@@ -13,11 +13,11 @@ phases:
       - echo In pre_build phase..
       - echo Current directory is $CODEBUILD_SRC_DIR
       - git submodule update --init --recursive
-      - npm install --production
+      - npm install --dev
   build:
     commands:
       - echo "******** Building Hugo site ********"
-      - hugo --verbose
+      - HUGO_ENV="production" hugo --verbose
   post_build:
     commands:
       - echo "******** Uploading to S3 ********"
