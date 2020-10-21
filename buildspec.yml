@@ -13,6 +13,8 @@ phases:
       - echo In pre_build phase..
       - echo Current directory is $CODEBUILD_SRC_DIR
       - git submodule update --init --recursive
+      - npm install -D --save autoprefixer
+      - npm install -D --save postcss-cli
   build:
     commands:
       - echo "******** Building Hugo site ********"
@@ -31,3 +33,4 @@ phases:
 cache:
   paths:
     - 'themes/docsy/**/*'
+    - 'node_modules/**/*'

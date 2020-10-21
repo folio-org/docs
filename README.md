@@ -8,6 +8,7 @@ Version 2.0. See the file "[LICENSE](LICENSE)" for more information.
 ## Introduction
 
 This is the documentation for FOLIO apps.
+If working with this Hugo site locally, be sure to execute `git submodule update --init --recursive` before attempting to build with Hugo for the first time.
 
 ### Issue tracker
 
