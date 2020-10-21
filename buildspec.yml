@@ -6,7 +6,7 @@ phases:
       python: 3.7
     commands:
       - apt-get update
-      - curl -L -o hugo.deb https://github.com/gohugoio/hugo/releases/download/v0.76.5/hugo_0.76.5_Linux-64bit.deb
+      - curl -L -o hugo.deb https://github.com/gohugoio/hugo/releases/download/v0.76.5/hugo_extended_0.76.5_Linux-64bit.deb
       - dpkg -i hugo.deb
   pre_build:
     commands:
@@ -28,6 +28,6 @@ phases:
     # - location
   #discard-paths: yes
   #base-directory: location
-# cache:
-#   paths:
-#     - 'vendor/**/*'
+cache:
+  paths:
+    - 'themes/docsy/**/*'
