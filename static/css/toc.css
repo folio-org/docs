@@ -1,0 +1,123 @@
+.td-sidebar-nav .td-sidebar-link {
+    display: block;
+    padding-bottom: 0.375rem;
+    color: #FFFFFF;
+    font-weight: 300;
+    font-size: 13px;
+}
+
+.td-sidebar-link.td-sidebar-link__section {
+    font-size: 16px;
+}
+
+
+/* .td-sidebar-nav__section-title {
+    text-transform: uppercase;
+} */
+
+.td-sidebar-nav__section ul {
+    padding: 0;
+    margin: 0px !important ;
+}
+
+.sub-section-parent {
+    padding-left: 1em;
+    display: none !important;
+}
+
+.parent-with-subtopics > li  {
+    margin-top: 0px !important;
+}
+
+.parent-with-subtopics > li > a {
+    /* font-size: 1px !important; */
+    color: hsl(210, 9%, 31%) !important;
+    font-weight: 300;
+
+}
+
+
+ul.td-sidebar-nav__section.pr-md-3.parent-with-subtopics > li > a {
+   /* color: hsl(210, 9%, 31%); */
+   /* font-weight: 300; */
+}
+
+li.td-sidebar-nav__section-title {
+    font-weight: 600;
+    margin-top: 1.5em;
+    text-transform: uppercase;
+}
+
+
+ul.td-sidebar-nav__section.pr-md-3.parent-with-subtopics > li > a {
+    color: hsl(210, 9%, 31%) !important;
+    font-weight: 300;
+}
+
+ul.td-sidebar-nav__section.pr-md-3.parent-with-subtopics > li > a:hover {
+    color: transparent !important;
+    text-shadow: 0 0 0.5px hsl(220, 100%, 70%) !important;
+}
+
+a.align-left.pl-0.pr-2.active.td-sidebar-link.td-sidebar-link__section {
+    font-weight: 700;
+    margin-top: 0px !important;
+}
+
+
+
+ ul.side-main {
+    margin-left: 0px !important;
+}
+
+.td-sidebar-link__sub_section{
+    padding-bottom: 0px;
+}
+
+li.td-sidebar-link.td-sidebar-link__sub_section_title {
+    padding: 0px !important;
+    line-height: 1rem !important;
+}
+
+.sub-section-child-topic {
+    padding-left: 1em;
+    display: none !important;
+}
+
+.sub-section-title {
+    margin-top: 0px !important;
+    padding-bottom: 0px;
+}
+
+nav#td-section-nav {
+    background-color: #2C3442;
+}
+
+
+.td-sidebar-nav a.active {
+    font-weight: 700 !important;
+}
+
+
+a.activeToc  {
+    font-weight: 100;
+    color: #6C9CE8 !important
+}
+
+/* From Arnon */
+
+footer.bg-dark.py-5.row.d-print-none {
+    background-color: #3F7DA7 !important;
+}
+
+/* From Arnon */
+
+.col-12.col-md-3.col-xl-2.td-sidebar.d-print-none {
+    background-color: #2B3343;
+}
+
+/* From Arnon */
+
+.td-sidebar__search {
+border-bottom: 1px solid hsl(0deg 0% 50%);
+}
