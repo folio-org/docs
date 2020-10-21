@@ -12,11 +12,11 @@ phases:
     commands:
       - echo In pre_build phase..
       - echo Current directory is $CODEBUILD_SRC_DIR
-      - ls -la
+      - git submodule update --init --recursive
   build:
     commands:
       - echo "******** Building Hugo site ********"
-      - hugo -v
+      - hugo --verbose
   post_build:
     commands:
       - echo "******** Uploading to S3 ********"
