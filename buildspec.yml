@@ -12,8 +12,8 @@ phases:
     commands:
       - echo In pre_build phase..
       - echo Current directory is $CODEBUILD_SRC_DIR
-      - git submodule update --init --recursive
-      - npm install --dev
+      - git submodule update --init --depth 1 --recursive
+      - npm install --only=dev
   build:
     commands:
       - echo "******** Building Hugo site ********"
@@ -31,5 +31,4 @@ phases:
   #base-directory: location
 cache:
   paths:
-    - 'themes/docsy/**/*'
     - 'node_modules/**/*'
