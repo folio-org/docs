@@ -6,5 +6,13 @@
     "Suffix": "index.html"
   },
   "RoutingRules": [
+    {
+      "Condition": {
+        "KeyPrefixEquals": "example/"
+      },
+      "Redirect": {
+        "ReplaceKeyWith": "example/new-location"
+      }
+    }
   ]
 }
