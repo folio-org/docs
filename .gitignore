@@ -1,0 +1,13 @@
+public/
+resources/
+node_modules/
+tech-doc-hugo
+
+# Ignore Mac system files
+.DS_Store
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
