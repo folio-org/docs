@@ -6,6 +6,8 @@ weight: 10
 
 ---
 
+This is an example of a change sitting on a branch as part of a pull request.  It will have a separate URL that makes it viewable so revisions can be reviewed before they are merged with the main documentation.
+
 Welcome to FOLIO, an open source project that creates a new paradigm for collaboration between libraries, developers, and vendors.  This open platform moves the industry well beyond the traditional library management system, offering libraries more choices of features and services.
 
 ![FOLIO Intro](img/FOLIO_6.png)
