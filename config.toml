@@ -1,5 +1,5 @@
 # baseURL = "/"
-baseURL = "http://127.0.0.1:1313"
+baseURL = "https://docs.folio.org/"
 title = "FOLIO Documentation"
 
 enableRobotsTXT = true
