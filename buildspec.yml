@@ -1,0 +1,33 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      python: 3.8
+    commands:
+      - apt-get update
+      - curl -L -o hugo.deb https://github.com/gohugoio/hugo/releases/download/v0.76.5/hugo_0.76.5_Linux-64bit.deb
+      - dpkg -i hugo.deb
+  pre_build:
+    commands:
+      - echo In pre_build phase..
+      - echo Current directory is $CODEBUILD_SRC_DIR
+      - ls -la
+  build:
+    commands:
+      - echo "******** Building Hugo site ********"
+      - hugo -v
+  post_build:
+    commands:
+      - echo "******** Uploading to S3 ********"
+      - aws s3 sync --delete public/ "s3://${BUCKET_NAME}"
+      - aws s3api put-bucket-website --bucket "${BUCKET_NAME}" --website-configuration file://s3-website-config.json
+#artifacts:
+  #files:
+    # - location
+    # - location
+  #discard-paths: yes
+  #base-directory: location
+# cache:
+#   paths:
+#     - 'vendor/**/*'
