@@ -6,15 +6,15 @@ weight: 10
 
 ---
 
-Welcome to FOLIO, an open source project that creates a new paradigm for collaboration between libraries, developers, and vendors.  This open platform moves the industry well beyond the traditional library management system, offering libraries more choices of features and services.
+Welcome to FOLIO documentation. FOLIO is an open source project that creates a new paradigm for collaboration between libraries, developers, and vendors.  This open platform moves the industry well beyond the traditional library management system, offering libraries more choices of features and services.
 
 ![FOLIO Intro](img/FOLIO_6.png)
 
-## A Modern Library Ecosystem
+## A modern library ecosystem
 
 The FOLIO project aims to facilitate a sustainable, community-driven collaboration around the creation of a modern technology ecosystem that empowers libraries through open source applications to manage library resources and expand library value.
 
-### Community Collaboration
+### Community collaboration
 
 Development of the FOLIO platform is driven by the transparent collaboration of librarians, developers, and vendors. A Product Council provides oversight of platform development, with representation from the many institutions and organizations involved.  A healthy number of communication channels supports ongoing interactions to move the project forward.
 
