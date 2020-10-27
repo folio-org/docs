@@ -6,7 +6,6 @@ date: 2020-06-11
 weight: 10
 description: >
   Note: This content is currently in draft status.
-tags: ["parenttopic"]
 ---
 
 The Check Out app enables a patron to use an item.  To check out an item, first locate the patron in the system and then scan/enter the item to borrow.

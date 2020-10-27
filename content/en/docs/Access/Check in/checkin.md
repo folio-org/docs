@@ -6,7 +6,6 @@ date: 2020-06-11
 weight: 20
 description: >
   Note: This content is currently in draft status.
-tags: ["parenttopic"]
 ---
 
 Use the Check in app when processing items a patron returns to the library, items requested by a patron, or In process items. You can also use the Check in app to record in-house usage.
