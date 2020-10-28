@@ -34,10 +34,10 @@ When a patron requests an item, checking the item in at its requested pickup ser
 
 Delivery requests are not treated any differently than items being routed to the hold shelf. The delivery request will trigger once the item is checked in at any location.
 
-Scan the barcode of the item. If you type or paste the barcode into the field, click **Enter**. A **Route for delivery request** dialog appears.
-Optional. If you do not want to print a hold slip, clear the **Print slip** checkbox.
-To check out the item to the patron, click **Close and check out**. The check out window appears and the item is automatically checked out to the patron.
-To leave the check out window, click **End Session**.
+1. Scan the barcode of the item. If you type or paste the barcode into the field, click **Enter**. A **Route for delivery request** dialog appears.
+2. Optional. If you do not want to print a hold slip, clear the **Print slip** checkbox.
+3. To check out the item to the patron, click **Close and check out**. The check out window appears and the item is automatically checked out to the patron.
+4. To leave the check out window, click **End Session**.
 
 ## Checking in and backdating an item
 
