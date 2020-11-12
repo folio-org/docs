@@ -2,13 +2,13 @@
 ---
 title: "Check out"
 linkTitle: "Check out"
-date: 2020-06-11
+date: 2020-11-12
 weight: 10
 description: >
   Note: This content is currently in draft status.
 ---
 
-The Check Out app enables a patron to use an item.  To check out an item, first locate the patron in the system and then scan/enter the item to borrow.
+The Check Out app enables a patron to borrow an item.  To check out an item, first locate the patron in the system and then scan/enter the item to borrow.
 
 ## Locating the patron in the system
 
@@ -17,17 +17,17 @@ You can find the patron by either:
 * Scanning / entering the barcode provided by the patron
 * Using the Patron Look-up function
 
-To locate the patron using a barcode:
+Locate the patron using a barcode:
 
 1. Either scan the barcode on the patron's library card, or enter the patron barcode number.
 2. Click **Enter**. Patron details are displayed.
 
 
-To locate the patron using the Patron Lookup function:
+Locate the patron using the Patron Lookup function:
 
-1. In the Scan Patron Card area, click **Patron Look-up**. A Select User screen appears.
-2. Enter part or all of the patron's name.
-3. (Optional) Filter results by status (active/inactive), or by patron type.
+1. In the Scan Patron Card paneclick **Patron Look-up**. 
+2. In the **Select User** dialog, enter part or all of the patron's name.
+3. Optional: Filter results by status (active/inactive), or by patron type.
 4. Click **Search**.
 5. Click the patron to use. The Select User screen closes, the barcode appears in the Scan Patron Card area, and the patron details are displayed.
 
@@ -56,8 +56,8 @@ To access more information about each item:
 
 To change the due date:
 
-1. Click **... > Change due date**.  The Change Due Date screen appears.
-2. Enter the date and /or time for the new due date.
+1. Click **... > Change due date**.
+2. In the **Change Due Date** dialog, enter the date and /or time for the new due date.
 3. Click **Save and Close**.  The new due date is saved.
 
 ## Ending the check out session
