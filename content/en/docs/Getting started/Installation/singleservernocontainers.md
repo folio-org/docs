@@ -87,7 +87,7 @@ CREATE ROLE foliosu WITH PASSWORD 'folio123' LOGIN SUPERUSER;
 1. Import the FOLIO signing key and add the FOLIO apt repository.
 
 ```
-wget --no-check-certificate --quiet -O - https://folio-repo.bib-bvb.de/repository.gpg | sudo apt-key add -
+wget --quiet -O - https://folio-repo.bib-bvb.de/repository.gpg | sudo apt-key add -
 sudo add-apt-repository "deb [arch=amd64] http://folio-repo.bib-bvb.de/repo folio-bleeding main"
 ```
 
