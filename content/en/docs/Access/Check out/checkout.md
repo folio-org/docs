@@ -26,22 +26,20 @@ Locate the patron using a barcode:
 Locate the patron using the Patron Lookup function:
 
 1. In the Scan Patron Card paneclick **Patron Look-up**. 
-2. In the **Select User** dialog, enter part or all of the patron's name.
+2. In the **Select User** dialog, enter part or all of the patron's name, email or username.
 3. Optional: Filter results by status (active/inactive), or by patron type.
 4. Click **Search**.
 5. Click the patron to use. The Select User screen closes, the barcode appears in the Scan Patron Card area, and the patron details are displayed.
 
 ### Assessing the patron's data
 
-Within the patron details area, note that you can access additional information related to the user.  Clicking on any linked information opens the Users app and displays the associated information.  
+Within the patron details area, note that you can access additional information related to the user.  Clicking on any linked information opens the appropriate app and displays the associated information.  For example, clicking the number beneath Open requests opens the Requests app.
 
 Review the information available to determine if you can continue with check out.  For example, fees or fines may be owed, and may need to be handled before proceeding.  
 
 ## Scanning the item to check out
 
 To select the item for check out, scan or enter the barcode of the item and click **Enter**.  The item is displayed in the Scan Items area and the total number of items scanned is incremented.  
-
-To change the order of checked out items, click **No.**
 
 ## Getting additional item information
 
