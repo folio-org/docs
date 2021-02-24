@@ -34,7 +34,7 @@ Locate the patron using the Patron Lookup function:
 
 1. In the Scan patron card pane, click **Patron Look-up**.
 
-2. In the **Select User **dialog, in the **User search **box, enter part or all of the patron's name, email, or username.
+2. In the **Select User** dialog, in the **User search** box, enter part or all of the patron's name, email, or username.
 
 3. Optional: Filter results by Status (active/inactive), or by Patron group.
 
