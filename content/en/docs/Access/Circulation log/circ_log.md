@@ -27,17 +27,17 @@ Note: Panes are resizable throughout FOLIO and in the Circulation log. Resize th
 
 ### Generating circulation actions associated with a user barcode
 
-In the **Search & filter **pane, type or paste a **User barcode** into the box. Results display as soon as you start typing.
+In the **Search & filter** pane, type or paste a **User barcode** into the box. Results display as soon as you start typing.
 
 
 ### Generating circulation actions associated with an item barcode
 
-In the **Search & filter **pane, type or paste an **Item barcode** into the box. Results display as soon as you start typing.
+In the **Search & filter** pane, type or paste an **Item barcode** into the box. Results display as soon as you start typing.
 
 
 ### Generating circulation actions by description
 
-To search through the **Description** field, in the **Search & filter **pane, enter your search terms into the box. Results display as soon as you start typing.
+To search through the **Description** field, in the **Search & filter** pane, enter your search terms into the box. Results display as soon as you start typing.
 
 
 ### Generating circulation actions by date
@@ -49,18 +49,18 @@ To search through the **Description** field, in the **Search & filter **pane, en
 
 ### Generating circulation actions by service point
 
-In the **Search & filter **pane, type or select the **Service point** from the box. You are able to apply more than one Service point to your search, if needed. Results display as soon as you enter a Service point.
+In the **Search & filter** pane, type or select the **Service point** from the box. You are able to apply more than one Service point to your search, if needed. Results display as soon as you enter a Service point.
 
 
 ### Loan filter options
 
-In the **Search & filter **pane, click **Loan** and select any applicable filters:
+In the **Search & filter** pane, click **Loan** and select any applicable filters:
 
-* **Changed due date. **Include items whose due date was manually changed.
-* **Checked out. **Include items that were checked out.
+* **Changed due date.** Include items whose due date was manually changed.
+* **Checked out.** Include items that were checked out.
 * **Checked out through override.** Include items that were checked out using an override.
 * **Anonymize.** Include loans that were anonymized. Note: This feature is under development.
-* **Claimed returned. **Include items that were claimed returned.
+* **Claimed returned.** Include items that were claimed returned.
 * **Closed loan.** Include items that were returned.
 * **Declared lost.** Include items that were declared lost.
 * **Marked as missing.** Include items that were marked as missing.
@@ -72,39 +72,39 @@ In the **Search & filter **pane, click **Loan** and select any applicable filter
 
 ### Notice filter options
 
-In the **Search & filter **pane, click **Notice** and select any applicable filters:
+In the **Search & filter** pane, click **Notice** and select any applicable filters:
 
-* **Send. **Include notices that were sent out to users.
+* **Send.** Include notices that were sent out to users.
 
 
 ### Fee/fine filter options
 
-In the **Search & filter **pane, click **Fee/fine** and select any applicable filters:
+In the **Search & filter** pane, click **Fee/fine** and select any applicable filters:
 
-* **Billed. **Include items that were billed.
-* **Credited fully. **Include fees/fines that were fully credited.
-* **Paid fully. **Include fees/fines that were fully paid.
-* **Paid partially. **Include fees/fines that were partially paid.
-* **Refunded fully. **Include fees/fines that were fully refunded.
+* **Billed.** Include items that were billed.
+* **Credited fully.** Include fees/fines that were fully credited.
+* **Paid fully.** Include fees/fines that were fully paid.
+* **Paid partially.** Include fees/fines that were partially paid.
+* **Refunded fully.** Include fees/fines that were fully refunded.
 * **Refunded partially.** Include fees/fines that were partially refunded. Note: Partial refunds are not implemented at this time. Only automated (full) refunds appear in the Circulation Log.
-* **Staff information only information added. **Include fees/fines that had staff information added to them.
-* **Transferred fully. **Include fees/fines that were fully transferred from the user to another account.
-* **Transferred partially. **Include fees/fines that were partially transferred from the user to another account.
-* **Waived fully. **Include fees/fines that were fully waived.
-* **Waived partially. **Include fees/fines that were partially waived.
-* **Cancelled as error. **Include fees/fines that were cancelled because they were created in error.
+* **Staff information only information added.** Include fees/fines that had staff information added to them.
+* **Transferred fully.** Include fees/fines that were fully transferred from the user to another account.
+* **Transferred partially.** Include fees/fines that were partially transferred from the user to another account.
+* **Waived fully.** Include fees/fines that were fully waived.
+* **Waived partially.** Include fees/fines that were partially waived.
+* **Cancelled as error.** Include fees/fines that were cancelled because they were created in error.
 
 
 ### Request filter options
 
-In the **Search & filter **pane, click **Request** and select any applicable filters:
+In the **Search & filter** pane, click **Request** and select any applicable filters:
 
-* **Cancelled. **Include requests that were cancelled.
-* **Created. **Include requests that were created and manual blocks.
-* **Pickup expired. **Include requests that were awaiting pickup and the pickup period expired.
-* **Expired. **Include requests that expired before they were filled.
-* **Moved. **Include requests that were [moved from one item to another.]({{< ref "/requests.md#moving-a-request-to-another-item-on-the-same-instance" >}})
-* **Queue position reordered. **Include requests that were moved up or down in the request queue.
+* **Cancelled.** Include requests that were cancelled.
+* **Created.** Include requests that were created and manual blocks.
+* **Pickup expired.** Include requests that were awaiting pickup and the pickup period expired.
+* **Expired.** Include requests that expired before they were filled.
+* **Moved.** Include requests that were [moved from one item to another.]({{< ref "/requests.md#moving-a-request-to-another-item-on-the-same-instance" >}})
+* **Queue position reordered.** Include requests that were moved up or down in the request queue.
 
 
 ### Columns in the circulation log
