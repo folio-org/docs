@@ -17,15 +17,15 @@ The following are all the Circulation Settings permissions presented in the orde
 
 
 * **Settings (Circ): Can create, edit and remove circulation rules.** This permission allows the user to create, read, update, and delete circulation rules.
-* **Settings (Circ): Can create, edit and remove other settings. **This permission allows the user to create, read, update, and delete other settings.
+* **Settings (Circ): Can create, edit and remove other settings.** This permission allows the user to create, read, update, and delete other settings.
 * **Settings (Circ): Can create, edit and remove staff slips.** This permission allows the user to create, read, update, and delete staff slips.
 * **Settings (Circ): Can create, edit and remove fixed due date schedules.** This permission allows the user to create, read, update, and delete fixed due date schedules.
-* **Settings (Circ): Can view loan history. **This permission allows the user to view loan history settings.
+* **Settings (Circ): Can view loan history.** This permission allows the user to view loan history settings.
 * **Settings (Circ): Can create, edit and remove loan policies.** This permission allows the user to create, read, update, and delete loan policies.
 * **Settings (Circ): Can create, edit and remove overdue fine policies.** This permission allows the user to create, read, update, and delete overdue fine policies.
 * **Settings (Circ): Can create, edit and remove lost item fee policies.** This permission allows the user to create, read, update, and delete lost item fee policies.
 * **Settings (Circ): Can create, edit and remove notice policies.** This permission allows the user to create, read, update, and delete patron notice policies.
-* **Settings (Circ): Can create, edit and remove patron notice templates. **This permission allows the user to create, read, update, and delete patron notice templates.
+* **Settings (Circ): Can create, edit and remove patron notice templates.** This permission allows the user to create, read, update, and delete patron notice templates.
 * **Settings (Circ): Can create, edit and remove cancellation reasons.** This permission allows the user to create, read, update, and delete request cancellation reasons.
 * **Settings (Circ): Can create, edit and remove request policies.** This permission allows the user to create, read, update, and delete request policies.
 
@@ -113,7 +113,7 @@ This setting is turned on by default with an inactivity period of 3 minutes.
 
 Audio alerts can be turned on to signal to library staff when a checkout is successful or fails. This setting is turned off by default.
 
-To enable audio alerts, select **Yes **from the drop-down list.
+To enable audio alerts, select **Yes** from the drop-down list.
 
 
 ## Settings > Circulation > Staff slips
@@ -165,7 +165,7 @@ Fixed due date schedules are used in Loan policies when you want to have a loan 
 
 3. Optional: Enter a **Description** in the box.
 
-4. In the **Schedule **section, enter a date range for the fixed due date by selecting dates in the **Date from** and **Date to** boxes. This is the time range during which the fixed due date is applied.
+4. In the **Schedule** section, enter a date range for the fixed due date by selecting dates in the **Date from** and **Date to** boxes. This is the time range during which the fixed due date is applied.
 
 5. Enter the **Due date** that applies to all materials checked out during the time range you selected above.
 
@@ -187,11 +187,11 @@ Fixed due date schedules are used in Loan policies when you want to have a loan 
 
 ### Delete a fixed due date schedule
 
-1. In the **Fixed due date schedules **pane, select the fixed due date schedule you want to delete.
+1. In the **Fixed due date schedules** pane, select the fixed due date schedule you want to delete.
 
-2. In the **fixed due date schedule details** pane, click **Edit**.
+2. In the **Fixed due date schedule details** pane, click **Edit**.
 
-3. In the **Edit **window, click **Delete**.
+3. In the **Edit** window, click **Delete**.
 
 4. In the **Delete fixed due date schedule** dialog, click **Delete**. The fixed due date schedule is deleted and a confirmation message appears.
 
@@ -265,7 +265,7 @@ After you create your loan policies, you should test them to make sure they func
 
 2. In the **Create loan policy** window, enter a **Policy name **in the box.
 
-3. Optional: Enter a **Policy description **in the box.
+3. Optional: Enter a **Policy description** in the box.
 
 4. Use the information in the following sections to help guide you in creating loan policies. Different fields are available depending on the options you select in the policy.
 
@@ -287,7 +287,7 @@ If you selected **Fixed**, you will see the following fields:
 
 **Fixed due date schedule.** Select a fixed due date schedule, as configured in Settings > Circulation > Fixed due date schedules. The selected schedule determines the due date for the item. Note: Fixed due dates are only applicable for loans longer than 24 hours, and the due date/time is automatically set to 11:59 pm or the close of that service point’s day.
 
-**Closed library due date management. **Select when the item is due if an item’s calculated due date lands in closed hours for the service point.
+**Closed library due date management.** Select when the item is due if an item’s calculated due date lands in closed hours for the service point.
 
 **Grace period.** Enter a grace period for overdue items. If you select a grace period, the item is not overdue until after the loan due date/time plus the grace period interval. Adding a grace period to a due date follows the same logic that you chose for closed library due date management, if the grace period lands in a closed time for the service point. 
 
@@ -299,9 +299,9 @@ If you selected **Rolling**, you will see the following fields:
 
 **Fixed due date schedule (due date limit).** Select a fixed due date schedule, as configured in Settings > Circulation > Fixed due date schedules. The schedule is used to enforce a stop point on continuing renewals. For example, you may allow students to renew items every four weeks, but want renewals to stop at the end of the semester.
 
-**Closed library due date management. **Select when the item is due if an item’s calculated due date lands in closed hours for the service point.
+**Closed library due date management.** Select when the item is due if an item’s calculated due date lands in closed hours for the service point.
 
-**Grace period. **Enter a grace period for overdue items. If you choose to have a grace period, the item is not overdue until after the loan due date/time plus the grace period interval. Adding a grace period to a due date follows the same logic that you chose for closed library due date management if the grace period lands in a closed time for the service point.
+**Grace period.** Enter a grace period for overdue items. If you choose to have a grace period, the item is not overdue until after the loan due date/time plus the grace period interval. Adding a grace period to a due date follows the same logic that you chose for closed library due date management if the grace period lands in a closed time for the service point.
 
 **Item limit.** Enter an item limit for items borrowed under this policy. This setting is currently In development.
 
@@ -314,13 +314,13 @@ If you selected **Rolling**, you will see the following fields:
 
 **Number of renewals allowed.** If you have not selected **Unlimited renewals**, enter the number of renewals allowed.
 
-**Renew from. **Select whether a renewed item is renewed from the **Current due date** or **System date, **the date the item is renewed on.
+**Renew from.** Select whether a renewed item is renewed from the **Current due date** or **System date, **the date the item is renewed on.
 
-**Renewal period different from original loan. **Select the checkbox if you want renewed items to have a different loan period than the original loan period. If selected, the next two options appear.
+**Renewal period different from original loan.** Select the checkbox if you want renewed items to have a different loan period than the original loan period. If selected, the next two options appear.
 
-**Alternate loan period for renewals. **Enter the alternate loan period for renewals.
+**Alternate loan period for renewals.** Enter the alternate loan period for renewals.
 
-**Alternate fixed due date schedule (due date limit) for renewals. **Select a fixed due date schedule, as configured in Settings > Circulation > Fixed due date schedules. The schedule is used to enforce a stop point on continuing renewals.
+**Alternate fixed due date schedule (due date limit) for renewals.** Select a fixed due date schedule, as configured in Settings > Circulation > Fixed due date schedules. The schedule is used to enforce a stop point on continuing renewals.
 
 
 #### Request management
@@ -332,25 +332,25 @@ All of the fields in this section are optional. Note: If you leave them blank, t
 
 ##### Recalls
 
-**Recall return interval. **Enter an amount of time for the recall return interval. This is the period of time the patron has to return a recalled item before it becomes overdue.
+**Recall return interval.** Enter an amount of time for the recall return interval. This is the period of time the patron has to return a recalled item before it becomes overdue.
 
 **Minimum guaranteed loan period for recalled items.** Enter an amount of time for the minimum guaranteed loan period for recalled items. If you allow an item to be recalled, but do not have a minimum guaranteed loan period, the recall return interval effectively becomes the minimum guaranteed loan period for recalled items.
 
 
 ##### Holds
 
-**Alternate loan period at checkout for items with an active, pending hold request **To shorten a loan period for an item that has a request queue, enter an amount of time. If an item is checked out and has no queue, the regular loan period is applied.
+**Alternate loan period at checkout for items with an active, pending hold request** To shorten a loan period for an item that has a request queue, enter an amount of time. If an item is checked out and has no queue, the regular loan period is applied.
 
 **Allow renewal of items with an active, pending hold request.** If you want to allow renewals on a checked out item that has hold requests, select the check box. When renewals are allowed, patrons can continue to renew the item based on the settings in the Renewals section.
 
-**Alternate loan period at renewal for items with an active, pending hold request. **If you allow renewals on items with an active, pending hold request, and want to shorten the renewal loan period, enter an amount of time.
+**Alternate loan period at renewal for items with an active, pending hold request.** If you allow renewals on items with an active, pending hold request, and want to shorten the renewal loan period, enter an amount of time.
 
 
 ### Duplicating a loan policy
 
 1. In the **Loan policies** pane, select the loan policy you want to duplicate.
 
-2. In the **loan policy details **pane, click **Actions > Duplicate**. A Create loan policy window appears with the same loan information as the policy you chose to duplicate.
+2. In the **loan policy details** pane, click **Actions > Duplicate**. A Create loan policy window appears with the same loan information as the policy you chose to duplicate.
 
 3. Edit any of the loan information before saving the policy.
 
@@ -359,9 +359,9 @@ All of the fields in this section are optional. Note: If you leave them blank, t
 
 ### Editing a loan policy
 
-1. In the** Loan policies** pane, select the loan policy you want to edit.
+1. In the **Loan policies** pane, select the loan policy you want to edit.
 
-2. In the **loan policy details** pane, click **Actions > Edit**.
+2. In the **Loan policy details** pane, click **Actions > Edit**.
 
 3. Edit the loan policy.
 
@@ -374,7 +374,7 @@ All of the fields in this section are optional. Note: If you leave them blank, t
 
 2. In the **loan policy details** pane, click **Actions > Delete**.
 
-3. In the **Delete Loan policy** dialog, click** Delete**. The policy is deleted and a confirmation message appears.
+3. In the **Delete Loan policy** dialog, click **Delete**. The policy is deleted and a confirmation message appears.
 
 
 ## Overdue fine policies
@@ -390,7 +390,7 @@ Overdue fine policies determine the amount of fines that accrue when a patron ha
 
 3. Optional: Enter a **Description** in the box.
 
-4. In the **Overdue fine **section, enter the **Overdue fine** amount in the box and **Select interval** at which the fine accrues.
+4. In the **Overdue fine** section, enter the **Overdue fine** amount in the box and **Select interval** at which the fine accrues.
 
 5. Select whether overdue fines should **Count closed days/hours/minutes**. If you select **Yes**, overdue fines continue to accrue on days the library is closed.
 
@@ -411,7 +411,7 @@ Overdue fine policies determine the amount of fines that accrue when a patron ha
 
 1. In the **Overdue fine policies** pane, select the overdue fine policy you want to duplicate.
 
-2. In the **overdue fine policy details** pane, click** Actions > Duplicate**. A New overdue fine policy window appears with the same overdue fine policy information as the policy you chose to duplicate.
+2. In the **overdue fine policy details** pane, click **Actions > Duplicate**. A New overdue fine policy window appears with the same overdue fine policy information as the policy you chose to duplicate.
 
 3. Edit any of the overdue fine policy information before saving the policy.
 
@@ -431,9 +431,9 @@ Overdue fine policies determine the amount of fines that accrue when a patron ha
 
 ### Deleting a loan policy
 
-1. In the **Overdue fine policies **pane, select the overdue fine policy you want to delete.
+1. In the **Overdue fine policies** pane, select the overdue fine policy you want to delete.
 
-2. In the **overdue fine policy details **pane, click **Actions > Delete**.
+2. In the **Overdue fine policy details** pane, click **Actions > Delete**.
 
 3. In the **Delete Overdue fine policy** dialog, click **Delete**. The policy is deleted and a confirmation message appears.
 
@@ -445,7 +445,7 @@ Lost item fee policies determine when overdue items automatically age to lost (t
 
 ### Creating a lost item fee policy
 
-1. In the **Lost item fee policies **pane, click **New**.
+1. In the **Lost item fee policies** pane, click **New**.
 
 2. In the **Lost item fee policies **window, enter a **Lost item fee policy name** in the box**.**
 
@@ -463,7 +463,7 @@ Lost item fee policies determine when overdue items automatically age to lost (t
 
 9. Select whether to **Charge lost item processing fee if item aged to lost by system**.
 
-10.  Enter an amount of time** For lost items not charged a fee/fine, close the loan after**.
+10.  Enter an amount of time **For lost items not charged a fee/fine, close the loan after**.
 
 11. Select whether **If lost item returned, remove lost item processing fee**.
 
@@ -473,7 +473,7 @@ Lost item fee policies determine when overdue items automatically age to lost (t
 
 14. Select **If lost item replaced, remove lost item processing fee**.
 
-15. Enter a **Replacement processing fee **amount in the box.
+15. Enter a **Replacement processing fee** amount in the box.
 
 16. Enter an amount of time that **No fees/fines shall be refunded if a lost item is returned more than [amount] late**.
 
@@ -493,9 +493,9 @@ Lost item fee policies determine when overdue items automatically age to lost (t
 
 ### Editing a lost item fee policy
 
-1. In the** Lost item fee policies **pane, select the Lost item fee policy you want to edit.
+1. In the **Lost item fee policies** pane, select the Lost item fee policy you want to edit.
 
-2. In the **lost item fee policy** details pane, click **Actions > Edit**.
+2. In the **Lost item fee policy** details pane, click **Actions > Edit**.
 
 3. Edit the lost item fee policy.
 
@@ -506,9 +506,9 @@ Lost item fee policies determine when overdue items automatically age to lost (t
 
 1. In the **Lost item fee policies** pane, select the lost item fee policy you want to delete.
 
-2. In the** lost item fee policy details** pane, click **Actions > Delete**.
+2. In the **Lost item fee policy details** pane, click **Actions > Delete**.
 
-3. In the **Delete Lost item fee policy** dialog, click** Delete**. The policy is deleted and a confirmation message appears.
+3. In the **Delete Lost item fee policy** dialog, click **Delete**. The policy is deleted and a confirmation message appears.
 
 
 ## Patron notice policies
@@ -525,7 +525,7 @@ Multiple notices can be set up in one policy. Whether it makes more sense to set
 
 ### Creating a patron notice policy
 
-1. In the **Patron notice policies **pane, click **New**.
+1. In the **Patron notice policies** pane, click **New**.
 
 2. In the **New patron notice policy** window, enter a **Policy name**. Note: The policy name is what you will see in Circulation rules. 
 
@@ -541,9 +541,9 @@ Multiple notices can be set up in one policy. Whether it makes more sense to set
 
 8. Select the **Triggering event**. This event triggers the system to send a notice. Depending on the event, you might have the option to select a time period before or after.
 
-9. Optional: If you selected a time-based event, the **Send **drop-down list appears. Select to send the request Upon/At, Before, or After the event (settings variable on the Triggering event).
+9. Optional: If you selected a time-based event, the **Send** drop-down list appears. Select to send the request Upon/At, Before, or After the event (settings variable on the Triggering event).
 
-10. Optional: If you select Before or After in the previous step, you will see the **Frequency **drop-down list. Select whether to send the notice One-Time or Recurring, until the event is reached.
+10. Optional: If you select Before or After in the previous step, you will see the **Frequency** drop-down list. Select whether to send the notice One-Time or Recurring, until the event is reached.
 
 11. Click **Save & close**. The policy is saved and appears in the Patron notice policies pane.
 
@@ -556,12 +556,12 @@ Multiple notices can be set up in one policy. Whether it makes more sense to set
 
 **Item renewed.** The notice is sent when items are renewed.
 
-**Loan due date/time. **The notice is sent before, after, or when an item is due. Select when the notice is sent from the **Send** drop-down list:
+**Loan due date/time.** The notice is sent before, after, or when an item is due. Select when the notice is sent from the **Send** drop-down list:
 
 * To send the notice when the item is due, select **Upon/At**. 
 * To send the notice before the item is due, select **Before**. Then, determine the **Frequency** of the notice. To send the notice once, before it is due, select **One-Time**. To send the notice multiple times before the item is due, select **Recurring** and enter how often the notice sends until the due date is reached.
 * To send the notice after the item is due, select **After**. Then, determine the **Frequency** of the notice. To send the notice once, after the item is due, select **One-Time**. To send the notice multiple times after the item is due, select **Recurring** and enter how often the notice sends until the item is returned or renewed.
-* Additionally, select whether you want to **Send overnight with multiple loans/items by patron. Useful for long-term loans **or **Send throughout the day without multiple loans/items. Useful for short-term loans.**
+* Additionally, select whether you want to **Send overnight with multiple loans/items by patron. Useful for long-term loans** or **Send throughout the day without multiple loans/items. Useful for short-term loans.**
 
 **Loan due date changed.** The notice is sent when an item’s due date/time is manually changed.
 
@@ -574,20 +574,20 @@ For all request notices, the system is scanned every five minutes for triggering
 
 **Awaiting pickup.** The notice is sent when a requested item was checked in at the request service point and now it’s available and awaiting pickup.
 
-**Page request. **The notice is sent when a page request is placed.
+**Page request.** The notice is sent when a page request is placed.
 
 **Hold request.** The notice is sent when a hold request is placed.
 
-**Recall request. **The notice is sent when a recall request is placed.
+**Recall request.** The notice is sent when a recall request is placed.
 
 **Cancel request.** The notice is sent when a request is cancelled.
 
-**Hold shelf expiration. **The notice is sent before or when the item is no longer available for pickup on the hold shelf. Select when the notice is sent from the **Send** drop-down list:
+**Hold shelf expiration.** The notice is sent before or when the item is no longer available for pickup on the hold shelf. Select when the notice is sent from the **Send** drop-down list:
 
 * To send the notice when the item’s time on the hold shelf expires, select **Upon/At**. 
 * To send the notice before the item’s time on the hold shelf expires, select **Before**. Then, determine the **Frequency** of the notice. To send the notice once, before its time on the hold shelf expires, select **One-Time**. To send the notice multiple times before the item’s time on the hold shelf expire, select **Recurring** and enter how often the notice sends until the hold shelf expiration is reached.
 
-**Request expiration.** The notice is sent before or when the request expires. Select when the notice is sent from the **Send **drop-down list:
+**Request expiration.** The notice is sent before or when the request expires. Select when the notice is sent from the **Send** drop-down list:
 
 
 
@@ -603,12 +603,12 @@ For all fee/fine notices, the system is scanned every five minutes for triggerin
 
 
 * To send the notice when the overdue fine is charged, select **Upon/At**. 
-* To send the notice after the overdue fine is charged, select **Before**. Then, determine the **Frequency** of the notice. To send the notice once, before the request expires, select **One-Time**. To send the notice multiple times before the request expires, select **Recurring **and enter how often the notice sends until the fee/fine is closed.
+* To send the notice after the overdue fine is charged, select **Before**. Then, determine the **Frequency** of the notice. To send the notice once, before the request expires, select **One-Time**. To send the notice multiple times before the request expires, select **Recurring** and enter how often the notice sends until the fee/fine is closed.
 
-**Overdue fine, renewed.** The notice is sent after or when an overdue fine is charged to a patron. Select when the notice is sent from the **Send **drop-down list:
+**Overdue fine, renewed.** The notice is sent after or when an overdue fine is charged to a patron. Select when the notice is sent from the **Send** drop-down list:
 
 * To send the notice when the overdue fine is charged, select **Upon/At**. 
-* To send the notice after the overdue fine is charged, select** Before**. Then, determine the **Frequency **of the notice. To send the notice once, before the request expires, select **One-Time**. To send the notice multiple times before the request expires, select **Recurring** and enter how often the notice sends until the fee/fine is closed.
+* To send the notice after the overdue fine is charged, select **Before**. Then, determine the  **Frequency** of the notice. To send the notice once, before the request expires, select  **One-Time**. To send the notice multiple times before the request expires, select  **Recurring** and enter how often the notice sends until the fee/fine is closed.
 
 
 ### Duplicating a patron notice policy
@@ -651,7 +651,7 @@ Patron notice templates are the templates used in your Patron notice policies. C
 
 1. In the **Patron notice templates** pane, click **New**.
 
-2. In the** New patron notice** window, enter a **Name** for the notice.
+2. In the **New patron notice** window, enter a **Name** for the notice.
 
 3. Clear the **Active** checkbox if you do not want the notice to be available for use in notice policies.
 
@@ -681,9 +681,9 @@ Patron notice templates are the templates used in your Patron notice policies. C
 
 ### Editing a patron notice template
 
-1. In the** Patron notice templates** pane, select the patron notice template you want to edit.
+1. In the **Patron notice templates** pane, select the patron notice template you want to edit.
 
-2. In the **patron notice template details** pane, click **Actions > Edit**.
+2. In the **Patron notice template details** pane, click **Actions > Edit**.
 
 3. Edit the patron notice template.
 
@@ -692,11 +692,11 @@ Patron notice templates are the templates used in your Patron notice policies. C
 
 ### Deleting a patron notice template
 
-1. In the **Patron notice templates **pane, select the patron notice template you want to delete.
+1. In the **Patron notice templates** pane, select the patron notice template you want to delete.
 
-2. In the **patron notice template details** pane, click **Actions > Delete**.
+2. In the **Patron notice template details** pane, click **Actions > Delete**.
 
-3. In the **Delete Patron notice templates** dialog, click** Delete**. The template is deleted and a confirmation message appears.
+3. In the **Delete Patron notice templates** dialog, click **Delete**. The template is deleted and a confirmation message appears.
 
 
 ## Settings > Circulation > Request cancellation reasons
@@ -726,7 +726,7 @@ When  you cancel a request, you must select a cancellation reason. Use this sett
 
 1. Find the request cancellation reason you want to delete and click the **Delete icon**.
 
-2. In the** Delete Request cancellation reason **dialog, click **Delete**. The reason is deleted and a confirmation message appears.
+2. In the **Delete Request cancellation reason** dialog, click **Delete**. The reason is deleted and a confirmation message appears.
 
 
 ## Settings > Circulation > Request policies
@@ -736,9 +736,9 @@ Request policies determine the types of requests (pages, holds, and recalls) all
 
 ### Creating a new request policy
 
-1. Click **New **on the Request policies pane.
+1. Click **New** on the Request policies pane.
 
-2. In the **New request policy **window, enter a **Request policy name**.
+2. In the **New request policy** window, enter a **Request policy name**.
 
 3. Optional: Enter a **Request policy description**.
 

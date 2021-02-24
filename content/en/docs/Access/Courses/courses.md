@@ -19,10 +19,10 @@ The following are all the Courses permissions, listed from least to most restric
 
 * **Courses: All permissions.** This permission allows the user to maintain (view, add, edit, and delete) courses, items, instructors, and cross-listed courses.
 * **Courses: Read, Add, edit.** This permission allows the user to view, add, and edit a course. However, they are unable to delete a course.
-* **Courses: Add, edit, and remove items. **This permission allows the user to view, add, edit, and remove items associated with a course.
+* **Courses: Add, edit, and remove items.** This permission allows the user to view, add, edit, and remove items associated with a course.
 * **Courses: Read All.** This permission allows the user to see all courses and item information.
 * **Settings (Courses): Can create, edit and delete Course Settings.** This permission allows the user to maintain (view, add, edit, and delete) all course settings.
-* **Settings (courses): display list of settings pages. **This permission allows the user to access and view course settings. However, they are unable to add, edit, or delete any settings.
+* **Settings (courses): display list of settings pages.** This permission allows the user to access and view course settings. However, they are unable to add, edit, or delete any settings.
 * **UI: courses module is enabled.** This permission adds the Courses app icon to the user's FOLIO toolbar. It does not give the user the ability to view or interact with the Courses app or settings.
 
 
@@ -114,18 +114,18 @@ Courses can only be deleted once all items are removed from the course.
 
 3. Click **Delete**.
 
-4. Click **Really Delete** to delete the course. The course is deleted and removed from the Courses list.
+4. Click **Really delete** to delete the course. The course is deleted and removed from the Courses list.
 
 
 ## Adding a cross-listed course
 
 Cross-listed courses share instructors, course listing information, and reserve items. Once a course is created, cross-listed courses can be added to it. When you cross-list a course, the information you have in the original course’s Course listing information section also applies to the cross-listed course.
 
-1. [Find the course](#searching-for-courses) you want to add a cross-listed course to and click on it in the **Courses **list.
+1. [Find the course](#searching-for-courses) you want to add a cross-listed course to and click on it in the **Courses** list.
 
-2. In the **course details **window, click **Crosslist**.
+2. In the **course details** window, click **Crosslist**.
 
-3. In the **New course within listing **window, enter a **Course name **and optionally fill in the other boxes under **Basic course information**. The **Cross listing information** section is populated with information from the original course.
+3. In the **New course within listing** window, enter a **Course name** and optionally fill in the other boxes under **Basic course information**. The **Cross listing information** section is populated with information from the original course.
 
 4. Click **Save & close**. The course is saved and appears in the Cross-listed courses section of the original course. It also appears in the main course list.
 
@@ -139,13 +139,13 @@ See [Editing a course.](#editing-a-course)
 
 You are able to delete a cross-listed course with items as long as one course remains.
 
-1. [Find the cross-listed course](#searching-for-courses) you want to delete and click on it in the **Courses **list.
+1. [Find the cross-listed course](#searching-for-courses) you want to delete and click on it in the **Courses** list.
 
 2. In the **course details** window, click **Edit**.
 
 3. Click **Delete**.
 
-4. Click **Really Delete** to delete the course. The course is deleted and removed from the Courses list.
+4. Click **Really delete** to delete the course. The course is deleted and removed from the Courses list.
 
 
 ## Adding an instructor to a course
@@ -154,44 +154,44 @@ Instructors can only be added once a course is created. The instructor does not 
 
 Add an instructor with a FOLIO user record:
 
-1. [Find the course](#searching-for-courses) and click on it in the **Courses **list.
+1. [Find the course](#searching-for-courses) and click on it in the **Courses** list.
 
 2. Under **Instructors**, click **Add instructor**.
 
 3. In the **Add instructor** window, click **Look up user**.
 
-4. In the **Select User **dialog, find the instructor you want to add, and click on them in the **User Search Results** list. The instructor’s name and barcode appears in the Name and Barcode boxes.
+4. In the **Select User** dialog, find the instructor you want to add, and click on them in the **User Search Results** list. The instructor’s name and barcode appears in the Name and Barcode boxes.
 
 5. Click **Save & close**. The instructor appears in the Instructors section.
 
 
 Add an instructor that does not have a FOLIO user record:
 
-1. [Find the course](#searching-for-courses) and click on it in the **Courses **list.
+1. [Find the course](#searching-for-courses) and click on it in the **Courses** list.
 
 2. Under **Instructors**, click **Add instructor**.
 
-3. In the **Name **box, enter the instructor’s name.
+3. In the **Name** box, enter the instructor’s name.
 
 4. Click **Save & close**. The instructor appears in the Instructors section.
 
 
 ## Editing an instructor
 
-1. [Find the course](#searching-for-courses) and click on it in the **Courses **list.
+1. [Find the course](#searching-for-courses) and click on it in the **Courses** list.
 
 2. Under **Instructors**, find the instructor you want to edit.
 
 3. Click **Edit instructor**.
 
-4. In the **Add instructor for [course]** window, edit the **Name **or **Barcode **of the instructor. 
+4. In the **Add instructor for [course]** window, edit the **Name** or **Barcode** of the instructor. 
 
 5. Click **Save & close**.
 
 
 ## Deleting an instructor
 
-1. [Find the course](#searching-for-courses) and click on it in the **Courses **list.
+1. [Find the course](#searching-for-courses) and click on it in the **Courses** list.
 
 2. Under **Instructors**, find the instructor you want to delete.
 
@@ -204,9 +204,9 @@ When you add an item to a course, the following information is copied from the o
 
 The Start date, End date, and Temporary location are automatically updated based on the Term and Location applied at the courses level. If you need to change these fields, or update reserve item level information, you will need to [edit the reserve item.](#editing-a-reserve-item)
 
-1. [Find the course](#searching-for-courses) and click on it in the **Courses **list.
+1. [Find the course](#searching-for-courses) and click on it in the **Courses** list.
 
-2. In the **Items **section, either scan the item barcode into the box, or enter the barcode and click **Add item**. The item is added to the course and appears in the Items section.
+2. In the **Items** section, either scan the item barcode into the box, or enter the barcode and click **Add item**. The item is added to the course and appears in the Items section.
 
 
 ## Editing a reserve item
@@ -215,17 +215,17 @@ Note: If you add an item to a course and later make a change to the item via the
 
 Editing a reserve item allows you to change or add information to the following fields:
 
-* **Temporary location. **If you change the reserve item’s temporary location, once you save the changes, the selected Temporary location is added to the Item record in the Inventory app.
+* **Temporary location.** If you change the reserve item’s temporary location, once you save the changes, the selected Temporary location is added to the Item record in the Inventory app.
 * **Temporary loan type.** If you change the reserve item’s temporary loan type, once you save the changes, the selected Temporary loan type is added to the Item record in the Inventory app.
 * **Processing status.** This field only applies to the Courses app and is available as a Reserves search filter.
 * **Start Date and End Date.** When an item is placed on reserve, the start and end date are inherited from the selected Term.
 * **Copyright information.** This section facilitates copyright tracking.
 
-1. [Find the course](#searching-for-courses) with the item you want to edit and click on it in the **Courses **list.
+1. [Find the course](#searching-for-courses) with the item you want to edit and click on it in the **Courses** list.
 
-2. In the **Items **section, find the reserve item and click **Edit reserve**.
+2. In the **Items** section, find the reserve item and click **Edit reserve**.
 
-3. In the** Item title** window, make your changes.
+3. In the **Item title** window, make your changes.
 
 4. Click **Save & close**. The item is updated.
 
@@ -234,6 +234,6 @@ Editing a reserve item allows you to change or add information to the following 
 
 Note: Removing an item from a course does not remove it from the Inventory app.
 
-1. [Find the course](#searching-for-courses) with the item you want to remove and click on it in the **Courses **list.
+1. [Find the course](#searching-for-courses) with the item you want to remove and click on it in the **Courses** list.
 
-2. In the **Items **section, find the reserve item and click **Remove**. The item is removed.
+2. In the **Items** section, find the reserve item and click **Remove**. The item is removed.

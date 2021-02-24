@@ -45,7 +45,7 @@ Use this setting to create and manage Course Types. Examples of Course Types inc
 
 1. Click **New**.
 
-2. Enter a **Name **in the box.
+2. Enter a **Name** in the box.
 
 3. Optional: Enter a **Description** in the box.
 
@@ -56,7 +56,7 @@ Use this setting to create and manage Course Types. Examples of Course Types inc
 
 1. Find the Course Type you want to edit and click the **pencil icon**.
 
-2. Edit the **Name **or **Description**.
+2. Edit the **Name** or **Description**.
 
 3. Click **Save**. The Course Type is saved.
 
@@ -77,7 +77,7 @@ Use this setting to create and manage Course Departments. Examples of Course Dep
 
 1. Click **New**.
 
-2. Enter a **Name **in the box.
+2. Enter a **Name** in the box.
 
 3. Optional: Enter a **Description** in the box.
 
@@ -97,7 +97,7 @@ Use this setting to create and manage Course Departments. Examples of Course Dep
 
 1. Find the Course Department you want to delete and click the **delete icon**.
 
-2. In the **Delete Department **dialog, click **Delete**. A confirmation message appears and the department is deleted.
+2. In the **Delete Department** dialog, click **Delete**. A confirmation message appears and the department is deleted.
 
 
 ## Settings > Courses > Processing Statuses
@@ -109,7 +109,7 @@ Use this setting to create and manage Processing Statuses. These statuses are sp
 
 1. Click **New**.
 
-2. Enter a **Name **in the box.
+2. Enter a **Name** in the box.
 
 3. Optional: Enter a **Description** in the box.
 
@@ -120,7 +120,7 @@ Use this setting to create and manage Processing Statuses. These statuses are sp
 
 1. Find the Processing Status you want to edit and click the **pencil icon**.
 
-2. Edit the **Name **or **Description**.
+2. Edit the **Name** or **Description**.
 
 3. Click **Save**. The Processing Status is saved.
 
@@ -141,7 +141,7 @@ Use this setting to create and manage Copyright Statuses. These statuses are spe
 
 1. Click **New**.
 
-2. Enter a **Name **in the box.
+2. Enter a **Name** in the box.
 
 3. Optional: Enter a **Description** in the box.
 
@@ -152,7 +152,7 @@ Use this setting to create and manage Copyright Statuses. These statuses are spe
 
 1. Find the Copyright Status you want to edit and click the **pencil icon**.
 
-2. Edit the **Name **or **Description**.
+2. Edit the **Name** or **Description**.
 
 3. Click **Save**. The Copyright Status is saved.
 

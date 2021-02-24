@@ -21,13 +21,13 @@ The permissions listed below allow you to interact with the Requests app and det
 
 The following are all the Requests permissions:
 
-* **Requests: All permissions. **This permission allows the user all request functions.
-* **Requests: Move to new item. **This permission allows the user to move requests from one item to another (subject to request policies). 
-* **Requests, Reorder queue. **This permission allows the user to access the dedicated request queue page with reorder capabilities. It is only needed for users who need to reorder the queue. You do not need this permission to view the queue.
-* **Requests: View. **This permission allows the user to search and view request records.
-* **Requests: View, create. **This permission allows the user to create new requests and view existing records.
-* **Requests: View, edit, cancel. **This permission allows the user to view, edit and cancel requests. 
-* **Users: View requests. **This permission allows the user to view requests in the Users app.
+* **Requests: All permissions.** This permission allows the user all request functions.
+* **Requests: Move to new item.** This permission allows the user to move requests from one item to another (subject to request policies). 
+* **Requests, Reorder queue.** This permission allows the user to access the dedicated request queue page with reorder capabilities. It is only needed for users who need to reorder the queue. You do not need this permission to view the queue.
+* **Requests: View.** This permission allows the user to search and view request records.
+* **Requests: View, create.** This permission allows the user to create new requests and view existing records.
+* **Requests: View, edit, cancel.** This permission allows the user to view, edit and cancel requests. 
+* **Users: View requests.** This permission allows the user to view requests in the Users app.
 
 
 ## Creating a request
@@ -39,7 +39,7 @@ Note: When creating a request, you should consider the following:
 * You cannot request an item if it has one of the following Item statuses: Aged to lost, Claimed returned, Declared lost, Lost and paid, Missing, or Withdrawn. 
 * You can only recall an item if it has one of the following Item statuses: Awaiting delivery, Awaiting pickup, Checked out, In process, In transit, On order, or Paged.
 
-1. In the **Requests **pane, select **Actions > New**.
+1. In the **Requests** pane, select **Actions > New**.
 
 2. In the **Item information** box, either scan the barcode of the requested item or enter the barcode and click **Enter**. The item is added to the request and its item information appears.
 
@@ -47,19 +47,19 @@ Note: When creating a request, you should consider the following:
 
 4. Optional: Enter a **Request expiration date**. If the request is still open by the selected date, it closes and its status changes to Closed - Unfilled.
 
-5. In the** Requester information** box, either scan the requester’s barcode or enter the barcode and click **Enter**.
+5. In the **Requester information** box, either scan the requester’s barcode or enter the barcode and click **Enter**.
 
-6. If you do not have the requester’s barcode, click **Requester look-up **to search for the patron:
+6. If you do not have the requester’s barcode, click **Requester look-up** to search for the patron:
 
 
-    1. In the **Select User **dialog, search for the requester.
+    1. In the **Select User** dialog, search for the requester.
 
 
     2. Once you find the requester, select them from the **User Search Results** list. They are applied to the request and their information appears.
 
 7. Select the **Fulfilment preference**.
 
-8. Select the **Pickup service point **or **Delivery address**, depending on your selection in the previous step.
+8. Select the **Pickup service point** or **Delivery address**, depending on your selection in the previous step.
 
 9. Click **Save & close**. The request is saved and the Request Detail pane appears. The patron receives an email notification saying their request was received by the library, [if you have this notification configured.]({{< ref "/settings_circulation.md#patron-notice-policies" >}})
 
@@ -77,7 +77,7 @@ After you perform a search for requests, you can save your results to a comma-se
 
 1. [Search for requests.](#searching-for-requests) 
 
-2. In the **Requests **pane, select **Actions > Export search results to CSV**. Depending on your browser and its configurations, the file automatically downloads or you are prompted to save it.
+2. In the **Requests** pane, select **Actions > Export search results to CSV**. Depending on your browser and its configurations, the file automatically downloads or you are prompted to save it.
 
 
 ## Exporting a hold shelf clearance report
@@ -102,7 +102,7 @@ To create a pick report, follow these steps:
 
 1. In the Search & filter pane, select **Request type > Pages** and **Request status > Open - Not yet filled** to filter the items down to open page requests.
 
-2. In the **Requests **pane, select **Actions > Export search results to CSV**.
+2. In the **Requests** pane, select **Actions > Export search results to CSV**.
 
 3. Save and open the file in a spreadsheet application.
 
@@ -175,9 +175,9 @@ Note: If a recall request is moved to a loan item that wasn’t previously recal
 
 1. [Find the request you want to move.](#searching-for-requests) 
 
-2. In the **Request Detail **pane, select **Actions > Move request**.
+2. In the **Request Detail** pane, select **Actions > Move request**.
 
-3. In the **Select item **window, select the item you want to move the request to. If the current request type is not allowed, a Current requests type not allowed for selected item dialog appears. 
+3. In the **Select item** window, select the item you want to move the request to. If the current request type is not allowed, a Current requests type not allowed for selected item dialog appears. 
 
 4. Click **Confirm** to allow the request to be converted. A confirmation message appears and the request appears under the item you selected.
 
@@ -188,7 +188,7 @@ You can change a patron’s location in the request queue for an item by reorder
 
 1. [Find the request with the queue you want to reorder.](#searching-for-requests) 
 
-2. In the **Request Detail **pane, select **Actions > Reorder queue**.
+2. In the **Request Detail** pane, select **Actions > Reorder queue**.
 
 3. In the **Request queue** window, drag the requests in the order you would like them to appear. Requests cannot be moved above a Page request in the first position, even if fulfillment has not begun.
 
@@ -203,7 +203,7 @@ You can add a tag to any open request. Tags are included in the [CSV export repo
 
 2. In the **Request Detail** pane, click the **tag icon**.
 
-3. In the **Tag **pane, either select a tag from the box or enter a tag.
+3. In the **Tag** pane, either select a tag from the box or enter a tag.
 
 4. Click the **X** on the Tag window to close the pane and save the tag. The tag number updates to the number of tags applied to the request.
 
@@ -221,7 +221,7 @@ Delivery must first be turned on in a patron’s user record, and they must have
 
 2. Click **Edit**.
 
-3. In the **user record** window, select **Delivery **under **Request preferences** to turn on delivery.
+3. In the **User record** window, select **Delivery** under **Request preferences** to turn on delivery.
 
 4. Select a default **Fulfillment preference** for the patron.
 
