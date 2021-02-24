@@ -61,7 +61,7 @@ Note: When creating a request, you should consider the following:
 
 8. Select the **Pickup service point **or **Delivery address**, depending on your selection in the previous step.
 
-9. Click **Save & close**. The request is saved and the Request Detail pane appears. The patron receives an email notification saying their request was received by the library, if you have this notification configured.
+9. Click **Save & close**. The request is saved and the Request Detail pane appears. The patron receives an email notification saying their request was received by the library, [if you have this notification configured.]({{< ref "/settings_circulation.md#patron-notice-policies" >}})
 
 
 ## Searching for requests
@@ -75,7 +75,7 @@ To search for requests placed by a specific patron when you do not have their ba
 
 After you perform a search for requests, you can save your results to a comma-separated values (CSV) file. The fields visible in the Requests results list appear in the CSV file, along with additional request and item information.
 
-1. Search for requests.
+1. [Search for requests.](#searching-for-requests) 
 
 2. In the **Requests **pane, select **Actions > Export search results to CSV**. Depending on your browser and its configurations, the file automatically downloads or you are prompted to save it.
 
@@ -113,7 +113,7 @@ To create a pick report, follow these steps:
 
 The pick slips report generates a single slip for every paged item that needs to be pulled from the shelf. This report automatically prints only those items whose Effective location is associated with the currently selected service point. Therefore, you must be signed in to the service point you want to generate the slips for. If there are no items matching the report’s criteria, the option appears grayed out.
 
-You can configure the information that appears on the pick slips in the Settings app.
+You can configure the information that appears on the pick slips in the [Settings app]({{< ref "/settings_circulation.md#settings--circulation--staff-slips" >}}).
 
 To print pick slips, in the Requests pane, select **Actions > Print pick slips for [your service point]**. A print dialog appears.
 
@@ -128,7 +128,7 @@ Note: When cancelling a request, you should consider the following:
 * If you cancel a request that has begun fulfillment (it has a Request status of Open - In transit or Open - Awaiting pickup), the Request status changes to Closed - Cancelled, but the Item status will not change until it is checked in.
 * If a requested item is awaiting pickup and its request is cancelled, it appears on the Hold shelf clearance report.
 
-1. Find the request you want to cancel.
+1. [Find the request you want to cancel.](#searching-for-requests) 
 
 2. In the **Request Detail** pane, select **Actions > Cancel request**.
 
@@ -136,14 +136,14 @@ Note: When cancelling a request, you should consider the following:
 
 4. Optional: Enter any additional notes on the cancellation in the **Additional information for patron** box. If you selected **Other**, then you must supply additional information.
 
-5. Click **Confirm**. The dialog closes and the request is cancelled. The Request status is updated to Closed - Cancelled and the patron receives a cancellation notification email, if you have this notification configured.
+5. Click **Confirm**. The dialog closes and the request is cancelled. The Request status is updated to Closed - Cancelled and the patron receives a cancellation notification email, [if you have this notification configured.]({{< ref "/settings_circulation.md#patron-notice-policies" >}})
 
 
 ## Editing a request
 
 You can only edit open requests. Once a request is closed, it cannot be edited.
 
-1. Find the request you want to edit.
+1. [Find the request you want to edit.](#searching-for-requests) 
 
 2. In the **Request Detail** pane, select **Actions > Edit.**
 
@@ -156,7 +156,7 @@ You can only edit open requests. Once a request is closed, it cannot be edited.
 
 Any open request can be duplicated, but you need to change the requester, because it is not possible to have two identical requests. Note: Duplicate requests act as any other request. They do not go to the top of the queue.
 
-1. Find the request you want to duplicate.
+1. [Find the request you want to duplicate.](#searching-for-requests) 
 
 2. In the **Request Detail **pane, select **Actions > Duplicate**. A New request window appears with the same Item information, Request information, and Requester information as the request you chose to duplicate.
 
@@ -171,9 +171,9 @@ Any open request can be duplicated, but you need to change the requester, becaus
 
 You can move a request from one item to another on the same instance. You may want to do this if a request item goes missing or if you need to balance request queues.
 
-Note: If a recall request is moved to a loan item that wasn’t previously recalled, the loan will be recalled--the patron gets a recall notice, if configured, and the loan’s due date may be truncated.
+Note: If a recall request is moved to a loan item that wasn’t previously recalled, the loan will be recalled--the patron gets a recall notice, [if configured,]({{< ref "/settings_circulation.md#patron-notice-policies" >}}) and the loan’s due date may be truncated.
 
-1. Find the request you want to move.
+1. [Find the request you want to move.](#searching-for-requests) 
 
 2. In the **Request Detail **pane, select **Actions > Move request**.
 
@@ -186,7 +186,7 @@ Note: If a recall request is moved to a loan item that wasn’t previously recal
 
 You can change a patron’s location in the request queue for an item by reordering the queue.
 
-1. Find the request with the queue you want to reorder.
+1. [Find the request with the queue you want to reorder.](#searching-for-requests) 
 
 2. In the **Request Detail **pane, select **Actions > Reorder queue**.
 
@@ -197,9 +197,9 @@ You can change a patron’s location in the request queue for an item by reorder
 
 ## Adding a tag to a request
 
-You can add a tag to any open request. Tags are included in the CSV export report, in case you want to use them for your workflow. For example, you can tag requests that were not found.
+You can add a tag to any open request. Tags are included in the [CSV export report](#exporting-your-search-results-to-csv), in case you want to use them for your workflow. For example, you can tag requests that were not found.
 
-1. Find the request you want to tag.
+1. [Find the request you want to tag.](#searching-for-requests) 
 
 2. In the **Request Detail** pane, click the **tag icon**.
 
@@ -232,7 +232,7 @@ Delivery must first be turned on in a patron’s user record, and they must have
 
 ### Creating a delivery request
 
-1. Create a request.
+1. [Create a request.](#creating-a-request) 
 
 2. If the patron does not have delivery as their default **Fulfilment preference**, select **Delivery**.
 
@@ -249,7 +249,7 @@ When checking in a delivery request, you have two options: check the item out to
 
 To check the item out to the patron, follow these steps:
 
-1. Check in the item on the Check in app.
+1. [Check in the item on the Check in app.]({{< ref "/checkin.md#checking-in-an-item" >}})
 
 2. Optional: In the **Route for delivery request** dialog, if you do not want to print a request delivery slip, clear the **Print slip** checkbox.
 
@@ -259,7 +259,7 @@ To check the item out to the patron, follow these steps:
 
 To wait to process the request, follow these steps:
 
-1. Check in the item on the Check in app.
+1. [Check in the item on the Check in app.]({{< ref "/checkin.md#checking-in-an-item" >}})
 
 2. Optional: In the **Route for delivery request** dialog, if you do not want to print a hold slip, clear the **Print slip** checkbox.
 

@@ -8,7 +8,7 @@ weight: 20
 
 The Check in app allows you to process items at a service point, including items a patron returns to the library, items requested by a patron, or in process items. You can also use the Check in app to record in-house usage.
 
-To configure any of the staff slips you encounter when checking in an item, like the Hold slip, see Staff slips for more information.
+To configure any of the staff slips you encounter when checking in an item, like the Hold slip, see [Staff slips]({{< ref "/settings_circulation.md#settings--circulation--staff-slips" >}}) for more information.
 
 
 ## Permissions
@@ -44,7 +44,7 @@ Once you check in an item, the following columns appear in the Scanned Items tab
 * **Barcode. **The barcode of the item.
 * **Effective call number string.** The full call number of the item, which includes the call number prefix, suffix, and copy number, as configured in the Inventory app.
 * **Location.** The permanent location of the item.
-* **In-house use.** If you are recording in-house use of an item, a house icon appears here. Otherwise, it appears blank. See Recording in-house use of an item for more information.
+* **In-house use.** If you are recording in-house use of an item, a house icon appears here. Otherwise, it appears blank. See [Recording in-house use of an item](#recording-in-house-use-of-an-item) for more information.
 * **Status.** The item status once checked in.
 * **Actions.** Click **…** to view additional item information or see the actions you can take on the item. See Getting additional item information for more information.
 
@@ -131,9 +131,9 @@ To mark an item as used, either scan the barcode of the item, or enter the barco
 
 ## Printing a transit slip
 
-If you forgot to print a transit slip or have transit slips turned off by default, you can print a transit slip after checking in an item. Transit slips are configured in the Settings app.
+If you forgot to print a transit slip or have transit slips turned off by default, you can print a transit slip after checking in an item. Transit slips are configured in the [Settings app]({{< ref "/settings_circulation.md#settings--circulation--staff-slips" >}}).
 
-1. Check in the item.
+1. [Check in the item](#checking-in-an-item).
 
 2. In the Actions column, click **... > Print transit slip.**
 
@@ -142,7 +142,7 @@ If you forgot to print a transit slip or have transit slips turned off by defaul
 
 You can manually create a new fee/fine for an item after checking it in.
 
-1. Check in the item.
+1. [Check in the item](#checking-in-an-item).
 
 2. In the Actions column, click **... > New Fee/Fine.**
 
@@ -163,4 +163,4 @@ You can manually create a new fee/fine for an item after checking it in.
 
 Once you are done checking in items, you can end your check in session manually. To end your session and clear the Scanned Items table, click **End session**. Once you end the session, any applicable notices are sent to patrons.
 
-By default, the Check in session is configured to end automatically after a 3 minute period of inactivity. You can turn this setting off or edit the number of minutes of inactivity the session will end after in the Settings app.
+By default, the Check in session is configured to end automatically after a 3 minute period of inactivity. You can turn this setting off or edit the number of minutes of inactivity the session will end after in the [Settings app]({{< ref "/settings_circulation.md#automatically-end-check-in-and-check-out-session-after-period-of-inactivity" >}}).

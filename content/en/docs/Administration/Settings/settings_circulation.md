@@ -120,9 +120,9 @@ To enable audio alerts, select **Yes **from the drop-down list.
 
 Staff slips allow you to configure the information that appears on your staff slips. You have the option of printing these slips when their associated action occurs:
 
-* **Hold. **This slip is available through the Check in app, when you check in an item with a request.
+* **Hold.** This slip is available through the Check in app, when you check in an item with a request.
 * **Pick slip.** This slip is available in the Requests app, when you generate the pick slip report.
-* **Request delivery. **This slip is available in the Check in app, when you check in an item with a delivery request.
+* **Request delivery.** This slip is available in the Check in app, when you check in an item with a delivery request.
 * **Transit.** This slip is available in the Check in app, when you check in an item that is in transit to another location.
 
 
@@ -289,7 +289,7 @@ If you selected **Fixed**, you will see the following fields:
 
 **Closed library due date management. **Select when the item is due if an item’s calculated due date lands in closed hours for the service point.
 
-**Grace period.** Enter a grace period for overdue items. If you select a grace period, the item is not overdue until after the loan due date/time plus the grace period interval. Adding a grace period to a due date follows the same logic that you chose for closed library due date management, if the grace period lands in a closed time for the service point. **//Could SMEs verify?**
+**Grace period.** Enter a grace period for overdue items. If you select a grace period, the item is not overdue until after the loan due date/time plus the grace period interval. Adding a grace period to a due date follows the same logic that you chose for closed library due date management, if the grace period lands in a closed time for the service point. 
 
 **Item limit.** Enter an item limit for items borrowed under this policy. This setting is currently In development.
 

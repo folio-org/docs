@@ -64,10 +64,10 @@ In the **Search & filter **pane, click **Loan** and select any applicable filter
 * **Closed loan.** Include items that were returned.
 * **Declared lost.** Include items that were declared lost.
 * **Marked as missing.** Include items that were marked as missing.
-* **Recall requested.** Include items that were requested as recalls.
+* **Recall requested.** Include items that were requested as [recalls]({{< ref "/requests.md" >}}).
 * **Renewed.** Include items that were renewed.
 * **Renewed through override.** Include items that were renewed using an override.
-* **Age to lost.** Include overdue items that have an Item status of Aged to lost. The time in which an overdue item ages to lost is set up in the Circulation Setting Lost item fee policies.
+* **Age to lost.** Include overdue items that have an Item status of Aged to lost. The time in which an overdue item ages to lost is set up in the [Circulation Setting Lost item fee policies.]({{< ref "/settings_circulation.md#creating-a-lost-item-fee-policy" >}})
 
 
 ### Notice filter options
@@ -103,7 +103,7 @@ In the **Search & filter **pane, click **Request** and select any applicable fil
 * **Created. **Include requests that were created and manual blocks.
 * **Pickup expired. **Include requests that were awaiting pickup and the pickup period expired.
 * **Expired. **Include requests that expired before they were filled.
-* **Moved. **Include requests that were moved from one item to another.
+* **Moved. **Include requests that were [moved from one item to another.]({{< ref "/requests.md#moving-a-request-to-another-item-on-the-same-instance" >}})
 * **Queue position reordered. **Include requests that were moved up or down in the request queue.
 
 
@@ -119,9 +119,9 @@ Once you generate a circulation log, these are the columns that appear:
 * **Service point.** The service point at which the action occurred.
 * **Source.** The source of the action: System, user, or none (blank).
 * **Description.** A description of the action.
-* **Action.** Click **…** to see more information about the action. See Getting additional circulation action information for more information.
+* **Action.** Click **…** to see more information about the action. See [Getting additional circulation action information for more information.](#getting-additional-circulation-action-information)
 
 
 ## Getting additional circulation action information
 
-Clicking the Action button displays a menu that enables access to additional information. The menu options that appear differ depending upon the Object ** **(Fee/fine, Loan, Manual block, Notice, or Request). For example, clicking **... > Item details** opens the Inventory app for more information.
+Clicking the Action button displays a menu that enables access to additional information. The menu options that appear differ depending upon the **[Object](#columns-in-the-circulation-log)** (Fee/fine, Loan, Manual block, Notice, or Request). For example, clicking **... > Item details** opens the Inventory app for more information.
