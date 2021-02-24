@@ -40,8 +40,8 @@ While checking in an item, you may encounter one of the following pop-ups:
 Once you check in an item, the following columns appear in the Scanned Items table:
 
 * **Time returned.** The time the item was returned, based on when the item is checked in. Click the **information icon** to view the check in time it is processed as, if backdating the item, versus the actual time it is checked in. Additionally, if any fees/fines are owed, they are noted here.
-* **Title. **The title of the item.
-* **Barcode. **The barcode of the item.
+* **Title.** The title of the item.
+* **Barcode.** The barcode of the item.
 * **Effective call number string.** The full call number of the item, which includes the call number prefix, suffix, and copy number, as configured in the Inventory app.
 * **Location.** The permanent location of the item.
 * **In-house use.** If you are recording in-house use of an item, a house icon appears here. Otherwise, it appears blank. See [Recording in-house use of an item](#recording-in-house-use-of-an-item) for more information.
