@@ -2,8 +2,6 @@
 title: "Resource Access (Circulation)"
 linkTitle: "Resource Access (Circulation)"
 weight: 300
-description: >
-  Note: This content is currently in draft status.
 ---
 
 In FOLIO, resource access includes essential circulation functions. These functions include:
