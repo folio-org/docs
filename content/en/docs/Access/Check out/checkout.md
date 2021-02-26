@@ -2,44 +2,81 @@
 ---
 title: "Check out"
 linkTitle: "Check out"
-date: 2020-11-12
+date: 2021-02-23
 weight: 10
-description: >
-  Note: This content is currently in draft status.
 ---
 
-The Check Out app enables a patron to borrow an item.  To check out an item, first locate the patron in the system and then scan/enter the item to borrow.
+The Check Out app allows you to check out items to patrons. To check out an item, first locate a patron in the system and then scan/enter an item to borrow.
 
-## Locating the patron in the system
+
+## Permissions
+
+The permissions listed below allow you to interact with the Check out app and determine what you can or cannot do within the app. You can assign permissions to users in the Users app. If none of these permissions are assigned to a user, then they will be unable to see the Check out app or any related information.
+
+* **Check out: All permissions.** This permission allows the user to check out items to patrons (create new loans) and view open loans and loan details. However, this permission does not include seeing the entirety of the user record.
+* **Check out: Check out circulating items.** This permission allows the user to check out items, but they cannot override non-circulating loan policies.
+
+
+## Locating a patron in the system
 
 You can find the patron by either:
 
-* Scanning / entering the barcode provided by the patron
-* Using the Patron Look-up function
+*   Scanning / entering the barcode provided by the patron
+*   Using the Patron Look-up function
 
 Locate the patron using a barcode:
 
 1. Either scan the barcode on the patron's library card, or enter the patron barcode number.
-2. Click **Enter**. Patron details are displayed.
 
+2. Click **Enter**. Patron details are displayed.
 
 Locate the patron using the Patron Lookup function:
 
-1. In the Scan Patron Card paneclick **Patron Look-up**. 
-2. In the **Select User** dialog, enter part or all of the patron's name, email or username.
-3. Optional: Filter results by status (active/inactive), or by patron type.
+1. In the Scan patron card pane, click **Patron Look-up**.
+
+2. In the **Select User** dialog, in the **User search** box, enter part or all of the patron's name, email, or username.
+
+3. Optional: Filter results by Status (active/inactive), or by Patron group.
+
 4. Click **Search**.
-5. Click the patron to use. The Select User screen closes, the barcode appears in the Scan Patron Card area, and the patron details are displayed.
+
+5. Click the patron to use. The Select User dialog closes, the barcode appears in the Scan patron card pane, and the patron details are displayed.
+
 
 ### Assessing the patron's data
 
-Within the patron details area, note that you can access additional information related to the user.  Clicking on any linked information opens the appropriate app and displays the associated information.  For example, clicking the number beneath Open requests opens the Requests app.
+Within the patron details area, note that you can access additional information related to the user. Clicking on any linked information opens the appropriate app and displays the associated information. For example, clicking the number beneath Open requests opens the Requests app.
 
-Review the information available to determine if you can continue with check out.  For example, fees or fines may be owed, and may need to be handled before proceeding.  
+Review the information available to determine if you can continue with check out. For example, fees or fines may be owed, and may need to be handled before proceeding.
+
+
+## Checking out to a proxy borrower
+
+Proxy borrowers are patrons who are checking out items on the behalf of another patron. For example, a graduate assistant may act as a proxy for a professor.
+
+Note: A patron must first be assigned as a proxy for the borrower  in their user record in the Users app.
+
+1. [Locate the proxy borrower in the system.](#locating-a-patron-in-the-system) 
+
+2. In the Who are you acting as? dialog, select the name of the user they will be acting as a proxy for and click **Continue**. The Who are you acting as? dialog closes and patron and proxy details are displayed.
+
 
 ## Scanning the item to check out
 
-To select the item for check out, scan or enter the barcode of the item and click **Enter**.  The item is displayed in the Scan Items area and the total number of items scanned is incremented.  
+To select the item for check out, scan or enter the barcode of the item and click **Enter**. The item is displayed in the Scan Items area and the total number of items scanned is incremented.
+
+
+### Pop-ups that can occur when checking out an item
+
+While checking an item out to a patron, you may encounter one of the following pop-ups:
+
+* Item status
+* Check out notes
+* Multiple and/or missing pieces
+* Patron block
+* Item block
+* Override circulation policy
+
 
 ## Getting additional item information
 
@@ -56,10 +93,11 @@ To change the due date:
 
 1. Click **... > Change due date**.
 2. In the **Change Due Date** dialog, enter the date and /or time for the new due date.
-3. Click **Save and Close**.  The new due date is saved.
+3. Click **Save and Close**. The new due date is saved.
+
 
 ## Ending the check out session
 
-Once you have completed checking out items for a patron, you can end the session.
+Once you have completed checking out items for a patron, you can end the session manually. To end your session and clear the Scanned Items table, click **End session**. Once you end the session, any applicable notices are sent to patrons.
 
-To end the check out session, in the Scan Items area, click **End Session**.  The session is then complete.
+By default, the Check out session is configured to end automatically after a 3 minute period of inactivity. You can turn this setting off or edit the number of minutes of inactivity the session will end after in the [Settings app]({{< ref "/settings_circulation.md#automatically-end-check-in-and-check-out-session-after-period-of-inactivity" >}}).
