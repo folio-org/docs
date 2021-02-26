@@ -2,10 +2,8 @@
 ---
 title: "Features"
 linkTitle: "Features"
-date: 2020-10-01
+date: 2021-02-26
 weight: 10
-description: >
-  Note: This content is currently in draft status.
 tags: ["parenttopic"]
 ---
 The FOLIO LSP includes the domains that support the library’s operations such as circulation, acquisitions, cataloging and e-resources management. Each domain is comprised of multiple, smaller apps (for example a check-in or checkout app within the circulation domain). For example, features include the ability to:
