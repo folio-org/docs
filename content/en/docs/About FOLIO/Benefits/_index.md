@@ -2,10 +2,8 @@
 ---
 title: "Benefits"
 linkTitle: "Benefits"
-date: 2020-10-01
+date: 2021-02-26
 weight: 20
-description: >
-  Note: This content is currently in draft status.
 tags: ["parenttopic"]
 ---
 
