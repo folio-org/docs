@@ -29,6 +29,15 @@ A FOLIO instance is divided into two main components.  The first component is Ok
 | RAM             | 12GB                | 20GB                    |
 | CPU             | 4                   | 8                       |
 
+Clone this repository, cd into the directory that is created
+```
+cd ~
+git clone https://github.com/folio-org/folio-install
+cd folio-install
+git checkout q3-2020
+cd runbooks/single-server
+```
+
 ## Installing Okapi
 
 ### Okapi requirements
@@ -98,16 +107,33 @@ Follow the instructions from official documentation for [docker](https://docs.do
 
 ```
 sudo curl -L \
-  "https://github.com/docker/compose/releases/download/1.26.2/docker-compose-$(uname -s)-$(uname -m)" \
+  "https://github.com/docker/compose/releases/download/1.27.4/docker-compose-$(uname -s)-$(uname -m)" \
   -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
+```
+
+Build requirements: git, curl, NodeJS, npm, Yarn, libjson-perl, libwww-perl libuuid-tiny-perl 
+Install build requirements from Ubuntu apt repositories 
+```
+sudo apt-get -y install git curl nodejs npm libjson-perl libwww-perl libuuid-tiny-perl
+```
+Install n from npm
+```
+sudo npm install n -g
+```
+Import the Yarn signing key, add the Yarn apt repository, install Yarn
+```
+wget --quiet -O - https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+sudo add-apt-repository "deb https://dl.yarnpkg.com/debian/ stable main"
+sudo apt-get update
+sudo apt-get -y install yarn
 ```
 
 8. Install Apache Kafka and Apache ZooKeeper.  Apache Kafka and Apache ZooKeeper are required by FOLIO [mod-pubsub](https://github.com/folio-org/mod-pubsub).  Both Kafka and ZoopKeepr are installed below using docker-compose.
 
 ```
 sudo mkdir /opt/kafka-zk
-sudo cp /home/user/docker-compose-kafka-zk.yml /opt/kafka-zk/docker-compose.yml
+sudo cp /home/folio-install/runbooks/single-server/scripts/docker-compose-kafka-zk.yml /opt/kafka-zk/docker-compose.yml
 cd /opt/kafka-zk
 sudo docker-compose up -d
 ```
