@@ -112,24 +112,9 @@ sudo curl -L \
 sudo chmod +x /usr/local/bin/docker-compose
 ```
 
-Build requirements: git, curl, NodeJS, npm, Yarn, libjson-perl, libwww-perl libuuid-tiny-perl 
-Install build requirements from Ubuntu apt repositories 
-```
-sudo apt-get -y install git curl nodejs npm libjson-perl libwww-perl libuuid-tiny-perl
-```
-Install n from npm
-```
-sudo npm install n -g
-```
-Import the Yarn signing key, add the Yarn apt repository, install Yarn
-```
-wget --quiet -O - https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
-sudo add-apt-repository "deb https://dl.yarnpkg.com/debian/ stable main"
-sudo apt-get update
-sudo apt-get -y install yarn
-```
-
 8. Install Apache Kafka and Apache ZooKeeper.  Apache Kafka and Apache ZooKeeper are required by FOLIO [mod-pubsub](https://github.com/folio-org/mod-pubsub).  Both Kafka and ZoopKeepr are installed below using docker-compose.
+
+Take into account that you have to change the **KAFKA_ADVERTISED_LISTENERS** value for the private IP of your server, instead of 10.0.2.15 for a Vagrant box.
 
 ```
 sudo mkdir /opt/kafka-zk
@@ -138,7 +123,6 @@ cd /opt/kafka-zk
 sudo docker-compose up -d
 ```
 
-A sample docker-compose (docker-compose-kafka-zk.yml) file can be downloaded from [here](https://github.com/folio-org/folio-install/blob/master/runbooks/single-server/scripts/docker-compose-kafka-zk.yml). Take into account that you have to change the **KAFKA_INTER_BROKER_LISTENER_NAME** value for the private IP of your server. 
 
 
 ### Create a database and role for Okapi
@@ -157,7 +141,15 @@ CREATE ROLE okapi WITH PASSWORD 'okapi25' LOGIN CREATEDB;
 CREATE DATABASE okapi WITH OWNER okapi;
 ```
 
-3. Exit psql with **\q** command
+3. Create a database role and database to persist tenant data.
+   Create a database for your tenant.  This database will host the data of your tenant.
+
+```
+CREATE ROLE folio WITH PASSWORD 'folio123' LOGIN SUPERUSER;
+CREATE DATABASE folio WITH OWNER folio;
+```
+
+4. Exit psql with **\q** command
 
 **Note**: You will need to create additional databases for each new tenant you add to FOLIO. More information on how to set up a new tenants on the next sections.
 
@@ -171,7 +163,7 @@ Once you have installed the requirements for Okapi and created a database, you c
 wget --quiet -O - https://repository.folio.org/packages/debian/folio-apt-archive-key.asc | sudo apt-key add -
 sudo add-apt-repository "deb https://repository.folio.org/packages/ubuntu focal/"
 sudo apt-get update
-sudo apt-get -y install okapi=4.3.2-1
+sudo apt-get -y install okapi=4.7.2-1
 sudo apt-mark hold okapi
 ```
 
@@ -184,11 +176,12 @@ Please note that the last stable version of FOLIO is 4.3.2-1.  If you do not exp
 ```
 role="dev"
 port_end="9230"
-host="10.0.2.15"
+host="<YOUR_IP_ADRESS>"
 storage="postgres"
-okapiurl="http://10.0.2.15:9130"
+okapiurl="http://<YOUR_IP_ADDRESS>:9130"
+docker_registries -- See explanation in okapi.conf file. Default is unauthenticated.
 ```
-**Note 1**: The IP address that you use in the properties **host** and **okapiurl** should match the private IP of your server.  This IP address should be reachable from Docker containers.  Therefore, you can not use localhost.  You can use the /**ifconfig** command in order to determine the private IP. 
+**Note 1**: The IP address <YOUR_IP_ADDRESS> that you use in the properties **host** and **okapiurl** should match the private IP of your server.  This IP address should be reachable from Docker containers.  Therefore, you can not use localhost.  You can use the /**ifconfig** command in order to determine the private IP. 
 
 **Note 2**: The properties **postgres_host**, **postgres_port**, **postgres_username**, **postgres_password**, **postgres_database** should be configured in order to match the PostgreSQL configurations made previously.
 
@@ -225,24 +218,7 @@ Now that you have an Okapi instance, you can proceed to install Stripes.  Howeve
 
 ### Create a new tenant
 
-1. Create a database for your tenant.  This database will host the data of your tenant.
-
-- Log into the PostgreSQL server as a superuser.
-
-```
-sudo su -c psql postgres postgres
-```
-- Create a database role for Okapi and a database to persist Okapi configuration.
-
-```
-CREATE ROLE folio WITH PASSWORD 'folio123' LOGIN CREATEDB;
-CREATE DATABASE folio WITH OWNER folio;
-```
-- Exit psql with **\q** command
-
-2. Create a new tenant on Okapi.
-
-- Post the tenant initialization to Okapi.
+1. Post the tenant initialization to Okapi.
 ```
 curl -w '\n' -D - -X POST -H "Content-type: application/json" \
   -d @tenant.json \
@@ -259,27 +235,29 @@ The content of tenant.json:
 
 **Note**:  In this installation guide, the Datalogisk Institut is used as an example, but you should use the information for your organization.  Take into account that you have to use the id of your tenant in the next steps.
 
-- Next, enable the Okapi internal module for the tenant
+2. Enable the Okapi internal module for the tenant
 
 ```
 curl -w '\n' -D - -X POST -H "Content-type: application/json" \
   -d '{"id":"okapi"}' \
   http://localhost:9130/_/proxy/tenants/diku/modules
 ```
-3. Post data source information to the Okapi environment for use by deployed modules.
+## Deploy a Folio Backend and enable for the tenant
+
+1. Post data source information to the Okapi environment for use by deployed modules.
 ```
-curl -w '\n' -D - -X POST -H "Content-Type: application/json" -d "{\"name\":\"DB_HOST\",\"value\":\"10.0.2.15\"}" http://localhost:9130/_/env
+curl -w '\n' -D - -X POST -H "Content-Type: application/json" -d "{\"name\":\"DB_HOST\",\"value\":\"<YOUR_IP_ADDRESS>\"}" http://localhost:9130/_/env
 curl -w '\n' -D - -X POST -H "Content-Type: application/json" -d "{\"name\":\"DB_PORT\",\"value\":\"5432\"}" http://localhost:9130/_/env
 curl -w '\n' -D - -X POST -H "Content-Type: application/json" -d "{\"name\":\"DB_DATABASE\",\"value\":\"folio\"}" http://localhost:9130/_/env
 curl -w '\n' -D - -X POST -H "Content-Type: application/json" -d "{\"name\":\"DB_USERNAME\",\"value\":\"folio\"}" http://localhost:9130/_/env
 curl -w '\n' -D - -X POST -H "Content-Type: application/json" -d "{\"name\":\"DB_PASSWORD\",\"value\":\"folio123\"}" http://localhost:9130/_/env
-curl -w '\n' -D - -X POST -H "Content-Type: application/json" -d "{\"name\":\"KAFKA_HOST\",\"value\":\"10.0.2.15\"}" http://localhost:9130/_/env
-curl -w '\n' -D - -X POST -H "Content-Type: application/json" -d "{\"name\":\"OKAPI_URL\",\"value\":\"http://10.0.2.15:9130\"}" http://localhost:9130/_/env
+curl -w '\n' -D - -X POST -H "Content-Type: application/json" -d "{\"name\":\"KAFKA_HOST\",\"value\":\"<YOUR_IP_ADDRESS>\"}" http://localhost:9130/_/env
+curl -w '\n' -D - -X POST -H "Content-Type: application/json" -d "{\"name\":\"OKAPI_URL\",\"value\":\"http://<YOUR_IP_ADDRESS>:9130\"}" http://localhost:9130/_/env
 ```
 
 **Note**: Make sure that you use your private IP for the properties **DB_HOST**, **KAFKA_HOST** and **OKAPI_URL**. 
 
-4. Decide if you would like to use platform-core or platform-complete for your tenant and clone the repository.  The tenant is now ready to add some Apps.
+2. Decide if you would like to use platform-core or platform-complete for your tenant and clone the repository.  The tenant is now ready to add some Apps.
 
 The App installation process is similar for platform-core and platform-complete.  You have to clone one of these github repositories: https://github.com/folio-org/platform-core or https://github.com/folio-org/platform-complete.
 
@@ -297,7 +275,7 @@ cd platform-core
 git checkout q3-2020
 ```
 
-5. Post the list of backend modules to deploy and enable. Also, you can set the (tenantParameters)[https://github.com/folio-org/okapi/blob/master/doc/guide.md#install-modules-per-tenant] to load their sample and reference data.
+3. Post the list of backend modules to deploy and enable. Also, you can set the (tenantParameters)[https://github.com/folio-org/okapi/blob/master/doc/guide.md#install-modules-per-tenant] to load their sample and reference data.
 
 ```
 curl -w '\n' -D - -X POST -H "Content-type: application/json" \
@@ -309,7 +287,7 @@ This will take a long time to return because all of the Docker images must be pu
 
 **Note**: You will have to replace ‘diku’ with the id of your tenant.
 
-6. Post the list of Stripes modules to enable.
+4. Post the list of Stripes modules to enable.
 
 ```
 curl -w '\n' -D - -X POST -H "Content-type: application/json" \
@@ -325,6 +303,7 @@ The backend of the new tenant is ready.  Now, you have to set up a Stripes insta
 You need to create a superuser for the newly created tenant.  This is a multi step process and the details can be found in the (Okapi documentation) [https://github.com/folio-org/okapi/blob/master/doc/guide.md#securing-okapi]. You can use a PERL script to execute these steps automatically.   You only need to provide the tenant id, a username/password for the superuser and the URL of Okapi.
 
 ```
+cd ~/folio-install/runbooks/single-server/scripts
 perl bootstrap-superuser.pl \
   --tenant diku --user diku_admin --password admin \
   --okapi http://localhost:9130
@@ -344,25 +323,19 @@ The script can be downloaded (here)[https://github.com/folio-org/folio-install/b
 
 When Okapi is secured, you must login using **mod-authtoken** to obtain an authtoken and include it in the **x-okapi-token** header for every request to the Okapi API.  For example, if you want to repeat any of the calls to Okapi in this guide, you will need to include **x-okapi-token:YOURTOKEN** and **x-okapi-tenant:supertenant** as headers for any requests to the Okapi API.
 
-## Install Stripes
+## Install the frontend, Folio Stripes
 
+### Build requirements: git, curl, NodeJS, npm, Yarn, libjson-perl, libwww-perl libuuid-tiny-perl 
 
-### Stripes requirements
-
-1. Install build requirements from Ubuntu apt repositories.
-
+1. Install build requirements from Ubuntu apt repositories 
 ```
 sudo apt-get -y install git curl nodejs npm libjson-perl libwww-perl libuuid-tiny-perl
 ```
-
-2. Install n from npm.
-
+2. Install n from npm
 ```
 sudo npm install n -g
 ```
-
-3. Import the Yarn signing key, add the Yarn apt repository and install Yarn.
-
+3. Import the Yarn signing key, add the Yarn apt repository, install Yarn
 ```
 wget --quiet -O - https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
 sudo add-apt-repository "deb https://dl.yarnpkg.com/debian/ stable main"
@@ -400,10 +373,11 @@ yarn install
 
 ```
 ...
-okapi: { 'url':'http://folio.server.com:9130', 'tenant':'diku' },
+okapi: { 'url':'http://<YOUR_SERVER_NAME>:9130', 'tenant':'diku' },
 ..
 ```
 Make sure that you use the public IP or domain of your server since this URL will be used to request Okapi from the clients’ browsers.
+You might also edit branding in stripes.config.js, add your own logo as desired.
 
 6. Build webpack.
 
@@ -413,9 +387,9 @@ cd ..
 ```
 A new folder called ‘output’ will be created which contains the Stripes configured webpack of your tenant. 
 
-7.  Server the contents of this output folder on a web server.
+Serve the contents of this output folder on a web server:
 
-### Serve Stripes
+### Configure Webserver to serve Stripes webpack
 
 Now that the webpack is built, you can configure the 'nginx' server.
 
@@ -440,7 +414,7 @@ The content of nginx-stripes.conf should look like this:
 ```
 server {
   listen 80;
-  server_name folio-server.com;
+  server_name <MY_SERVER_NAME>;
   charset utf-8;
   # Serve index.html for any request not found
   location / {
@@ -456,7 +430,7 @@ server {
 ```
 
 
-You should use your public IP or domain name in the field ‘server_name’. 
+You should use your public IP or domain name in the field ‘<MY_SERVER_NAME>’. 
 
 **Note**: If you want to host multiple tenants on a server, you can configure NGINX to either open a new port for each tenant or set up different paths on the same port (e.g. /tenat1, /tenant2).
 
