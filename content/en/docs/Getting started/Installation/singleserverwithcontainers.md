@@ -304,9 +304,17 @@ The backend of the new tenant is ready.  Now, you have to set up a Stripes insta
 
 You need to create a superuser for the newly created tenant.  This is a multi step process and the details can be found in the (Okapi documentation) [https://github.com/folio-org/okapi/blob/master/doc/guide.md#securing-okapi]. You can use a PERL script to execute these steps automatically.   You only need to provide the tenant id, a username/password for the superuser and the URL of Okapi.
 
+Install gcc on Ubuntu 20 (prerequisite to install Perl modules from cpan)
+```
+sudo apt install gcc
+gcc --version
+```
+
 Install prerequiste Perl modules
 ```
 sudo cpan install LWP.pm
+sudo cpan install JSON.pm
+sudo cpan install UUID::Tiny
 ```
 
 Use the Perl script to create a superuser
