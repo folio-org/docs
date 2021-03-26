@@ -457,7 +457,7 @@ sudo rm /etc/nginx/sites-enabled/default
 sudo systemctl restart nginx
 ```
 
-3. Now Stripes is running on port 80 and you can open it using a browser.
+3. Now Stripes is running on port 80 and you can open it using a browser. Log in with the credentials of the superuser that you have created.
 
 
 ## Install and serve edge modules (platform-complete only)
