@@ -347,7 +347,7 @@ You have an Okapi instance running, you can proceed to install Stripes.  However
 
 1. Install build requirements from Ubuntu apt repositories 
 ```
-sudo apt-get -y install git curl nodejs npm libjson-perl libwww-perl libuuid-tiny-perl
+sudo apt -y install git curl nodejs npm libjson-perl libwww-perl libuuid-tiny-perl
 ```
 2. Install n from npm
 ```
@@ -357,8 +357,8 @@ sudo npm install n -g
 ```
 wget --quiet -O - https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
 sudo add-apt-repository "deb https://dl.yarnpkg.com/debian/ stable main"
-sudo apt-get update
-sudo apt-get -y install yarn
+sudo apt update
+sudo apt -y install yarn
 ```
 
 ### Building Stripes
@@ -368,24 +368,17 @@ sudo apt-get -y install yarn
 ```
 sudo n lts
 ```
-2. Clone the platform-core repository and cd into it.
-
+2. cd into the platform-core repository (or platform-complete, if you chose to install that)
 ```
-git clone https://github.com/folio-org/platform-core
-cd platform-core
-```
-3. Checkout a stable branch of the repository
-
-```
-git checkout q3-2020
+cd ~/platform-core
 ```
 
-4. Install npm packages.
+3. Install npm packages.
 
 ```
 yarn install
 ```
-5. Configure Stripes.
+4. Configure Stripes.
 
 - Edit the file **stripes.config.js** and change **okapi.url** and **okapi.tenant**.
 
@@ -395,15 +388,15 @@ okapi: { 'url':'http://<YOUR_SERVER_NAME>:9130', 'tenant':'diku' },
 ..
 ```
 Make sure that you use the public IP or domain of your server since this URL will be used to request Okapi from the clients’ browsers.
-You might also edit branding in stripes.config.js, add your own logo as desired.
+You might also edit branding in stripes.config.js, e.g. add your own logo as desired.
 
-6. Build webpack.
+5. Build webpack.
 
 ```
 NODE_ENV=production yarn build output
 cd ..
 ```
-A new folder called ‘output’ will be created which contains the Stripes configured webpack of your tenant. 
+This will take a while. A new folder called ‘output’ will be created which contains the Stripes configured webpack of your tenant. 
 
 Serve the contents of this output folder on a web server:
 
