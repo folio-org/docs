@@ -45,12 +45,12 @@ cd runbooks/single-server
 1. Update the APT cache.
 
 ```
-sudo apt-get update
+sudo apt update
 ```
 
 2. Install Java 11 and nginx and verify that Java 11 is the system default.
 ```
-sudo apt-get -y install openjdk-11-jdk nginx
+sudo apt -y install openjdk-11-jdk nginx
 sudo update-java-alternatives --jre-headless --jre --set java-1.11.0-openjdk-amd64
 ```
 
@@ -58,8 +58,8 @@ sudo update-java-alternatives --jre-headless --jre --set java-1.11.0-openjdk-amd
 ```
 wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
 sudo add-apt-repository "deb http://apt.postgresql.org/pub/repos/apt/ focal-pgdg main"
-sudo apt-get update
-sudo apt-get -y install postgresql-10 postgresql-client-10 postgresql-contrib-10 libpq-dev
+sudo apt update
+sudo apt -y install postgresql-10 postgresql-client-10 postgresql-contrib-10 libpq-dev
 ```
 
 4. Configure PostgreSQL to listen on all interfaces and allow connections from all addresses (to allow Docker connections).
