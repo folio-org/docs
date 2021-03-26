@@ -163,12 +163,12 @@ Once you have installed the requirements for Okapi and created a database, you c
 ```
 wget --quiet -O - https://repository.folio.org/packages/debian/folio-apt-archive-key.asc | sudo apt-key add -
 sudo add-apt-repository "deb https://repository.folio.org/packages/ubuntu focal/"
-sudo apt-get update
-sudo apt-get -y install okapi=4.7.2-1
+sudo apt update
+sudo apt -y install okapi=4.7.2-1
 sudo apt-mark hold okapi
 ```
 
-Please note that the last stable version of FOLIO is 4.3.2-1.  If you do not explicitly set the Okapi version, you will install the latest Okapi release.  There is some risk with installing the latest Okapi release.  The latest release may not have been tested with the rest of the components in the quarterly release.
+Please note that the last stable version of FOLIO is 4.7.2-1.  If you do not explicitly set the Okapi version, you will install the latest Okapi release.  There is some risk with installing the latest Okapi release.  The latest release may not have been tested with the rest of the components in the quarterly release.
 
 2. Configure Okapi to run as a single node server with persistent storage.
 
@@ -176,7 +176,7 @@ Please note that the last stable version of FOLIO is 4.3.2-1.  If you do not exp
 
 ```
 role="dev"
-port_end="9230"
+port_end="9250"
 host="<YOUR_IP_ADRESS>"
 storage="postgres"
 okapiurl="http://<YOUR_IP_ADDRESS>:9130"
@@ -208,14 +208,13 @@ The content of registry.json should look like this:
 ```
 {
   "urls": [
-    "http://folio-registry.aws.indexdata.com"
+    "http://folio-registry.dev.folio.org"
   ]
 }
 ```
 
 Okapi is up and running!
 
-Now that you have an Okapi instance, you can proceed to install Stripes.  However, Stripes is bundled and deployed on a per tenant basis.  So, you have to decide whether to install platform-core or platform-complete for your tenant.
 
 ### Create a new tenant
 
@@ -243,6 +242,8 @@ curl -w '\n' -D - -X POST -H "Content-type: application/json" \
   -d '{"id":"okapi"}' \
   http://localhost:9130/_/proxy/tenants/diku/modules
 ```
+
+
 ## Deploy a Folio Backend and enable for the tenant
 
 1. Post data source information to the Okapi environment for use by deployed modules.
@@ -303,6 +304,12 @@ The backend of the new tenant is ready.  Now, you have to set up a Stripes insta
 
 You need to create a superuser for the newly created tenant.  This is a multi step process and the details can be found in the (Okapi documentation) [https://github.com/folio-org/okapi/blob/master/doc/guide.md#securing-okapi]. You can use a PERL script to execute these steps automatically.   You only need to provide the tenant id, a username/password for the superuser and the URL of Okapi.
 
+Install prerequiste Perl modules
+```
+sudo cpan install LWP.pm
+```
+
+Use the Perl script to create a superuser
 ```
 cd ~/folio-install/runbooks/single-server/scripts
 perl bootstrap-superuser.pl \
@@ -325,6 +332,8 @@ The script can be downloaded (here)[https://github.com/folio-org/folio-install/b
 When Okapi is secured, you must login using **mod-authtoken** to obtain an authtoken and include it in the **x-okapi-token** header for every request to the Okapi API.  For example, if you want to repeat any of the calls to Okapi in this guide, you will need to include **x-okapi-token:YOURTOKEN** and **x-okapi-tenant:supertenant** as headers for any requests to the Okapi API.
 
 ## Install the frontend, Folio Stripes
+
+You have an Okapi instance running, you can proceed to install Stripes.  However, Stripes is bundled and deployed on a per tenant basis.  So, you have to decide whether to install platform-core or platform-complete for your tenant.
 
 ### Build requirements: git, curl, NodeJS, npm, Yarn, libjson-perl, libwww-perl libuuid-tiny-perl 
 
