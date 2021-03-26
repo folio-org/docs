@@ -71,11 +71,11 @@ sudo apt -y install postgresql-10 postgresql-client-10 postgresql-contrib-10 lib
 
 5. Import the Docker signing key, add the Docker apt repository and install the Docker engine.
 ```
-sudo apt-get -y install apt-transport-https ca-certificates gnupg-agent software-properties-common
+sudo apt -y install apt-transport-https ca-certificates gnupg-agent software-properties-common
 wget --quiet -O - https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 sudo add-apt-repository "deb https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
-sudo apt-get update
-sudo apt-get -y install docker-ce docker-ce-cli containerd.io
+sudo apt update
+sudo apt -y install docker-ce docker-ce-cli containerd.io
 ```
 
 6. Configure Docker engine to listen on network socket.
@@ -117,8 +117,9 @@ sudo chmod +x /usr/local/bin/docker-compose
 Take into account that you have to change the **KAFKA_ADVERTISED_LISTENERS** value for the private IP of your server, instead of 10.0.2.15 for a Vagrant box.
 
 ```
+vim ~/folio-install/runbooks/single-server/scripts/docker-compose-kafka-zk.yml  # chnage IP in KAFKA_ADVERTISED_LISTENERS
 sudo mkdir /opt/kafka-zk
-sudo cp /home/folio-install/runbooks/single-server/scripts/docker-compose-kafka-zk.yml /opt/kafka-zk/docker-compose.yml
+sudo cp ~/folio-install/runbooks/single-server/scripts/docker-compose-kafka-zk.yml /opt/kafka-zk/docker-compose.yml
 cd /opt/kafka-zk
 sudo docker-compose up -d
 ```
