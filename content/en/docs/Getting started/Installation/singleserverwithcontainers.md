@@ -415,11 +415,9 @@ cp -R output/. /home/folio/tenants/diku/
 3. Configure NGINX to serve this directory.
 
 ```
-sudo cp nginx-stripes.conf /etc/nginx/sites-available/stripes
-sudo ln -s /etc/nginx/sites-available/stripes /etc/nginx/sites-enabled/stripes
-sudo rm /etc/nginx/sites-enabled/default
-sudo systemctl restart nginx
+cd ~/folio-install/runbooks/single-server/scripts
 ```
+
 The content of nginx-stripes.conf should look like this:
 
 ```
@@ -427,25 +425,39 @@ server {
   listen 80;
   server_name <MY_SERVER_NAME>;
   charset utf-8;
+  
+  # front-end requests:
   # Serve index.html for any request not found
   location / {
     # Set path
     root /home/folio/tenants/diku;
+    index       index.html index.htm;
     include mime.types;
     types {
       text/plain lock;
     }
     try_files $uri /index.html;
   }
+  
+   # back-end requests:
+  location /okapi {
+    rewrite ^/okapi/(.*) /$1 break;
+    proxy_pass http://localhost:9130/;
+  }
 }
 ```
-
 
 You should use your public IP or domain name in the field ‘<MY_SERVER_NAME>’. 
 
 **Note**: If you want to host multiple tenants on a server, you can configure NGINX to either open a new port for each tenant or set up different paths on the same port (e.g. /tenat1, /tenant2).
+```
+sudo cp nginx-stripes.conf /etc/nginx/sites-available/stripes
+sudo ln -s /etc/nginx/sites-available/stripes /etc/nginx/sites-enabled/stripes
+sudo rm /etc/nginx/sites-enabled/default
+sudo systemctl restart nginx
+```
 
-3. Now Stripes is running on the port 80 and you can open it using a browser.
+3. Now Stripes is running on port 80 and you can open it using a browser.
 
 
 ## Install and serve edge modules (platform-complete only)
