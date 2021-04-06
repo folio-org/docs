@@ -21,7 +21,7 @@ The main differences between this deployment and the method with docker containe
 * Modules and users are prefixed with 'folio-' with this method.
 * This deployment method reduces the RAM requirement of each module to about 71MB. 
 
-**Note:**  This installation process is still under development and it is recommended for setting up a production system. At the moment, only the Okapi and backend modules are considered on this installer, the installation of Stripes has to be manually executed.
+**Note:**  This installation process is still under development and it is NOT recommended for setting up a production system. At the moment, only the Okapi and backend modules are considered on this installer, the installation of Stripes has to be manually executed.
 
 ## System Requirements
 
