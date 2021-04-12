@@ -108,7 +108,7 @@ When creating a course, you should keep the following in mind:
 
 Courses can only be deleted once all items are removed from the course.
 
-1. [Find the course](#searching-for-courses) you want to delete and click on it in the **Courses **list.
+1. [Find the course](#searching-for-courses) you want to delete and click on it in the **Courses** list.
 
 2. In the **course details** window, click **Edit**.
 
