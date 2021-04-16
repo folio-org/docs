@@ -208,7 +208,7 @@ The content of registry.json should look like this:
 ```
 {
   "urls": [
-    "http://folio-registry.dev.folio.org"
+    "https://folio-registry.dev.folio.org"
   ]
 }
 ```
