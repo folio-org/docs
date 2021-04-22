@@ -3,7 +3,7 @@
 title: "Check in"
 linkTitle: "Check in"
 date: 2021-02-23
-weight: 20
+weight: 10
 ---
 
 The Check in app allows you to process items at a service point, including items a patron returns to the library, items requested by a patron, or in process items. You can also use the Check in app to record in-house usage.
