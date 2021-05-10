@@ -1,9 +1,9 @@
 
 ---
-title: "Inventory"
-linkTitle: "Inventory"
+title: "Licenses"
+linkTitle: "Licenses"
 date: 2020-06-11
-weight: 10
+weight: 40
 tags: ["parenttopic"]
 ---
 

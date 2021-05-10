@@ -3,7 +3,7 @@
 title: "Check out"
 linkTitle: "Check out"
 date: 2021-02-23
-weight: 10
+weight: 20
 ---
 
 The Check Out app allows you to check out items to patrons. To check out an item, first locate a patron in the system and then scan/enter an item to borrow.

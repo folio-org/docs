@@ -3,7 +3,7 @@
 title: "Requests"
 linkTitle: "Requests"
 date: 2021-02-23
-weight: 30
+weight: 50
 ---
 
 The Requests app allows you to create and manage requests. Requests are holds placed on individual items.

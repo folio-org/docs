@@ -1,6 +1,6 @@
 ---
-title: "Acquisitions"
-linkTitle: "Acquisitions"
+title: "Resource Management (Acquisitions)"
+linkTitle: "Resource Management (Acquisitions)"
 weight: 400
 ---
 

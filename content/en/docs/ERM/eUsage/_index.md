@@ -1,9 +1,9 @@
 
 ---
-title: "Licenses"
-linkTitle: "Licenses"
+title: "eUsage"
+linkTitle: "eUsage"
 date: 2020-06-11
-weight: 20
+weight: 30
 tags: ["parenttopic"]
 ---
 

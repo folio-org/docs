@@ -1,8 +1,10 @@
 ---
-title: "Additional configurations"
-linkTitle: "Additional configurations"
-weight: 20
-tags: ["parenttopic"]
+title: "Customizations"
+linkTitle: "Customizations"
+weight: 50
+description: >
+  Note: This content is currently in draft status.
+tags: ["subtopic"]
 ---
 
 
@@ -54,36 +56,4 @@ Take into account that this configuration is performed on a per tenant basis and
 Once you have configured the mod-email module, you should configure other modules related to the email configuration.  You should configure the users module and edge-sip2.  You can find a Bash script that could be used to automate this process [here](https://github.com/folio-org/folio-install/blob/kube-rancher/alternative-install/kubernetes-rancher/TAMU/deploy-jobs/create-email/create-email-config.sh).  Make sure that you replace all of the environment variables required for the script.
 
 Alternatively, if you deployed FOLIO on a Kubernetes cluster, you can create a Kubernetes Job for this task.  This docker project  https://github.com/folio-org/folio-install/tree/kube-rancher/alternative-install/kubernetes-rancher/TAMU/deploy-jobs/create-email can be built, pushed to the image registry and executed on the cluster similarly to other scripts mentioned in the Kubernetes deployment section.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

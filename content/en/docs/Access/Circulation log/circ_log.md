@@ -3,7 +3,7 @@
 title: "Circulation log"
 linkTitle: "Circulation log"
 date: 2021-02-23
-weight: 50
+weight: 30
 ---
 
 The Circulation log app allows you to view and search for circulation actions. Circulation actions are any action performed by the system or a user within the following Circulation apps: Check in, Check out, and Requests. Notices and fee/fine actions are also included.
