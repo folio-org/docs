@@ -57,7 +57,7 @@ Note: Users can be assigned to more than one acquisition unit.
 
 5. Click **Search**.
 
-6. Select the **checkbox **in the row of the users(s) you want to add to the unit and click **Save**. The Select User dialog closes and the user appears in the Assigned users section.
+6. Select the **checkbox** in the row of the users(s) you want to add to the unit and click **Save**. The Select User dialog closes and the user appears in the Assigned users section.
 
 
 ## Deleting a user from an acquisition unit
@@ -66,7 +66,7 @@ Note: Users can be assigned to more than one acquisition unit.
 
 2. In the **Acquisition unit detail** pane, click **Assigned users > Assign users**.
 
-3. Find the user you want to delete and click the **trash can icon **at the end of their row. The user is removed from the list and deleted from the unit.
+3. Find the user you want to delete and click the **trash can icon** at the end of their row. The user is removed from the list and deleted from the unit.
 
 
 ## Editing an acquisition unit

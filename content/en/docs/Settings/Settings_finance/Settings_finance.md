@@ -67,9 +67,9 @@ For more information on adding funds and fund information, see Creating a new fu
 
 3. **Name.** The name to designate the expense class.
 
-4.** Code.** Self-created, based on name, a unique identifier for the expense class.
+4. **Code.** Self-created, based on name, a unique identifier for the expense class.
 
-5.** External account number extensions.** The financial account listing outside of the system linked to the expense class. For example, 01. 
+5. **External account number extensions.** The financial account listing outside of the system linked to the expense class. For example, 01. 
 
 6. Click **Save**. The expense class is saved and appears in the Expense class list.
 

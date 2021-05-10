@@ -37,11 +37,11 @@ Use this setting to create preset adjustments that you can add to invoices at an
 1. Click **New.** 
 2. Enter a **Description** in the box. 
 3. Select a **Type** from the list: Percent, Amount. 
-4. Select the **Always show **checkbox if you want the adjustment to show up automatically when you create a new invoice. Note: You can still remove an adjustment from invoices with this option enabled. 
+4. Select the **Always show** checkbox if you want the adjustment to show up automatically when you create a new invoice. Note: You can still remove an adjustment from invoices with this option enabled. 
 5. Enter a **Default amount** in the box. 
 6. Select a **Pro rate** from the list: By line, By amount, By quantity, Not prorated.  
 7. Select a **Relation to total** from the list: In addition to, Separate from. 
-8. Select the **Export to accounting** checkbox** **if you want to send a copy of the adjustment to an external financial system. 
+8. Select the **Export to accounting** checkbox if you want to send a copy of the adjustment to an external financial system. 
 9. Click **Save & close.** The adjustment is saved. 
 
 
@@ -50,7 +50,7 @@ Use this setting to create preset adjustments that you can add to invoices at an
 
 
 1. Find the adjustment you want to edit and click it. 
-2. Click **Actions **> **Edit**. 
+2. Click **Actions** > **Edit**. 
 3. Edit the adjustment. 
 4. Click **Save & close**. 
 
@@ -60,7 +60,7 @@ Use this setting to create preset adjustments that you can add to invoices at an
 
 
 1. Select the adjustment you want to delete. 
-2. In the adjustment window, select **Actions **> **Delete**. 
+2. In the adjustment window, select **Actions** > **Delete**. 
 3. In the **Delete adjustment** dialog, click **Delete**. A confirmation message appears and the adjustment is deleted. 
 
 
@@ -72,9 +72,8 @@ Use this setting to create, edit, and delete batch groups, which are used to org
 ### Creating a batch group
 
 
-
 1. Click **New.** 
-2. Enter a **Name **in the box.** **
+2. Enter a **Name** in the box.
 3. Optional: Enter a **Description** in the box. 
 4. Click **Save.** The Batch group is saved. 
 
@@ -82,9 +81,8 @@ Use this setting to create, edit, and delete batch groups, which are used to org
 ### Editing a batch group
 
 
-
 1. Find the Batch group you want to edit and click the **pencil icon**. 
-2. Edit the** batch group**. 
+2. Edit the **batch group**. 
 3. Click **Save**. 
 
 
@@ -104,11 +102,11 @@ Use this setting to configure batch groups for use in organizing invoices. This 
 ### Configuring a batch group
 
 1. Select a **Batch group.** 
-2. Select a **Schedule export.** If you choose** Daily,** enter a time. If you choose **Weekly,** select the days and time you want the export to automatically run. 
+2. Select a **Schedule export.** If you choose **Daily,** enter a time. If you choose **Weekly,** select the days and time you want the export to automatically run. 
 3. Enter an **Upload location.** If this box is left blank, the export downloads the file to your computer.
-4. Select a **Format: **JSON or XML. 
-5. Enter a **Username **if needed for the file upload location
-6. Enter a **Password **if needed for the file upload location**.** 
+4. Select a **Format:** JSON or XML. 
+5. Enter a **Username** if needed for the file upload location.
+6. Enter a **Password** if needed for the file upload location. 
 7. Click **Save**. 
 
 Click **Show credentials/Hide credentials** to show or hide the password. If you want to test the connection with the upload location, click **Test connection**. 
@@ -121,7 +119,7 @@ Note: If you run a manual export, all vouchers created since the last export for
 
 
 1. Click **Run manual export.** 
-2. In the Run manual export dialog, click **Continue. **in the confirmation message. 
+2. In the Run manual export dialog, click **Continue.** in the confirmation message. 
 
 
 ## Settings > Invoices > Voucher number
@@ -132,5 +130,5 @@ This section lets you create voucher numbers to use for invoices.
 
 1. Enter a **Prefix**. 
 2. Enter a **Starting number**.
-3. Click **Reset sequence **if you need to reset the voucher number. 
+3. Click **Reset sequence** if you need to reset the voucher number. 
 4. Select the **Allow voucher number to be edited** checkbox if you want to allow editing for the voucher number. 

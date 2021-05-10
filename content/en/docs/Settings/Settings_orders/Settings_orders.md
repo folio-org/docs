@@ -34,7 +34,7 @@ Use this setting to configure the reasons for an order closure. FOLIO provides d
 
 1. Click **New**.
 
-2. Enter a **Reason **in the box.
+2. Enter a **Reason** in the box.
 
 3. Click **Save**. The Reason is saved.
 
@@ -52,7 +52,7 @@ Use this setting to configure the reasons for an order closure. FOLIO provides d
 
 1. Find the Reason you want to delete and click the **delete icon**.
 
-2. In the **Delete Reason **dialog, click **Delete**. A confirmation message appears and the Reason is deleted.
+2. In the **Delete Reason** dialog, click **Delete**. A confirmation message appears and the Reason is deleted.
 
 
 ## Settings > Orders > Inventory interactions
@@ -123,7 +123,7 @@ Note: Template name is the only required field.
 
 2. In the order template window, select **Actions > Delete.**
 
-3. In the **Delete template **dialog, click **Delete**. A confirmation message appears and the template is deleted.
+3. In the **Delete template** dialog, click **Delete**. A confirmation message appears and the template is deleted.
 
 
 ## Settings > Orders > Purchase order lines limit
@@ -133,7 +133,7 @@ Use this setting to limit the number of order lines that you can add to an order
 
 ## Settings > Orders > Opening purchase orders
 
-If you want to allow users the option to save and open a purchase order in the same step, select **Allow save and open purchase order when creating or editing a purchase order line. **
+If you want to allow users the option to save and open a purchase order in the same step, select **Allow save and open purchase order when creating or editing a purchase order line.**
 
 
 ## Settings > Orders > Edit
@@ -150,7 +150,7 @@ Use this setting to configure prefixes, which are used in orders. You can add pr
 
 1. Click **New**.
 
-2. Enter a **Name **in the box.
+2. Enter a **Name** in the box.
 
 3. Optional: Enter a **Description** in the box.
 
@@ -170,7 +170,7 @@ Use this setting to configure prefixes, which are used in orders. You can add pr
 
 1. Find the Prefix you want to delete and click the **delete icon**.
 
-2. In the **Delete Prefix **dialog, click **Delete**. A confirmation message appears and the Prefix is deleted.
+2. In the **Delete Prefix** dialog, click **Delete**. A confirmation message appears and the Prefix is deleted.
 
 
 ## Settings > Orders > Suffixes
@@ -182,7 +182,7 @@ Use this setting to configure suffixes, which are used in orders. You can add su
 
 1. Click **New**.
 
-2. Enter a **Name **in the box.
+2. Enter a **Name** in the box.
 
 3. Optional: Enter a **Description** in the box.
 
@@ -202,4 +202,4 @@ Use this setting to configure suffixes, which are used in orders. You can add su
 
 1. Find the Suffix you want to delete and click the **delete icon**.
 
-2. In the **Delete Suffix **dialog, click **Delete**. A confirmation message appears and the Suffix is deleted.
+2. In the **Delete Suffix** dialog, click **Delete**. A confirmation message appears and the Suffix is deleted.
