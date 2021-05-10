@@ -13,7 +13,7 @@ Definition of terms related to the Organizations app:
 
 
 
-*   **Acquisition units.** An additional layer you can add to acquisitions records that restricts a user’s ability to interact with those records unless they have been assigned to that unit. For example, you may create acquisition units to represent the different libraries within your library system. Units are defined and determined by your library in the Settings app. See Settings > Acquisition units for more information.
+*   **Acquisition units.** An additional layer you can add to acquisitions records that restricts a user’s ability to interact with those records unless they have been assigned to that unit. For example, you may create acquisition units to represent the different libraries within your library system. Units are defined and determined by your library in the Settings app. See [Settings > Acquisition units]({{< ref "/settings_acquisition_units.md" >}}) for more information.
 *   **Organization.** Any institution with whom your library interacts (this may or may not be an institution from whom you purchase materials).
 *   **Vendor.** Any institution from whom your library purchases materials.
 
@@ -57,7 +57,7 @@ When creating an organization, you either create it as a general organization or
 *   **Organization status (required).** Select an organization status: Active, Inactive, or Pending. The status you select here is evaluated by the Orders and Invoices apps. Orders can only be opened and invoices can only be paid if the organization is a vendor with an Active status. You may want to use the Pending status to signify that the organization record is a draft.
 *   **Default language.** Select the organization’s default language.
 *   **Vendor.** If you are creating a vendor organization, select the **Vendor** checkbox . See [Creating a vendor](#creating-a-vendor) for more information.
-*   **Acquisition unit.** Select the Acquisition units you want to apply to the organization record, if using. See Settings > Acquisition units for more information.
+*   **Acquisition unit.** Select the Acquisition units you want to apply to the organization record, if using. See [Settings > Acquisition units]({{< ref "/settings_acquisition_units.md" >}}) for more information.
 *   **Description**. Enter a description of the organization.
 *   **Alternative names.** Alternative names used by the organization, such as abbreviations or prior names.
 
@@ -407,7 +407,7 @@ Note: Adding an account is optional, but if you click **Add**, you must fill in 
 
 11. Optional: Enter any **Notes** about the account in the box.
 
-12. Optional: Select any **Acquisition units** from the drop-down list. For more information on acquisition units, see Settings > Acquisition units.
+12. Optional: Select any **Acquisition units** from the drop-down list. For more information on acquisition units, see [Settings > Acquisition]({{< ref "/settings_acquisition_units.md" >}}) units.
 
 13. Repeat steps 1-13 as needed. Accounts are saved once you save the vendor.
 
@@ -776,7 +776,7 @@ Note: If you need to create a new interface, you should save your progress on th
 *   **Username.** The username needed to log into the interface.
 *   **Password.** The password needed to log into the interface. Click **Show** to display the password. Click **Hide** to stop displaying the password.
 *   **Notes.** Any notes about the interface.
-*   **Available.** Select the **Available **checkbox to indicate whether statistics are available through this interface.
+*   **Available.** Select the **Available** checkbox to indicate whether statistics are available through this interface.
 *   **Delivery method.** Select the statistics’ **Delivery method** from the drop-down list: Online, FTP, Email, or Other.
 *   **Statistics format.** Select the statistics’ **Statistics format** from the drop-down list: Counter, Delimited, Excel, PDF, ASCII, HTML, or Other.
 *   **Locally stored.** The location of the statistics if they are locally stored?
