@@ -12,7 +12,7 @@ The Orders app allows you to create and manage purchase orders.
 Definition of terms related to the Orders app:
 
 
-*   **Acquisition units.** An additional layer you can add to acquisitions records that restricts a user’s ability to interact with those records unless they have been assigned to that unit. For example, you may create acquisition units to represent the different libraries within your library system. Units are defined and determined by your library in the Settings app. See Settings > Acquisition units for more information.
+*   **Acquisition units.** An additional layer you can add to acquisitions records that restricts a user’s ability to interact with those records unless they have been assigned to that unit. For example, you may create acquisition units to represent the different libraries within your library system. Units are defined and determined by your library in the Settings app. See [Settings > Acquisition units]({{< ref "/settings_acquisition_units.md" >}}) for more information.
 *   **Order.** A purchase order featuring a list of titles or packages (physical or electronic) being ordered by the library from a vendor.
 *   **Order line.** A purchase order line contains one of the titles or packages being ordered by the library. Order lines make up an order. Orders can contain multiple order lines.
 
@@ -45,9 +45,9 @@ The following are all the Orders permissions:
 
 Orders contain a list of titles or packages (physical or electronic) being ordered by your library from a vendor. 
 
-In FOLIO, you can create either one-time orders or ongoing orders. One-time orders should be used for items fulfilled within the year, like monographs. Ongoing orders generally span multiple years, and you usually pay as you receive each item. You would want to create an ongoing order for a magazine subscription, for example.
+In FOLIO, you can create either [one-time orders](#creating-a-one-time-order) or [ongoing orders](#creating-an-ongoing-order). One-time orders should be used for items fulfilled within the year, like monographs. Ongoing orders generally span multiple years, and you usually pay as you receive each item. You would want to create an ongoing order for a magazine subscription, for example.
 
-Once you create an order, you need to add at least one order line to the order so the order can be opened and the acquisitions process can begin.
+Once you create an order, you need to [add at least one order line to the order](#adding-an-order-line-to-an-order) so the [order can be opened](#opening-an-order) and the acquisitions process can begin.
 
 
 ### Creating a one-time order
@@ -56,13 +56,13 @@ Once you create an order, you need to add at least one order line to the order s
 
 2. In the **Orders** pane, click **New**.
 
-3. In the **Create purchase order** window, select a template from the **Template name** drop-down list, if using. The order is populated with the information configured in the template. Templates are created in the Settings app. See Settings > Orders > Order templates for more information.
+3. In the **Create purchase order** window, select a template from the **Template name** drop-down list, if using. The order is populated with the information configured in the template. Templates are created in the Settings app. See [Settings > Orders > Order templates]({{< ref "/settings_orders.md#settings--orders--order-templates" >}}) for more information.
 
 4. Select **One-time** from the **Order type** drop-down list.
 
-5. Fill in the rest of the fields under Purchase order and PO summary. For more information on the fields and actions available in these sections, see the section descriptions below.
+5. Fill in the rest of the fields under [Purchase order](#purchase-order) and [PO summary](#po-summary). For more information on the fields and actions available in these sections, see the section descriptions below.
 
-6. Optional: Select **Approved** to approve the order. Note: You only need to approve the order if your library has the Approval required setting turned on. For more information, see Settings > Orders > Approvals.
+6. Optional: Select **Approved** to approve the order. Note: You only need to approve the order if your library has the Approval required setting turned on. For more information, see [Settings > Orders > Approvals]({{< ref "/settings_orders.md#settings--orders--approvals" >}}).
 
 7. Click **Save & close**. A confirmation message appears and the order appears in the Orders pane.
 
@@ -71,12 +71,12 @@ Once you create an order, you need to add at least one order line to the order s
 
 
 
-*   **Prefix.** If applicable, select a **Prefix** for the purchase order number from the drop-down list. Prefixes are configured by your library in the Settings app. See Settings > Orders > Prefixes for more information.
-*   **PO number.** Purchase order number for the order. Whether you can edit the PO number depends on your library’s settings in the PO number Edit setting. See Settings > Orders > Edit for more information.
-*   **Suffix.** If applicable, select a **Suffix** for the purchase order number from the drop-down list. Suffixes are configured by your library in the Settings app. See Settings > Orders > Suffixes for more information.
+*   **Prefix.** If applicable, select a **Prefix** for the purchase order number from the drop-down list. Prefixes are configured by your library in the Settings app. See [Settings > Orders > Prefixes]({{< ref "/settings_orders.md#settings--orders--prefixes" >}}) for more information.
+*   **PO number.** Purchase order number for the order. Whether you can edit the PO number depends on your library’s settings in the PO number Edit setting. See [Settings > Orders > Edit]({{< ref "/settings_orders.md#settings--orders--edit" >}}) for more information.
+*   **Suffix.** If applicable, select a **Suffix** for the purchase order number from the drop-down list. Suffixes are configured by your library in the Settings app. See [Settings > Orders > Suffixes]({{< ref "/settings_orders.md#settings--orders--suffixes" >}}) for more information.
 *   **Vendor.** Any institution from whom your library purchases materials. Click **Organization look-up** to select a vendor. In the **Select Organization** dialog, find the organization using the search box and/or filters. Click the organization to select it. The organization is added to the Vendor field.
 *   **Order type.** Select the type of order you are placing: One-time or Ongoing.
-*   **Acquisitions units.** If you want the order to be available to particular users within certain acquisitions units, enter or select the Acquisition units from the drop-down list. You can select multiple units. For more information on acquisition units, see Settings > Acquisition units.
+*   **Acquisitions units.** If you want the order to be available to particular users within certain acquisitions units, enter or select the Acquisition units from the drop-down list. You can select multiple units. For more information on acquisition units, see [Settings > Acquisition units]({{< ref "/settings_acquisition_units.md" >}}).
 *   **Assigned to.** To assign the order to a user, click the **+**. In the **Select User **dialog, find the user using the search box and/or the filters. Click the user to select them. The user appears in the **Assigned to** box**.** If you need to remove the user, click the **x**. If you need to assign the order to a different user, click the **+** and repeat the above steps.
 *   **Bill to.** In the **Bill to** drop-down list, select the billing address for the order. Once you select an address, the billing address appears. Addresses are configured in the Settings app. For more information, see Settings > Tenant > Addresses.
 *   **Ship to.** In the **Ship to** drop-down list, select the address the order items will be shipped to. Once you select an address, the shipping address appears. Addresses are configured in the Settings app. For more information, see Settings > Tenant > Addresses.
@@ -89,7 +89,7 @@ Once you create an order, you need to add at least one order line to the order s
 
 
 
-*   **Approved.** To approve the order, select the **Approved** checkbox. Note: You only need to approve the order if your library has the Approval required setting turned on. For more information, see Settings > Orders > Approvals.
+*   **Approved.** To approve the order, select the **Approved** checkbox. Note: You only need to approve the order if your library has the Approval required setting turned on. For more information, see [Settings > Orders > Approvals]({{< ref "/settings_orders.md#settings--orders--approvals" >}}).
 
 
 ### Creating an ongoing order
@@ -98,20 +98,20 @@ Once you create an order, you need to add at least one order line to the order s
 
 2. In the **Orders** pane, click **New**.
 
-3. In the **Create purchase order** window, select a template from the **Template name** drop-down list, if using. The order is populated with the information configured in the template. Templates are created in the Settings app. See Settings > Orders > Order templates for more information.
+3. In the **Create purchase order** window, select a template from the **Template name** drop-down list, if using. The order is populated with the information configured in the template. Templates are created in the Settings app. See [Settings > Orders > Order templates]({{< ref "/settings_orders.md#settings--orders--order-templates" >}}) for more information.
 
 4. Select **Ongoing** from the **Order type** drop-down list.
 
-5. Fill in the rest of the fields under Purchase order, Ongoing order information, and PO summary. For more information on the fields and actions available in these sections, see the section descriptions below.
+5. Fill in the rest of the fields under [Purchase order](#purchase-order), [Ongoing order information](#ongoing-order-information), and [PO summary](#po-summary). For more information on the fields and actions available in these sections, see the section descriptions below.
 
-6. Optional: Select **Approved** to approve the order. Note: You only need to approve the order if your library has the Approval required setting turned on. For more information, see Settings > Orders > Approvals.
+6. Optional: Select **Approved** to approve the order. Note: You only need to approve the order if your library has the Approval required setting turned on. For more information, see [Settings > Orders > Approvals]({{< ref "/settings_orders.md#settings--orders--approvals" >}}).
 
 7. Click **Save & close**. A confirmation message appears and the order appears in the Orders pane.
 
 
 #### Purchase order
 
-See Purchase order, above.
+See [Purchase order](#purchase-order), above.
 
 
 #### Ongoing order information
@@ -129,7 +129,7 @@ See Purchase order, above.
 
 #### PO summary
 
-See PO summary, above.
+See [PO summary](#po-summary), above.
 
 
 ## Searching for an order
@@ -324,7 +324,7 @@ In the search results, click on an order to view it. The purchase order details 
 
 ## Editing an order
 
-1. Search for the order you want to edit and select it.
+1. [Search for the order you want to edit](#searching-for-an-order) and select it.
 
 2. In the **Purchase order** pane, select **Actions > Edit**.
 
@@ -346,7 +346,7 @@ There are two ways to approve an order. You can edit the order and select the Ap
 
 ## Cloning an order
 
-1. Search for the order you want to clone and select it.
+1. [Search for the order you want to clone](#searching-for-an-order) and select it.
 
 2. In the **Purchase order** pane, select **Actions > Clone**.
 
@@ -360,12 +360,12 @@ After you create an order, it has the status of Pending until you open it. Once 
 
 
 *   Encumbrances are created. Note: Encumbrances are only created if a fund distribution was added to an order line.
-*   Inventory records are created. Note: Inventory records are not created if the Create inventory field on the order line is set to None. For more information about the Create inventory field, see the E-resources details and Physical details sections below. 
+*   Inventory records are created. Note: Inventory records are not created if the Create inventory field on the order line is set to None. For more information about the Create inventory field, see the [E-resources details](#e-resources-details) and [Physical details](#physical-resource-details) sections below. 
 *   Date ordered is set to today’s date.
 *   Order lines cannot be added.
-*   Fields such as Order type, Title, Acquisition method, and Order format are not editable once an order is opened. The order would need to be unopened to edit those fields. For more information, see Unopening an order.
+*   Fields such as Order type, Title, Acquisition method, and Order format are not editable once an order is opened. The order would need to be unopened to edit those fields. For more information, see [Unopening an order](#unopening-an-order).
 
-1. Search for the order you want to open and select it.
+1. [Search for the order you want to open](#searching-for-an-order) and select it.
 
 2. In the **Purchase order** pane, select **Actions > Open**.
 
@@ -374,11 +374,11 @@ After you create an order, it has the status of Pending until you open it. Once 
 
 ## Unopening an order
 
-Opening an order is not final and an order can be reverted back to a Pending status by unopening the order.
+[Opening an order](#opening-an-order) is not final and an order can be reverted back to a Pending status by unopening the order.
 
 Note: Unopening an order removes any encumbrances and item records with an On Order status. However, items that were received, holdings, and instances aren’t removed.
 
-1. Search for the open order you want to unopen and select it.
+1. [Search for the open order you want to unopen](#searching-for-an-order) and select it.
 
 2. In the **Purchase order** pane, select **Actions > Unopen**.
 
@@ -389,11 +389,11 @@ Note: Unopening an order removes any encumbrances and item records with an On Or
 
 Once you no longer need an order, you can close it. Only open orders can be closed.
 
-1. Search for the order you want to close and select it.
+1. [Search for the order you want to close](#searching-for-an-order) and select it.
 
 2. In the **Purchase order** pane, select **Actions > Close order**.
 
-3. In the **Close - purchase order** dialog, select a closing **Reason** from the drop-down list. Closing reasons are configured in the Settings app. For more information, see Settings > Orders > Closing purchase order reasons.
+3. In the **Close - purchase order** dialog, select a closing **Reason** from the drop-down list. Closing reasons are configured in the Settings app. For more information, see [Settings > Orders > Closing purchase order reasons]({{< ref "/settings_orders.md#settings--orders--closing-purchase-order-reasons" >}}).
 
 4. Optional: Enter any notes about why you are closing the order.
 
@@ -404,7 +404,7 @@ Once you no longer need an order, you can close it. Only open orders can be clos
 
 Closing an order is not final and an order can be reverted back to an Open status by reopening the order.
 
-1. Search for the order you want to reopen and select it.
+1. [Search for the order you want to reopen](#searching-for-an-order) and select it.
 
 2. In the **Purchase order** pane, select **Actions > Reopen.** A confirmation message appears and the order’s status changes to Open.
 
@@ -413,7 +413,7 @@ Closing an order is not final and an order can be reverted back to an Open statu
 
 You can only receive open orders.
 
-1. Search for the order you want to receive and select it.
+1. [Search for the order you want to receive](#searching-for-an-order) and select it.
 
 2. In the **Purchase order** pane, select **Actions > Receive.** The order line(s) open in the Receiving app.
 
@@ -424,7 +424,7 @@ You can only receive open orders.
 
 Note: When you delete an order, received items remain in the system, but the receiving history is removed.
 
-1. Search for the order you want to delete and select it.
+1. [Search for the order you want to delete](#searching-for-an-order) and select it.
 
 2. In the **Purchase order** pane, select **Actions > Delete.**
 
@@ -433,7 +433,7 @@ Note: When you delete an order, received items remain in the system, but the rec
 
 ## Adding a tag to an order
 
-1. Search for the order you want to tag and select it.
+1. [Search for the order you want to tag](#searching-for-an-order) and select it.
 
 2. In the **Purchase order details** pane, click the **tag icon**.
 
@@ -444,13 +444,13 @@ Note: When you delete an order, received items remain in the system, but the rec
 
 ## Adding an order line to an order
 
-1. Search for the order to which you want to add the PO line and select it.
+1. [Search for the order to which you want to add the PO line](#searching-for-an-order) and select it.
 
 2. In the **Purchase order** pane, in the **PO lines** section, click **Add PO line**.
 
-3. In the **Add PO line** window, fill in the fields in the Item details, PO line details, Vendor, Cost details, and Fund distribution sections. For more information on the fields and actions available in these sections, see the section descriptions below.
+3. In the **Add PO line** window, fill in the fields in the [Item details](#item-details), [PO line details](#po-line-details), [Vendor](#vendor), [Cost details](#cost-details), and [Fund distribution](#fund-distribution) sections. For more information on the fields and actions available in these sections, see the section descriptions below.
 
-4. Click **Save & close** or **Save & open order**, if applicable. For more information on saving and opening orders at the same time, see Settings > Orders > Opening purchase orders.
+4. Click **Save & close** or **Save & open order**, if applicable. For more information on saving and opening orders at the same time, see [Settings > Orders > Opening purchase orders]({{< ref "/settings_orders.md#settings--orders--opening-purchase-orders" >}}).
 
 
 ### Item details
@@ -509,7 +509,7 @@ Note: When you delete an order, received items remain in the system, but the rec
 
 
 *   **Acquisition method.** The method you are using to purchase the item. 
-*   **Order format.** Select the format of the item you are ordering: Electronic resource, Physical resource, P/E mix, or Other. The Order format determines which fields are required in the Cost details section and whether the Physical resource details or E-resources details sections are displayed.
+*   **Order format.** Select the format of the item you are ordering: Electronic resource, Physical resource, P/E mix, or Other. The Order format determines which fields are required in the [Cost details](#cost-details) section and whether the [Physical resource details](#physical-resource-details) or [E-resources details](#e-resources-details) sections are displayed.
 *   **Receipt date.** The receipt date of the item.
 *   **Receipt status.** Select the receipt status of the item: Pending or Receipt not required.
 *   **Payment status.** Select the payment status of the item: Payment not required or Pending.
@@ -531,22 +531,22 @@ Note: When you delete an order, received items remain in the system, but the rec
 
 *   **Vendor ref number.** A reference number used by a vendor to identify the order or item being ordered. For example, for migrated open orders it may be helpful to store the original purchase order number here for use in matching to vendor invoices.
 *   **Vendor ref type.** Select the type of reference number entered in the previous box: Agent’s unique subscription reference number, Internal vendor number, Library’s continuation order number, Supplier’s continuation order, or Supplier’s unique order line reference number.
-*   **Account number.** The vendor account number. If one or more vendor accounts exist in the Organization record for the vendor selected in the Purchase order section of the Order, the first account appears in this field as the default value. To use a different account number for this vendor, select the **Account number** from the drop-down list, if applicable.
+*   **Account number.** The vendor account number. If one or more vendor accounts exist in the Organization record for the vendor selected in the [Purchase order](#purchase-order) section of the Order, the first account appears in this field as the default value. To use a different account number for this vendor, select the **Account number** from the drop-down list, if applicable.
 *   **Instructions to vendor.** Enter any instructions you want to send to the vendor when the order is opened.
 
 
 ### Cost details
 
-Note: Only certain fields will be editable depending on the Order format selected in the PO line details section. Also, some fields are required based on the Order format.
+Note: Only certain fields will be editable depending on the [Order format](#order-format) selected in the [PO line details](#po-line-details) section. Also, some fields are required based on the Order format.
 
 
 
-*   **Physical unit price.** The price of the physical unit. Required if the Order format is Physical, P/E mix, or Other.
-*   **Quantity physical.** The number of items you are ordering. Required if the Order format is Physical, P/E mix, or Other.
+*   **Physical unit price.** The price of the physical unit. Required if the [Order format](#order-format) is Physical, P/E mix, or Other.
+*   **Quantity physical.** The number of items you are ordering. Required if the [Order format](#order-format) is Physical, P/E mix, or Other.
 *   **Currency.** Select the **Currency** of the item from the drop-down list. The default value is stored in Tenant settings as the primary currency. For more information, see Settings > Tenant > Language and localization.
 *   **Additional cost.** Any additional costs for the item.
-*   **Electronic unit price.** The price of the electronic item. Required if the Order format is Physical, P/E mix, or Other.
-*   **Quantity electronic.** The number of electronic items you are ordering. Required if the Order format is Electronic or P/E mix.
+*   **Electronic unit price.** The price of the electronic item. Required if the [Order format](#order-format) is Physical, P/E mix, or Other.
+*   **Quantity electronic.** The number of electronic items you are ordering. Required if the [Order format](#order-format) is Electronic or P/E mix.
 *   **Discount.** The discount percentage or price.
 *   **Type.** Select the **%** or **$** to indicate the type of discount.
 *   **Estimated price.** The calculated price based on the values you entered. Estimated price = Unit price(s) x quantities ordered + additional cost - discount.
@@ -604,28 +604,28 @@ Location determines the effective location of the item once you receive it. If y
 
 ### Physical resource details
 
-This section only appears if you select Physical resource or P/E mix under Order format.
+This section only appears if you select Physical resource or P/E mix under [Order format](#order-format).
 
 
 
-*   **Material supplier.** The supplier of the item. The field defaults to the name of the vendor associated with the vendor code selected for the order. For more information, see Purchase order. To change the supplier, click **Organization look-up** to select an organization. In the **Select Organization** dialog, find the organization using the search box and/or filters. Click the organization to select it. The organization is added to the Material supplier field.
+*   **Material supplier.** The supplier of the item. The field defaults to the name of the vendor associated with the vendor code selected for the order. For more information, see [Purchase order](#purchase-order). To change the supplier, click **Organization look-up** to select an organization. In the **Select Organization** dialog, find the organization using the search box and/or filters. Click the organization to select it. The organization is added to the Material supplier field.
 *   **Receipt due.** The date that receipt of the material is due, or the date by which the material should be received.
 *   **Expected receipt date.** The date the material is expected to be received. This date could fall before or after the Receipt due date.
-*   **Create inventory.** Select the types of records you want to create in the Inventory app once the order is opened: Instance, holdings, items; Instance; Instance, holdings; None.  For information on configuring the default setting for this field, see Settings > Orders > Inventory interactions.
+*   **Create inventory.** Select the types of records you want to create in the Inventory app once the order is opened: Instance, holdings, items; Instance; Instance, holdings; None.  For information on configuring the default setting for this field, see [Settings > Orders > Inventory interactions]({{< ref "/settings_orders.md#settings--orders--inventory-interactions" >}}).
 *   **Material type.** The type of material.
 *   **Volume.** A number to identify the specific volume being ordered within a series, set or collection.
 
 
 ### E-resources details
 
-This section only appears if you select Electronic resource or P/E mix under Order format.
+This section only appears if you select Electronic resource or P/E mix under [Order format](#order-format).
 
 
 
 *   **Access provider.** The e-resource provider. To change the provider, click **Organization look-up** to select a vendor. In the **Select Organization** dialog, find the organization using the search box and/or filters. Click the organization to select it. The organization is added to the Access provider field.
 *   **Activation status.** If the e-resource is activated, select the **Activation status** checkbox.
 *   **Activation due.** The date the activation is due. Note: If you have entered an interval in the Expected activation interval field in the Vendor information section of the vendor record, the activation due date is populated based on the number of days you entered as the interval. For example, if you set the interval to 365, the Activation due field is populated with the date that falls one year from the date the order line is created. If needed, you can edit the 
-*   **Create inventory.** Select the types of records you want to create in the Inventory app once the order is opened. For information on configuring the default setting for this field based on Order format, see Settings > Orders > Inventory interactions.
+*   **Create inventory.** Select the types of records you want to create in the Inventory app once the order is opened. For information on configuring the default setting for this field based on [Order format](#order-format), see [Settings > Orders > Inventory interactions]({{< ref "/settings_orders.md#settings--orders--inventory-interactions" >}}).
 *   **Material type.** The type of material.
 *   **Trial.** If the e-resource is part of a trial, select the **Trial** checkbox.
 *   **Expected activation.** The date the activation is expected.
@@ -645,14 +645,14 @@ To delete a volume, find the volume you want to delete and click the **trash can
 
 ### Other resource details
 
-This section only appears if you select Other under Order format.
+This section only appears if you select Other under [Order format](#order-format).
 
 
 
 *   **Material supplier.** The supplier of the item. The default value is the vendor selected on the order. To change the supplier, click **Organization look-up** to select a vendor. In the **Select Organization** dialog, find the organization using the search box and/or filters. Click the organization to select it. The organization is added to the Material supplier field.
 *   **Receipt due.** The date the receipt is due.
 *   **Expected receipt date.** The date the item is expected to be received.
-*   **Create inventory.** Select the types of records you want to create in the Inventory app once the order is opened. For information on configuring the default setting for this field, see Settings > Orders > Inventory interactions.
+*   **Create inventory.** Select the types of records you want to create in the Inventory app once the order is opened. For information on configuring the default setting for this field, see [Settings > Orders > Inventory interactions]({{< ref "/settings_orders.md#settings--orders--inventory-interactions" >}}).
 *   **Material type.** The type of material.
 
 
@@ -961,7 +961,7 @@ In the search results, click on an order line to view it. The PO Line details pa
 
 ## Editing an order line
 
-1. Find the order line you want to edit and select it.
+1. [Find the order line you want to edit](#searching-for-order-lines) and select it.
 
 2. In the **PO Line details** pane, click **Actions > Edit**.
 
@@ -972,16 +972,16 @@ In the search results, click on an order line to view it. The PO Line details pa
 
 ## Receiving an order line
 
-1. Find the order line you want to receive and select it.
+1. [Find the order line you want to receive](#searching-for-order-lines) and select it.
 
 2. In the **PO Line details** pane, click **Actions > Receive.** The order line opens in the Receiving app.
 
-3. Follow the steps as outlined in the Receiving app doc.
+3. Follow the steps as outlined in the [Receiving app documentation]({{< ref "/receiving.md" >}}).
 
 
 ## Deleting an order line
 
-1. Find the order line you want to delete and select it.
+1. [Find the order line you want to delete](#searching-for-order-lines) and select it.
 
 2. In the **PO Line details** pane, click **Actions > Delete**.
 
@@ -990,7 +990,7 @@ In the search results, click on an order line to view it. The PO Line details pa
 
 ## Adding a note to an order line
 
-1. Find the order line to which you want to add a note and select it.
+1. [Find the order line to which you want to add a note](#searching-for-order-lines) and select it.
 
 2. In the **PO Line details** pane, under **Notes**, click **New**.
 
@@ -1005,7 +1005,7 @@ In the search results, click on an order line to view it. The PO Line details pa
 
 ## Adding a tag to an order line
 
-1. Find the order line you want to tag and select it.
+1. [Find the order line you want to tag](#searching-for-order-lines) and select it.
 
 2. In the **PO Line details** pane, click the **tag icon**.
 

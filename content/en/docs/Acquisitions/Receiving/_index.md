@@ -35,7 +35,7 @@ The permissions listed below allow you to interact with the Receiving app and de
 
 ## Creating a receiving title
 
-Usually, an order consists of a _receiving title _that may have one or more pieces attached. For example, if you order a journal, the receiving title would be the journal name and the attached pieces would include each issue of the journal.
+Usually, an order consists of a receiving title that may have one or more pieces attached. For example, if you order a journal, the receiving title would be the journal name and the attached pieces would include each issue of the journal.
 
 Purchase order lines can also be used to represent Packages. An order line is created in the Orders app as a single purchase order line, but it can’t be located or received in Receiving because it represents the acquisitions of multiple titles (for example, a monographic standing order). In order to receive the titles that are included in a package, you must create the receiving titles in the Receiving app and link them to the Package POL. In this version of FOLIO, receiving titles must be connected to an instance in the Inventory app and a POL.
 
@@ -111,7 +111,7 @@ Note: Adding a product ID and type is optional, but if you click **Add product I
 
 
 
-*   **POL number.** The purchase order line number. This can only be populated by using the **POL number look-up**. See Creating a receiving title for more information.
+*   **POL number.** The purchase order line number. This can only be populated by using the **POL number look-up**. See [Creating a receiving title](#creating-a-receiving-title) for more information.
 *   **Expected receipt date.** The date the material is expected to be received. This is automatically populated with information from Orders and can not be modified.
 *   **Receiving note.** Notes about receiving the item. This is automatically populated with information from Orders and cannot be modified. 
 *   **Must acknowledge receiving note.** When this checkbox is selected, the **Receiving note** dialog appears when you attempt to receive the item. You must click **Continue** in order to receive the item.
@@ -126,7 +126,7 @@ Note: Adding a product ID and type is optional, but if you click **Add product I
 3. In the **Select instance** dialog, in the **Search & filter** box, enter the title you want to link to the package. This populates all of the fields that have already been filled out for the existing title.
 4. Optional: filter the results using the filters in the **Select instance** dialog.
 5. Click **Search** and select the Title from the search results. This populates all of the fields that have already been filled out for the existing title.
-6. Fill in the rest of the fields under **Item details**. See Item details above for more information.
+6. Fill in the rest of the fields under **Item details**. See [Item details](#item-details) above for more information.
 7. Click **POL number look-up**. 
 8. In the **Select order lines** dialog, in the **Search & filter** box, enter the Package POL number. 
 9. Optional: filter the results using the filters in the **Select order lines** dialog.
@@ -253,7 +253,7 @@ To clear all filters, go to the **Search & filter** pane and click **Reset all**
 
 ## Viewing receiving titles details
 
-Order details can be viewed by any user with the Receiving: View permission. 
+Order details can be viewed by any user with the [Receiving: View permission](#permissions). 
 
 
 ### Search results
@@ -275,7 +275,7 @@ Select an order from the **Receiving** pane to view the order details listed bel
 
 ### Title information
 
-This section displays the item details defined under Creating a new receiving title. See above for more information. 
+This section displays the item details defined under [Creating a receiving title](#creating-a-receiving-title). 
 
 
 ### POL details
@@ -294,12 +294,12 @@ This section displays the details of the purchase order lines.
 
 ### Expected
 
-This section displays the pieces of the order that are still expected to be received. See Adding an expected piece for more information.
+This section displays the pieces of the order that are still expected to be received. See [Adding an expected piece](#adding-an-expected-piece) for more information.
 
 
 ### Received
 
-This section displays the pieces of the order that have been received. See Receiving an order for more information.
+This section displays the pieces of the order that have been received. See [Receiving an order](#receiving-an-order) for more information.
 
 
 ## Editing order information
@@ -308,7 +308,7 @@ This section displays the pieces of the order that have been received. See Recei
 
 1. Locate the order you want to edit and select it.
 2. In the order pane, click **Edit**.
-3. In the order window, you can modify Item details and PO line details. See **Item details** and **PO line details** above for more information. Note: The **Title look-up** and **POL number look-up** functions are different in editing mode. See details below.
+3. In the order window, you can modify [Item details](#item-details) and [PO line details](#po-line-details). Note: The **Title look-up** and **POL number look-up** functions are different in editing mode. See details below.
 4. Fill out the desired fields.
 5. Click **Save & close.** The order is updated and a confirmation message appears.
 
@@ -341,7 +341,7 @@ The **POL number look-up** function replaces the current POL number with a POL n
 
 An expected piece is a part of an order you expect to receive. For example, if you order a magazine subscription, you might expect to receive 12 different pieces during the year. If you order a book that comes with supplemental materials such as a CD or map, you might expect to receive multiple pieces with the order. The order will not initially display each piece that comes with it. Adding expected pieces to an order allows you to track which pieces of the order have been received and which are still expected. 
 
-Expected pieces can be found under the Expected section of an order. Expected pieces can also be received from this section. See Quick receive for more information.
+Expected pieces can be found under the Expected section of an order. Expected pieces can also be received from this section. See [Quick receive](#quick-receive) for more information.
 
 Note: To add an expected piece to an order, the **Manually add pieces for receiving** checkbox must have been selected in the [Order line]({{< ref "/orders.md#po-line-details" >}}) when the order was created.
 
@@ -359,10 +359,10 @@ Note: To add an expected piece to an order, the **Manually add pieces for receiv
 
 *   **Caption.** Create a caption for the piece. 
 *   **Expected receipt date.** The date the piece is expected to be received.
-*   **Select location.** This field is populated with the location selected in Orders. You can change the location by clicking **Assign a different location**. See below for more information.
+*   **Select location.** This field is populated with the location selected in Orders. You can change the location by clicking [Assign a different location](#assign-a-different-location). 
 *   **Piece format.** This field is populated with the format selected in Orders. It can not be modified. 
 *   **Comment.** Enter a comment about the piece.
-*   **Create item.** Selecting the **Create item** checkbox connects the new piece to an instance in Inventory. This option is not available for electronic resources. Note: In order to create an item, an instance status, instance type, and loan type must be selected in Settings.
+*   **Create item.** Selecting the **Create item** checkbox connects the new piece to an instance in Inventory. This option is not available for electronic resources. Note: In order to create an item, an [instance status]({{< ref "/settings_orders.md#settings--orders--instance-status" >}}), [instance type]({{< ref "/settings_orders.md#settings--orders--instance-type" >}}), and [loan type]({{< ref "/settings_orders.md#settings--orders--loan-type" >}}) must be selected in Settings.
 *   **Supplement.** Selecting the **Supplement** checkbox indicates that the piece is a supplementary material such as a CD or a map. 
 
 
@@ -387,7 +387,7 @@ To edit an expected or received piece, make sure the correct order is displayed 
 
 
 1. Select the piece you want to edit.
-2. In the **Edit piece** dialog, the same fields as the **Add piece** dialog appear. See above for more information.
+2. In the **Edit piece** dialog, the same fields as the [Add piece](#adding-an-expected-piece) dialog appear. See above for more information.
 3. Fill out the desired fields.
 4. Click **Save & close.** The piece is updated and a confirmation message appears.
 
@@ -448,7 +448,7 @@ The Receive function can be used to receive multiple pieces at once.
 *   **Piece format.** This field is populated by the format selected in Orders. It can not be modified. 
 *   **Request.** This field is populated with information from Requests. If there is a request open for the piece, this field will say “Yes”. 
 *   **Comment.** Enter a comment about the piece.
-*   **Select location.** This field is populated with the location selected in Orders. You can change the location by clicking **Assign a different location**. See above for more information.
+*   **Select location.** This field is populated with the location selected in Orders. You can change the location by clicking [Assign a different location](#assign-a-different-location).
 *   **Item status.** This field is populated with the information that will appear in Inventory if the item is received. 
 *   **Call number.** Create a call number for the piece. You can only add a call number if the piece is already **Connected** to an instance in Inventory, or if the **Create item** box is checked.
 *   **Create item.** Checking the **Create item** box links the new piece to an instance in Inventory. This option is not available for electronic resources. Note: In order to create an item, a loan type must be selected in Settings.

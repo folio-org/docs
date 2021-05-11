@@ -22,7 +22,7 @@ Note: This is the only permission available for order settings. You can assign p
 
 ## Settings > Orders > Approvals
 
-If you want to require approval to open orders, select **“Approval required” to open orders**. When selected, an additional step between Pending and Open is added. A user with the appropriate permission has to approve the order. Once the order is approved, the date and time of the approval is captured, along with the username of the person who made the approval. For more information, see Approving an order.
+If you want to require approval to open orders, select **“Approval required” to open orders**. When selected, an additional step between Pending and Open is added. A user with the appropriate permission has to approve the order. Once the order is approved, the date and time of the approval is captured, along with the username of the person who made the approval. For more information, see [Approving an order]({{< ref "/orders.md#approving-an-order" >}}).
 
 
 ## Settings > Orders > Closing purchase order reasons
@@ -101,7 +101,7 @@ Note: Template name is the only required field.
 
 1. Click **New**.
 
-2. Fill in the fields. Follow the instructions under Creating an order for more information.
+2. Fill in the fields. Follow the instructions under [Creating an order]({{< ref "/orders.md#creating-an-order" >}}) for more information.
 
 3. Click **Save**. A confirmation message appears and the template is saved.
 

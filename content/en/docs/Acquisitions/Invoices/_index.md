@@ -365,7 +365,7 @@ To create an invoice line that is not associated with an existing purchase order
 *   **Description.** The description or title for the invoice line. This may contain the materials, service, or fee being invoiced.
 *   **PO line number.** The purchase order line number for the invoice line. 
 *   **Invoice line number.** The invoice line number for the invoice line. 
-*   **Vendor reference number.** The vendor reference number for the invoice line. For more information about vendor reference numbers, see Orders > Adding an order line to an order > Vendor ref number.
+*   **Vendor reference number.** The vendor reference number for the invoice line. For more information about vendor reference numbers, see [Orders > Adding an order line to an order > Vendor ref number]({{< ref "/orders.md#vendor-1" >}}).
 *   **Status.** The status of the invoice line. 
 *   **Subscription info.** Subscription information for this invoice line. 
 *   **Subscription start date.** The date the subscription starts. 
@@ -453,12 +453,12 @@ A record of the invoice lines used in previous purchase orders remain in your li
 
 If an order line references a different vendor or currency than the one identified in the invoice, you will be asked to confirm this before proceeding. Note: Payments will be assigned according to the information identified on the invoice. 
 
-For more information on invoices lines, please see Invoices > Viewing invoice details. 
+For more information on invoices lines, please see [Invoices > Viewing invoice details](#viewing-invoice-details). 
 
 
 ##### Fund distribution
 
-For information on fund distribution, see **Viewing an invoice** > **Fund distribution.** 
+For information on fund distribution, see [Viewing an invoice > Fund distribution](#fund-distribution). 
 
 
 ##### Adjustments 
@@ -466,12 +466,12 @@ For information on fund distribution, see **Viewing an invoice** > **Fund distri
 
 ###### Selecting an adjustment
 
-For information on selecting an adjustment, see **Creating an invoice** > **Selecting an adjustment**. 
+For information on selecting an adjustment, see [Creating an invoice > Selecting an adjustment](#selecting-an-adjustment). 
 
 
 ###### Creating an adjustment
 
-For information on creating an adjustment, see **Creating an invoice** > **Creating an adjustment**. 
+For information on creating an adjustment, see [Creating an invoice > Creating an adjustment](#creating-an-adjustment). 
 
 
 ## Deleting an invoice
@@ -487,7 +487,7 @@ For information on creating an adjustment, see **Creating an invoice** > **Creat
 
 Invoices require approval before they can be sent out to vendors. Only someone with the **Approve invoice** permission can perform this action. 
 
-Total expenditures must match the selected locked total. Approving an invoice automatically sends a voucher to the business office. Vouchers provide information necessary to make invoice payments and can be exported to an external payment system. For more information on exporting vouchers, see **Settings > Invoices > Batch group configurations**.
+Total expenditures must match the selected locked total. Approving an invoice automatically sends a voucher to the business office. Vouchers provide information necessary to make invoice payments and can be exported to an external payment system. For more information on exporting vouchers, see [Settings > Invoices > Batch group configuration]({{< ref "/settings_invoices.md#settings--invoices--batch-group-configuration" >}}).
 
 To approve an invoice, follow these steps:
 
