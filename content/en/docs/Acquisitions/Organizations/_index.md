@@ -271,7 +271,7 @@ The information that you enter under Vendor information sets some of the default
 
 
 
-*   **Payment method.** The payment method that you want to appear as the default payment method for the vendor on an invoice. See Invoices > Extended information for more information.
+*   **Payment method.** The payment method that you want to appear as the default payment method for the vendor on an invoice. See [Invoices > Extended information]({{< ref "/invoices.md#extended-information" >}}) for more information.
 *   **Vendor currencies.** The currencies accepted by the vendor.
 *   **Expected activation interval.** The standard activation period for the vendor, in days. Note: The interval you enter here is used in the Activation due field in the E-resources details section of an order line associated with the vendor. For example, if you set the interval to 365, the Activation due field is populated with the date that falls one year from the date the order line is created.
 *   **Expected invoice interval.** The standard invoice interval for the vendor, in days. Currently, this information does not display on invoices.
