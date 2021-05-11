@@ -14,7 +14,7 @@ Definitions of terms used in the Invoices app:
 
 
 *   **Accounting code.** The code used by your library in your payment system in reference to an organization. 
-*   **Acquisitions units.** An additional layer you can add to acquisitions records that restricts a user’s ability to interact with those records unless they have been assigned to that unit. Units are defined and determined by your library in the Settings app. See Settings > Acquisition units for more information.
+*   **Acquisitions units.** An additional layer you can add to acquisitions records that restricts a user’s ability to interact with those records unless they have been assigned to that unit. Units are defined and determined by your library in the Settings app. See [Settings > Acquisition units]({{< ref "/settings_acquisition_units.md" >}}) for more information.
 *   **Adjustments:** Charges added to an invoice in addition to the materials ordered. Shipping costs and exchange rates represent common adjustments. 
 *   **Batch group:** Groups that process their invoices together. Invoices from the same library are generally processed together. 
 *   **Funds:** Specific allocations of money within a ledger.
@@ -78,7 +78,7 @@ There are certain pieces of information associated with an invoice. Some informa
 
 Adjustments are costs attached to an invoice beyond the items ordered. Shipping rates and exchange rates represent two common adjustments. You can either choose a preset adjustment from the drop-down menu or create a new one. 
 
-To create preset adjustments, see Settings > Invoices > Adjustments for more information. 
+To create preset adjustments, see [Settings > Invoices > Adjustments]({{< ref "/settings_invoices.md#settings--invoices--adjustments" >}}) for more information. 
 
 
 #### Selecting an adjustment
@@ -186,7 +186,7 @@ To search for invoices placed with a specific vendor, follow these steps:
 3. In the **Select Organization** dialog, search for the vendor. 
 4. Click the vendor to populate the **Vendor name** field. 
 
-For information on searching for organizations, see **Orders** > **Searching for an organization.**
+For information on searching for organizations, see [Organizations > Searching for an organization]({{< ref "/organizations.md#searching-for-an-organization" >}}).
 
 
 ### Date created
@@ -307,12 +307,12 @@ In the search results, click on an invoice to view it. The **Vendor invoice numb
 
 ### Invoice information
 
-For information about the items in the Invoice information section, see [Creating an invoice > Invoice information]. In addition, this section also includes the following information:
+For information about the items in the Invoice information section, see [Creating an invoice > Invoice information](#invoice-information). In addition, this section also includes the following information:
 
 
 
 *   **Source.** The method by which this invoice was created: User, API, EDI, or MARC.
-*   **Bill to address.** The address associated with the Bill to name. For more information about the Bill to name, see Creating an invoice > Invoice information.
+*   **Bill to address.** The address associated with the Bill to name. For more information about the Bill to name, see [Creating an invoice > Invoice information](#invoice-information).
 *   **Total units**. All the items listed for order in the invoice.
 
 
@@ -374,7 +374,7 @@ To create an invoice line that is not associated with an existing purchase order
 *   **Account number.** The account number for the invoice line. This drop-down list contains vendor account numbers for the vendor selected on the invoice. If one or more vendor accounts exist in the Organization record for the vendor, the first account appears in this field as the default value.
 *   **Accounting code.** The accounting code for the invoice line. 
 *   **Quantity.** The number of items in the invoice line. 
-*   **Sub-total.** The cost of all the items in the invoice line. Note: The subtotal is used for fund distribution in the currency defined in Settings > Tenant > Language and localization
+*   **Sub-total.** The cost of all the items in the invoice line. Note: The subtotal is used for fund distribution in the currency defined in Settings > Tenant > Language and localization.
 *   **Release encumbrance.** Releases the cost of the invoice against the fund to which it was assigned. 
 
 
