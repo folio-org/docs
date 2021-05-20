@@ -2,7 +2,7 @@
 ---
 title: "Finance"
 linkTitle: "Finance"
-date: 2021-05-11
+date: 2021-05-14
 weight: 10
 tags: ["parenttopic"]
 ---
@@ -13,14 +13,14 @@ Definitions of terms used in the Finance app:
 
 
 
-*   **Acquisition units**. An additional organization layer you can add to acquisitions records that restricts a user’s ability to interact with those records unless they have been assigned to that unit. Units are defined and determined by your library in the Settings app under the Acquisition units subsection.
-*   **Amount Allocated**. The amount of money assigned to a fund at the start of a fiscal year. Additional money can also be allocated during the year.
-*   **Expense class**. A fiscal entity used to track transactions against a specific purpose or function within a Fund.
+*   **Acquisition units.** An additional layer you can add to acquisitions records that restricts a user’s ability to interact with those records unless they have been assigned to that unit. For example, you may create acquisition units to represent the different libraries within your library system. Units are defined and determined by your library in the Settings app. See [Settings > Acquisition units]({{< ref "/settings_acquisition_units.md" >}}) for more information.
+*   **Amount Allocated.** The amount of money assigned to a fund at the start of a fiscal year. Additional money can also be allocated during the year.
+*   **Expense class.** A fiscal entity used to track transactions against a specific purpose or function within a Fund.
 *   **Fiscal year.** The twelve-month period your library uses to manage its finances.
-*   **Fund.** A fiscal entity used to track transactions against a general purpose or function' within a ledger.  Funds are associated with only one ledger.  Fund information persists from year to year as new budgets are created for the fund each year.
+*   **Fund.** A fiscal entity used to track transactions against a general purpose or function' within a ledger. Funds are associated with only one ledger. Fund information persists from year to year as new budgets are created for the fund each year.
 *   **Group.** A collection of one or more funds grouped together.
 *   **Ledger.** A collection of funds that need to be kept fiscally separate from another ledger’s collection of funds.  All funds within a ledger will share future fiscal year rollover behavior.
-*   **Net Transfers**. Money transferred between funds during a fiscal year.
+*   **Net Transfers.** Money transferred between funds during a fiscal year.
 
 
 ## Permissions
@@ -71,12 +71,12 @@ Create a fiscal year to serve as the basis for your entire fund structure and it
 
 
 
-*   **Name (required)**. The name of this fiscal year.  A suggested naming convention is the term 'Fiscal year' followed by the numeric year: Fiscal Year 2021.
-*   **Code (required)**. The code must be an alpha followed by a four-digit number.  It can be based on name and year. For example, FY2021.
-*   **Period Begin Date (required)**. The date when the fiscal year begins. 
-*   **Period End Date (required)**. The date when the fiscal year ends. 
-*   **Acquisition units**. If you want editing of the fiscal year information to be available only to particular users within certain acquisitions units, enter or select the Acquisition units from the drop-down list. You can select multiple units.  If blank, any users with the appropriate permissions will be permitted to edit the fiscal year information. See Settings > Acquisition units for more information.
-*   **Description**. A description of the fiscal year. 
+*   **Name (required).** The name of this fiscal year. A suggested naming convention is the term 'Fiscal year' followed by the numeric year: Fiscal Year 2021.
+*   **Code (required).** The code must be an alpha followed by a four-digit number. It can be based on name and year. For example, FY2021.
+*   **Period Begin Date (required).** The date when the fiscal year begins. 
+*   **Period End Date (required).** The date when the fiscal year ends. 
+*   **Acquisition units.** If you want editing of the fiscal year information to be available only to particular users within certain acquisitions units, enter or select the Acquisition units from the drop-down list. You can select multiple units. If blank, any users with the appropriate permissions will be permitted to edit the fiscal year information. For more information, see [Settings > Acquisition units]({{< ref "/settings_acquisition_units.md" >}})
+*   **Description.** A description of the fiscal year. 
 
 
 ## Creating a new ledger
@@ -95,17 +95,17 @@ In order to create a ledger, a fiscal year must be created first. The fiscal yea
 
 
 
-*   **Name (required)**. Name of the ledger. For example, Law Library. 
-*   **Code (required)**. Self-created, based on name.
-*   **Fiscal year one (required)**. The first fiscal year for the ledger. Ledgers can continue to be used for multiple fiscal years. If the fiscal year does not appear in the list, you can click **New fiscal year** to create a new one. 
-*   **Status (required)**. Select the status of the ledger: **Active**, **Frozen**, or **Inactive**. Active means the ledger is ongoing, Frozen means the ledger has been put on pause, and Inactive means the ledger is no longer in use. 
-*   **Acquisition Units.** If you want editing of the ledger information to be available only to particular users within certain acquisitions units, enter or select the Acquisition units from the drop-down list. You can select multiple units. If blank, any users with the appropriate permissions will be permitted to edit the ledger information. See Settings > Acquisition units for more information.
-*   **Description**. Description of the ledger.
+*   **Name (required).** Name of the ledger. For example, Law Library. 
+*   **Code (required).** Self-created, based on name.
+*   **Fiscal year one (required).** The first fiscal year for the ledger. Ledgers can continue to be used for multiple fiscal years. If the fiscal year does not appear in the list, you can click **New fiscal year** to create a new one. 
+*   **Status (required).** Select the status of the ledger: Active, Frozen, or Inactive. Active means the ledger is ongoing, Frozen means the ledger has been put on pause, and Inactive means the ledger is no longer in use. 
+*   **Acquisition Units.** If you want editing of the ledger information to be available only to particular users within certain acquisitions units, enter or select the Acquisition units from the drop-down list. You can select multiple units. If blank, any users with the appropriate permissions will be permitted to edit the ledger information. For more information, see [Settings > Acquisition units]({{< ref "/settings_acquisition_units.md" >}})
+*   **Description.** Description of the ledger.
 
 
 ## Creating a new group
 
-Groups categorize funds and bring multiple funds together as a single group regardless of fiscal year and ledger, which enables a total amount of money that’s available or has been allocated across multiple funds to be easily analyzed.
+Groups categorize funds and bring multiple funds together as a single group regardless of fiscal year and ledger, which enables the total amount of money that’s available or has been allocated across multiple funds to be easily analyzed.
 
 
 
@@ -119,11 +119,11 @@ Groups categorize funds and bring multiple funds together as a single group rega
 
 
 
-*   **Name (required)**. Name of the group. For example, History. 
-*   **Code (required)**. Self-created, based on name.
-*   **Status (required)**. Choose the appropriate status for the ledger as either **Active**, **Frozen**, or **Inactive**. Active means the group is ongoing, Frozen means the group has been put on pause, and Inactive means the group is no longer in use.
-*   **Acquisition Units.** If you want editing of the group information to be available only to particular users within certain acquisitions units, enter or select the Acquisition units from the drop-down list. You can select multiple units.  If blank, any users with the appropriate permissions will be permitted to edit the group information. See Settings > Acquisition units for more information.
-*   **Description**. A description of the group. For example, you may want to include why the group was created and the relation between the different funds.
+*   **Name (required).** Name of the group. For example, History. 
+*   **Code (required).** Self-created, based on name.
+*   **Status (required).** Select the status of the group: Active, Frozen, or Inactive. Active means the group is ongoing, Frozen means the group has been put on pause, and Inactive means the group is no longer in use.
+*   **Acquisition Units.** If you want editing of the group information to be available only to particular users within certain acquisitions units, enter or select the Acquisition units from the drop-down list. You can select multiple units.  If blank, any users with the appropriate permissions will be permitted to edit the group information. For more information, see [Settings > Acquisition units]({{< ref "/settings_acquisition_units.md" >}})
+*   **Description.** A description of the group. For example, you may want to include why the group was created and the relation between the different funds.
 
 
 ## Creating a new fund
@@ -142,26 +142,26 @@ Funds show information regarding an ongoing ledger with a budget for the current
 
 
 
-*   **Name (required)**. Name of the fund. 
-*   **Code (required)**. Self-created, based on name.
-*   **Ledger (required)**. Select the ledger associated with the fund.
-*   **Status (required)**. Choose the appropriate status for the fund as either **Active**, **Inactive**, or **Frozen**. Active means the fund is ongoing, Frozen means the fund has been put on pause, and Inactive means the fund is no longer in use. It was important for us to know that for an order to successfully open, or an invoice to successfully be fully paid, the associated fund must be active.
-*   **Type**. A category to describe this fund. Fiscal year rollover of funds is often defined by fund type, so definition of the type values should consider future fiscal year rollover requirements. Examples: endowment, restricted.
+*   **Name (required).** Name of the fund. 
+*   **Code (required).** Self-created, based on name.
+*   **Ledger (required).** Select the ledger associated with the fund.
+*   **Status (required).** Select the status of the fund: Active, Frozen, or Inactive. Active means the fund is ongoing, Frozen means the fund has been put on pause, and Inactive means the fund is no longer in use. Note: The fund must be active in order to successfully open an order or for an invoice to successfully be fully paid.
+*   **Type.** A category to describe this fund. Fiscal year rollover of funds is often defined by fund type, so definition of the type values should consider future fiscal year rollover requirements. Examples: endowment, restricted.
 *   **Acquisition Units.** If you want the fund to be available for use on an order or invoice to users within certain acquisitions units, enter or select the Acquisition units from the drop-down list. You can select multiple units. If left blank, the system will allow this fund to be used on orders and invoices with any acquisition unit assignments.
-*   **Group**. The group associated with the fund.
-*   **Transfer from**. To allow transfers to this fund from any other fund, leave this field blank.  To restrict transfers to this fund, enter or select the allowed funds from the drop-down list. You can select multiple funds. 
-*   **Transfer to**. To allow transfers from this fund to any other fund, leave this field blank.  To restrict transfers from this fund, enter or select the allowed funds from the drop-down list. You can select multiple funds. 
-*   **External account (required)**. Account identifier for this account in an external financial system.
-*   **Description**. A description of the fund. For example, you may want to include the purpose of the fund.
+*   **Group.** The group associated with the fund. For more information, see [Settings > Acquisition units]({{< ref "/settings_acquisition_units.md" >}})
+*   **Transfer from.** To allow transfers to this fund from any other fund, leave this field blank.  To restrict transfers to this fund, enter or select the allowed funds from the drop-down list. You can select multiple funds. 
+*   **Transfer to.** To allow transfers from this fund to any other fund, leave this field blank.  To restrict transfers from this fund, enter or select the allowed funds from the drop-down list. You can select multiple funds. 
+*   **External account (required).** Identifier for this account in an external financial system.
+*   **Description.** A description of the fund. For example, you may want to include the purpose of the fund.
 
 
 ## Searching for a fiscal year, ledger, group or fund
 
-You can search for fiscal years, ledgers, groups, or funds by clicking on either **Fiscal year**, **Ledger**, **Group**, or **Fund** in the **Search & filter** pane. To search for a fiscal year, ledger, group, or fund, enter your search terms into the box when you are in the fiscal year, ledger, group, or fund pane. Select the **All** drop-down list to search through one of the following fields: 
+You can search for fiscal years, ledgers, groups, or funds by clicking on either **Fiscal year**, **Ledger**, **Group**, or **Fund** in the **Search & filter** pane. To search for a fiscal year, ledger, group, or fund, enter your search terms into the box when you are in the Fiscal year, Ledger, Group, or Fund pane. Select the **All** drop-down list to search through one of the following fields: 
 
 
 
-*   **All.** All fields. This is the default search.
+*   **All.** Searches through all fields in the drop-down list. This is the default search.
 *   **Name.** The name of the fiscal year, ledger, group, or fund. 
 *   **Code.** A unique identifier for the fiscal year, ledger, group, or fund.
 
@@ -234,31 +234,31 @@ The type of information displayed in your search results depends upon the type o
 
 
 
-*   **Name**. The name of the fiscal year, ledger, group, fund, or budget record.
-*   **Code**. A unique identifier for the fiscal year, ledger, group, fund, or budget record.
-*   **Description**. The purpose of the fiscal year, ledger, group, fund, or budget record.
-*   **Status**. Whether the ledger, group, fund, or budget record is **Active**, **Inactive**, or **Frozen**. 
-*   **Ledger**. The ledger associated with the fund.
+*   **Name.** The name of the fiscal year, ledger, group, fund, or budget record.
+*   **Code.** A unique identifier for the fiscal year, ledger, group, fund, or budget record.
+*   **Description.** The purpose of the fiscal year, ledger, group, fund, or budget record.
+*   **Status.** Whether the ledger, group, fund, or budget record is Active, Inactive, or Frozen. 
+*   **Ledger.** The ledger associated with the fund.
 
-Click on any result to display another panel that includes the associated details. 
+In the search results, click any result to view it. The fiscal year, ledger, group, or fund details pane displays with additional information.
 
 
 ## Editing a fiscal year, ledger, group, fund, or budget records
 
 
 
-1. In the **Search & filter** pane, click the appropriate pane (fiscal year, ledger, group, fund, or budget record).
-2. Click the information you want to edit in the appropriate pane. 
+1. In the **Search & filter** pane, click the appropriate button (Fiscal year, Ledger, Group, or Fund).
+2. Select the record you want to edit in the appropriate pane. 
 3. Click **Actions > Edit**.
 4. Edit the information within the window as needed.
-5. Click **Save & close**. The finance information is saved and updated.
+5. Click **Save & close**. The record is saved and updated.
 
 
 ## Deleting a fiscal year, ledger, group, fund, or budget records
 
 
 
-1. In the **Search & filter** pane, click the appropriate pane (fiscal year, ledger, group, fund, or budget record). 
-2. Click the information you want to delete in the appropriate pane.
+1. In the **Search & filter** pane, click the appropriate button (Fiscal year, Ledger, Group, or Fund).
+2. Select the record you want to delete in the appropriate pane.
 3. Click **Actions > Delete**. Financial structure records cannot be deleted if they have other records assigned to them. Budgets cannot be deleted once they have any type of transaction against them. Budgets can be deleted that only have Allocation type transactions against them.
-4. In the **Delete finance information** dialog, click **Delete**. The finance information is deleted and a confirmation message appears.
+4. In the **Delete record** dialog, click **Delete**. A confirmation message appears and the record is deleted.
