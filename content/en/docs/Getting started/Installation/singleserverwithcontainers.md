@@ -303,10 +303,13 @@ git checkout R1-2021
 
 Elasticsearch support is being included as a PoC in R1-2021.
 If you would like to build with ES, you have to install elasticsearch on your server and point the related modules, at least mod_pubsub and mod_search, to your Installation.
+
 Here is a prescription how to install ES under Ubuntu 18.04 : https://phoenixnap.com/kb/install-elasticsearch-ubuntu
+
 To point the modules to your Okapi installation, the environment parameters of those modules need to be set for the module/container when it spins up, 
 so it can connect to the ES instance. You can find out the env params by looking at the Overview - Metadata section of the module's page in Folio org’s Dockerhub. 
 For mod-search, this is at https://hub.docker.com/r/folioorg/mod-search.
+
 The env params need to be set in the launch descriptor of the module, before you deploy the module. The launch descriptor is a part of the module descriptor. 
 To set an env param in the launch descriptor of a module, follow the prescription described below for mod-pubsub.
 
@@ -353,11 +356,12 @@ Delete the standard module descriptor and post your own module descriptor to Oka
 
 
 If you want to use the Data Import module, you have to set KAFKA_HOST in the launch descriptor of the following modules, because these modules also talk directly to Kafka:
-  mod-data-import-2.0.2
-  mod-source-record-manager-3.0.7
-  mod-source-record-storage-5.0.4
-  mod-inventory-16.3.2
-  mod-inventory-storage-20.2.1
+  - mod-data-import-2.0.2
+  - mod-source-record-manager-3.0.7
+  - mod-source-record-storage-5.0.4
+  - mod-inventory-16.3.2
+  - mod-inventory-storage-20.2.1 
+  -
 Apply the same steps as for the module descriptor of mod-pubsub to those of these 5 modules, but change only the value of KAFKA_HOST (they don't have OKAPI_URL as an env param).
 
 
@@ -456,10 +460,11 @@ okapi: { 'url':'http://<YOUR_SERVER_NAME>:9130', 'tenant':'diku' },
 ```
 
 Make sure that you use the public IP or domain of your server since this URL will be used to request Okapi from the clients’ browsers.
-The above Okapi url will only work if you access your frontend (Stripes) in an unsecured network (i.e. use plain http requests).
-It is highly recommend that you secure your connection by using SSL. Chose a domain name for your installation. Apply for a domain certificate and install it in your webproxy (we use nginx further down).
+
+The above Okapi url will only work if you access your frontend (Stripes) in an unsecured network (i.e. use plain http requests). 
+It is highly recommend that you secure your connection by using SSL. Chose a domain name for your installation. Apply for a domain certificate and install it in your webproxy (we use nginx further down). 
 Proxy your backend requests to the subpath /okapi (this is being described below). 
-Then use this Okapi url in your stripes.config.js:
+Then use this Okapi url in your stripes.config.js: 
 
 ```
 ...
