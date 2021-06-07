@@ -361,7 +361,7 @@ If you want to use the Data Import module, you have to set KAFKA_HOST in the lau
   - mod-source-record-storage-5.0.4
   - mod-inventory-16.3.2
   - mod-inventory-storage-20.2.1 
-  -
+ 
 Apply the same steps as for the module descriptor of mod-pubsub to those of these 5 modules, but change only the value of KAFKA_HOST (they don't have OKAPI_URL as an env param).
 
 
