@@ -110,6 +110,7 @@ Take into account that you have to change the **KAFKA_ADVERTISED_LISTENERS** val
 
 ```
 mkdir ~/folio-install
+cd folio-install
 vim docker-compose-kafka-zk.yml
 ```
 
