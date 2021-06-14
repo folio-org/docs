@@ -530,10 +530,10 @@ cp -R output/. /home/folio/tenants/diku/
 3. Configure NGINX to serve this directory.
 
 ```
-cd ~/folio-install/runbooks/single-server/scripts
+cd /home/folio/tenants/diku
 ```
 
-The content of nginx-stripes.conf should look like this:
+Create a file nginx-stripes.conf with the following content:
 
 ```
 server {
