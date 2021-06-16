@@ -2,7 +2,7 @@
 ---
 title: "Orders"
 linkTitle: "Orders"
-date: 2021-05-10
+date: 2021-05-16
 weight: 30
 tags: ["parenttopic"]
 ---
@@ -19,7 +19,7 @@ Definition of terms related to the Orders app:
 
 ## Permissions
 
-The permissions listed below allow you to interact with the Orders app and determine what you can or cannot do within the app. You can assign permissions to users in the Users app. If none of these permissions are assigned to a user, they are unable to see the Orders app or any related information. 
+The permissions listed below allow you to interact with the Orders app and determine what you can or cannot do within the app. You can assign permissions to users in the Users app. If none of these permissions are assigned to a user, they are unable to see the Orders app or any related information.
 
 Note: The below permissions only pertain to the Orders app. Within the app, orders and order lines may link to records in other apps, like Inventory and Receiving, and the ability to interact with those records could require separate permissions.
 
@@ -43,7 +43,7 @@ The following are all the Orders permissions:
 
 ## Creating an order
 
-Orders contain a list of titles or packages (physical or electronic) being ordered by your library from a vendor. 
+Orders contain a list of titles or packages (physical or electronic) being ordered by your library from a vendor.
 
 In FOLIO, you can create either [one-time orders](#creating-a-one-time-order) or [ongoing orders](#creating-an-ongoing-order). One-time orders should be used for items fulfilled within the year, like monographs. Ongoing orders generally span multiple years, and you usually pay as you receive each item. You would want to create an ongoing order for a magazine subscription, for example.
 
@@ -206,7 +206,7 @@ To search for orders created by a specific user, follow these steps:
 
 To search for orders based on the date they were created, follow these steps:
 
-1. In the **Search & filter** pane, click **Date created**. 
+1. In the **Search & filter** pane, click **Date created**.
 
 2. Enter a start date in the **From** box and an end date in the **To** box.
 
@@ -217,7 +217,7 @@ To search for orders based on the date they were created, follow these steps:
 
 To search for orders based on the date the order was opened, follow these steps:
 
-1. In the **Search & filter** pane, click **Date ordered**. 
+1. In the **Search & filter** pane, click **Date ordered**.
 
 2. Enter a start date in the **From** box and an end date in the **To** box.
 
@@ -279,7 +279,7 @@ In the **Search & filter** pane, click **Re-encumber** and select any applicable
 
 To search for orders based on their renewal date, follow these steps:
 
-1. In the **Search & filter** pane, click **Renewal date**. 
+1. In the **Search & filter** pane, click **Renewal date**.
 
 2. Enter a start date in the **From** box and an end date in the **To** box.
 
@@ -360,7 +360,7 @@ After you create an order, it has the status of Pending until you open it. Once 
 
 
 *   Encumbrances are created. Note: Encumbrances are only created if a fund distribution was added to an order line.
-*   Inventory records are created. Note: Inventory records are not created if the Create inventory field on the order line is set to None. For more information about the Create inventory field, see the [E-resources details](#e-resources-details) and [Physical details](#physical-resource-details) sections below. 
+*   Inventory records are created. Note: Inventory records are not created if the Create inventory field on the order line is set to None. For more information about the Create inventory field, see the [E-resources details](#e-resources-details) and [Physical details](#physical-resource-details) sections below.
 *   Date ordered is set to today’s date.
 *   Order lines cannot be added.
 *   Fields such as Order type, Title, Acquisition method, and Order format are not editable once an order is opened. The order would need to be unopened to edit those fields. For more information, see [Unopening an order](#unopening-an-order).
@@ -417,7 +417,7 @@ You can only receive open orders.
 
 2. In the **Purchase order** pane, select **Actions > Receive.** The order line(s) open in the Receiving app.
 
-3. Follow the steps as outlined in the Receiving app doc.
+3. Follow the steps as outlined in [Receiving > Receiving an order]({{< ref "/receiving.md#receiving-an-order" >}}).
 
 
 ## Deleting an order
@@ -437,7 +437,7 @@ Note: When you delete an order, received items remain in the system, but the rec
 
 2. In the **Purchase order details** pane, click the **tag icon**.
 
-3. In the **Tags** pane, either select a tag from the box or enter a tag. 
+3. In the **Tags** pane, either select a tag from the box or enter a tag.
 
 4. Click the **X** on the Tags pane to close the pane and save the tag. The tag number updates to the number of tags applied to the order.
 
@@ -508,7 +508,7 @@ Note: When you delete an order, received items remain in the system, but the rec
 
 
 
-*   **Acquisition method.** The method you are using to purchase the item. 
+*   **Acquisition method.** The method you are using to purchase the item.
 *   **Order format.** Select the format of the item you are ordering: Electronic resource, Physical resource, P/E mix, or Other. The Order format determines which fields are required in the [Cost details](#cost-details) section and whether the [Physical resource details](#physical-resource-details) or [E-resources details](#e-resources-details) sections are displayed.
 *   **Receipt date.** The receipt date of the item.
 *   **Receipt status.** Select the receipt status of the item: Pending or Receipt not required.
@@ -624,7 +624,7 @@ This section only appears if you select Electronic resource or P/E mix under [Or
 
 *   **Access provider.** The e-resource provider. To change the provider, click **Organization look-up** to select a vendor. In the **Select Organization** dialog, find the organization using the search box and/or filters. Click the organization to select it. The organization is added to the Access provider field.
 *   **Activation status.** If the e-resource is activated, select the **Activation status** checkbox.
-*   **Activation due.** The date the activation is due. Note: If you have entered an interval in the Expected activation interval field in the Vendor information section of the vendor record, the activation due date is populated based on the number of days you entered as the interval. For example, if you set the interval to 365, the Activation due field is populated with the date that falls one year from the date the order line is created. If needed, you can edit the 
+*   **Activation due.** The date the activation is due. Note: If you have entered an interval in the Expected activation interval field in the Vendor information section of the vendor record, the activation due date is populated based on the number of days you entered as the interval. For example, if you set the interval to 365, the Activation due field is populated with the date that falls one year from the date the order line is created. If needed, you can edit the
 *   **Create inventory.** Select the types of records you want to create in the Inventory app once the order is opened. For information on configuring the default setting for this field based on [Order format](#order-format), see [Settings > Orders > Inventory interactions]({{< ref "/settings_orders.md#settings--orders--inventory-interactions" >}}).
 *   **Material type.** The type of material.
 *   **Trial.** If the e-resource is part of a trial, select the **Trial** checkbox.
@@ -780,7 +780,7 @@ To search for order lines that have an Order format of Physical resource or P/E 
 
 To search for order lines based on the date they were created, follow these steps:
 
-1. In the **Search & filter** pane, click **Date created**. 
+1. In the **Search & filter** pane, click **Date created**.
 
 2. Enter a start date in the **From** box and an end date in the **To** box.
 
@@ -868,7 +868,7 @@ In the **Search & filter** pane, click **Activated** and select any applicable f
 
 To search for order lines based on their expected activation date, follow these steps:
 
-1. In the **Search & filter** pane, click **Expected activation**. 
+1. In the **Search & filter** pane, click **Expected activation**.
 
 2. Enter a start date in the **From** box and an end date in the **To** box.
 
@@ -891,7 +891,7 @@ In the **Search & filter** pane, click **Trial** and select any applicable filte
 
 To search for order lines based on their subscription from date, follow these steps:
 
-1. In the **Search & filter** pane, click **Subscription from**. 
+1. In the **Search & filter** pane, click **Subscription from**.
 
 2. Enter a start date in the **From** box and an end date in the **To** box.
 
@@ -902,7 +902,7 @@ To search for order lines based on their subscription from date, follow these st
 
 To search for order lines based on their subscription to date, follow these steps:
 
-1. In the **Search & filter** pane, click **Subscription to**. 
+1. In the **Search & filter** pane, click **Subscription to**.
 
 2. Enter a start date in the **From** box and an end date in the **To** box.
 
@@ -913,7 +913,7 @@ To search for order lines based on their subscription to date, follow these step
 
 To search for order lines based on their actual receipt date (when the order line was fully received), follow these steps:
 
-1. In the **Search & filter** pane, click **Actual receipt date**. 
+1. In the **Search & filter** pane, click **Actual receipt date**.
 
 2. Enter a start date in the **From** box and an end date in the **To** box.
 
@@ -924,7 +924,7 @@ To search for order lines based on their actual receipt date (when the order lin
 
 To search for order lines based on their expected receipt date, follow these steps:
 
-1. In the **Search & filter** pane, click **Subscription to**. 
+1. In the **Search & filter** pane, click **Subscription to**.
 
 2. Enter a start date in the **From** box and an end date in the **To** box.
 
@@ -935,7 +935,7 @@ To search for order lines based on their expected receipt date, follow these ste
 
 To search for order lines based on their receipt due date, follow these steps:
 
-1. In the **Search & filter** pane, click **Subscription to**. 
+1. In the **Search & filter** pane, click **Subscription to**.
 
 2. Enter a start date in the **From** box and an end date in the **To** box.
 
@@ -956,7 +956,7 @@ Once you search for an order line, the following information appears in the Orde
 *   **Fund code.** The fund code being used to purchase the item.
 *   **Order status.** The status of the order.
 
-In the search results, click on an order line to view it. The PO Line details pane displays with additional information about the order line.
+In the search results, click on an order line to view it. The PO Line details pane displays with additional information about the order line. If the PO Line has been linked to an Agreement line in the Agreements app, a Linked Agreement Lines section will display in the PO Line details pane containing information about the linked Agreement Line.  See Agreements > Adding a PO line to an agreement line for more information.
 
 
 ## Editing an order line
@@ -1009,7 +1009,6 @@ In the search results, click on an order line to view it. The PO Line details pa
 
 2. In the **PO Line details** pane, click the **tag icon**.
 
-3. In the **Tags** pane, either select a tag from the box or enter a tag. 
+3. In the **Tags** pane, either select a tag from the box or enter a tag.
 
 4. Click the **X** on the Tags pane to close the pane and save the tag. The tag number updates to the number of tags applied to the order line.
-
