@@ -47,8 +47,8 @@ If you want to link or view organizations and/or internal contacts in a license 
 
 1. In the **Licenses** pane, click **New**.
 2. In the **New license** window, enter a **Name** for the license record.
-3. Select a license **Type** from the drop-down list. For example, local or consortial. License Types are configured in the Settings app. For more information, see Settings > Licenses > Pick list values.
-4. Select a **Status** from the drop-down list. License Statuses are configured in the Settings app. For more information, see Settings > Licenses > Pick list values.
+3. Select a license **Type** from the drop-down list. For example, local or consortial. License Types are configured in the Settings app. For more information, see [Settings > Licenses > Pick list values]({{< ref "/settings_licenses.md#settings--licenses--pick-list-values" >}}).
+4. Select a **Status** from the drop-down list. License Statuses are configured in the Settings app. For more information, see [Settings > Licenses > Pick list values]({{< ref "/settings_licenses.md#settings--licenses--pick-list-values" >}}).
 5. (Optional) To indicate when the license begins, enter a **Start date**.
 6. (Optional) To indicate when the license terminates, enter an **End date**. If the license doesn’t have an End date, select the **Open ended** checkbox.
 7. (Optional) Enter a **Description** of the license in the box.
@@ -97,7 +97,7 @@ Internal contacts must have a user record created in the Users app in order to b
 3. In the **Select User** dialog, in the **User search** box, enter part or all of the internal contact’s name and click **Search**.
 4. (Optional) Filter results by Status or by Patron group.
 5. In the **User Search Results** pane, click the **user** to select them. The user is added to the license record as an internal contact.
-6. Select a **Role** to assign to the internal contact from the drop-down list. Roles are configured in the Settings app. For more information, see Settings > Licenses > Pick list setup.
+6. Select a **Role** to assign to the internal contact from the drop-down list. Roles are configured in the Settings app. For more information, see [Settings > Licenses > Pick list setup]({{< ref "/settings_licenses.md#settings--licenses--pick-lists" >}}).
 7. Repeat steps 1-6 as needed. The internal contact saves once you save the license.
 
 
@@ -134,7 +134,7 @@ Organizations must have an organization record created in the Organizations app 
 3. In the **Select Organization** dialog, in the **Search & filter** box, enter part or all of the organization’s name, and click **Search**. Alternatively, you can select the All drop-down list and search for an organization based on the fields listed. For more information, see [Searching for an organization]({{< ref "/organizations.md#searching-for-an-organization" >}}).
 4. (Optional) Filter results by Organizations status, Tags, Is vendor, Country, Languages, or Payment method.
 5. In the Organizations pane, click the **organization** to select it. The Select Organization dialog closes and the organization is added to the license record.
-6. Select a **Role** for the organization from the drop-down list. Roles are configured in the Settings app under Licenses > License term pick list setup.
+6. Select a **Role** for the organization from the drop-down list. Roles are configured in the Settings app under [Licenses > License term pick list setup]({{< ref "/settings_licenses.md#settings--licenses--pick-lists" >}}).
 7. (Optional) Enter a **Note** in the box.
 8. Repeat steps 1-7 as needed. The organization saves once you save the license.
 
@@ -185,7 +185,8 @@ A core document is any central document relevant to the license record, for exam
 
 ### Terms
 
-Terms are the terms of use that define what you can or cannot do with the licensed content. In FOLIO, you can define the Terms that appear in license records through configurations in the Settings app. The Settings app is where you establish the term label, the type of term, default visibility of the term, and term status (primary or optional). For more information, see Settings > Licenses > Terms.
+Terms are the terms of use that define what you can or cannot do with the licensed content. In FOLIO, you can define the Terms that appear in license records through configurations in the Settings app. The Settings app is where you establish the term label, the type of term, default visibility of the term, and term status (primary or optional). For more information, see [Settings > Licenses > Terms]({{< ref "/settings_licenses.md#settings--licenses--terms" >}})
+
 
 Primary terms appear on every license record by default. Optional terms can be added on a license-by-license basis.
 
@@ -234,7 +235,7 @@ A supplementary document is any additional document relevant to the license reco
 
 1. Click **Add supplementary document.**
 2. Enter a **Name** in the box.
-3. Select a **Category** from the drop-down list. Categories for Supplementary documents can be configured in the Settings app under Licenses > License term pick list setup.
+3. Select a **Category** from the drop-down list. Categories for Supplementary documents can be configured in the Settings app under [Licenses > License term pick list setup]({{< ref "/settings_licenses.md#settings--licenses--pick-lists" >}}).
 4. (Optional) Enter a **Note** about the supplementary document.
 5. You must complete at least one of the following:
     *   Upload a file into the license record by dragging and dropping the file in the **Drag & drop to upload** box, or click **or choose file**.
@@ -267,7 +268,7 @@ To filter licenses by their status, in the **Search & filter** pane, click **Sta
 *   **Active.** Licenses currently in use by your library.
 *   **Expired.** Licenses no longer in use by your library.
 
-Status values are configured in Settings > Licenses > Pick list values.
+Status values are configured in [Settings > Licenses > Pick list values]({{< ref "/settings_licenses.md#settings--licenses--pick-list-values" >}}).
 
 
 ### Type
@@ -279,7 +280,7 @@ To filter licenses by their type, in the **Search & filter** pane, click **Type*
 *   **Local.** Licenses specific to your library.
 *   **Consortial.** Licenses entered into through a library consortium.
 
-Type values are configured in Settings > Licenses > Pick list values.
+Type values are configured in [Settings > Licenses > Pick list values]({{< ref "/settings_licenses.md#settings--licenses--pick-list-values" >}}).
 
 
 ### Organizations
@@ -306,7 +307,7 @@ To filter licenses by their associated organizations’ roles, follow these step
 3. In the drop-down list, search for the role.
 4. Select the role you want to filter by. The search results appear in the Licenses pane.
 
-Organization role values are configured in Settings > Licenses > Pick list values.
+Organization role values are configured in [Settings > Licenses > Pick list values]({{< ref "/settings_licenses.md#settings--licenses--pick-list-values" >}}).
 
 
 ### Tags
@@ -331,10 +332,10 @@ To filter licenses by their terms, follow these steps:
 4. Select a **Comparator** from the drop-down list. The comparator options depend on the term selected.
 5. If the **Value** box is available, select or enter a value. Whether the value box is available depends on which comparator is selected.
 6. (Optional) To continue to build the term filter, click **Add rule.**
-7. (Optional) To search for licenses using multiple term filters, click **Add term filter.** Note:** **To delete a rule or term filter in the Term filter builder, click on the **trash can icon** next to the rule or term filter.
+7. (Optional) To search for licenses using multiple term filters, click **Add term filter.** Note: To delete a rule or term filter in the Term filter builder, click on the **trash can icon** next to the rule or term filter.
 8. Click **Apply.** The search results appear in the Licenses pane.
 
-Term values are configured in Settings > Licenses > Pick list values.
+Term values are configured in [Settings > Licenses > Pick list values]({{< ref "/settings_licenses.md#settings--licenses--pick-list-values" >}}).
 
 
 ## Viewing a license
@@ -520,8 +521,8 @@ If you want to link or view organizations and/or internal contacts in a license 
 
 1. In the **Licenses** pane, click **New**.
 2. In the **New license** window, enter a **Name** for the license record.
-3. Select a license **Type** from the drop-down list. For example, local or consortial. License Types are configured in the Settings app. For more information, see Settings > Licenses > Pick list values.
-4. Select a **Status** from the drop-down list. License Statuses are configured in the Settings app. For more information, see Settings > Licenses > Pick list values.
+3. Select a license **Type** from the drop-down list. For example, local or consortial. License Types are configured in the Settings app. For more information, see [Settings > Licenses > Pick list values]({{< ref "/settings_licenses.md#settings--licenses--pick-list-values" >}}).
+4. Select a **Status** from the drop-down list. License Statuses are configured in the Settings app. For more information, see [Settings > Licenses > Pick list values]({{< ref "/settings_licenses.md#settings--licenses--pick-list-values" >}}).
 5. (Optional) To indicate when the license begins, enter a **Start date**.
 6. (Optional) To indicate when the license terminates, enter an **End date**. If the license doesn’t have an End date, select the **Open ended** checkbox.
 7. (Optional) Enter a **Description** of the license in the box.
@@ -570,7 +571,7 @@ Internal contacts must have a user record created in the Users app in order to b
 3. In the **Select User** dialog, in the **User search** box, enter part or all of the internal contact’s name and click **Search**.
 4. (Optional) Filter results by Status or by Patron group.
 5. In the **User Search Results** pane, click the **user** to select them. The user is added to the license record as an internal contact.
-6. Select a **Role** to assign to the internal contact from the drop-down list. Roles are configured in the Settings app. For more information, see Settings > Licenses > Pick list setup.
+6. Select a **Role** to assign to the internal contact from the drop-down list. Roles are configured in the Settings app. For more information, see [Settings > Licenses > Pick list setup]({{< ref "/settings_licenses.md#settings--licenses--pick-lists" >}}).
 7. Repeat steps 1-6 as needed. The internal contact saves once you save the license.
 
 
@@ -607,7 +608,7 @@ Organizations must have an organization record created in the Organizations app 
 3. In the **Select Organization** dialog, in the **Search & filter** box, enter part or all of the organization’s name, and click **Search**. Alternatively, you can select the All drop-down list and search for an organization based on the fields listed. For more information, see Searching for an organization.
 4. (Optional) Filter results by Organizations status, Tags, Is vendor, Country, Languages, or Payment method.
 5. In the Organizations pane, click the **organization** to select it. The Select Organization dialog closes and the organization is added to the license record.
-6. Select a **Role** for the organization from the drop-down list. Roles are configured in the Settings app under Licenses > License term pick list setup.
+6. Select a **Role** for the organization from the drop-down list. Roles are configured in the Settings app under [Licenses > License term pick list setup]({{< ref "/settings_licenses.md#settings--licenses--pick-lists" >}}).
 7. (Optional) Enter a **Note** in the box.
 8. Repeat steps 1-7 as needed. The organization saves once you save the license.
 
@@ -658,7 +659,7 @@ A core document is any central document relevant to the license record, for exam
 
 ### Terms
 
-Terms are the terms of use that define what you can or cannot do with the licensed content. In FOLIO, you can define the Terms that appear in license records through configurations in the Settings app. The Settings app is where you establish the term label, the type of term, default visibility of the term, and term status (primary or optional). For more information, see Settings > Licenses > Terms.
+Terms are the terms of use that define what you can or cannot do with the licensed content. In FOLIO, you can define the Terms that appear in license records through configurations in the Settings app. The Settings app is where you establish the term label, the type of term, default visibility of the term, and term status (primary or optional). For more information, see [Settings > Licenses > Terms]({{< ref "/settings_licenses.md#settings--licenses--terms" >}}).
 
 Primary terms appear on every license record by default. Optional terms can be added on a license-by-license basis.
 
@@ -707,7 +708,7 @@ A supplementary document is any additional document relevant to the license reco
 
 1. Click **Add supplementary document.**
 2. Enter a **Name** in the box.
-3. Select a **Category** from the drop-down list. Categories for Supplementary documents can be configured in the Settings app under Licenses > License term pick list setup.
+3. Select a **Category** from the drop-down list. Categories for Supplementary documents can be configured in the Settings app under [Licenses > License term pick list setup]({{< ref "/settings_licenses.md#settings--licenses--pick-lists" >}}).  
 4. (Optional) Enter a **Note** about the supplementary document.
 5. You must complete at least one of the following:
     *   Upload a file into the license record by dragging and dropping the file in the **Drag & drop to upload** box, or click **or choose file**.
@@ -740,7 +741,7 @@ To filter licenses by their status, in the **Search & filter** pane, click **Sta
 *   **Active.** Licenses currently in use by your library.
 *   **Expired.** Licenses no longer in use by your library.
 
-Status values are configured in Settings > Licenses > Pick list values.
+Status values are configured in [Settings > Licenses > Pick list values]({{< ref "/settings_licenses.md#settings--licenses--pick-list-values" >}}).
 
 
 ### Type
@@ -752,7 +753,7 @@ To filter licenses by their type, in the **Search & filter** pane, click **Type*
 *   **Local.** Licenses specific to your library.
 *   **Consortial.** Licenses entered into through a library consortium.
 
-Type values are configured in Settings > Licenses > Pick list values.
+Type values are configured in [Settings > Licenses > Pick list values]({{< ref "/settings_licenses.md#settings--licenses--pick-list-values" >}}).
 
 
 ### Organizations
@@ -779,7 +780,7 @@ To filter licenses by their associated organizations’ roles, follow these step
 3. In the drop-down list, search for the role.
 4. Select the role you want to filter by. The search results appear in the Licenses pane.
 
-Organization role values are configured in Settings > Licenses > Pick list values.
+Organization role values are configured in [Settings > Licenses > Pick list values]({{< ref "/settings_licenses.md#settings--licenses--pick-list-values" >}}).
 
 
 ### Tags
@@ -807,7 +808,7 @@ To filter licenses by their terms, follow these steps:
 7. (Optional) To search for licenses using multiple term filters, click **Add term filter.** Note: To delete a rule or term filter in the Term filter builder, click on the **trash can icon** next to the rule or term filter.
 8. Click **Apply.** The search results appear in the Licenses pane.
 
-Term values are configured in Settings > Licenses > Pick list values.
+Term values are configured in [Settings > Licenses > Pick list values]({{< ref "/settings_licenses.md#settings--licenses--pick-list-values" >}}).
 
 
 ## Viewing a license
