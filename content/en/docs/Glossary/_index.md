@@ -14,13 +14,13 @@ weight: 800
   <tr>
    <td>Accounting code
    </td>
-   <td>External systems reference number for a vendor.
+   <td>A reference number used to identify a vendor in an external payment system.
    </td>
   </tr>
   <tr>
    <td>Acquisition unit
    </td>
-   <td>An additional layer you can add to acquisitions records that restrict a user's ability to interact with those records unless they have been assigned to that unit. While acquisition permissions may allow a user to perform certain actions within a particular app to any record within that app, acquisition units can further limit user access to only individual records.
+   <td>An additional layer you can add to acquisitions records that restricts a user’s ability to interact with those records unless they have been assigned to that unit. For example, you may create acquisition units to represent the different libraries within your library system. Units are defined and determined by your library in the Settings app.
    </td>
   </tr>
   <tr>
@@ -30,51 +30,45 @@ weight: 800
    </td>
   </tr>
   <tr>
-   <td>Assignment status
-   </td>
-   <td>Condition of an item’s workflow state.
-   </td>
-  </tr>
-  <tr>
    <td>Availability
    </td>
-   <td>Describes information about where an item is (available; recently returned) or if it can be circulated. In FOLIO, "Item Status" displays availability.
+   <td>The status of an item in terms of circulation (for example, available; recently returned). In FOLIO, "Item Status" displays availability.
    </td>
   </tr>
   <tr>
    <td>Batch group
    </td>
-   <td>Assigned to invoices for batch export to an external accounts payable system. Invoices from the same library are generally processed together, as determined by the batch group assignment on each invoice.
+   <td>Invoices grouped together for export to an external accounts payable system. Invoices from the same library are generally processed together, as determined by the batch group assignment on each invoice.
    </td>
   </tr>
   <tr>
    <td>Bound-with
    </td>
-   <td>Multiple separate bibliographic titles that are bound together in a single volume, most frequently by a former owner but also sometimes by a publisher and for other reasons.
+   <td>Multiple, separate bibliographic titles that are bound together in a single volume, most frequently by a former owner but also sometimes by a publisher and for other reasons.
+   </td>
+  </tr>
+  <tr>
+   <td>Budget
+   </td>
+   <td>A finance record that describes the amount of money available for a fiscal year within a fund that includes a definition of the allowed expenditure percentage and allowed encumbrance percentage. Transfers and allocations transactions are performed against a budget. Expense classes can be assigned to a budget.
    </td>
   </tr>
   <tr>
    <td>Bug
    </td>
-   <td>An error, fault or flaw in a software system. 
+   <td>An error, fault or flaw in a software system.
    </td>
   </tr>
   <tr>
    <td>Campus
    </td>
-   <td>The second level of the four level location structure (Institution -> Campus -> Library -> Location).  The structure is hierarchical - a campus must be associated to one institution, and a library must be associated to one campus.
+   <td>The second level of the four level location structure (Institution -> Campus -> Library -> Location).  The structure is hierarchical - a campus must be linked to one  institution, and a library must be linked to one campus.
    </td>
   </tr>
   <tr>
    <td>Child record
    </td>
-   <td>Associated with linking bound-withs, which allows for "links" between separate bibliographic records and/or a bibliographic record and items belonging to another bibliographic record. Child records<strong> </strong>are those associated bibliographic records. 
-   </td>
-  </tr>
-  <tr>
-   <td>Code
-   </td>
-   <td>See <em>accounting code</em>.
+   <td>Associated with linking bound-withs, which allows for "links" between separate bibliographic records and/or a bibliographic record and items belonging to another bibliographic record. Child records<strong> </strong>are those associated bibliographic records.
    </td>
   </tr>
   <tr>
@@ -92,43 +86,55 @@ weight: 800
   <tr>
    <td>Department
    </td>
-   <td>Organizations in your institution that have permission and use of FOLIO.
+   <td>Organizations at a library’s institution of which patrons and staff may be a part, for example, Campus Facilities or Chemical Engineering.
    </td>
   </tr>
   <tr>
    <td>Discovery display name
    </td>
-   <td>The display of a service point in the UI FOLIO.
+   <td>The name of a service point to be displayed to patrons in a discovery layer, if needed.
    </td>
   </tr>
   <tr>
    <td>Effective call number (item), eye readable
    </td>
-   <td>A way of presenting the call number that may be easier to read for a human being.
+   <td>A way of presenting the call number that may be easier for a human being to read.
    </td>
   </tr>
   <tr>
    <td>Effective call number (item), normalized
    </td>
-   <td>A standardized way of presenting the call number that may be harder to read, but might be easier for the machine to process.
+   <td>A standardized way of presenting the call number that may be harder for a human being to read, but easier for a machine to process.
    </td>
   </tr>
   <tr>
-   <td>Effective location
+   <td>Expense class
    </td>
-   <td>FOLIO has permanent and temporary location fields on the Holdings and Items records. There is built-in logic for FOLIO to compute the item's "effective location" based on what values are set. 
+   <td>A fiscal entity used to track transactions against a specific purpose or function within a Fund.
+   </td>
+  </tr>
+  <tr>
+   <td>Item effective location
+   </td>
+   <td>FOLIO has permanent and temporary location fields on the Holdings and Items records. There is built-in logic for FOLIO to compute the item's "effective location" based on what values are set.
    </td>
   </tr>
   <tr>
    <td>eHoldings
    </td>
-   <td>Contains information such as the resource’s URL, call number, etc to enable staff to locate and manage library electronic holdings. 
+   <td>Contains information such as the resource’s URL, call number, etc to enable staff to locate and manage library electronic holdings.
+   </td>
+  </tr>
+  <tr>
+   <td>Encumbrance
+   </td>
+   <td>An amount of money that the library commits to pay to a vendor from a fund budget for ordered materials that will be invoiced in the future.
    </td>
   </tr>
   <tr>
    <td>ERM
    </td>
-   <td>Electronic Resource Management.
+   <td>Electronic Resource Management. ERM is used within the FOLIO community to describe functions that manage the acquisition, licensing, access, maintenance, usage, retention, and de-selection of electronic resources.  
    </td>
   </tr>
   <tr>
@@ -140,25 +146,25 @@ weight: 800
   <tr>
    <td>Expiration date (patron blocks)
    </td>
-   <td>Time set before specific permissions or privileges for a user expire and block that user from those privileges.
+   <td>The date at which the patron block is removed from the patron record, and the blocked privileges are restored to their user account.
    </td>
   </tr>
   <tr>
    <td>Expiration date (user record)
    </td>
-   <td>Time set before the user lapses and ceases to be a person with active permissions.
-   </td>
-  </tr>
-  <tr>
-   <td>External system ID
-   </td>
-   <td>Unique Identifiers to create links to outside organization and vendors.
+   <td>The amount of time set before the user record lapses and the user no longer has active permissions or has ability to borrow items
    </td>
   </tr>
   <tr>
    <td>Fee/fine
    </td>
-   <td>Monies attached to patron interactions for reasons such as damaged or late materials.
+   <td>Charges attached to patron records for reasons such as damaged materials, late item returns, or rental fees.
+   </td>
+  </tr>
+  <tr>
+   <td>Fiscal year
+   </td>
+   <td>The twelve-month period a library uses to manage its finances.
    </td>
   </tr>
   <tr>
@@ -170,31 +176,37 @@ weight: 800
   <tr>
    <td>Fund
    </td>
-   <td>Falls under acquisitions and the ‘Acquisition Unit,’ associating streams of money from which invoices and orders are paid.
+   <td>A fiscal entity used to track transactions against a general purpose or function' within a ledger. Funds are associated with only one ledger. Fund information persists from year to year as new budgets are created for the fund each year.
+   </td>
+  </tr>
+  <tr>
+   <td>FYRO
+   </td>
+   <td>Fiscal year roll-over. After ordering and invoice processing is completed for the fiscal year, a library performs fiscal year roll-over processes to open new fiscal year budgets, close budgets from the prior fiscal year, and create encumbrance transactions in the new fiscal year.
    </td>
   </tr>
   <tr>
    <td>Group
    </td>
-   <td>Related to acquisitions and the ‘Acquisition Unit’.
+   <td>A collection of one or more funds grouped together. A group can bring multiple funds together regardless of fiscal year and ledger which enables the total amount of money available or allocated across multiple funds to be analyzed.
    </td>
   </tr>
   <tr>
    <td>Hidden permission
    </td>
-   <td>One that you can not see in the list of permissions in the user interface.
+   <td>A permission that you do not see in the list of permissions to assign to users.  Hidden permissions are generally very granular permissions that are bundled together in larger permissions sets that are then made viewable to assign to users.
    </td>
   </tr>
   <tr>
    <td>Holdings
    </td>
-   <td>Contains information such as location, call number, and volumes owned, to enable staff to locate and manage library holdings. Holdings records may describe library holdings that are physical, electronic, or other formats. 
+   <td>A data record that contains information such as location, call number, and volumes owned, to enable staff to locate and manage library holdings. Holdings records may describe library holdings that are physical, electronic, or other formats.
    </td>
   </tr>
   <tr>
    <td>Identifier
    </td>
-   <td>A unique label, such as an ISBN, ASIN, or OCLC number. 
+   <td>A unique label of a record, such as an ISBN, ASIN, or OCLC number.
    </td>
   </tr>
   <tr>
@@ -204,15 +216,33 @@ weight: 800
    </td>
   </tr>
   <tr>
+   <td>In-app report
+   </td>
+   <td>A specific report or reporting function that has been developed as an added feature in a FOLIO app, rather than via an external reporting tool that an institution may be using.
+   </td>
+  </tr>
+  <tr>
    <td>Instance
    </td>
-   <td>Contains bibliographic and administrative information about a particular title or item; are mostly derived from full bibliographic records (in MARC or other formats) and are intended to provide information for library staff to identify and select records in order to perform work on associated holdings and items. 
+   <td>A bibliographic record. Contains bibliographic and administrative information about a particular title or item; are mostly derived from full bibliographic records (in MARC or other formats) and are intended to provide information for library staff to identify and select records in order to perform work on associated holdings and items.
    </td>
   </tr>
   <tr>
    <td>Institution
    </td>
-   <td>In FOLIO, an Institution is the top level of the four-level location structure (Institution -> Campus -> Library -> Location). 
+   <td>In FOLIO, an Institution is the top level of the four-level location structure (Institution -> Campus -> Library -> Location).
+   </td>
+  </tr>
+  <tr>
+   <td>Invoice
+   </td>
+   <td>A list of the payments due for materials ordered by a library from a vendor.
+   </td>
+  </tr>
+  <tr>
+   <td>Invoice line
+   </td>
+   <td>The individual line items being paid for within each invoice. Each line consists of a description of the materials being paid for, the costs incurred, and a vendor reference number. Invoices are primarily a sum of the information from these lines.
    </td>
   </tr>
   <tr>
@@ -236,117 +266,121 @@ weight: 800
   <tr>
    <td>Item
    </td>
-   <td>Contains information needed to identify and track a single item or piece, such as barcode, availability, and material type.
+   <td>A data record representing a single item. Contains information needed to identify and track a single item or piece, such as barcode, availability, and material type.
    </td>
   </tr>
   <tr>
    <td>Item HRID
    </td>
-   <td>FOLIO generated ID for the Item record.
+   <td>Human readable ID. A FOLIO generated or migrated  ID for the Item record.
    </td>
   </tr>
   <tr>
    <td>Item status
    </td>
-   <td>Item Status is a field that reflects information about an item's availability, staff processing, and needs for future use.
-<p>
-See Item State in FOLIO for a discussion of the three-part item state structure (currently in development).
-   </td>
-  </tr>
-  <tr>
-   <td>JIRA
-   </td>
-   <td>Software used to describe and track requested features and bugs in a system, also called "issues." The name JIRA is inherited from the Japanese word "Gojira" which means "Godzilla."
+   <td>A field that currently reflects item availability, and in future development will also reflect information about an item's staff processing, and needs for future use.
    </td>
   </tr>
   <tr>
    <td>KB
    </td>
-   <td>Knowledge base: a self-serve web-based library of information about a product, topic, etc.
-   </td>
-  </tr>
-  <tr>
-   <td>Keyboard navigation
-   </td>
-   <td>Adoption of platform-wide keyboard shortcuts in FOLIO requires implementation of the shortcuts in each app.
+   <td>Knowledge base. A self-serve web-based library of information about a product, topic, etc.
    </td>
   </tr>
   <tr>
    <td>LDP
    </td>
-   <td>Library Data Platform: A database containing data extracted from FOLIO on a scheduled basis.
+   <td>Library Data Platform. A project that develops an open-source analytics platform  (<a href="https://github.com/library-data-platform">https://github.com/library-data-platform</a>) which can be utilized by FOLIO reporting (<a href="https://github.com/folio-org/folio-analytics">https://github.com/folio-org/folio-analytics</a>) for statistical and operational analytics.  The term, "LDP," is sometimes also used as a shorthand for a specific component of the platform, such as the LDP database or the LDP query builder app which runs in FOLIO.
    </td>
   </tr>
   <tr>
    <td>Ledger
    </td>
-   <td>Categorize funds that need to be kept distinctly separate from other funds or that share common fiscal year roll-over behavior. Each fund record is assigned to only one ledger.
+   <td>A collection of funds that need to be kept fiscally separate from another ledger’s collection of funds. All funds within a ledger share future fiscal year rollover behavior. Each fund record is assigned to only one ledger.
    </td>
   </tr>
   <tr>
    <td>Library
    </td>
-   <td>The third level of the four-level location structure (Institution -> Campus -> Library -> Location). The structure is hierarchical - a library must be associated to one campus, and a location must be associated to one library. 
+   <td>The third level of the four-level location structure (Institution -> Campus -> Library -> Location). The structure is hierarchical - a library must be linked to one campus, and a location must be linked to a library. A library may have more than one location.
    </td>
   </tr>
   <tr>
    <td>Loan type
    </td>
-   <td>Used as an element in FOLIO circulation rules. Items must have a permanent loan type and can also have a temporary loan type. If an item has a temporary loan type set, that is the loan type that would be matched on in circulation rules.
+   <td>An optional element in FOLIO circulation rules. Items must have a permanent loan type and can also have a temporary loan type. If an item has a temporary loan type set, that is the loan type that would be matched on in circulation rules.
    </td>
   </tr>
   <tr>
    <td>Location
    </td>
-   <td>A location is the fourth level of the four-level location structure (Institution -> Campus -> Library -> Location). Locations provide functionality for items including item routing, discovery display names, and remote storage configuration. Location data is stored on the holdings record and inherited by the item; you can also set a temporary holdings location, as well as an item permanent location and item temporary location. FOLIO uses those values to compute an item’s “effective location”, which is used in circulation. See <a href="https://wiki.folio.org/display/RA/Effective+Location+Logic">https://wiki.folio.org/display/RA/Effective+Location+Logic</a> 
+   <td>The fourth level of the four-level location structure (Institution -> Campus -> Library -> Location). Locations are used in functionality including item routing, fees and fines, and remote storage configuration. Items may also have an “effective location” value that is used in circulation.
    </td>
   </tr>
   <tr>
    <td>LSP
    </td>
-   <td>Library Services Platform: The next generation of library automation systems that extend and improve upon the functions of the ILS (integrated library system). Term coined by Marshall Breeding in 2011).
+   <td>Library Services Platform. The next generation of library automation systems that extend and improve upon the functions of the ILS (integrated library system). The term was coined by Marshall Breeding in 2011.
    </td>
   </tr>
   <tr>
    <td>Material type
    </td>
-   <td>A required field on the item record, used as an element in FOLIO circulation rules. The field is intended to describe the material nature of a specific item, with the intention to permit more specific information than resource type alone.
+   <td>A required field on the item record, used as an optional element in FOLIO circulation rules. The field is intended to describe the material nature of a specific item, with the intention to permit more specific information than resource type alone.
+   </td>
+  </tr>
+  <tr>
+   <td>Metadb
+   </td>
+   <td>The open-source analytics platform used in LDP (Library Data Platform), introduced at <a href="https://www.cni.org/topics/e-science/perspectives-on-metadb-analytics-in-the-library">CNI Fall 2020</a>.
    </td>
   </tr>
   <tr>
    <td>MM
    </td>
-   <td>Metadata Management. Essential bibliographic management functions, such as creating, editing, suppressing, deleting, importing, exporting, replacing, overlaying, and reporting. 
+   <td>Metadata Management. MM is used within the FOLIO community to describe essential bibliographic management functions, such as creating, editing, suppressing, deleting, importing, exporting, replacing, overlaying, and reporting.
    </td>
   </tr>
   <tr>
    <td>Mode of issuance
    </td>
-   <td>Describes the abstract form of the resource (eg., monograph, subunit).
+   <td>The abstract form of the resource (eg., monograph, subunit).
    </td>
   </tr>
   <tr>
-   <td>Needed for
+   <td>Net transfers
    </td>
-   <td>Part of Item State functionality - allows libraries to assign a path for an item to follow when it is needed for specific things. These may be for staff needs, or for patron needs. Needed For might include Requests; Course Reserves; Binding; etc.
+   <td>Money transferred between funds during a fiscal year.
+   </td>
+  </tr>
+  <tr>
+   <td>Order
+   </td>
+   <td>A purchase order featuring a list of titles or packages (physical or electronic) being ordered by a library from a vendor.
    </td>
   </tr>
   <tr>
    <td>Organization
    </td>
-   <td>Related to acquisitions and the ‘Acquisition Unit,’ these external companies or vendors that a library interacts with for services or materials.
+   <td>Any institution with whom your library interacts (this may or may not be an institution from whom you purchase materials).
+   </td>
+  </tr>
+  <tr>
+   <td>Package (in Orders)
+   </td>
+   <td>A purchase order that represents the acquisition of multiple titles.
    </td>
   </tr>
   <tr>
    <td>Parent record
    </td>
-   <td>Serves as that main link in a bound-with situation: It will have an item record (and thus barcode) that all other bibliographic records associated with a given bound-with volume can link to. Child records are those associated bibliographic records. Child records will have LKR fields in the bibliographic record that include the ADM number of the parent record and "Enum. Level.1" information found in the parent record's item record. Doing this allows all item record information in the parent record to display in the child record, so the same barcode, sublibrary, collection, description, call number, etc. will show up for all titles in a bound-with.
+   <td>The main link in a bound-with situation: It will have an item record (and thus barcode) that all other bibliographic records associated with a given bound-with volume can link to. Child records are those associated bibliographic records. Child records will have LKR fields in the bibliographic record that include the ADM number of the parent record and "Enum. Level.1" information found in the parent record's item record. Doing this allows all item record information in the parent record to display in the child record, so the same barcode, sublibrary, collection, description, call number, etc. will show up for all titles in a bound-with.
    </td>
   </tr>
   <tr>
    <td>Patron blocks
    </td>
-   <td>Controls the conditions and limits for patron circulation privileges.
+   <td>Optional limits that libraries can impose on patron circulation privileges, removing privileges when the limits are exceeded. For example, a library can say that if a patron has five lost items, they can no longer borrow books until that number is reduced to four lost items or fewer.
    </td>
   </tr>
   <tr>
@@ -358,37 +392,37 @@ See Item State in FOLIO for a discussion of the three-part item state structure 
   <tr>
    <td>Permission
    </td>
-   <td>Setting that allows a user to perform one task in FOLIO while not performing others.
+   <td>Value granted to a FOLIO user that allows them access to view, create, update or delete records in FOLIO, or to carry out specific FOLIO tasks.
    </td>
   </tr>
   <tr>
    <td>Permission set
    </td>
-   <td>Grouping of permissions that allow a user to perform a set of tasks while not performing others.
+   <td>A group of permissions that allows a user to perform a specific set of tasks.
    </td>
   </tr>
   <tr>
    <td>Persona
    </td>
-   <td>Refers to a practice in software design that involves creating detailed biographies of fictitious users of the future product: these are called “personas”. The team creates one persona for each category it deems important to serve well.
+   <td>A detailed biography of a fictitious user of a software product. A software design team creates a persona for each category it deems important to serve.
    </td>
   </tr>
   <tr>
-   <td>Process (specifically referring to item state)
+   <td>Piece
    </td>
-   <td>Part of Item State functionality - describes a staff process that an item is in. Processes might include Digitization; Repair; Cataloging; etc.
+   <td>A subsection of a receiving title that is expected to be received. For example, if the ordered title is a journal subscription, then a piece of that title could be volume one of the journal.
    </td>
   </tr>
   <tr>
    <td>POL
    </td>
-   <td>Purchase Order Line. Orders in FOLIO can potentially be set up with multiple purchase order lines for orders that have multiple titles.
+   <td>Purchase Order Line. A purchase order line contains one of the titles or packages being ordered by the library. Orders can contain multiple order lines.
    </td>
   </tr>
   <tr>
    <td>Proxy
    </td>
-   <td>A person who is authorized (by a sponsor) to act on their behalf to checkout, renew, recall, etc. 
+   <td>A person who is authorized (by a sponsor) to act on their behalf to checkout, renew, recall, etc.
    </td>
   </tr>
   <tr>
@@ -400,13 +434,19 @@ See Item State in FOLIO for a discussion of the three-part item state structure 
   <tr>
    <td>QuickMARC
    </td>
-   <td>Editor for MARC records that opens from the Inventory app to edit specific MARC records.
+   <td>An editor for MARC records that opens from the Inventory app to edit specific MARC records.
    </td>
   </tr>
   <tr>
    <td>RA
    </td>
-   <td>Resource Access: RA is used within the FOLIO community to describe functions that allow libraries to circulate and provide access to materials. The apps for Resource Access include Check In, Check Out, Requests, Courses, and Circulation Log. RA functions are also included in the Inventory App and Users App.
+   <td>Resource Access. RA is used within the FOLIO community to describe functions that allow libraries to circulate and provide access to materials and support patron service needs.
+   </td>
+  </tr>
+  <tr>
+   <td>Receiving
+   </td>
+   <td>The management of information about ordered materials that have arrived at a library by delivery from a vendor.  Also known as serials check-in and arriving.
    </td>
   </tr>
   <tr>
@@ -418,7 +458,7 @@ See Item State in FOLIO for a discussion of the three-part item state structure 
   <tr>
    <td>RM
    </td>
-   <td>Resource Management: RM is used within the FOLIO community to describe a category of functions which include Acquisitions, Finance/Budgets, Organizations/Vendors, and Electronic Resource Management.
+   <td>Resource Management. RM is used within the FOLIO community to describe a category of acquisitions functions which include Finance/Budgets, Organizations/Vendors, Orders, Invoices, and Electronic Resource Management.
    </td>
   </tr>
   <tr>
@@ -430,43 +470,43 @@ See Item State in FOLIO for a discussion of the three-part item state structure 
   <tr>
    <td>Shelving lag time
    </td>
-   <td>Locally determine time-frame between the return of material and a time determined it should be reshelved.
+   <td>Locally determined time-frame between the return of material and the time it should be reshelved. This functionality is not yet in place for the Honeysuckle version of FOLIO.
    </td>
   </tr>
   <tr>
    <td>SIG
    </td>
-   <td>Special Interest Group: A SIG consists of practitioners from libraries and services providers that are interested in contributing to a specific functional area of the FOLIO platform.
+   <td>Special Interest Group. A SIG consists of a group of subject-matter experts that are interested in contributing to a specific functional area of the FOLIO platform.
    </td>
   </tr>
   <tr>
    <td>Sponsor
    </td>
-   <td>A person who authorizes another person to do something on his or her behalf i.e.  checkout, renew, recall, etc. 
+   <td>A person who authorizes another person to do something on his or her behalf, i.e., checkout, renew, recall, etc.
    </td>
   </tr>
   <tr>
    <td>SRS
    </td>
-   <td>Source Record Storage. If an instance has an underlying MARC record, then this record is stored in SRS. The underlying MARC record is also named <em>the source of truth.</em> 
+   <td>Source Record Storage. A storage layer in FOLIO. If an instance has an underlying MARC record, then this record is stored in SRS. The underlying MARC record is also named <em>the source of truth.</em>
    </td>
   </tr>
   <tr>
    <td>Tag
    </td>
-   <td>A cross-FOLIO application, tags will allow for faceting/filtering search results, batching things that have similar characteristics, and reporting categories.
+   <td> A label applied to a FOLIO record that allows for cross-app faceting, filtering, record batching and reporting.
    </td>
   </tr>
   <tr>
    <td>Tenant
    </td>
-   <td>A single installation of FOLIO. Libraries may refer to their FOLIO server as “single-tenant” or “multi-tenant” depending on how their hosting environment is configured.
+   <td>A client in FOLIO whose data are stored separately and are accessible and visible separately from other clients. FOLIO installations may be “single-tenant” or “multi-tenant” depending on how their hosting environment is configured. A client is typically a library or a branch library. Each tenant uses its own set of deployed modules.
    </td>
   </tr>
   <tr>
    <td>Token
    </td>
-   <td>Used to auto-fill content in a notice when it is sent. For example, if a notice template includes the token {{item.title}}, the notice will replace the token with the title of the item when the notice is delivered to the patron.
+   <td>A value in a notice used to dynamically fill content in a notice when it is sent. For example, if a notice template includes the token {{item.title}}, when the notice is generated, {{item.title}} will be replaced by the title of the item to which the notice is referring.
    </td>
   </tr>
   <tr>
@@ -476,21 +516,21 @@ See Item State in FOLIO for a discussion of the three-part item state structure 
    </td>
   </tr>
   <tr>
-   <td>User management
+   <td>UM
    </td>
-   <td>The application (Users) wherein users are managed, along with their permissions and permission sets.
+   <td>User Management. UM is used within the FOLIO community to describe practices at libraries for managing patron and staff records, including permissions to the FOLIO system itself.
    </td>
   </tr>
   <tr>
    <td>Vendor
    </td>
-   <td>External company that supplies materials or services to the library.
+   <td>Any institution from whom your library purchases materials or services.
    </td>
   </tr>
   <tr>
    <td>Visible permission
    </td>
-   <td>One that you can see in the list of permissions in the UI. They can be assigned to patrons directly, and/or you can add them to a permission set through Settings → Users → General →  Permission Sets.
+   <td>One that you can see in the list of permissions in the UI. They can be assigned to users directly or used to create groups of permissions called permission sets that can be assigned to users directly.
    </td>
   </tr>
   <tr>
@@ -500,5 +540,3 @@ See Item State in FOLIO for a discussion of the three-part item state structure 
    </td>
   </tr>
 </table>
-
-
