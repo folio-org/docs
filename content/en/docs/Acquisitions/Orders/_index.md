@@ -2,7 +2,7 @@
 ---
 title: "Orders"
 linkTitle: "Orders"
-date: 2021-05-16
+date: 2021-08-02
 weight: 30
 tags: ["parenttopic"]
 ---
@@ -702,7 +702,7 @@ In the **Search & filter** pane, click **Payment status** and select any applica
 *   **Awaiting payment.** Order lines awaiting payment.
 *   **Cancelled.** Order lines with cancelled payment.
 *   **Fully paid.** Order lines that are fully paid.
-*   **Partially paid.** Order lines that are partially paid.
+*   **Partially paid.** Order lines that are partially paid. Note: Once one or more invoices connected to a purchase order line have been "Approved", the payment status on the purchase order is changed to "Partially paid."  See [Invoices > Approving an invoice]({{< ref "/invoices.md#approving-an-invoice" >}}).
 *   **Payment not required.** Order lines that do not require payment.
 *   **Pending.** Order lines with pending payment.
 
