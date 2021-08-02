@@ -6,6 +6,10 @@ weight: 10
 
 ---
 
+{{% alert title="VERSION" color="info"%}}
+This documentation currently supports the Honeysuckle version of FOLIO. 
+{{% /alert %}}
+
 Welcome to FOLIO documentation. FOLIO is an open source project that creates a new paradigm for collaboration between libraries, developers, and vendors.  This open platform moves the industry well beyond the traditional library management system, offering libraries more choices of features and services.
 
 ![FOLIO Intro](/img/FOLIO_6.png)

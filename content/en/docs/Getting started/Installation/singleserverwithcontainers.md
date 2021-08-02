@@ -29,14 +29,6 @@ A FOLIO instance is divided into two main components.  The first component is Ok
 | RAM             | 12GB                | 20GB                    |
 | CPU             | 4                   | 8                       |
 
-Clone this repository, cd into the directory that is created
-```
-cd ~
-git clone https://github.com/folio-org/folio-install
-cd folio-install
-git checkout q3-2020
-cd runbooks/single-server
-```
 
 ## Installing Okapi
 
@@ -117,14 +109,46 @@ sudo chmod +x /usr/local/bin/docker-compose
 Take into account that you have to change the **KAFKA_ADVERTISED_LISTENERS** value for the private IP of your server, instead of 10.0.2.15 for a Vagrant box.
 
 ```
-vim ~/folio-install/runbooks/single-server/scripts/docker-compose-kafka-zk.yml  # chnage IP in KAFKA_ADVERTISED_LISTENERS
+mkdir ~/folio-install
+cd folio-install
+vim docker-compose-kafka-zk.yml
+```
+
+Insert this content into the file. Change the IP Address in KAFKA_ADVERTISED_LISTENERS to the local IP of your server on which you run Kafka:
+```
+version: '2'
+services:
+  zookeeper:
+    image: wurstmeister/zookeeper
+    container_name: zookeeper
+    restart: always
+    ports:
+      - "2181:2181"
+  kafka:
+    image: wurstmeister/kafka
+    container_name: kafka
+    restart: always
+    ports:
+      - "9092:9092"
+      - "29092:29092"
+    environment:
+      KAFKA_LISTENERS: INTERNAL://:9092,LOCAL://:29092
+      KAFKA_ADVERTISED_LISTENERS: INTERNAL://10.0.2.15:9092,LOCAL://localhost:29092
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: LOCAL:PLAINTEXT,INTERNAL:PLAINTEXT
+      KAFKA_INTER_BROKER_LISTENER_NAME: INTERNAL
+      KAFKA_AUTO_CREATE_TOPICS_ENABLE: "true"
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_BROKER_ID: 1
+      KAFKA_LOG_RETENTION_BYTES: -1
+      KAFKA_LOG_RETENTION_HOURS: -1
+```
+
+```
 sudo mkdir /opt/kafka-zk
-sudo cp ~/folio-install/runbooks/single-server/scripts/docker-compose-kafka-zk.yml /opt/kafka-zk/docker-compose.yml
+sudo cp ~/folio-install/docker-compose-kafka-zk.yml /opt/kafka-zk/docker-compose.yml
 cd /opt/kafka-zk
 sudo docker-compose up -d
 ```
-
-
 
 ### Create a database and role for Okapi
 
@@ -194,9 +218,10 @@ sudo systemctl restart okapi
 ```
 The Okapi log is at **/var/log/folio/okapi/okapi.log**.
 
+
 4. Pull module descriptors from the central registry.
 
-A module descriptor declares the basic module metadata (id, name, etc.), specifies the module's dependencies on other modules (interface identifiers to be precise), and reports all "provided" interfaces. As part of the continuous integration process, each Module Descriptor  is published to the FOLIO Registry at https://folio-registry.aws.indexdata.com/.
+A module descriptor declares the basic module metadata (id, name, etc.), specifies the module's dependencies on other modules (interface identifiers to be precise), and reports all "provided" interfaces. As part of the continuous integration process, each Module Descriptor  is published to the FOLIO Registry at https://folio-registry.dev.folio.org.
 
 ```
 curl -w '\n' -D - -X POST -H "Content-type: application/json" \
@@ -274,70 +299,117 @@ cd platform-core
 - Checkout a stable branch of the repository
 
 ```
-git checkout q3-2020
+git checkout R1-2021
 ```
+
+Elasticsearch support is being included as a PoC in R1-2021.
+If you would like to build with ES, you have to install elasticsearch on your server and point the related modules, at least mod_pubsub and mod_search, to your Installation.
+
+Here is a prescription how to install ES under Ubuntu 18.04 : https://phoenixnap.com/kb/install-elasticsearch-ubuntu
+
+To point the modules to your Okapi installation, the environment parameters of those modules need to be set for the module/container when it spins up, 
+so it can connect to the ES instance. You can find out the env params by looking at the Overview - Metadata section of the module's page in Folio org’s Dockerhub. 
+For mod-search, this is at https://hub.docker.com/r/folioorg/mod-search.
+
+The env params need to be set in the launch descriptor of the module, before you deploy the module. The launch descriptor is a part of the module descriptor. 
+To set an env param in the launch descriptor of a module, follow the prescription described below for mod-pubsub.
+
+If you want to build without Elasticsearch, do the following:
+  cd platform-core
+ - Remove @folio/inventory-es from stripes.config.js
+ - Remove mod-search and folio_inventory-es entries from install.json
+ - Remove mod-search from okapi-install.json
+ - Remove folio_inventory-es from stripes-install.json
+ - Remove @folio/inventory-es from package.json
+
+mod-pubsub is the Folio module which implements a message queue. It needs to connect to the message broker Kafka which we installed above using docker-compose.
+You have to set the env params KAFKA_HOST and OKAPI_URL of mod-pubsub, so it can connect. You can do this like this:
+
+```
+  cd ~/folio-install
+  wget https://folio-registry.dev.folio.org/_/proxy/modules/mod-pubsub-2.0.7 -O pubsub-module-descriptor.json
+```
+
+Edit the following part of pubsub-module-descriptor.json :
+
+```
+    }, {
+      "name" : "KAFKA_HOST",
+      "value" : "<YOUR_IP_ADDRESS>"
+    }, {
+      "name" : "KAFKA_PORT",
+      "value" : "9092"
+    }, {
+      "name" : "OKAPI_URL",
+      "value" : "http://<YOUR_IP_ADDRESS>:9130"
+    }, {
+      "name" : "SYSTEM_USER_PASSWORD",
+      "value" : "****"    #  Choose your own password; don't use the standard value, otherwise your installation will be insecure.
+    } ],
+```
+
+Delete the standard module descriptor and post your own module descriptor to Okapi:
+
+```
+  curl -X DELETE -D - -w '\n' http://localhost:9130/_/proxy/modules/mod-pubsub-2.0.7
+  curl -i -w '\n' -X POST -H 'Content-type: application/json' -d @pubsub-module-descriptor.json http://localhost:9130/_/proxy/modules
+```
+
+
+If you want to use the Data Import module, you have to set KAFKA_HOST in the launch descriptor of the following modules, because these modules also talk directly to Kafka:
+  - mod-data-import-2.0.2
+  - mod-source-record-manager-3.0.7
+  - mod-source-record-storage-5.0.4
+  - mod-inventory-16.3.2
+  - mod-inventory-storage-20.2.1 
+ 
+Apply the same steps as for the module descriptor of mod-pubsub to those of these 5 modules, but change only the value of KAFKA_HOST (they don't have OKAPI_URL as an env param).
+
 
 3. Post the list of backend modules to deploy and enable. Also, you can set the (tenantParameters)[https://github.com/folio-org/okapi/blob/master/doc/guide.md#install-modules-per-tenant] to load their sample and reference data.
 
+First, simulate the run to see what will happen:
+```
+curl -w '\n' -D - -X POST -H "Content-type: application/json" -d @okapi-install.json http://localhost:9130/_/proxy/tenants/diku/install?simulate=true\&preRelease=false
+```
+
+Then do
 ```
 curl -w '\n' -D - -X POST -H "Content-type: application/json" \
   -d @okapi-install.json \
   http://localhost:9130/_/proxy/tenants/diku/install?deploy=true\&preRelease=false\&tenantParameters=loadSample%3Dtrue%2CloadReference%3Dtrue
 ```
 
-This will take a long time to return because all of the Docker images must be pulled from Docker Hub.  Progress can be followed in the Okapi log at /var/log/folio/okapi/okapi.log
+This will take a long time (5 - 10 mins) to return because all of the Docker images must be pulled from Docker Hub.  Progress can be followed in the Okapi log at /var/log/folio/okapi/okapi.log
 
 **Note**: You will have to replace ‘diku’ with the id of your tenant.
 
-4. Post the list of Stripes modules to enable.
+Once the install has finished, check what docker containers are running on your machine :
 
 ```
-curl -w '\n' -D - -X POST -H "Content-type: application/json" \
-  -d @stripes-install.json \
-  http://localhost:9130/_/proxy/tenants/diku/install?preRelease=false
+sudo docker ps | grep -v "^CONTAINER"
 ```
+
+There should be 59 docker containers for the backend modules of R1-2021, plus Kafka and Zookeeper.
+
+Check, what is in your Discovery:
+
+```
+curl -w '\n' -D - http://localhost:9130/_/discovery/modules | grep srvcId
+```
+
+Those should be the same 59 modules. Finally, check which backend modules have been enabled for your tenant:
+
+```
+curl -w '\n' -XGET http://localhost:9130/_/proxy/tenants/diku/modules | grep "mod-"
+```
+
+This should be the same set of modules, again.
 
 The backend of the new tenant is ready.  Now, you have to set up a Stripes instance for the frontend of the tenant, create a superuser for the tenant and secure Okapi.
 
 
-### Create a superuser
 
-You need to create a superuser for the newly created tenant.  This is a multi step process and the details can be found in the (Okapi documentation) [https://github.com/folio-org/okapi/blob/master/doc/guide.md#securing-okapi]. You can use a PERL script to execute these steps automatically.   You only need to provide the tenant id, a username/password for the superuser and the URL of Okapi.
-
-Install gcc on Ubuntu 20 (prerequisite to install Perl modules from cpan)
-```
-sudo apt install gcc
-gcc --version
-```
-
-Install prerequiste Perl modules
-```
-sudo cpan install LWP.pm
-sudo cpan install JSON.pm
-sudo cpan install UUID::Tiny
-```
-
-Use the Perl script to create a superuser
-```
-cd ~/folio-install/runbooks/single-server/scripts
-perl bootstrap-superuser.pl \
-  --tenant diku --user diku_admin --password admin \
-  --okapi http://localhost:9130
-```
-
-You can download the bootstrap-superuser.pl script (here)[https://github.com/folio-org/folio-install/blob/master/runbooks/single-server/scripts/bootstrap-superuser.pl ].
-
-### Secure Okapi
-
-By default, Okapi API is open in order to facilitate the deployment process of FOLIO. However, in a production environment you must enable the security checks. You can use a Python script to secure Okapi, you should provide a username and password for Okapi.
-
-```
-python3 secure-supertenant.py -u USERNAME -p PASSWORD -o http://localhost:9130
-```
-
-The script can be downloaded (here)[https://github.com/folio-org/folio-install/blob/master/runbooks/single-server/scripts/secure-supertenant.py].
-
-When Okapi is secured, you must login using **mod-authtoken** to obtain an authtoken and include it in the **x-okapi-token** header for every request to the Okapi API.  For example, if you want to repeat any of the calls to Okapi in this guide, you will need to include **x-okapi-token:YOURTOKEN** and **x-okapi-tenant:supertenant** as headers for any requests to the Okapi API.
 
 ## Install the frontend, Folio Stripes
 
@@ -385,10 +457,35 @@ yarn install
 ```
 ...
 okapi: { 'url':'http://<YOUR_SERVER_NAME>:9130', 'tenant':'diku' },
-..
+...
 ```
+
 Make sure that you use the public IP or domain of your server since this URL will be used to request Okapi from the clients’ browsers.
-You might also edit branding in stripes.config.js, e.g. add your own logo as desired.
+
+The above Okapi url will only work if you access your frontend (Stripes) in an unsecured network (i.e. use plain http requests). 
+It is highly recommend that you secure your connection by using SSL. Chose a domain name for your installation. Apply for a domain certificate and install it in your webproxy (we use nginx further down). 
+Proxy your backend requests to the subpath /okapi (this is being described below). 
+Then use this Okapi url in your stripes.config.js: 
+
+```
+...
+okapi: { 'url':'https://<YOUR_DOMAIN_NAME>/okapi', 'tenant':'diku' },
+...
+```
+
+You might also edit branding in stripes.config.js, e.g. add your own logo as desired. Edit these lines:
+
+```
+  branding: {
+    logo: {
+      src: './tenant-assets/mybib.gif',
+      alt: 'My Folio Library',
+    },
+    favicon: {
+      src: './tenant-assets/mybib_icon.gif'
+    },
+  }
+```
 
 5. Build webpack.
 
@@ -398,7 +495,25 @@ cd ..
 ```
 This will take a while. A new folder called ‘output’ will be created which contains the Stripes configured webpack of your tenant. 
 
-Serve the contents of this output folder on a web server:
+6. Post the list of Stripes modules to enable for your tenant.
+
+First, simulate what will happen:
+```
+curl -w '\n' -D - -X POST -H "Content-type: application/json" -d @stripes-install.json http://localhost:9130/_/proxy/tenants/diku/install?simulate=true\&preRelease=false
+```
+
+Then, enable the frontend modules for your tenant:
+
+```
+curl -w '\n' -D - -X POST -H "Content-type: application/json" \
+  -d @stripes-install.json \
+  http://localhost:9130/_/proxy/tenants/diku/install?preRelease=false
+```
+
+50 Stripes modules (folio*) and 8 Edge modules have been enabled.
+
+
+Now, serve the contents of the output folder on a web server. Also, proxy the backend requests on your web server:
 
 ### Configure Webserver to serve Stripes webpack
 
@@ -415,10 +530,10 @@ cp -R output/. /home/folio/tenants/diku/
 3. Configure NGINX to serve this directory.
 
 ```
-cd ~/folio-install/runbooks/single-server/scripts
+cd /home/folio/tenants/diku
 ```
 
-The content of nginx-stripes.conf should look like this:
+Create a file nginx-stripes.conf with the following content:
 
 ```
 server {
@@ -457,7 +572,46 @@ sudo rm /etc/nginx/sites-enabled/default
 sudo systemctl restart nginx
 ```
 
-3. Now Stripes is running on port 80 and you can open it using a browser. Log in with the credentials of the superuser that you have created.
+### Create a superuser
+
+You need to create a superuser for the newly created tenant.  This is a multi step process and the details can be found in the (Okapi documentation) [https://github.com/folio-org/okapi/blob/master/doc/guide.md#securing-okapi]. You can use a PERL script to execute these steps automatically.   You only need to provide the tenant id, a username/password for the superuser and the URL of Okapi.
+
+Install gcc on Ubuntu 20 (prerequisite to install Perl modules from cpan)
+```
+sudo apt install gcc
+gcc --version
+```
+
+Install prerequiste Perl modules
+```
+sudo cpan install LWP.pm
+sudo cpan install JSON.pm
+sudo cpan install UUID::Tiny
+```
+
+Use this Perl script to create a superuser [https://github.com/folio-org/folio-install/blob/master/runbooks/single-server/scripts/bootstrap-superuser.pl ] :
+```
+perl bootstrap-superuser.pl \
+  --tenant diku --user diku_admin --password admin \
+  --okapi http://localhost:9130
+```
+
+
+
+Now Stripes is running on port 80 and you can open it using a browser. Log in with the credentials of the superuser that you have created.
+
+
+### Secure Okapi
+
+By default, Okapi API is open in order to facilitate the deployment process of FOLIO. However, in a production environment you must enable the security checks. You can use a Python script to secure Okapi, you should provide a username and password for Okapi.
+
+```
+python3 secure-supertenant.py -u USERNAME -p PASSWORD -o http://localhost:9130
+```
+
+The script can be downloaded (here)[https://github.com/folio-org/folio-install/blob/master/runbooks/single-server/scripts/secure-supertenant.py].
+
+When Okapi is secured, you must login using **mod-authtoken** to obtain an authtoken and include it in the **x-okapi-token** header for every request to the Okapi API.  For example, if you want to repeat any of the calls to Okapi in this guide, you will need to include **x-okapi-token:YOURTOKEN** and **x-okapi-tenant:supertenant** as headers for any requests to the Okapi API.
 
 
 ## Install and serve edge modules (platform-complete only)
