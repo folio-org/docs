@@ -2,7 +2,7 @@
 ---
 title: "Finance"
 linkTitle: "Finance"
-date: 2021-05-16
+date: 2021-08-02
 weight: 10
 tags: ["parenttopic"]
 ---
@@ -353,9 +353,9 @@ The Ledger information section contains the following fields:
 *   **Name.** Name of the ledger.
 *   **Code.** Code for the ledger.
 *   **Current fiscal year.** The current fiscal year name. The system determines which fiscal year is current based on the current date and the period start and end dates for the fiscal year.
-*  **Status.** Status of the ledger: Active, Inactive, Frozen.
+*   **Status.** Status of the ledger: Active, Inactive, Frozen.
 *   **Allocated.** Total amount allocated across all funds with a budget for the current fiscal year that are associated with the ledger.
-*   ** Net transfers.** Total net transfer amount for all funds with a budget for the current fiscal year that are associated with the ledger.
+*   **Net transfers.** Total net transfer amount for all funds with a budget for the current fiscal year that are associated with the ledger.
 *   **Unavailable.** Total amount unavailable across all funds with a budget for the current  fiscal year that are associated with the ledger.
 *   **Available.** Total amount available across all funds with a budget for the current fiscal year that are associated with the ledger.
 *   **Acquisition units.** All acquisition units assigned to the ledger.
