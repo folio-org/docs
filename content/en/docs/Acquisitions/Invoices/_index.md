@@ -564,17 +564,17 @@ The process to generate a batch file containing vouchers for export to an extern
 3. To download the full voucher export file, click the downward arrow download icon next to the Batch file name.  This file will contain all vouchers that were in a Paid status that had not yet been exported at the time of job execution.
 
 
-###Voucher export details
+### Voucher export details
 
 
 
 *   **Batch group.**
-*   **Batch file name.***
+*   **Batch file name.**
 *   **Batch file status.**
 
 
 
-###Voucher export file
+### Voucher export file
 
 
 
