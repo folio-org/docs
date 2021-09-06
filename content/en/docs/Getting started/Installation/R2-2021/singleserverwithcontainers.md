@@ -18,7 +18,7 @@ A FOLIO instance is divided into two main components.  The first component is Ok
 
 | **Requirement**      | **Recommended Version**                    |
 |----------------------|--------------------------------------------|
-| Operating system     | Ubuntu 20.04 LTS (Focal Fossa) 64-bits     |
+| Operating system     | Ubuntu 18.04.5 LTS (Bionic Beaver) 64-bits     |
 | Java                 | OpenJDK 11                                 |
 | PostgreSQL           | PostgreSQL 10                              |
 
