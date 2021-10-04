@@ -6,7 +6,7 @@ description: >
   Note: This content is currently in draft status.
 tags: ["subtopic"]
 ---
-A single server installation is recommended if you have a single tenant or you can estimate beforehand the number of tenants and resources that your FOLIO instance will handle.  
+A single server installation is being considered a non-production installation. For a production installation you should apply some kind of orchestration.
 
 ![FOLIO Single Server components](/img/single_docker_compose.png)
 
