@@ -134,7 +134,7 @@ services:
       - "29092:29092"
     environment:
       KAFKA_LISTENERS: INTERNAL://:9092,LOCAL://:29092
-      KAFKA_ADVERTISED_LISTENERS: INTERNAL://10.0.2.15:9092,LOCAL://localhost:29092
+      KAFKA_ADVERTISED_LISTENERS: INTERNAL://<YOUR_IP_ADDRESS>:9092,LOCAL://localhost:29092
       KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: LOCAL:PLAINTEXT,INTERNAL:PLAINTEXT
       KAFKA_INTER_BROKER_LISTENER_NAME: INTERNAL
       KAFKA_AUTO_CREATE_TOPICS_ENABLE: "true"
@@ -143,6 +143,8 @@ services:
       KAFKA_LOG_RETENTION_BYTES: -1
       KAFKA_LOG_RETENTION_HOURS: -1
 ```
+
+**Note**: The IP address <YOUR_IP_ADDRESS> should match the private IP of your server.  This IP address should be reachable from Docker containers.  Therefore, you can not use localhost.  You can use the /**ifconfig** command in order to determine the private IP. 
 
 ```
 sudo mkdir /opt/kafka-zk
@@ -207,9 +209,8 @@ storage="postgres"
 okapiurl="http://<YOUR_IP_ADDRESS>:9130"
 docker_registries -- See explanation in okapi.conf file. Default is unauthenticated.
 ```
-**Note 1**: The IP address <YOUR_IP_ADDRESS> that you use in the properties **host** and **okapiurl** should match the private IP of your server.  This IP address should be reachable from Docker containers.  Therefore, you can not use localhost.  You can use the /**ifconfig** command in order to determine the private IP. 
 
-**Note 2**: The properties **postgres_host**, **postgres_port**, **postgres_username**, **postgres_password**, **postgres_database** should be configured in order to match the PostgreSQL configurations made previously.
+**Note**: The properties **postgres_host**, **postgres_port**, **postgres_username**, **postgres_password**, **postgres_database** should be configured in order to match the PostgreSQL configurations made previously.
 
 3. Restart Okapi
 
