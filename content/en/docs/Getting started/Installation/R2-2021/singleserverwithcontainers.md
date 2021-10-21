@@ -188,11 +188,11 @@ Once you have installed the requirements for Okapi and created a database, you c
 wget --quiet -O - https://repository.folio.org/packages/debian/folio-apt-archive-key.asc | sudo apt-key add -
 sudo add-apt-repository "deb https://repository.folio.org/packages/ubuntu focal/"
 sudo apt update
-sudo apt -y install okapi=4.7.2-1
+sudo apt -y install okapi=4.8.2-1
 sudo apt-mark hold okapi
 ```
 
-Please note that the last stable version of FOLIO is 4.7.2-1.  If you do not explicitly set the Okapi version, you will install the latest Okapi release.  There is some risk with installing the latest Okapi release.  The latest release may not have been tested with the rest of the components in the quarterly release.
+Please note that the R2-2021 FOLIO release version of Okapi is 4.8.2-1.  If you do not explicitly set the Okapi version, you will install the latest Okapi release.  There is some risk with installing the latest Okapi release.  The latest release may not have been tested with the rest of the components in the official release.
 
 2. Configure Okapi to run as a single node server with persistent storage.
 
@@ -279,6 +279,7 @@ curl -w '\n' -D - -X POST -H "Content-Type: application/json" -d "{\"name\":\"DB
 curl -w '\n' -D - -X POST -H "Content-Type: application/json" -d "{\"name\":\"DB_USERNAME\",\"value\":\"folio\"}" http://localhost:9130/_/env
 curl -w '\n' -D - -X POST -H "Content-Type: application/json" -d "{\"name\":\"DB_PASSWORD\",\"value\":\"folio123\"}" http://localhost:9130/_/env
 curl -w '\n' -D - -X POST -H "Content-Type: application/json" -d "{\"name\":\"KAFKA_HOST\",\"value\":\"<YOUR_IP_ADDRESS>\"}" http://localhost:9130/_/env
+curl -w '\n' -D - -X POST -H "Content-Type: application/json" -d "{\"name\":\"KAFKA_PORT\",\"value\":\"9092\"}" http://localhost:9130/_/env;
 curl -w '\n' -D - -X POST -H "Content-Type: application/json" -d "{\"name\":\"OKAPI_URL\",\"value\":\"http://<YOUR_IP_ADDRESS>:9130\"}" http://localhost:9130/_/env
 ```
 
@@ -299,10 +300,10 @@ cd platform-core
 - Checkout a stable branch of the repository
 
 ```
-git checkout R1-2021
+git checkout R2-2021
 ```
 
-Elasticsearch support is being included as a PoC in R1-2021.
+Elasticsearch support is being included in R2-2021.
 If you would like to build with ES, you have to install elasticsearch on your server and point the related modules, at least mod_pubsub and mod_search, to your Installation.
 
 Here is a prescription how to install ES under Ubuntu 18.04 : https://phoenixnap.com/kb/install-elasticsearch-ubuntu
@@ -317,10 +318,10 @@ To set an env param in the launch descriptor of a module, follow the prescriptio
 If you want to build without Elasticsearch, do the following:
   cd platform-core
  - Remove @folio/inventory-es from stripes.config.js
- - Remove mod-search and folio_inventory-es entries from install.json
- - Remove mod-search from okapi-install.json
- - Remove folio_inventory-es from stripes-install.json
- - Remove @folio/inventory-es from package.json
+ - Remove mod-search, folio_search and folio_inventory-es entries from install.json
+ - Remove mod-search and folio_inventory-es from okapi-install.json
+ - Remove folio_inventory-es and folio_search from stripes-install.json
+ - Remove @folio/inventory-es and @folio/search from package.json
 
 mod-pubsub is the Folio module which implements a message queue. It needs to connect to the message broker Kafka which we installed above using docker-compose.
 You have to set the env params KAFKA_HOST and OKAPI_URL of mod-pubsub, so it can connect. You can do this like this:
