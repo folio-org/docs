@@ -358,12 +358,19 @@ Delete the standard module descriptor and post your own module descriptor to Oka
 ```
 
 
-If you want to use the Data Import module, you have to set KAFKA_HOST in the launch descriptor of the following modules, because these modules also talk directly to Kafka:
-  - mod-data-import-2.0.2
-  - mod-source-record-manager-3.0.7
-  - mod-source-record-storage-5.0.4
-  - mod-inventory-16.3.2
-  - mod-inventory-storage-20.2.1 
+You have to set the KAFKA_HOST variable also in the launch descriptor of the following modules, because these modules also talk directly to Kafka:
+  - mod-data-import
+  - mod-data-export-spring
+  - mod-data-export-worker
+  - mod-ebsconet
+  - mod-inventory
+  - mod-inventory-storage
+  - mod-invoice
+  - mod-quick-marc
+  - mod-remote-storage
+  - mod-source-record-manager
+  - mod-source-record-storage 
+You can look up the R2-2021 module versions in okapi-install.json.
  
 Apply the same steps as for the module descriptor of mod-pubsub to those of these 5 modules, but change only the value of KAFKA_HOST (they don't have OKAPI_URL as an env param).
 
