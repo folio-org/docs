@@ -371,25 +371,26 @@ You have to set the KAFKA_HOST variable also in the launch descriptor of the fol
   - mod-source-record-manager
   - mod-source-record-storage 
 You can look up the R2-2021 module versions in okapi-install.json.
- 
-Apply the same steps as for the module descriptor of mod-pubsub to those of these 5 modules, but change only the value of KAFKA_HOST (they don't have OKAPI_URL as an env param).
+ Apply the same steps as for the module descriptor of mod-pubsub to these modules, but change only the value of KAFKA_HOST.
 
 
-3. Post the list of backend modules to deploy and enable. Also, you can set the (tenantParameters)[https://github.com/folio-org/okapi/blob/master/doc/guide.md#install-modules-per-tenant] to load their sample and reference data.
+3. Deploy and enable the backend modules. Also, you can set the (tenantParameters)[https://github.com/folio-org/okapi/blob/master/doc/guide.md#install-modules-per-tenant] to load their sample and reference data.
 
+Start with mod-pubsub.
 First, simulate the run to see what will happen:
 ```
-curl -w '\n' -D - -X POST -H "Content-type: application/json" -d @okapi-install.json http://localhost:9130/_/proxy/tenants/diku/install?simulate=true\&preRelease=false
+curl -w '\n' -D - -X POST -H "Content-type: application/json" -d '[ { "id" : "mod-pubsub-2.3.3", "action" : "enable" } ]' http://localhost:9130/_/proxy/tenants/diku/install?simulate=true
 ```
 
 Then do
 ```
 curl -w '\n' -D - -X POST -H "Content-type: application/json" \
-  -d @okapi-install.json \
+  -d '[ { "id" : "mod-pubsub-2.3.3", "action" : "enable" } ]' \
   http://localhost:9130/_/proxy/tenants/diku/install?deploy=true\&preRelease=false\&tenantParameters=loadSample%3Dtrue%2CloadReference%3Dtrue
 ```
 
-This will take a long time (5 - 10 mins) to return because all of the Docker images must be pulled from Docker Hub.  Progress can be followed in the Okapi log at /var/log/folio/okapi/okapi.log
+This will pull the Docker image from Docker Hub and spin up a container on your host. 
+Progress can be followed in the Okapi log at /var/log/folio/okapi/okapi.log
 
 **Note**: You will have to replace ‘diku’ with the id of your tenant.
 
@@ -398,6 +399,22 @@ Once the install has finished, check what docker containers are running on your 
 ```
 sudo docker ps | grep -v "^CONTAINER"
 ```
+
+Deploy the backend modules one by one. Go through the list of modules in okapi-install.json.
+For a single module it works like this:
+
+```
+  cat > circulation-deployment-descriptor.json <<END
+{
+  "srvcId": "mod-circulation-22.0.4",
+  "nodeId": "<YOUR_IP_ADDRESS>"
+}
+END
+  curl -w '\n' -D - -X POST -H "Content-type: application/json" -d @circulation-deployment-descriptor.json http://localhost:9130/_/discovery/modules
+```
+
+Now the backend modules are deployed, but not yet enables for your tenant.
+Enable the backend modules for your tenant.
 
 There should be 59 docker containers for the backend modules of R1-2021, plus Kafka and Zookeeper.
 
