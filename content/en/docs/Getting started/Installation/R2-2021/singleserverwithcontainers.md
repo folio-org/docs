@@ -6,7 +6,7 @@ description: >
   Note: This content is currently in draft status.
 tags: ["subtopic"]
 ---
-A single server installation is being considered a non-production installation. For a production installation you should apply some kind of orchestration.
+A single server installation is being considered a non-production installation. For a production installation some kind of orchestration should be applied. A single server installation of FOLIO is useful for demo and testing purposes.
 
 ![FOLIO Single Server components](/img/single_docker_compose.png)
 
@@ -18,15 +18,15 @@ A FOLIO instance is divided into two main components.  The first component is Ok
 
 | **Requirement**      | **Recommended Version**                    |
 |----------------------|--------------------------------------------|
-| Operating system     | Ubuntu 18.04.5 LTS (Bionic Beaver) 64-bits     |
+| Operating system     | Ubuntu 20.04.02 LTS (Focal Fossa) 64-bits  |
 | Java                 | OpenJDK 11                                 |
-| PostgreSQL           | PostgreSQL 10                              |
+| PostgreSQL           | PostgreSQL 12                              |
 
 **Hardware requirements**
 
 | **Requirement** | **FOLIO Base Apps** | **FOLIO Extended Apps** |
 |-----------------|---------------------|-------------------------|
-| RAM             | 12GB                | 20GB                    |
+| RAM             | 24GB                | 40GB                    |
 | CPU             | 4                   | 8                       |
 
 
@@ -51,14 +51,14 @@ sudo update-java-alternatives --jre-headless --jre --set java-1.11.0-openjdk-amd
 wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
 sudo add-apt-repository "deb http://apt.postgresql.org/pub/repos/apt/ focal-pgdg main"
 sudo apt update
-sudo apt -y install postgresql-10 postgresql-client-10 postgresql-contrib-10 libpq-dev
+sudo apt -y install postgresql-12 postgresql-client-12 postgresql-contrib-12 libpq-dev
 ```
 
 4. Configure PostgreSQL to listen on all interfaces and allow connections from all addresses (to allow Docker connections).
 
-* Edit the file **/etc/postgresql/10/main/postgresql.conf** to add line **listen_addresses = '*'** in the "Connection Settings" section.
-* Edit the file **/etc/postgresql/10/main/postgresql.conf** to increase **max_connections** (e.g. to 500)
-* Edit the file **/etc/postgresql/10/main/pg_hba.conf** to add line **host all all 0.0.0.0/0 md5**
+* Edit the file **/etc/postgresql/12/main/postgresql.conf** to add line **listen_addresses = '*'** in the "Connection Settings" section.
+* Edit the file **/etc/postgresql/12/main/postgresql.conf** to increase **max_connections** (e.g. to 500)
+* Edit the file **/etc/postgresql/12/main/pg_hba.conf** to add line **host all all 0.0.0.0/0 md5**
 * Restart PostgreSQL with command **sudo systemctl restart postgresql**
 
 5. Import the Docker signing key, add the Docker apt repository and install the Docker engine.
