@@ -493,7 +493,44 @@ server {
       # remove this line, unless you are installing Elasticsearch :
           '@folio/search' : {},
 ```
- The url in stripes.config.js must be reachable by a browser. If you want your FOLIO installation to be accessed from outside of your network, it is highly recommended to use https instead of http.
+ The url in stripes.config.js must be reachable by a browser. If you want your FOLIO installation to be accessed from outside of your network, it is highly recommended to use https instead of http. In this case, your nginx.conf might look like this:
+ 
+ ```
+ edit docker/nginx.conf
+ server {
+  listen 443 ssl;
+  server_name  <YOUR_SERVER_NAME>;
+  ssl on;
+  ssl_certificate     cert_bundle.crt;
+  ssl_certificate_key <YOUR_SERVER_NAME>-key.no_enc.pem;
+  ssl_protocols       TLSv1 TLSv1.1 TLSv1.2;
+  ssl_prefer_server_ciphers on;
+  ssl_ciphers         HIGH:!aNULL:!MD5;
+
+  charset utf-8;
+  access_log  /var/log/nginx/host.access.log  combined;
+
+  # front-end requests:
+  # Serve index.html for any request not found
+  location / {
+    # Set path
+    root        /usr/share/nginx/html;
+    index       index.html index.htm;
+    include mime.types;
+    types {
+      text/plain lock;
+    }
+    try_files $uri /index.html;
+  }
+
+  # back-end requests:
+  location /okapi {
+    rewrite ^/okapi/(.*) /$1 break;
+    proxy_pass http://localhost:9130/;
+  }
+
+}
+```
  
 The external endpoint /okapi is being redicrectd to your internal port 9130. Thus, the Okapi port 9130 does not need to be released to outside of your network.
  
