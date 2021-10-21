@@ -241,7 +241,7 @@ The content of registry.json should look like this:
 Okapi is up and running!
 
 
-### Create a new tenant
+## Create a new tenant
 
 1. Post the tenant initialization to Okapi.
 ```
@@ -269,7 +269,7 @@ curl -w '\n' -D - -X POST -H "Content-type: application/json" \
 ```
 
 
-## Deploy a Folio Backend and enable for the tenant
+## Install a Folio Backend
 
 1. Post data source information to the Okapi environment for use by deployed modules.
 ```
@@ -304,6 +304,8 @@ cd platform-core
 git checkout R2-2021
 ```
 
+### Elasticsearch support
+
 Elasticsearch support is being included in R2-2021.
 If you would like to build with ES, you have to install elasticsearch on your server and point the related modules, at least mod_pubsub and mod_search, to your Installation.
 
@@ -323,6 +325,8 @@ If you want to build without Elasticsearch, do the following:
  - Remove mod-search and folio_inventory-es from okapi-install.json
  - Remove folio_inventory-es and folio_search from stripes-install.json
  - Remove @folio/inventory-es and @folio/search from package.json
+
+### Deploy mod-pubsub and configure connection to the mesasage broker Kafka
 
 mod-pubsub is the Folio module which implements a message queue. It needs to connect to the message broker Kafka which we installed above using docker-compose.
 You have to set the env params KAFKA_HOST and OKAPI_URL of mod-pubsub, so it can connect. You can do this like this:
@@ -373,6 +377,7 @@ You have to set the KAFKA_HOST variable also in the launch descriptor of the fol
 You can look up the R2-2021 module versions in okapi-install.json.
  Apply the same steps as for the module descriptor of mod-pubsub to these modules, but change only the value of KAFKA_HOST.
 
+### Deploy the backend modules
 
 3. Deploy and enable the backend modules. Also, you can set the (tenantParameters)[https://github.com/folio-org/okapi/blob/master/doc/guide.md#install-modules-per-tenant] to load their sample and reference data.
 
@@ -422,7 +427,8 @@ Check, what is in your Discovery:
 curl -w '\n' -D - http://localhost:9130/_/discovery/modules | grep srvcId
 ```
 
-Enable the backend modules for your tenant.
+### Enable the backend modules for your tenant
+
 Post the list of backend modules to Okapi to enable them for your tenant. First do a simulation run:
 
 ```
@@ -451,8 +457,9 @@ The backend of the new tenant is ready.  Now, you have to set up a Stripes insta
 ## Install the frontend, Folio Stripes
 
 You have an Okapi instance running, you can proceed to install Stripes.  Stripes is bundled and deployed on a per tenant basis. 
+Install Stripes and nginx in a Docker container.
 
-# Install Stripes and nginx in a Docker container
+### Configure the docker file and the nginx webserver
 
 ```
   cd ~/platform-core
@@ -526,10 +533,11 @@ If you want your FOLIO installation to be accessed from outside of your network,
 
 }
 ```
- 
-The external endpoint /okapi is being redicrectd to your internal port 9130. Thus, the Okapi port 9130 does not need to be released to outside of your network.
 
-Edit the url and tenant in stripes.config.js. The url will be requested by a FOLIO client, thus a browser. Use http only if you want to access your FOLIO installation only from within your network.
+The subpath /okapi of your domain is being redicrectd to your internal port 9130. Thus, the Okapi port 9130 does not need to be released to outside of your network.
+**Note**: If you want to host multiple tenants on a server, you can configure NGINX to either open a new port for each tenant or set up different paths on the same port (e.g. /tenat1, /tenant2).
+
+Edit the url and tenant in stripes.config.js. The url will be requested by a FOLIO client, thus a browser. Make sure that you use the public IP or domain of your serve. Use http only if you want to access your FOLIO installation only from within your network.
 
 ```
   edit stripes.config.js
@@ -538,10 +546,24 @@ Edit the url and tenant in stripes.config.js. The url will be requested by a FOL
       # remove this line, unless you are installing Elasticsearch :
           '@folio/search' : {},
 ```
- 
-Add your own logo and favicon in stripes.config.js.
 
-  # Build the Docker container
+
+You might also edit branding in stripes.config.js, e.g. add your own logo and favicon as desired. Edit these lines:
+
+```
+  branding: {
+    logo: {
+      src: './tenant-assets/mybib.gif',
+      alt: 'My Folio Library',
+    },
+    favicon: {
+      src: './tenant-assets/mybib_icon.gif'
+    },
+  }
+```
+
+
+### Build the Docker container
   
 ```
   sudo su
@@ -559,7 +581,7 @@ Successfully tagged stripes:latest
 
 This will run for quite a long time, approx. 15 minutes.
 
-  # Start the Docker container
+### Start the Docker container
   Redirect port 80 from the outside to port 80 of the docker container. When using SSL, port 443 has to be redirected.
   
 ```
@@ -568,7 +590,7 @@ This will run for quite a long time, approx. 15 minutes.
 
 Stop nginx on your server in case it is running there: sudo service nginx stop.
   
-  # Log in to the Docker container
+### Log in to the Docker container
   Check if your config file looks o.k. and follow the access log inside the container:
   
 ```
@@ -578,162 +600,6 @@ Stop nginx on your server in case it is running there: sudo service nginx stop.
   tail -f /var/log/nginx/host.access.log
 ```
 
-### Build requirements: git, curl, NodeJS, npm, Yarn, libjson-perl, libwww-perl libuuid-tiny-perl 
-
-1. Install build requirements from Ubuntu apt repositories 
-```
-sudo apt -y install git curl nodejs npm libjson-perl libwww-perl libuuid-tiny-perl
-```
-2. Install n from npm
-```
-sudo npm install n -g
-```
-3. Import the Yarn signing key, add the Yarn apt repository, install Yarn
-```
-wget --quiet -O - https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
-sudo add-apt-repository "deb https://dl.yarnpkg.com/debian/ stable main"
-sudo apt update
-sudo apt -y install yarn
-```
-
-### Building Stripes
-
-1. Move to NodeJS LTS.
-
-```
-sudo n lts
-```
-2. cd into the platform-core repository (or platform-complete, if you chose to install that)
-```
-cd ~/platform-core
-```
-
-3. Install npm packages.
-
-```
-yarn install
-```
-4. Configure Stripes.
-
-- Edit the file **stripes.config.js** and change **okapi.url** and **okapi.tenant**.
-
-```
-...
-okapi: { 'url':'http://<YOUR_SERVER_NAME>:9130', 'tenant':'diku' },
-...
-```
-
-Make sure that you use the public IP or domain of your server since this URL will be used to request Okapi from the clients’ browsers.
-
-The above Okapi url will only work if you access your frontend (Stripes) in an unsecured network (i.e. use plain http requests). 
-It is highly recommend that you secure your connection by using SSL. Chose a domain name for your installation. Apply for a domain certificate and install it in your webproxy (we use nginx further down). 
-Proxy your backend requests to the subpath /okapi (this is being described below). 
-Then use this Okapi url in your stripes.config.js: 
-
-```
-...
-okapi: { 'url':'https://<YOUR_DOMAIN_NAME>/okapi', 'tenant':'diku' },
-...
-```
-
-You might also edit branding in stripes.config.js, e.g. add your own logo as desired. Edit these lines:
-
-```
-  branding: {
-    logo: {
-      src: './tenant-assets/mybib.gif',
-      alt: 'My Folio Library',
-    },
-    favicon: {
-      src: './tenant-assets/mybib_icon.gif'
-    },
-  }
-```
-
-5. Build webpack.
-
-```
-NODE_ENV=production yarn build output
-cd ..
-```
-This will take a while. A new folder called ‘output’ will be created which contains the Stripes configured webpack of your tenant. 
-
-6. Post the list of Stripes modules to enable for your tenant.
-
-First, simulate what will happen:
-```
-curl -w '\n' -D - -X POST -H "Content-type: application/json" -d @stripes-install.json http://localhost:9130/_/proxy/tenants/diku/install?simulate=true\&preRelease=false
-```
-
-Then, enable the frontend modules for your tenant:
-
-```
-curl -w '\n' -D - -X POST -H "Content-type: application/json" \
-  -d @stripes-install.json \
-  http://localhost:9130/_/proxy/tenants/diku/install?preRelease=false
-```
-
-50 Stripes modules (folio*) and 8 Edge modules have been enabled.
-
-
-Now, serve the contents of the output folder on a web server. Also, proxy the backend requests on your web server:
-
-### Configure Webserver to serve Stripes webpack
-
-Now that the webpack is built, you can configure the 'nginx' server.
-
-1. Define a directory for the Stripes webpacks of the tenants.  For example, you can use **/home/folio/tenants**.
-2. Copy the Stripes webpack to the new directory.
-
-```
-mkdir /home/folio/tenants/diku
-cp -R output/. /home/folio/tenants/diku/
-```
-
-3. Configure NGINX to serve this directory.
-
-```
-cd /home/folio/tenants/diku
-```
-
-Create a file nginx-stripes.conf with the following content:
-
-```
-server {
-  listen 80;
-  server_name <MY_SERVER_NAME>;
-  charset utf-8;
-  
-  # front-end requests:
-  # Serve index.html for any request not found
-  location / {
-    # Set path
-    root /home/folio/tenants/diku;
-    index       index.html index.htm;
-    include mime.types;
-    types {
-      text/plain lock;
-    }
-    try_files $uri /index.html;
-  }
-  
-   # back-end requests:
-  location /okapi {
-    rewrite ^/okapi/(.*) /$1 break;
-    proxy_pass http://localhost:9130/;
-  }
-}
-```
-
-You should use your public IP or domain name in the field ‘<MY_SERVER_NAME>’. 
-
-**Note**: If you want to host multiple tenants on a server, you can configure NGINX to either open a new port for each tenant or set up different paths on the same port (e.g. /tenat1, /tenant2).
-```
-sudo cp nginx-stripes.conf /etc/nginx/sites-available/stripes
-sudo ln -s /etc/nginx/sites-available/stripes /etc/nginx/sites-enabled/stripes
-sudo rm /etc/nginx/sites-enabled/default
-sudo systemctl restart nginx
-```
 
 ### Create a superuser
 
@@ -761,7 +627,7 @@ perl bootstrap-superuser.pl \
 
 
 
-Now Stripes is running on port 80 and you can open it using a browser. Log in with the credentials of the superuser that you have created.
+Now Stripes is running on port 80 or 443 and you can open it using a browser. Log in with the credentials of the superuser that you have created.
 
 
 ### Secure Okapi
@@ -852,7 +718,7 @@ sudo docker-compose up -d
 
 4. Set up NGINX.
 
-- Create a new virtual host configuration to proxy the edge modules.   Create a new NGINX file in the directory **/etc/nginx/sites-available/edge**.
+- Create a new virtual host configuration to proxy the edge modules.   Create a new NGINX file in the directory **/etc/nginx/sites-available/edge**. This needs to be done inside your Stripes container. You might want to modify the Docker file that builds your Stripes container, then re-build and re-run the container.
 
 ```
 server {
@@ -866,7 +732,7 @@ server {
 }
 
 ```
-- Link that new configuration and restart nginx.
+- Link that new configuration and restart nginx (inside the Stripes container; or re-start that container).
 
 ```
 sudo ln -s /etc/nginx/sites-available/edge /etc/nginx/sites-enabled/edge
