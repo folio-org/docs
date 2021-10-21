@@ -28,6 +28,7 @@ A FOLIO instance is divided into two main components.  The first component is Ok
 |-----------------|---------------------|-------------------------|
 | RAM             | 24GB                | 40GB                    |
 | CPU             | 4                   | 8                       |
+| HD              | 100 GB SSD          | 350 GB SSD              |
 
 
 ## Installing Okapi
@@ -188,7 +189,7 @@ Once you have installed the requirements for Okapi and created a database, you c
 wget --quiet -O - https://repository.folio.org/packages/debian/folio-apt-archive-key.asc | sudo apt-key add -
 sudo add-apt-repository "deb https://repository.folio.org/packages/ubuntu focal/"
 sudo apt update
-sudo apt -y install okapi=4.8.2-1
+sudo apt-get -y --allow-change-held-packages install okapi=4.8.2-1 # R2-2021 Okapi version
 sudo apt-mark hold okapi
 ```
 
@@ -301,7 +302,7 @@ cd platform-core
 - Checkout a stable branch of the repository
 
 ```
-git checkout R2-2021
+git checkout R2-2021-GA
 ```
 
 ### Elasticsearch support
