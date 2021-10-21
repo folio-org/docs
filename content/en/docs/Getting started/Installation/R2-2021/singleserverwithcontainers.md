@@ -486,14 +486,9 @@ server {
     proxy_pass http://<YOUR_IP_ADDRESS>:9130/;
   }
 }
-
-  edit stripes.config.js
-      okapi: { 'url':'http://<YOUR_SERVER_NAME>/okapi', 'tenant':'diku' },
-     
-      # remove this line, unless you are installing Elasticsearch :
-          '@folio/search' : {},
 ```
- The url in stripes.config.js must be reachable by a browser. If you want your FOLIO installation to be accessed from outside of your network, it is highly recommended to use https instead of http. In this case, your nginx.conf might look like this:
+
+If you want your FOLIO installation to be accessed from outside of your network, it is highly recommended to use https instead of http. In this case, your nginx.conf might look like this:
  
  ```
  edit docker/nginx.conf
@@ -533,11 +528,24 @@ server {
 ```
  
 The external endpoint /okapi is being redicrectd to your internal port 9130. Thus, the Okapi port 9130 does not need to be released to outside of your network.
+
+Edit the url and tenant in stripes.config.js. The url will be requested by a FOLIO client, thus a browser. Use http only if you want to access your FOLIO installation only from within your network.
+
+```
+  edit stripes.config.js
+      okapi: { 'url':'http(s)://<YOUR_SERVER_NAME>/okapi', 'tenant':'diku' },
+     
+      # remove this line, unless you are installing Elasticsearch :
+          '@folio/search' : {},
+```
  
-# in stripes.config.js Logo und Favoriten-Bildchen anpassen
-  # Den Docker-Container bauen
+Add your own logo and favicon in stripes.config.js.
+
+  # Build the Docker container
+  
+```
   sudo su
-  docker build -f docker/Dockerfile --build-arg OKAPI_URL=http://10.9.2.85:9130 --build-arg TENANT_ID=diku -t stripes .
+  docker build -f docker/Dockerfile --build-arg OKAPI_URL=http://<YOUR_IP_ADDRESS>:9130 --build-arg TENANT_ID=diku -t stripes .
 Sending build context to Docker daemon  1.138GB
 Step 1/19 : FROM node:15-alpine as stripes_build
 ...
@@ -547,17 +555,28 @@ Removing intermediate container a47dce4e3b3e
  ---> 48a532266f21
 Successfully built 48a532266f21
 Successfully tagged stripes:latest
+```
 
-# Läuft ca. 15 Minuten lang.
-  # Den Docker-Container starten. Dabei Port 80 von außen auf Port 80 des Containers umleiten. Für SSL muss auch der Port 443 umgeleitet werden (ist nicht Teil dieser Doku):
+This will run for quite a long time, approx. 15 minutes.
+
+  # Start the Docker container
+  Redirect port 80 from the outside to port 80 of the docker container. When using SSL, port 443 has to be redirected.
+  
+```
   nohup docker run -d -p 80:80 stripes
-  nginx auf dem Server anhalten: sudo service nginx stop
-  # Einloggen in den Docker Container
-  docker exec -it <id> sh
-  überprufen, ob die Konf.datei richtig angekommen ist:
+```
+
+Stop nginx on your server in case it is running there: sudo service nginx stop.
+  
+  # Log in to the Docker container
+  Check if your config file looks o.k. and follow the access log inside the container:
+  
+```
+  docker exec -it <container_id> sh
   vi /etc/nginx/conf.d/default.conf
-  # das Webserver-Log in dem Container verfolgen
+  
   tail -f /var/log/nginx/host.access.log
+```
 
 ### Build requirements: git, curl, NodeJS, npm, Yarn, libjson-perl, libwww-perl libuuid-tiny-perl 
 
