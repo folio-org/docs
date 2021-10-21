@@ -450,7 +450,77 @@ The backend of the new tenant is ready.  Now, you have to set up a Stripes insta
 
 ## Install the frontend, Folio Stripes
 
-You have an Okapi instance running, you can proceed to install Stripes.  However, Stripes is bundled and deployed on a per tenant basis.  So, you have to decide whether to install platform-core or platform-complete for your tenant.
+You have an Okapi instance running, you can proceed to install Stripes.  Stripes is bundled and deployed on a per tenant basis. 
+
+# Install Stripes and nginx in a Docker container
+
+```
+  cd ~/platform-core
+  edit docker/Dockerfile
+    ARG OKAPI_URL=http://<YOUR_IP_ADDRESS>:9130
+    ARG TENANT_ID=diku # Or change to your tenant's name
+    
+  edit docker/nginx.conf
+server {
+  listen 80;
+  server_name <YOUR_SERVER_NAME>;  # replace by the IP address under which your FOLIO instance will be visible, e.g. my.domain.edu
+  charset utf-8;
+  access_log  /var/log/nginx/host.access.log  combined;
+
+  # front-end requests:
+  # Serve index.html for any request not found
+  location / {
+    # Set path
+    root        /usr/share/nginx/html;
+    index       index.html index.htm;
+    include mime.types;
+    types {
+      text/plain lock;
+    }
+    try_files $uri /index.html;
+  }
+
+  # back-end requests:
+  location /okapi {
+    rewrite ^/okapi/(.*) /$1 break;
+    proxy_pass http://<YOUR_IP_ADDRESS>:9130/;
+  }
+}
+
+  edit stripes.config.js
+      okapi: { 'url':'http://<YOUR_SERVER_NAME>/okapi', 'tenant':'diku' },
+     
+      # remove this line, unless you are installing Elasticsearch :
+          '@folio/search' : {},
+```
+ The url in stripes.config.js must be reachable by a browser. If you want your FOLIO installation to be accessed from outside of your network, it is highly recommended to use https instead of http.
+ 
+The external endpoint /okapi is being redicrectd to your internal port 9130. Thus, the Okapi port 9130 does not need to be released to outside of your network.
+ 
+# in stripes.config.js Logo und Favoriten-Bildchen anpassen
+  # Den Docker-Container bauen
+  sudo su
+  docker build -f docker/Dockerfile --build-arg OKAPI_URL=http://10.9.2.85:9130 --build-arg TENANT_ID=diku -t stripes .
+Sending build context to Docker daemon  1.138GB
+Step 1/19 : FROM node:15-alpine as stripes_build
+...
+Step 19/19 : ENTRYPOINT ["/usr/bin/entrypoint.sh"]
+ ---> Running in a47dce4e3b3e
+Removing intermediate container a47dce4e3b3e
+ ---> 48a532266f21
+Successfully built 48a532266f21
+Successfully tagged stripes:latest
+
+# Läuft ca. 15 Minuten lang.
+  # Den Docker-Container starten. Dabei Port 80 von außen auf Port 80 des Containers umleiten. Für SSL muss auch der Port 443 umgeleitet werden (ist nicht Teil dieser Doku):
+  nohup docker run -d -p 80:80 stripes
+  nginx auf dem Server anhalten: sudo service nginx stop
+  # Einloggen in den Docker Container
+  docker exec -it <id> sh
+  überprufen, ob die Konf.datei richtig angekommen ist:
+  vi /etc/nginx/conf.d/default.conf
+  # das Webserver-Log in dem Container verfolgen
+  tail -f /var/log/nginx/host.access.log
 
 ### Build requirements: git, curl, NodeJS, npm, Yarn, libjson-perl, libwww-perl libuuid-tiny-perl 
 
