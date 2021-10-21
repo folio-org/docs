@@ -281,6 +281,7 @@ curl -w '\n' -D - -X POST -H "Content-Type: application/json" -d "{\"name\":\"DB
 curl -w '\n' -D - -X POST -H "Content-Type: application/json" -d "{\"name\":\"KAFKA_HOST\",\"value\":\"<YOUR_IP_ADDRESS>\"}" http://localhost:9130/_/env
 curl -w '\n' -D - -X POST -H "Content-Type: application/json" -d "{\"name\":\"KAFKA_PORT\",\"value\":\"9092\"}" http://localhost:9130/_/env;
 curl -w '\n' -D - -X POST -H "Content-Type: application/json" -d "{\"name\":\"OKAPI_URL\",\"value\":\"http://<YOUR_IP_ADDRESS>:9130\"}" http://localhost:9130/_/env
+curl -w '\n' -D - -X POST -H "Content-Type: application/json" -d "{\"name\":\"SYSTEM_USER_PASSWORD\",\"value\":\"<YOUR_SYSTEM_USER_PASSWORD>\"}" http://localhost:9130/_/env
 ```
 
 **Note**: Make sure that you use your private IP for the properties **DB_HOST**, **KAFKA_HOST** and **OKAPI_URL**. 
@@ -328,7 +329,7 @@ You have to set the env params KAFKA_HOST and OKAPI_URL of mod-pubsub, so it can
 
 ```
   cd ~/folio-install
-  wget https://folio-registry.dev.folio.org/_/proxy/modules/mod-pubsub-2.0.7 -O pubsub-module-descriptor.json
+  wget https://folio-registry.dev.folio.org/_/proxy/modules/mod-pubsub-2.3.3 -O pubsub-module-descriptor.json
 ```
 
 Edit the following part of pubsub-module-descriptor.json :
@@ -345,14 +346,14 @@ Edit the following part of pubsub-module-descriptor.json :
       "value" : "http://<YOUR_IP_ADDRESS>:9130"
     }, {
       "name" : "SYSTEM_USER_PASSWORD",
-      "value" : "****"    #  Choose your own password; don't use the standard value, otherwise your installation will be insecure.
+      "value" : "<YOUR_SYSTEM_USER_PASSWORD>"
     } ],
 ```
-
+<YOUR_SYSTEM_USER_PASSWORD> has to be the same one as we set in the Okapi environment variables above.
 Delete the standard module descriptor and post your own module descriptor to Okapi:
 
 ```
-  curl -X DELETE -D - -w '\n' http://localhost:9130/_/proxy/modules/mod-pubsub-2.0.7
+  curl -X DELETE -D - -w '\n' http://localhost:9130/_/proxy/modules/mod-pubsub-2.3.3
   curl -i -w '\n' -X POST -H 'Content-type: application/json' -d @pubsub-module-descriptor.json http://localhost:9130/_/proxy/modules
 ```
 
