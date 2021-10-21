@@ -400,7 +400,9 @@ Once the install has finished, check what docker containers are running on your 
 sudo docker ps | grep -v "^CONTAINER"
 ```
 
-Deploy the backend modules one by one. Go through the list of modules in okapi-install.json.
+There should be a container running mod-pubsub, plus Kafka and Zookeeper.
+
+Deploy the other backend modules one by one. Go through the list of modules in okapi-install.json.
 For a single module it works like this:
 
 ```
@@ -414,23 +416,32 @@ END
 ```
 
 Now the backend modules are deployed, but not yet enables for your tenant.
-Enable the backend modules for your tenant.
-
-There should be 59 docker containers for the backend modules of R1-2021, plus Kafka and Zookeeper.
-
 Check, what is in your Discovery:
 
 ```
 curl -w '\n' -D - http://localhost:9130/_/discovery/modules | grep srvcId
 ```
 
-Those should be the same 59 modules. Finally, check which backend modules have been enabled for your tenant:
+Enable the backend modules for your tenant.
+Post the list of backend modules to Okapi to enable them for your tenant. First do a simulation run:
+
+```
+  curl -w '\n' -D - -X POST -H "Content-type: application/json" -d @$HOME/platform-core/okapi-install.json http://localhost:9130/_/proxy/tenants/diku/install?simulate=true\&preRelease=false
+```
+
+Then do
+
+```
+  curl -w '\n' -D - -X POST -H "Content-type: application/json" -d @$HOME/platform-core/okapi-install.json http://localhost:9130/_/proxy/tenants/diku/install?deploy=false\&preRelease=false\&tenantParameters=loadReference%3Dtrue
+```
+
+Finally, check which backend modules have been enabled for your tenant:
 
 ```
 curl -w '\n' -XGET http://localhost:9130/_/proxy/tenants/diku/modules | grep "mod-"
 ```
 
-This should be the same set of modules, again.
+This should show the same set of modules as in okapi-install.json.
 
 The backend of the new tenant is ready.  Now, you have to set up a Stripes instance for the frontend of the tenant, create a superuser for the tenant and secure Okapi.
 
