@@ -1,6 +1,6 @@
 ---
-title: "Querying the LDP"
-linkTitle: "Querying"
+title: "FOLIO Analytics"
+linkTitle: "FOLIO Analytics"
 date: 2021-06-24
 weight: 30
 tags: ["parenttopic"]
@@ -23,7 +23,7 @@ The first section below outlines how to make use of the report queries in the FO
 
 ## Using queries from the FOLIO Analytics repository
 
-Report queries in the FOLIO Analytics repository are laid out in a particular structure that will make it easy for you to find the various areas you need as you build your knowledge of SQL. 
+Report queries in the FOLIO Analytics repository are laid out in a particular structure that will make it easy for you to find the various areas you need as you build your knowledge of SQL.
 
 * **Introductory comments.** Queries may start with a short block of text that is not part of the query. These “comments” often describe basic components of the query and give a brief description of the purpose.
 * **Parameters.** To make things easier for the user, queries typically include a “parameters” section at the top that allows one to easily specify the values needed for filtering on a field.  
@@ -51,7 +51,7 @@ The following section demonstrates this workflow using [DBeaver](https://dbeaver
 
 #### Copy the query code from GitHub
 
-1. In the **sql** folder of [the FOLIO Analytics Repository](https://github.com/folio-org/folio-analytics/tree/release-1.0/sql), click on the **report_queries** folder. 
+1. In the **sql** folder of [the FOLIO Analytics Repository](https://github.com/folio-org/folio-analytics/tree/release-1.0/sql), click on the **report_queries** folder.
 1. Click on the subfolder for the report you are interested in. For this example, open the [ACRL Circulation query file](https://github.com/folio-org/folio-analytics/blob/release-1.0/sql/report_queries/acrl/circulation/acrl_circulation.sql) by clicking first on the **acrl** subdirectory and then on the **circulation** subdirectory, and finally clicking on the **acrl_circulation.sql** file.
 1. To open the query file directly, click on the **raw** button located in the upper right corner of the file preview box.
 1. To copy the query code, type Ctrl-A (Cmd-A on Mac) to highlight all of the text, followed by Ctrl-C (Cmd-C on Mac) to copy the text.
@@ -105,7 +105,7 @@ To edit the parameter values, all you need to do is type in the measure value of
 
 To further tailor the query, consult the [introduction to this section](#using-queries-from-the-folio-analytics-repository) above to identify the different sections you may wish to review and modify. One edit you may want to make would be to add your own comments to guide yourself and others.  Comment text will be gray (in DBeaver) and will not affect how the query runs. There are two ways to make comments. Typing `--` will create a comment out of the rest of that particular line of the file.  To create a comment that spans multiple lines, use `/*` at the beginning of the comment and `*/` at the end of the comment.
 
-Another edit you may want to make would be to remove a field from the report. To do this, you can look for the `SELECT` keyword in the main query section (which is usually where you will see the longest list of field names). Inside the list of fields after that `SELECT` keyword, you can delete the lines that list fields you do not want to include. Just make sure that the last item in the list, the one that appears right before the `FROM` keyword, is not followed by a comma. 
+Another edit you may want to make would be to remove a field from the report. To do this, you can look for the `SELECT` keyword in the main query section (which is usually where you will see the longest list of field names). Inside the list of fields after that `SELECT` keyword, you can delete the lines that list fields you do not want to include. Just make sure that the last item in the list, the one that appears right before the `FROM` keyword, is not followed by a comma.
 
 For more advanced query writing techniques, refer to the documentation on [ad hoc querying using LDP tables](#ad-hoc-querying-using-ldp-tables).
 
@@ -113,7 +113,7 @@ For more advanced query writing techniques, refer to the documentation on [ad ho
 
 #### What to do if you do not get any results
 
-* Check to see if a parameter was entered by the report writer that does not apply.  If not, seek out additional training here or through your local (or the larger) FOLIO community. 
+* Check to see if a parameter was entered by the report writer that does not apply.  If not, seek out additional training here or through your local (or the larger) FOLIO community.
 
 #### What to do if there are errors
 
@@ -123,14 +123,12 @@ For more advanced query writing techniques, refer to the documentation on [ad ho
 
 ## Ad hoc querying using LDP tables
 
-If the shared queries do not meet your needs, you can also develop your own “ad hoc” (or as needed) queries to pull data from the LDP. In addition to creating queries with different fields and table connections than the shared queries, ad hoc queries make it possible to connect FOLIO to other custom tables available in your local LDP. Because the LDP is built on standard relational database software, you can build ad hoc LDP queries in the same way you would build queries for any other database, such as writing an SQL query and using a database query tool to run the query. 
+If the shared queries do not meet your needs, you can also develop your own “ad hoc” (or as needed) queries to pull data from the LDP. In addition to creating queries with different fields and table connections than the shared queries, ad hoc queries make it possible to connect FOLIO to other custom tables available in your local LDP. Because the LDP is built on standard relational database software, you can build ad hoc LDP queries in the same way you would build queries for any other database, such as writing an SQL query and using a database query tool to run the query.
 
 
 ### Learning SQL
 
-To develop ad hoc queries, you will need to write query scripts using Structured Query Language (SQL). The Reporting SIG has compiled a few resources for learning SQL (Table 1).
-
-Table 1: A compiled list of SQL training resources.
+To develop ad hoc queries, you will need to write query scripts using Structured Query Language (SQL). The table below includes a few resources for learning SQL.
 
 |Training Resource|Description|
 |---|---|
@@ -147,8 +145,8 @@ Table 1: A compiled list of SQL training resources.
 After learning how to use SQL, there are a few resources that outline specifics of how the LDP organizes FOLIO data.
 
 * **[The LDP User Guide](https://github.com/library-data-platform/ldp/blob/1.1.11/doc/User_Guide.md).** This guide includes details about writing SQL that works for the LDP data model; note especially the sections describing the data model, JSON queries, and the differences between the relational attributes and JSON fields. The guide also includes a section that describes the [historical data functionality within the LDP](https://github.com/library-data-platform/ldp/blob/1.1.11/doc/User_Guide.md#5-historical-data), which allows users to compose queries that explore how FOLIO data records change over time.
-* **[SchemaSpy](https://glintcore.net:8443/ldp/schemaspy/).** The Reporting SIG maintains a SchemaSpy installation attached to our LDP reference environment, which pulls data from the FOLIO snapshot reference environment. SchemaSpy gives a concise list of LDP tables and fields and can be helpful when developing queries, if your local LDP uses the same software version as the LDP reference environment.
-* **[FOLIO Schema Parser](https://docs.google.com/spreadsheets/d/1m_Cq_GmZX37gJPEjVWt9eOLXskUjSLUb-8KapWj0SIw/edit#gid=1511890017).** The Reporting SIG’s lightweight FOLIO Schema Parser automatically populates a spreadsheet using FOLIO’s data schema documentation, connecting FOLIO fields to LDP tables and fields. It can be helpful as a tool for quickly looking up what fields are available from FOLIO apps and what LDP tables include those fields.
+* **[SchemaSpy](https://glintcore.net:8443/ldp/schemaspy/).** This SchemaSpy installation is attached to the LDP reference environment, which pulls data from the FOLIO snapshot reference environment. SchemaSpy gives a concise list of LDP tables and fields and can be helpful when developing queries, if your local LDP uses the same software version as the LDP reference environment.
+* **[FOLIO Schema Parser](https://docs.google.com/spreadsheets/d/1m_Cq_GmZX37gJPEjVWt9eOLXskUjSLUb-8KapWj0SIw/edit#gid=1511890017).** This lightweight FOLIO Schema Parser automatically populates a spreadsheet using FOLIO’s data schema documentation, connecting FOLIO fields to LDP tables and fields. It can be helpful as a tool for quickly looking up what fields are available from FOLIO apps and what LDP tables include those fields.
 * **[FOLIO Analytics shared derived tables](https://github.com/folio-org/folio-analytics/tree/release-1.0/sql/derived_tables).** The derived tables developed for the LDP (found in the **folio_reporting** schema of the LDP) often serve as a better starting point for ad hoc queries than the FOLIO tables in the **public** schema. The derived tables combine and simplify the original FOLIO tables in ways that make query development much easier. You should work with your local LDP administrator to determine how your local LDP is using derived tables (e.g., what FOLIO Analytics release you are using, how frequently the derived tables are updated).
 
 ### Sharing ad hoc queries
