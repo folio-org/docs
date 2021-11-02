@@ -203,7 +203,7 @@ Please note that the R2-2021 FOLIO release version of Okapi is 4.8.2-1.  If you 
 
 ```
 role="dev"
-port_end="9250"
+port_end="9340"
 host="<YOUR_IP_ADRESS>"
 storage="postgres"
 okapiurl="http://<YOUR_IP_ADDRESS>:9130"
