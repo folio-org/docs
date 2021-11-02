@@ -58,7 +58,7 @@ sudo apt -y install postgresql-12 postgresql-client-12 postgresql-contrib-12 lib
 4. Configure PostgreSQL to listen on all interfaces and allow connections from all addresses (to allow Docker connections).
 
 * Edit the file **/etc/postgresql/12/main/postgresql.conf** to add line **listen_addresses = '*'** in the "Connection Settings" section.
-* Edit the file **/etc/postgresql/12/main/postgresql.conf** to increase **max_connections** (e.g. to 500)
+* In the same file, increase **max_connections** (e.g. to 500)
 * Edit the file **/etc/postgresql/12/main/pg_hba.conf** to add line **host all all 0.0.0.0/0 md5**
 * Restart PostgreSQL with command **sudo systemctl restart postgresql**
 
