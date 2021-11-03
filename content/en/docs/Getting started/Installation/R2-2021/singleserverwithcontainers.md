@@ -324,7 +324,7 @@ If you want to build without Elasticsearch, do the following:
   cd platform-core
  - Remove @folio/inventory-es from stripes.config.js
  - Remove mod-search, folio_search and folio_inventory-es entries from install.json
- - Remove mod-search and folio_inventory-es from okapi-install.json
+ - Remove mod-search from okapi-install.json
  - Remove folio_inventory-es and folio_search from stripes-install.json
  - Remove @folio/inventory-es and @folio/search from package.json
 
