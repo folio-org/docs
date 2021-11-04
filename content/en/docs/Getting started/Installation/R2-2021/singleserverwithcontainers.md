@@ -409,7 +409,7 @@ Once the install has finished, check what docker containers are running on your 
 sudo docker ps | grep -v "^CONTAINER"
 ```
 
-There should be a container running mod-pubsub, plus Kafka and Zookeeper.
+There should be a container running mod-pubsub, plus Kafka and Zookeeper, as well as dependent modules (mod-login, mod-permissions, mod-users).
 
 Deploy the other backend modules one by one. Go through the list of modules in okapi-install.json.
 For a single module it works like this:
