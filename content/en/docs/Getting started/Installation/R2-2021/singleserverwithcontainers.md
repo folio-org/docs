@@ -356,6 +356,7 @@ Edit the following part of pubsub-module-descriptor.json :
     } ],
 ```
 <YOUR_SYSTEM_USER_PASSWORD> has to be the same one as we set in the Okapi environment variables above.
+
 Delete the standard module descriptor and post your own module descriptor to Okapi:
 
 ```
