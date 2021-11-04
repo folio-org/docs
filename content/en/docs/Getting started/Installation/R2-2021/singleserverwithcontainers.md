@@ -377,8 +377,8 @@ You have to set the KAFKA_HOST variable also in the launch descriptor of the fol
   - mod-remote-storage
   - mod-source-record-manager
   - mod-source-record-storage 
-You can look up the R2-2021 module versions in okapi-install.json.
- Apply the same steps as for the module descriptor of mod-pubsub to these modules, but change only the value of KAFKA_HOST.
+You can look up the R2-2021 module versions in okapi-install.json. 
+Apply the same steps as for the module descriptor of mod-pubsub to these modules, but change only the value of KAFKA_HOST.
 
 ### Deploy the backend modules
 
