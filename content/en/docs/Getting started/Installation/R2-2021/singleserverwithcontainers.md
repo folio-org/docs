@@ -454,10 +454,10 @@ Then do
 Finally, check which backend modules have been enabled for your tenant:
 
 ```
-curl -w '\n' -XGET http://localhost:9130/_/proxy/tenants/diku/modules | grep "mod-"
+curl -w '\n' -XGET http://localhost:9130/_/proxy/tenants/diku/modules | grep "id"
 ```
 
-This should show the same set of modules as in okapi-install.json.
+This should show the same set of modules as in okapi-install.json plus the Okapi module itself. Thus, the number of modules enabled for your tenant should be 62.
 
 The backend of the new tenant is ready.  Now, you have to set up a Stripes instance for the frontend of the tenant, create a superuser for the tenant and secure Okapi.
 
