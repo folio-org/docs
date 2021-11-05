@@ -411,7 +411,17 @@ sudo docker ps | grep -v "^CONTAINER"
 
 There should be a container running mod-pubsub, plus Kafka and Zookeeper, as well as dependent modules (mod-login, mod-permissions, mod-users).
 
-Deploy the other backend modules one by one. Go through the list of modules in okapi-install.json.
+Deploy the other backend modules one by one. 
+
+Remove mod-pubsub, mod-login, mod-permissions and mod-users from okapi-install.json, because we have already installed them.
+
+Use this script to deploy all other backend modules, one after the other, on your host:
+
+```
+./deploy-all-backend-modules.sh ~/platform-core/okapi-install.json <YOUR_IP_ADDRESS>
+```
+
+Go through the list of modules in okapi-install.json.
 For a single module it works like this:
 
 ```
@@ -430,6 +440,16 @@ Check, what is in your Discovery:
 ```
 curl -w '\n' -D - http://localhost:9130/_/discovery/modules | grep srvcId
 ```
+
+There should be 61 modules in your Okapi discovery.
+
+Check, what Docker containers are running on your host:
+
+```
+docker ps --all | wc
+```
+
+This should show the number 64 : 61 backend modules, Kafka, Zookeeper + the header line
 
 ### Enable the backend modules for your tenant
 
