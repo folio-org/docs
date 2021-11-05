@@ -411,11 +411,7 @@ sudo docker ps | grep -v "^CONTAINER"
 
 There should be a container running mod-pubsub, plus Kafka and Zookeeper, as well as dependent modules (mod-login, mod-permissions, mod-users).
 
-Deploy the other backend modules one by one. 
-
-Remove mod-pubsub, mod-login, mod-permissions and mod-users from okapi-install.json, because we have already installed them.
-
-Use this script to deploy all other backend modules, one after the other, on your host:
+Deploy the other backend modules one by one. Use this script to deploy all other backend modules, one after the other, on your host:
 
 ```
 ./deploy-all-backend-modules.sh ~/platform-core/okapi-install.json <YOUR_IP_ADDRESS>
@@ -434,14 +430,13 @@ END
   curl -w '\n' -D - -X POST -H "Content-type: application/json" -d @circulation-deployment-descriptor.json http://localhost:9130/_/discovery/modules
 ```
 
-Now the backend modules are deployed, but not yet enables for your tenant.
 Check, what is in your Discovery:
 
 ```
 curl -w '\n' -D - http://localhost:9130/_/discovery/modules | grep srvcId
 ```
 
-There should be 61 modules in your Okapi discovery - those which have been in okapi-install.json before we deployed mod-pubsub.
+There should be 65 modules in your Okapi discovery - those which are in okapi-install.json. In addition, we have installed mod-pubsub, mod-login, mod-permissions and mod-users twice, because we have installed mod-pubsub and dependencies right away (leave it as is, some of those modules have been deployed in different release versions).
 
 Check, what Docker containers are running on your host:
 
@@ -449,7 +444,10 @@ Check, what Docker containers are running on your host:
 docker ps --all | wc
 ```
 
-This should show the number 64 : The 61 backend modules, Kafka, Zookeeper + the header line
+This should show the number 68 : The 61 backend modules, Kafka, Zookeeper + the header line. In addition, 4 modules have been deployed twice.
+
+Now the backend modules are deployed, but not yet enables for your tenant.
+
 
 ### Enable the backend modules for your tenant
 
