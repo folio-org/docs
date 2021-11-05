@@ -441,7 +441,7 @@ Check, what is in your Discovery:
 curl -w '\n' -D - http://localhost:9130/_/discovery/modules | grep srvcId
 ```
 
-There should be 61 modules in your Okapi discovery.
+There should be 61 modules in your Okapi discovery - those which have been in okapi-install.json before we deployed mod-pubsub.
 
 Check, what Docker containers are running on your host:
 
@@ -449,7 +449,7 @@ Check, what Docker containers are running on your host:
 docker ps --all | wc
 ```
 
-This should show the number 64 : 61 backend modules, Kafka, Zookeeper + the header line
+This should show the number 64 : The 61 backend modules, Kafka, Zookeeper + the header line
 
 ### Enable the backend modules for your tenant
 
