@@ -411,23 +411,10 @@ sudo docker ps | grep -v "^CONTAINER"
 
 There should be a container running mod-pubsub, plus Kafka and Zookeeper, as well as dependent modules (mod-login, mod-permissions, mod-users).
 
-Deploy the other backend modules one by one. Use this script to deploy all other backend modules, one after the other, on your host:
+Deploy the other backend modules one by one. Use this script (provided in the Installation folder of this repository) to deploy all other backend modules, one after the other, on your host:
 
 ```
 ./deploy-all-backend-modules.sh ~/platform-core/okapi-install.json <YOUR_IP_ADDRESS>
-```
-
-Go through the list of modules in okapi-install.json.
-For a single module it works like this:
-
-```
-  cat > circulation-deployment-descriptor.json <<END
-{
-  "srvcId": "mod-circulation-22.0.4",
-  "nodeId": "<YOUR_IP_ADDRESS>"
-}
-END
-  curl -w '\n' -D - -X POST -H "Content-type: application/json" -d @circulation-deployment-descriptor.json http://localhost:9130/_/discovery/modules
 ```
 
 Check, what is in your Discovery:
