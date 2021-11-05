@@ -396,7 +396,7 @@ Then do
 ```
 curl -w '\n' -D - -X POST -H "Content-type: application/json" \
   -d '[ { "id" : "mod-pubsub-2.3.3", "action" : "enable" } ]' \
-  http://localhost:9130/_/proxy/tenants/diku/install?deploy=true\&preRelease=false\&tenantParameters=loadSample%3Dtrue%2CloadReference%3Dtrue
+  http://localhost:9130/_/proxy/tenants/diku/install?deploy=true\&preRelease=false\&tenantParameters=loadSample%3Dfalse%2CloadReference%3Dtrue
 ```
 
 This will pull the Docker image from Docker Hub and spin up a container on your host. 
