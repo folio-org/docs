@@ -598,8 +598,6 @@ This will run for quite a long time, approx. 15 minutes.
 ```
   nohup docker run -d -p 80:80 stripes
 ```
-
-Stop nginx on your server in case it is running there: sudo service nginx stop.
   
 ### Log in to the Docker container
   Check if your config file looks o.k. and follow the access log inside the container:
@@ -631,6 +629,7 @@ sudo cpan install UUID::Tiny
 
 Use this Perl script to create a superuser [https://github.com/folio-org/folio-install/blob/master/runbooks/single-server/scripts/bootstrap-superuser.pl ] :
 ```
+wget "https://raw.githubusercontent.com/folio-org/folio-install/master/runbooks/single-server/scripts/bootstrap-superuser.pl"
 perl bootstrap-superuser.pl \
   --tenant diku --user diku_admin --password admin \
   --okapi http://localhost:9130
