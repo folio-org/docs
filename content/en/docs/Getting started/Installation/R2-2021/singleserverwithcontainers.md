@@ -41,9 +41,9 @@ A FOLIO instance is divided into two main components.  The first component is Ok
 sudo apt update
 ```
 
-2. Install Java 11 and nginx and verify that Java 11 is the system default.
+2. Install Java 11 and verify that Java 11 is the system default.
 ```
-sudo apt -y install openjdk-11-jdk nginx
+sudo apt -y install openjdk-11-jdk
 sudo update-java-alternatives --jre-headless --jre --set java-1.11.0-openjdk-amd64
 ```
 
@@ -592,6 +592,7 @@ Successfully tagged stripes:latest
 This will run for quite a long time, approx. 15 minutes.
 
 ### Start the Docker container
+  Make sure nginx is not already running on your VM (do `sudo service nginx stop`). Make sure nothing else is running on port 80.
   Redirect port 80 from the outside to port 80 of the docker container. When using SSL, port 443 has to be redirected.
   
 ```
