@@ -170,7 +170,6 @@ CREATE DATABASE okapi WITH OWNER okapi;
 ```
 
 3. Create a database role and database to persist tenant data.
-   This database will host the data of your tenant(s).
 
 ```
 CREATE ROLE folio WITH PASSWORD 'folio123' LOGIN SUPERUSER;
