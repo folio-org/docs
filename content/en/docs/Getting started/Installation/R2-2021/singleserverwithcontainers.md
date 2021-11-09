@@ -170,7 +170,7 @@ CREATE DATABASE okapi WITH OWNER okapi;
 ```
 
 3. Create a database role and database to persist tenant data.
-   Create a database for your tenant.  This database will host the data of your tenant.
+   This database will host the data of your tenant(s).
 
 ```
 CREATE ROLE folio WITH PASSWORD 'folio123' LOGIN SUPERUSER;
@@ -178,8 +178,6 @@ CREATE DATABASE folio WITH OWNER folio;
 ```
 
 4. Exit psql with **\q** command
-
-**Note**: You will need to create additional databases for each new tenant you add to FOLIO. More information on how to set up a new tenants on the next sections.
 
 ### Install and configure Okapi
 
