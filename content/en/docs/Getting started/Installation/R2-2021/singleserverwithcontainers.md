@@ -608,13 +608,11 @@ sudo cpan install UUID::Tiny
 
 Use this Perl script to create a superuser [https://github.com/folio-org/folio-install/blob/master/runbooks/single-server/scripts/bootstrap-superuser.pl ]. Use the version of the script which is applicable for mod-permissions of version < 5.15.0 :
 ```
-wget "https://raw.githubusercontent.com/folio-org/folio-install/b2e75a058f6d821c4cc04f711aeb0d8dbab06f80/runbooks/single-server/scripts/bootstrap-superuser.pl"
+wget "https://raw.githubusercontent.com/folio-org/folio-install/master/runbooks/single-server/scripts/bootstrap-superuser.pl"
 perl bootstrap-superuser.pl \
   --tenant diku --user diku_admin --password admin \
   --okapi http://localhost:9130
 ```
-
-
 
 Now Stripes is running on port 80 or 443 and you can open it using a browser. Log in with the credentials of the superuser that you have created.
 
