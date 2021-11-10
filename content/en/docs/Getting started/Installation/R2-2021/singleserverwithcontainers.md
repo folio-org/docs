@@ -457,7 +457,7 @@ Install Stripes and nginx in a Docker container.
     ARG TENANT_ID=diku # Or change to your tenant's name
 ```
 
-Use https if possible, i.e. use an SSL certificate. <YOUR_DOMAIN_NAME> should be the fully qualified domain name (FQDN) for which your certificate is valid, or a server alias name (SAN) which applies to your certificate. The subpath /okapi of your domain name will be redirected to port 9130 below, in your nginx configuration. 
+Use https if possible, i.e. use an SSL certificate. <YOUR_DOMAIN_NAME> should then be the fully qualified domain name (FQDN) for which your certificate is valid, or a server alias name (SAN) which applies to your certificate. If using http, it is your server name (host name plus domain). The subpath /okapi of your domain name will be redirected to port 9130 below, in your nginx configuration. 
    
 ```   
   edit docker/nginx.conf
