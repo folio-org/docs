@@ -379,41 +379,19 @@ You have to set the KAFKA_HOST variable also in the launch descriptor of the fol
 You can look up the R2-2021 module versions in okapi-install.json. 
 Apply the same steps as for the module descriptor of mod-pubsub to these modules, but change only the value of KAFKA_HOST.
 
+3. Deploy and enable the backend modules.
+
 ### Deploy the backend modules
 
-3. Deploy and enable the backend modules. Also, you can set the (tenantParameters)[https://github.com/folio-org/okapi/blob/master/doc/guide.md#install-modules-per-tenant] to load their sample and reference data.
+Deploy the backend modules one by one. This will pull the Docker image from Docker Hub and spin up a container on your host for each backend module. 
 
-Start with mod-pubsub.
-First, simulate the run to see what will happen:
-```
-curl -w '\n' -D - -X POST -H "Content-type: application/json" -d '[ { "id" : "mod-pubsub-2.3.3", "action" : "enable" } ]' http://localhost:9130/_/proxy/tenants/diku/install?simulate=true
-```
-
-Then do
-```
-curl -w '\n' -D - -X POST -H "Content-type: application/json" \
-  -d '[ { "id" : "mod-pubsub-2.3.3", "action" : "enable" } ]' \
-  http://localhost:9130/_/proxy/tenants/diku/install?deploy=true\&preRelease=false\&tenantParameters=loadSample%3Dfalse%2CloadReference%3Dtrue
-```
-
-This will pull the Docker image from Docker Hub and spin up a container on your host. 
-Progress can be followed in the Okapi log at /var/log/folio/okapi/okapi.log
-
-**Note**: You will have to replace ‘diku’ with the id of your tenant.
-
-Once the install has finished, check what docker containers are running on your machine :
-
-```
-sudo docker ps | grep -v "^CONTAINER"
-```
-
-There should be a container running mod-pubsub, plus Kafka and Zookeeper, as well as dependent modules (mod-login, mod-permissions, mod-users).
-
-Deploy the other backend modules one by one. Use this script (provided in the Installation folder of this repository) to deploy all other backend modules, one after the other, on your host:
+Use this script (provided in the Installation folder of this repository) to deploy all backend modules, one after the other, on your host:
 
 ```
 ./deploy-all-backend-modules.sh ~/platform-core/okapi-install.json <YOUR_IP_ADDRESS>
 ```
+
+Progress can be followed in the Okapi log at /var/log/folio/okapi/okapi.log
 
 Check, what is in your Discovery:
 
@@ -421,7 +399,7 @@ Check, what is in your Discovery:
 curl -w '\n' -D - http://localhost:9130/_/discovery/modules | grep srvcId
 ```
 
-There should be 65 modules in your Okapi discovery - those which are in okapi-install.json. In addition, we have installed mod-pubsub, mod-login, mod-permissions and mod-users twice, because we have installed mod-pubsub and dependencies right away (leave it as is, some of those modules have been deployed in different release versions).
+There should be 61 modules in your Okapi discovery - those which are in okapi-install.json.
 
 Check, what Docker containers are running on your host:
 
@@ -429,23 +407,27 @@ Check, what Docker containers are running on your host:
 docker ps --all | wc
 ```
 
-This should show the number 68 : The 61 backend modules, Kafka, Zookeeper + the header line. In addition, 4 modules have been deployed twice.
+This should show the number 64 : The 61 backend modules, Kafka, Zookeeper + the header line.
 
 Now the backend modules are deployed, but not yet enables for your tenant.
 
 
 ### Enable the backend modules for your tenant
 
-Post the list of backend modules to Okapi to enable them for your tenant. First do a simulation run:
+Post the list of backend modules to Okapi to enable them for your tenant.  Also, you can set the (tenantParameters)[https://github.com/folio-org/okapi/blob/master/doc/guide.md#install-modules-per-tenant] to load their sample and reference data.
+
+First do a simulation run:
 
 ```
   curl -w '\n' -D - -X POST -H "Content-type: application/json" -d @$HOME/platform-core/okapi-install.json http://localhost:9130/_/proxy/tenants/diku/install?simulate=true\&preRelease=false
 ```
 
-Then do
+**Note**: You will have to replace ‘diku’ with the id of your tenant.
+
+Decide whether you want to load a set of sample data (inventory: bibs, holdings and items) or not. If you want to load sample data, then change the value of "loadSample" from "false" to "true" in the following command line. Then execute this command line:
 
 ```
-  curl -w '\n' -D - -X POST -H "Content-type: application/json" -d @$HOME/platform-core/okapi-install.json http://localhost:9130/_/proxy/tenants/diku/install?deploy=false\&preRelease=false\&tenantParameters=loadReference%3Dtrue
+  curl -w '\n' -D - -X POST -H "Content-type: application/json" -d @$HOME/platform-core/okapi-install.json http://localhost:9130/_/proxy/tenants/diku/install?deploy=false\&preRelease=false\&tenantParameters=loadReference%3Dtrue%2CloadSample%3Dfalse
 ```
 
 Finally, check which backend modules have been enabled for your tenant:
