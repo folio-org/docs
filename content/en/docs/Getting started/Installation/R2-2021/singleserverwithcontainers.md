@@ -453,13 +453,17 @@ Install Stripes and nginx in a Docker container.
 ```
   cd ~/platform-core
   edit docker/Dockerfile
-    ARG OKAPI_URL=http://<YOUR_IP_ADDRESS>:9130
+    ARG OKAPI_URL=http(s)://<YOUR_DOMAIN_NAME>/okapi
     ARG TENANT_ID=diku # Or change to your tenant's name
-    
+```
+
+Use https if possible, i.e. use an SSL certificate. <YOUR_DOMAIN_NAME> should be the fully qualified domain name (FQDN) for which your certificate is valid, or a server alias name (SAN) which applies to your certificate. The subpath /okapi of your domain name will be redirected to port 9130 below, in your nginx configuration. 
+   
+```   
   edit docker/nginx.conf
 server {
   listen 80;
-  server_name <YOUR_SERVER_NAME>;  # replace by the IP address under which your FOLIO instance will be visible, e.g. my.domain.edu
+  server_name <YOUR_SERVER_NAME>;
   charset utf-8;
   access_log  /var/log/nginx/host.access.log  combined;
 
@@ -483,6 +487,8 @@ server {
   }
 }
 ```
+
+<YOUR_SERVER_NAME> should be the real name of your server in your network. <YOUR_SERVER_NAME> should consist of host name plus domain name, e.g. myserv.mydomain.edu. 
 
 If you want your FOLIO installation to be accessed from outside of your network, it is highly recommended to use https instead of http. In this case, your nginx.conf might look like this:
  
@@ -517,7 +523,7 @@ If you want your FOLIO installation to be accessed from outside of your network,
   # back-end requests:
   location /okapi {
     rewrite ^/okapi/(.*) /$1 break;
-    proxy_pass http://localhost:9130/;
+    proxy_pass http://<YOUR_IP_ADDRESS>:9130/;
   }
 
 }
@@ -530,7 +536,7 @@ Edit the url and tenant in stripes.config.js. The url will be requested by a FOL
 
 ```
   edit stripes.config.js
-      okapi: { 'url':'http(s)://<YOUR_SERVER_NAME>/okapi', 'tenant':'diku' },
+      okapi: { 'url':'http(s)://<YOUR_DOMAIN_NAME>/okapi', 'tenant':'diku' },
      
       # remove this line, unless you are installing Elasticsearch :
           '@folio/search' : {},
@@ -556,7 +562,7 @@ You might also edit branding in stripes.config.js, e.g. add your own logo and fa
   
 ```
   sudo su
-  docker build -f docker/Dockerfile --build-arg OKAPI_URL=http://<YOUR_IP_ADDRESS>:9130 --build-arg TENANT_ID=diku -t stripes .
+  docker build -f docker/Dockerfile --build-arg OKAPI_URL=http(s)://<YOUR_DOMAIN_NAME>/okapi --build-arg TENANT_ID=diku -t stripes .
 Sending build context to Docker daemon  1.138GB
 Step 1/19 : FROM node:15-alpine as stripes_build
 ...
