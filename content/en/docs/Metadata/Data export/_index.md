@@ -11,7 +11,7 @@ The Data export app allows you to export bibliographic data from Source Record S
 
 When the records are exported from the Inventory app and there is underlying MARC source data, that data is exported. If there is no underlying source data, a simplified MARC record is generated.
 
-The Data export app comes with a default job profile, which determines how information is exported in the generated MARC file. To create your own customized job profiles, you can configure job profiles in the Settings app. For more information, see Settings \> Data Export.
+The Data export app comes with a default job profile, which determines how information is exported in the generated MARC file. To create your own customized job profiles, you can configure job profiles in the Settings app. For more information, see [Settings \> Data Export](../../settings/settings_data_export/settings_data_export/).
 
 Definition of terms related to the Data export app:
 
@@ -47,7 +47,7 @@ Exporting instances to JSON is not implemented at this time.
 
 The Data export app accepts two types of data and file types that identify sets of records for export: a CSV file listing Instance UUIDs and a CQL query in CQL format. Triggering an export generates a .mrc file.
 
-The Data export app comes with a default job profile, which determines how information is exported in the generated MARC file. To create your own customized job profiles, you can configure job profiles in the Settings app. For more information, see Settings \> Data Export.
+The Data export app comes with a default job profile, which determines how information is exported in the generated MARC file. To create your own customized job profiles, you can configure job profiles in the Settings app. For more information, see [Settings \> Data Export](../../settings/settings_data_export/settings_data_export/).
 
 ### Uploading instance UUIDs
 
