@@ -7,19 +7,20 @@ description: >
 tags: ["subtopic"]
 ---
 
-*Warning:  This deployment method is still considered an experimental method.  It is still a work in progress.  Currently, only the Okapi installation is available.  The module deployments are blocked by an unsolved issue in the configuration of each module.*
+*Warning:  This deployment method is still considered an experimental method. It is still a work in progress. Currently, installation is only available for Okapi and the backend modules with this method. The backend installation is not secured at this time. The Stripes deployment is blocked by an unsolved issue in the configuration of each module. It is not recommended for setting up a production system at this time.*
 
 With this type of deployment, each module of FOLIO is bundled with a DEB package and runs directly on the host operating system without containers.
 
 ![FOLIO Single Server components (DEB installers)](/img/single_deb.png)
 
-The main differences between this deployment and the method with docker containers are:
+There are several differences between this type of deployment and the docker container deployment method. When this type of deployment is used:
 
-* Each module creates a new service and user on the operating system with the no container installation method. 
-* Each module creates a new database and role in PostgreSQL with the no container method.
-* No PostgreSQL superuser roles are required for Okapi or the modules with the no container method.  It is required during the installation.
-* Modules and users are prefixed with 'folio-' with this method.
-* This deployment method reduces the RAM requirement of each module to about 71MB. 
+* Each module creates a new systemd service and user on the operating system. The name of the new systemd service is prefixed with 'folio-'.
+* Each module creates a new database and role in PostgreSQL.
+* PostgreSQL databases and roles are created with customizable prefixes.
+* No PostgreSQL superuser roles are required for Okapi or the modules. The superuser role is required during the installation.
+* Modules and users are prefixed with ‘folio-’.
+* The RAM requirement of each module is reduced to about 71MB.
 
 **Note:**  This installation process is still under development and it is NOT recommended for setting up a production system. At the moment, only the Okapi and backend modules are considered on this installer, the installation of Stripes has to be manually executed.
 
@@ -27,11 +28,11 @@ The main differences between this deployment and the method with docker containe
 
 **Software requirements**
 
-| **Requirement**      | **Recommended Version**                    |
-|----------------------|--------------------------------------------|
-| Operating system     | Ubuntu 18.04.5 LTS (Bionic Beaver) 64-bits |
-| Java                 | OpenJDK 11                                 |
-| PostgreSQL           | PostgreSQL 10                              |
+| **Requirement**      | **Recommended Version**                                            |
+|----------------------|--------------------------------------------------------------------|
+| Operating system     | Ubuntu 18.04.5 LTS (Bionic Beaver) 64-bits or Debian Buster amd64  |
+| Java                 | OpenJDK 11                                                         |
+| PostgreSQL           | PostgreSQL 10                                                      |
 
 **Hardware requirements**
 
@@ -42,15 +43,15 @@ The main differences between this deployment and the method with docker containe
 
 ## Installation Requirements
 
-1. Install Java 11.
+1. Add the Folio Debian Repo to your system:
 
 ```
-sudo apt-get update
+sudo add-apt-repository "deb http://folio-repo.bib-bvb.de/repo folio-bleeding main"
+wget -qO - http://folio-repo.bib-bvb.de/repository.gpg | sudo apt-key add -
 ```
 
 
 2. Import the PostgreSQL signing key, add the PostgreSQL apt repository and install PostgreSQL.
-
 
 ```
 wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
@@ -59,39 +60,17 @@ sudo apt-get update
 sudo apt-get -y install postgresql-10 postgresql-client-10 postgresql-contrib-10 libpq-dev
 ```
 
-3. Create a superuser for FOLIO. 
 
-* Log into the PostgreSQL server as a superuser.
+3. Allow connections in PostgreSQL.
 
-```
-sudo su -c psql postgres postgres
-```
+**Note:**  This is only necessary if you run your PostgreSQL server on a different machine.  If you plan to run it on the same server as the FOLIO deployment, skip this step.
 
-* Create a new superuser role.
-
-```
-CREATE ROLE foliosu WITH PASSWORD 'folio123' LOGIN SUPERUSER;
-```
-
-* Exit psql with **\q** command.
-
-4. Allow connections in PostgreSQL.
- 
-* Edit file **/etc/postgresql/10/main/postgresql.conf** to add line **listen_addresses = '*'** in the "Connection Settings" section.
-* Edit file **/etc/postgresql/10/main/pg_hba.conf** to add line host **all all 0.0.0.0/0 md5** .
+* Modify the line **listen_addresses = ...** in **/etc/postgresql/10/main/postgresql.conf** to make PostgreSQL listen on the necessary interfaces.
+* Add the line **all all w.x.y.z/32 md5** to **/etc/postgresql/10/main/pg_hba.conf** (with w.x.y.z being the IP address of your FOLIO host).
 * Restart PostgreSQL with command **sudo systemctl restart postgresql** .
 
 
 ## Installing Okapi
-
-1. Import the FOLIO signing key and add the FOLIO apt repository.
-
-```
-wget --quiet -O - https://folio-repo.bib-bvb.de/repository.gpg | sudo apt-key add -
-sudo add-apt-repository "deb [arch=amd64] http://folio-repo.bib-bvb.de/repo folio-bleeding main"
-```
-
-2. Install Okapi through the package manager.
 
 ```
 sudo apt-get update
@@ -104,9 +83,9 @@ This DEB package will start a graphical installer where you can configure Okapi.
 This wizard has the following stages:
 
 * **Select a working mode**.  If you want to install FOLIO on a single server configuration, you should choose ‘dev’.
-* **Select port range of Okapi**.  The default ports range 9130-9149 is recommended.
+* **Select port range of Okapi**.  The default port range 9130-9149 is NOT recommended, since there's too few ports in this range for all the modules.
 * **Choose the backend type**.  PostgreSQL is the recommended.
-* **Database host and port**.  Insert IP and port of the PostgreSQL server or simply ‘localhost’ if it is running on the same server. 
+* **Database host and port**.  Insert IP and port of the PostgreSQL server or simply ‘localhost’ if it is running on the same server.
 * **Enter the PostgreSQL user for Okapi**.   For example, folio_okapi.
 * **Enter the PostgreSQL database for Okapi**.  For example,  folio_okapi.
 * **Enter the PostgreSQL password for Okapi**.  Provide a secure password or leave it empty to use a auto-generated password.
@@ -114,8 +93,8 @@ This wizard has the following stages:
 The installer will automatically apply these configurations on the PostgreSQL server if you provide superuser credentials or you can create them manually.
 
 * **Apply the database connection details**.  If you decide to set up a PostgreSQL database for Okapi automatically, you have to enter superuser credentials.
-* **Enter a PostgreSQL superuser**.  Enter the username of a postgres administrator account (e.g. foliosu). 
-* **Enter superuser password**.  For example, folio123.
+* **Enter a PostgreSQL superuser**.  Enter the username of a postgres administrator account (e.g. root).
+* **Enter superuser password**.
 
 The installer will configure and start Okapi automatically with the configurations that you have provided.  Additionally, you can create new tenants on Okapi in the next step of the installation process or you can create them later.
 
@@ -131,9 +110,9 @@ Once you have installed Okapi, you can install modules and assign them to tenant
 
 ## Installing modules
 
-The complete list of available installers for FOLIO modules can be found [here](https://github.com/drexljo/folio-projects).  Currently, the modules that depend on the mod-pubsub module do not have support.  The modules are bundled as DEB packages that deploy Java processes and register themselves on Okapi.
+The complete list of available installers for FOLIO modules can be found [here](https://github.com/drexljo/folio-projects), or by apt-get autocompletion.  Currently, the modules that depend on the mod-pubsub module do not have support.  The modules are bundled as DEB packages that deploy Java processes and register themselves with Okapi.
 
-With this deployment method, each module is installed independently.  If you want to install a suite of apps similar to [platform-core](https://github.com/folio-org/platform-core) or [platform-complete](https://github.com/folio-org/platform-complete), you can find the list of modules that you have to install in the github  repositories.  The backend module list can be found in the file **okapi-install.json** and the frontend modules in the file **stripes-install.json**. 
+With this deployment method, each module is installed independently.  If you want to install a suite of apps similar to [platform-core](https://github.com/folio-org/platform-core) or [platform-complete](https://github.com/folio-org/platform-complete), you can find the list of modules that you have to install in the github  repositories.  The backend module list can be found in the file **okapi-install.json** and the frontend modules in the file **stripes-install.json**.
 
 For example, the list of modules of the platform-core suite is the following:
 
@@ -188,7 +167,7 @@ The DEB package will start a graphical installer with following stages:
 * **Database configuration / Host**.  Provide the PostgreSQL server IP address (e.g. localhost).
 * **Database configuration / Port**.  Provide the PostgreSQL server port (e.g. 5432).
 * **Database configuration / Set up now?**.  Similar to the Okapi installation, you can automatically apply the new configurations on PostgreSQL if you provide superuser credentials (Select Yes).  Or, you can apply them manually later (Select No).
-* **Module / Number of instances**.  Enter the number of instances of the module. 
+* **Module / Number of instances**.  Enter the number of instances of the module.
 
 Once you have deployed the modules that you require, you can proceed to link them to a tenant and install Stripes
 
@@ -219,7 +198,7 @@ The configuration files of Okapi are located  in the folder: **/etc/folio/okapi/
 Take into account that you have to restart the Okapi service if you change the okapi.conf file.
 
 ### Secure Okapi
-In order to secure Okapi, you should run the **secure-supertenant** script.  The usage of this script is explained in the Secure Okapi section of the Single Server Installation Guide.
+In order to secure Okapi, you should run the **secure-supertenant** script.  The usage of this script is explained in the Secure Okapi section of the Single Server Installation Guide. **Be aware this will break autoregistration of modules during restarts as of now!**
 
 ## Tenant configuration
 ### Add a new tenant
@@ -227,7 +206,7 @@ If you want to create a new tenant, you can use the script **addtenants**.
 ```
 sudo /usr/share/folio/okapi/bin/addtenants newtenant
 ```
-**Note**:   You have to pass the ID of the new tenant as argument to the script.   For example, **newtenant**
+**Note**:   You don't have to pass the ID of the new tenant as argument to the script.   If you don't, it will simply ask you.
 
 This starts a graphical wizard similar to the one shown in the Okapi installer and all the tenants are registered in the file **/etc/folio/tenants**.
 
@@ -239,7 +218,7 @@ You can obtain the complete list of installed modules by executing a GET request
 ```
 curl http://localhost:9130/_/proxy/modules
 ```
-The response will be a JSON file that contains the identifier and name of the active modules (e.g. mod-circulation-storage-12.2.0-SNAPSHOT).  The module installer appends the version of the module when the module is registered on discovery web services for Okapi. 
+The response will be a JSON file that contains the identifier and name of the active modules (e.g. mod-circulation-storage-12.2.0-SNAPSHOT).  The module installer appends the version of the module when the module is registered on discovery web services for Okapi.
 
 The operation of enabling a module for a tenant is performed in a single POST request to Okapi.  You will need the identifier of your tenant (e.g diku) and the identifier of the module that you want to enable.
 

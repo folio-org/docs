@@ -2,7 +2,7 @@
 ---
 title: "Invoices"
 linkTitle: "Invoices"
-date: 2021-05-16
+date: 2021-08-02
 weight: 20
 tags: ["parenttopic"]
 ---
@@ -54,12 +54,12 @@ Invoices contain a list of the payments due for materials ordered by your librar
 
 ### Invoice information
 
-There are certain pieces of information associated with an invoice. Some information is required when creating the invoice, while other information can be added later. Invoice date, Status, and Batch group are the only required fields in this section.
+This section contains header information. Invoice date, Status, and Batch group are the only required fields in this section.
 
 
 
 *   **Invoice date (required).** The date the invoice was created.
-*   **Status (required).** The status of the invoice.  
+*   **Status (required).** The status of the invoice. The default status for a new invoice is "Open." "Reviewed" is also available in the drop-down list.
 *   **Payment due.** The date when invoice payment is due.
 *   **Terms.** The additional terms associated with the invoice, such as business or contractual terms.
 *   **Approval date.** The date a user approved the invoice to move forward.
@@ -71,7 +71,7 @@ There are certain pieces of information associated with an invoice. Some informa
 *   **Total adjustments.** The cost of all the adjustments for the invoice.
 *   **Total amount.** The combined cost of the items ordered and adjustments for the invoice.  
 *   **Lock total.** The total expenditure for the invoice.
-*   **Notes.** Any additional comments relevant to the invoice.
+*   **Note.** Any additional comments relevant to the invoice.
 
 
 ### Adjustments
@@ -168,11 +168,13 @@ In the **Search & filter** pane, click **Status** and select any applicable filt
 
 
 
-*   **Open.** Invoices currently open for your library.
-*   **Reviewed.** Invoices that have been reviewed by your library.
-*   **Approved.** Invoices that have been approved by your library.
-*   **Paid.** Invoices that have been paid for by your library.
-*   **Cancelled.** Invoices that have been cancelled by your library.
+*   **Open.** Invoices currently open for your library. This is the default status for new invoices.
+*   **Reviewed.** Invoices that have been reviewed by your library. To set an invoice as “Reviewed”, you can select the Reviewed status from the drop-down list on the Create vendor invoice screen or the Edit vendor invoice screen.
+
+*   **Approved.** Invoices that have been approved by your library. Use the Action menu to approve an invoice.
+*   **Paid.** Invoices that have been paid for by your library. Use the Action menu to pay an invoice.
+*   **Cancelled.** Invoices that have been cancelled by your library. Note: The cancel invoice functionality will be available in future releases.
+
 
 
 ### Vendor name
@@ -317,7 +319,7 @@ For information about the items in the Invoice information section, see [Creatin
 
 ### Invoice lines
 
-Invoice lines allow you to link an invoice to open order purchase order lines or create invoice lines that are not associated with an existing order. Each line consists of the title, billing information, cost details, and adjustments.
+Invoice lines allow you to link an invoice to open order purchase order lines or create invoice lines that are not associated with an existing order. Each line consists of the title, payment information, cost details, and adjustments.
 
 This section lists all invoice lines for the order. The list displays the following:
 
@@ -377,28 +379,6 @@ To create an invoice line that is not associated with an existing purchase order
 *   **Release encumbrance.** Releases the cost of the invoice against the fund to which it was assigned.
 
 
-##### Fund distribution
-
-
-
-*   **Fund.** The fund the invoice line will charge.
-*   **Expense class.** The expense class for the invoice line.
-*   **Value.** The value of the invoice charged to this line. This number can be expressed as either a percentage or a currency.
-*   **Amount.** The amount of money charged to the fund.
-*   **Initial encumbrance.** The initial amount charged to the fund.
-*   **Current encumbrance.** The current amount charged to the fund.
-
-
-##### Adjustments
-
-
-
-*   **Description.** A description of the adjustment.
-*   **Amount.** The money owed for the adjustment.
-*   **Pro rate.** The discount applied to the adjustment.
-*   **Relation to total.** Specifies whether the adjustment is in addition to, included with, or separate from in the total amount of the invoice.
-
-
 ### Fund distribution
 
 
@@ -442,7 +422,7 @@ This area includes all the links and documents attached to the invoice. Click th
 
 1. Find the invoice you want to edit and select it.
 2. Click **Actions** > **Edit**.
-3. Edit the invoice.
+3. Edit the invoice. Not all fields are editable.  The Status field is editable so that you can optionally set an invoice as “Reviewed”  by selecting the Reviewed status from the drop-down list.
 4. Click **Save & close.** A confirmation message appears and the invoice is updated.
 
 
@@ -484,9 +464,9 @@ Deleting an invoice is possible while in an Open, Reviewed, or Canceled status. 
 
 ## Approving an invoice
 
-Invoices require approval before the values are considered to be awaiting payment and in order for vouchers to be created. Only someone with the **Approve invoice** permission can perform this action.
+Invoices require approval before the payment amounts are considered to be awaiting payment and in order for vouchers to be created. Only invoices with invoice lines can be approved. Only someone with the Approve invoice permission can perform this action. Note: Once one or more invoices connected to a purchase order line have been “Approved,” the payment status on the purchase order is changed to “Partially paid.”
 
-If entering a locked total, all invoice lines and adjustment values must equal this lock total amount before a user can approve the invoice. Approving an invoice triggers the creation of the voucher and pending payment transactions. Vouchers are a mechanism for providing the information necessary to make invoice payments and can be exported to an external payment system. For more information on exporting vouchers, see
+If entering a locked total, all invoice lines and adjustment values must equal this lock total amount before a user can approve the invoice. Approving an invoice triggers the creation of the voucher and pending payment transactions. Vouchers are a mechanism for providing the information necessary to make invoice payments and can be exported to an external payment system. Each invoice generates a single unique voucher on which all fund charges are grouped by the fund external account number. For more information on exporting vouchers, see
  [Settings > Invoices > Batch group configuration]({{< ref "/settings_invoices.md#settings--invoices--batch-group-configuration" >}}).
 
 To approve an invoice, follow these steps:
@@ -496,3 +476,155 @@ To approve an invoice, follow these steps:
 1. Find the invoice you want to approve and select it.
 2. In the **Vendor invoice number** pane, click **Actions** > **Approve.**
 3. In the **Approve invoice** dialog, click **Approve**. A confirmation message appears and the invoice is approved.
+
+## Viewing a voucher
+
+
+Once an invoice is approved, an invoice voucher is created and is added to the invoice record.  To view an invoice voucher, follow these steps:
+
+
+
+1. Using the **Search and Filter** pane, find the invoice you want to view and select it.
+2. In the **Vendor invoice number** pane, scroll down to the **Voucher information** section.  Key information about the invoice payment voucher is displayed in this section.
+3. To view all voucher information on a full screen window, click **View voucher**.  
+
+
+
+ ### Voucher information
+
+*   **Status.** The status of the invoice voucher: Awaiting Payment or Paid.
+*   **Voucher number.**  System-assigned number for this voucher.
+*   **Voucher date.** Date the invoice was approved and the voucher was created.
+*   **Total.** Total amount of all voucher lines.
+*   **Exchange rate.** Currency exchange rate used to generate the transaction.
+*   **Disbursement number.**  The identifier from an external system corresponding to a payment.
+*   **Account number.** The number of the vendor organization account for the payment method indicated on the invoice.  This value is only populated if the organization record for the vendor contains an account number in the Accounts section for the payment method being used for this invoice.
+*   **Accounting code.**  Vendor accounting code to identify the vendor organization in an external accounts payable system.
+*   **Enclosure needed.**  If true and payment method is “Check,” this indicates to an external accounting system that an enclosure is needed with this invoice,If the Export to accounting checkbox is set to true and a voucher is created for this invoice, the export voucher file will contain a value of true for
+*   **Vendor.** Vendor name.
+*   **Address 1.** Vendor address 1.
+*   **Address 2.** Vendor address 2.
+*   **City.** Vendor city.
+*   **State/Prov./Region.** Vendor State, Province, or Region code.
+*   **Zip code.** Vendor zip code.
+*   **Country.** Vendor country.
+
+
+
+### Voucher lines
+
+
+
+The voucher lines are grouped by fund external account number.  For example, if there are multiple invoice lines on an invoice that contain the same fund external account number, only one voucher line will be generated containing the total amount across those invoice lines.
+
+
+
+*   **External account number.**  The fund’s external account number.
+*   **Total.** The total amount for all voucher lines, displayed at the bottom of the voucher line table.
+
+
+The Voucher lines table contains this information for each voucher line:
+
+
+*   **Line number.**
+*   **Group.**
+*   **Fund code.**
+*   **External account number.**
+*   **Amount.**
+
+
+
+## Paying an invoice
+
+
+
+Use the Pay action to update the invoice to the status of Paid. The Pay action is available in the Action menu if the Settings > Invoices > Approvals > Approve and pay in one click setting is turned off.  This enables a library to use separate actions to approve invoices and pay invoices.  If that setting is off, the invoice must be approved before the Pay action is available.  Moving the invoice to paid status triggers an update of the order status to Closed if the order is fully received. See [Settings > Invoices > Approvals]({{< ref "/invoices.md#settings--invoices--approvals" >}})  for more information about the Approve and pay in one click setting.  
+
+
+
+To pay an invoice, follow these steps:
+
+
+
+1. Using the **Search and Filter** pane, find the invoice you want to pay and select it.
+2. In the **Action** menu, select **Pay**.
+
+
+
+## Viewing voucher export details and downloading the export file
+
+
+
+The process to generate a batch file containing vouchers for export to an external accounts payable system is managed in [Invoice > Settings > Batch group configuration]({{< ref "/invoices.md#settings--invoices--batch-group-configuration" >}}).  Only vouchers for invoices with the Export to accounting checkbox turned on with an invoice status of “Approved” that have not been extracted in a prior job run will be included in the export.  After the export job completes, you can view details about the export and view a copy of the full voucher export file by finding an invoice that was included in the export job.  To view voucher export details and download a copy of the full file to your local download folder, follow these steps:
+
+
+
+1. Using the **Search and Filter** pane, find the invoice you want to view and select it.
+2. In the **Vendor invoice number** pane, scroll down to the **Voucher export details** section.  
+3. To download the full voucher export file, click the downward arrow download icon next to the Batch file name.  This file will contain all vouchers that were in a Paid status that had not yet been exported at the time of job execution.
+
+
+### Voucher export details
+
+
+
+*   **Batch group.**
+*   **Batch file name.**
+*   **Batch file status.**
+
+
+
+### Voucher export file
+
+
+
+The voucher export file contains the following data elements:
+
+*   accountingCode
+*   amount
+*   batchedVoucherLines/0/amount
+*   batchedVoucherLines/0/fundCodes/0
+*   batchedVoucherLines/0/externalAccountNumber
+*   enclosureNeeded
+*   exchangeRate
+*   folioInvoiceNo
+*   invoiceCurrency
+*   status
+*   systemCurrency
+*   type
+*   vendorInvoiceNo
+*   vendorName
+*   voucherDate
+*   voucherNumber
+*   vendorAddress/addressLine1
+*   vendorAddress/addressLine2
+*   vendorAddress/city
+*   vendorAddress/stateRegion
+*   vendorAddress/zipCode
+*   vendorAddress/country
+
+
+## Edit a voucher to add disbursement information
+
+
+
+To add information about the invoice voucher disbursement from an external accounts payable system, use the Action menu to edit the invoice voucher.
+
+
+
+
+1. Using the **Search and Filter** pane, find the invoice for which you want to update disbursement information and select it.
+2. In the Voucher information section, click the **View voucher** button.
+2. From the **View voucher full-screen** window, open the **Action** menu and select **Edit**.
+2. Enter the disbursement information in the fields described below.
+4. Click **Save and close.**  
+
+
+
+The only fields that are editable on the voucher are:
+
+
+
+*   **Disbursement number.** Enter an identifier from an external system corresponding to a payment, such as a check number.
+*   **Disbursement date.**  Enter the date of the disbursement transaction in the external system.
+*   **Disbursement amount.**  Enter the amount of the disbursement, with or without decimal.
