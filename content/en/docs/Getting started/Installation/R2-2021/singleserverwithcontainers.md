@@ -41,9 +41,9 @@ A FOLIO instance is divided into two main components.  The first component is Ok
 sudo apt update
 ```
 
-2. Install Java 11 and nginx and verify that Java 11 is the system default.
+2. Install Java 11 and verify that Java 11 is the system default.
 ```
-sudo apt -y install openjdk-11-jdk nginx
+sudo apt -y install openjdk-11-jdk
 sudo update-java-alternatives --jre-headless --jre --set java-1.11.0-openjdk-amd64
 ```
 
@@ -170,7 +170,6 @@ CREATE DATABASE okapi WITH OWNER okapi;
 ```
 
 3. Create a database role and database to persist tenant data.
-   Create a database for your tenant.  This database will host the data of your tenant.
 
 ```
 CREATE ROLE folio WITH PASSWORD 'folio123' LOGIN SUPERUSER;
@@ -178,8 +177,6 @@ CREATE DATABASE folio WITH OWNER folio;
 ```
 
 4. Exit psql with **\q** command
-
-**Note**: You will need to create additional databases for each new tenant you add to FOLIO. More information on how to set up a new tenants on the next sections.
 
 ### Install and configure Okapi
 
@@ -377,58 +374,24 @@ You have to set the KAFKA_HOST variable also in the launch descriptor of the fol
   - mod-remote-storage
   - mod-source-record-manager
   - mod-source-record-storage 
+  - mod-feesfines (add KAFKA_HOST and KAFKA_PORT variables to the launch descriptor)
   
 You can look up the R2-2021 module versions in okapi-install.json. 
 Apply the same steps as for the module descriptor of mod-pubsub to these modules, but change only the value of KAFKA_HOST.
 
+3. Deploy and enable the backend modules.
+
 ### Deploy the backend modules
 
-3. Deploy and enable the backend modules. Also, you can set the (tenantParameters)[https://github.com/folio-org/okapi/blob/master/doc/guide.md#install-modules-per-tenant] to load their sample and reference data.
+Deploy the backend modules one by one. This will pull the Docker image from Docker Hub and spin up a container on your host for each backend module. 
 
-Start with mod-pubsub.
-First, simulate the run to see what will happen:
-```
-curl -w '\n' -D - -X POST -H "Content-type: application/json" -d '[ { "id" : "mod-pubsub-2.3.3", "action" : "enable" } ]' http://localhost:9130/_/proxy/tenants/diku/install?simulate=true
-```
-
-Then do
-```
-curl -w '\n' -D - -X POST -H "Content-type: application/json" \
-  -d '[ { "id" : "mod-pubsub-2.3.3", "action" : "enable" } ]' \
-  http://localhost:9130/_/proxy/tenants/diku/install?deploy=true\&preRelease=false\&tenantParameters=loadSample%3Dtrue%2CloadReference%3Dtrue
-```
-
-This will pull the Docker image from Docker Hub and spin up a container on your host. 
-Progress can be followed in the Okapi log at /var/log/folio/okapi/okapi.log
-
-**Note**: You will have to replace ‘diku’ with the id of your tenant.
-
-Once the install has finished, check what docker containers are running on your machine :
-
-```
-sudo docker ps | grep -v "^CONTAINER"
-```
-
-There should be a container running mod-pubsub, plus Kafka and Zookeeper, as well as dependent modules (mod-login, mod-permissions, mod-users).
-
-Deploy the other backend modules one by one. Use this script to deploy all other backend modules, one after the other, on your host:
+Use this script (provided in the Installation folder of this repository) to deploy all backend modules, one after the other, on your host:
 
 ```
 ./deploy-all-backend-modules.sh ~/platform-core/okapi-install.json <YOUR_IP_ADDRESS>
 ```
 
-Go through the list of modules in okapi-install.json.
-For a single module it works like this:
-
-```
-  cat > circulation-deployment-descriptor.json <<END
-{
-  "srvcId": "mod-circulation-22.0.4",
-  "nodeId": "<YOUR_IP_ADDRESS>"
-}
-END
-  curl -w '\n' -D - -X POST -H "Content-type: application/json" -d @circulation-deployment-descriptor.json http://localhost:9130/_/discovery/modules
-```
+Progress can be followed in the Okapi log at /var/log/folio/okapi/okapi.log
 
 Check, what is in your Discovery:
 
@@ -436,7 +399,7 @@ Check, what is in your Discovery:
 curl -w '\n' -D - http://localhost:9130/_/discovery/modules | grep srvcId
 ```
 
-There should be 65 modules in your Okapi discovery - those which are in okapi-install.json. In addition, we have installed mod-pubsub, mod-login, mod-permissions and mod-users twice, because we have installed mod-pubsub and dependencies right away (leave it as is, some of those modules have been deployed in different release versions).
+There should be 61 modules in your Okapi discovery - those which are in okapi-install.json.
 
 Check, what Docker containers are running on your host:
 
@@ -444,32 +407,36 @@ Check, what Docker containers are running on your host:
 docker ps --all | wc
 ```
 
-This should show the number 68 : The 61 backend modules, Kafka, Zookeeper + the header line. In addition, 4 modules have been deployed twice.
+This should show the number 64 : The 61 backend modules, Kafka, Zookeeper + the header line.
 
 Now the backend modules are deployed, but not yet enables for your tenant.
 
 
 ### Enable the backend modules for your tenant
 
-Post the list of backend modules to Okapi to enable them for your tenant. First do a simulation run:
+Post the list of backend modules to Okapi to enable them for your tenant.  Also, you can set the (tenantParameters)[https://github.com/folio-org/okapi/blob/master/doc/guide.md#install-modules-per-tenant] to load their sample and reference data.
+
+First do a simulation run:
 
 ```
   curl -w '\n' -D - -X POST -H "Content-type: application/json" -d @$HOME/platform-core/okapi-install.json http://localhost:9130/_/proxy/tenants/diku/install?simulate=true\&preRelease=false
 ```
 
-Then do
+**Note**: You will have to replace ‘diku’ with the id of your tenant.
+
+Decide whether you want to load a set of sample data (inventory: bibs, holdings and items) or not. If you want to load sample data, then change the value of "loadSample" from "false" to "true" in the following command line. Then execute this command line:
 
 ```
-  curl -w '\n' -D - -X POST -H "Content-type: application/json" -d @$HOME/platform-core/okapi-install.json http://localhost:9130/_/proxy/tenants/diku/install?deploy=false\&preRelease=false\&tenantParameters=loadReference%3Dtrue
+  curl -w '\n' -D - -X POST -H "Content-type: application/json" -d @$HOME/platform-core/okapi-install.json http://localhost:9130/_/proxy/tenants/diku/install?deploy=false\&preRelease=false\&tenantParameters=loadReference%3Dtrue%2CloadSample%3Dfalse
 ```
 
 Finally, check which backend modules have been enabled for your tenant:
 
 ```
-curl -w '\n' -XGET http://localhost:9130/_/proxy/tenants/diku/modules | grep "mod-"
+curl -w '\n' -XGET http://localhost:9130/_/proxy/tenants/diku/modules | grep "id"
 ```
 
-This should show the same set of modules as in okapi-install.json.
+This should show the same set of modules as in okapi-install.json plus the Okapi module itself. Thus, the number of modules enabled for your tenant should be 62.
 
 The backend of the new tenant is ready.  Now, you have to set up a Stripes instance for the frontend of the tenant, create a superuser for the tenant and secure Okapi.
 
@@ -486,13 +453,17 @@ Install Stripes and nginx in a Docker container.
 ```
   cd ~/platform-core
   edit docker/Dockerfile
-    ARG OKAPI_URL=http://<YOUR_IP_ADDRESS>:9130
+    ARG OKAPI_URL=http(s)://<YOUR_DOMAIN_NAME>/okapi
     ARG TENANT_ID=diku # Or change to your tenant's name
-    
+```
+
+Use https if possible, i.e. use an SSL certificate. <YOUR_DOMAIN_NAME> should then be the fully qualified domain name (FQDN) for which your certificate is valid, or a server alias name (SAN) which applies to your certificate. If using http, it is your server name (host name plus domain). The subpath /okapi of your domain name will be redirected to port 9130 below, in your nginx configuration. 
+   
+```   
   edit docker/nginx.conf
 server {
   listen 80;
-  server_name <YOUR_SERVER_NAME>;  # replace by the IP address under which your FOLIO instance will be visible, e.g. my.domain.edu
+  server_name <YOUR_SERVER_NAME>;
   charset utf-8;
   access_log  /var/log/nginx/host.access.log  combined;
 
@@ -516,6 +487,8 @@ server {
   }
 }
 ```
+
+<YOUR_SERVER_NAME> should be the real name of your server in your network. <YOUR_SERVER_NAME> should consist of host name plus domain name, e.g. myserv.mydomain.edu. 
 
 If you want your FOLIO installation to be accessed from outside of your network, it is highly recommended to use https instead of http. In this case, your nginx.conf might look like this:
  
@@ -550,7 +523,7 @@ If you want your FOLIO installation to be accessed from outside of your network,
   # back-end requests:
   location /okapi {
     rewrite ^/okapi/(.*) /$1 break;
-    proxy_pass http://localhost:9130/;
+    proxy_pass http://<YOUR_IP_ADDRESS>:9130/;
   }
 
 }
@@ -563,7 +536,7 @@ Edit the url and tenant in stripes.config.js. The url will be requested by a FOL
 
 ```
   edit stripes.config.js
-      okapi: { 'url':'http(s)://<YOUR_SERVER_NAME>/okapi', 'tenant':'diku' },
+      okapi: { 'url':'http(s)://<YOUR_DOMAIN_NAME>/okapi', 'tenant':'diku' },
      
       # remove this line, unless you are installing Elasticsearch :
           '@folio/search' : {},
@@ -589,7 +562,7 @@ You might also edit branding in stripes.config.js, e.g. add your own logo and fa
   
 ```
   sudo su
-  docker build -f docker/Dockerfile --build-arg OKAPI_URL=http://<YOUR_IP_ADDRESS>:9130 --build-arg TENANT_ID=diku -t stripes .
+  docker build -f docker/Dockerfile --build-arg OKAPI_URL=http(s)://<YOUR_DOMAIN_NAME>/okapi --build-arg TENANT_ID=diku -t stripes .
 Sending build context to Docker daemon  1.138GB
 Step 1/19 : FROM node:15-alpine as stripes_build
 ...
@@ -604,13 +577,12 @@ Successfully tagged stripes:latest
 This will run for quite a long time, approx. 15 minutes.
 
 ### Start the Docker container
+  Make sure nginx is not already running on your VM (do `sudo service nginx stop`). Make sure nothing else is running on port 80.
   Redirect port 80 from the outside to port 80 of the docker container. When using SSL, port 443 has to be redirected.
   
 ```
   nohup docker run -d -p 80:80 stripes
 ```
-
-Stop nginx on your server in case it is running there: sudo service nginx stop.
   
 ### Log in to the Docker container
   Check if your config file looks o.k. and follow the access log inside the container:
@@ -640,14 +612,13 @@ sudo cpan install JSON.pm
 sudo cpan install UUID::Tiny
 ```
 
-Use this Perl script to create a superuser [https://github.com/folio-org/folio-install/blob/master/runbooks/single-server/scripts/bootstrap-superuser.pl ] :
+Use this Perl script to create a superuser [https://github.com/folio-org/folio-install/blob/master/runbooks/single-server/scripts/bootstrap-superuser.pl ]. Use the version of the script which is applicable for mod-permissions of version < 5.15.0 :
 ```
+wget "https://raw.githubusercontent.com/folio-org/folio-install/master/runbooks/single-server/scripts/bootstrap-superuser.pl"
 perl bootstrap-superuser.pl \
   --tenant diku --user diku_admin --password admin \
   --okapi http://localhost:9130
 ```
-
-
 
 Now Stripes is running on port 80 or 443 and you can open it using a browser. Log in with the credentials of the superuser that you have created.
 
