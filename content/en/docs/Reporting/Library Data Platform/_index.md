@@ -28,7 +28,7 @@ For detailed information about how to set up and configure the LDP, please revie
 * [Reference](https://github.com/library-data-platform/ldp/blob/1.1.11/doc/Config_Guide.md#reference): reference of the configuration file: dbconfig.general
 
 ## Setting up derived tables
-To let report users take full advantage of the community-developed [report queries](../querying/#using-queries-from-the-folio-analytics-repository) as well as having a good starting point for [ad hoc querying](../querying/#ad-hoc-querying-using-ldp-tables), it is strongly recommended to set up a nightly update on [derived tables](https://github.com/folio-org/folio-analytics/tree/release-1.0/sql/derived_tables). Note that the use of *views* and *materialized views* is not supported in LDP databases and may cause the LDP software to be unable to perform data updates.
+To let report users take full advantage of the community-developed [report queries](../folio-analytics/#using-queries-from-the-folio-analytics-repository) as well as having a good starting point for [ad hoc querying](../folio-analytics/#ad-hoc-querying-using-ldp-tables), it is strongly recommended to set up a nightly update on [derived tables](https://github.com/folio-org/folio-analytics/tree/release-1.0/sql/derived_tables). Note that the use of *views* and *materialized views* is not supported in LDP databases and may cause the LDP software to be unable to perform data updates.
 
 You can find instructions in Github on how to set up [FOLIO Reporting Derived Tables (Guide)](https://github.com/folio-org/folio-analytics/blob/release-1.0/sql/derived_tables/README.md).
 
