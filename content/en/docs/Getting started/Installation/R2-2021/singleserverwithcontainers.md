@@ -594,6 +594,20 @@ This will run for quite a long time, approx. 15 minutes.
   tail -f /var/log/nginx/host.access.log
 ```
 
+### Post the list of Stripes modules to enable for your tenant.
+
+First, simulate what will happen:
+```
+curl -w '\n' -D - -X POST -H "Content-type: application/json" -d @stripes-install.json http://localhost:9130/_/proxy/tenants/diku/install?simulate=true\&preRelease=false
+```
+
+Then, enable the frontend modules for your tenant:
+
+```
+curl -w '\n' -D - -X POST -H "Content-type: application/json" -d @stripes-install.json http://localhost:9130/_/proxy/tenants/diku/install?preRelease=false
+```
+
+50 Stripes modules (folio*) and 9 Edge modules have been enabled.
 
 ### Create a superuser
 
