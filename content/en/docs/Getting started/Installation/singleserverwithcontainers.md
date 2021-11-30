@@ -435,10 +435,10 @@ sudo apt -y install yarn
 
 ### Building Stripes
 
-1. Move to NodeJS LTS.
+1. Move to NodeJS 14 LTS.
 
 ```
-sudo n lts
+sudo n 14
 ```
 2. cd into the platform-core repository (or platform-complete, if you chose to install that)
 ```
