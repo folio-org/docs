@@ -117,7 +117,7 @@ sudo chmod +x /usr/local/bin/docker-compose
 Take into account that you have to change the **KAFKA_ADVERTISED_LISTENERS** value for the private IP of your server, instead of 10.0.2.15 for a Vagrant box.
 
 ```
-vim ~/folio-install/runbooks/single-server/scripts/docker-compose-kafka-zk.yml  # chnage IP in KAFKA_ADVERTISED_LISTENERS
+vim ~/folio-install/runbooks/single-server/scripts/docker-compose-kafka-zk.yml  # change IP in KAFKA_ADVERTISED_LISTENERS
 sudo mkdir /opt/kafka-zk
 sudo cp ~/folio-install/runbooks/single-server/scripts/docker-compose-kafka-zk.yml /opt/kafka-zk/docker-compose.yml
 cd /opt/kafka-zk
@@ -196,7 +196,7 @@ The Okapi log is at **/var/log/folio/okapi/okapi.log**.
 
 4. Pull module descriptors from the central registry.
 
-A module descriptor declares the basic module metadata (id, name, etc.), specifies the module's dependencies on other modules (interface identifiers to be precise), and reports all "provided" interfaces. As part of the continuous integration process, each Module Descriptor  is published to the FOLIO Registry at https://folio-registry.aws.indexdata.com/.
+A module descriptor declares the basic module metadata (id, name, etc.), specifies the module's dependencies on other modules (interface identifiers to be precise), and reports all "provided" interfaces. As part of the continuous integration process, each Module Descriptor  is published to the FOLIO Registry at https://folio-registry.dev.folio.org/.
 
 ```
 curl -w '\n' -D - -X POST -H "Content-type: application/json" \
@@ -208,7 +208,7 @@ The content of registry.json should look like this:
 ```
 {
   "urls": [
-    "http://folio-registry.dev.folio.org"
+    "https://folio-registry.dev.folio.org"
   ]
 }
 ```
