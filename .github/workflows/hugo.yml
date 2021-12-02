@@ -1,0 +1,17 @@
+name: Hugo
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          submodules: recursive
+          
+      - uses: klakegg/actions-hugo@1
+        with:
+          image: ext-alpine
+
