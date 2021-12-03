@@ -6,6 +6,10 @@ weight: 10
 tags: ["parenttopic"]
 ---
 
+{{% alert color="info"%}}
+<b>Note:</b> This [WOLFcon 2021 presentation](https://www.youtube.com/watch?v=SM1vq0zvxsY) gives an overview of the Library Data Platform.
+{{% /alert %}}
+
 In order for LDP software to connect to FOLIO, it needs read-only access to Okapi and the FOLIO database. The LDP can be hosted and administered locally by an institution’s own staff or by contracting hosting services out to a third party. You can find specific [system requirements](https://github.com/library-data-platform/ldp/blob/release-1.1/doc/Admin_Guide.md#software) in the LDP documentation.
 
 ## Installing and configuring the LDP
