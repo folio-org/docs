@@ -89,6 +89,18 @@ custom_css = ["css/toc.css"]
 # This menu appears only if you have at least one [params.versions] set.
 version_menu = "Releases"
 
+[[params.versions]]
+  version = "master"
+  url = "https://master.kubeflow.org"
+
+[[params.versions]]
+  version = "v0.2"
+  url = "https://v0-2.kubeflow.org"
+
+[[params.versions]]
+  version = "v0.3"
+  url = "https://v0-3.kubeflow.org"
+
 # Flag used in the "version-banner" partial to decide whether to display a
 # banner on every page indicating that this is an archived version of the docs.
 # Set this flag to "true" if you want to display the banner.
