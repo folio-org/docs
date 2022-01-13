@@ -38,7 +38,7 @@ Job profiles define the type of import at the highest level. A job profile conta
 
 ### Searching for an import job profile
 
-Use the search bar to search for job profiles contained in the Job profile table. 
+Use the search bar to search for job profiles contained in the Job profile table.
 
 The Job profiles table contains the following columns:
 
@@ -87,7 +87,7 @@ Exporting an import job profile is not implemented at this time.
 
 ## Settings \> Data import \> Match profiles
 
-Match profiles define the match between an incoming record and existing record. Match profiles can be used for multiple job profiles. 
+Match profiles define the match between an incoming record and existing record. Match profiles can be used for multiple job profiles.
 
 Before creating a match profile, you should first create action profiles and field mapping profiles.
 
@@ -102,7 +102,7 @@ Before creating a match profile, you should first create action profiles and fie
 
 ### Searching for an import match profile
 
-Use the search bar to search for match profiles contained in the Match profile table. 
+Use the search bar to search for match profiles contained in the Match profile table.
 
 The Match profiles table contains the following columns:
 
@@ -171,7 +171,7 @@ Before creating an action profile, you should first create field mapping profile
 
 ### Searching for an import action profile
 
-Use the search bar to search for action profiles contained in the Action profile table. 
+Use the search bar to search for action profiles contained in the Action profile table.
 
 The Action profiles table contains the following columns:
 
@@ -276,7 +276,7 @@ Note: Inactive fields cannot be mapped because they are controlled by the system
 
 ### Searching for an import field mapping profile
 
-Use the search bar to search for field mapping profiles contained in the Field mapping profile table. 
+Use the search bar to search for field mapping profiles contained in the Field mapping profile table.
 
 The Field mapping profiles table contains the following columns:
 
@@ -339,7 +339,7 @@ Use File extensions to configure which file formats are allowed for import and w
 
 ### Searching for a file extension
 
-Use the search bar to search for file extensions contained in the File extensions table. 
+Use the search bar to search for file extensions contained in the File extensions table.
 
 The File extensions table contains the following columns:
 

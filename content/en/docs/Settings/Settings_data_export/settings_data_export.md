@@ -10,7 +10,7 @@ The Data export section of the Settings app is where you can configure the job p
 
 The Data export app comes with a default job profile that exports only bibliographic data. Additional profiles that deliver information from the Instance, Holdings, and/or Item records can be created as needed. The mapping profiles allow you to customize the data that is used in the job profile.
 
-The mapping and job profiles add flexibility to the data export and provide an easy way to execute a different type of export on the same data set or the same type of export on different data sets.  For example, one user can export bibliographic data only and another user can export instances with appended elements of the holdings and items records using the same set of data.
+The mapping and job profiles add flexibility to the data export and provide an easy way to execute a different type of export on the same data set or the same type of export on different data sets.  For example, one user can export bibliographic data only and another user can export instances with appended elements of the holdings and items records using the same set of data.
 
 ## Permissions
 
@@ -26,7 +26,7 @@ Before you begin configuring job profiles, you should first configure your field
 
 ### Default export job profile
 
-The system comes with a default job profile that is associated with the default field mapping profile. Records exported with the default job profile generate a MARC file containing information for the provided record IDs. 
+The system comes with a default job profile that is associated with the default field mapping profile. Records exported with the default job profile generate a MARC file containing information for the provided record IDs.
 
 If you use the default job profile, simplified MARC bibliographic records are generated for instances without underlying MARC records. For instances with underlying MARC records stored in SRS, those records are used in the export.
 
@@ -41,7 +41,7 @@ If you use the default job profile, simplified MARC bibliographic records are ge
 
 ### Searching for an export job profile
 
-Use the search bar to search for profiles contained in the Job profile table. 
+Use the search bar to search for profiles contained in the Job profile table.
 
 The Job profiles table contains the following columns:
 
@@ -95,7 +95,7 @@ The system comes with a default field mapping profile that is associated with th
 
 ### Searching for an export field mapping profile
 
-Use the search bar to search for profiles contained in the Field mapping profiles table. 
+Use the search bar to search for profiles contained in the Field mapping profiles table.
 
 The Field mapping profiles table contains the following columns:
 

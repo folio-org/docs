@@ -1,8 +1,7 @@
-
 ---
 title: "Data import"
 linkTitle: "Data import"
-date: 2020-11-14
+date: 2021-11-14
 weight: 20
 tags: ["parenttopic"]
 ---

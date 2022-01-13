@@ -1,4 +1,3 @@
-
 ---
 title: "Inventory"
 linkTitle: "Inventory"
@@ -11,7 +10,7 @@ The Inventory app allows you to manage your collections (physical and/or virtual
 
 Definition of terms related to the Inventory app:
 
--   **Instance record.** A record that contains bibliographic and administrative information about a particular resource. The Instance record is what is known as the bibliographic record. They are mostly derived from full bibliographic records (in MARC or other formats) and are intended to provide information for library staff to identify and select records in order to perform work on associated holdings and items. 
+-   **Instance record.** A record that contains bibliographic and administrative information about a particular resource. The Instance record is what is known as the bibliographic record. They are mostly derived from full bibliographic records (in MARC or other formats) and are intended to provide information for library staff to identify and select records in order to perform work on associated holdings and items.
 -   **Holdings record.** A record that contains information such as location, call number, and volumes owned, that enables staff to locate and manage library holdings for materials in all formats. A Holdings record must be associated with an Instance record.
 -   **Item record.** A record that contains information needed to identify and track a single item or piece. The Item record contains data specific to a single volume or piece, such as barcode and circulation status. An Item record must be associated with a Holdings record.
 -   **HRID.** Human readable identifier, also called eye readable ID.
@@ -68,7 +67,7 @@ The Administrative data section contains technical information about the instanc
 
 #### Deleting a statistical code
 
-1.  Find the statistical code you want to delete. 
+1.  Find the statistical code you want to delete.
 2.  Click the **trash can icon** next to the code. The code is removed from the record and is deleted once you save the instance.
 
 ### Title data
@@ -105,7 +104,7 @@ Note: Adding a preceding title is optional, but if you click **Add preceding tit
     2.  In the **Select instance** dialog, in the **Search & filter** pane, enter all or part of the title in the search box and click **Search**.
     3.  Optional: Filter results by Language, Resource Type, or Location.
     4.  In the **Search results** pane, click the **Title** to select it. The title is connected to the instance record as a preceding title. The Title, Instance HRID, ISBN, and ISSN fields are automatically populated with information from the record, and Not connected changes to Connected.
-3.  Optional: If you didn't connect the Title to another instance, enter the **ISBN** or **ISSN** into their respective boxes. 
+3.  Optional: If you didn't connect the Title to another instance, enter the **ISBN** or **ISSN** into their respective boxes.
 4.  Repeat steps 1-3 as needed. The preceding title is saved once you save the instance.
 
 #### Adding a succeeding title
@@ -118,7 +117,7 @@ Note: Adding a succeeding title is optional, but if you click **Add succeeding t
     2.  In the **Select instance** dialog, in the **Search & filter** pane, enter all or part of the title in the search box and click **Search**.
     3.  Optional: Filter results by Language, Resource Type, or Location.
     4.  In the **Search results** pane, click the **Title** to select it. The title is connected to the instance record as a succeeding title. The Title, Instance HRID, ISBN, and ISSN fields are automatically populated with information from the record, and Not connected changes to Connected.
-3.  Optional: If you didn't connect the Title to another instance, enter the **ISBN** or **ISSN** into their respective boxes. 
+3.  Optional: If you didn't connect the Title to another instance, enter the **ISBN** or **ISSN** into their respective boxes.
 4.  Repeat steps 1-3 as needed. The succeeding title is saved once you save the instance.
 
 #### Deleting an alternative title, preceding title, succeeding title, or series statement
@@ -136,12 +135,12 @@ Note: Adding an identifier is optional, but if you click **Add identifier**, you
 
 1.  Click **Add identifier**.
 2.  Select the identifier **Type** from the drop-down list. Identifier types are configured by your library in the Settings app. See [Settings \> Inventory \> Resource identifier types](../../settings/settings_inventory/settings_inventory/#settings--inventory--resource-identifier-types) for more information.
-3.  Enter the **Identifer** in the box.
+3.  Enter the **Identifier** in the box.
 4.  Repeat steps 1-3 as needed. The identifier is saved once you save the instance.
 
 #### Deleting an identifier
 
-1.  Find the identifier you want to delete. 
+1.  Find the identifier you want to delete.
 2.  Click the **trash can icon** next to the identifier. The identifier is removed from the edit record display and is permanently deleted once you save the instance.
 
 ### Contributor
@@ -202,7 +201,7 @@ Note: Adding a contributor is optional, but if you click **Add publication**, yo
 2.  Enter a **Physical description** in the box.
 3.  Repeat steps 1-2 as needed. The physical description is saved once you save the instance.
 
-#### Adding a nature of content 
+#### Adding a nature of content
 
 1.  Click **Add nature of content**.
 2.  Select the **Nature of content term** from the drop-down list.
@@ -314,8 +313,8 @@ Note: Adding a classification is optional, but if you click **Add classification
 
 In the Instance relationship section, you can add any relationships between the instance and other instances.
 
--   **Parent instances.** The main link in a bound-with situation: It will have an item record (and thus barcode) that all other bibliographic records associated with a given bound-with volume can link to. Child records are those associated bibliographic records. Child records will have LKR fields in the bibliographic record that include the ADM number of the parent record and "Enum. Level.1" information found in the parent record's item record. Doing this allows all item record information in the parent record to display in the child record, so the same barcode, sublibrary, collection, description, call number, etc. will show up for all titles in a bound-with. 
--   **Child instances.** Associated with linking bound-withs, which allows for "links" between separate bibliographic records and/or a bibliographic record and items belonging to another bibliographic record. Child recordsare those associated bibliographic records. 
+-   **Parent instances.** The main link in a bound-with situation: It will have an item record (and thus barcode) that all other bibliographic records associated with a given bound-with volume can link to. Child records are those associated bibliographic records. Child records will have LKR fields in the bibliographic record that include the ADM number of the parent record and "Enum. Level.1" information found in the parent record's item record. Doing this allows all item record information in the parent record to display in the child record, so the same barcode, sublibrary, collection, description, call number, etc. will show up for all titles in a bound-with.
+-   **Child instances.** Associated with linking bound-withs, which allows for "links" between separate bibliographic records and/or a bibliographic record and items belonging to another bibliographic record. Child recordsare those associated bibliographic records.
 
 #### Adding a parent instance
 
@@ -389,7 +388,7 @@ The Holdings section contains select holdings record fields. For all fields avai
 -   **Call number type.** The classification system used for the call number. Select the **Call number type** from the drop-down list. Configured in [Settings \> Inventory \> Call number types](../../settings/settings_inventory/settings_inventory/#settings--inventory--call-number-types).
 -   **Call number prefix.** Prefix of the call number on the holdings level. For example, FIC.
 -   **Call number.** Call number is an identifier assigned to an item, usually printed on a label attached to the item. The call number is used to determine the resource's physical position in a shelving sequence. For example, K1 .M44.
--   **Call number suffix.** Suffix of the call number on the holdings level. For example, the year (2001). 
+-   **Call number suffix.** Suffix of the call number on the holdings level. For example, the year (2001).
 
 ### Item
 
@@ -430,6 +429,17 @@ A check in or check out note is required by default.
 1.  Find the electronic access you want to delete.
 2.  Click the **trash can icon** next to the electronic access. The electronic access is removed from the record and is deleted once you save the fast add record.
 
+## Creating an instance record using the Import action in FOLIO
+
+1.       In the default or middle pane, click **Actions > Import**
+2.       In the **Single Record Import** dialog box, select the source of the record to be imported (e.g., Library of Congress, OCLC WorldCat, BnF)
+3.       Enter the record number, without any prefixes, in the box labeled “Enter [source] identifier”
+4.       Click **Import**
+
+A new instance record is created along with an underlying SRS record. Only the editable **Administrative Data** elements in the instance can be edited directly in Inventory. These elements are entered as described in [Administrative Data](#administrative-data).
+
+Any other edits to the instance record data must be made by editing the source record using [quickMARC](quickmarc).
+
 ## Adding holdings to a record
 
 1.  [Find the instance record](#searching-for-a-record) to which you want to add holdings and select it.
@@ -462,7 +472,7 @@ The Administrative data section contains technical information about the holding
 
 #### Deleting a former holdings ID or statistical code
 
-1.  Find the former holdings ID or statistical code you want to delete. 
+1.  Find the former holdings ID or statistical code you want to delete.
 2.  Click the **trash can icon** next to the ID or code. The ID or code is removed from the record and is deleted once you save the holdings record.
 
 ### Location
@@ -477,7 +487,7 @@ The Location section contains information on the physical or electronic location
 -   **Call number type.** The classification system used for the call number. Select the **Call number type** from the drop-down list. Configured in [Settings \> Inventory \> Call number types](../../settings/settings_inventory/settings_inventory/#settings--inventory--call-number-types).
 -   **Call number prefix.** Prefix of the call number on the holdings level. For example, FIC.
 -   **Call number.** Call Number is an identifier assigned to an item, usually printed on a label attached to the item. The call number is used to determine the items physical position in a shelving sequence (e.g. K1 .M44)
--   **Call number suffix.** Suffix of the call number on the holdings level. For example, the year (2001). 
+-   **Call number suffix.** Suffix of the call number on the holdings level. For example, the year (2001).
 
 ### Holdings details
 
@@ -519,7 +529,7 @@ Specifies the exact content of Indexes to which the library has access, typicall
 
 #### Deleting a holding statement
 
-1.  Find the holdings statement you want to delete. 
+1.  Find the holdings statement you want to delete.
 2.  Click the **trash can icon** next to the holdings statement. The holdings statement is removed from the record and is deleted once you save the holdings record.
 
 ### Holdings notes
@@ -536,7 +546,7 @@ The Holdings notes section contains any notes about the holdings.
 
 #### Removing a note
 
-1.  Find the note you want to delete. 
+1.  Find the note you want to delete.
 2.  Click the **trash can icon** next to the note. The note is removed from the record and is deleted once you save the holdings record.
 
 ### Electronic access
@@ -580,14 +590,14 @@ Receiving history is used for serials and continuing resources? Shows the materi
 
 #### Deleting receiving history
 
-1.  Find the receiving history you want to delete. 
+1.  Find the receiving history you want to delete.
 2.  Click the **trash can icon** next to the receiving history. The receiving history is removed from the record and is deleted once you save the holdings record.
 
 ## Adding an item to a record
 
 1.  [Find the record](#searching-for-a-record) to which you want to add an item and select it.
 2.  In the **Instance record details** pane, in the **Holdings** section, click **Add item**.
-3.  In the **Item record** window, fill in the Administrative data, Item data, Enumeration data, Condition, Item notes, Loan and availability, Location, and Electronic access sections.  For more information on the fields and actions available in these sections, see the section descriptions below.
+3.  In the **Item record** window, fill in the Administrative data, Item data, Enumeration data, Condition, Item notes, Loan and availability, Location, and Electronic access sections.  For more information on the fields and actions available in these sections, see the section descriptions below.
 4.  Once you have included all of the information you want in the item record, click **Save & close**. The item record is saved.
 
 ### Administrative data
@@ -618,7 +628,7 @@ Receiving history is used for serials and continuing resources? Shows the materi
 
 #### Deleting a former identifier or statistical code
 
-1.  Find the former identifier or statistical code you want to delete. 
+1.  Find the former identifier or statistical code you want to delete.
 2.  Click the **trash can icon** next to the identifier or code. The identifier or code is removed from the record and is deleted once you save the item.
 
 ### Item data
@@ -651,7 +661,7 @@ The Enumeration data section contains enumeration information for any serials or
 
 #### Deleting a year, caption
 
-1.  Find the year, caption you want to delete. 
+1.  Find the year, caption you want to delete.
 2.  Click the **trash can icon** next to the year, caption. The year, caption is removed from the record and is deleted once you save the item.
 
 ### Condition
@@ -760,7 +770,7 @@ When you search for a record in Inventory, you can toggle between searching on a
 
 You can search for instance, holdings, or items by clicking on either **Instance**, **Holdings**, or **Item** in the **Search & filter** pane. The elements available for searching and filtering are different based on your selection, but the results always display instance records.
 
-To search, enter your search terms into the box and click **Search**. Select the **Keyword (title, contributor, identifier)** drop-down list to search through one of the following: 
+To search, enter your search terms into the box and click **Search**. Select the **Keyword (title, contributor, identifier)** drop-down list to search through one of the following:
 
 -   **Keyword (title, contributor, identifier)**. Keyword search through title, contributor, and identifier fields.
 -   **Contributor.** Contributor is a generic term for any sort of agent (author, editor, conference name, etc.). Your results depend on the word order in your search.
@@ -804,7 +814,7 @@ To search for instances, holdings, or items based on their effective location, f
 To search for instances in a specific language, follow these steps:
 
 1.  In the **Search & filte**r pane, click **Language**.
-2.  Click the drop-down list and either enter the language or select it from the list. 
+2.  Click the drop-down list and either enter the language or select it from the list.
 3.  Repeat step 2 to add more than one language. Your search results appear in the Inventory pane.
 
 ### Resource type
@@ -812,7 +822,7 @@ To search for instances in a specific language, follow these steps:
 To search for instances with a specific resource type, follow these steps:
 
 1.  In the **Search & filte**r pane, click **Resource Type**.
-2.  Click the drop-down list and either enter the resource type or select it from the list. 
+2.  Click the drop-down list and either enter the resource type or select it from the list.
 3.  Repeat step 2 to add more than one resource type. Your search results appear in the Inventory pane.
 
 ### Format
@@ -820,7 +830,7 @@ To search for instances with a specific resource type, follow these steps:
 To search for instances with a specific format, follow these steps:
 
 1.  In the **Search & filte**r pane, click **Format**.
-2.  Click the drop-down list and either enter the format or select it from the list. 
+2.  Click the drop-down list and either enter the format or select it from the list.
 3.  Repeat step 2 to add more than one format. Your search results appear in the Inventory pane.
 
 ### Mode of issuance
@@ -828,7 +838,7 @@ To search for instances with a specific format, follow these steps:
 To search for instances based on their mode of issuance, follow these steps:
 
 1.  In the **Search & filte**r pane, click **Mode of issuance**.
-2.  Click the drop-down list and either enter the mode or select it from the list. 
+2.  Click the drop-down list and either enter the mode or select it from the list.
 3.  Repeat step 2 to add more than one mode. Your search results appear in the Inventory pane.
 
 ### Nature of content
@@ -836,7 +846,7 @@ To search for instances based on their mode of issuance, follow these steps:
 To search for instances based on their nature of content, follow these steps:
 
 1.  In the **Search & filte**r pane, click **Nature of content**.
-2.  Click the drop-down list and either enter the nature of content or select it from the list. 
+2.  Click the drop-down list and either enter the nature of content or select it from the list.
 3.  Repeat step 2 to add more than one nature of content. Your search results appear in the Inventory pane.
 
 ### Staff suppress
@@ -881,7 +891,7 @@ To search for instances based on their source, in the **Search & filter** pane, 
 To search for holdings or items based on their holdings permanent location, follow these steps:
 
 1.  In the **Search & filte**r pane, click **Holdings permanent location**.
-2.  Click the drop-down list and either enter the holdings permanent location or select it from the list. 
+2.  Click the drop-down list and either enter the holdings permanent location or select it from the list.
 3.  Repeat step 2 to add more than one holdings permanent location. Your search results appear in the Inventory pane.
 
 ### Item status
@@ -897,7 +907,7 @@ To search for items based on their item status, follow these steps:
 To search for items based on their material type, follow these steps:
 
 1.  In the **Search & filte**r pane, click **Material type**.
-2.  Click the drop-down list and either enter the material type or select it from the list. 
+2.  Click the drop-down list and either enter the material type or select it from the list.
 3.  Repeat step 2 to add more than one material type. Your search results appear in the Inventory pane.
 
 ## Viewing an instance record
@@ -909,7 +919,7 @@ Once you search for an instance, holding, or item, the following information app
 -   **Publishers.** Publisher of the instance.
 -   **Relation.** Relation to other instances?
 
-In the search results, click any result to view the instance record. 
+In the search results, click any result to view the instance record.
 
 ### Viewing holdings records
 
@@ -929,12 +939,21 @@ To view an item record, follow these steps:
 1.  [Find the instance](#searching-for-a-record) with the item record you want to view and select it.
 2.  In the **Instance record details** pane, in the **Holdings** section, click the **Item barcode** of the item you want to view. The Item record details window appears.
 
-## Editing a instance record
+## Editing an instance record
 
 1.  [Find the instance](#searching-for-a-record) you want to edit and select it.
 2.  In the **Instance record details** pane, click **Actions \> Edit**.
 3.  Make your desired changes to the instance record.
 4.  Click **Save and close**. The instance record is updated.
+
+## Editing an instance record with underlying MARC using the **Re-import** action in FOLIO
+
+1.  [Find the instance](#searching-for-a-record) you want to edit and select it
+2.  In the **Instance record details** pane, click **Actions \> Re-import**
+3. In the **Single Record Import** dialog box, select the source of the record to be imported (e.g., Library of Congress, OCLC WorldCat, BnF)
+4.  Enter the record number, without any prefixes, in the box labeled “Enter [source] identifier”
+5.  Click **Import**
+The selected instance record and any underlying source data will be replaced by the re-imported record. The instance uuid and hrid as well as manually configurable Administrative Data such as suppression from discovery, instance status, cataloged date, and any statistical codes assigned will remain the same. Some configurations may be made locally to the import profile used for single record import. These changes are made in the [settings for Data Import](../../settings/settings_data_import/settings_data_import/).
 
 ## Duplicating an instance record
 
@@ -977,14 +996,14 @@ To move items to a different holdings record within the same instance record, fo
 
 ## Deleting an instance record
 
-Note: An instance record cannot be deleted, but it may be suppressed. 
+Note: An instance record cannot be deleted, but it may be suppressed.
 
 1.  [Find the instance](#searching-for-a-record) you want to delete and select it.
 2.  In the **Instance record details** pane, click **Actions \> Edit**.
 3.  In the **Edit** window, under **Administrative data**, click **Suppress from discovery**.
 4.  Click **Save and close**. The instance record is updated.
 
-## Editing holdings records 
+## Editing holdings records
 
 1.  [Find the instance](#searching-for-a-record) with the holdings record you want to edit and select it.
 2.  In the **Instance record details** pane, in the **Holdings** section, click **View holdings**.
