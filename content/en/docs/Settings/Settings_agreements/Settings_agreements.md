@@ -1,7 +1,7 @@
 ---
 title: "Settings > Agreements"
 linkTitle: "Agreements"
-date: 2021-06-23
+date: 2021-12-03
 weight: 20
 tags: ["subtopic"]   
 ---
@@ -24,7 +24,6 @@ In order to interact with Agreements settings, a user needs to be assigned the f
 
 Use the settings in this section to turn certain features in agreement records on or off.
 
-
 ### Hide internal agreements knowledgebase
 
 If you are using an external knowledge base (for example, you are using EBSCO with the eHoldings app) and want to hide the internal knowledge base available in the Agreements app, select the **Hide internal agreements knowledgebase** checkbox. The checkbox is cleared by default.
@@ -36,6 +35,19 @@ Selecting the checkbox causes the following to happen:
 *   The E-resources tab in the Agreements app is hidden.
 *   The basket icon in the Agreements app is hidden.
 *   The E-resources covered by this agreement section does not appear in the agreement details pane.
+
+
+### Tabular list pagination
+
+Use this setting to control the number of lines to show per page (i.e. before showing the "Load more" button) in multi-column lists (tabular lists) across the Agreements application. The default value for all lists is 10. The multi-column lists affected are:
+
+
+
+*   Agreement view pane > Agreement lines
+*   Agreement view pane > E-resources covered by this agreement
+*   E-resource view pane > Options for acquiring e-resource
+*   Package view pane > E-resources in package
+*   E-resource view pane > Agreements for this e-resource
 
 
 ### Display "Suppress from discovery" setting on

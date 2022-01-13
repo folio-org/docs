@@ -2,7 +2,7 @@
 ---
 title: "Agreements"
 linkTitle: "Agreements"
-date: 2021-06-23
+date: 2021-12-03
 weight: 10
 tags: ["parenttopic"]
 ---
@@ -96,9 +96,13 @@ When adding agreement periods, you should consider the following:
 
 
 *   Every record must have at least one agreement period.
+*   If only a single agreement period is used, no other information is displayed in relation to periods.
 *   If you add multiple periods to the record, their dates cannot overlap.
 *   Each period must have a start date.
+*   The earliest period start date is treated as the agreement start date.
 *   End dates are optional, but only one period in a set can be left without an end date. This is referred to as an open-ended period, which has a start date but is assumed to continue for an indefinite amount of time.
+*   The latest period end date is treated as the agreement end date, or if there is a blank period end date the agreement is treated as having no end date.
+*   You can navigate between past, present, and future periods by clicking on the **Previous**, **Current**, or **Next** buttons.
 
 
 #### Adding an agreement period
@@ -428,6 +432,18 @@ Renewal priority values are configured in [Settings > Agreements > Pick list val
 To filter agreements by whether or not they are perpetual, select **Yes** or **No**.
 
 
+### Start date
+
+To filter agreements by their start date, enter a date into the **On or after** and/or **On or before** search box, or click the **calendar icon** to select a date from the calendar.
+
+
+### End date
+
+To filter agreements by their end date, enter a date into the **On or after** and/or **On or before** search box, or click the **calendar icon** to select a date from the calendar.
+
+You can also check the box **Include agreements with no end date set** to locate agreements without end dates.
+
+
 ### Organizations
 
 To filter agreements associated with a specific organization, follow these steps:
@@ -503,17 +519,17 @@ To filter agreements by their supplementary properties, follow these steps:
 
 ## Viewing an agreement
 
-Once you search for a agreement, the following information appears in the License pane:
+Once you search for an agreement, the following information appears in the Agreement pane:
 
 
 
-*   **Name.** The name of the license.
+*   **Name.** The name of the agreement.
 *   **Status.** The order status.
 *   **Period start.** The date the agreement period starts.
 *   **Period end.** The date the agreement period ends.
 *   **Cancellation deadline.** The date by which you need to cancel the agreement if you do not want to renew the material covered by the agreement.
 
-In the search results, click an agreement to view it. The agreement details pane displays with additional information about the agreement.
+In the search results, click an agreement to view it. The agreement details pane displays with additional information about the agreement. In the agreement display, any accordions not populated with data and not otherwise required are not displayed to the user.
 
 
 ## Editing an agreement
@@ -521,7 +537,7 @@ In the search results, click an agreement to view it. The agreement details pane
 
 
 1. Find the agreement you want to edit.
-2. In the **agreement details** pane, click **Edit**.
+2. In the **agreement details** pane, click **Actions > Edit**.
 3. Make your desired changes to the agreement.
 4. Click **Save & close**. The agreement is updated.
 
@@ -637,6 +653,8 @@ Adding an agreement line by linking to the eHoldings app cannot be done in an ag
 ### Adding a purchase order line to an agreement line
 
 You have the option of adding a purchase order line (POL) to an agreement line. Linking the agreement line to a POL adds context to the agreement line. For example, it can show how you paid for, or the method by which you ordered, the material.
+
+When an agreement line is linked to a POL that is linked to an Inventory instance, a link directly to the Inventory instance is displayed in the Agreement Line display.
 
 Note: If you are already editing an agreement line, skip to step 5.
 
@@ -860,3 +878,28 @@ You can add and assign notes to agreement records and agreement lines. Assigning
 4. In the **Agreement lines** pane, under **Notes**, find the note you want to remove and select it.
 5. In the **Note** window, click **Actions > Delete**.
 6. In the **Delete note** dialog, click **Delete**. The note is deleted and removed from any records to which it was attached.
+
+
+### Agreements keyboard shortcuts
+
+To display keyboard shortcuts available for the Agreements app:
+
+
+
+1. Open the Agreements app.
+2. Press "Ctrl+Alt+K" (Windows) or "Cmd+Alt+K" (Mac).
+3. Dialog displays showing a list of the valid keyboard shortcuts for the Agreements app, including the shortcuts for the following actions:
+
+
+
+*  Save a record: Press "Ctrl+S" (Windows) or "Cmd+S" (Mac)
+*  Create a new record: Ensure cursor is not in the search text box and press "Alt+N"
+*  Go to "Search & filter" pane: Click on the heading of an agreement in the view pane and press "Ctrl+Alt+H" (Windows) or "Cmd+Alt+H" (Mac)
+*  Edit a record: Press "Ctrl+Alt+E" (Windows) or "Cmd+Alt+E" (Mac)
+*  Expand all accordions: Click on the heading of an agreement in the view pane and press "Ctrl+Alt+B" (Windows) or "Cmd+Alt+B" (Mac)
+*  Collapse all accordions: Click on the heading of an agreement in the view pane and press "Ctrl+Alt+G" (Windows) or "Cmd+Alt+G" (Mac)
+*  Duplicate a record: Click on the heading of an agreement in the view pane and press "Alt+C" (Windows and Mac)
+*  Open keyboard shortcuts modal: Press "Ctrl+Alt+K" (windows) or "Cmd+Alt+K" (Mac)
+
+
+4. Press the “Esc” key to close the dialog box.
