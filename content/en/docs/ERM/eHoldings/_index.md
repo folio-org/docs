@@ -1,8 +1,7 @@
-
 ---
 title: "eHoldings"
 linkTitle: "eHoldings"
-date: 2021-07-26
+date: 2021-12-03
 weight: 20
 tags: ["parenttopic"]
 ---
@@ -31,6 +30,13 @@ The following are all the eHoldings permissions:
 * **eHoldings: Can create and delete custom packages and titles.** This permission allows the user to create and delete custom packages and titles.
 * **eHoldings: Can edit providers, packages, titles detail records.** This permission allows the user to edit providers, packages, and titles detail records.
 * **eHoldings: Can select/unselect packages and titles to/from your holdings.** This permission allows the user to select (or add) packages and titles to your library’s holdings, and unselect (or remove) them from your holdings.
+* **eHoldings: Can view Usage & analysis data for packages, titles and resources.** This permission allows the user to view usage consolidation on the eHoldings app.
+* **Settings (eHoldings): Create, edit, and view Usage Consolidation API credentials.** This permission allows the user to update and view usage consolidation settings.
+* **Settings (eHoldings): View Usage Consolidation API credentials.** This permission allows the user to view usage consolidation settings.
+* **Settings (eHoldings): Can assign/unassign a user from a KB.** This permission allows the user to assign and unassign a user from KB credentials.
+
+Note: This permission should only be used by institutions that maintain multiple EBSCO KB configurations.
+
 
 
 ## Implementing eHoldings
@@ -773,3 +779,24 @@ Note: Agreements can only be added to title records when a package is selected a
 2. In the **Title record** window, in the **Packages** section, select the package within which the title appears.
 3. In the **Note** window, click **Actions > Delete**.
 4. In the **Delete note** dialog, click **Delete**. The note is deleted and removed from any records to which it was attached.
+
+
+### eHoldings keyboard shortcuts
+
+Keyboard shortcuts available for the eHoldings app:
+
+
+
+*  Create a new custom package or title record: Ensure cursor is not in the search text box and press "Alt+N"
+*  Edit a record: Press "Ctrl+Alt+E" (Windows) or "Cmd+Alt+E" (Mac)
+*  Save a record: Press "Ctrl+S" (Windows) or "Cmd+S" (Mac)
+*  Expand all accordions: Press "Ctrl+Alt+B" (Windows) or "Cmd+Alt+B" (Mac)
+*  Collapse all accordions: Press "Ctrl+Alt+G" (Windows) or "Cmd+Alt+G" (Mac)
+*  Go to "Search & filter" pane: Press "Ctrl+Alt+H" (Windows) or "Cmd+Alt+H" (Mac)
+*  Open keyboard shortcuts modal: Press "Ctrl+Alt+K" (windows) or "Cmd+Alt+K" (Mac)
+*  Expand or collapse an accordion: Press the Spacebar
+*  Close a modal or pop-up: Press the “Esc” key
+*  Copy: Press “Ctrl+c”
+*  Cut: Press “Ctrl+x”
+*  Paste: Press “Ctrl+v”
+*  Find: Press “Ctrl+f”

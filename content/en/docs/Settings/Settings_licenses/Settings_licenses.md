@@ -1,7 +1,7 @@
 ---
 title: "Settings > Licenses"
 linkTitle: "Licenses"
-date: 2021-06-23
+date: 2021-12-03
 weight: 150
 tags: ["subtopic"]   
 ---
