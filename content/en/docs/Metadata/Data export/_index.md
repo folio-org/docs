@@ -1,8 +1,7 @@
-
 ---
 title: "Data export"
 linkTitle: "Data export"
-date: 2020-11-14
+date: 2021-11-14
 weight: 10
 tags: ["parenttopic"]
 ---
@@ -16,7 +15,6 @@ The Data export app comes with a default job profile, which determines how infor
 Definition of terms related to the Data export app:
 
 -   **Job profile.** Determines how information from FOLIO is exported to the generated MARC file.
-
 -   **SRS.** Source Record Storage. A storage layer in FOLIO. If an instance has an underlying MARC record, then this record is stored in SRS.
 
 ## Permissions
@@ -34,9 +32,7 @@ Quick exports are performed in the Inventory app. They allow you to quickly down
 ### Exporting instances (MARC)
 
 1.  Open the **Inventory** app. 
-
 2.  In the **Inventory** pane, find the records you want to export, and for each record, select the **checkbox** in the first column.
-
 3.  Click **Actions \> Export instances (MARC)**. Depending on your browser and its configurations, the file automatically downloads or you are prompted to save it. The export is logged in the Data export app.
 
 ### Exporting instances (JSON)
@@ -54,9 +50,7 @@ The Data export app comes with a default job profile, which determines how infor
 The data export can be triggered by providing the list of record identifiers (Instances UUIDs) in a .csv file. The list can be created by [saving the UUIDs of the records](../inventory/#saving-instances-uuids) that fulfill inventory search criteria.
 
 1.  In the **Jobs** pane, either drag and drop your file into the box, or click **or choose file** to locate the file on your computer.
-
 2.  In the **Select job profile to run the export** window, select the job profile to run.
-
 3.  In the **Are you sure you want to run this job** dialog, select **Run**. The window closes and the job appears under the Running section in the Jobs pane.
 
 ### 		 Uploading CQL query
@@ -64,9 +58,7 @@ The data export can be triggered by providing the list of record identifiers (In
 Note: The file you upload needs to be a CQL file.
 
 1.  In the **Jobs** pane, either drag and drop your file into the box, or click **or choose file** to locate the file on your computer.
-
 2.  In the **Select job profile to run the export** window, select the job profile to run.
-
 3.  In the **Are you sure you want to run this job** dialog, select **Run**. The window closes and the job appears under the Running section in the Jobs pane.
 
 ## Viewing export logs
@@ -76,19 +68,12 @@ Once an export is completed, whether it was completed without any errors, comple
 The Logs table contains the following columns:
 
 -   **File name.** Name of the MARC file that was generated.
-
 -   **Status.** Status of the export: Completed, Completed with errors, or Fail.
-
 -   **Total.** Number of records in the export.
-
 -   **Failed.** Number of records that failed.
-
 -   **Job profile.** Name of the job profile used.
-
 -   **Ended running.** Date and time the export finished.
-
 -   **Run by.** User or system by which the export was generated.
-
 -   **ID.** Identification number of the export.
 
 You can click on any column name to sort by that column.

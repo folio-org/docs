@@ -37,7 +37,7 @@ The following are all the Inventory Settings permissions presented in the order 
 -   **Settings (Inventory): Create, edit, delete statistical codes.** This permission allows the user to create, read, update, and delete statistical codes.
 -   **Settings (Inventory): Create, edit, delete URL relationships.** This permission allows the user to create, read, update, and delete URL relationships.
 -   **Settings (Inventory): Create, edit, delete call number types.** This permission allows the user to create, read, update, and delete call number types.
--   **Settings (Inventory): Display list of settings pages.** This permission allows the user to 
+-   **Settings (Inventory): Display list of settings pages.** This permission allows the user to
 
 ## Settings \> Inventory \> Alternative title types
 
@@ -419,7 +419,7 @@ Use this setting to create and manage material types. Material types appear in t
 
 ### Editing a loan type
 
-1. Find the material  type you want to edit and click the **pencil icon**.
+1. Find the material  type you want to edit and click the **pencil icon**.
 2. Edit the **Name**.
 3. Click **Save**. The Material type is saved.
 
