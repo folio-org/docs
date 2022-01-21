@@ -332,7 +332,7 @@ You have to set the env params KAFKA_HOST and OKAPI_URL of mod-pubsub, so it can
 
 ```
   cd ~/folio-install
-  wget https://folio-registry.dev.folio.org/_/proxy/modules/mod-pubsub-2.3.3 -O pubsub-module-descriptor.json
+  curl -X GET -o mod-pubsub-2.3.3-module-descriptor.json -D - -w '\n' http://localhost:9130/_/proxy/modules/mod-pubsub-2.3.3
 ```
 
 Edit the following part of pubsub-module-descriptor.json :
