@@ -617,6 +617,7 @@ Install gcc on Ubuntu 20 (prerequisite to install Perl modules from cpan)
 ```
 sudo apt install gcc
 gcc --version
+gcc (Ubuntu 9.3.0-17ubuntu1~20.04) 9.3.0
 ```
 
 Install prerequiste Perl modules
