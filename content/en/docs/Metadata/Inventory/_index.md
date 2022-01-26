@@ -762,7 +762,11 @@ Produces a file that contains the 'commands' used in the query, in Contextual Qu
 
 ## Exporting instances (MARC)
 
+See [Exporting instances (MARC)](../metadata/data-export/#exporting-instances-marc).
+
 ## Exporting instances (JSON)
+
+Exporting instances to JSON is not implemented at this time.
 
 ## Searching for a record
 
