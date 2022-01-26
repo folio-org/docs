@@ -526,7 +526,7 @@ In the search results, click an agreement to view it. The agreement details pane
 4. Click **Save & close**. The agreement is updated.
 
 
-## Deleting a agreement
+## Deleting an agreement
 
 Note: You cannot delete an agreement that is linked to a license, has agreement lines, or is related to another agreement.
 
