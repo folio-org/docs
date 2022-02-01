@@ -2,7 +2,7 @@
 ---
 title: "Check out"
 linkTitle: "Check out"
-date: 2021-02-23
+date: 2021-12-03
 weight: 20
 ---
 
@@ -16,6 +16,12 @@ The permissions listed below allow you to interact with the Check out app and de
 * **Check out: All permissions.** This permission allows the user to check out items to patrons (create new loans) and view open loans and loan details. However, this permission does not include seeing the entirety of the user record.
 * **Check out: Check out circulating items.** This permission allows the user to check out items, but they cannot override non-circulating loan policies.
 
+Three new permissions were added in Iris and are in development. These permissions are expected to allow for more granular control of the links in the Check out app to view a patron’s fee/fines, loans, and requests. These three permissions must be granted to a user in order for the associated link in the **Scan patron card** pane to work.
+
+* **Check out: View fees/fines**. This permission is in development. When finished, it will allow users to be able to click the link in the **Scan patron card** pane to view the patron’s fees/fines in the Users app. The user must have permission to view the Users app in order for the link to work.
+* **Check out: View loans**. This permission is in development. When finished, it allows users to be able to click the link in the **Scan patron card** pane to view the patron’s current loans in the Users app. The user must have permission to view the Users app in order for the link to work.
+* **Check out: View requests**. This permission is in development. This permission allows users to be able to click the link in the **Scan patron card** pane to view the patron’s current requests in the Requests app.  The user must have permissions to view the Requests app in order for the link to work.
+
 
 ## Locating a patron in the system
 
@@ -27,19 +33,14 @@ You can find the patron by either:
 Locate the patron using a barcode:
 
 1. Either scan the barcode on the patron's library card, or enter the patron barcode number.
-
 2. Click **Enter**. Patron details are displayed.
 
 Locate the patron using the Patron Lookup function:
 
 1. In the Scan patron card pane, click **Patron Look-up**.
-
 2. In the **Select User** dialog, in the **User search** box, enter part or all of the patron's name, email, or username.
-
 3. Optional: Filter results by Status (active/inactive), or by Patron group.
-
 4. Click **Search**.
-
 5. Click the patron to use. The Select User dialog closes, the barcode appears in the Scan patron card pane, and the patron details are displayed.
 
 
@@ -56,8 +57,7 @@ Proxy borrowers are patrons who are checking out items on the behalf of another 
 
 Note: A patron must first be assigned as a proxy for the borrower  in their user record in the Users app.
 
-1. [Locate the proxy borrower in the system.](#locating-a-patron-in-the-system) 
-
+1. [Locate the proxy borrower in the system.](#locating-a-patron-in-the-system)
 2. In the Who are you acting as? dialog, select the name of the user they will be acting as a proxy for and click **Continue**. The Who are you acting as? dialog closes and patron and proxy details are displayed.
 
 
