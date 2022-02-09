@@ -375,7 +375,7 @@ In the search results, click on a license to view it. The license details pane d
 
 
 
-1. [Find the license](#searching-for-licenses-1) you want to delete and select it.
+1. [Find the license](#searching-for-licenses) you want to delete and select it.
 2. In the **license details** pane, click **Actions > Delete**.
 3. In the **Delete license** dialog, click **Delete**. A confirmation message appears and the license is deleted.
 
