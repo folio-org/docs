@@ -288,11 +288,8 @@ Type values are configured in [Settings > Licenses > Pick list values]({{< ref "
 To filter licenses associated with a specific organization, follow these steps:
 
 1. In the **Search & filter** pane, click **Organizations**.
-
 2. Click **Select an organization**.
-
 3. In the drop-down list, search for the organization.
-
 4. Select the organization you want to filter by. The search results appear in the Licenses pane.
 
 
