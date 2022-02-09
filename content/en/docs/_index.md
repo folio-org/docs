@@ -4,6 +4,19 @@ title: "Welcome"
 linkTitle: "Home"
 weight: 10
 
+cascade:
+- _target:
+    path: "/**"
+    kind: "page"
+  type: "docs"
+- _target:
+    path: "/**"
+    kind: "section"
+  type: "docs"
+- _target:
+    path: "/**"
+    kind: "section"
+  type: "home"
 ---
 
 {{% alert title="VERSION" color="info"%}}
