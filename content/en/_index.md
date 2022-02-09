@@ -3,20 +3,10 @@
 title: "Welcome"
 linkTitle: "Home"
 weight: 10
-
-cascade:
-- _target:
-    path: "/**"
-    kind: "page"
-  type: "docs"
-- _target:
-    path: "/**"
-    kind: "section"
-  type: "docs"
-- _target:
-    path: "/**"
-    kind: "section"
-  type: "home"
+type: list
+menu:
+  main:
+    weight: 20
 ---
 
 {{% alert title="VERSION" color="info"%}}
