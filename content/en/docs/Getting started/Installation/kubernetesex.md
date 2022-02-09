@@ -2,8 +2,7 @@
 title: "Kubernetes example"
 linkTitle: "Kubernetes example"
 weight: 30
-description: >
-  Note: This content is currently in draft status.
+description: 
 tags: ["subtopic"]
 ---
  The Rancher/Kubernetes solution allows for the addition of new tenants and hardware resources on demand.  It is ideal if you need to scale-up your FOLIO instance in the future.  This guide describes a Rancher/Kubernetes installation.

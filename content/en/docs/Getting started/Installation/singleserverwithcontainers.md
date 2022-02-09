@@ -2,8 +2,7 @@
 title: "Single server with containers"
 linkTitle: "Single server with containers"
 weight: 10
-description: >
-  Note: This content is currently in draft status.
+description: 
 tags: ["subtopic"]
 ---
 A single server installation is being considered a non-production installation. For a production installation some kind of orchestration should be applied. A single server installation of FOLIO is useful for demo and testing purposes.
@@ -385,10 +384,11 @@ Apply the same steps as for the module descriptor of mod-pubsub to these modules
 
 Deploy the backend modules one by one. This will pull the Docker image from Docker Hub and spin up a container on your host for each backend module. 
 
-Use this script (provided in the Installation folder of this repository) to deploy all backend modules, one after the other, on your host:
+Use this script [deploy-all-backend-modules.sh]({{< ref "deploy-all-backend-modules.sh" >}}) to deploy all backend modules, one after the other, on your host:
 
 ```
 ./deploy-all-backend-modules.sh ~/platform-core/okapi-install.json <YOUR_IP_ADDRESS>
+
 ```
 
 Progress can be followed in the Okapi log at /var/log/folio/okapi/okapi.log
