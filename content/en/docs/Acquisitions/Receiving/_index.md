@@ -2,7 +2,7 @@
 ---
 title: "Receiving"
 linkTitle: "Receiving"
-date: 2021-05-14
+date: 2021-12-14
 weight: 50
 tags: ["parenttopic"]
 ---
@@ -15,8 +15,8 @@ Definition of terms related to the Receiving app:
 
 *   **Package.** A purchase order that represents the acquisition of multiple titles. 
 *   **Piece.** A subsection of a receiving title that is expected to be received. For example, if the ordered title is a journal subscription, then a piece of that title could be volume one of the journal.
-*   **Receive.** To confirm that an order has been delivered to the library.
-*   **Receiving title.** The name of ordered material. This may have one or more pieces attached.
+*   **Receive.** To confirm that an all or part of an order has been delivered to the library.
+*   **Receiving title.** The title of the ordered material. There may be one or more pieces attached.
 *   **Unreceive.** To indicate that an order previously listed as “received” has not been delivered to the library.
 
 
@@ -39,7 +39,7 @@ Usually, an order consists of a receiving title that may have one or more pieces
 
 Purchase order lines can also be used to represent Packages. A package order line is created in the Orders app as a single purchase order line, but it can’t be located or received in Receiving because it represents the acquisitions of multiple titles (for example, a monographic standing order). In order to receive the titles that are included in a package, you must create the receiving titles in the Receiving app and link them to the Package POL. In this version of FOLIO, receiving titles must be connected to an instance in the Inventory app and a POL.
 
-The **New** function allows you to create the receiving titles that come in a package so that they can be received by the library. This function also allows you to link existing instances to a package POL if you want to create a relationship between the instance and the order. In this case, the receiving title is searchable by its related POL number.
+The **New** action allows you to create the receiving titles that come in a package so that they can be received by the library. This action also allows you to link existing instances to a package POL if you want to create a relationship between the instance and the order. In this case, the receiving title is searchable by its related POL number.
 
 
 
@@ -50,7 +50,7 @@ The **New** function allows you to create the receiving titles that come in a pa
 5. Click **Search** and select the Package from the Search results. The Package POL is linked to the new title. 
 6. Enter a **Title** for the item in the Package. 
 7. Fill in the rest of the fields under Item details and PO line details. For more information on the fields and actions available in these sections, see the section descriptions below.
-8. Click **Save & close**. A confirmation message appears, and the new receiving title is created and appears in the Receiving pane. It can now be edited, expected pieces can be added to it, and it can be received. You can locate the title by searching for the PO or POL number, the Package Name, or the Title(s) within it. 
+8. Click **Save & close**. A confirmation message appears, and the new receiving title is created and appears in the Receiving pane. It can now be edited, expected pieces can be added to it, and it can be received. You can locate the title by searching for the PO or POL number, the Package Name, the Title(s). 
 
 
 ### Item details
@@ -146,6 +146,7 @@ You can search for orders in the **Search & filter** pane. To search for orders,
 *   **Product ID.** Identifying number, typically assigned in Orders when the order was created.
 *   **PO number.** The purchase order number.
 *   **POL number.** The purchase order line number.
+*   **Vendor reference number.** The vendor reference number for the purchase order line associated with this receiving title. 
 
 You can also search for orders by selecting any of the filters in the **Search & filter** pane. Additionally, you can apply the filters after you perform a search to limit your results. See the sections below for more information.
 
@@ -248,6 +249,9 @@ To search for orders assigned to a specific acquisition unit, follow these steps
 1. In the **Search & filter** pane, click **Acquisition units**.
 2. Select the acquisition unit(s) from the drop-down list. The search results appear in the Receiving pane. 
 
+Note: The Receiving app does not currently support restricting user permissions based on acquisition unit.  
+
+
 To clear all filters, go to the **Search & filter** pane and click **Reset all**.
 
 
@@ -265,7 +269,7 @@ Once you search for a receiving title, the following information appears in the 
 *   **Title.** The title of the material to be received.
 *   **Expected receipt date.** The date the material is expected to be received.
 *   **Package.** The name of the package the receiving title is associated with (if applicable).
-*   **POL number.** The purchase order line number.
+*   **POL number.** The purchase order line number.  Click on this number to open the related POL in the Orders app.
 *   **Receiving note.** Notes about receiving the material.
 *   **Locations.** The location(s) to which the order is assigned.
 *   **Order status.** The status of the order, either open, closed, or pending.
@@ -288,7 +292,7 @@ This section displays the details of the purchase order lines.
 *   **Expected receipt date.** The date the piece is expected to be received.
 *   **Receiving note.** Notes about receiving the material.
 *   **Order type.** The type of order, either one-time or ongoing.
-*   **Vendor.** The institution from which the material was purchased. 
+*   **Vendor.** The organization from which the material was purchased. 
 *   **Material supplier.** The supplier of the material.
 
 
@@ -315,7 +319,7 @@ This section displays the pieces of the order that have been received. See [Rece
 
 ### Title look-up
 
-The **Title look-up** function replaces the current title with a title that already exists as an instance in Inventory. This doesn't replace existing publishing or subscription details, but it does add any contributors or product IDs associated with the new title. Once you make this change, the material is longer be searchable by the original title.
+The **Title look-up** function replaces the current title with a title that already exists as an instance in Inventory. This doesn't replace existing publishing or subscription details, but it does add any contributors or product IDs associated with the new title. Once you make this change, the material is longer searchable by the original title.
 
 
 
@@ -327,7 +331,7 @@ The **Title look-up** function replaces the current title with a title that alre
 
 ### POL number look-up
 
-The **POL number look-up** function replaces the current POL number with a POL number that already exists in Inventory. This doesn't replace any item details, only the POL number. Once you make this change, the material is no longer be searchable by the original POL number.
+The **POL number look-up** function replaces the current POL number with a POL number that already exists in Inventory. This doesn't replace any item details, only the POL number. Once you make this change, the material is no longer searchable by the original POL number.
 
 
 
@@ -402,6 +406,30 @@ To edit an expected or received piece, make sure the correct receiving title is 
 4. Click **Save & close**. A confirmation message appears and the piece is updated.
 
 
+## Deleting an expected or received piece
+
+To delete an expected or received piece, make sure the correct receiving title is displayed by using the **Search & filter** pane and look under the Expected and Received sections of the title.
+
+
+### Deleting an expected piece
+
+
+
+1. Select the piece you want to edit.
+2. In the **Edit piece** dialog, the same fields as the [Add piece](#adding-an-expected-piece) dialog appear. See above for more information.
+3. Click **Delete.** A confirmation message appears, click **Confirm** and the piece is deleted.
+
+
+### Deleting a received piece
+
+
+
+1. Select the piece you want to delete. 
+2. In the **Edit piece** dialog, the same fields as the **Add piece** dialog appear. See above for more information. 
+3. Click **Delete.** A confirmation message appears, click **Confirm** and the piece is deleted.
+
+
+
 ## Receiving an order
 
 Receiving an order confirms that it has arrived at the library.
@@ -465,4 +493,3 @@ The Receive function can be used to receive multiple pieces at once.
 5. Click **Unreceive**. The selected pieces are now displayed under the Expected section. 
 
 You can also get to the Receiving app from the action menu of an open order by clicking **Receive**.
-

@@ -2,20 +2,20 @@
 ---
 title: "Organizations"
 linkTitle: "Organizations"
-date: 2021-05-10
+date: 2021-12-21
 weight: 40
 tags: ["parenttopic"]
 ---
 
-The Organizations app allows you to manage organizations with which your library interacts. Organization records are a place where you can store information about an organization, including contact information, websites, interfaces, and accounts. The organizations you create are shared with the acquisitions and electronic resources management areas of FOLIO in the following apps: Orders, Invoices, Receiving, Agreements, Licenses, and eUsage.
+The Organizations app allows you to manage information about organizations associated with your library. Organization records are a place where you can store information about an organization, including contact information, websites, interfaces, and accounts. The organizations you create are shared with the acquisitions and electronic resources management areas of FOLIO in the following apps: Orders, Invoices, Receiving, Agreements, Licenses, and eUsage.
 
 Definition of terms related to the Organizations app:
 
 
 
 *   **Acquisition units.** An additional layer you can add to acquisitions records that restricts a user’s ability to interact with those records unless they have been assigned to that unit. For example, you may create acquisition units to represent the different libraries within your library system. Units are defined and determined by your library in the Settings app. See [Settings > Acquisition units]({{< ref "/settings_acquisition_units.md" >}}) for more information.
-*   **Organization.** Any institution with whom your library interacts (this may or may not be an institution from whom you purchase materials).
-*   **Vendor.** Any institution from whom your library purchases materials.
+*   **Organization.** Any institution with which your library interacts.  An organization may or may not be an institution from which you purchase materials.
+*   **Vendor.** Any institution from which your library purchases materials.
 
 
 ## Permissions
@@ -26,14 +26,14 @@ The following are all the Organizations permissions:
 
 
 
-*   **Organizations: Assign acquisitions units to new organization.** This permission allows the user to assign acquisition units to the organization when creating a new record
+*   **Organizations: Assign acquisitions units to new organization.** This permission allows the user to assign acquisition units to the organization when creating a new record.
 *   **Organizations: Interface usernames and passwords: view.** This permission allows the user to view the usernames and passwords that appear in the Interface section.
-*   **Organizations: Interface usernames and passwords: view, edit, create, delete.** This permission allows the user to create, edit, and delete the usernames and passwords that appear in the Interface section. Note: This permission must always have the Organizations: View, edit, create or Organizations: View, edit, delete permissions assigned along with it.
+*   **Organizations: Interface usernames and passwords: view, edit, create, delete.** This permission allows the user to create, edit, and delete the usernames and passwords that appear in the Interface section. Note: This permission must always be assigned in conjunction with either the Organizations: View, edit, create or Organizations: View, edit, delete permissions.
 *   **Organizations: Manage acquisition units.** This permission allows the user to change the assignment of acquisition units for the organization when editing a record.
 *   **Organizations: View.** This permission allows the user to search and view organization records and settings. The user can also access Contacts and Interfaces but cannot access Interface usernames and passwords.
-*   **Organizations: View, edit.** This permission allows the user to edit and view organizations. The user can also access Contacts and view organization settings, but they cannot access Interface usernames and passwords.
-*   **Organizations: View, edit, create.** This permission allows the user to create, edit, and view organizations. The user can also access Contacts and view organization settings, but they cannot access Interface usernames and passwords.
-*   **Organizations: View, edit, delete.** This permission allows the user to view, edit, and delete organizations. The user can also access Contacts and view organization settings, but they cannot access Interface usernames and passwords.
+*   **Organizations: View, edit.** This permission allows the user to edit and view organizations. The user can also access Contacts, but they cannot access Interface usernames and passwords.
+*   **Organizations: View, edit, create.** This permission allows the user to create, edit, and view organizations. The user can also access Contacts, but they cannot access Interface usernames and passwords.
+*   **Organizations: View, edit, delete.** This permission allows the user to view, edit, and delete organizations. The user can also access Contacts, but they cannot access Interface usernames and passwords.
 
 
 ## Creating an organization
@@ -57,7 +57,7 @@ When creating an organization, you either create it as a general organization or
 *   **Organization status (required).** Select an organization status: Active, Inactive, or Pending. The status you select here is evaluated by the Orders and Invoices apps. Orders can only be opened and invoices can only be paid if the organization is a vendor with an Active status. You may want to use the Pending status to signify that the organization record is a draft.
 *   **Default language.** Select the organization’s default language.
 *   **Vendor.** If you are creating a vendor organization, select the **Vendor** checkbox . See [Creating a vendor](#creating-a-vendor) for more information.
-*   **Acquisition unit.** Select the Acquisition units you want to apply to the organization record, if using. See [Settings > Acquisition units]({{< ref "/settings_acquisition_units.md" >}}) for more information.
+*   **Acquisition unit.** Select the Acquisition units you want to apply to the organization record. See [Settings > Acquisition units]({{< ref "/settings_acquisition_units.md" >}}) for more information.
 *   **Description**. Enter a description of the organization.
 *   **Alternative names.** Alternative names used by the organization, such as abbreviations or prior names.
 
@@ -102,7 +102,7 @@ Categories for contact information are configured in the Settings app. If you as
 
 2. Fill in the address information.
 
-3. Repeat as needed. The address saves once you save the organization. Note: If you are adding multiple addresses, select the **Use as primary address** checkbox at the top of the organization’s primary address.
+3. Repeat as needed. The address saves once you save the organization. Note: If you are adding multiple addresses, select the **Use as primary address** checkbox at the top of the organization’s primary address.  The primary address is included in the invoice voucher extract.  See [Invoices > Voucher information](../../invoices/#voucher-information) for more information. 
 
 
 #### Deleting an address
@@ -118,7 +118,7 @@ Categories for contact information are configured in the Settings app. If you as
 
 2. Enter the Phone number in the box.
 
-3. Optional: Select the **Type** of number it is from the drop-down list: Office, Mobile, Fax, or Other.
+3. Optional: Select the **Type** of phone number from the drop-down list: Office, Mobile, Fax, or Other.
 
 4. Optional: Select the **Language** spoken at that number from the drop-down list.
 
@@ -213,7 +213,7 @@ An interface is a website, software, or portal that you use to manage orders or 
 
 #### Creating a new interface
 
-For more information, see Creating an interface.
+For more information, see [Creating an interface](#creating-an-interface).
 
 
 #### Adding an existing interface
@@ -341,7 +341,7 @@ EDI (electronic data interchange) information is the information you use when se
 *   **EDI naming convention.** The naming convention that sets the expected structure to be used for outgoing FOLIO EDI files, such as the prefix or file extension. Example: .edu
 *   **Send account number.** If you send your account number with orders or invoices, select the **Send account number** checkbox. If selected, the account number will be required for the PO/POL and output in the EDI order file.
 *   **What messages are expected for this vendor?** If your library expects to send EDI orders to the vendor, select the **Orders** checkbox. If your library expects to receive EDI invoices from the vendor, select the **Invoices** checkbox.
-*   **Notes.** Enter any notes about the EDI information for this vendor.
+*   **Notes.** Notes about the EDI information for this vendor.
 
 
 #### FTP details
@@ -357,7 +357,7 @@ EDI (electronic data interchange) information is the information you use when se
 *   **FTP port.** The FTP port number.
 *   **Order directory.** The subdirectory where orders should be placed, if different from the main FTP directory for this vendor. Ex: /directory.
 *   **Invoice directory.** The subdirectory where invoices should be retrieved, if different from the main FTP directory for this vendor. Ex: /directory.
-*   **Notes.** Any notes about the FTP details for this vendor.
+*   **Notes.** Notes about the FTP details for this vendor.
 
 
 #### Scheduling
@@ -373,12 +373,12 @@ EDI (electronic data interchange) information is the information you use when se
 *   **Notify invoice only**. If you want to notify the email addresses about invoices only, select the **Notify invoice only** checkbox.
 *   **Notify error only.** If you want to notify the email addresses only if an EDI error occurs, select the **Notify error only** checkbox.
 *   **Check now.** To verify the EDI connection, click **Check now**. Note: This feature is currently in development.
-*   **Notes.** Enter any notes about the EDI schedule.
+*   **Notes.** Notes about the EDI schedule.
 
 
 ### Accounts
 
-Accounts are the accounts you have with a vendor that you use for ordering materials.
+The account section describes your library accounts with a vendor used for ordering materials.
 
 Note: Adding an account is optional, but if you click **Add**, you must fill in the required fields or delete the account in order to save the organization record.
 
@@ -428,10 +428,9 @@ You can search for organizations in the **Search & filter** pane. To search for 
 *   **All.** All fields. This is the default search.
 *   **Name.** The name of the organization. 
 *   **Code.** A unique identifier for the organization.
-*   **Language.** The default language of the organization.
-*   **Alias.** Alternative names used by the organization, such as abbreviations or prior names.
+*   **Language.** The default language of the organization.  Enter the language code (ex: ‘eng’ or ‘fra’) to search for organizations with this default language.  Entering the language name in this search box will not retrieve results.*   **Alias.** Alternative names used by the organization, such as abbreviations or prior names.
 *   **Accounting code.** The accounting code used by your library in your payment system in reference to the organization.
-*   **Tax ID.** Your library’s tax ID?
+*   **Tax ID.** Your library’s tax identifier number.
 
 You can also search for organizations by selecting any of the filters in the **Search & filter** pane. Additionally, you can apply the filters after you perform a search to limit your results. See the sections below for more information.
 
@@ -481,7 +480,8 @@ To search for organizations that communicate in a specific language, follow thes
 
 1. In the **Search & filter** pane, click **Languages**.
 
-2. Select the language from the drop-down list. Your search results appear in the Organizations pane.
+2. Select the language from the drop-down list. Your search results appear in the Organizations pane. Note:  This filter may not retrieve all expected records for organizations loaded to FOLIO through an API. This tool is filtering by language name rather than language code.  For records created directly in FOLIO this filter does retrieve the expected records by language.
+
 
 
 ### Payment method
@@ -552,6 +552,8 @@ Note: Changing a vendor to an organization removes all Vendor information, Vendo
 
 ## Deleting an organization
 
+The system allows you to delete a vendor organization even if there are orders or invoices associated with the vendor.  If you try to take actions such as adding a PO line or paying an invoice associated with the deleted vendor you will see error messages explaining that that vendor has been deleted.   
+
 1. [Find the organization you want to delete](#searching-for-an-organization) and select it.
 
 2. In the **Organization details** pane, click **Actions > Delete**.
@@ -607,7 +609,7 @@ Note: If you need to create a new contact, you should save your progress on the 
 *   **First name.** The given name of the contact.
 *   **Status.** Select the status of the contact from the drop-down list: Active or Inactive.
 *   **Language.** The primary language spoken by the contact.
-*   **Categories.** Select any categories from the drop-down list that describe the contact. Categories are configured in the Settings app. See Settings > Organizations for more information.
+*   **Categories.** Select any categories from the drop-down list that describe the contact. Categories are configured in the Settings app. See [Settings > Organizations](../../settings/organizations/#settings--organizations--categories) for more information.
 *   **Notes.** Any notes related to the contact.
 
 
@@ -626,7 +628,7 @@ Note: If you need to create a new contact, you should save your progress on the 
 
 5. Optional: Select any **Categories** from the drop-down list that describe the email address.
 
-6. Repeat steps 1-5 as needed.The email address saves once you save the contact. Note: If you are adding multiple emails, click **Primary** to indicate the contact’s primary email address.
+6. Repeat steps 1-5 as needed.The email address saves once you save the contact. Note: If you are adding multiple emails, click **Primary** to indicate the contact’s primary email address.  The **Primary** email will display as the first result.
 
 
 ###### Deleting an email address
@@ -651,7 +653,7 @@ Note: If you need to create a new contact, you should save your progress on the 
 
 5. Optional: Select any **Categories** from the drop-down list that describe the email address.
 
-6. Repeat steps 1-5 as needed. The phone number saves once you save the contact. Note: If you are adding multiple phone numbers, click **Primary** to indicate the contact’s primary phone number.
+6. Repeat steps 1-5 as needed. The phone number saves once you save the contact. Note: If you are adding multiple phone numbers, click **Primary** to indicate the contact’s primary phone number. The **Primary** phone number will display as the first result.
 
 
 ###### Deleting a phone number
@@ -678,7 +680,7 @@ The URL can be a website or FTP link.
 
 5. Optional: Select any **Categories** from the drop-down list that describe the URL.
 
-6. Repeat steps 1-5 as needed. The URL saves once you save the contact. Note: If you are adding multiple URLs, click **Primary** to indicate the contact’s primary URL.
+6. Repeat steps 1-5 as needed. The URL saves once you save the contact. Note: If you are adding multiple URLs, click **Primary** to indicate the contact’s primary URL.  The **Primary** URL will display as the first result.
 
 
 ###### Deleting a URL
@@ -697,7 +699,7 @@ The URL can be a website or FTP link.
 
 2. Fill in the address information.
 
-3. Repeat steps 1-2 as needed. The address saves once you save the contact. Note: If you are adding multiple addresses, click **Primary** to indicate the contact’s primary address.
+3. Repeat steps 1-2 as needed. The address saves once you save the contact. Note: If you are adding multiple addresses, click **Primary** to indicate the contact’s primary address. The **Primary** address will display as the first result.
 
 
 ###### Deleting an address
@@ -779,8 +781,8 @@ Note: If you need to create a new interface, you should save your progress on th
 *   **Available.** Select the **Available** checkbox to indicate whether statistics are available through this interface.
 *   **Delivery method.** Select the statistics’ **Delivery method** from the drop-down list: Online, FTP, Email, or Other.
 *   **Statistics format.** Select the statistics’ **Statistics format** from the drop-down list: Counter, Delimited, Excel, PDF, ASCII, HTML, or Other.
-*   **Locally stored.** The location of the statistics if they are locally stored?
-*   **Online location.** The online location of the statistics. For example, a website?
+*   **Locally stored.** The location of the statistics if they are locally stored.
+*   **Online location.** The online location of the statistics. For example, a vendor website.
 *   **Statistics notes.** Any notes about the statistics.
 
 
@@ -828,5 +830,3 @@ Deleting an interface removes it from your library’s list of interfaces. If yo
 3. In the contact window, click **Actions > Delete**.
 
 4. In the **Delete interface** dialog, click **Confirm**. The contact is deleted and the organization window appears.
-
-
