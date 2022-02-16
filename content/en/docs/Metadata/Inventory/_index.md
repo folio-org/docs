@@ -431,10 +431,10 @@ A check in or check out note is required by default.
 
 ## Creating an instance record using the Import action in FOLIO
 
-1.       In the default or middle pane, click **Actions > Import**
-2.       In the **Single Record Import** dialog box, select the source of the record to be imported (e.g., Library of Congress, OCLC WorldCat, BnF)
-3.       Enter the record number, without any prefixes, in the box labeled “Enter [source] identifier”
-4.       Click **Import**
+1.  In the default or middle pane, click **Actions > Import**.
+2.  In the **Single Record Import** dialog box, select the source of the record to be imported (e.g., Library of Congress, OCLC WorldCat, BnF).
+3.  Enter the record number, without any prefixes, in the **Enter [source] identifier** box.
+4.  Click **Import**.
 
 A new instance record is created along with an underlying SRS record. Only the editable **Administrative Data** elements in the instance can be edited directly in Inventory. These elements are entered as described in [Administrative Data](#administrative-data).
 
@@ -950,13 +950,13 @@ To view an item record, follow these steps:
 3.  Make your desired changes to the instance record.
 4.  Click **Save and close**. The instance record is updated.
 
-## Editing an instance record with underlying MARC using the **Re-import** action in FOLIO
+## Editing an instance record with underlying MARC using the Re-import action in FOLIO
 
-1.  [Find the instance](#searching-for-a-record) you want to edit and select it
-2.  In the **Instance record details** pane, click **Actions \> Re-import**
-3. In the **Single Record Import** dialog box, select the source of the record to be imported (e.g., Library of Congress, OCLC WorldCat, BnF)
-4.  Enter the record number, without any prefixes, in the box labeled “Enter [source] identifier”
-5.  Click **Import**
+1.  [Find the instance](#searching-for-a-record) you want to edit and select it.
+2.  In the **Instance record details** pane, click **Actions \> Re-import**.
+3. In the **Single Record Import** dialog box, select the source of the record to be imported (e.g., Library of Congress, OCLC WorldCat, BnF).
+4.  Enter the record number, without any prefixes, in the **Enter [source] identifier** box.
+5.  Click **Import**.
 The selected instance record and any underlying source data will be replaced by the re-imported record. The instance uuid and hrid as well as manually configurable Administrative Data such as suppression from discovery, instance status, cataloged date, and any statistical codes assigned will remain the same. Some configurations may be made locally to the import profile used for single record import. These changes are made in the [settings for Data Import](../../settings/settings_data_import/settings_data_import/).
 
 ## Duplicating an instance record
