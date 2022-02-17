@@ -882,24 +882,13 @@ You can add and assign notes to agreement records and agreement lines. Assigning
 
 ### Agreements keyboard shortcuts
 
-To display keyboard shortcuts available for the Agreements app:
+Keyboard shortcuts allow you to perform actions using the keyboard. Keyboard shortcuts available for the Agreements app are:
 
-
-
-1. Open the Agreements app.
-2. Press "Ctrl+Alt+K" (Windows) or "Cmd+Alt+K" (Mac).
-3. Dialog displays showing a list of the valid keyboard shortcuts for the Agreements app, including the shortcuts for the following actions:
-
-
-
-*  Save a record: Press "Ctrl+S" (Windows) or "Cmd+S" (Mac)
-*  Create a new record: Ensure cursor is not in the search text box and press "Alt+N"
-*  Go to "Search & filter" pane: Click on the heading of an agreement in the view pane and press "Ctrl+Alt+H" (Windows) or "Cmd+Alt+H" (Mac)
-*  Edit a record: Press "Ctrl+Alt+E" (Windows) or "Cmd+Alt+E" (Mac)
-*  Expand all accordions: Click on the heading of an agreement in the view pane and press "Ctrl+Alt+B" (Windows) or "Cmd+Alt+B" (Mac)
-*  Collapse all accordions: Click on the heading of an agreement in the view pane and press "Ctrl+Alt+G" (Windows) or "Cmd+Alt+G" (Mac)
-*  Duplicate a record: Click on the heading of an agreement in the view pane and press "Alt+C" (Windows and Mac)
-*  Open keyboard shortcuts modal: Press "Ctrl+Alt+K" (windows) or "Cmd+Alt+K" (Mac)
-
-
-4. Press the “Esc” key to close the dialog box.
+*  Save a record: Press <kbd>Ctrl+S</kbd> (Windows) or <kbd>Cmd+S</kbd> (Mac)
+*  Create a new record: Ensure cursor is not in the search text box and press <kbd>Alt+N</kbd>
+*  Go to the **Search & filter** pane: Click the heading of an agreement in the view pane and press <kbd>Ctrl+Alt+H</kbd> (Windows) or <kbd>Cmd+Alt+H</kbd> (Mac)
+*  Edit a record: Press <kbd>Ctrl+Alt+E</kbd> (Windows) or <kbd>Cmd+Alt+E</kbd> (Mac)
+*  Expand all accordions: Click the heading of an agreement in the view pane and press <kbd>Ctrl+Alt+B</kbd> (Windows) or <kbd>Cmd+Alt+B</kbd> (Mac)
+*  Collapse all accordions: Click the heading of an agreement in the view pane and press <kbd>Ctrl+Alt+G</kbd> (Windows) or <kbd>Cmd+Alt+G</kbd> (Mac)
+*  Duplicate a record: Click the heading of an agreement in the view pane and press <kbd>Alt+C</kbd> (Windows and Mac)
+*  Open keyboard shortcuts modal: Press <kbd>Ctrl+Alt+K</kbd> (Windows) or <kbd>Cmd+Alt+K</kbd> (Mac)
