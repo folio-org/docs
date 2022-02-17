@@ -1,7 +1,7 @@
 ---
 title: "eHoldings"
 linkTitle: "eHoldings"
-date: 2021-12-03
+date: 2022-02-17
 weight: 20
 tags: ["parenttopic"]
 ---
@@ -781,22 +781,35 @@ Note: Agreements can only be added to title records when a package is selected a
 4. In the **Delete note** dialog, click **Delete**. The note is deleted and removed from any records to which it was attached.
 
 
-### eHoldings keyboard shortcuts
+## eHoldings keyboard shortcuts
 
-Keyboard shortcuts available for the eHoldings app:
+Keyboard shortcuts allow you to perform actions using the keyboard. There are two options for displaying keyboard shortcuts available for the eHoldings app.
+
+The first option:
+
+1. Click the downward-facing carrot, “v”, at the end of the app name.  
+2. Click **Keyboard shortcuts** to view the list of shortcut actions.
+
+The second option:
+
+1. Press <kbd>Ctrl+Alt+K</kbd> (Windows) or <kbd>Cmd+Alt+K</kbd> (Mac).
+2. Dialog displays showing a list of the valid keyboard shortcuts for the eHoldings app, including the shortcuts for the following actions:
 
 
 
-*  Create a new custom package or title record: Ensure cursor is not in the search text box and press "Alt+N"
-*  Edit a record: Press "Ctrl+Alt+E" (Windows) or "Cmd+Alt+E" (Mac)
-*  Save a record: Press "Ctrl+S" (Windows) or "Cmd+S" (Mac)
-*  Expand all accordions: Press "Ctrl+Alt+B" (Windows) or "Cmd+Alt+B" (Mac)
-*  Collapse all accordions: Press "Ctrl+Alt+G" (Windows) or "Cmd+Alt+G" (Mac)
-*  Go to "Search & filter" pane: Press "Ctrl+Alt+H" (Windows) or "Cmd+Alt+H" (Mac)
-*  Open keyboard shortcuts modal: Press "Ctrl+Alt+K" (windows) or "Cmd+Alt+K" (Mac)
+*  Create a new custom package or title record: Ensure cursor is not in the search text box and press <kbd>Alt+N</kbd>
+*  Edit a record: Press <kbd>Ctrl+Alt+E</kbd> (Windows) or <kbd>Cmd+Alt+E</kbd> (Mac)
+*  Save a record: Press <kbd>Ctrl+S</kbd> (Windows) or <kbd>Cmd+S</kbd> (Mac)
+*  Expand all accordions: Press <kbd>Ctrl+Alt+B</kbd> (Windows) or <kbd>Cmd+Alt+B</kbd> (Mac)
+*  Collapse all accordions: Press <kbd>Ctrl+Alt+G</kbd> (Windows) or <kbd>Cmd+Alt+G" (Mac)
+*  Go to the **Search & filter** pane: Press <kbd>Ctrl+Alt+H</kbd> (Windows) or <kbd>Cmd+Alt+H</kbd> (Mac)
+*  Open keyboard shortcuts modal: Press <kbd>Ctrl+Alt+K</kbd> (windows) or <kbd>Cmd+Alt+K</kbd> (Mac)
 *  Expand or collapse an accordion: Press the Spacebar
-*  Close a modal or pop-up: Press the “Esc” key
-*  Copy: Press “Ctrl+c”
-*  Cut: Press “Ctrl+x”
-*  Paste: Press “Ctrl+v”
-*  Find: Press “Ctrl+f”
+*  Close a modal or pop-up: Press the <kbd>Esc</kbd> key
+*  Copy: Press <kbd>Ctrl+c</kbd>
+*  Cut: Press <kbd>Ctrl+x</kbd>
+*  Paste: Press <kbd>Ctrl+v</kbd>
+*  Find: Press <kbd>Ctrl+f</kbd>
+
+
+4. Press the <kbd>Esc</kbd> key to close the dialog box. 
