@@ -511,7 +511,7 @@ Deleting an invoice is possible while in an Open, Reviewed, or Cancelled status.
 
 ## Approving an invoice
 
-Only invoices with invoice lines can be approved. Only someone with the **Approve invoice** permission can perform this action.  Invoices require approval before the payment amounts are considered to be awaiting payment and in order for vouchers to be created. Once or more invoices connected to a purchase order line have been “Approved,” the Payment status on the purchase order is changed to “Partially paid.”
+Only invoices with invoice lines can be approved. Only someone with the **Approve invoice** permission can perform this action.  Invoices require approval before the payment amounts are considered to be awaiting payment and in order for vouchers to be created. Once one or more invoices connected to a purchase order line have been “Approved,” the Payment status on the purchase order is changed to “Partially paid.”
 
 If entering a locked total, all invoice lines and adjustment values must equal this lock total amount before a user can approve the invoice. Approving an invoice triggers the creation of the voucher and pending payment transactions. Vouchers are a mechanism for providing the information necessary to make invoice payments and can be exported to an external payment system. Each invoice generates a single unique voucher on which all fund charges are grouped by the fund external account number.  For more information on exporting vouchers, see
  [Settings > Invoices > Batch group configuration]({{< ref "/settings_invoices.md#settings--invoices--batch-group-configuration" >}}).
