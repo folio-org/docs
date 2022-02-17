@@ -880,7 +880,7 @@ You can add and assign notes to agreement records and agreement lines. Assigning
 6. In the **Delete note** dialog, click **Delete**. The note is deleted and removed from any records to which it was attached.
 
 
-### Agreements keyboard shortcuts
+## Agreements keyboard shortcuts
 
 Keyboard shortcuts allow you to perform actions using the keyboard. Keyboard shortcuts available for the Agreements app are:
 
