@@ -1,8 +1,8 @@
 ---
 title: "Settings > Users"
 linkTitle: "Users"
-date: 2021-11-09
-weight: 220
+date: 2021-12-17
+weight: 250
 tags: ["subtopic"]   
 ---
 
@@ -12,16 +12,17 @@ The Users section in the Settings app provides configuration options for managin
 
 The following are all the permissions for Users Settings:
 
--   **Settings (Users): Can create, edit and remove address types.** 
+-   **Settings (Users): Can create, edit and remove address types.** 
 -   **Settings (Users): Can create, edit and remove all feefines-related entries.**
 -   **Settings (Users): Can create, edit and remove comments.**
 -   **Settings (Users): Can create, edit and remove feefines.**
 -   **Settings (Users): Can create, edit and remove owners.**
 -   **Settings (Users): Can create, edit and remove patron blocks conditions.**
 -   **Settings (Users): Can create, edit and remove patron blocks limits.**
+-   **Settings (Users): Can create, edit and remove patron blocks templates.**
 -   **Settings (Users): Can create, edit and remove patron groups.**
 -   **Settings (Users): Can create, edit and remove payments.**
--   **Settings (Users): Can create, edit and remove sets.**
+-   **Settings (Users): Can create, edit and remove permission sets.**
 -   **Settings (Users): Can create, edit and remove refunds.**
 -   **Settings (Users): Can create, edit and remove transfer accounts.**
 -   **Settings (Users): Can create, edit and remove transfer criteria.**
@@ -41,29 +42,29 @@ Additionally, if permissions change because of a new release, a FOLIO administra
 
 ### Creating a permission set
 
-1.  In the Permission sets pane, click **New**.
+1.  In the **Permission sets** pane, click **New**.
 2.  To name the permissions set, enter a **Permission set name**.
 3.  Optional: Enter a **Description** of the permission set.
-4.  Under **Assigned permissions**, click **Add permission**. 
+4.  Under **Assigned permissions**, click **Add permission**. 
 5.  In the **Select Permissions** dialog, check the box next to each permission you want to assign to the permission set. You can also add an existing permission set to another permission set.
-6.  Click **Save & close**. The permissions are added to the set.
+6.  Click **Save & close**. The permissions are added to the permission set.
 7.  Click **Save & close**. The permission set is saved.
 
 ### Editing a permission set
 
 1.  Find the permission set you want to edit and select it.
-2.  In the **permission set** pane, click **Edit**.
+2.  In the permission set pane, click **Edit**.
 3.  Make your desired changes to the permission set.
-4.  Click **Save & Close**. 
+4.  Click **Save & Close**. 
 
 ### Deleting a permission set
 
 Note: A permission set can be deleted even if it is currently assigned to a user. Deleting the permission set removes it from the users to whom it was assigned.
 
 1.  Find the permission set you want to delete and select it.
-2.  In the **permission set** pane, click **Edit**.
+2.  In the permission set pane, click **Edit**.
 3.  In the **Edit** window, click **Delete**.
-4.  In the **Delete permission set** dialog, click **Delete**. A confirmation message appears and the permission is deleted.
+4.  In the **Delete permission set?** dialog, click **Delete**. A confirmation message appears and the permission is deleted.
 
 ## Settings \> Users \> Patron Groups
 
@@ -76,19 +77,21 @@ Only one patron group can be assigned to a user record. Patron groups are also u
 1.  In the **Patron groups** pane, click **New**.
 2.  Enter a name for the **Patron group** in the box. Patron group names need to be unique.
 3.  Optional: Enter a **Description** of the patron group.
-4.  Click **Save**. The patron group is saved.
+4.  Optional: Enter a number in the **Expiration date offset (days)** box. This number represents
+     the number of days of active status for user records assigned to the patron group.  
+5.  Click **Save**. The patron group is saved.
 
 ### Editing a patron group
 
 1.  Find the patron group you want to edit and click the **pencil icon**.
-2.  Make your changes to the **Patron group** or **Description**.
+2.  Make your changes to the **Patron group**, **Description**, or **Expiration offset date (days)**. 
 3.  Click **Save**. The patron group is saved.
 
 ### Deleting a patron group
 
 A patron group can only be deleted if it is no longer applied to any user records. To delete a patron group, you should first check to be sure that no users are currently assigned to that group.
 
-To see the number of user records assigned to a patron group, complete the following: 
+To see the number of user records assigned to a patron group, complete the following: 
 
 -   In the **Users app**, in the **User search** pane, select the checkbox next to the appropriate Patron group. The list of user records assigned to that patron group appears in the User search results pane. The number of records found displays at the top of the pane.
 
@@ -113,13 +116,14 @@ Note: Address types should be first configured here before bulk loading of patro
 
 ### Editing an address type
 
-1.  Find the Address Type you want to edit and click the **pencil icon**.
+1.  In the **Address Types** pane, find the Address Type you want to edit and click the **pencil  
+     icon**.
 2.  Make your changes to the **Address Type** or **Description**.
 3.  Click **Save**. The Address Type is updated.
 
 ### Deleting an address type
 
-1.  Find the Address Type you want to delete and click the **trash can icon**.
+1.  In the **Address Types** pane, find the Address Type you want to delete and click the **trash can icon**.
 2.  In the **Delete Address Type** dialog, click **Delete**. A confirmation message appears and the Address Type is deleted.
 
 ## Settings \> Users \> Departments
@@ -135,18 +139,18 @@ Use this setting to configure departments. Departments can be added in the [Exte
 
 ### Editing a department
 
-1.  Find the department you want to edit and click the **pencil icon**.
+1.  In the **Departments** pane, find the department you want to edit and click the **pencil icon**.
 2.  Make your changes to the **Name** or **Code**.
 3.  Click **Save**. The department is updated.
 
 ### Deleting a department
 
-1.  Find the department you want to delete and click the **trash can icon**.
+1.  In the **Departments** pane, find the department you want to delete and click the **trash can icon**.
 2.  In the **Delete Department** dialog, click **Delete**. A confirmation message appears and the department is deleted.
 
 ## Settings \> Users \> Profile pictures
 
-This field in the user record is not being developed at this time. 
+This field in the user record is not being developed at this time. 
 
 ## Settings \> Users \> Custom fields
 
@@ -174,13 +178,14 @@ Note: Custom fields can be deleted if they are in use, but any information tied 
 1.  In the **Custom fields** pane, click **Edit**.
 2.  In the **Edit custom fields** pane, next to the custom fields you want to delete, click the **trash can icon**. Clear out all of the fields to remove the accordion from appearing in user records.
 3.  Click **Save & close**.
-4.  In the **Delete field data** dialog, click **Save & lose data**. 
+4.  In the **Delete field data** dialog, click **Save & lose data**. 
 
 ## Settings \> Users \> Owners
+ A Fee/fine owner is the agent or office that manages fines for FOLIO transactions. Fee/fine owners collect fees/fines for FOLIO service points.
 
-Use this setting to configure the fee/fine owners at your library. A Fee/fine owner is the agent or office that manages fines for FOLIO transactions. Fee/fine owners collect fees/fines for FOLIO service points.
+Libraries may use owners in different ways, such as creating a fee/fine owner for each service point, or creating a fee/fine owner for each library's accounting office, that may collect fee/fines for multiple service points. 
 
-Libraries may use these in different ways, such as creating a fee/fine owner for each service point, or creating a fee/fine owner for each library's accounting office, that may collect fee/fines for multiple service points. 
+If your library intends to charge any fines, it is important that *every service point* be assigned to a fee/fine owner, even if you do not expect fines to accrue for items associated with that service point. Making sure that the service point is assigned to an owner will prevent unexpected errors from occurring.
 
 When manually creating a fee/fine, Fee/fine owner is a required field.
 
@@ -189,8 +194,7 @@ When manually creating a fee/fine, Fee/fine owner is a required field.
 1.  In the **Fee/fine: Owners** pane, click **New**.
 2.  Enter a name for the **Owner** in the box.
 3.  Optional: Enter a **Description** about the owner.
-4.  Optional: Select any **Associated service points**. If no service point is associated with the owner, they can be used at any service point.
-5.  Click **Save**. The fee/fine owner is saved.
+4.  Optional: Select the desired **Associated service points**. Note that while a fee/fine owner does not have to have associated service points, you will not be able to use the fee/fine owner in workflows unless it has service points associated with it. 5.  Click **Save**. The fee/fine owner is saved.
 
 ### Editing a fee/fine owner
 
@@ -205,7 +209,9 @@ When manually creating a fee/fine, Fee/fine owner is a required field.
 
 ## Settings \> Users \> Manual charges
 
-Use this setting to configure fee/fine types. For example, fee/fine types could be overdue fines, processing fees, or lost item fees. When manually creating a fee/fine, Fee/fine type is a required field.
+Use this setting to configure fee/fine types. For example, fee/fine types could be overdue fines, processing fees, or lost item fees. 
+
+When manually creating a fee/fine, Fee/fine type is a required field.
 
 ### Creating a fee/fine type
 
@@ -226,13 +232,12 @@ Use this setting to configure fee/fine types. For example, fee/fine types could 
 
 ### Deleting a fee/fine type
 
-1.  Find the fee/fine type  you want to delete and click the **trash can icon**.
+1.  Find the fee/fine type  you want to delete and click the **trash can icon**.
 2.  In the **Delete Fee/fine Type** dialog, click **Delete**. A confirmation message appears and the fee/fine type is deleted.
 
 ## Settings \> Users \> Waive reasons
 
-Use this setting to configure waive reasons. When waiving a fee/fine, Waive reason is a required field.
-
+Use this setting to configure waive reasons. 
 ### Creating a waive reason
 
 1.  In the **Fee/fine: Waive reasons** pane, click **New**.
@@ -318,7 +323,7 @@ Use this section to configure whether comments are required when fees/fines are 
 
 ## Settings \> Users \> Transfer accounts
 
-Use this setting to configure transfer accounts. Transfer accounts are used when your library needs to transfer transactions (for charge or credit) to entities outside of the library. For example, a transfer account may be the bursar's office or a collection agency.
+Use this setting to configure available transfer accounts. Transfer accounts are used when your library needs to transfer transactions (for charge or credit) to entities outside of the library. For example, a transfer account may be the bursar's office or a collection agency.
 
 ### Creating a transfer account
 
@@ -341,11 +346,11 @@ Use this setting to configure transfer accounts. Transfer accounts are used when
 
 ## Settings \> Users \> Conditions
 
-Automatic patron blocks allow the library to set limits that are automatically enforced. The limits are calculated in real time and displayed in the same areas as manual blocks. Patrons can be automatically blocked from checking out, renewing, and/or requesting.
+Automatic patron blocks allow the library to set limits that are automatically enforced. The limits are applied in real time and displayed in the same areas as manual blocks. Patrons can be automatically blocked from checking out, renewing, and/or requesting.
 
 Automatic patron blocks are displayed in the Users app in the Patron blocks section of a user record. Depending on which actions are blocked, the blocks also display in the Check out app after patron barcode entry or patron look-up or if an item barcode is scanned, in the Users app Loans section if you want to renew an item, and in the Requests app after a patron barcode/patron look-up.
 
-The patron block is automatically removed once the patron falls below the limit.
+The block is automatically removed once the patron falls below the limit.
 
 Note: Conditions and limits have to be in place in order for automated patron blocks to work.
 
@@ -366,7 +371,7 @@ These are all the categories for which you can set conditions and limits:
 
 1.  In the **Conditions** pane, select the condition you want to configure.
 2.  In the **condition** pane, select the actions that occur when the defined limits are exceeded: Block borrowing, Block renewals, and/or Block requests.
-3.  Enter a **Message to be displayed**.
+3.  Enter a **Message to be displayed** (required)
 4.  Click **Save**. A confirmation message appears and the block condition is saved.
 
 ### Editing patron block conditions
@@ -403,3 +408,30 @@ Limits determine the maximum number of materials, recalls, fee/fines, or overdue
 2.  In the **patron group** pane, clear out the limits.
 
 Click **Save**. A confirmation message appears and the block limits are saved.
+
+## Settings \> Users \> Patron Block Templates
+
+Libraries can choose to create templates for use with patron blocks that staff can apply to user records. This allows libraries to have more consistent patron messaging, and can improve reporting.
+
+Patron block templates are created in Settings \> Users \> Templates. 
+
+### Create patron block template
+1. In the **Patron block templates** pane, select **New** in the top right corner. A **New patron block template** window opens.
+2. Enter a **Template name** (required).
+3. Enter a **Block code** (optional). Block codes can be used for reporting or integration purposes. They do not appear in the Users app.
+4. Enter a **Description** (optional). This description only appears when viewing the template in settings.
+5. Enter a **Display description** (optional). This appears to staff when applying the block to a particular patron record.
+6. Enter a **Message to Patron** (optional). This appears to staff when applying the block to a particular patron record, and can be accessed by discovery layer tools to display to a patron when viewing their library account online.
+7. Check the boxes for the appropriate **Block actions** - borrowing, renewals, or requests (optional).
+
+### Edit patron block template.
+1. In the **Patron block templates** pane, select the template you wish to edit. The pane opens for viewing in a fourth pane.
+2. Click **Edit** to open the template in edit mode.
+3. Make changes as desired.
+4. Click **Save & close** to apply changes.
+
+### Delete patron block template
+1. In the **Patron block templates** pane, select the template you wish to edit. The pane opens for viewing in a fourth pane.
+2. Click **Edit** to open the template in edit mode.
+3. Click **Delete** in the top right.
+4. Click **Delete** in the confirmation pop-up.
