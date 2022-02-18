@@ -28,7 +28,7 @@ The permissions listed below allow you to interact with the Receiving app and de
 
 *   **Receiving: View.** This permission allows the user to view receiving information for orders.
 *   **Receiving: View, edit.** This permission allows the user to receive and edit pieces that are associated with a purchase order line.
-*   **Receiving: View, edit, create.** This permission allows the user to view, edit, and create piece records. Note: Users can only create pieces if the related purchase order line has the [Manually add pieces for receiving]({{< ref "/orders.md#po-line-details" >}}) checkbox selected.
+*   **Receiving: View, edit, create.** This permission allows the user to view, edit, and create piece records. Note: Users can only create pieces if the related purchase order line has the [Manually add pieces for receiving](../orders/#po-line-details) checkbox selected.
 *   **Receiving: View, edit, delete.** This permission allows the user to view, edit and delete pieces in the Receiving app.
 *   **Settings (Receiving): Can view and edit settings.** This permission allows the user to manage receiving settings.
 
@@ -347,7 +347,7 @@ An expected piece is a part of an order you expect to receive. For example, if y
 
 Expected pieces can be found under the Expected section of an order. Expected pieces can also be received from this section. See [Quick receive](#quick-receive) for more information.
 
-Note: To add an expected piece to an order, the **Manually add pieces for receiving** checkbox must have been selected in the [Order line]({{< ref "/orders.md#po-line-details" >}}) when the order was created.
+Note: To add an expected piece to an order, the **Manually add pieces for receiving** checkbox must have been selected in the [Order line](../orders/#po-line-details) when the order was created.
 
 
 
@@ -366,7 +366,7 @@ Note: To add an expected piece to an order, the **Manually add pieces for receiv
 *   **Select location.** This field is populated with the location selected in Orders. You can change the location by clicking [Assign a different location](#assign-a-different-location). 
 *   **Piece format.** This field is populated with the format selected in Orders. It can not be modified. 
 *   **Comment.** Enter any comments about the piece.
-*   **Create item.** Selecting the **Create item** checkbox connects the new piece to an instance in Inventory. This option is not available for electronic resources. Note: In order to create an item, an [instance status]({{< ref "/settings_orders.md#settings--orders--instance-status" >}}), [instance type]({{< ref "/settings_orders.md#settings--orders--instance-type" >}}), and [loan type]({{< ref "/settings_orders.md#settings--orders--loan-type" >}}) must be selected in Settings.
+*   **Create item.** Selecting the **Create item** checkbox connects the new piece to an instance in Inventory. This option is not available for electronic resources. Note: In order to create an item, an [instance status](../settings/settings_orders/settings_orders#settings--orders--instance-status), [instance type](../settings/settings_orders/settings_orders#settings--orders--instance-type), and [loan type](../settings/settings_orders/settings_orders#settings--orders--loan-type) must be selected in Settings.
 *   **Supplement.** Selecting the **Supplement** checkbox indicates that the piece is a supplementary material such as a CD or a map. 
 
 
