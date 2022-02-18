@@ -472,7 +472,7 @@ The Expense classes table contains the following columns:
 
 ### Viewing fund details
 
-The fund details pane contains fund information and all current, planned, and previous budgets as well as expense classes associated with a fund. The budget sections in the pane display total allocated, unavailable, and available by fund and expense class. To view a list of transactions for the current budget of a fund, click **Actions > View transactions for current budget**. See [Viewing budget transactions](#viewing-budget-transactions) for more information.
+The fund details pane contains fund information and all current, planned, and previous budgets as well as expense classes associated with a fund. The budget sections in the pane display total allocated, unavailable, and available by fund and expense class. To view a list of transactions for the current budget of a fund, click **Actions > View transactions for current budget**. See [Viewing budget transactions](#viewing-budget-transactions-for-a-current-budget) for more information.
 
 
 
@@ -561,7 +561,7 @@ The Budget information section contains the following fields:
 *   **Fiscal end.** Fiscal year end date.
 *   **Allowable expenditure.** Expenditure allowed, expressed as a percentage.
 *   **Allowable encumbrance.** Encumbrance allowed, expressed as a percentage.
-*   **Transactions.** Click **View transactions** to view budget transactions. See [Viewing budget transactions](#viewing-budget-transactions) for more information.
+*   **Transactions.** Click **View transactions** to view budget transactions. See [Viewing budget transactions](#viewing-budget-transactions-for-a-current-budget) for more information.
 
 
 ## Editing a budget
@@ -759,7 +759,7 @@ If you need to unencumber an order, this action is available from the transactio
 
 To release an encumbrance, follow these steps:
 
-1. Find the transaction list for the encumbered budget.  See [Viewing transactions for a current budget](#viewing-transactions-for-a-current budget) for more information.
+1. Find the transaction list for the encumbered budget.  See [Viewing transactions for a current budget](#viewing-transactions-for-a-current-budget) for more information.
 2. Select the encumbrance transaction from the result list. 
 3. On the encumbrance detail pane, click **Release encumbrance.**
 4. In the confirmation window, click **Confirm** for the message “Are you sure you want to release this encumbrance?” Any remaining amount will be added back to the budget.
@@ -854,7 +854,7 @@ Fiscal year rollover is initiated from the ledger detail pane.  This process clo
 
 When you select the **Rollover** action, the system displays the current year for the ledger at the top left of the rollover form.  The current year is based on the fiscal year period and the current date/time.
 
-If your institution runs rollover before or after the fiscal year end date, you’ll need to return to the fiscal year tab and adjust the dates of both the fiscal year you are rolling from and the upcoming fiscal year such that the current date now fits into the fiscal year you are rolling from. Remember to readjust the fiscal year dates back to the actual fiscal year dates after rollover is complete.  See [Editing a fiscal year, ledger, group, fund, or budget records](# editing-a-fiscal-year,-ledger,-group,-fund,-or-budget-records) for more information.
+If your institution runs rollover before or after the fiscal year end date, you’ll need to return to the fiscal year tab and adjust the dates of both the fiscal year you are rolling from and the upcoming fiscal year such that the current date now fits into the fiscal year you are rolling from. Remember to readjust the fiscal year dates back to the actual fiscal year dates after rollover is complete.  See [Editing a fiscal year, ledger, group, fund, or budget records](#editing-a-fiscal-year-ledger-group-fund-or-budget-records) for more information.
 
 
 *   **Period begin date.**  The fiscal year begin date for the **Fiscal year** selected.   See [Creating a fiscal year](#creating-a-fiscal-year) for more information about period dates.
@@ -882,7 +882,7 @@ The information in this section defines rollover behavior for budgets by fund ty
 
 #### Rollover encumbrances
 
-The information in this section defines rollover behavior for encumbrances by order type: one-time, ongoing, or ongoing-subscription.  An order is considered an ongoing-subscription if the order type is **Ongoing** and the **Subscription** checkbox is checked. See [Orders > Creating an ongoing order > Ongoing order information](/../../orders/#ongoing-order-information) for more information about the subscription checkbox.   For each order type listed, select the appropriate settings for each of the fields defined below:
+The information in this section defines rollover behavior for encumbrances by order type: one-time, ongoing, or ongoing-subscription.  An order is considered an ongoing-subscription if the order type is **Ongoing** and the **Subscription** checkbox is checked. See [Orders > Creating an ongoing order > Ongoing order information](/../orders/#ongoing-order-information) for more information about the subscription checkbox.   For each order type listed, select the appropriate settings for each of the fields defined below:
 
 *   **Rollover.**  Check this box if you want encumbrances for open orders of this type of order to rollover to the upcoming fiscal year budget associated with each order.  Checking this box will activate the  **Based on** and **Increase by, %** fields.
 *   **Based on.**  From the drop down list, select **Expended** to encumber the total amount that was expended during the current fiscal year or select **Remaining** to encumber the amount that has not yet been paid.
