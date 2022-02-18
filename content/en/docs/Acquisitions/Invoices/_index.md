@@ -113,7 +113,7 @@ The vendor information section is required.
 
 1. Enter the **Vendor invoice number** provided to you by the vendor.
 2. To select the vendor, click **Organization look-up**. In the **Select Organization** dialog, find the organization record for the vendor using the search box and/or filters. Click the organization to select it.  
-3. The vendor’s Accounting code from their Organization record summary section will display automatically once you select the vendor and save the invoice. If the vendor has multiple accounts with different accounting codes, select the appropriate accounting code  from the drop-down list. For more information about Organization accounting codes, see [Organizations > Creating an Organization](../../organizations/#creating-an-organization).
+3. The vendor’s Accounting code from their Organization record summary section will display automatically once you select the vendor and save the invoice. If the vendor has multiple accounts with different accounting codes, select the appropriate accounting code  from the drop-down list. For more information about Organization accounting codes, see [Organizations > Creating an Organization](../organizations/#creating-an-organization).
 
 
 ### Extended information
@@ -159,7 +159,7 @@ This is the end of the **Create new invoice** screen.  Click **Save & close** to
 
 
 You must **add or create new invoice lines** before the invoice can be approved or paid.  
-*   To link an existing open order purchase order line to the invoice, follow the steps to [add an invoice line to an invoice](#adding-an-invoice-line-to-an-invoice).  Information from the purchase order line populates fields on the invoice line, such as Subscription start date, Subscription end date, and quantity. The account number and accounting code are derived from the vendor’s organization record account section. See [Organizations > Accounts](../../Organizations/#accounts) for more information about vendor accounts.
+*   To link an existing open order purchase order line to the invoice, follow the steps to [add an invoice line to an invoice](#adding-an-invoice-line-to-an-invoice).  Information from the purchase order line populates fields on the invoice line, such as Subscription start date, Subscription end date, and quantity. The account number and accounting code are derived from the vendor’s organization record account section. See [Organizations > Accounts](../organizations/#accounts) for more information about vendor accounts.
 *   To create a new invoice line that is not associated with a purchase order, follow the steps to [create a new invoice line](#creating-a-new-invoice-line),
 
 ## Adding an invoice line to an invoice
@@ -551,7 +551,7 @@ Once an invoice is approved, an invoice voucher is created and is added to the i
 *   **Accounting code.**  Vendor accounting code to identify the vendor organization in an external accounts payable system.
 *   **Enclosure needed.**  If true and payment method is “Check,” this indicates to an external accounting system that an enclosure is needed with this invoice. If the Export to accounting checkbox is set to true and a voucher is created for this invoice, the export voucher file will contain a value of true in the enclosure needed data element.
 *   **Vendor.** Vendor name.
-*   **Address 1.** Vendor address 1. This is the vendor’s primary address from the Organization app.  See [Organizations> Adding an address](../../organizations/#adding-an-address) for more information.
+*   **Address 1.** Vendor address 1. This is the vendor’s primary address from the Organization app.  See [Organizations> Adding an address](../organizations/#adding-an-address) for more information.
 *   **Address 2.** Vendor address 2.
 *   **City.** Vendor city.
 *   **State/Prov./Region.** Vendor State, Province, or Region code.
