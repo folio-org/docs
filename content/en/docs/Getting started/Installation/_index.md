@@ -34,3 +34,22 @@ See [Single server with containers]({{< ref "singleserverwithcontainers.md" >}})
 FOLIO's built-in multi-tenant capabilities make it straightforward to harness economies of scale and improve efficiencies for libraries. In this scenario, FOLIO will be deployed on a cluster of servers using Kubernetes for orchestration. This configuration allows the addition of new tenants and hardware resources on demand and it is ideal if you need to scale-up your FOLIO instance in the future.
 
 See [Kubernetes example]({{< ref "kubernetesex.md" >}}) for more information.
+
+## Prerequisites
+
+### Memory
+
+At least 24 GB memory are needed to run the official [platform-complete](https://github.com/folio-org/platform-complete) set of FOLIO modules.
+
+### PostgreSQL
+
+FOLIO requires PostgreSQL 12 or any later version.
+
+`pg_hba.conf` must be configured for `md5` [password authentication](https://www.postgresql.org/docs/current/auth-password.html). Some PostgreSQL distributions default to `scram-sha-256` password authentication failing the FOLIO installation with this error message:
+
+```
+Opening SQLConnection failed: com/ongres/scram/common/stringprep/StringPreparation
+java.lang.NoClassDefFoundError: com/ongres/scram/common/stringprep/StringPreparation
+```
+
+The FOLIO development teams are working on enabling the more secure `scram-sha-256` method, see [FOLIO-2411](https://issues.folio.org/browse/FOLIO-2411) and the issues it lists in its Issues Link section.

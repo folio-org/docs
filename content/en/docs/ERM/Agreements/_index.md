@@ -306,7 +306,7 @@ A supplementary document is any additional document relevant to the agreement re
 3. Select a **Category** from the drop-down list. You can configure the values that appear in the drop-down list in [Settings > Agreements > Pick list values]({{< ref "/settings_agreements.md#settings--agreements--pick-list-values" >}}).
 4. (Optional) Enter a **Note** about the supplementary document.
 5. You must complete at least one of the following:
-    * Upload a file into the license record by dragging and dropping the file in the **Drag & drop to upload** box, or click **or choose file**.
+    * Upload a file into the agreement record by dragging and dropping the file in the **Drag & drop to upload** box, or click **or choose file**.
     * Enter the **Physical location** of the document in the box.
     * Enter the **URL** of the document in the box.
 6. Repeat steps 1-5 as needed. The supplementary document saves once you save the agreement.
@@ -442,7 +442,7 @@ To filter agreements associated with a specific organization, follow these steps
 
 ### Organizations role
 
-To filter licenses by their associated organizations’ roles, follow these steps:
+To filter agreements by their associated organizations’ roles, follow these steps:
 
 
 
@@ -503,11 +503,11 @@ To filter agreements by their supplementary properties, follow these steps:
 
 ## Viewing an agreement
 
-Once you search for a agreement, the following information appears in the License pane:
+Once you search for a agreement, the following information appears in the Agreements pane:
 
 
 
-*   **Name.** The name of the license.
+*   **Name.** The name of the agreement.
 *   **Status.** The order status.
 *   **Period start.** The date the agreement period starts.
 *   **Period end.** The date the agreement period ends.
@@ -526,7 +526,7 @@ In the search results, click an agreement to view it. The agreement details pane
 4. Click **Save & close**. The agreement is updated.
 
 
-## Deleting a agreement
+## Deleting an agreement
 
 Note: You cannot delete an agreement that is linked to a license, has agreement lines, or is related to another agreement.
 
@@ -791,7 +791,7 @@ You can add and assign notes to agreement records and agreement lines. Assigning
 1. [Find the agreement](#searching-for-agreements) to which you want to add a note and select it.
 2. In the **Agreement details** pane, click **Notes > Assign / Unassign**.
 3. In the **Assign / Unassign note** dialog, search for a note using the search bar in the Search & filter pane, or select a **Note type** from the drop-down list. You can also filter by **Note assignment status**.
-4. Select the checkbox next to the note you want to assign to the license and click **Save.** The note is saved and appears in the Notes section in the agreement details pane.
+4. Select the checkbox next to the note you want to assign to the agreement and click **Save.** The note is saved and appears in the Notes section in the agreement details pane.
 
 
 ### Editing an agreement note

@@ -288,11 +288,8 @@ Type values are configured in [Settings > Licenses > Pick list values]({{< ref "
 To filter licenses associated with a specific organization, follow these steps:
 
 1. In the **Search & filter** pane, click **Organizations**.
-
 2. Click **Select an organization**.
-
 3. In the drop-down list, search for the organization.
-
 4. Select the organization you want to filter by. The search results appear in the Licenses pane.
 
 
@@ -355,7 +352,7 @@ In the search results, click on a license to view it. The license details pane d
 
 
 
-1. [Find the license](#searching-for-licenses-1) you want to edit and select it.
+1. [Find the license](#searching-for-licenses) you want to edit and select it.
 2. In the **license details** pane, click **Actions > Edit**.
 3. Make your desired changes to the license.
 4. Click **Save & close**. A confirmation message appears and the license is updated.
@@ -365,7 +362,7 @@ In the search results, click on a license to view it. The license details pane d
 
 
 
-1. [Find the license](#searching-for-licenses-1) you want to delete and select it.
+1. [Find the license](#searching-for-licenses) you want to delete and select it.
 2. In the **license details** pane, click **Actions > Delete**.
 3. In the **Delete license** dialog, click **Delete**. A confirmation message appears and the license is deleted.
 
@@ -374,7 +371,7 @@ In the search results, click on a license to view it. The license details pane d
 
 
 
-1. [Find the license](#searching-for-licenses-1) you want to tag and select it.
+1. [Find the license](#searching-for-licenses) you want to tag and select it.
 2. In the **license details** pane, click the **tag icon**.
 3. In the **Tags** pane, either select a tag from the box or enter a tag.
 4. Click the **X** on the Tags pane to close the pane and save the tag. The tag number updates to the number of tags applied to the license.
@@ -384,7 +381,7 @@ In the search results, click on a license to view it. The license details pane d
 
 
 
-1. [Find the license](#searching-for-licenses-1) you want to duplicate and select it.
+1. [Find the license](#searching-for-licenses) you want to duplicate and select it.
 2. In the **License details** pane, click **Actions > Duplicate**.
 3. In the **Duplicate license** dialog, select which sections of the license to duplicate. See [Creating a license](#creating-a-license) for the fields that appear in each of the sections.
 4. Click **Save & close**.
@@ -396,7 +393,7 @@ In the search results, click on a license to view it. The license details pane d
 
 
 
-1. [Find the license(s)](#searching-for-licenses-1) you want to export and select the checkbox next to the license name in the **Licenses** pane.
+1. [Find the license(s)](#searching-for-licenses) you want to export and select the checkbox next to the license name in the **Licenses** pane.
 2. Click **Actions > Export selected** as CSV.
 3. In the **Export licenses as CSV** dialog, select which sections of the license(s) to export. See [Creating a license](#creating-a-license) for the fields that appear in each of the sections.
 4. Click **Save & close**. Depending on your browser and its configurations, the file automatically downloads or you are prompted to save it.
@@ -406,7 +403,7 @@ In the search results, click on a license to view it. The license details pane d
 
 
 
-1. [Find the license](#searching-for-licenses-1) to which you want to add an amendment and select it.
+1. [Find the license](#searching-for-licenses) to which you want to add an amendment and select it.
 2. In the **License details** pane, click **Amendments > Add amendment**.
 3. Fill out the amendment. The fields that appear are also found in a license record. See [Creating a license](#creating-a-license) for more information.
 4. Click **Save & close**. A confirmation message appears and the amendment is saved.
@@ -416,7 +413,7 @@ In the search results, click on a license to view it. The license details pane d
 
 
 
-1. [Find the license](#searching-for-licenses-1) that contains the amendment you want to edit and select it.
+1. [Find the license](#searching-for-licenses) that contains the amendment you want to edit and select it.
 2. In the **License details** pane, click **Amendments**.
 3. In the **Amendments** table, click the **amendment** you want to edit.
 4. In the **Amendment details** pane, click **Actions > Edit**.
@@ -428,7 +425,7 @@ In the search results, click on a license to view it. The license details pane d
 
 
 
-1. [Find the license](#searching-for-licenses-1) that contains the amendment you want to delete and select it.
+1. [Find the license](#searching-for-licenses) that contains the amendment you want to delete and select it.
 2. In the **License details** pane, click **Amendments**.
 3. In the **Amendments** table, click the **amendment** you want to delete.
 4. In the **Amendment details** pane, click **Actions > Delete**.
@@ -444,7 +441,7 @@ You can add and assign notes to license records. Assigning a note means you are 
 
 
 
-1. [Find the license](#searching-for-licenses-1) to which you want to add a note and select it.
+1. [Find the license](#searching-for-licenses) to which you want to add a note and select it.
 2. In the **License details** pane, click **Notes > New**.
 3. In the **New note** window, select the **Note type** from the drop-down list. Note types are created in the Settings app. For more information, see Settings > Notes.
 4. Enter a **Note title** in the box.
@@ -456,7 +453,7 @@ You can add and assign notes to license records. Assigning a note means you are 
 
 
 
-1. [Find the license](#searching-for-licenses-1) to which you want to add a note and select it.
+1. [Find the license](#searching-for-licenses) to which you want to add a note and select it.
 2. In the **License details** pane, click **Notes > Assign / Unassign**.
 3. In the **Assign / Unassign note** dialog, search for a note using the search bar in the Search & filter pane, or select a **Note type** from the drop-down list. You can also filter by **Note assignment status**.
 4. Select the checkbox next to the note you want to assign to the license and click **Save.** The note is saved and appears in the Notes section in the license details pane.
@@ -466,7 +463,7 @@ You can add and assign notes to license records. Assigning a note means you are 
 
 
 
-1. [Find the license](#searching-for-licenses-1) with the note you want to edit and select it.
+1. [Find the license](#searching-for-licenses) with the note you want to edit and select it.
 2. In the **License details** pane, click **Notes**.
 3. Find the note you want to edit, and click **Edit** at the bottom of the Title and details section of the note.
 4. In the **Edit: note** window, make your desired changes to the note.
@@ -477,7 +474,7 @@ You can add and assign notes to license records. Assigning a note means you are 
 
 
 
-1. [Find the license](#searching-for-licenses-1) with the note you want to remove and select it.
+1. [Find the license](#searching-for-licenses) with the note you want to remove and select it.
 2. In the **License details** pane, click **Notes**.
 3. Click on the note you want to remove.
 4. In the **Note** window, click **Actions > Delete**.
