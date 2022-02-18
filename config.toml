@@ -120,6 +120,14 @@ algolia_docsearch = true
 # Enable Lunr.js offline search
 offlineSearch = false
 
+[[params.versions]]
+  version = "Iris"
+  url = "https://iris.docs.folio.org/docs"
+
+[[params.versions]]
+  version = "Honeysuckle"
+  url = "https://honeysuckle.docs.folio.org/docs"
+
 # User interface configuration
 [params.ui]
 # Enable to show the side bar menu in its compact state.
