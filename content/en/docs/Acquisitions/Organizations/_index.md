@@ -609,7 +609,7 @@ Note: If you need to create a new contact, you should save your progress on the 
 *   **First name.** The given name of the contact.
 *   **Status.** Select the status of the contact from the drop-down list: Active or Inactive.
 *   **Language.** The primary language spoken by the contact.
-*   **Categories.** Select any categories from the drop-down list that describe the contact. Categories are configured in the Settings app. See [Settings > Organizations](../../settings/organizations/#settings--organizations--categories) for more information.
+*   **Categories.** Select any categories from the drop-down list that describe the contact. Categories are configured in the Settings app. See [Settings > Organizations](../../settings/settings_organizations/settings_organizations/#settings--organizations--categories) for more information.
 *   **Notes.** Any notes related to the contact.
 
 

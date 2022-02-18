@@ -531,7 +531,7 @@ This section displays information about invoices and invoice lines that link to 
 
 ## Approving an order
 
-You only need to approve an order if you have the Approvals required setting turned on. For more information, see [Settings > Orders > Approvals](../../settings/orders/#approvals). If you have this setting turned on, you also need the applicable permission to be able to approve the order. You can open an order once it is approved.
+You only need to approve an order if you have the Approvals required setting turned on. For more information, see [Settings > Orders > Approvals](../../settings/settings_orders/settings_orders/#settings--orders--approvals). If you have this setting turned on, you also need the applicable permission to be able to approve the order. You can open an order once it is approved.
 
 There are two ways to approve an order. You can edit the order and select the Approved checkbox under PO summary, or you can follow these steps:
 
@@ -614,7 +614,7 @@ You can only receive open orders.
 
 2. In the **Purchase order** pane, select **Actions > Receive.** The order line(s) open in the Receiving app.
 
-3. Follow the steps as outlined in [Receiving > Receiving an order]({{< ref "/receiving.md#receiving-an-order" >}}).
+3. Follow the steps as outlined in [Receiving > Receiving an order](../receiving/#receiving-an-order").
 
 
 ## Update encumbrances for an order
@@ -1287,7 +1287,7 @@ This section displays notes about the order.  See [Adding a note to an order lin
 
 *   **Date.**  Last updated date of the note.  Click on the column label **Date** to sort notes by ascending or descending order.
 *   **Title and details.**  The note title and the details of the note. Click **Edit** to edit the note.  Click **Save & Close** to save your changes and click **X** to close the notes window.
-*   **Type.** Note type.  See [Settings > Notes](../../settings/notes/#creating-a-note-type) for more information about note types.
+*   **Type.** Note type.  See [Settings > Notes](../../settings/settings_notes/settings_notes#creating-a-note-type) for more information about note types.
 
 
 
@@ -1303,7 +1303,7 @@ This section displays information about invoices and invoice lines that link to 
 *   **Status.**  The status of the invoice: Open, Reviewed, Approved, Paid, or Cancelled.
 *   **Quantity.** The quantity invoiced.  Note that the quantity shown is from the invoice line related to this order, not from the general invoice.
 *   **Expended amount.** The expended amount of the invoice.  In this version of FOLIO, the amount displayed is the **Calculated total amount** of the general invoice.  In future versions of FOLIO, the amount of the invoice line will display as the expended amount.
-*   **Piece(s).**  The caption information, as entered on the piece record of the Receiving app, for this order.  See [Receiving >Add piece fields](../../receiving/#add-piece-fields) for more information.
+*   **Piece(s).**  The caption information, as entered on the piece record of the Receiving app, for this order.  See [Receiving >Add piece fields](../receiving/#add-piece-fields) for more information.
 
 
 ### Related agreements
@@ -1328,7 +1328,7 @@ If the PO Line has been linked to an Agreement line in the Agreements app, a Lin
 
 2. In the **PO Line details** pane, click **Actions > Receive.** The order line opens in the Receiving app.
 
-3. Follow the steps as outlined in the [Receiving app documentation]({{< ref "/receiving.md" >}}).
+3. Follow the steps as outlined in the [Receiving app documentation](../receiving).
 
 
 ## Deleting an order line
