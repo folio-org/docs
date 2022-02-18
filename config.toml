@@ -76,8 +76,8 @@ languageName ="English"
 # Everything below this are Site Params
 
 [params]
-copyright = "The Docsy Authors"
-privacy_policy = "https://policies.google.com/privacy"
+copyright = "Open Library Foundation"
+privacy_policy = "https://openlibraryfoundation.org/privacy-policy/"
 
 #From Arnon
 custom_css = ["css/toc.css"]
