@@ -1,7 +1,7 @@
 ---
 title: "Settings > Orders"
 linkTitle: "Orders"
-date: 2021-05-10
+date: 2021-11-24
 weight: 200
 tags: ["subtopic"]   
 ---
@@ -15,9 +15,15 @@ In order to interact with order settings, a user needs to be assigned the follow
 
 
 
-*   **Settings (Orders): Can view and edit settings.** This permission allows you to view all of the Order settings.
+*   **Settings(Orders):  Can view all settings.**  This permission allows you to view all of the Order settings. 
+*   **Settings (Orders): Can view and edit all settings.** This permission allows you to view and edit all of the Order settings.
+*   **Settings(Orders): Can view Order Templates.** This permission allows you to view Order Templates in Settings > Orders.
+*   **Settings(Orders): Can view, edit Order Templates.** This permission allows you to view and edit Order Templates in Settings > Orders.
+*   **Settings(Orders): Can view, edit, create Order Templates.** This permission allows you to view, edit, and create Order Templates in Settings > Orders.
+*   **Settings(Orders): Can view, edit, delete Order Templates.** This permission allows you to view, edit, and delete Order Templates in Settings > Orders.
 
-Note: This is the only permission available for order settings. You can assign permissions to users in the Users app.
+
+Note:. You can assign permissions to users in the Users app.
 
 
 ## Settings > Orders > Approvals
@@ -63,9 +69,9 @@ There are four default interactions you can select:
 
 
 
-*   **Instance, holding, item.** Once the order is opened, an instance, holding, and item are found or created in the Inventory app.
+*   **Instance, holdings, item.** Once the order is opened, an instance, holdings, and item are found or created in the Inventory app.
 *   **Instance.** Once the order is opened, an instance is found or created in the Inventory app.
-*   **Instance, holding.** Once the order is opened, an instance and holding are found or created in the Inventory app.
+*   **Instance, holdings.** Once the order is opened, an instance and holdings are found or created in the Inventory app.
 *   **None.** Nothing is found or created in the Inventory app.
 
 
