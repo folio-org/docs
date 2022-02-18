@@ -727,7 +727,7 @@ Note: Agreements can only be added to title records when a package is selected a
 4. Click **Save & close.** A confirmation message appears and the agreement is added to the title record.
 
 
-## Removing an agreement
+## Removing an agreement from a title record
 
 
 
