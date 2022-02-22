@@ -882,7 +882,7 @@ The information in this section defines rollover behavior for budgets by fund ty
 
 #### Rollover encumbrances
 
-The information in this section defines rollover behavior for encumbrances by order type: one-time, ongoing, or ongoing-subscription.  An order is considered an ongoing-subscription if the order type is **Ongoing** and the **Subscription** checkbox is checked. See [Orders > Creating an ongoing order > Ongoing order information](/../orders/#ongoing-order-information) for more information about the subscription checkbox.   For each order type listed, select the appropriate settings for each of the fields defined below:
+The information in this section defines rollover behavior for encumbrances by order type: one-time, ongoing, or ongoing-subscription.  An order is considered an ongoing-subscription if the order type is **Ongoing** and the **Subscription** checkbox is checked. See [Orders > Creating an ongoing order > Ongoing order information](../orders/#ongoing-order-information) for more information about the subscription checkbox.   For each order type listed, select the appropriate settings for each of the fields defined below:
 
 *   **Rollover.**  Check this box if you want encumbrances for open orders of this type of order to rollover to the upcoming fiscal year budget associated with each order.  Checking this box will activate the  **Based on** and **Increase by, %** fields.
 *   **Based on.**  From the drop down list, select **Expended** to encumber the total amount that was expended during the current fiscal year or select **Remaining** to encumber the amount that has not yet been paid.
