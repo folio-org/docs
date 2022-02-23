@@ -1,6 +1,6 @@
 In FOLIO, **locations** are used to describe where items are located in a library.
 
-Locations are required for any library that wants to use holdings or item records in the Inventory app. Locations are used in workflows with service points, borrowing and returning items, charging fines, requesting items, providing remote storage, and data export for Inventory records.
+Locations are required for any library that wants to use holdings or item records in the Inventory app. Locations are used in workflows with service points, borrowing and returning items, charging fines, requesting items, providing remote storage, and data export for holdings and item records.
 
 FOLIO uses a hierarchical location tree, with four levels:
 
@@ -23,14 +23,14 @@ Using the values in the permanent and temporary location fields, FOLIO computes 
 ### Examples
 Temporary locations can be used to support various library workflows. 
 
-#### Supporting a New Books section of the library
+#### Example 1: Supporting a New Books section of the library
 
 Smith University Library purchases a copy of “The Midnight Library” by Matt Haig, a popular new book. They want “The Midnight Library” to be shelved at the “Smith New Arrivals” location for three months, before it gets sent to its permanent location of “Smith Main Stacks.”
 * When they order the item, library staff set the location on the PO line to “Smith Main Stacks”. This becomes the **holdings permanent location** for “The Midnight Library.”
 * Using Data Import or Inventory workflows, staff then set the **item temporary location** for “The Midnight Library” to “Smith New Arrivals”. FOLIO then sets the **item effective location** to “Smith New Arrivals”, and that location is used by FOLIO when the book circulates.
 * After “The Midnight Library” has been circulating for three months, library staff use Inventory or Data Import workflows to remove the item temporary location. That changes the **item effective location** to “Smith Main Stacks”, and FOLIO uses that location to circulate the item going forward.
 
-#### Supporting a library renovation
+#### Example 2: Supporting a library renovation
 
 Pacific College is renovating their Arts Library. Staff need to move 5,000 items from the Arts Library to the Undergraduate Library during the nine month renovation. 
 * Library staff use Data Import workflows to set a **holdings temporary location** of “Undergrad Stacks” on the 5,000 holdings records and then move the items. That changes the **item effective location** for all 5,000 items to “Undergrad Stacks”, and then FOLIO uses that location as they circulate. 
@@ -39,11 +39,11 @@ Pacific College is renovating their Arts Library. Staff need to move 5,000 items
 ## Configuring Locations
 To create the location tree, follow the steps outlined in Settings \> Tenant.
 
-Holdings and Item effective locations
+## Holdings and Item effective locations
 FOLIO supports a **holdings effective location** and **item effective location**. Both fields are calculated automatically by FOLIO. 
 
 
-Holdings effective location
+### Holdings effective location
 The holdings effective location is used to provide location information for holdings that are not always itemized, such as periodicals, microfilm, or in-process special collections. It is not used in item circulation workflows.
 
 On the holdings record, there are three location fields:
@@ -57,7 +57,7 @@ FOLIO sets the holdings effective location to the first value it finds in the fo
 # Holdings permanent location
 
 Item effective location
-The "effective location" is used by FOLIO to know the current home location for an item, and for staff and patrons to understand where to find an item in the library. 
+The item effective location is used by FOLIO to know the current home location for an item, and for staff and patrons to understand where to find an item in the library. 
 
 The item effective location is used in multiple apps, including Check out, Check in, Requests, and Users (when viewing loans and fee/fines).
 
@@ -73,4 +73,4 @@ FOLIO sets the item effective location to the first value it finds in the follow
 # Holding temporary location
 # Holding permanent location
 
-Note that an item permanent location *does not need to be set* if the holding permanent location is set. *Item effective location* is what is used in circulation workflows, and it will inherit the holding permanent location if no other location values are set.
+Note that an item permanent location *does not need to be set* if the holding permanent location is set. *Item effective location* is what is used in circulation workflows, and it will inherit the holding permanent location if no location values are set directly on the item.
