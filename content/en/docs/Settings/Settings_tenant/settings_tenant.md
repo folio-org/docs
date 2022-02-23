@@ -54,12 +54,14 @@ To make temporary changes for your current session, click Change session locale.
 
 ### Update your library locale, time zone, or currency
 
-Locale (for language display, date format, etc.). Locale adjusts FOLIO's language display, date format, and number format to the standard for the locality selected.
-Time zone (time zone used when showing date time information). Time zone adjusts FOLIO's time zone for when dates are displayed. Time zones are based on the standard tz database time zone names.
-Primary currency (for currency symbol to display). Primary currency adjusts FOLIO's currency symbol, using ISO 4217 standard codes.
+* **Locale** Changing the locale adjusts FOLIO's language display, date format, and number format to the standard for the locale selected.
+* **Time zone** Changing the time zone adjusts the display in the FOLIO user interface for dates and times. 
+* **Primary currency**. Primary currency adjusts FOLIO's displayed currency symbol, using ISO 4217 standard codes.
 
-Select a Locale, Time zone, and/or Primary currency from the drop-down lists.
-Click Save. A confirmation message appears and your changes are saved.
+To change these settings:
+
+1. Select a Locale, Time zone, and/or Primary currency from the drop-down lists.
+2. Click Save. A confirmation message appears and your changes are saved.
 
 ## Settings > Tenant > Preferred plugins
 
@@ -73,53 +75,53 @@ Changing any of the preferred plugins to (none) disables the action for all FOLI
 
 Use this setting if your library wishes to implement Single Sign-On (SSO) for staff members to log into FOLIO. SSO allows library staff to use the same username and password they use for other services at their library, removing the need to maintain a separate username and password just for FOLIO.
 
-Note: Enabling single sign-on generally requires coordination with your IT staff and/or your identity provider. 
+Note: Enabling single sign-on generally requires coordination with your IT staff and/or your hosting provider. 
 
-Identity Provider URL. A URL where metadata about the identity provider can be accessed by FOLIO.
-Download metadata. After selecting all of your SSO settings, click Download metadata to download an XML, which you should send to your identity provider. This file will need to be re-downloaded if you make any changes to these settings.
-SAML binding. Depending on your configuration, select Redirect binding to use an HTTP redirect to the identity provider's sign on page, or POST binding to send an HTTP POST from the FOLIO login page.
-SAML attribute. The attribute in the identity provider that uniquely identifies the user.
-User property. The attribution in FOLIO where the SAML attribute can be found.
+* **Identity Provider URL.** An Identity Provider URL is a URL where metadata about the identity provider can be accessed by FOLIO.
+* **SAML binding.** Depending on your configuration, you can select **Redirect binding** to use an HTTP redirect to the identity provider's sign on page, or **POST binding** to send an HTTP POST request from the FOLIO login page.
+* **SAML attribute.** The SAML attribute is the attribute the identity provider users to uniquely identify the user.
+* **User property.** The **User property** is the attribute in the FOLIO user record where the SAML attribute can be found.
+
+After selecting and saving all of your SSO settings, click **Download metadata** to download an XML file to send to your identity provider. This file will need to be re-downloaded if you make any changes to these settings.
 
 ## Settings > Tenant > Service Points
 
-Use this setting to configure your library’s service points. In FOLIO, a service point is a library staff work location. 
+In FOLIO, a service point is a library staff work location. At least one service point is needed to support library workflows such as:
 
-A service point is needed when you want to perform at least one of the following at that location:
+* Check in items.
+* Check out items.
+* Request items for patron delivery.
+* Request items for patron pickup.
+* Put items in transit to another location.
+* Charge fines for library transactions
 
-Check in items.
-Check out items.
-Request items for patron delivery.
-Request items for patron pickup.
-Put items in transit to another location.
-Charge fines for transactions, which occurred at that location.
+When creating service points, you should consider the following:
 
-Every location that has physical materials needs an associated primary service point in order to manage those materials. Therefore, you should create your desired service points before creating your location hierarchy.
-
-Staff who use the Check in, Check out, Requests, and Users apps must have a service point assigned to them in their user record.
-
-There is no requirement that a service point be a place that is providing service to patrons. Libraries may find that it is helpful to establish internal service points for areas such as shelving, conservation, or collection development.
+* In FOLIO, every configured location needs an associated primary service point in order to manage those materials. Therefore, you should create your desired service points before creating your location hierarchy.
+* Staff who use the Check in, Check out, and Request apps must have a service point assigned to them in their user record.
+* There is no requirement that a service point provide direct service to patrons. Libraries may find that it is helpful to establish internal service points for areas such as shelving, conservation, or collection development.
 
 ### Creating a service point
 
-In the Service points pane, click New.
-In the New service point window, enter a Name for the service point. The name must be unique to your FOLIO tenant.
-Enter a Code. The code is the machine readable name of the service point and must be unique to your FOLIO tenant.
-Enter a Discovery display name. This name is used in discovery services to identify the service point to patrons. It does not have to be unique.
-Optional: Enter a Description of the service point. The description only appears in Settings.
-Optional: Enter the location’s Shelving lag time (minutes). This number is used to set expectations for how long until materials returned to this service point are reshelved.
-Optional: Select whether the service point is a Pickup location. If the service point is a pickup location, it appears as a Pickup location option for patrons in the Requests and Users app. If you select Yes, you must enter a Hold shelf expiration period, which determines how long materials are available for pickup on the hold shelf.
-Optional: Select the Hold, Pick slip, Request delivery, and/or Transit checkboxes to determine which staff slips print by default for this service point. 
-Click Save & close. A confirmation message appears and the service point is created.
+1. In the Service points pane, click **New**.
+2. In the New service point window, enter a **Name** for the service point. The name must be unique to your FOLIO tenant.
+3. Enter a **Code.** The code is the machine readable name of the service point and must be unique to your FOLIO tenant.
+4. Enter a **Discovery display name.** This name is used in discovery services to identify the service point to patrons. It does not have to be unique.
+5. Enter a **Description** of the service point (optional). The description only appears in Settings.
+6. Enter the service point's **Shelving lag time (minutes).** As of Juniper, this is informational only, as items immediately appear as **Available** when checked in at their home service point.
+7. Select whether the service point is a **Pickup location**. The default is **No**. If the service point is a pickup location for requests, it will appear as a pickup location option for patrons in the Requests and Users app(s). 
+8. If the service point is a pickup location, enter a **Hold shelf expiration period**. This determines how long a request will remain in **Open-Awaiting Pickup** status for the patron when the item is available for them to pickup.
+9. Check which types of staff slips should **Print by default** at the service point: Hold, Pick slip, Request delivery, and/or Transit.
+10. Click **Save & close.** A confirmation message appears and the service point is created.
 
 The Assigned locations accordion is updated when the service point is assigned to any locations in the location tree. 
 
 ### Editing a service point
 
-In the Service points pane, find the service point you want to edit and select it.
-In the service point details pane, click Edit.
-In the Edit window, make your desired changes.
-Click Save & close. A confirmation message appears and the service point is updated.
+1. In the Service points pane, find the service point you want to edit and select it.
+2. In the service point details pane, click **Edit.**
+3. In the Edit window, make your desired changes.
+4. Click **Save & close.** A confirmation message appears and the service point is updated.
 
 ### Deleting a service point
 
@@ -130,14 +132,14 @@ You cannot delete a service point in the FOLIO user interface.
 
 Use the settings under Location setup to configure the four parts of the item location tree. Locations must be configured in order to create holdings and items in Inventory, to circulate items using the Check in and Check out apps, and to request items using the Requests app.
 
-The location setup has four elements that are hierarchical in relationship, from the top down the hierarchy is: Institutions > Campuses > Libraries > Locations.
+The location setup has four hierarchical elements - each level of the hierarchy must have at least one value in order to create a value at the next, more specific level. 
 
+* **Institution.** An institution is the highest level of the FOLIO location hierarchy. An institution typically represents entities such as the college or university, though that is not a FOLIO requirement. You can create one or more institutions.
+* **Campus.** A campus is the second highest level of the FOLIO location hierarchy, A campus typically represents distinct parts of an institution, like a physical or branch campus, or online programs, though that is not a FOLIO requirement.
+* **Library.** A library is the third level of the FOLIO Location hierarchy. A library typically represents physical buildings on a campus, or domains of service on a virtual campus, though that is not a FOLIO requirement. 
+* **Location.** A location is the fourth and most detailed level of the FOLIO Location hierarchy. A location typically represents specific shelving areas, like the stacks, reserves, or specific language collections, though that is not a FOLIO requirement.
 
 ### Settings > Tenant > Institutions
-
-Use this setting to configure your institutions. An institution is the highest level of the FOLIO location hierarchy, and typically represents legal entities such as the college or university.
-
-FOLIO libraries need at least one institution created to be able to populate elements down the hierarchy.
 
 #### Creating an institution
 
@@ -160,20 +162,16 @@ In the Institutions pane, find the institution you want to delete.
 In the actions column, click the trash can icon.
 In the Delete Institution dialog, click Delete. A confirmation message appears and the institution is deleted.
 
-Settings > Tenant > Campuses
+### Settings > Tenant > Campuses
 
-Use this setting to configure your campuses. A campus is the second highest level of the FOLIO location hierarchy, and typically represents distinct spaces or domains within an institution, like a downtown campus or online program.
-
-FOLIO libraries need at least one institution and one campus to create elements further down the location hierarchy.
-
-Creating a campus
+#### Creating a campus
 
 In the Campuses pane, select the Institution under which the campus should be created.
 Click New.
 Enter a Name and Code. The name and code should be unique. FOLIO doesn’t stop you from making campuses with the same name and/or code, but it does cause problems for your staff in writing circulation rules.
 Click Save. The campus is created.
 
-Editing a campus
+#### Editing a campus
 
 In the Campuses pane, select the Institution under which the campus is located.
 Find the campus you want to edit.
@@ -181,7 +179,7 @@ In the actions column, click the pencil icon.
 Make your desired changes.
 Click Save. The campus is updated.
 
-Deleting a campus
+#### Deleting a campus
 
 Note: If the campus has an associated library, you cannot delete it.
 
@@ -190,20 +188,17 @@ Find the campus you want to delete.
 In the actions column, click the trash can icon.
 In the Delete Campus dialog, click Delete. A confirmation message appears and the campus is deleted.
 
-Settings > Tenant > Libraries
+### Settings > Tenant > Libraries
 
-Use this setting to configure your libraries. A library is the third level of the FOLIO Location hierarchy, and typically represents physical buildings on a physical campus, or domains of service in a virtual campus, like a subject-specific library or an annex.
-
-FOLIO libraries need at least one institution, campus, and library to be able to create the final element of the location tree.
-
-Creating a library
+#### Creating a library
 
 In the Libraries pane, select the Institution under which the library should be created.
 Select the Campus under which the library should be created.
 Click New.
 Enter a Name and Code. The name and code should be unique. FOLIO doesn’t stop you from making libraries with the same name and/or code, but it does cause problems for your staff in writing circulation rules.
 Click Save. The library is created.
-Editing a library
+
+#### Editing a library
 
 In the Libraries pane, select the Institution under which the library is located.
 Select the Campus under which the library is located.
@@ -212,7 +207,7 @@ In the actions column, click the pencil icon.
 Make your desired changes.
 Click Save. The library is updated.
 
-Deleting a library
+#### Deleting a library
 
 Note: If the library has an associated location, you cannot delete it.
 
@@ -223,19 +218,19 @@ In the actions column, click the trash can icon.
 In the Delete Library dialog, click Delete.
 Click Save. A confirmation message appears and the library is deleted.
 
-Settings > Location setup > Locations
+### Settings > Location setup > Locations
 
-Use this setting to configure your locations. A location is the fourth and most detailed level of the FOLIO Location hierarchy, and typically represents specific shelving areas, like the stacks, reserves, or specific language collections.
-
-Locations and service points
+#### Locations and service points
 
 Each location must have at least one service point associated with it and designated as primary. Locations may also have additional service points that are non-primary. Non-primary service points are not required. 
 
-When an item is returned at another service point that is not associated with the location, it is put in transit to the primary service point. When an item is checked in at a location’s non-primary service point, it is not put in transit to the primary service point. 
+When an item is returned at a service point that is not associated with the location, it is put in transit to the primary service point. 
 
-The most common use case for a non-primary service point is if your library has multiple service desks in the same building, or decides to create a service point for staff working “behind the scenes” in addition to a service point for a patron-facing service desk. In those cases, one service point can be the primary service point for locations in that building, and the other service points would be non-primary service points for those locations. This allows staff at those non-primary service points to discharge and shelve items for the library without putting them in transit to the main service point.
+When an item is checked in at a location’s non-primary service point, it is not put in transit to the primary service point. 
 
-Creating a location
+The most common use case for a non-primary service point is if your library has multiple service points in the same building, or if your library has a service point for staff working “behind the scenes” in addition to a service point for a patron-facing service desk. In those cases, one service point can be the primary service point for locations in that building, and the other service points would be non-primary service points for those locations. This allows staff at non-primary service points to discharge and shelve items for that location without putting them in transit to the main service point.
+
+#### Creating a location
 
 In the Locations pane, select the Institution under which the location should be created.
 Select the Campus under which the location should be created.
@@ -251,7 +246,7 @@ Optional: Select the location’s Status. By default, all locations are Active.
 Optional: Enter a Description of the location.
 Click Save & close. The location is created.
 
-Editing a location
+#### Editing a location
 
 In the Locations pane, select the Institution under which the location is located.
 Select the Campus under which the location is located.
@@ -261,7 +256,7 @@ In the location details pane, click Actions > Edit.
 Make your desired changes.
 Click Save & close. The location is updated.
 
-Duplicating a location
+#### Duplicating a location
 
 In the Locations pane, select the Institution under which the location is located.
 Select the Campus under which the location is located.
@@ -271,7 +266,7 @@ In the location details pane, click Actions > Duplicate.
 Make your desired changes to the location.
 Click Save & close. The location is created.
 
-Deleting a location
+#### Deleting a location
 
 Note: If the location is in use by at least one record in Inventory, you cannot delete the location. In those cases, it is recommended that you edit the location and make the status Inactive. It doesn’t remove the location from Inventory location dropdown menus, but it gives staff a dialog message if they select an inactive location.
 
