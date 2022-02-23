@@ -39,7 +39,7 @@ If a FOLIO library is depending on an item’s status to communicate information
  
 Items in some statuses will warn library staff members that the item status is going to change, and ask them to confirm check in before proceeding.
 
-{{% alert title="" color="info"%}}
+{{% alert title="Item statuses do not automatically revert when items are returned" color="info"%}}
 Importantly, FOLIO does not automatically reset an item status to what it was before it circulated. If your library uses item status to communicate information about an item, and then the item circulates, you will need to develop workflows to manually restore the item’s status once it is returned.                
 {{% /alert %}}
 
