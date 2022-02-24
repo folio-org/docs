@@ -53,12 +53,12 @@ Some FOLIO deployments use different host names for font-end and back-end, and t
 Advantages:
 
 * Simple host name based configuration, requires no path based proxy configuration.
-* Continuously tested on FOLIOs reference environments.
+* Continuously tested on FOLIO's reference environments.
 
 Disadvantages:
 
 * Slower because the browser needs to send extra "preflight" OPTIONS HTTP requests for cross-origin resource sharing (CORS) protection resulting in latency.
-* Less secure as it requires a configuration that lifts the security configurations regarding cross-origin resource sharing (CORS) and cross-site request forgery (CSRF).
+* Less secure as it requires a configuration that weakens the security restrictions regarding cross-origin resource sharing (CORS) and cross-site request forgery (CSRF).
 
 ## Two host names on different sites
 
@@ -69,6 +69,6 @@ Fictional example:
 * https://beispiel.de
 * https://okapi.example.org
 
-This requires removing security configurations regarding cross-origin resource sharing (CORS) and cross-site request forgery (CSRF) and likely violates security rules required by law or policy.
+This requires removing security restrictions regarding cross-origin resource sharing (CORS) and cross-site request forgery (CSRF) and likely violates security rules required by law or policy.
 
-FOLIO prevents to configure it for the most security sensitive module, the single-sign-on (SSO) module mod-login-saml.
+FOLIO prevents this configuration for the most security sensitive module, the single-sign-on (SSO) module mod-login-saml.
