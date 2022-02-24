@@ -2,7 +2,7 @@
 ---
 title: "Agreements"
 linkTitle: "Agreements"
-date: 2021-06-23
+date: 2022-02-18
 weight: 10
 tags: ["parenttopic"]
 ---
@@ -503,7 +503,7 @@ To filter agreements by their supplementary properties, follow these steps:
 
 ## Viewing an agreement
 
-Once you search for a agreement, the following information appears in the Agreements pane:
+Once you search for an agreement, the following information appears in the Agreements pane:
 
 
 
