@@ -1,6 +1,6 @@
 # baseURL = "/"
-baseURL = "https://iris.docs.folio.org/"
-title = "FOLIO Documentation - Iris"
+baseURL = "https://juniper.docs.folio.org/"
+title = "FOLIO Documentation - Juniper"
 
 enableRobotsTXT = true
 
