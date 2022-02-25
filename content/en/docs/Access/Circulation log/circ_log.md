@@ -56,7 +56,7 @@ In the **Search & filter** pane, click **Loan** and select any applicable filter
 * **Checked out.** Include items that were checked out.
 * **Checked out through override.** Include items that were checked out using an override.
 * **Checked in** Include items that were checked in. The items may or may not have been out on loan.
-* **Anonymize.** Include loans that were anonymized. Note: This feature is under development.
+* **Anonymized.** Include loans that were anonymized.
 * **Claimed returned.** Include items that were claimed returned.
 * **Closed loan.** Include items that were returned.
 * **Declared lost.** Include items that were declared lost.
