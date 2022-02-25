@@ -1,13 +1,13 @@
 ---
 title: "Platform essentials"
-linkTitle: "Platform essentials"
+linkTitle: "platformessentials"
 weight: 300
 ---
 
 In FOLIO, there are several parts of functionality that support library workflows
 across FOLIO apps. These include:
 
-* Item statuses
-* Keyboard Shortcuts
-* Locations
-* Permissions 
+* [Item status]({{< ref "/itemstatus.md" >}})
+* [Keyboard Shortcuts]({{< ref "/keyboardshortcuts.md" >}})
+* [Locations]({{< ref "/locations.md" >}})
+* [Permissions]({{< ref "/permissions.md" >}))
