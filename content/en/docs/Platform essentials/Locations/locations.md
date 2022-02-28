@@ -1,3 +1,9 @@
+---
+title: "Locations"
+linkTitle: "Locations"
+date: 2022-01-12
+weight: 50
+---
 In FOLIO, **locations** are used to describe where items are located in a library.
 
 Locations are required for any library that wants to use holdings or item records in the Inventory app. Locations are used in workflows with service points, borrowing and returning items, charging fines, requesting items, providing remote storage, and data export for holdings and item records.
@@ -38,7 +44,7 @@ Pacific College is renovating their Arts Library. Staff need to move 5,000 items
 * When the renovation is over and the items are returned to the Arts Library, library staff use Data Import workflows to remove the **holdings temporary location** from all 5,000 items, and that changes their effective locations back to “Arts Library.” FOLIO uses that location to circulate the items going forward.
 
 ## Configuring Locations
-To create the location tree, follow the steps outlined in [Settings \> Tenant.]({{< ref "/settings_tenant.md" >}})
+To create the location tree, follow the steps outlined in [Settings \> Tenant.]({{ ref "Settings_tenant.md"}})
 
 ## Holdings and Item effective locations
 FOLIO supports a **holdings effective location** and **item effective location**. Both fields are calculated automatically by FOLIO. 

@@ -1,3 +1,10 @@
+---
+title: "Permissions"
+linkTitle: "Permissions"
+date: 2022-01-12
+weight: 50
+---
+
 FOLIO has a user permissions system that allows for granular control over what users can access in their FOLIO installation. 
 
 Each app defines its own permissions for the frontend and backend modules that it uses. 

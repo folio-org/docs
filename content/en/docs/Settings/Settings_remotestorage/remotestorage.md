@@ -1,8 +1,9 @@
 ---
 title: "Settings > Remote Storage"
-linkTitle: "remotestorage"
+linkTitle: "Remote Storage"
 date: 2022-02-25
-weight: 20
+weight: 220
+tags: ["subtopic"]
 ---
 <!-- written with Juniper release -->
 
