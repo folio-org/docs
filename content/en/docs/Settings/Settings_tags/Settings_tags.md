@@ -6,8 +6,6 @@ weight: 230
 tags: ["subtopic"]   
 ---
 
-# Settings > Tags
-
 The Tags section of the Settings app is where you enable the use of tags in FOLIO apps.
 
 ## Permissions

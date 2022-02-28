@@ -6,8 +6,6 @@ weight: 180
 tags: ["subtopic"]   
 ---
 
-# Settings > Notes
-
 The Notes section of the Settings app is where you establish your library’s note types.
 
 Notes are a way for your library to add extra information to a record. The Notes section appears in records in the following FOLIO apps:
