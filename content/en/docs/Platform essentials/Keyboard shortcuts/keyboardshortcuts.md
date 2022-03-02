@@ -32,11 +32,9 @@ Keyboard shortcuts allow you to perform actions using the keyboard.  These short
 
 To view the list of available shortcut keys, follow these steps:
  
-Click on the name of a FOLIO app from the top menu bar.  The app opens and the app name displays at the top left of the window.
- 
-Click on the downward-facing carrot, “v”, at the end of the app name.  
- 
-Click **Keyboard shortcuts** to view the list of shortcut actions.
+1. Click on the name of a FOLIO app from the top menu bar.  The app opens and the app name displays at the top left of the window.
+2. Click on the downward-facing carrot, “v”, at the end of the app name.  
+3. Click **Keyboard shortcuts** to view the list of shortcut actions.
 
 
 ## List of apps displaying the shortcut list
