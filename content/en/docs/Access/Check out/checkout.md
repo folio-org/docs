@@ -46,7 +46,7 @@ Locate the patron using the Patron Lookup function:
 
 ### Assessing the patron's data
 
-Within the patron details area, note that you can access additional information related to the user. Clicking on any linked information opens the appropriate app and displays the associated information. For example, clicking the number beneath Open requests opens the Requests app.
+Within the patron details area, note that you can access additional information related to the user. Clicking on any linked information opens the appropriate app and displays the associated information. For example, if the FOLIO user has the appropriate permissions, clicking the number beneath Open requests will open a list of the patron's open requests in the Requests app.
 
 Review the information available to determine if you can continue with check out. For example, fees or fines may be owed, and may need to be handled before proceeding.
 
