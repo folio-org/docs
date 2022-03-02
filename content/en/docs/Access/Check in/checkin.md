@@ -70,7 +70,7 @@ There are two scenarios in which an item may need to be routed to another servic
 3. Click **Close** to exit and print a routing slip, if selected. The item appears in the Scanned Items table and its status changes to In transit.
 
 
-## Checking in an item with a request (hold shelf fulfilment)
+## Checking in an item with a request (hold shelf fulfillment)
 
 When a patron requests an item, checking the item in at its requested pickup service point triggers the hold.
 
