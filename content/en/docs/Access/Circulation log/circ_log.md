@@ -6,8 +6,7 @@ date: 2022-01-13
 weight: 30
 ---
 
-The Circulation log app allows you to view and search for circulation actions. Circulation actions are any action performed by the system or a user within the following Circulation apps: Check in, Check out, and Requests. Notices and fee/fine actions are also included.
-
+The Circulation log app allows you to view and search for some circulation actions. Circulation actions are actions performed by the system or a user within the following Circulation apps: Check in, Check out, and Requests. Notices and fee/fine actions are also included.
 
 ## Permissions
 
@@ -28,6 +27,8 @@ Note: Panes are resizable throughout FOLIO and in the Circulation log. Resize th
 ### Generating circulation actions associated with a user barcode
 
 In the **Search & filter** pane, type or paste a **User barcode** into the box.
+
+If you don't know the user's barcode, click **Patron look-up** to open the user search box and search for that user's record 
 
 ### Generating circulation actions associated with an item barcode
 
@@ -66,6 +67,8 @@ In the **Search & filter** pane, click **Loan** and select any applicable filter
 * **Renewed through override.** Include items that were renewed using an override.
 * **Age to lost.** Include overdue items that have an Item status of Aged to lost. The time in which an overdue item ages to lost is set up in the [Circulation Setting Lost item fee policies.]({{< ref "/settings_circulation.md#creating-a-lost-item-fee-policy" >}})
 
+Some user block functionality is also recorded, but not available through filters. You can find when manual user blocks were created or deleted by searching the description field for "Block" and applying other search/filter options as needed.
+
 
 ### Notice filter options
 
@@ -97,7 +100,7 @@ In the **Search & filter** pane, click **Fee/fine** and select any applicable fi
 In the **Search & filter** pane, click **Request** and select any applicable filters:
 
 * **Cancelled.** Include requests that were cancelled.
-* **Created.** Include requests that were created and manual blocks.
+* **Created.** Include requests that were created.
 * **Pickup expired.** Include requests that were awaiting pickup and the pickup period expired.
 * **Expired.** Include requests that expired before they were filled.
 * **Moved.** Include requests that were [moved from one item to another.]({{< ref "/requests.md#moving-a-request-to-another-item-on-the-same-instance" >}})
@@ -121,7 +124,7 @@ Once you generate a circulation log, these are the columns that appear:
 
 ## Getting additional circulation action information
 
-Clicking the Action button displays a menu that enables access to additional information. The menu options that appear differ depending upon the **[Object](#columns-in-the-circulation-log)** (Fee/fine, Loan, Manual block, Notice, or Request). For example, clicking **... > Item details** opens the Inventory app for more information.
+Clicking the Action button displays a menu that enables access to additional information. The menu options that appear differ depending upon the **[Object](#columns-in-the-circulation-log)** (Fee/fine, Loan, Manual block, Notice, or Request). For example, clicking **... > Item details** opens the Inventory app for more information. In some cases the **Action** button may not appear, e.g., when a loan has been anonymized.
 
 ## Exporting circulation log search results
 
@@ -132,4 +135,4 @@ If your search for circulation log records returns results, you can export those
 
 A green success toast message informs you that the export file is being generated. Once the file is generated, it downloads automatically.
 
-If you do not receive the download file, check that your browser did not block the pop-up window. If the pop-up was blocked, change your browser to allow pop-ups, and export your circulation log search results again.
+If you do not receive the download file, check that your browser did not block the pop-up window. If the pop-up was blocked, change your browser to allow pop-ups, and export your circulation log search results again. You may also be able to access your download through the Export Manager app if you have permission to view that app.
