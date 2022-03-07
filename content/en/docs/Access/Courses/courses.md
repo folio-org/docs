@@ -83,7 +83,7 @@ When creating a course, you should keep the following in mind:
 * You must have the Courses window open in order to create a course.
 * Once a course is created, it can only be deleted if all reserve items are removed.
 * Department, Course Type, and Term are configured in Settings. See [Settings > Courses]({{< ref "/settings_courses.md" >}}) for more information.
-* If you are adding one or more cross-listed course to a course, the information you enter into Course listing information also applies to each cross-listed course.
+* If you are adding one or more cross-listed courses to a course, the information you enter into Course listing information also applies to each cross-listed course.
 * Reserve items added to the course are automatically assigned with the Start Date and End Date of the Term you selected, as specified in the [Term settings.]({{< ref "/settings_courses.md#settings--courses--terms" >}}) If needed, you can edit the dates by [editing the reserve item.](#editing-a-reserve-item)
 * Any item assigned to a Course automatically has its temporary location set to the value specified in the Location field. If needed, you can change the temporary location by [editing the reserve item.](#editing-a-reserve-item)
 * When completing the course information, make sure you understand how the fields correspond to your discovery interface.
@@ -137,10 +137,10 @@ You are able to delete a cross-listed course with items as long as one course re
 1. Find the course you want to duplicate and click on it in the Courses list.
 2. In the Course details window, click **Action > Duplicate**. A pop-up window will appear.
 3. In the pop-up window, select the term for the duplicate course.
-4. If the course has crosslistings, and you want the crosslisted courses to also be duplicated, check **Duplicate all cross-listed courses**.
+4. If the course has cross-listings, and you want the cross-listed courses to also be duplicated, check **Duplicate all cross-listed courses**.
 5. Click **Create duplicate course(s)**.
 
-The new duplicated course will appear. The course will have - Duplicate added to the course name. Click **Action > Edit** to edit the course to update the name and other information.
+The new duplicated course will appear, with "- Duplicate" added to the end of the course name. Click **Action > Edit** to edit the course to update the name and other information.
 
 ## Adding an instructor to a course
 
@@ -177,7 +177,7 @@ Add an instructor that does not have a FOLIO user record:
 3. Click **Remove**. The instructor is removed from the course.
 
 
-## Adding a reserve item to a course when the item exists in inventory
+## Adding a reserve item to a course when the item exists in Inventory
 
 When you add an item to a course, the following information is copied from the original record: Title and Contributor from the Instance record; Barcode, Status, Permanent location, Copy, Volume, Enumeration, and URL/PDF link from the Item record; and Effective call number.
 
