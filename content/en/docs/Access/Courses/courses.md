@@ -189,12 +189,12 @@ The Start date, End date, and Temporary location are automatically updated based
 
 ## Adding a reserve item to a course using Fast Add
 
-You can use Fast Add to create an item in the Courses app and put it on reserve. The Fast Add option prompts you to create an instance, holding and item in one pane with fewer fields. When you create the item, the Courses app creates the instance, holding and item in Inventory for you, and then adds the item to the course.
+You can use Fast Add to create an item in the Courses app and put it on reserve. The Fast Add option prompts you to create an instance, holding, and item in one pane with fewer fields. When you create the item, the Courses app creates the instance, holding, and item in Inventory for you, and then adds the item to the course.
 
 The Fast Add workflow is meant to support putting personal copies, scanned articles, or other items on reserve that are not part of the library’s general circulating collection.
 
 1. From the associated course, scroll to the bottom and click **Add Fast Add item**.
-2. From the New fast add record, fill in the Instance, Holdings and Item sections with the appropriate values.
+2. From the New fast add record, fill in the Instance, Holdings, and Item sections with the appropriate values.
 3. Once you have included all of the information needed for the item, click **Save and close** to create your inventory records and add the item on reserve for the course.
 
 
