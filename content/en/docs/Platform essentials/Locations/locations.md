@@ -59,8 +59,8 @@ On the holdings record, there are three location fields:
 
 FOLIO sets the holdings effective location to the first value it finds in the following list:
 
-# Holdings temporary location
-# Holdings permanent location
+1. Holdings temporary location
+2. Holdings permanent location
 
 Item effective location
 The item effective location is used by FOLIO to know the current home location for an item, and for staff and patrons to understand where to find an item in the library. 
@@ -74,9 +74,9 @@ On the item record, there are three location fields:
 
 FOLIO sets the item effective location to the first value it finds in the following list:
 
-# Item temporary location
-# Item permanent location
-# Holding temporary location
-# Holding permanent location
+1. Item temporary location
+2. Item permanent location
+3. Holding temporary location
+4. Holding permanent location
 
 Note that an item permanent location **does not need to be set** if the holding permanent location is set. **Item effective location** is what is used in circulation workflows, and it will inherit the holding permanent location if no location values are set directly on the item.
