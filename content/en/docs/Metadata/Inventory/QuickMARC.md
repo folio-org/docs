@@ -1,6 +1,6 @@
 ---
 title: "quickMARC"
-linkTitle: "QuickMARC"
+linkTitle: "quickMARC"
 weight: 4
 tags: ["subtopic"]   
 ---

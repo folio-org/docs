@@ -432,7 +432,7 @@ weight: 800
    </td>
   </tr>
   <tr>
-   <td>QuickMARC
+   <td>quickMARC
    </td>
    <td>An editor for MARC records that opens from the Inventory app to edit specific MARC records.
    </td>
