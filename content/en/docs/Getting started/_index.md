@@ -21,8 +21,8 @@ Access one of our demo sites and explore FOLIO features and functionality.
 
 Login: diku_admin / admin
 
-* [Current release](https://folio-goldenrod.dev.folio.org)
-* [Previous release](https://folio-fameflower.dev.folio.org)
+* [Current release](https://folio-juniper.dev.folio.org)
+* [Previous release](https://folio-iris.dev.folio.org)
 
 ### Work with a demo site
 
