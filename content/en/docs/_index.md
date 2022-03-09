@@ -1,6 +1,6 @@
 
 ---
-title: "Welcome"
+title: "Welcome test"
 linkTitle: "Home"
 weight: 10
 
