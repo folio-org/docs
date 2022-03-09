@@ -48,7 +48,7 @@ Note: When creating a request, you should consider the following:
 6. If you do not have the requester’s barcode, click **Requester look-up** to search for the patron:
     1. In the **Select User** dialog, search for the requester.
     2. Once you find the requester, select them from the **User Search Results** list. They are applied to the request and their information appears.
-7. Select the **Fulfilment preference**.
+7. Select the **Fulfillment preference**.
 8. Select the **Pickup service point** or **Delivery address**, depending on your selection in the previous step.
 9. Click **Save & close**. The request is saved and the Request Detail pane appears. The patron receives an email notification saying their request was received by the library, [if you have this notification configured.]({{< ref "/settings_circulation.md#patron-notice-policies" >}})
 
@@ -86,7 +86,7 @@ To export a hold shelf clearance report, in the **Requests** pane, select **Acti
 
 ## Collecting page requests
 
-Page requests are requests for items currently available at the library. In order to fulfil the request, you need to find the item in your library and check it in using the Check in app. This begins the request process in FOLIO. Depending on your library’s workflow, you can identify the page requests that need to be collected using one of two reports: CSV export or pick slips.
+Page requests are requests for items currently available at the library. In order to fulfill the request, you need to find the item in your library and check it in using the Check in app. This begins the request process in FOLIO. Depending on your library’s workflow, you can identify the page requests that need to be collected using one of two reports: CSV export or pick slips.
 
 
 ### Generating a page requests CSV export
@@ -152,7 +152,7 @@ Any open request can be duplicated, but you need to change the requester, becaus
 
 You can move a request from one item to another on the same instance. You may want to do this if a request item goes missing or if you need to balance request queues.
 
-Note: If a recall request is moved to a loan item that wasn’t previously recalled, the loan will be recalled--the patron gets a recall notice, [if configured,]({{< ref "/settings_circulation.md#patron-notice-policies" >}}) and the loan’s due date may be truncated.
+Note: If a recall request is moved to a loan item that wasn’t previously recalled, the loan will be recalled--the patron gets a recall notice, [if configured,]({{< ref "/settings_circulation.md#patron-notice-policies" >}}) and the loan’s due date may be truncated or extended, depending on the associated loan policy.
 
 1. [Find the request you want to move.](#searching-for-requests)
 2. In the **Request Detail** pane, select **Actions > Move request**.
@@ -200,7 +200,7 @@ Delivery must first be turned on in a patron’s user record, and they must have
 ### Creating a delivery request
 
 1. [Create a request.](#creating-a-request)
-2. If the patron does not have delivery as their default **Fulfilment preference**, select **Delivery**.
+2. If the patron does not have delivery as their default **Fulfillment preference**, select **Delivery**.
 3. Select a **Delivery address**.
 4. Click **Save & close** to start the request process.
 
