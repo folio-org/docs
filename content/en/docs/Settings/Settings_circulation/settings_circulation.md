@@ -96,6 +96,9 @@ At least one of the options must be selected:
 * External system id.
 * FOLIO record number.
 * Username.
+* User custom fields
+
+If you want to allow check out with a custom field, you must create the custom field first, in Settings\>Users\>Custom Fields.
 
 
 ###  Automatically end check in and check out session after period of inactivity
