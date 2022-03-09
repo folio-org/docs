@@ -29,7 +29,7 @@ Login: diku_admin / admin
 Once you've accessed a demo site, you can experiment with the platform to see how it works.  Some examples of things you can try include:
 
 * Check out an item, and check it back in
-* Update an item record with QuickMARC
+* Update an item record with quickMARC
 * Update licenses and agreements for an electronic resource
 * View and edit a patron record
 
