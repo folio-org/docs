@@ -315,6 +315,7 @@ All of the fields in this section are optional. Note: If you leave them blank, t
 
 **Minimum guaranteed loan period for recalled items.** Enter an amount of time for the minimum guaranteed loan period for recalled items. If you allow an item to be recalled, but do not have a minimum guaranteed loan period, the recall return interval effectively becomes the minimum guaranteed loan period for recalled items.
 
+**Allow recalls to extend due dates for overdue loans.** Checking this box ensures that if an item is overdue, and is then recalled, that patrons aren’t suddenly assessed unexpected recall fines when they had been expecting that the item was simply overdue.
 
 ##### Holds
 
