@@ -10,6 +10,7 @@ In FOLIO, resource access includes essential circulation functions. These functi
 * Checking in materials
 * Managing hold requests
 * Managing course reserves
+* Managing circulation logs
 
 ## Circulation Settings
 

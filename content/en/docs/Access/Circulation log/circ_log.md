@@ -2,8 +2,8 @@
 ---
 title: "Circulation log"
 linkTitle: "Circulation log"
-date: 2021-02-23
-weight: 50
+date: 2022-01-13
+weight: 30
 ---
 
 The Circulation log app allows you to view and search for circulation actions. Circulation actions are any action performed by the system or a user within the following Circulation apps: Check in, Check out, and Requests. Notices and fee/fine actions are also included.
@@ -27,18 +27,15 @@ Note: Panes are resizable throughout FOLIO and in the Circulation log. Resize th
 
 ### Generating circulation actions associated with a user barcode
 
-In the **Search & filter** pane, type or paste a **User barcode** into the box. Results display as soon as you start typing.
-
+In the **Search & filter** pane, type or paste a **User barcode** into the box.
 
 ### Generating circulation actions associated with an item barcode
 
-In the **Search & filter** pane, type or paste an **Item barcode** into the box. Results display as soon as you start typing.
-
+In the **Search & filter** pane, type or paste an **Item barcode** into the box.
 
 ### Generating circulation actions by description
 
-To search through the **Description** field, in the **Search & filter** pane, enter your search terms into the box. Results display as soon as you start typing.
-
+To search through the **Description** field, in the **Search & filter** pane, enter your search terms into the box.
 
 ### Generating circulation actions by date
 
@@ -49,8 +46,7 @@ To search through the **Description** field, in the **Search & filter** pane, en
 
 ### Generating circulation actions by service point
 
-In the **Search & filter** pane, type or select the **Service point** from the box. You are able to apply more than one Service point to your search, if needed. Results display as soon as you enter a Service point.
-
+In the **Search & filter** pane, type or select the **Service point** from the box. You are able to apply more than one Service point to your search, if needed.
 
 ### Loan filter options
 
@@ -59,7 +55,8 @@ In the **Search & filter** pane, click **Loan** and select any applicable filter
 * **Changed due date.** Include items whose due date was manually changed.
 * **Checked out.** Include items that were checked out.
 * **Checked out through override.** Include items that were checked out using an override.
-* **Anonymize.** Include loans that were anonymized. Note: This feature is under development.
+* **Checked in** Include items that were checked in. The items may or may not have been out on loan.
+* **Anonymized.** Include loans that were anonymized.
 * **Claimed returned.** Include items that were claimed returned.
 * **Closed loan.** Include items that were returned.
 * **Declared lost.** Include items that were declared lost.
@@ -111,11 +108,11 @@ In the **Search & filter** pane, click **Request** and select any applicable fil
 
 Once you generate a circulation log, these are the columns that appear:
 
-* **User barcode.** The user barcode associated with the action. 
+* **User barcode.** The user barcode associated with the action.
 * **Item barcode.** The item barcode associated with the action.
 * **Object.** The object associated with the action: Fee/fine, Loan, Manual block, Notice, or Request.
 * **Circ action.** The action that occurred.
-* **Date.** The date and time the action occurred. 
+* **Date.** The date and time the action occurred.
 * **Service point.** The service point at which the action occurred.
 * **Source.** The source of the action: System, user, or none (blank).
 * **Description.** A description of the action.
@@ -125,3 +122,14 @@ Once you generate a circulation log, these are the columns that appear:
 ## Getting additional circulation action information
 
 Clicking the Action button displays a menu that enables access to additional information. The menu options that appear differ depending upon the **[Object](#columns-in-the-circulation-log)** (Fee/fine, Loan, Manual block, Notice, or Request). For example, clicking **... > Item details** opens the Inventory app for more information.
+
+## Exporting circulation log search results
+
+If your search for circulation log records returns results, you can export those results to a CSV file.
+
+1. Click the **Actions** menu.
+2. Select **Export results (CSV)**.
+
+A green success toast message informs you that the export file is being generated. Once the file is generated, it downloads automatically.
+
+If you do not receive the download file, check that your browser did not block the pop-up window. If the pop-up was blocked, change your browser to allow pop-ups, and export your circulation log search results again.
