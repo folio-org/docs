@@ -43,6 +43,7 @@ Locate the patron using the Patron Lookup function:
 4. Click **Search**.
 5. Click the patron to use. The Select User dialog closes, the barcode appears in the Scan patron card pane, and the patron details are displayed.
 
+If a patron has a note on their record that is checked to display in the Check out app, the note will appear as a pop-up window after the patron details are displayed.
 
 ### Assessing the patron's data
 
@@ -55,7 +56,7 @@ Review the information available to determine if you can continue with check out
 
 Proxy borrowers are patrons who are checking out items on the behalf of another patron. For example, a graduate assistant may act as a proxy for a professor.
 
-Note: A patron must first be assigned as a proxy for the borrower  in their user record in the Users app.
+Note: A patron must first be assigned as a proxy for the borrower in their user record in the Users app.
 
 1. [Locate the proxy borrower in the system.](#locating-a-patron-in-the-system)
 2. In the Who are you acting as? dialog, select the name of the user they will be acting as a proxy for and click **Continue**. The Who are you acting as? dialog closes and patron and proxy details are displayed.
@@ -63,8 +64,9 @@ Note: A patron must first be assigned as a proxy for the borrower  in their user
 
 ## Scanning the item to check out
 
-To select the item for check out, scan or enter the barcode of the item and click **Enter**. The item is displayed in the Scan Items area and the total number of items scanned is incremented.
+To select the item for check out, scan or enter the barcode of the item and click **Enter**. The item is displayed in the Scan Items area with the **Due date** and **Time** and the total number of items scanned is incremented.
 
+The item due date/time may be sooner or later than expected if a service point is going to be closed when the item would normally be due. The item due date/time may also be sooner than expected if the patron's account is set to expire prior to the expected due date/time.
 
 ### Pop-ups that can occur when checking out an item
 
