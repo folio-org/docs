@@ -2,8 +2,7 @@
 title: "Vagrant boxes"
 linkTitle: "Vagrant boxes"
 weight: 40
-description: >
-  Note: This content is currently in draft status.
+description: 
 tags: ["subtopic"]
 ---
 If you just want to try FOLIO without installing it, you can run one of the pre-built Vagrant boxes. 

@@ -2,7 +2,7 @@
 ---
 title: "Install FOLIO"
 linkTitle: "Install FOLIO"
-date: 2020-06-11
+date: 2022-02-09
 weight: 10
 tags: ["parenttopic"]
 ---
