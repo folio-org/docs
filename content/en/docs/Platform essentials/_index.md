@@ -10,4 +10,3 @@ across FOLIO apps. These include:
 * [Item status]({{< ref "/itemstatus.md" >}})
 * [Keyboard Shortcuts]({{< ref "/keyboardshortcuts.md" >}})
 * [Locations]({{< ref "/locations.md" >}})
-* [Permissions]({{< ref "/permissions.md" >}})
