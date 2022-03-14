@@ -56,7 +56,7 @@ sudo apt -y install postgresql-12 postgresql-client-12 postgresql-contrib-12 lib
 
 4. Configure PostgreSQL to listen on all interfaces and allow connections from all addresses (to allow Docker connections).
 
-* Edit the file **/etc/postgresql/12/main/postgresql.conf** to add line **listen_addresses = '*'** in the "Connection Settings" section.
+* Edit the file **/etc/postgresql/12/main/postgresql.conf** to add line **listen_addresses = '\*'** in the "Connection Settings" section.
 * In the same file, increase **max_connections** (e.g. to 500)
 * Edit the file **/etc/postgresql/12/main/pg_hba.conf** to add line **host all all 0.0.0.0/0 md5**
 * Restart PostgreSQL with command **sudo systemctl restart postgresql**
@@ -385,7 +385,7 @@ Apply the same steps as for the module descriptor of mod-pubsub to these modules
 
 Deploy the backend modules one by one. This will pull the Docker image from Docker Hub and spin up a container on your host for each backend module. 
 
-Use this script [deploy-all-backend-modules.sh]({{< ref "deploy-all-backend-modules.sh" >}}) to deploy all backend modules, one after the other, on your host:
+Use this script [deploy-all-backend-modules.sh](../deploy-all-backend-modules.sh) to deploy all backend modules, one after the other, on your host:
 
 ```
 ./deploy-all-backend-modules.sh ~/platform-core/okapi-install.json <YOUR_IP_ADDRESS>
@@ -608,7 +608,7 @@ Then, enable the frontend modules for your tenant:
 curl -w '\n' -D - -X POST -H "Content-type: application/json" -d @stripes-install.json http://localhost:9130/_/proxy/tenants/diku/install?preRelease=false
 ```
 
-50 Stripes modules (folio*) and 9 Edge modules have been enabled.
+50 Stripes modules (folio/*) and 9 Edge modules have been enabled.
 
 ### Create a superuser
 
