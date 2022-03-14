@@ -7,10 +7,9 @@ tags: ["parenttopic"]
 ---
 
 ## What is the FOLIO Analytics repository
-
 The FOLIO Analytics repository contains reports and other analytics developed for FOLIO and designed to run on the Library Data Platform. Reports developed for FOLIO are stored as code written in Structured Query Language (SQL). The SQL queries can be opened inside of database querying software to pull data out of the LDP.
 
-You can read an introduction to the repository at its [overarching README file](https://github.com/folio-org/folio-analytics/blob/v1.1.1/README.md) on GitHub.  The file describes the following:
+You can read an introduction to the repository at its [overarching README file](https://github.com/folio-org/folio-analytics/blob/v1.2.0/README.md) on GitHub.  The file describes the following:
 
 * The two types of SQL queries to be found in the repository:
     * **Report queries**, which you can copy and paste to run on your LDP.
@@ -32,7 +31,7 @@ Report queries in the FOLIO Analytics repository are laid out in a particular st
 
 ### Locating queries in the repository
 
-Report queries are stored in the sql/report_queries folder of the repository. To see an overview of the report queries in the repository, review the [README file in the report_queries folder](https://github.com/folio-org/folio-analytics/blob/v1.1.1/sql/report_queries/README.md). You can also browse the subdirectories in the [sql/report_queries](https://github.com/folio-org/folio-analytics/tree/v1.1.1/sql/report_queries) folder. Each subdirectory contains one or more SQL queries, along with documentation that describes the purpose and output of the queries.
+Report queries are stored in the sql/report_queries folder of the repository. To see an overview of the report queries in the repository, review the [README file in the report_queries folder](https://github.com/folio-org/folio-analytics/blob/v1.2.0/sql/report_queries/README.md). You can also browse the subdirectories in the [sql/report_queries](https://github.com/folio-org/folio-analytics/tree/v1.2.0/sql/report_queries) folder. Each subdirectory contains one or more SQL queries, along with documentation that describes the purpose and output of the queries.
 
 ### Running queries in a database query tool
 
@@ -51,8 +50,8 @@ The following section demonstrates this workflow using [DBeaver](https://dbeaver
 
 #### Copy the query code from GitHub
 
-1. In the **sql** folder of [the FOLIO Analytics Repository](https://github.com/folio-org/folio-analytics/tree/v1.1.1/sql), click on the **report_queries** folder.
-1. Click on the subfolder for the report you are interested in. For this example, open the [ACRL Circulation query file](https://github.com/folio-org/folio-analytics/blob/v1.1.1/sql/report_queries/acrl/circulation/acrl_circulation.sql) by clicking first on the **acrl** subdirectory and then on the **circulation** subdirectory, and finally clicking on the **acrl_circulation.sql** file.
+1. In the **sql** folder of [the FOLIO Analytics Repository](https://github.com/folio-org/folio-analytics/tree/v1.2.0/sql), click on the **report_queries** folder.
+1. Click on the subfolder for the report you are interested in. For this example, open the [ACRL Circulation query file](https://github.com/folio-org/folio-analytics/blob/v1.2.0/sql/report_queries/acrl/circulation/acrl_circulation.sql) by clicking first on the **acrl** subdirectory and then on the **circulation** subdirectory, and finally clicking on the **acrl_circulation.sql** file.
 1. To open the query file directly, click on the **raw** button located in the upper right corner of the file preview box.
 1. To copy the query code, type Ctrl-A (Cmd-A on Mac) to highlight all of the text, followed by Ctrl-C (Cmd-C on Mac) to copy the text.
 
@@ -132,7 +131,6 @@ To develop ad hoc queries, you will need to write query scripts using Structured
 
 |Training Resource|Description|
 |---|---|
-|Stanford courses: <ul><li>[Relational Algebra](https://lagunita.stanford.edu/courses/DB/RA/SelfPaced/about)</li><li>[Introduction to SQL](https://lagunita.stanford.edu/courses/DB/RA/SelfPaced/about)</li></ul>|These courses include an introduction to the algebraic query language that provides the formal foundations of SQL (Structured Query Language), as well as a basic introduction to SQL.|
 |[The Data School: Learn Introductory SQL Concepts](https://dataschool.com/learn-sql/introduction/)|An interactive tutorial with an approachable style. The tutorial has built-in SQL evaluation, so you don’t need to set up a separate database tool to try the exercises.|
 |[Select Star SQL](https://selectstarsql.com/)|An interactive book that teaches SQL concepts using real-world datasets and problems. The book has built-in SQL evaluation, so you don’t need to set up a separate database tool to try the exercises.|
 |[SQL Murder Mystery](https://github.com/NUKnightLab/sql-mysteries)|The SQL Murder Mystery is designed to be both a self-directed lesson to learn SQL concepts and commands and a fun game for experienced SQL users to solve an intriguing crime. They also have a walkthrough for SQL beginners.|
@@ -144,14 +142,14 @@ To develop ad hoc queries, you will need to write query scripts using Structured
 
 After learning how to use SQL, there are a few resources that outline specifics of how the LDP organizes FOLIO data.
 
-* **[The LDP User Guide](https://github.com/library-data-platform/ldp/blob/1.2.2/doc/User_Guide.md).** This guide includes details about writing SQL that works for the LDP data model; note especially the sections describing the data model, JSON queries, and the differences between the relational attributes and JSON fields. The guide also includes a section that describes the [historical data functionality within the LDP](https://github.com/library-data-platform/ldp/blob/1.2.2/doc/User_Guide.md#5-historical-data), which allows users to compose queries that explore how FOLIO data records change over time.
+* **[The LDP User Guide](https://github.com/library-data-platform/ldp/blob/1.3.0/doc/User_Guide.md).** This guide includes details about writing SQL that works for the LDP data model; note especially the sections describing the data model, JSON queries, and the differences between the relational attributes and JSON fields. The guide also includes a section that describes the [historical data functionality within the LDP](https://github.com/library-data-platform/ldp/blob/1.3.0/doc/User_Guide.md#5-historical-data), which allows users to compose queries that explore how FOLIO data records change over time.
 * **[SchemaSpy](https://glintcore.net:8443/ldp/schemaspy/).** This SchemaSpy installation is attached to the LDP reference environment, which pulls data from the FOLIO snapshot reference environment. SchemaSpy gives a concise list of LDP tables and fields and can be helpful when developing queries, if your local LDP uses the same software version as the LDP reference environment.
 * **[FOLIO Schema Parser](https://docs.google.com/spreadsheets/d/1m_Cq_GmZX37gJPEjVWt9eOLXskUjSLUb-8KapWj0SIw/edit#gid=1511890017).** This lightweight FOLIO Schema Parser automatically populates a spreadsheet using FOLIO’s data schema documentation, connecting FOLIO fields to LDP tables and fields. It can be helpful as a tool for quickly looking up what fields are available from FOLIO apps and what LDP tables include those fields.
-* **[FOLIO Analytics shared derived tables](https://github.com/folio-org/folio-analytics/tree/v1.1.1/sql/derived_tables).** The derived tables developed for the LDP (found in the **folio_reporting** schema of the LDP) often serve as a better starting point for ad hoc queries than the FOLIO tables in the **public** schema. The derived tables combine and simplify the original FOLIO tables in ways that make query development much easier. You should work with your local LDP administrator to determine how your local LDP is using derived tables (e.g., what FOLIO Analytics release you are using, how frequently the derived tables are updated).
+* **[FOLIO Analytics shared derived tables](https://github.com/folio-org/folio-analytics/tree/v1.2.0/sql/derived_tables).** The derived tables developed for the LDP (found in the **folio_reporting** schema of the LDP) often serve as a better starting point for ad hoc queries than the FOLIO tables in the **public** schema. The derived tables combine and simplify the original FOLIO tables in ways that make query development much easier. You should work with your local LDP administrator to determine how your local LDP is using derived tables (e.g., what FOLIO Analytics release you are using, how frequently the derived tables are updated).
 
 ### Sharing ad hoc queries
 
-If your ad hoc query might be of use to other institutions, we encourage you to consider submitting it to the folio-analytics repository. Our [contributing guidelines](https://github.com/folio-org/folio-analytics/blob/v1.1.1/CONTRIBUTING.md) describe the requirements for new contributions to the repository.
+If your ad hoc query might be of use to other institutions, we encourage you to consider submitting it to the folio-analytics repository. Our [contributing guidelines](https://github.com/folio-org/folio-analytics/blob/v1.2.0/CONTRIBUTING.md) describe the requirements for new contributions to the repository.
 
 ### Tips for using DBeaver to write an ad hoc query
 
