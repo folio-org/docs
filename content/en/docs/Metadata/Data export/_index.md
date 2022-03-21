@@ -1,7 +1,7 @@
 ---
 title: "Data export"
 linkTitle: "Data export"
-date: 2021-11-14
+date: 2022-03-21
 weight: 10
 tags: ["parenttopic"]
 ---
@@ -31,7 +31,7 @@ Quick exports are performed in the Inventory app. They allow you to quickly down
 
 ### Exporting instances (MARC)
 
-1.  Open the **Inventory** app. 
+1.  Open the **Inventory** app. 
 2.  In the **Inventory** pane, find the records you want to export, and for each record, select the **checkbox** in the first column.
 3.  Click **Actions \> Export instances (MARC)**. Depending on your browser and its configurations, the file automatically downloads or you are prompted to save it. The export is logged in the Data export app.
 
@@ -53,7 +53,7 @@ The data export can be triggered by providing the list of record identifiers (In
 2.  In the **Select job profile to run the export** window, select the job profile to run.
 3.  In the **Are you sure you want to run this job** dialog, select **Run**. The window closes and the job appears under the Running section in the Jobs pane.
 
-### 		 Uploading CQL query
+###  Uploading CQL query
 
 Note: The file you upload needs to be a CQL file.
 
