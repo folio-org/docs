@@ -1,8 +1,8 @@
 ---
 title: "Settings > Users"
 linkTitle: "Users"
-date: 2021-12-17
-weight: 250
+date: 2022-03-21
+weight: 260
 tags: ["subtopic"]   
 ---
 
@@ -45,15 +45,16 @@ Additionally, if permissions change because of a new release, a FOLIO administra
 1.  In the **Permission sets** pane, click **New**.
 2.  To name the permissions set, enter a **Permission set name**.
 3.  Optional: Enter a **Description** of the permission set.
-4.  Under **Assigned permissions**, click **Add permission**. 
-5.  In the **Select Permissions** dialog, check the box next to each permission you want to assign to the permission set. You can also add an existing permission set to another permission set.
-6.  Click **Save & close**. The permissions are added to the permission set.
-7.  Click **Save & close**. The permission set is saved.
+4.  Under **Assigned permissions**, click **Add permission**. You can assign individual permissions or existing permission sets to the new permission set. 
+5.  In the **Select Permissions** modal, search and filter by **Permission type** and/or **Permission assignment status** or type in the name of the permission or permission set into the search box. 
+6. Select the permission(s) or permission set(s) to assign to the new permission set. 
+7.  Click **Save & close**. The permission(s) or permission set(s) are added to the new permission set.
+8.  Click **Save & close**. The new permission set is saved.
 
 ### Editing a permission set
 
-1.  Find the permission set you want to edit and select it.
-2.  In the permission set pane, click **Edit**.
+1.  In the **Permission Sets** pane, find the permission set you want to edit and select it.
+2.  Click **Edit**.
 3.  Make your desired changes to the permission set.
 4.  Click **Save & Close**. 
 
@@ -61,8 +62,8 @@ Additionally, if permissions change because of a new release, a FOLIO administra
 
 Note: A permission set can be deleted even if it is currently assigned to a user. Deleting the permission set removes it from the users to whom it was assigned.
 
-1.  Find the permission set you want to delete and select it.
-2.  In the permission set pane, click **Edit**.
+1.  In the **Permission Set** pane, find the permission set you want to delete and select it.
+2.  Click **Edit**.
 3.  In the **Edit** window, click **Delete**.
 4.  In the **Delete permission set?** dialog, click **Delete**. A confirmation message appears and the permission is deleted.
 
@@ -76,16 +77,16 @@ Only one patron group can be assigned to a user record. Patron groups are also u
 
 1.  In the **Patron groups** pane, click **New**.
 2.  Enter a name for the **Patron group** in the box. Patron group names need to be unique.
-3.  Optional: Enter a **Description** of the patron group.
-4.  Optional: Enter a number in the **Expiration date offset (days)** box. This number represents
+3.  (Optional): Enter a **Description** of the patron group.
+4.  (Optional): Enter a number in the **Expiration date offset (days)** box. This number represents
      the number of days of active status for user records assigned to the patron group.  
 5.  Click **Save**. The patron group is saved.
 
 ### Editing a patron group
 
-1.  Find the patron group you want to edit and click the **pencil icon**.
+1.  Find the patron group you want to edit and click the **pencil icon** in the **Actions** column. 
 2.  Make your changes to the **Patron group**, **Description**, or **Expiration offset date (days)**. 
-3.  Click **Save**. The patron group is saved.
+3.  Click **Save**. The changes to the patron group are saved.
 
 ### Deleting a patron group
 
@@ -93,12 +94,12 @@ A patron group can only be deleted if it is no longer applied to any user record
 
 To see the number of user records assigned to a patron group, complete the following: 
 
--   In the **Users app**, in the **User search** pane, select the checkbox next to the appropriate Patron group. The list of user records assigned to that patron group appears in the User search results pane. The number of records found displays at the top of the pane.
+-   In the **Users app**, in the **User search** pane, select the checkbox next to the appropriate Patron group. The list of user records assigned to that patron group appears in the **User search results** pane. The number of records found displays at the top of the pane.
 
 To delete a patron group, follow these steps:
 
 1.  In the **Settings app**, select **Users \> Patron groups**.
-2.  In the **Patron groups** pane, find the patron group you want to delete and click the **trash can icon**.
+2.  In the **Patron groups** pane, find the patron group you want to delete and click the **trash can icon** in the **Actions** column.
 3.  In the **Delete Patron group** dialog, click **Delete**. A confirmation message appears and the patron group is deleted.
 
 ## Settings \> Users \> Address Types
@@ -117,13 +118,14 @@ Note: Address types should be first configured here before bulk loading of patro
 ### Editing an address type
 
 1.  In the **Address Types** pane, find the Address Type you want to edit and click the **pencil  
-     icon**.
+     icon** in the **Actions** menu. 
 2.  Make your changes to the **Address Type** or **Description**.
 3.  Click **Save**. The Address Type is updated.
 
 ### Deleting an address type
+An address type can be deleted only if it is not assigned to any user records.
 
-1.  In the **Address Types** pane, find the Address Type you want to delete and click the **trash can icon**.
+1.  In the **Address Types** pane, find the Address Type you want to delete and click the **trash can icon** in the **Actions** column.
 2.  In the **Delete Address Type** dialog, click **Delete**. A confirmation message appears and the Address Type is deleted.
 
 ## Settings \> Users \> Departments
@@ -139,13 +141,13 @@ Use this setting to configure departments. Departments can be added in the [Exte
 
 ### Editing a department
 
-1.  In the **Departments** pane, find the department you want to edit and click the **pencil icon**.
+1.  In the **Departments** pane, find the department you want to edit and click the **pencil icon** in the **Actions** column.
 2.  Make your changes to the **Name** or **Code**.
 3.  Click **Save**. The department is updated.
 
 ### Deleting a department
 
-1.  In the **Departments** pane, find the department you want to delete and click the **trash can icon**.
+1.  In the **Departments** pane, find the department you want to delete and click the **trash can icon** in the **Actions** column.
 2.  In the **Delete Department** dialog, click **Delete**. A confirmation message appears and the department is deleted.
 
 ## Settings \> Users \> Profile pictures
@@ -159,17 +161,17 @@ Use this setting to configure custom fields, which you can add to the user recor
 ### Creating a custom field
 
 1.  In the **Custom fields** pane, click **New**.
-2.  In the **Edit custom fields** pane, in the **Accordion title** box, enter the name of the user record section, which contains the custom fields you add below.
-3.  Click **Add custom field** and select the type of field you want to create: Checkbox, Multi-select, Radio button set, Single select, Text area, or Text field.
-4.  Configure the custom field.
+2.  In the **Edit custom fields** pane, in the **Accordion title** box, enter the name of the user record section for the custom field(s). 
+3.  Click **Add custom field** and select the type of field you want to create: **Checkbox**, **Multi-select**, **Radio button set**, **Single select**, **Text area**, or **Text field**.
+4.  Configure the custom field by checking the box next to **Hidden** and/or **Required**. Add a name for the field in the **Field name** box. 
 5.  Optional: To add additional custom fields, repeat steps 3-4.
 6.  Click **Save & close**. The custom field(s) are saved.
 
 ### Editing a custom field
 
 1.  In the **Custom fields** pane, click **Edit**.
-2.  In the **Edit custom fields** pane, make your changes to the custom fields.
-3.  Click **Save & close**. The custom field(s) are updated.
+2.  In the **Edit custom fields** pane, make your changes to the custom field.
+3.  Click **Save & close**. The custom field is updated.
 
 ### Deleting a custom field
 
@@ -198,13 +200,13 @@ When manually creating a fee/fine, Fee/fine owner is a required field.
 
 ### Editing a fee/fine owner
 
-1.  Find the owner you want to edit and click the **pencil icon**.
+1.  Find the owner you want to edit and click the **pencil icon** in the **Actions** column. 
 2.  Make your changes to the **Owner, Description,** or **Associated service points**.
 3.  Click **Save**. The owner is updated.
 
 ### Deleting a fee/fine owner
 
-1.  Find the owner you want to delete and click the **trash can icon**.
+1.  Find the owner you want to delete and click the **trash can icon** in the **Actions** column.
 2.  In the **Delete Fee/fine Owner** dialog, click **Delete**. A confirmation message appears and the owner is deleted.
 
 ## Settings \> Users \> Manual charges
@@ -416,22 +418,22 @@ Libraries can choose to create templates for use with patron blocks that staff c
 Patron block templates are created in Settings \> Users \> Templates. 
 
 ### Create patron block template
-1. In the **Patron block templates** pane, select **New** in the top right corner. A **New patron block template** window opens.
+1. In the **Patron block templates** pane, select **New** in the top right corner. A **New patron block template** window will open.
 2. Enter a **Template name** (required).
 3. Enter a **Block code** (optional). Block codes can be used for reporting or integration purposes. They do not appear in the Users app.
-4. Enter a **Description** (optional). This description only appears when viewing the template in settings.
+4. Enter a **Description** (optional). This description will only appear when viewing the template in settings.
 5. Enter a **Display description** (optional). This appears to staff when applying the block to a particular patron record.
 6. Enter a **Message to Patron** (optional). This appears to staff when applying the block to a particular patron record, and can be accessed by discovery layer tools to display to a patron when viewing their library account online.
 7. Check the boxes for the appropriate **Block actions** - borrowing, renewals, or requests (optional).
 
 ### Edit patron block template.
-1. In the **Patron block templates** pane, select the template you wish to edit. The pane opens for viewing in a fourth pane.
+1. In the **Patron block templates** pane, select the template you wish to edit. It will open for viewing in a fourth pane.
 2. Click **Edit** to open the template in edit mode.
 3. Make changes as desired.
 4. Click **Save & close** to apply changes.
 
 ### Delete patron block template
-1. In the **Patron block templates** pane, select the template you wish to edit. The pane opens for viewing in a fourth pane.
+1. In the **Patron block templates** pane, select the template you wish to edit. It will open for viewing in a fourth pane.
 2. Click **Edit** to open the template in edit mode.
 3. Click **Delete** in the top right.
 4. Click **Delete** in the confirmation pop-up.

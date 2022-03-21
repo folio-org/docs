@@ -1,7 +1,7 @@
 ---
 title: "Settings > Data import"
 linkTitle: "Data import"
-date: 2021-11-14
+date: 2022-03-21
 weight: 70
 tags: ["subtopic"]   
 ---

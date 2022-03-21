@@ -1,7 +1,7 @@
 ---
 title: "Settings > Data export"
 linkTitle: "Data export"
-date: 2021-11-14
+date: 2022-03-21
 weight: 60
 tags: ["subtopic"]   
 ---

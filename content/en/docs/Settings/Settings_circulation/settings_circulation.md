@@ -1,7 +1,7 @@
 ---
 title: "Settings > Circulation"
 linkTitle: "Circulation"
-date: 2021-02-23
+date: 2022-03-21
 weight: 40
 tags: ["subtopic"]   
 ---
@@ -69,7 +69,7 @@ Before you begin to write your circulation rules, you should complete the follow
 
 ### Creating circulation rules
 
-Add your circulation rules to the Circulation rules editor. The editor contains responsive features to help write the rules. For example, typing a criteria letter displays the options for the criteria value, which you can select from the drop-down list that appears. Click **Save **once you have completed adding your circulation rules.
+Add your circulation rules to the Circulation rules editor. The editor contains responsive features to help write the rules. For example, typing a criteria letter displays the options for the criteria value, which you can select from the drop-down list that appears. Click **Save** once you have completed adding your circulation rules.
 
 
 #### Circulation rule tips
@@ -96,9 +96,6 @@ At least one of the options must be selected:
 * External system id.
 * FOLIO record number.
 * Username.
-* User custom fields
-
-If you want to allow check out with a custom field, you must create the custom field first, in Settings\>Users\>Custom Fields.
 
 
 ###  Automatically end check in and check out session after period of inactivity
@@ -316,6 +313,7 @@ All of the fields in this section are optional. Note: If you leave them blank, t
 **Minimum guaranteed loan period for recalled items.** Enter an amount of time for the minimum guaranteed loan period for recalled items. If you allow an item to be recalled, but do not have a minimum guaranteed loan period, the recall return interval effectively becomes the minimum guaranteed loan period for recalled items.
 
 **Allow recalls to extend due dates for overdue loans.** Checking this box ensures that if an item is overdue, and is then recalled, that patrons aren’t suddenly assessed unexpected recall fines when they had been expecting that the item was simply overdue.
+
 
 ##### Holds
 
@@ -552,8 +550,7 @@ For all fee/fine notices, the system is scanned every five minutes for triggerin
 
 1. In the **Patron notice policies** pane, select the patron notice policy you want to delete.
 2. In the **patron notice policy details** pane, click **Actions > Delete**.
-3. In the **Delete Patron notice policy **dialog, click** Delete**. The policy is deleted and a confirmation message appears.
-
+3. In the **Delete Patron notice policy** dialog, click **Delete**. The policy is deleted and a confirmation message appears.
 
 ## Patron notice templates
 

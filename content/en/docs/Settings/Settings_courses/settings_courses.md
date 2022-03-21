@@ -1,7 +1,7 @@
 ---
 title: "Settings > Courses"
 linkTitle: "Courses"
-date: 2021-02-23
+date: 2022-03-21
 weight: 50
 tags: ["subtopic"]   
 ---
