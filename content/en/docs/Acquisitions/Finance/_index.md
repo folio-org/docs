@@ -2,7 +2,7 @@
 ---
 title: "Finance"
 linkTitle: "Finance"
-date: 2021-12-07
+date: 2022-03-21
 weight: 10
 tags: ["parenttopic"]
 ---
@@ -29,7 +29,7 @@ Definitions of terms used in the Finance app:
 
 The permissions listed below allow you to interact with the Finance app and determine what you can or cannot do within the app. You can assign permissions to users in the Users app. If none of these permissions are assigned to a user, they are unable to see the Finance app or any related information.
 
-The following are all the Finance permissions:
+Finance permissions:
 
 
 
@@ -55,6 +55,11 @@ The following are all the Finance permissions:
 *   **Finance: View, edit, delete fund and budget.** This permission allows the user to view, edit, and delete funds and budgets.
 *   **Finance: View, edit, delete group.** This permission allows the user to view, edit, and delete groups.
 *   **Finance: View, edit, delete ledger.** This permission allows the user to view, edit, and delete ledgers.
+
+
+##Keyboard shortcuts
+Keyboard shortcuts allow you to perform actions in this app using the keyboard.  See [Platform essentials > Keyboard shortcuts]({{< ref "#platform_essentials_keyboard_shortcuts.md" >}}) for more information.
+
 
 
 ## Creating a fiscal year
@@ -554,9 +559,7 @@ The Budget summary section contains the following fields:
 The Budget information section contains the following fields:
 
 *   **Name.** Budget name.
-*   **Allocation date.** Currently a null value, but displays the date of the first allocation in future releases.
 *   **Status.** Status of the ledger: Active, Frozen, or Inactive.
-*   **Actions required.** Known issue. Do not use this field; it will be removed in a future version.
 *   **Fiscal start.** Fiscal year start date.
 *   **Fiscal end.** Fiscal year end date.
 *   **Allowable expenditure.** Expenditure allowed, expressed as a percentage.
@@ -807,9 +810,6 @@ When an [transfer of money](#transferring-money-between-funds) is made between t
 
 
 
-
-
-
 ## Editing a fiscal year, ledger, group, fund, or budget records
 
 
@@ -882,7 +882,7 @@ The information in this section defines rollover behavior for budgets by fund ty
 
 #### Rollover encumbrances
 
-The information in this section defines rollover behavior for encumbrances by order type: one-time, ongoing, or ongoing-subscription.  An order is considered an ongoing-subscription if the order type is **Ongoing** and the **Subscription** checkbox is checked. See [Orders > Creating an ongoing order > Ongoing order information](/../orders/#ongoing-order-information) for more information about the subscription checkbox.   For each order type listed, select the appropriate settings for each of the fields defined below:
+The information in this section defines rollover behavior for encumbrances by order type: one-time, ongoing, or ongoing-subscription.  An order is considered an ongoing-subscription if the order type is **Ongoing** and the **Subscription** checkbox is checked. See [Orders > Creating an ongoing order > Ongoing order information](../orders/#ongoing-order-information) for more information about the subscription checkbox.   For each order type listed, select the appropriate settings for each of the fields defined below:
 
 *   **Rollover.**  Check this box if you want encumbrances for open orders of this type of order to rollover to the upcoming fiscal year budget associated with each order.  Checking this box will activate the  **Based on** and **Increase by, %** fields.
 *   **Based on.**  From the drop down list, select **Expended** to encumber the total amount that was expended during the current fiscal year or select **Remaining** to encumber the amount that has not yet been paid.

@@ -2,12 +2,12 @@
 ---
 title: "Receiving"
 linkTitle: "Receiving"
-date: 2021-12-14
+date: 2022-03-21
 weight: 50
 tags: ["parenttopic"]
 ---
 
-The Receiving app allows you to indicate that order lines created in the Orders app have been received by the library. 
+The Receiving app allows you to indicate that materials ordered through the creation of purchase order lines in the Orders app have been received by the library. 
 
 Definition of terms related to the Receiving app:
 
@@ -31,6 +31,11 @@ The permissions listed below allow you to interact with the Receiving app and de
 *   **Receiving: View, edit, create.** This permission allows the user to view, edit, and create piece records. Note: Users can only create pieces if the related purchase order line has the [Manually add pieces for receiving](../orders/#po-line-details) checkbox selected.
 *   **Receiving: View, edit, delete.** This permission allows the user to view, edit and delete pieces in the Receiving app.
 *   **Settings (Receiving): Can view and edit settings.** This permission allows the user to manage receiving settings.
+
+
+##Keyboard shortcuts
+Keyboard shortcuts allow you to perform actions in this app using the keyboard.  See [Platform essentials > Keyboard shortcuts]({{< ref "#platform_essentials_keyboard_shortcuts.md" >}}) for more information.
+
 
 
 ## Creating a receiving title
@@ -136,7 +141,7 @@ Note: Adding a product ID and type is optional, but if you click **Add product I
 
 ## Searching for a receiving title
 
-You can search for orders in the **Search & filter** pane. To search for orders, enter your search terms into the box. Select the **Keyword** drop-down list to search through one of the following fields:
+You can search for  orders to be received in the **Search & filter** pane. To search for orders, enter your search terms into the box. Select the **Keyword** drop-down list to search through one of the following fields:
 
 
 
@@ -252,6 +257,36 @@ To search for orders assigned to a specific acquisition unit, follow these steps
 Note: The Receiving app does not currently support restricting user permissions based on acquisition unit.  
 
 
+### Received date
+
+To search by date received from received pieces, follow these steps:
+
+
+1. In the **Search & filter** pane, click **Received date**.
+2. Enter a start date in the **From** box and an end date in the **To** box.
+3. Click **Apply**. The search results appear in the Receiving pane.  
+
+### Expected receipt date
+
+To search by the expected receipt date from expected pieces, follow these steps:
+
+
+1. In the **Search & filter** pane, click **Expected receipt date**.
+2. Enter a start date in the **From** box and an end date in the **To** box.
+3. Click **Apply**. The search results appear in the Receiving pane. 
+
+
+### Receipt due
+
+To search by the receipt due date from the order purchase order line, follow these steps:
+
+
+1. In the **Search & filter** pane, click **Receipt due**.
+2. Enter a start date in the **From** box and an end date in the **To** box.
+3. Click **Apply**. The search results appear in the Receiving pane. 
+
+
+
 To clear all filters, go to the **Search & filter** pane and click **Reset all**.
 
 
@@ -294,6 +329,9 @@ This section displays the details of the purchase order lines.
 *   **Order type.** The type of order, either one-time or ongoing.
 *   **Vendor.** The organization from which the material was purchased. 
 *   **Material supplier.** The supplier of the material.
+*   **Requester.** The person who requested the item"
+*   **Rush.** This flag indicates whether rush handling should be applied to this order
+
 
 
 ### Expected
@@ -357,17 +395,16 @@ Note: To add an expected piece to an order, the **Manually add pieces for receiv
 4. Click **Save & close**. The new piece is displayed under the Expected section.
 
 
-### Add piece fields
+### Add piece
 
 
 
 *   **Caption.** Enter a caption for the piece. 
 *   **Expected receipt date.** The date the piece is expected to be received.
-*   **Select location.** This field is populated with the location selected in Orders. You can change the location by clicking [Assign a different location](#assign-a-different-location). 
-*   **Piece format.** This field is populated with the format selected in Orders. It can not be modified. 
+*   **Select location.** The location, as selected in Orders. You can change the location by clicking [Assign a different location](#assign-a-different-location). 
+*   **Piece format.**  The order format, as selected in Orders. It can not be modified. 
 *   **Comment.** Enter any comments about the piece.
-*   **Create item.** Selecting the **Create item** checkbox connects the new piece to an instance in Inventory. This option is not available for electronic resources. Note: In order to create an item, an [instance status](../settings/settings_orders/settings_orders#settings--orders--instance-status), [instance type](../settings/settings_orders/settings_orders#settings--orders--instance-type), and [loan type](../settings/settings_orders/settings_orders#settings--orders--loan-type) must be selected in Settings.
-*   **Supplement.** Selecting the **Supplement** checkbox indicates that the piece is a supplementary material such as a CD or a map. 
+*   **Create item.** Selecting the **Create item** checkbox connects the new piece to an instance in Inventory. This option is only available for pieces linked to an order with the purchase order line **Create inventory** value set to “Instance/holding/item.” . Note: In order to create an item in Inventory, a default instance status, instance type, and loan type must already be set up in Settings.  See [Settings > Orders]({{< ref "/settings_orders.md" >}}) for more information.*   **Supplement.** Selecting the **Supplement** checkbox indicates that the piece is a supplementary material such as a CD or a map. 
 
 
 #### Assign a different location
@@ -430,11 +467,11 @@ To delete an expected or received piece, make sure the correct receiving title i
 
 
 
-## Receiving an order
+## Receiving a piece
 
-Receiving an order confirms that it has arrived at the library.
+Receiving a piece confirms that the ordered material arrived at the library.
 
-There are two ways to receive an order:
+There are two ways to receive a piece:
 
 
 
@@ -467,19 +504,20 @@ The Receive function can be used to receive multiple pieces at once.
 5. Click **Receive**. The selected pieces are now displayed under the Received section.
 
 
-#### Receive fields
+#### Receive
 
 
 
 *   **Caption.** Create or change the caption of the piece. 
 *   **Barcode.** Create a barcode for the piece. You can only add a barcode if the piece is already **Connected** to an instance in Inventory, or if the **Create item** checkbox is selected.
-*   **Piece format.** This field is populated by the format selected in Orders. It can not be modified. 
-*   **Request.** This field is populated with information from Requests. If there is a request open for the piece, this field says “Yes”. 
+*   **Piece format.** The order format, as selected in Orders. It can not be modified. 
+*   **Request.** Information from the Requests app about this ordered material. If there is a request open for the piece, this field says “Yes”. 
 *   **Comment.** Enter any comments about the piece.
-*   **Select location.** This field is populated with the location selected in Orders. You can change the location by clicking [Assign a different location](#assign-a-different-location).
-*   **Item status.** This field is populated with the information that will appear in Inventory if the item is received. 
+*   **Select location.** The location, as selected in Orders. You can change the location by clicking [Assign a different location](#assign-a-different-location).
+*   **Item status.** This field is populated with the item status that will appear in Inventory after the item is received. The item status will change from “On order” to “In process.”
 *   **Call number.** Enter the call number for the piece. You can only add a call number if the piece is already **Connected** to an instance in Inventory, or if the **Create item** checkbox is selected.
-*   **Create item.** Selecting the **Create item** checkbox links the new piece to an instance in Inventory. This option is not available for electronic resources. Note: In order to create an item, a loan type must be selected in Settings.
+*   **Create item.** Selecting the **Create item** checkbox links the new piece to an instance in Inventory. This option is onlyavailable for pieces linked to an order with the purchase order line **Create inventory** value set to “Instance/holding/item.” Note: In order to create an item in Inventory, a default instance status, instance type, and loan type must already be set up in Settings.  See [Settings > Orders]({{< ref "/settings_orders.md" >}}) for more information.
+
 
 
 ## Unreceiving an order
@@ -492,4 +530,4 @@ The Receive function can be used to receive multiple pieces at once.
 4. Select the checkbox beside each piece you want to unreceive. Note: If you want to unreceive all of the received pieces, select the top checkbox.
 5. Click **Unreceive**. The selected pieces are now displayed under the Expected section. 
 
-You can also get to the Receiving app from the action menu of an open order by clicking **Receive**.
+You can also open the Receiving app from the action menu of an open order by clicking **Receive**.

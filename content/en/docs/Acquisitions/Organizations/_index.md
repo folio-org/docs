@@ -2,7 +2,7 @@
 ---
 title: "Organizations"
 linkTitle: "Organizations"
-date: 2021-12-21
+date: 2022-03-21
 weight: 40
 tags: ["parenttopic"]
 ---
@@ -22,7 +22,7 @@ Definition of terms related to the Organizations app:
 
 The permissions listed below allow you to interact with the Organizations app and determine what you can or cannot do within the app. You can assign permissions to users in the Users app. If none of these permissions are assigned to a user, they are unable to see the Organizations app or any related information.
 
-The following are all the Organizations permissions:
+Organizations permissions:
 
 
 
@@ -34,6 +34,11 @@ The following are all the Organizations permissions:
 *   **Organizations: View, edit.** This permission allows the user to edit and view organizations. The user can also access Contacts, but they cannot access Interface usernames and passwords.
 *   **Organizations: View, edit, create.** This permission allows the user to create, edit, and view organizations. The user can also access Contacts, but they cannot access Interface usernames and passwords.
 *   **Organizations: View, edit, delete.** This permission allows the user to view, edit, and delete organizations. The user can also access Contacts, but they cannot access Interface usernames and passwords.
+
+
+
+##Keyboard shortcuts
+Keyboard shortcuts allow you to perform actions in this app using the keyboard.  See [Platform essentials > Keyboard shortcuts]({{< ref "#platform_essentials_keyboard_shortcuts.md" >}}) for more information.
 
 
 ## Creating an organization
@@ -395,15 +400,15 @@ Note: Adding an account is optional, but if you click **Add**, you must fill in 
 
 5. Optional: Enter the **Accounting code** in the box.
 
-6. Select the **Payment method** from the drop-down list.
+6. Optional: Select the **Payment method** from the drop-down list.
 
 7. Select the **Account status** from the drop-down list.
 
 8. Optional: Enter **Contact** info in the box.
 
-9. Enter the **Library code** in the box. This is the library-supplied code for the account with the vendor.
+9. Optional: Enter the **Library code** in the box. This is the library-supplied code for the account with the vendor.
 
-10. Enter the **Library EDI code** in the box.
+10. Optional: Enter the **Library EDI code** in the box.
 
 11. Optional: Enter any **Notes** about the account in the box.
 
@@ -647,7 +652,7 @@ Note: If you need to create a new contact, you should save your progress on the 
 
 2. Enter the **Phone number** in the box.
 
-3. Optional: Select the **Type** of number it is from the drop-down list: Office, Mobile, Fax, or Other.
+3. Optional: Select the **Type** of number from the drop-down list: Office, Mobile, Fax, or Other.
 
 4. Optional: Select the **Language** spoken at that number from the drop-down list.
 
@@ -830,3 +835,4 @@ Deleting an interface removes it from your library’s list of interfaces. If yo
 3. In the contact window, click **Actions > Delete**.
 
 4. In the **Delete interface** dialog, click **Confirm**. The contact is deleted and the organization window appears.
+

@@ -2,7 +2,7 @@
 ---
 title: "Orders"
 linkTitle: "Orders"
-date: 2021-12-15
+date: 2022-03-21
 weight: 30
 tags: ["parenttopic"]
 ---
@@ -43,6 +43,10 @@ The following are all the Orders permissions:
 *   **Orders: View orders.** This permission allows the user to search for and view orders. Additionally, they can view order settings.
 
 
+##Keyboard shortcuts
+Keyboard shortcuts allow you to perform actions in this app using the keyboard.  See [Platform essentials > Keyboard shortcuts]({{< ref "#platform_essentials_keyboard_shortcuts.md" >}}) for more information.
+ 
+ 
 ## Creating an order
 
 Orders contain a list of titles or packages (physical or electronic) being ordered by your library from a vendor.
@@ -145,6 +149,7 @@ You can search for orders in the **Search & filter** pane. Click **Orders** to s
 *   **Date ordered.** Date the order was opened, which is when funds are encumbered and interactions with the Inventory app occur.
 *   **PO number.** The purchase order number.
 
+
 You can also search for orders by selecting any of the filters in the **Search & filter** pane. Additionally, you can apply the filters after you perform a search to limit your results. See the sections below for more information on the filters.
 
 
@@ -171,7 +176,7 @@ To search for orders by purchase order number prefix, follow these steps.  For m
 
 ### Suffix
 
-To search for orders purchase order number suffix, follow these steps.  For more information about creating **Suffix** values, see [Settings > Orders > Sufffixes]({{< ref "/settings_orders.md#settings--orders--suffixes" >}})
+To search for orders purchase order number suffix, follow these steps.  For more information about creating **Suffix** values, see [Settings > Orders > Suffixes]({{< ref "/settings_orders.md#settings--orders--suffixes" >}})
 
 
 1. In the **Search & filter** pane, click **Suffix**.
@@ -297,6 +302,18 @@ In the **Search & filter** pane, click **Re-encumber** and select any applicable
 *   **No.** Orders with the Re-encumber checkbox cleared.
 
 
+### Subscription
+
+To search for subscription orders follow these steps:
+
+1. In the **Search & filter** pane, click **Subscription**.
+
+2. Choose the appropriate filter:
+
+*   **Yes.** Subscription orders.
+*   **No.** Non-subscription orders.
+
+
 ### Renewal date
 
 To search for orders based on their renewal date, follow these steps:
@@ -308,9 +325,9 @@ To search for orders based on their renewal date, follow these steps:
 3. Click **Apply**. The search results appear in the Orders pane.
 
 
-### Renewal manual
+### lManual renewal
 
-In the **Search & filter** pane, click **Renewal manual** and select any applicable filters:
+In the **Search & filter** pane, click **Manual renewal** and select any applicable filters:
 
 
 
@@ -318,13 +335,13 @@ In the **Search & filter** pane, click **Renewal manual** and select any applica
 *   **No.** Orders with the Manual renewal checkbox cleared.
 
 
-### Renewal review period
+### Review period
 
-To search for orders within a renewal review period, in days, follow these steps:
+To search for orders within a review period, in days, follow these steps:
 
-1. In the **Search & filter** pane, click **Renewal review period**.
+1. In the **Search & filter** pane, click **Review period**.
 
-2. Enter or select the renewal review period, in days. The search results appear in the Orders pane.
+2. Enter or select the review period, in days. The search results appear in the Orders pane.
 
 
 ## Exporting search results
@@ -434,6 +451,16 @@ Once you search for an order, the following information appears in the Orders pa
 *   **Last updated.** The date the order was last updated.
 *   **Acquisition unit.** The acquisition units assigned to the order.
 *   **Assigned to.** The user to which the order is assigned.
+
+To customize the columns that appear in the results list, follow these steps:
+
+1. In the **Order** pane, select the **Actions** button.  
+
+2. The listed columns are all selected by default under **Show columns** in the Actions list.  
+
+3. Deselect any columns that you want to remove from the Orders pane display.
+
+4. Your selections persist until you logout of FOLIO.
 
 In the search results, click on an order to view it. The purchase order details pane displays with additional information about the order:
 
@@ -556,7 +583,7 @@ After you create an order, it has the status of Pending until you open it. Once 
 
 
 *   Encumbrance transactions are created. Note: Encumbrances are only created if a fund distribution was added to an order line.
-*   Inventory records are created. Note: Inventory records are not created if the Create inventory field on the order line is set to None. For more information about the Create inventory field, see the [E-resources details](#e-resources-details) and [Physical details](#physical-resource-details) sections below.
+*   Inventory records are created. If **Create inventory** on the purchase order line is set to “Instance/holdings/item”, an item is created with an item status of “On order.” For more information about item status see [Platform essentials > Item Status](< ref “/platform_essentials_items_status.md” >).Inventory records are not created if **Create inventory** on the order line is set to None. For more information about **Create inventory**, see the [E-resources details](#e-resources-details) and [Physical details](#physical-resource-details) sections below.
 *   Date ordered is set to today’s date.
 *   Approval date is set to today’s date if the order hasn’t already been approved by a user.
 *   Order lines cannot be added after the order is opened unless you [unopen](#unopening-an-order) the order.
@@ -584,7 +611,7 @@ Note: Unopening an order removes any encumbrances and item records with an On Or
 
 ## Closing an order
 
-Once you no longer need an order, you can close it. Only open orders can be closed.
+The system will automatically close one-time orders that are fully received and fully paid, or those where receipt or payment is not required, as indicated by the purchase order line **Receipt status** and Payment status** values.  Only open orders can be closed. If you need to close an order manually, follow the steps below.. Note about **Item status**: If **Create inventory** on the purchase order line is set to “Instance/holdings/item”, an item was created in Inventory when the order was opened. Closing an order when the item is not yet received will update the **Item status** of the item to “Order Closed.”  For more information about item status see [Platform essentials > Item Status](< ref “/platform_essentials_items_status.md” >).
 
 1. [Search for the order you want to close](#searching-for-an-order) and select it.
 
@@ -637,6 +664,19 @@ Note: When you delete an order, received items remain in the system, but the rec
 2. In the **Purchase order** pane, select **Actions > Delete.**
 
 3. In the Delete order dialog, click **Delete**. A confirmation message appears and the order is deleted.
+
+
+## Printing an order
+To print or save a PDF file containing a snapshot of key information about an order, follow these steps:
+
+1. [Search for the order you want to delete](#searching-for-an-order) and select it.
+
+2. To print the order, adjust the printer settings as needed and select **Print**.
+
+3. In the **Purchase order** pane, select **Actions > Print**.  A print preview window will open.
+
+4. To save the PDF file without printing, open the **Destination** drop-down list and select **Save as pdf**.
+
 
 
 ## Adding a tag to an order
@@ -987,6 +1027,14 @@ To search for order lines using a specific fund code, follow these steps:
 1. In the **Search & filter** pane, click **Fund code**.
 
 2. Select the fund code from the drop-down list. The search results appear in the Order lines pane.
+
+
+###Expense class
+To search for order lines that have a fund distribution expense class assignment, follow these steps:
+
+1. In the **Search & filter** pane, click **Expense class**.
+
+2. Select the expense class from the drop-down list. The search results appear in the Order lines pane.
 
 
 ### Order format
@@ -1364,3 +1412,4 @@ If the PO Line has been linked to an Agreement line in the Agreements app, a Lin
 3. In the **Tags** pane, either select a tag from the box or enter a tag.
 
 4. Click the **X** on the Tags pane to close the pane and save the tag. The tag number updates to the number of tags applied to the order line.
+
