@@ -1,8 +1,9 @@
+
 ---
 title: "Licenses"
 linkTitle: "Licenses"
-date: 2022-02-17
-weight: 40
+date: 2022-03-21
+weight: 50
 tags: ["parenttopic"]
 ---
 
@@ -40,11 +41,15 @@ If you want to link or view organizations and/or internal contacts in a license 
 *   **Users: Can view user profile.**
 
 
+##Keyboard shortcuts
+Keyboard shortcuts allow you to perform actions in this app using the keyboard.  See [Platform essentials > Keyboard shortcuts](< ref "/platform_essentials_keyboard_shortcuts.md" >) for more information.
+
+
 ## Creating a license
 
 
 
-1. In the **Licenses** pane, click **New**.
+1. In the **Licenses** pane, click **Actions > New**.
 2. In the **New license** window, enter a **Name** for the license record.
 3. Select a license **Type** from the drop-down list. For example, local or consortial. License Types are configured in the Settings app. For more information, see [Settings > Licenses > Pick list values]({{< ref "/settings_licenses.md#settings--licenses--pick-list-values" >}}).
 4. Select a **Status** from the drop-down list. License Statuses are configured in the Settings app. For more information, see [Settings > Licenses > Pick list values]({{< ref "/settings_licenses.md#settings--licenses--pick-list-values" >}}).
@@ -508,16 +513,8 @@ You can add and assign notes to license records. Assigning a note means you are 
 5. In the **Delete note** dialog, click **Delete**. The note is deleted and removed from any records to which it was attached.The Licenses app allows you to create and manage your library’s licenses. The licenses you create here can link to agreements in the Agreements app.
 
 
-## Licenses keyboard shortcuts
+### Dashboard widgets for the Licenses app
 
-Keyboard shortcuts allow you to perform actions using the keyboard. Keyboard shortcuts available for the Licenses app:
+The Dashboard app is designed to enable a personalized view of key information from across FOLIO apps at a glance. In its first release (included in the Juniper flower release), the Dashboard includes the ability to display information from the Agreements and Licenses applications.
 
-
-*  Save a record: Press <kbd>Ctrl+S</kbd> (Windows) or <kbd>Cmd+S</kbd> (Mac)
-*  Create a new record: Ensure cursor is not in the search text box and press <kbd>Alt+N</kbd>
-*  Go to the **Search & filter** pane: Click the heading of a license in the view pane and press <kbd>Ctrl+Alt+H</kbd> (Windows) or <kbd>Cmd+Alt+H</kbd> (Mac)
-*  Edit a record: Press <kbd>Ctrl+Alt+E</kbd> (Windows) or <kbd>Cmd+Alt+E</kbd> (Mac)
-*  Expand all accordions: Click the heading of a license in the view pane and press <kbd>Ctrl+Alt+B</kbd> (Windows) or <kbd>Cmd+Alt+B</kbd> (Mac)
-*  Collapse all accordions: Click the heading of a license in the view pane and press <kbd>Ctrl+Alt+G</kbd> (Windows) or <kbd>Cmd+Alt+G</kbd> (Mac)
-*  Duplicate a record: Click on the heading of a license in the view pane and press <kbd>Alt+C</kbd> (Windows and Mac)
-*  Open keyboard shortcuts modal: Press <kbd>Ctrl+Alt+K</kbd> (Windows) or <kbd>Cmd+Alt+K</kbd> (Mac)
+In the Juniper release, the Licenses app comes with one dashboard widget ("ERM Licenses"). There are examples of how you can use this  widget definition to achieve a wide range of outcomes in the [Example widget configurations](https://wiki.folio.org/display/FOLIOtips/Example+widget+configurations) documentation.

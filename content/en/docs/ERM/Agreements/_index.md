@@ -2,7 +2,7 @@
 ---
 title: "Agreements"
 linkTitle: "Agreements"
-date: 2022-02-17
+date: 2022-03-21
 weight: 10
 tags: ["parenttopic"]
 ---
@@ -44,6 +44,10 @@ The following permissions are only applicable if your library is using the inter
 *   **Agreements: Edit e-resources.** This permission allows the user to edit the e-resources. It also grants all permissions included in "Agreements: Search & view e-resources."
 *   **Agreements: Search & view platforms.** This permission allows the user to search and view platforms in the internal KB. This includes the permission to see and access the Agreement app in the FOLIO interface.
 *   **Agreements: Edit platforms.** This permission allows the user to edit platform properties. It also grants all permissions included in "Agreements: Search & view e-resources."
+
+
+##Keyboard shortcuts
+Keyboard shortcuts allow you to perform actions in this app using the keyboard.  See [Platform essentials > Keyboard shortcuts](< ref "/platform_essentials_keyboard_shortcuts.md" >) for more information.
 
 
 ## Creating an agreement
@@ -173,7 +177,7 @@ Note: You can add multiple license records to an agreement record, but only one 
 
 #### Adding a license created in the Licenses app to an agreement
 
-Note: If the license you link to the agreement has amendments present, once you link the license the Amendments also display. They also need to have a status in relation to the agreement set. This is important as it is the combination of the applicable (controlling) licenses and amendments that dictate the terms that apply to the agreement.
+Note: If the license you link to the agreement has amendments present, once you link the license the amendments also display. They also need to have a status in relation to the agreement set. This is important as it is the combination of the applicable (controlling) licenses and amendments that dictate the terms that apply to the agreement.
 
 
 
@@ -197,7 +201,7 @@ External licenses are any license not available through the Licenses app.
 2. Enter a **Name** in the box.
 3. (Optional): Enter a **Note** about the license.
 4. You must complete at least one of the following:
-    * Upload a file into the agreement record by dragging and dropping the file in the **Drag & drop to upload** box, or click **or choose file**.
+    * Upload a file into the license record by dragging and dropping the file in the **Drag & drop to upload** box, or click **or choose file**.
     * Enter the **Physical location** of the license in the box.
     * Enter the **URL** of the license in the box.
 5. Repeat steps 1-5 as needed. The external license saves once you save the agreement record.
@@ -519,7 +523,7 @@ To filter agreements by their supplementary properties, follow these steps:
 
 ## Viewing an agreement
 
-Once you search for an agreement, the following information appears in the Agreements pane:
+Once you search for an agreement, the following information appears in the Agreement pane:
 
 
 
@@ -652,7 +656,7 @@ Adding an agreement line by linking to the eHoldings app cannot be done in an ag
 
 ### Adding a purchase order line to an agreement line
 
-You have the option of adding a purchase order line (POL) to an agreement line. Linking the agreement line to a POL adds context to the agreement line. For example, it can show how you paid for, or the method by which you ordered, the material.
+You have the option of adding a purchase order line (POL) to an agreement line. Linking the agreement line to a POL adds context to the agreement line. For example, it can show how you paid for, or the method by which you ordered, the material. 
 
 When an agreement line is linked to a POL that is linked to an Inventory instance, a link directly to the Inventory instance is displayed in the Agreement Line display.
 
@@ -880,15 +884,8 @@ You can add and assign notes to agreement records and agreement lines. Assigning
 6. In the **Delete note** dialog, click **Delete**. The note is deleted and removed from any records to which it was attached.
 
 
-## Agreements keyboard shortcuts
+### Dashboard widgets for the Agreements app
 
-Keyboard shortcuts allow you to perform actions using the keyboard. Keyboard shortcuts available for the Agreements app are:
+The Dashboard app is designed to enable a personalized view of key information from across FOLIO apps at a glance. In its first release (included in the Juniper flower release), the Dashboard includes the ability to display information from the Agreements and Licenses applications.
 
-*  Save a record: Press <kbd>Ctrl+S</kbd> (Windows) or <kbd>Cmd+S</kbd> (Mac)
-*  Create a new record: Ensure cursor is not in the search text box and press <kbd>Alt+N</kbd>
-*  Go to the **Search & filter** pane: Click the heading of an agreement in the view pane and press <kbd>Ctrl+Alt+H</kbd> (Windows) or <kbd>Cmd+Alt+H</kbd> (Mac)
-*  Edit a record: Press <kbd>Ctrl+Alt+E</kbd> (Windows) or <kbd>Cmd+Alt+E</kbd> (Mac)
-*  Expand all accordions: Click the heading of an agreement in the view pane and press <kbd>Ctrl+Alt+B</kbd> (Windows) or <kbd>Cmd+Alt+B</kbd> (Mac)
-*  Collapse all accordions: Click the heading of an agreement in the view pane and press <kbd>Ctrl+Alt+G</kbd> (Windows) or <kbd>Cmd+Alt+G</kbd> (Mac)
-*  Duplicate a record: Click the heading of an agreement in the view pane and press <kbd>Alt+C</kbd> (Windows and Mac)
-*  Open keyboard shortcuts modal: Press <kbd>Ctrl+Alt+K</kbd> (Windows) or <kbd>Cmd+Alt+K</kbd> (Mac)
+In the Juniper release, the Agreements app comes with two dashboard widgets ("ERM Agreements" and "ERM Agreement Jobs"). There are examples of how you can use these two widget definitions to achieve a wide range of outcomes in the [Example widget configurations](https://wiki.folio.org/display/FOLIOtips/Example+widget+configurations) documentation.
