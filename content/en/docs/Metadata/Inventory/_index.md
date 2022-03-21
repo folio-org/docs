@@ -1,7 +1,7 @@
 ---
 title: "Inventory"
 linkTitle: "Inventory"
-date: 2021-10-27
+date: 2022-03-21
 weight: 30
 tags: ["parenttopic"]
 ---
@@ -16,6 +16,7 @@ Definition of terms related to the Inventory app:
 -   **HRID.** Human readable identifier, also called eye readable ID.
 -   **UUID.** Universally unique identifier.
 -   **SRS.** Source Record Storage. A storage layer in FOLIO. If an instance has an underlying MARC record, then this record is stored in SRS.
+-   **Intellectual item.** This status can be used for an item record that does not correspond to a single, distinct physical object. May also be referred to as a “dummy record.”
 
 ## Permissions
 
@@ -24,11 +25,18 @@ The permissions listed below allow you to interact with the Inventory app and de
 The following are all the Inventory permissions:
 
 -   **Inventory: All permissions.** This permission allows the user to perform all actions in Inventory.
+-   **Inventory: Import single bibliographic records.** This permission allows the user to import and overlay Instance records from external sources. External sources must be configured in Settings.
+-   **Inventory: Mark items in process (non-requestable).** This permission allows the user to update an item record's Item status to In process (non-requestable).
+-   **Inventory: Mark items intellectual item.** This permission allows the user to update an item record's Item status to Intellectual.
+-   **Inventory: Mark items long missing.** This permission allows the user to update an item record's Item status to Long missing.
+-   **Inventory: Mark items restricted.** This permission allows the user to update an item record's Item status to Restricted.
+-   **Inventory: Mark items unavailable.** This permission allows the user to update an item record's Item status to Unavailable.
+-   **Inventory: Mark items unknown.** This permission allows the user to update an item record's Item status to Unknown.
 -   **Inventory: Mark items withdrawn.** This permission allows the user to update an item record's Item status to Withdrawn. The user can also view and edit items.
 -   **Inventory: Move holdings.** This permission allows the user to move holdings records from one instance record to another. The user can also search and view instances, holdings, and items.
 -   **Inventory: Move items.** This permission allows the user to move an item record from one holding record to another. The user can also search and view instances, holdings, and items.
--   **Inventory: View instance records being suppressed for staff.** This permission allows the user to search and view instance records that are suppressed for staff.
--   **Inventory: View instances, holdings, and items.** This permission allows the user to view instances, holdings, and items.
+-   **Inventory: View instance records being suppressed for staff.** This permission allows the user to search and view instance records that are suppressed for staff. (Not currently implemented; by default all users who can view records can view those suppressed for staff.)
+-   **Inventory: View instances, holdings, and items.** This permission allows the user to view instances, holdings, and items. 
 -   **Inventory: View, create holdings.** This permission allows the user to create new holdings records. The user can also view holdings.
 -   **Inventory: View, create instances.** This permission allows the user to create new instance records. The user can also view instances.
 -   **Inventory: View, create items.** This permission allows the user to create new item records. The user can also view items.
@@ -38,6 +46,8 @@ The following are all the Inventory permissions:
 -   **Inventory: View, create, edit, delete holdings.** This permission allows the user to delete holdings records. The user can also view and edit holdings.
 -   **Inventory: View, create, edit, delete items.** This permission allows the user to delete item records. The user can also view and edit items.
 -   **Inventory: View, create, edit, mark missing items.** This permission allows the user to update an item record's Item status to Missing. The user can also view and edit items.
+
+Note: Some actions in Inventory require permissions in other apps. For example, **View source** requires permissions in quickMARC.
 
 ## Creating an instance record manually in FOLIO
 
@@ -957,6 +967,7 @@ To view an item record, follow these steps:
 3. In the **Single Record Import** dialog box, select the source of the record to be imported (e.g., Library of Congress, OCLC WorldCat, BnF).
 4.  Enter the record number, without any prefixes, in the **Enter [source] identifier** box.
 5.  Click **Import**.
+
 The selected instance record and any underlying source data will be replaced by the re-imported record. The instance uuid and hrid as well as manually configurable Administrative Data such as suppression from discovery, instance status, cataloged date, and any statistical codes assigned will remain the same. Some configurations may be made locally to the import profile used for single record import. These changes are made in the [settings for Data Import](../../settings/settings_data_import/settings_data_import/).
 
 ## Duplicating an instance record
@@ -1053,19 +1064,14 @@ Note: An instance record cannot be deleted, but it may be suppressed.
 3.  In the **Item record details** window, click **Actions \> Delete**.
 4.  In the **Confirm deletion of item** dialog, click **Delete**. The item record is deleted.
 
-## Marking an item as missing
+## Marking item status
 
-1.  [Find the instance](#searching-for-a-record) with the item you want to mark as missing and select it.
+1.  [Find the instance](#searching-for-a-record) with the item you want to change.
 2.  In the **Instance record details** pane, in the **Holdings** section, click the **Item barcode** of the item.
-3.  In the **Item record details** window, click **Actions \> Mark as missing**.
-4.  In the **Confirm item as missing** dialog, click **Confirm**. The item record is updated and its Item status changes to Missing.
+3.  In the **Item record details** window, click **Actions \> Mark as …**.
+4.  In the **Confirm item status ** dialog, click **Confirm**. The item record is updated and its Item status changes to the value selected.
 
-## Marking an item as withdrawn
-
-1.  [Find the instance](#searching-for-a-record) with the item you want to mark as withdrawn and select it.
-2.  In the **Instance record details** pane, in the **Holdings** section, click the **Item barcode** of the item.
-3.  In the **Item record details** window, click **Actions \> Mark as withdrawn**.
-4.  In the **Confirm item as withdrawn** dialog, click **Confirm**. The item record is updated and its Item status changes to Withdrawn.
+Note: See **[Platform Essentials](../../platform-essentials/item-status/itemstatus/)** for more information on Item status.
 
 ## Creating a new request
 
