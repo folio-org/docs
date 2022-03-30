@@ -77,9 +77,10 @@ Keyboard shortcuts allow you to perform actions in this app using the keyboard. 
 -   **External system ID.** The external system ID for the user. This field is auto-populated if it is included in source data provided by an external system. 
 -   **Birth date.** The date of birth of the user in YYYY-MM-DD format.
 -   **Folio number.** A system-generated number for the user record.
--   **Request preferences.** **Hold Shelf** is selected by default for all users. If **Delivery** is also checked, select **Fulfillment preference**. 
--  If **Delivery** is selected as the **Fulfillment preference**, select the **Default delivery address**. This field appears and is required only if **Delivery** is selected as a request preference. Addresses are added to the user record in the **Contact information** section. See [Users \> Contact information] (#contact-information) for more information.
--   If **Hold Shelf** is selected as the **Fulfillment preference**, select the **Default pickup service point.** All user records have at least one service point assigned to indicate the location for checking out or picking up requested items. Service points are configured by your library in the Settings app. See [Settings \> Tenant \> Service points](../settings/settings_tenant/settings_tenant) for more information.
+-   **Request preferences.** **Hold Shelf** is selected by default for all users. 
+- If **Delivery** is also checked, select **Fulfillment preference**.
+    -  If **Delivery** is selected as the **Fulfillment preference**, select the **Default delivery address**. This field appears and is required only if **Delivery** is selected as a request preference. Addresses are added to the user record in the **Contact information** section. See [Users \> Contact information] (#contact-information) for more information.
+    -   If **Hold Shelf** is selected as the **Fulfillment preference**, select the **Default pickup service point.** All user records have at least one service point assigned to indicate the location for checking out or picking up requested items. Service points are configured by your library in the Settings app. See [Settings \> Tenant \> Service points](../settings/settings_tenant/settings_tenant/#settings--tenant-service-points) for more information.
 -   **Department name.** Name of the user's department, if applicable. To associate the user with a department, click **Add Department** and select the department from the drop-down list. This action is repeatable, and departments can be deleted by clicking the **trash can icon**. Departments are configured by your library in the Settings app. See [Settings \> Users \> Departments](../settings/settings_users/settings_users/#settings--users--departments) for more information. 
 -   **Username.** The name library staff use to log into FOLIO. Note: Patrons don't have a username because they don't need to log into FOLIO.
 
@@ -304,7 +305,7 @@ Permissions can also be removed by following a modified version of the process f
 
 A service point in FOLIO is a setting that libraries configure to support circulation functions. Every FOLIO item must have a location, and every location must have an attached service point. You must set up at least one service point to be able to check items in and out; allow patrons to request items; charge and collect fines; and put items in transit between locations at your library. 
 
-Staff who use the Check in, Check out, Users, or Requests apps must have a service point assigned to them in their user record. Service points are configured for your library in the Settings app. See [Settings \> Tenant \> Service Points](../settings/settings_tenant/settings_tenant)for more information. 
+Staff who use the Check in, Check out, Users, or Requests apps must have a service point assigned to them in their user record. Service points are configured for your library in the Settings app. See [Settings \> Tenant \> Service Points](../settings/settings_tenant/settings_tenant/#settings--tenant--service-points) for more information. 
 
 1.  [Find the user record](#searching-for-user-records) to which you want to add a service point and select it.
 2.  In the **User record** pane, click **Edit**.
@@ -395,9 +396,9 @@ Note that your library must configure fee/fine settings prior to charging fee/fi
 4.  In the **New fee/fine** window, select the **Fee/fine owner**.
 5.  Select the **Fee/fine type**.
 6.  In the **Fee/fine amount** box, you can do one of three things:
-Keep the default fee/fine amount, if one is populated for the fee/fine type.
-Adjust the default fee/fine amount, if it is populated for the fee/fine type.
-Provide a fee/fine amount, if one did not populate.
+    - Keep the default fee/fine amount, if one is populated for the fee/fine type.
+    - Adjust the default fee/fine amount, if it is populated for the fee/fine type.
+    - Provide a fee/fine amount, if one did not populate.
 7.  Optional: To associate the fee/fine with an item, scan or enter the item barcode into the **Item information** box and click **Enter**.
 8.  Optional: Enter any **Additional information for staff** in the box.
 9. Click **Charge only** to apply the charge to the patron record. FOLIO users with appropriate permissions may be able to create the fine and immediately accept payment by clicking **Charge & pay now**.
