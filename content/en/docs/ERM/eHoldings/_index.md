@@ -388,6 +388,16 @@ Use the Agreements section to create agreements or link the package to agreement
 2. In the **Package record** window, in the **Agreements** section, click the **trash can icon** next to the agreement you want to remove.
 3. In the **Unassign an agreement from this record** dialog, click **Unassign**. A confirmation message appears and the agreement is removed from the package record, but not deleted from the Agreements app.
 
+##### Usage & analysis
+ 
+In the Usage & analysis section, you can access cost and usage information for the packages and titles that are a part of your library's holdings.
+ 
+ 
+ 
+1. Select a year from the **Year** drop-down list.
+2. Select All platforms, Publisher platforms only, or Non-publisher platforms only from the **Platform** drop-down list.
+3. Click **View**. Cost and usage information for the packages and titles that are a part of your library's holdings will display.
+4. From the **Actions** drop-down list, you can select View titles or Export titles to view or export the titles from a package for additional analysis.
 
 #### Notes
 
@@ -735,13 +745,22 @@ Note: Agreements can only be added to title records when a package is selected a
 2. In the **Package title details** window, in the **Agreements** section, click the **trash can icon** next to the agreement you want to remove.
 3. In the **Unassign an agreement from this record** dialog, click **Unassign**. A confirmation message appears and the agreement is removed from the package record, but not deleted from the Agreements app.
 
+## Usage & analysis
+ 
+In the Usage & analysis section, you can access cost and usage information for the packages and titles that are a part of your library's holdings.
+ 
+ 
+ 
+1. Select a year from the **Year** drop-down list.
+2. Select All platforms, Publisher platforms only, or Non-publisher platforms only from the **Platform** drop-down list.
+3. Click **View**. Cost and usage information for the packages and titles that are a part of your library's holdings will display.
 
 ## Adding a new note to a title
 
 
 
 1. [Find the title](#searching-for-providers-packages-and-titles) to which you want to add a note and select it.
-2. In the **Title record** window, in the **Packages** section, select the package within which the title.
+2. In the **Title record** window, in the **Packages** section, select the package within which the title appears.
 3. In the **Package title details** window, in the **Notes** section, click **New**.
 4. In the **New note** window, select the **Note type** from the drop-down list. Note types are created in the Settings app. For more information, see Settings > Notes.
 5. Enter a **Note title** in the box.
