@@ -1,7 +1,7 @@
 ---
 title: "eHoldings"
 linkTitle: "eHoldings"
-date: 2022-02-17
+date: 2022-03-30
 weight: 20
 tags: ["parenttopic"]
 ---
@@ -31,11 +31,16 @@ The following are all the eHoldings permissions:
 * **eHoldings: Can edit providers, packages, titles detail records.** This permission allows the user to edit providers, packages, and titles detail records.
 * **eHoldings: Can select/unselect packages and titles to/from your holdings.** This permission allows the user to select (or add) packages and titles to your library’s holdings, and unselect (or remove) them from your holdings.
 * **eHoldings: Can view Usage & analysis data for packages, titles and resources.** This permission allows the user to view usage consolidation on the eHoldings app.
-* **Settings (eHoldings): Create, edit, and view Usage Consolidation API credentials.** This permission allows the user to update and view usage consolidation settings.
-* **Settings (eHoldings): View Usage Consolidation API credentials.** This permission allows the user to view usage consolidation settings.
-* **Settings (eHoldings): Can assign/unassign a user from a KB.** This permission allows the user to assign and unassign a user from KB credentials.
+* **Settings (eholdings): Create, edit, and view Usage Consolidation API credentials.** This permission allows the user to update and view usage consolidation settings.
+* **Settings (eholdings): View Usage Consolidation API credentials.** This permission allows the user to view usage consolidation settings.
+* **Settings (eHoldings): Can assign/unassign a user from a KB.** This permission allows the user to assign and unassign a user from KB credentials. 
 
 Note: This permission should only be used by institutions that maintain multiple EBSCO KB configurations.
+
+
+
+## Keyboard shortcuts
+Keyboard shortcuts allow you to perform actions in this app using the keyboard.  See [Platform essentials > Keyboard shortcuts]({{< ref "keyboardshortcuts.md" >}}) for more information.
 
 
 
@@ -51,6 +56,18 @@ To setup eHoldings:
 2. [Request an API key](https://developer.ebsco.com/knowledge-services/holdingsiq/reference).
 3. Go to FOLIO > Settings > eHoldings to enter API credentials and EBSCO customerID.
 
+
+## The eHoldings app drop-down menu
+
+1. Click on the **eHoldings app icon**.
+2. A menu appears with the following options:
+
+
+
+    * **eHoldings app Search.** This option will return you to the eHoldings app landing page.
+    * **Keyboard shortcuts.** This option will access the Keyboard shortcuts list.
+    * **Submit a KB Content Inquiry.** This option will open the EBSCO Knowledge Base Inquiry Form.
+    * **EBSCO System status.** This option will open the EBSCO system status site.
 
 ## Searching for providers, packages, and titles
 
@@ -100,7 +117,7 @@ To filter packages or titles by selection status, in the **Search & filter** pan
 * **All.** All packages or titles, regardless of selection status. This is selected by default.
 * **Selected.** Packages or titles selected in your knowledge base.
 * **Not selected.** Packages or titles not selected in your knowledge base.
-* **Ordered through EBSCO.** Packages or titles your library has acquired through EBSCONET.
+
 
 
 ### Content type
@@ -301,7 +318,7 @@ Note: Tags can be removed but not entirely deleted.
 
 
 1. [Find the package](#searching-for-providers-packages-and-titles) from which you want to remove a tag and select it.
-2. In the **Package record** window, in the **Tags** section, click the **X **next to the tag you want to remove. The tag is removed from the record but still remains as an option in the drop-down list.
+2. In the **Package record** window, in the **Tags** section, click the **X** next to the tag you want to remove. The tag is removed from the record but still remains as an option in the drop-down list.
 
 
 #### Holding status
@@ -389,6 +406,18 @@ Use the Agreements section to create agreements or link the package to agreement
 3. In the **Unassign an agreement from this record** dialog, click **Unassign**. A confirmation message appears and the agreement is removed from the package record, but not deleted from the Agreements app.
 
 
+## Usage & analysis
+
+In the Usage & analysis section, you can access cost and usage information for the packages and titles that are a part of your library's holdings.
+
+
+
+1. Select a year from the **Year** drop-down list. 
+2. Select All platforms, Publisher platforms only, or Non-publisher platforms only from the **Platform** drop-down list.
+3. Click **View**. Cost and usage information for the packages and titles that are a part of your library's holdings will display.
+4. From the **Actions** drop-down list, you can select View titles or Export titles to view or export the titles from a package for additional analysis. 
+
+
 #### Notes
 
 In the Notes section, you can add and manage notes.
@@ -451,7 +480,7 @@ The Titles section includes the total number of titles available in the package 
 4. Click **Search.** The titles are filtered based on your selections.
 
 
-### Viewing a title
+### Viewing a title record
 
 The title record contains detailed information about the selected title.
 
@@ -736,12 +765,23 @@ Note: Agreements can only be added to title records when a package is selected a
 3. In the **Unassign an agreement from this record** dialog, click **Unassign**. A confirmation message appears and the agreement is removed from the package record, but not deleted from the Agreements app.
 
 
+##### Usage & analysis
+
+In the Usage & analysis section, you can access cost and usage information for the packages and titles that are a part of your library's holdings.
+
+
+
+1. Select a year from the **Year** drop-down list. 
+2. Select All platforms, Publisher platforms only, or Non-publisher platforms only from the **Platform** drop-down list.
+3. Click **View**. Cost and usage information for the packages and titles that are a part of your library's holdings will display.
+
+
 ## Adding a new note to a title
 
 
 
 1. [Find the title](#searching-for-providers-packages-and-titles) to which you want to add a note and select it.
-2. In the **Title record** window, in the **Packages** section, select the package within which the title.
+2. In the **Title record** window, in the **Packages** section, select the package within which the title appears.
 3. In the **Package title details** window, in the **Notes** section, click **New**.
 4. In the **New note** window, select the **Note type** from the drop-down list. Note types are created in the Settings app. For more information, see Settings > Notes.
 5. Enter a **Note title** in the box.
@@ -779,37 +819,3 @@ Note: Agreements can only be added to title records when a package is selected a
 2. In the **Title record** window, in the **Packages** section, select the package within which the title appears.
 3. In the **Note** window, click **Actions > Delete**.
 4. In the **Delete note** dialog, click **Delete**. The note is deleted and removed from any records to which it was attached.
-
-
-## eHoldings keyboard shortcuts
-
-Keyboard shortcuts allow you to perform actions using the keyboard. There are two options for displaying keyboard shortcuts available for the eHoldings app.
-
-The first option:
-
-1. Click the downward-facing carrot, “v”, at the end of the app name.  
-2. Click **Keyboard shortcuts** to view the list of shortcut actions.
-
-The second option:
-
-1. Press <kbd>Ctrl+Alt+K</kbd> (Windows) or <kbd>Cmd+Alt+K</kbd> (Mac).
-2. Dialog displays showing a list of the valid keyboard shortcuts for the eHoldings app, including the shortcuts for the following actions:
-
-
-
-*  Create a new custom package or title record: Ensure cursor is not in the search text box and press <kbd>Alt+N</kbd>
-*  Edit a record: Press <kbd>Ctrl+Alt+E</kbd> (Windows) or <kbd>Cmd+Alt+E</kbd> (Mac)
-*  Save a record: Press <kbd>Ctrl+S</kbd> (Windows) or <kbd>Cmd+S</kbd> (Mac)
-*  Expand all accordions: Press <kbd>Ctrl+Alt+B</kbd> (Windows) or <kbd>Cmd+Alt+B</kbd> (Mac)
-*  Collapse all accordions: Press <kbd>Ctrl+Alt+G</kbd> (Windows) or <kbd>Cmd+Alt+G" (Mac)
-*  Go to the **Search & filter** pane: Press <kbd>Ctrl+Alt+H</kbd> (Windows) or <kbd>Cmd+Alt+H</kbd> (Mac)
-*  Open keyboard shortcuts modal: Press <kbd>Ctrl+Alt+K</kbd> (windows) or <kbd>Cmd+Alt+K</kbd> (Mac)
-*  Expand or collapse an accordion: Press the Spacebar
-*  Close a modal or pop-up: Press the <kbd>Esc</kbd> key
-*  Copy: Press <kbd>Ctrl+c</kbd>
-*  Cut: Press <kbd>Ctrl+x</kbd>
-*  Paste: Press <kbd>Ctrl+v</kbd>
-*  Find: Press <kbd>Ctrl+f</kbd>
-
-
-4. Press the <kbd>Esc</kbd> key to close the dialog box. 
