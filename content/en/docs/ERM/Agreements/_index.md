@@ -46,8 +46,8 @@ The following permissions are only applicable if your library is using the inter
 *   **Agreements: Edit platforms.** This permission allows the user to edit platform properties. It also grants all permissions included in "Agreements: Search & view e-resources."
 
 
-##Keyboard shortcuts
-Keyboard shortcuts allow you to perform actions in this app using the keyboard.  See [Platform essentials > Keyboard shortcuts](< ref "/platform_essentials_keyboard_shortcuts.md" >) for more information.
+## Keyboard shortcuts
+Keyboard shortcuts allow you to perform actions in this app using the keyboard.  See [Platform essentials > Keyboard shortcuts]({{< ref "keyboardshortcuts.md" >}}) for more information.
 
 
 ## Creating an agreement

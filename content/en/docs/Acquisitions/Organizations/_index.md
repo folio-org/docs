@@ -37,8 +37,8 @@ Organizations permissions:
 
 
 
-##Keyboard shortcuts
-Keyboard shortcuts allow you to perform actions in this app using the keyboard.  See [Platform essentials > Keyboard shortcuts]({{< ref "#platform_essentials_keyboard_shortcuts.md" >}}) for more information.
+## Keyboard shortcuts
+Keyboard shortcuts allow you to perform actions in this app using the keyboard.  See [Platform essentials > Keyboard shortcuts]({{< ref "keyboardshortcuts.md" >}}) for more information.
 
 
 ## Creating an organization

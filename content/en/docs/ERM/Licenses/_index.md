@@ -41,8 +41,8 @@ If you want to link or view organizations and/or internal contacts in a license 
 *   **Users: Can view user profile.**
 
 
-##Keyboard shortcuts
-Keyboard shortcuts allow you to perform actions in this app using the keyboard.  See [Platform essentials > Keyboard shortcuts](< ref "/platform_essentials_keyboard_shortcuts.md" >) for more information.
+## Keyboard shortcuts
+Keyboard shortcuts allow you to perform actions in this app using the keyboard.  See [Platform essentials > Keyboard shortcuts]({{< ref "keyboardshortcuts.md" >}}) for more information.
 
 
 ## Creating a license

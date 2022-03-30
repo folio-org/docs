@@ -44,8 +44,8 @@ The following are all the Invoices permissions:
 *   **Invoice: Pay Invoices.** This permission allows the user to approve invoices for payment.
 
 
-##Keyboard shortcuts
-Keyboard shortcuts allow you to perform actions using the keyboard in this app.  See [Platform essentials > Keyboard shortcuts]({{< ref "#platform_essentials_keyboard_shortcuts.md" >}}) for more information.
+## Keyboard shortcuts
+Keyboard shortcuts allow you to perform actions using the keyboard in this app.  See [Platform essentials > Keyboard shortcuts]({{< ref "keyboardshortcuts.md" >}}) for more information.
  
  
 ## Creating an invoice

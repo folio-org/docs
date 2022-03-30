@@ -33,8 +33,8 @@ The permissions listed below allow you to interact with the Receiving app and de
 *   **Settings (Receiving): Can view and edit settings.** This permission allows the user to manage receiving settings.
 
 
-##Keyboard shortcuts
-Keyboard shortcuts allow you to perform actions in this app using the keyboard.  See [Platform essentials > Keyboard shortcuts]({{< ref "#platform_essentials_keyboard_shortcuts.md" >}}) for more information.
+## Keyboard shortcuts
+Keyboard shortcuts allow you to perform actions in this app using the keyboard.  See [Platform essentials > Keyboard shortcuts]({{< ref "keyboardshortcuts.md" >}}) for more information.
 
 
 
