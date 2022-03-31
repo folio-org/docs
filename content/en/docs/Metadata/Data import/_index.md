@@ -102,10 +102,10 @@ To filter logs by whether or not they are inventory single record imports, in th
 -   **No.** All other types of logs.
 -   **Yes.** Logs for Inventory single record imports.
 
-## Retrieving data export results
+## Retrieving data imports results
 
-For all exports with the Status of *Completed* or *Completed with errors*, you can click on the **File name** in the Logs pane to retrieve your data export results. Depending on your browser and its configurations, the file automatically downloads or you are prompted to save it.
+For all imports with the Status of *Completed* or *Completed with errors*, you can click on the **File name** in the Logs pane to retrieve your data import results. Depending on your browser and its configurations, the file automatically downloads or you are prompted to save it.
 
-## Troubleshooting failed exports
+## Troubleshooting failed imports
 
-For all exports with the Status of *Fail* or *Completed with errors*, click in the **row** of the export to view the error log. For all failed exports, a MARC file is not generated.
+For all imports with the Status of *Fail* or *Completed with errors*, click in the **row** of the import to view the error log. For all failed imports, a MARC file is not generated.
