@@ -43,7 +43,7 @@ sudo apt-get update
 sudo apt-get upgrade
 sudo reboot
 ```
-Check if all Services have been restarted after reboot: Okapi, postgres, docker, the docker containers (do: docker ps --all | more ). Stripes and nginx (you have started these in one container if you have followed the Juniper docs. Re-start this container).
+Check if all Services have been restarted after reboot: "Okapi, postgres, docker, the docker containers" (do: docker ps --all | more ). "Stripes and nginx" (you have started these in one container if you have followed the Juniper docs. Re-start this container).
 
 The following actions in this section have been taken from the [Kiwi Release Notes](https://wiki.folio.org/display/REL/Kiwi+%28R3+2021%29+Release+Notes). I was able to do an upgrade with only these actions taken. There might be more actions that you might need to take for the upgrade of your FOLIO installation. If you are unsure what other steps you might need to take, study the [Release Notes](https://wiki.folio.org/display/REL/Kiwi+%28R3+2021%29+Release+Notes).
 
