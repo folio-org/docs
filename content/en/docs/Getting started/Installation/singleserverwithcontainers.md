@@ -11,6 +11,12 @@ A single server installation is being considered a non-production installation. 
 
 A FOLIO instance is divided into two main components.  The first component is Okapi, the gateway.  The second component is the UI layer which is called Stripes.  The single server with containers installation method will install both.
 
+## Changes in the documentation
+There are some changes in the idea of this documentation as compared to the documentations for previous releases (cf. [Juniper](https://juniper.docs.folio.org/docs/getting-started/installation/singleserverwithcontainers/) or [Iris](https://iris.docs.folio.org/docs/getting-started/installation/singleserverwithcontainers/) documentations). 
+
+* This is a documentation for an **upgrade** of your FOLIO system. It assumes that you have already successfully installed Juniper (GA or a Juniper hotfix release) and now want to upgrade your system to Kiwi. If you are deploying FOLIO for the first time, or if you want to start with a fresh installation for whatever reasons, go to the [Juniper single server documentation](https://juniper.docs.folio.org/docs/getting-started/installation/singleserverwithcontainers/) and come back here when you have installed Juniper.
+* This documentation assumes that you have installed the **platform-complete** distribution and want to upgrade the modules of that distribution. Previous release documentations have been written for the  more concise "platform-core" distribution. The platform-core distribution is not being supported, anymore.
+
 ## System requirements
 
 **Software requirements**
