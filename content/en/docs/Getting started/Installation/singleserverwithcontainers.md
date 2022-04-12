@@ -47,6 +47,28 @@ Check if all Services have been restarted after reboot: <em>Okapi, postgres, doc
 
 The following actions in this section have been taken from the [Kiwi Release Notes](https://wiki.folio.org/display/REL/Kiwi+%28R3+2021%29+Release+Notes). I was able to do an upgrade with only these actions taken. There might be more actions that you might need to take for the upgrade of your FOLIO installation. If you are unsure what other steps you might need to take, study the [Release Notes](https://wiki.folio.org/display/REL/Kiwi+%28R3+2021%29+Release+Notes).
 
+### Change all holdings sources to FOLIO
+
+Holdings created by a MARC Bib, not a MARC Holdings, showed the <em>source = MARC</em>. The behavior was changed to show <em>source = FOLIO</em> for such holdings. Database tables might contain holdings records with incorrect source value. See here [MODSOURMAN-627 - Script for retrieving holding by specific conditions](https://wiki.folio.org/pages/viewpage.action?pageId=79466342).
+Log in to your postgres database (on linux console, type "psql -U folio") and select the Holdings where source name is not FOLIO or MARC :
+```
+SELECT
+*
+FROM ${tenant}_mod_inventory_storage.holdings_record
+WHERE ${tenant}_mod_inventory_storage.holdings_record.jsonb ->> 'sourceId' = (
+SELECT
+id::text
+FROM ${tenant}_mod_inventory_storage.holdings_records_source
+WHERE ${tenant}_mod_inventory_storage.holdings_records_source.jsonb ->> 'name' != 'FOLIO' AND
+${tenant}_mod_inventory_storage.holdings_records_source.jsonb ->> 'name' != 'MARC');
+(0 rows)
+
+(END)
+```
+Replace ${tenant} by the name of your tenant. On a standard (test or demo) install, the tenant is "diku". 
+
+If the holdings source is anything other than FOLIO or MARC (e.g. -), then change it to FOLIO. 
+
 ## Installing Okapi
 
 ### Okapi requirements
