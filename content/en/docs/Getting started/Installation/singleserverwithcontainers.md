@@ -24,17 +24,25 @@ There are some changes in the idea of this documentation as compared to the docu
 | **Requirement**      | **Recommended Version**                    |
 |----------------------|--------------------------------------------|
 | Operating system     | Ubuntu 20.04.02 LTS (Focal Fossa) 64-bits  |
-| Java                 | OpenJDK 11                                 |
-| PostgreSQL           | PostgreSQL 12                              |
+| FOLIO system         | Juniper (R2-2021)                          |
 
 **Hardware requirements**
 
-| **Requirement** | **FOLIO Base Apps** | **FOLIO Extended Apps** |
-|-----------------|---------------------|-------------------------|
-| RAM             | 24GB                | 40GB                    |
-| CPU             | 4                   | 8                       |
-| HD              | 100 GB SSD          | 350 GB SSD              |
+| **Requirement** | **FOLIO Extended Apps** |
+|-----------------|-------------------------|
+| RAM             | 40GB                    |
+| CPU             | 8                       |
+| HD              | 350 GB SSD              |
 
+## Before the Upgrade
+
+First do Ubuntu Updates & Upgrades
+  
+```
+sudo apt-get update
+sudo apt-get upgrade
+sudo reboot
+```
 
 ## Installing Okapi
 
