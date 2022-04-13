@@ -1,3 +1,11 @@
+---
+title: "LDLite"
+linkTitle: "LDLite"
+date: 2021-06-24
+weight: 50
+tags: ["parenttopic"]
+---
+
 ## LDLite
 
 LDLite is a tool that is part of the Library Data Platform project. It provides basic LDP data reporting functions without requiring the LDP reporting database server to be installed. It also can be used to supplement a LDP database with additional or real-time FOLIO data.
