@@ -179,6 +179,13 @@ You can add a tag to any open request. Tags are included in the [CSV export repo
 3. In the **Tag** pane, either select a tag from the box or enter a tag.
 4. Click the **X** on the Tag window to close the pane and save the tag. The tag number updates to the number of tags applied to the request.
 
+## Requesting items from remote storage
+
+Some libraries store items at a remote storage facility that is not on campus. Often these facilities have their own inventory system in addition to FOLIO to manage high-capacity storage and facilitate requests of items to be brought back to campus. FOLIO supports connections to two types of remote storage systems: CAIASoft and Dematic.
+
+If your library integrates FOLIO with a remote storage system, you will be able to request items from remote storage through the FOLIO Requests app. The basic workflows in the Requests app will be the same as for on-campus items.
+
+For more information on FOLIO’s remote storage functionality, see [the Settings documentation for Remote Storage.]({{< ref “/remotestorage.md” >”}})
 
 ## Processing delivery requests
 
