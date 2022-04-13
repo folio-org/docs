@@ -15,3 +15,9 @@ In FOLIO, resource access includes essential circulation functions. These functi
 ## Circulation Settings
 
 The circulation of library materials is governed by a set of rules and policies.  These rules and policies are defined by the library and implemented in the [Circulation]({{< ref "/settings_circulation.md" >}}) and the [Courses]({{< ref "/settings_courses.md" >}}) areas of the FOLIO Settings app.  
+
+## INN-Reach 
+
+Kiwi includes the INN-Reach app, which supports resource sharing for institutions that use INN-Reach by Innovative Interfaces.
+
+While the app is available in Kiwi, it is not yet fully supported. The app will be removed from the FOLIO standard install in Lotus. The project plans to restore the app once the integration is certified by Innovative.
