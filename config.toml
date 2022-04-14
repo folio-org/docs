@@ -122,15 +122,15 @@ offlineSearch = false
 
 [[params.versions]]
   version = "Juniper"
-  url = "https://juniper.docs.folio.org/docs"
+  url = "https://juniper.docs.folio.org/docs/"
 
 [[params.versions]]
   version = "Iris"
-  url = "https://iris.docs.folio.org/docs"
+  url = "https://iris.docs.folio.org/docs/"
 
 [[params.versions]]
   version = "Honeysuckle"
-  url = "https://honeysuckle.docs.folio.org/docs"
+  url = "https://honeysuckle.docs.folio.org/docs/"
 
 # User interface configuration
 [params.ui]
