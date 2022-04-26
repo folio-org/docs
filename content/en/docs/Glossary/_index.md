@@ -359,6 +359,12 @@ weight: 800
    <td>Money transferred between funds during a fiscal year.
    </td>
   </tr>
+   <tr>
+   <td>Okapi
+   </td>
+   <td>Okapi is the FOLIO-provided gateway system for managing apps and communication between system modules. System administrators and hosting providers use Okapi as an essential tool to manage FOLIO performance, upgrade or remove modules, and maintain available permissions. In contrast, library staff generally only use Okapi when they need to query FOLIO APIs for information. See <a href="https://github.com/folio-org/okapi/blob/master/doc/guide.md">https://github.com/folio-org/okapi/blob/master/doc/guide.md</a> for more detailed technical documentation.
+   </td>
+  </tr>
   <tr>
    <td>Order
    </td>
@@ -476,7 +482,7 @@ weight: 800
   <tr>
    <td>Shelving lag time
    </td>
-   <td>Locally determined time-frame between the return of material and the time it should be reshelved. This functionality is not yet in place for the Honeysuckle version of FOLIO.
+   <td>Locally determined time-frame between the return of material and the time it should be reshelved. This functionality is not yet in place for FOLIO.
    </td>
   </tr>
    <tr>
