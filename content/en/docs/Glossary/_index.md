@@ -317,6 +317,12 @@ weight: 800
    <td>The fourth level of the four-level location structure (Institution -> Campus -> Library -> Location). Locations are used in functionality including item routing, fees and fines, and remote storage configuration. Items may also have an “effective location” value that is used in circulation.
    </td>
   </tr>
+   <tr>
+   <td>Long-term loan
+   </td>
+   <td>A loan with a loan period interval specified in days, weeks, or months, or determined by a fixed due date. A long-term loan is always due at 11:59 PM on its due date. All of its notices are delivered in real time except for notices triggered by loan due date/time, which are delivered overnight.
+   </td>
+  </tr>
   <tr>
    <td>LSP
    </td>
@@ -471,6 +477,12 @@ weight: 800
    <td>Shelving lag time
    </td>
    <td>Locally determined time-frame between the return of material and the time it should be reshelved. This functionality is not yet in place for the Honeysuckle version of FOLIO.
+   </td>
+  </tr>
+   <tr>
+   <td>Short-term loan
+   </td>
+   <td>A loan with a loan period specified in minutes or hours. All short-term loan notices are delivered in real time.
    </td>
   </tr>
   <tr>
