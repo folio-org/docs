@@ -46,19 +46,23 @@ In FOLIO, the underlying account and action data would look like this:
 **Account #1**: This represents the $100 charge to Julia as the set cost lost item fee. This account will have three associated actions:
 
 * Action 1 represents the initial charge to Julia, with an action type in the underlying data of “Outstanding.” The action type in the user interface displays as “Lost item fee.” At this point, the **account** has a status of “Open.”
-* Action 2 represents Julia paying $25, with an action type of “Paid Partially.”
+* Action 2 represents Julia paying $25, with an action type of “Paid partially.”
 * Action 3 represents the library waiving the remaining $75, with an action type of “Waived partially.” When Action 3 is applied, the status of the account becomes **Closed**. 
 
 The Library could choose to waive the $75 first and then mark $25 as paid, in which case action 2 and action 3 would flip in order, but the result would still be the same - paying and closing the account, closing the loan, and changing the item status to **Lost and paid**.
 
 **Account #2**: This represents the $25 processing fee, and it has two associated actions.
+
 * Action 1 represents the $25 processing fee charge, with an action type of “Outstanding” in the underlying data. The action type in the User Interface displays as “Lost item processing fee.”
 * Action 2 represents the library accepting $25 in cash to pay the fee, with an action type of “Paid fully.” When Action 2 is applied, the status of the account becomes **Closed**.
+
 ## Fee/fine owners
 
-In FOLIO, a fee/fine owner represents the agent or office that manages fines for FOLIO transactions. If you plan to charge any fines, you need to set up at least one fee/fine owner.  FOLIO does not require that a fee/fine owner represent a specific office or part of a library system. A fee/fine owner could represent an individual, a specific office, or a specific library.
+In FOLIO, a fee/fine owner represents the agent or office that manages fines for FOLIO transactions. 
 
-Fee/fine owners are configured in [Settings > Users > Fee/fine > Owners]({{< ref "/Settings_users.md#settings--users--owners" >}})
+If you plan to charge any fines, you need to set up at least one fee/fine owner.  FOLIO does not require that a fee/fine owner represent a specific office or part of a library system. A fee/fine owner could represent an individual, a specific office, or a specific library.
+
+Fee/fine owners are configured in [Settings > Users > Fee/fine > Owners]({{< ref "/Settings_users.md#settings--users--owners">}})
 
 FOLIO libraries should configure a fee/fine owner for every service point in their FOLIO tenant, even if they don’t expect items attached to a particular service point to be loaned and generate fines. This is because if such a loan does occur, and no fee/fine owner is attached to the service point, the fine transaction will fail. Libraries may wish to create one fee/fine owner to attach those service points as a backup in case fine transactions occur.
 
@@ -71,6 +75,7 @@ For an overdue fine, FOLIO uses an item’s effective location to determine the 
 For a lost item fee or lost item processing fee, FOLIO uses the **item permanent location**  to determine the fee/fine owner. If the **item permanent location** is not set, FOLIO uses the **permanent holdings location** instead.
 
 Fines always accrue this way **even if** an item’s location is not part of the circulation rule that was used for the loan that accrued a fine.
+
 ### Example: accruing lost item fines to fee/fine owners
 
 Julia Smith wants to borrow a book that is on the shelf at the Science Library, for pickup at the Law Library. 
@@ -87,17 +92,18 @@ Julie borrows the book  from the Law Library service point and doesn’t return 
 
 When the item is aged to lost:
 
+* FOLIO first checks the item record for an **item permanent location**. 
+* Since that value isn’t set, FOLIO next checks the **holdings permanent location** and finds the value “Science Library Stacks.” 
+* FOLIO then checks the location record for “Science Library Stacks” and finds that the location has a primary service point of “Science Library Desk”. 
+* Finally, FOLIO checks the fee/fine owner records for the service point “Science Library Desk” and finds it connected to the fee/fine owner “Science and Engineering Business Office”.
 
-FOLIO first checks the item record for an **item permanent location**. 
-Since that value isn’t set, FOLIO next checks the **holdings permanent location** and finds the value “Science Library Stacks.” 
-FOLIO then checks the location record for “Science Library Stacks” and finds that the location has a primary service point of “Science Library Desk”. 
-Finally, FOLIO checks the fee/fine owner records for the service point “Science Library Desk” and finds it connected to the fee/fine owner “Science and Engineering Business Office”.
 FOLIO charges both the $100 lost item fee and the $25 lost item processing fee and associates them to “Science and Engineering Business Office” as the owner.
 
 ## Fee/fine notices
 Notices function differently for fee/fines that are charged manually, versus fee/fines that are charged automatically.
 
 ### Manual fee/fine notices
+
 For a manual fee/fine, you have two types of notices that you can use - the **charge** notice and the **action notice**.
 
 You can create templates for both types of notices in Settings\>Circulation\>Patron Notices\>Patron notice templates. For a **charge** notice, choose the notice category “Manual fee/fine charge.” For an **action notice**, choose “Manual fee/fine action (pay, waive, refund, transfer, or cancel/error)”.
