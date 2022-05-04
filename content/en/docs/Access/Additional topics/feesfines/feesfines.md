@@ -3,7 +3,6 @@ title: "Fees and fines"
 linkTitle: "Fees and fines"
 weight: 10
 description: >
-  Note: This content is currently in draft status.
 tags: ["subtopic"]
 ---
 
