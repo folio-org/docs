@@ -179,6 +179,49 @@ Add an instructor that does not have a FOLIO user record:
 2. Under **Instructors**, find the instructor you want to delete.
 3. Click **Remove**. The instructor is removed from the course.
 
+## Adding and removing notes
+
+You can add and assign notes to courses. Assigning a note means you are reusing a previously created note.
+
+### Adding a new note to a course.
+
+1. [Find the course](#searching-for-courses) and click on it in the **Courses** list.
+2. In the **Notes** pane, click **New**.
+3. In the **New note** window, select the **Note type** from the drop-down list.
+4. Enter a **Note title** in the box.
+5. (Optional) Enter any **Details** about the note in the box.
+6. Click **Save & close**.
+
+### Assigning an existing note to a course
+
+1. [Find the course](#searching-for-courses) to which you want to add a note and click on it in the **Courses** list.
+2. In the **Notes** pane, click **Assign/Unassign**.
+3. In the **Assign / Unassign note** dialog, search for the note(s) you wish to assign to the course.
+4. Select the checkbox for the note(s) you wish to assign to the course and click **Save**.
+
+### Editing an existing note on a course.
+
+1. [Find the course](#searching-for-courses) and click on it in the **Courses** list.
+2. In the **Notes** pane, find the note you wish to edit and click **Edit**.
+3. Make your desired changes to the note.
+4. Click **Save & close**.
+
+If the note is assigned to multiple courses, any edits will apply to the note for all of its assigned courses. If you want to make a note with edits that apply just to the open course, you would need to make a new note with the desired text.
+
+### Unassign a note from a course.
+
+1. [Find the course](#searching-for-courses) and click on it in the **Courses** list.
+2. Under **Notes**, click **Assign / Unassign**.
+3. In the **Assign / Unassign note** modal, search for the note you wish to remove.
+4. Uncheck the box(es) for the note(s) you wish to unassign.
+5. Click **Save**.
+
+### Deleting a note
+
+1. [Find the course](#searching-for-courses) and click on it in the **Courses** list.
+2. Under **Notes**, click the note you wish to delete.
+3. In the Note window, click Actions > Delete.
+4. In the Delete note dialog, click Delete. The note is deleted and removed from any records to which it was attached
 
 ## Adding a reserve item to a course when the item exists in Inventory
 
