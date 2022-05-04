@@ -67,12 +67,15 @@ You can search for courses in the **Search & filter** pane. All courses are show
 
 You can also search for courses by selecting any of the filters in the **Courses Search & filter** pane: Department, Course type, Term, and Location. Additionally, you can apply the filters after you perform a search to limit your results.
 
+You can choose which columns appear in your search results by clicking on the **Action** menu. Under **Show columns**, check or uncheck columns to change what you see in the results pane.
 
 ## Searching for reserves
 
 You can search for items on reserve in the **Search & filter** pane. Click **Reserves** to start your search. Reserves are shown and selected by default. To search for reserves, enter your search terms into the box. Select the **All fields** drop-down list to search through one of the following fields: Title, Barcode, or Call Number. All fields is the default search.
 
 You can also search for reserves by selecting any of the filters in the **Search & filter** pane: Processing status, Copyright status, Permanent location, Temporary location, and Term. Additionally, you can apply the filters after you perform a search to limit your results.
+
+You can choose which columns appear in your search results by clicking on the **Action** menu. Under **Show columns**, check or uncheck columns to change what you see in the results pane.
 
 To find items on a reserve for a specific course, first search for the course from the **Search & filter** pane. Click on the course you wish to view reserves for. Scroll down to the Items section to see all the items on reserve for that course.
 
