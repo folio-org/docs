@@ -161,7 +161,7 @@ The factors that are used in the overdue fine calculation include:
 * The loaning service point calendar - in this example, suppose the service point is open 8 AM to midnight from May 1st to May 11th.
 * The stated overdue charge, defined in the overdue policy - in this example, $3/day
 * Whether there is a grace period for a late return, defined in the loan policy - in this example, a grace period of one day. 
-* Whether they should charge the overdue fine during closed hours, defined in the overdue policy - in this example,that option is set to **No**.
+* Whether they should charge the overdue fine during closed hours, defined in the overdue policy - in this example, that option is set to **No**.
 
 So, once the item is returned, FOLIO computes the overdue fine like this:
 
