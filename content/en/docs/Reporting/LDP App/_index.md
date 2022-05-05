@@ -9,7 +9,7 @@ tags: ["parenttopic"]
 ## LDP App
 The LDP app provides a FOLIO interface for interacting with an LDP database. Currently there is only one page, the **Query builder**. As the name suggests, it allows you to build queries without having to know or code any SQL.
 
-Choose the schema and table you would like to report on, select the options you would like, click **Submit** and you will see your results displayed at the bottom of the page. If you would like to export the displayed results you can click on the floppy disk icon and you can download them as a CSV file.
+Choose the [schema](#schema) and [table](#table) you would like to report on, select the options you would like, click **Submit** and you will see your results displayed at the bottom of the page. If you would like to export the displayed results you can click on the **save (floppy disk) icon** and you can download as a CSV file.
 
 ### Permissions
 The permissions listed below allow you to interact with the LDP app and determine what you can or cannot do within the app. You can assign permissions to users in the Users app. If none of these permissions are assigned to a user, they are unable to see the LDP app or any related information.
