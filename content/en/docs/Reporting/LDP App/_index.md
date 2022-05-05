@@ -15,8 +15,8 @@ Choose the [schema](#schema) and [table](#table) you would like to report on, se
 The permissions listed below allow you to interact with the LDP app and determine what you can or cannot do within the app. You can assign permissions to users in the Users app. If none of these permissions are assigned to a user, they are unable to see the LDP app or any related information.
 
 The following are all the LDP app permissions:
-**LDP: all permissions**. This permission allows the user to see and use the LDP app.
-**Settings (LDP): Can view, create, edit, and remove**. This allows users to manage the settings in the Settings app.
+* **LDP: all permissions**:  This permission allows the user to see and use the LDP app.
+* **Settings (LDP): Can view, create, edit, and remove**. This allows users to manage the settings in the Settings app.
 
 ### Schema
 Think of schema as the “buckets” in which tables live.
