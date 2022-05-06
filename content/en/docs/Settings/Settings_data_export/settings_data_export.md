@@ -1,7 +1,7 @@
 ---
 title: "Settings > Data export"
 linkTitle: "Data export"
-date: 2022-03-21
+date: 2021-11-14
 weight: 60
 tags: ["subtopic"]   
 ---
@@ -26,7 +26,7 @@ Before you begin configuring job profiles, you should first configure your field
 
 ### Default export job profile
 
-The system comes with a default job profile that is associated with the default field mapping profile. Records exported with the default job profile generate a MARC file containing information for the provided record IDs.
+The system comes with a default job profile that is associated with the default field mapping profile. Records exported with the default job profile generate a MARC file containing information for the provided record IDs. 
 
 If you use the default job profile, simplified MARC bibliographic records are generated for instances without underlying MARC records. For instances with underlying MARC records stored in SRS, those records are used in the export.
 
@@ -41,7 +41,7 @@ If you use the default job profile, simplified MARC bibliographic records are ge
 
 ### Searching for an export job profile
 
-Use the search bar to search for profiles contained in the Job profile table.
+Use the search bar to search for profiles contained in the Job profile table. 
 
 The Job profiles table contains the following columns:
 
@@ -60,6 +60,8 @@ To view the details of a job profile, follow these steps:
 
 ### Editing an export job profile
 
+Note: Once a job profile has been used for a data export job, it cannot be edited or deleted.
+
 1.  In the **Job profiles** pane, find the profile you want to edit and select it.
 2.  In the **export job profile details** window, click **Actions \> Edit**.
 
@@ -69,6 +71,8 @@ To view the details of a job profile, follow these steps:
 2.  In the **export job profile details** window, click **Actions \> Duplicate**.
 
 ### Deleting an export job profile
+
+Note: Once a job profile has been used for a data export job, it cannot be edited or deleted.
 
 1.  In the **Job profiles** pane, find the job profile you want to delete and select it.
 2.  In the **export job profile details** window, click **Actions \> Delete**.
@@ -88,14 +92,14 @@ The system comes with a default field mapping profile that is associated with th
 6.  Optional: To add a transformation, click **Add transformations** and follow these steps:
     <ol type="a">
       <li>In the <strong>Select transformations</strong> dialog, use the search box and filters to find the transformations you want to add to the field mapping profile.</li>
-      <li>For every transformation you want to add, select the <strong>checkbox</strong> next to it and fill out the field number, indicators, and subfield boxes.</li>
+      <li>For every transformation you want to add, select the <strong>checkbox</strong> next to it and fill out the field number, indicators, and subfield boxes.Subfields must begin with a $.</li>
       <li>Once you have added all transformations, click <strong>Save & close<strong>. A confirmation message appears and the transformations are added to the field mapping profile.</li>
     </ol>
 7.  Click **Save & close**. A confirmation message appears and the field mapping profile is created.
 
 ### Searching for an export field mapping profile
 
-Use the search bar to search for profiles contained in the Field mapping profiles table.
+Use the search bar to search for profiles contained in the Field mapping profiles table. 
 
 The Field mapping profiles table contains the following columns:
 
@@ -115,6 +119,8 @@ To view the details of a field mapping profile, follow these steps:
 
 ### Editing an export field mapping profile
 
+Note: While a field mapping is assigned to a job profile, it cannot be edited or deleted.
+
 1.  In the **Field mapping profiles** pane, find the profile you want to edit and select it.
 2.  In the **field mapping profile details** window, click **Actions \> Edit**.
 3.  Make your changes to the profile.
@@ -129,6 +135,9 @@ To view the details of a field mapping profile, follow these steps:
 
 ### Deleting an export field mapping profile
 
+Note: While a field mapping is assigned to a job profile, it cannot be edited or deleted.
+
 1.  In the **Field mapping profiles** pane, find the profile you want to delete and select it.
 2.  In the **field mapping profile details** window, click **Actions \> Delete**.
 3.  In the **Delete mapping profile** dialog, click **Delete**. A confirmation message appears and the field mapping profile is deleted.
+

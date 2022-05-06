@@ -27,9 +27,11 @@ Note: This is the only permission available for the Data export app. You are una
 
 ## Quick exports
 
-Quick exports are performed in the Inventory app. They allow you to quickly download instances in MARC or JSON formats for selected records.
+Quick exports are performed in the Inventory app. They allow you to quickly download instances in MARC or JSON formats for selected records. Currently, only the export of a .csv of UUIDs has been implemented.
 
 ### Exporting instances (MARC)
+
+Note: At this time, full MARC export via Quick Export is not implemented. Following these steps will instead export a .csv of the selected files’ UUIDs for use in the Data Export module.
 
 1.  Open the **Inventory** app. 
 2.  In the **Inventory** pane, find the records you want to export, and for each record, select the **checkbox** in the first column.
