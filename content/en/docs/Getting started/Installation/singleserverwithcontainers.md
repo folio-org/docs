@@ -189,231 +189,189 @@ curl -w '\n' -D - -X POST -H "Content-Type: application/json" -d "{\"name\":\"HA
 curl -w '\n' -D - -X POST -H "Content-Type: application/json" -d "{\"name\":\"HAZELCAST_FILE\",\"value\":\"/etc/folio/okapi/hazelcast.xml\"}" http://localhost:9130/_/env
 ```
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-### Install and configure Okapi
-
-Once you have installed the requirements for Okapi and created a database, you can proceed with the installation.  Okapi is available as a DEB package that can be easily installed in Debian-based operating systems. You only need to add the official APT repository to your server.
-
-1.
-
-Please note that the R2-2021 FOLIO release version of Okapi is 4.8.2-1.  If you do not explicitly set the Okapi version, you will install the latest Okapi release.  There is some risk with installing the latest Okapi release.  The latest release may not have been tested with the rest of the components in the official release.
-
-2. Configure Okapi to run as a single node server with persistent storage.
-
-- Edit file **/etc/folio/okapi/okapi.conf** to reflect the following changes: 
-
-```
-role="dev"
-port_end="9340"
-host="<YOUR_IP_ADRESS>"
-storage="postgres"
-okapiurl="http://<YOUR_IP_ADDRESS>:9130"
-docker_registries -- See explanation in okapi.conf file. Default is unauthenticated.
-```
-
-**Note**: The properties **postgres_host**, **postgres_port**, **postgres_username**, **postgres_password**, **postgres_database** should be configured in order to match the PostgreSQL configurations made previously.
-
-3. Restart Okapi
+Restart Okapi:
 
 ```
 sudo systemctl daemon-reload
-sudo systemctl restart okapi
+sudo systemctl restart okapi.service
 ```
-The Okapi log is at **/var/log/folio/okapi/okapi.log**.
 
+Follow /var/log/folio/okapi/okapi.log . You should read something like this:
 
-4. Pull module descriptors from the central registry.
+```
+INFO DeploymentManager shutdown
+...
+```
+
+Now Okapi will re-start your modules. Follow the okapi.log. It will run for 2 or 3 minutes. Check if all modules are running:
+
+```
+docker ps --all | grep "mod-" | wc
+  62
+```
+
+Retrieve the list of modules which are now being enabled for your tenant (just for your information):
+
+```
+curl -w '\n' -XGET http://localhost:9130/_/proxy/tenants/diku/modules
+...
+}, {
+  "id" : "okapi-4.11.1"
+} ]
+```
+
+You should see 9 Edge modules (Starting from Juniper HF#3; if you have started from Juniper-GA, you will see only 8 Edge modules), 52 Frontend modules (folio_\*), 62 Backend modules (mod-\*) (These are the modules of Juniper, platform-complete) + the Kiwi-Version of Okapi (4.11.1).
+
+### II.ii. Pull module descriptors from the central registry.
 
 A module descriptor declares the basic module metadata (id, name, etc.), specifies the module's dependencies on other modules (interface identifiers to be precise), and reports all "provided" interfaces. As part of the continuous integration process, each Module Descriptor  is published to the FOLIO Registry at https://folio-registry.dev.folio.org.
 
 ```
 curl -w '\n' -D - -X POST -H "Content-type: application/json" \
-  -d @registry.json \
-  http://localhost:9130/_/proxy/pull/modules
+  -d { "urls": [ "https://folio-registry.dev.folio.org" ]  http://localhost:9130/_/proxy/pull/modules
 ```
-The content of registry.json should look like this:
-
-```
-{
-  "urls": [
-    "https://folio-registry.dev.folio.org"
-  ]
-}
-```
-
-Okapi is up and running!
-
-
-## Create a new tenant
-
-1. Post the tenant initialization to Okapi.
-```
-curl -w '\n' -D - -X POST -H "Content-type: application/json" \
-  -d @tenant.json \
-  http://localhost:9130/_/proxy/tenants
-```
-The content of tenant.json:
-```
-{
-  "id" : "diku",
-  "name" : "Datalogisk Institut",
-  "description" : "Danish Library Technology Institute"
-}
-```
-
-**Note**:  In this installation guide, the Datalogisk Institut is used as an example, but you should use the information for your organization.  Take into account that you have to use the id of your tenant in the next steps.
-
-2. Enable the Okapi internal module for the tenant
+Okapi log should show something like
 
 ```
-curl -w '\n' -D - -X POST -H "Content-type: application/json" \
-  -d '{"id":"okapi"}' \
-  http://localhost:9130/_/proxy/tenants/diku/modules
+ INFO  ProxyContext         283828/proxy REQ 127.0.0.1:51424 supertenant POST /_/proxy/pull/modules  okapi-4.11.1
+ INFO  PullManager          Remote registry at https://folio-registry.dev.folio.org is version 4.11.1
+ INFO  PullManager          pull smart
+  ...
+ INFO  PullManager          pull: 3466 MDs to insert
+ INFO  ProxyContext         283828/proxy RES 200 93096323us okapi-4.11.1 /_/proxy/pull/modules
 ```
 
+### II.iii. Deploy a compatible FOLIO backend
 
-## Install a Folio Backend
-
-1. Post data source information to the Okapi environment for use by deployed modules.
+1.  Post data source information to the Okapi environment for use by deployed modules
 ```
-curl -w '\n' -D - -X POST -H "Content-Type: application/json" -d "{\"name\":\"DB_HOST\",\"value\":\"<YOUR_IP_ADDRESS>\"}" http://localhost:9130/_/env
-curl -w '\n' -D - -X POST -H "Content-Type: application/json" -d "{\"name\":\"DB_PORT\",\"value\":\"5432\"}" http://localhost:9130/_/env
-curl -w '\n' -D - -X POST -H "Content-Type: application/json" -d "{\"name\":\"DB_DATABASE\",\"value\":\"folio\"}" http://localhost:9130/_/env
-curl -w '\n' -D - -X POST -H "Content-Type: application/json" -d "{\"name\":\"DB_USERNAME\",\"value\":\"folio\"}" http://localhost:9130/_/env
-curl -w '\n' -D - -X POST -H "Content-Type: application/json" -d "{\"name\":\"DB_PASSWORD\",\"value\":\"folio123\"}" http://localhost:9130/_/env
-curl -w '\n' -D - -X POST -H "Content-Type: application/json" -d "{\"name\":\"KAFKA_HOST\",\"value\":\"<YOUR_IP_ADDRESS>\"}" http://localhost:9130/_/env
-curl -w '\n' -D - -X POST -H "Content-Type: application/json" -d "{\"name\":\"KAFKA_PORT\",\"value\":\"9092\"}" http://localhost:9130/_/env;
-curl -w '\n' -D - -X POST -H "Content-Type: application/json" -d "{\"name\":\"OKAPI_URL\",\"value\":\"http://<YOUR_IP_ADDRESS>:9130\"}" http://localhost:9130/_/env
-curl -w '\n' -D - -X POST -H "Content-Type: application/json" -d "{\"name\":\"SYSTEM_USER_PASSWORD\",\"value\":\"<YOUR_SYSTEM_USER_PASSWORD>\"}" http://localhost:9130/_/env
+curl -w '\n' -D - -X POST -H "Content-Type: application/json" -d "{\"name\":\"ELASTICSEARCH_HOST\",\"value\":\"10.9.2.85\"}" http://localhost:9130/_/env;
+curl -w '\n' -D - -X POST -H "Content-Type: application/json" -d "{\"name\":\"ELASTICSEARCH_URL\",\"value\":\"http://10.9.2.85:9200\"}" http://localhost:9130/_/env;
+curl -w '\n' -D - -X POST -H "Content-Type: application/json" -d "{\"name\":\"ELASTICSEARCH_USERNAME\",\"value\":\"elastic\"}" http://localhost:9130/_/env;
+curl -w '\n' -D - -X POST -H "Content-Type: application/json" -d "{\"name\":\"ELASTICSEARCH_PASSWORD\",\"value\":\"s3cret\"}" http://localhost:9130/_/env;
+curl -w '\n' -D - -X POST -H "Content-Type: application/json" -d "{\"name\":\"INITIAL_LANGUAGES\",\"value\":\"eng, ger, swe\"}" http://localhost:9130/_/env;
 ```
 
-**Note**: Make sure that you use your private IP for the properties **DB_HOST**, **KAFKA_HOST** and **OKAPI_URL**. 
+Change 10.9.2.85 to your local IP address. Choose a  safe password ELASTICSEARCH_PASSWORD.  You can choose up to five INITIAL_LANGUAGES. To find out the language codes, view here [mod-search: multi language search support](https://github.com/folio-org/mod-search#multi-language-search-support) .
 
-2. 
-
-### Elasticsearch support
-
-Elasticsearch support is being included in R2-2021.
-If you would like to build with ES, you have to install elasticsearch on your server and point the related modules, at least mod_pubsub and mod_search, to your Installation.
-
-Here is a prescription how to install ES under Ubuntu 18.04 : https://phoenixnap.com/kb/install-elasticsearch-ubuntu
-
-To point the modules to your Okapi installation, the environment parameters of those modules need to be set for the module/container when it spins up, 
-so it can connect to the ES instance. You can find out the env params by looking at the Overview - Metadata section of the module's page in Folio org’s Dockerhub. 
-For mod-search, this is at https://hub.docker.com/r/folioorg/mod-search.
-
-The env params need to be set in the launch descriptor of the module, before you deploy the module. The launch descriptor is a part of the module descriptor. 
-To set an env param in the launch descriptor of a module, follow the prescription described below for mod-pubsub.
-
-If you want to build without Elasticsearch, do the following:
-  cd platform-core
- - Remove @folio/inventory-es and @folio/search from stripes.config.js
- - Remove mod-search, folio_search and folio_inventory-es entries from install.json
- - Remove mod-search from okapi-install.json
- - Remove folio_inventory-es and folio_search from stripes-install.json
- - Remove @folio/inventory-es and @folio/search from package.json
-
-### Deploy mod-pubsub and configure connection to the mesasage broker Kafka
-
-mod-pubsub is the Folio module which implements a message queue. It needs to connect to the message broker Kafka which we installed above using docker-compose.
-You have to set the env params KAFKA_HOST and OKAPI_URL of mod-pubsub, so it can connect. You can do this like this:
+The Okapi environment should now look something like this:
 
 ```
-  cd ~/folio-install
-  curl -X GET -o mod-pubsub-2.3.3-module-descriptor.json -D - -w '\n' http://localhost:9130/_/proxy/modules/mod-pubsub-2.3.3
+ curl -X GET http://localhost:9130/_/env
+[ {
+  "name" : "DB_DATABASE",
+  "value" : "folio"
+}, {
+  "name" : "DB_HOST",
+  "value" : "10.9.2.62"
+}, {
+  "name" : "DB_PASSWORD",
+  "value" : "folio123"
+}, {
+  "name" : "DB_PORT",
+  "value" : "5432"
+}, {
+  "name" : "DB_USERNAME",
+  "value" : "folio"
+}, {
+  "name" : "ELASTICSEARCH_HOST",
+  "value" : "10.9.2.85"
+}, {
+  "name" : "ELASTICSEARCH_PASSWORD",
+  "value" : "s3cret"
+}, {
+  "name" : "ELASTICSEARCH_URL",
+  "value" : "http://10.9.2.85:9200"
+}, {
+  "name" : "ELASTICSEARCH_USERNAME",
+  "value" : "elastic"
+}, {
+  "name" : "HAZELCAST_FILE",
+  "value" : "/etc/folio/okapi/hazelcast.xml"
+}, {
+  "name" : "HAZELCAST_IP",
+  "value" : "10.9.2.85"
+}, {
+  "name" : "HAZELCAST_PORT",
+  "value" : "5701"
+}, {
+  "name" : "INITIAL_LANGUAGES",
+  "value" : "ger, eng, fre, spa"
+}, {
+  "name" : "KAFKA_HOST",
+  "value" : "10.9.2.85"
+}, {
+  "name" : "KAFKA_PORT",
+  "value" : "9092"
+}, {
+  "name" : "OKAPI_CLUSTERHOST",
+  "value" : "10.9.2.85"
+}, {
+  "name" : "OKAPI_URL",
+  "value" : "http://10.9.2.85:9130"
+}, {
+  "name" : "SYSTEM_USER_PASSWORD",
+  "value" : "pub-sub"
+} ]
 ```
 
-Edit the following part of pubsub-module-descriptor.json :
+If you choose a different SYSTEM_USER_PASSWORD than the default (which you should do on a production system), then you will have to change the password of the user "pub-sub" in the system to the same value. Change the password of the user pub-sub via Settings - Passwords menu. Do this **before** you re-deploy pubsub. Thus, do this **now**, as the re-deployment of pub-sub is the next step.
+
+
+2. Deploy the backend modules
+
+*Sidestep*: Look, how many containers are running already now:
+
+sudo docker ps | grep -v "^CONTAINER" | wc -l
+
+ 68 containers are running:
+ - 62 Backend Modules of R2-2021
+ - Stripes with nginx
+ - 3 Nodes Elasticsearch
+ - Kafka & Zookeeper
+
+2.1. Upgrade and enable mod-pubsub
 
 ```
-    }, {
-      "name" : "KAFKA_HOST",
-      "value" : "<YOUR_IP_ADDRESS>"
-    }, {
-      "name" : "KAFKA_PORT",
-      "value" : "9092"
-    }, {
-      "name" : "OKAPI_URL",
-      "value" : "http://<YOUR_IP_ADDRESS>:9130"
-    }, {
-      "name" : "SYSTEM_USER_PASSWORD",
-      "value" : "<YOUR_SYSTEM_USER_PASSWORD>"
-    } ],
-```
-<YOUR_SYSTEM_USER_PASSWORD> has to be the same one as we set in the Okapi environment variables above.
-
-Delete the standard module descriptor and post your own module descriptor to Okapi:
-
-```
-  curl -X DELETE -D - -w '\n' http://localhost:9130/_/proxy/modules/mod-pubsub-2.3.3
-  curl -i -w '\n' -X POST -H 'Content-type: application/json' -d @pubsub-module-descriptor.json http://localhost:9130/_/proxy/modules
+curl -w '\n' -D - -X POST -H "Content-type: application/json" -d '[ { "id" : "mod-pubsub-2.4.3", "action" : "enable" } ]' http://localhost:9130/_/proxy/tenants/diku/install?simulate=true
+  curl -w '\n' -D - -X POST -H "Content-type: application/json" -d '[ { "id" : "mod-pubsub-2.4.3", "action" : "enable" } ]' http://localhost:9130/_/proxy/tenants/diku/install?deploy=true\&preRelease=false\&tenantParameters=loadReference%3Dtrue
+HTTP/1.1 200 OK
 ```
 
+The old module instance, mod-pubsub-2.3.3, has been automatically undeployed by this operation.
 
-You have to set the KAFKA_HOST variable also in the launch descriptor of the following modules, because these modules also talk directly to Kafka:
-  - mod-data-import
-  - mod-data-export-spring
-  - mod-data-export-worker
-  - mod-ebsconet
-  - mod-inventory
-  - mod-inventory-storage
-  - mod-invoice
-  - mod-quick-marc
-  - mod-remote-storage
-  - mod-source-record-manager
-  - mod-source-record-storage 
-  - mod-feesfines (add KAFKA_HOST and KAFKA_PORT variables to the launch descriptor)
-  
-You can look up the R2-2021 module versions in okapi-install.json. 
-Apply the same steps as for the module descriptor of mod-pubsub to these modules, but change only the value of KAFKA_HOST.
+2.2 Deploy all the other backend modules
 
-3. Deploy and enable the backend modules.
+Remove mod-pubsub-2.4.3 from the list ~/platform-complete/okapi-install.json because it has already been deployed.
 
-### Deploy the backend modules
+Deploy all backend modules with this single script [deploy-all-backend-modules.sh]({{< ref "deploy-all-backend-modules.sh" >}}) . You will also need this script  [deploy-backend-module.sh]({{< ref "deploy-backend-module.sh" >}}) :
 
-Deploy the backend modules one by one. This will pull the Docker image from Docker Hub and spin up a container on your host for each backend module. 
-
-Use this script [deploy-all-backend-modules.sh]({{< ref "deploy-all-backend-modules.sh" >}}) to deploy all backend modules, one after the other, on your host:
+This will download all the necessary container images for the backend modules from Docker Hub and deploy them as containers to the local system :
 
 ```
-./deploy-all-backend-modules.sh ~/platform-core/okapi-install.json <YOUR_IP_ADDRESS>
-
+./deploy-all-backend-modules.sh ~/platform-complete/okapi-install.json <YOUR_IP_ADDRESS>
 ```
 
-Progress can be followed in the Okapi log at /var/log/folio/okapi/okapi.log
+This script will run for approx. 15 minutes. It will spin up one Docker container for each backend module using Okapi's /discovery/modules endpoint.
 
-Check, what is in your Discovery:
+You can follow the progress on the terminal screen and/or in /var/lib/folio/okapi/okapi.log .
 
-```
-curl -w '\n' -D - http://localhost:9130/_/discovery/modules | grep srvcId
-```
+Now the R3 (Kiwi) backend modules have been deployed, but have not yet been enabled for your tenant.
 
-There should be 61 modules in your Okapi discovery - those which are in okapi-install.json.
+In addition, the R2 (Juniper) containers are still running on your system. The latter are enabled. This means that, right now, the system is still in the state "R2-2021 (Juniper)", except for Okapi (but the Okapi is downward compatible to R2) and mod-pubsub.
 
-Check, what Docker containers are running on your host:
+There are 61 backend modules of R2 (all, except for mod-pubsub) and 65 backend modules of R3 running as containers on your system. Check this by typing
 
 ```
-docker ps --all | wc
+docker ps --all | grep "mod-" | wc
+    126
 ```
+*Side Remark*: 3 of the backend modules have been deployed twice in the same version, because for those backend modules, the R2 version is the same as the R3 version. These modules are:
 
-This should show the number 64 : The 61 backend modules, Kafka, Zookeeper + the header line.
+  mod-service-interaction:1.0.0
+  mod-graphql:1.9.0
+  mod-z3950-2.4.0  .
 
-Now the backend modules are deployed, but not yet enables for your tenant.
 
 
 ### Enable the backend modules for your tenant
