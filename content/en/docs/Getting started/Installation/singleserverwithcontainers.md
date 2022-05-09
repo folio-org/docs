@@ -374,11 +374,14 @@ There are 61 backend modules of R2 (all, except for mod-pubsub) and 65 backend m
 docker ps --all | grep "mod-" | wc
     126
 ```
-*Side Remark*: 3 of the backend modules have been deployed twice in the same version, because for those backend modules, the R2 version is the same as the R3 version. These modules are:
+*Side Remark*: Three of the backend modules have been deployed twice in the same version, because for those backend modules, the R2 version is the same as the R3 version. These modules are:
 
+```
   mod-service-interaction:1.0.0
   mod-graphql:1.9.0
-  mod-z3950-2.4.0  .
+  mod-z3950-2.4.0
+```
+.
 
 
 
@@ -388,8 +391,13 @@ Remove mod-pubsub-2.4.3 and okapi from ~/platform-complete/install.json because 
 
 Enable frontend and backend modules in a single post. But first, do a simulate run. Don't deploy the modules because they have already been deployed (use the parameter *deploy=false*). Load reference data of the modules, but no sample data. If you don't load reference data for the new modules, you might not be able to utilize the modules properly.
 
+First, do a simulate run (replace "diku" by the name of your tenant):
 ```
 curl -w '\n' -D - -X POST -H "Content-type: application/json" -d @/usr/folio/platform-complete/install.json http://localhost:9130/_/proxy/tenants/diku/install?simulate=true\&preRelease=false
+```
+
+Then, do enable the modules:
+```
 curl -w '\n' -D - -X POST -H "Content-type: application/json" -d @/usr/folio/platform-complete/install.json http://localhost:9130/_/proxy/tenants/diku/install?deploy=false\&preRelease=false\&tenantParameters=loadReference%3Dtrue
 ...
 HTTP/1.1 100 Continue
@@ -405,7 +413,7 @@ curl -w '\n' -D - http://localhost:9130/_/discovery/modules | grep srvcId | wc
  128
 ```
 
-The number 128 includes 5  Edge modules, also. Another important information: Get a list of modules (frontend + backend) that have now been enabled for your tenant:
+The number 128 includes 5  Edge modules. Another important information: Get a list of modules (frontend + backend) that have now been enabled for your tenant:
 
 ```
 curl -w '\n' -XGET http://localhost:9130/_/proxy/tenants/diku/modules | grep id | wc
@@ -421,7 +429,7 @@ This number is the sum of the following:
 
 These are all R3 (Kiwi) modules.
 
-The backend of the new tenant is ready.  Now, you have to set up a Stripes instance for the frontend of the tenant.
+The backend of the new tenant is ready.  Now, you have to set up a new Stripes instance for the frontend of the tenant.
 
 
 ### II.v. Build an R3-2021 FOLIO Stripes platform
@@ -471,7 +479,7 @@ server {
 <YOUR_SERVER_NAME> should be the real name of your server in your network. <YOUR_SERVER_NAME> should consist of host name plus domain name, e.g. myserv.mydomain.edu. 
 
 
-Edit the url and tenant in stripes.config.js. The url will be requested by a FOLIO client, thus a browser. Make sure that you use the public IP or domain of your serve. Use http only if you want to access your FOLIO installation only from within your network.
+Edit the url and tenant in stripes.config.js. The url will be requested by a FOLIO client, thus a browser. Make sure that you use the public IP or domain of your server. Use http only if you want to access your FOLIO installation only from within your network.
 
 ```
   edit stripes.config.js
@@ -523,13 +531,13 @@ If there should be something still running on port 80, kill these processes.
 
 Start the stripes container:
  
-  Redirect port 80 from the outside to port 80 of the docker container.
+  Redirect port 80 from the outside to port 80 of the docker container:
   
 ```
   nohup docker run -d -p 80:80 stripes
 ```
   
-Log in to your frontend: E.g., go to https://demo.folio.hbz-nrw.de/ in your browser. 
+Log in to your frontend: E.g., go to http://<YOUR_HOST_NAME>/ in your browser. 
 
   - Can you see the R3 modules in Settings - Installation details ?
 
@@ -537,7 +545,7 @@ Log in to your frontend: E.g., go to https://demo.folio.hbz-nrw.de/ in your brow
 
   - Does everything look good ?
 
-If so, remove the old stripes container: docker rm <container id of your old stripes container> .
+If so, remove the old stripes container: docker rm \<container id of your old stripes container\> .
   
 ### II.vi. Cleanup
   
@@ -545,28 +553,29 @@ Clean up. Undeploy all unused containers.
 
 In general, all R2 modules have to be removed now. But **care has to be taken** about which modules might be removed:
 
-Sometimes, R2 versions are the same as R3 versions. In this case, you have to find out which instance-ID of the module needs to be removed (if the module has been deployed twice). You can find this out via the port number (lower port numbers have been used for the R2 modules, higher numbers for the R3 modules, which have been installed later).
+Sometimes, R2 versions are the same as R3 versions. In this case, you have to find out which instance-ID of the module needs to be removed (if the module has been deployed twice). You can find this out via the port number (lower port numbers have been used for the R2 modules, higher numbers for the R3 modules, which have been installed later). If you are unsure, keep both instance-IDs of the module.
+  
 If you have more than one tenant on your server, some tenants may still need R2 modules ! Check for your supertenant; did you enable anything else than okapi for it ?
   
 #### Create a list of containers which are in your okapi discovery
   
 ```
-  curl -w '\n' -XGET http://localhost:9130/_/discovery/modules | jq '.[] | .srvcId + "/" + .instId' > dockerps.sh
+curl -w '\n' -XGET http://localhost:9130/_/discovery/modules | jq '.[] | .srvcId + "/" + .instId' > dockerps.sh
 sort dockerps.sh > dockerps.todelete.sh
-  ```
+```
   
-  This should still contain the module versions of the old release.
+This list should still contain the module versions of the old release:
 
-   => backend modules (mod-\*) of the old release (61 modules) + backend module of the new release (62 = 65 - 3 which are the same in the old release) + 5 Edge modules =128 modules.
+   => backend modules (mod-\*) of the old release (61 modules) + backend modules of the new release (62 = 65 - 3 which are the same in the old release) + 5 Edge modules =128 modules.
 
 Of those 128 modules, 58 have now to be undeployed:
-   Undeploy all R2 modules (which are still running), except for mod-service-interaction:1.0.0, mod-graphql:1.9.0, mod-z3950-2.4.0.
+   Undeploy all R2 modules (which are still running), except for mod-service-interaction:1.0.0, mod-graphql:1.9.0 and mod-z3950-2.4.0.
 
-If you have deployed mod-service-interaction:1.0.0, mod-graphql:1.9.0, mod-z3950-2.4.0 twice, you will need to undeploy 61 modules.
+If you have deployed mod-service-interaction:1.0.0, mod-graphql:1.9.0 and mod-z3950-2.4.0 twice, you will need to undeploy 61 modules.
 
 #### Compare the list with list of R3 modules
   
-  Compare  dockerps.todelete.sh with the list ~/platform-complete/okapi-install.sh (the R3 backend modules). First, sort this list:
+  Compare the list dockerps.todelete.sh with the list ~/platform-complete/okapi-install.sh (the R3 backend modules). First, sort this list:
   
   ```
   sort okapi-install.json > okapi-install.json.sorted
@@ -574,7 +583,8 @@ If you have deployed mod-service-interaction:1.0.0, mod-graphql:1.9.0, mod-z3950
   
   Now, throw out all modules which are in okapi-install.json.sorted out of the list dockerps.todelete.sh . 
 This should leave you with a list of 58 modules which are to be deleted now. If you decided to delete one of the instances of those modules which have been deployed twice (be careful about which one to delete !!!) , you should now have a list of 61 modules.
-Edit  dockerps.todelete.sh once again to make each line look like this on each line (e.g.) :
+  
+Edit  dockerps.todelete.sh once again to make each line look like this (e.g. for mod-agreements; i.e. prepend "curl -w '\n' -D - -XDELETE http://localhost:9130/_/discovery/modules/" to each line) :
   
   ```
   curl -w '\n' -D - -XDELETE http://localhost:9130/_/discovery/modules/mod-agreements-4.1.1/<instId>
@@ -582,7 +592,7 @@ Edit  dockerps.todelete.sh once again to make each line look like this on each l
   
   #### Finally, remove all unused modules
   
-  Add a line #!/bin/bash at the top of your delete script, make the script executable and then call your delete script:
+  Add a line #!/bin/bash at the top of your delete script, make the script executable and then execute your delete script:
   
   ```
    ./dockerps.todelete.sh
@@ -612,10 +622,15 @@ Compare this with the number of your running docker containers:
   The following containers are running on your system, but do not contain backend modules:
 
 5 containers with Edge modules
+  
 Stripes
+  
 3x Elasticsearch
+  
 Kafka
+  
 Zookeper
+  
 In sum, these are 11 containers without backend modules (if one doesn't count Edge modules as backend modules).
 
 Also subtract the header line (of "docker ps"), and you will arrive at 77 - 12 = 65 containers with backend modules (the figure of the first "wc").
