@@ -1,7 +1,7 @@
 ---
 title: "Inventory"
 linkTitle: "Inventory"
-date: 2022-03-21
+date: 2022-04-21
 weight: 30
 tags: ["parenttopic"]
 ---
@@ -26,6 +26,7 @@ The following are all the Inventory permissions:
 
 -   **Inventory: All permissions.** This permission allows the user to perform all actions in Inventory.
 -   **Inventory: Import single bibliographic records.** This permission allows the user to import and overlay Instance records from external sources. External sources must be configured in Settings.
+-   **Inventory: Mark items in process.** This permission allows the user to update an item record's Item status to In process.
 -   **Inventory: Mark items in process (non-requestable).** This permission allows the user to update an item record's Item status to In process (non-requestable).
 -   **Inventory: Mark items intellectual item.** This permission allows the user to update an item record's Item status to Intellectual.
 -   **Inventory: Mark items long missing.** This permission allows the user to update an item record's Item status to Long missing.
@@ -402,9 +403,9 @@ The Holdings section contains select holdings record fields. For all fields avai
 
 ### Item
 
-The Item section contains select item record fields. For all fields available in an item record, see Creating an item record.
+The Item section contains select item record fields. For all fields available in an item record, see Adding an item to a record.
 
--   **Barcode.** Generally a numerical sequence attached to the resource and validated by a barcode scanner.
+-   **Barcode.** Generally a numerical sequence attached to the resource and validated by a barcode scanner. Must be a unique value.
 -   **Material type (required).** Describes the material nature of a specific item, with the intention to permit more specific information than resource type alone. Configured in [Settings \> Inventory \> Material types](../../settings/settings_inventory/settings_inventory/#settings--inventory--material-types).
 -   **Permanent loan type (required).** The default loan type for a given item. For example, Can circulate, Course reserves, Reading room, Selected, etc. Configured in [Settings \> Inventory \> Loan types](../../settings/settings_inventory/settings_inventory/#settings--inventory--loan-types).
 -   **Item notes (required).** Any notes about the item that you want to appear to staff during check in or check out.
@@ -618,7 +619,7 @@ Receiving history is used for serials and continuing resources? Shows the materi
 -   **Source.** Name of the user who created the record.
 -   **Suppress from discovery.** If you want to suppress the record from your discovery layer, select the **Suppress from discovery** checkbox.
 -   **Item HRID.** The human readable ID, also called eye readable ID. A system-assigned sequential ID which maps to the Item ID
--   **Barcode.** Generally a numerical sequence attached to the resource and validated by a barcode scanner.
+-   **Barcode.** Generally a numerical sequence attached to the resource and validated by a barcode scanner. Must be a unique value.
 -   **Accession number.** A unique number assigned to an item in the order in which it is added to a library collection. Most libraries assign accession numbers in a continuous numerical sequence, but some use a code system to indicate type of material and/or year of accession in addition to order of accession. Also called inventar number.
 -   **Item identifier.** Item identifier number. For example, imported from the union catalogue (read only).
 -   **Former identifier.** Previous identifiers assigned to the item.
@@ -784,26 +785,25 @@ When you search for a record in Inventory, you can toggle between searching on a
 
 You can search for instance, holdings, or items by clicking on either **Instance**, **Holdings**, or **Item** in the **Search & filter** pane. The elements available for searching and filtering are different based on your selection, but the results always display instance records.
 
-To search, enter your search terms into the box and click **Search**. Select the **Keyword (title, contributor, identifier)** drop-down list to search through one of the following:
+To search, first select the record type (instance, holdings, or item); enter your search terms into the box and click **Search**. Select the **Keyword (title, contributor, identifier)** drop-down list to search through one of the following:
 
 -   **Keyword (title, contributor, identifier)**. Keyword search through title, contributor, and identifier fields.
--   **Contributor.** Contributor is a generic term for any sort of agent (author, editor, conference name, etc.). Your results depend on the word order in your search.
--   **Title (all).** Keyword search through all title fields. This includes searching the equivalent of the MARC 245 field and all subfields.
--   **Barcode.** Allows you to scan, copy/paste, or type a barcode.
--   **Identifier (all).** Searches through all identifier types (not just ISBN/ISSN).
-    -   **ISBN.** Searches the number exactly as it appears in the data. For example, if there are hyphens in the data, the hyphens must be entered in the search.
-    -   **ISBN, normalized.** Ignores hyphens, both in the data and in the search.
-    -   **ISSN.** Searches should include hyphens.
--   **Subject.** Keyword search through all subject fields. This includes Library of Congress Subjects, FAST, and other subject vocabularies, including Genre/Form terms.
+-   **Contributor.** Keyword search through all contributor fields. 
+-   **Title (all).** Keyword search through all title fields. This includes searching the equivalent of title proper, alternative titles (including uniform titles) and, series titles, but not preceding and succeeding titles.
+-   **Identifier (all).** Searches through all identifier types. Not normalized: the search may be left truncated, otherwise the entire identifier, including any prefix, must be entered.
+-   **ISBN.** Searches the number exactly as it appears in the data. For example, if there are hyphens in the data, the hyphens must be entered in the search.
+-   **ISSN.** Searches should include hyphens.
+-   **Subject.** Keyword search through all subject fields. This may include Library of Congress Subjects, FAST, and other subject vocabularies, including Genre/Form terms.
 -   **Instance HRID.** Human readable identifier for the record.
 -   **Instance UUID.** Universally unique identifier for the record.
+-   **Query search.** A search for advanced users to query by property names using CQL.
 -   **Call number, eye readable.** Requires you to enter the call number exactly as it appears in the holdings record, including punctuation.
--   **Call number, normalized.** Ignores any characters other than numbers and letters, such as punctuation and spaces.
--   **Effective call number (item) eye readable.** Requires you to enter the call number exactly as it appears in the holdings record, including the punctuation and call number prefix.
--   **Effective call number (tem), normalized.** Ignores any characters other than numbers and letters, such as punctuation and spaces.
+-   **Call number, normalized.** <i>NOT AVAILABLE IN KIWI </i>(will be available again in a subsequent release) Ignores any characters other than numbers and letters, such as punctuation and spaces.
 -   **Holdings HRID.** Human readable identifier for the record.
+-   **Barcode.** Allows you to scan, copy/paste, or type a barcode.
+-   **Effective call number (item) eye readable.** Requires you to enter the call number exactly as it appears in the holdings record, including the punctuation and call number prefix.
+-   **Effective call number (item), normalized.** <i>NOT AVAILABLE IN KIWI </i>(will be available again in a subsequent release) Ignores any characters other than numbers and letters, such as punctuation and spaces.
 -   **Item HRID.** Human readable identifier for the record.
--   **Query search.**
 
 You can also search for instance, holdings, or item records by selecting any of the filters in the **Search & filter** pane. Additionally, you can apply the filters after you perform a search to limit your results. The filters available vary depending on whether you are searching for an instance, holdings, or item record. See the sections below for more information.
 
@@ -827,7 +827,7 @@ To search for instances, holdings, or items based on their effective location, f
 
 To search for instances in a specific language, follow these steps:
 
-1.  In the **Search & filte**r pane, click **Language**.
+1.  In the **Search & filter** pane, click **Language**.
 2.  Click the drop-down list and either enter the language or select it from the list.
 3.  Repeat step 2 to add more than one language. Your search results appear in the Inventory pane.
 
@@ -835,7 +835,7 @@ To search for instances in a specific language, follow these steps:
 
 To search for instances with a specific resource type, follow these steps:
 
-1.  In the **Search & filte**r pane, click **Resource Type**.
+1.  In the **Search & filter** pane, click **Resource Type**.
 2.  Click the drop-down list and either enter the resource type or select it from the list.
 3.  Repeat step 2 to add more than one resource type. Your search results appear in the Inventory pane.
 
@@ -843,7 +843,7 @@ To search for instances with a specific resource type, follow these steps:
 
 To search for instances with a specific format, follow these steps:
 
-1.  In the **Search & filte**r pane, click **Format**.
+1.  In the **Search & filter** pane, click **Format**.
 2.  Click the drop-down list and either enter the format or select it from the list.
 3.  Repeat step 2 to add more than one format. Your search results appear in the Inventory pane.
 
@@ -851,7 +851,7 @@ To search for instances with a specific format, follow these steps:
 
 To search for instances based on their mode of issuance, follow these steps:
 
-1.  In the **Search & filte**r pane, click **Mode of issuance**.
+1.  In the **Search & filter** pane, click **Mode of issuance**.
 2.  Click the drop-down list and either enter the mode or select it from the list.
 3.  Repeat step 2 to add more than one mode. Your search results appear in the Inventory pane.
 
@@ -859,7 +859,7 @@ To search for instances based on their mode of issuance, follow these steps:
 
 To search for instances based on their nature of content, follow these steps:
 
-1.  In the **Search & filte**r pane, click **Nature of content**.
+1.  In the **Search & filter** pane, click **Nature of content**.
 2.  Click the drop-down list and either enter the nature of content or select it from the list.
 3.  Repeat step 2 to add more than one nature of content. Your search results appear in the Inventory pane.
 
@@ -900,11 +900,19 @@ To search for instances based on their source, in the **Search & filter** pane, 
 -   **FOLIO.** The instance was created in FOLIO.
 -   **MARC.** The instance was created by uploading MARC records.
 
+### Tags
+
+To search for instances based on assigned tags, follow these steps: 
+
+1.  In the **Search & filter** pane, click **Tags**.
+2.  Click the drop-down list and either enter the tag or select it from the list.
+3.  Repeat step 2 to add more than one tag. Your search results appear in the Inventory pane.
+
 ### Holdings permanent location
 
 To search for holdings or items based on their holdings permanent location, follow these steps:
 
-1.  In the **Search & filte**r pane, click **Holdings permanent location**.
+1.  In the **Search & filter** pane, click **Holdings permanent location**.
 2.  Click the drop-down list and either enter the holdings permanent location or select it from the list.
 3.  Repeat step 2 to add more than one holdings permanent location. Your search results appear in the Inventory pane.
 
@@ -920,7 +928,7 @@ To search for items based on their item status, follow these steps:
 
 To search for items based on their material type, follow these steps:
 
-1.  In the **Search & filte**r pane, click **Material type**.
+1.  In the **Search & filter** pane, click **Material type**.
 2.  Click the drop-down list and either enter the material type or select it from the list.
 3.  Repeat step 2 to add more than one material type. Your search results appear in the Inventory pane.
 
