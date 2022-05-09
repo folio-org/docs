@@ -1,4 +1,3 @@
-
 ---
 title: "Circulation log"
 linkTitle: "Circulation log"

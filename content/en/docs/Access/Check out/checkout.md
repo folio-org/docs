@@ -1,4 +1,3 @@
-
 ---
 title: "Check out"
 linkTitle: "Check out"

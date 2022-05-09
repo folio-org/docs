@@ -2,7 +2,6 @@
 title: "Fees and fines"
 linkTitle: "Fees and fines"
 weight: 10
-description: >
 tags: ["subtopic"]
 ---
 
