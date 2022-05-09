@@ -45,7 +45,7 @@ sudo reboot
 ```
 Check if all Services have been restarted after reboot: <em>Okapi, postgres, docker, the docker containers</em> (do: docker ps --all | more ). <em>Stripes and nginx</em> (you have started these in one container if you have followed the Juniper docs. Re-start this container).
 
-The following actions in this section have been taken from the [Kiwi Release Notes](https://wiki.folio.org/display/REL/Kiwi+%28R3+2021%29+Release+Notes). I was able to do an upgrade with only these actions taken. There might be more actions that you might need to take for the upgrade of your FOLIO installation. If you are unsure what other steps you might need to take, study the [Release Notes](https://wiki.folio.org/display/REL/Kiwi+%28R3+2021%29+Release+Notes).
+The following actions in this section have been taken from the [Kiwi Release Notes](https://wiki.folio.org/display/REL/Kiwi+%28R3+2021%29+Release+Notes). There might be more actions that you might need to take for the upgrade of your FOLIO installation. If you are unsure what other steps you might need to take, study the [Release Notes](https://wiki.folio.org/display/REL/Kiwi+%28R3+2021%29+Release+Notes).
 
 ### i. Change all duplicate item barcodes
 
@@ -62,7 +62,7 @@ HAVING count(*) > 1;
 -------
 (0 rows)
 ```
-Use Inventory Item Barcode search to edit the duplicate barcode.
+Change "diku" to the name of your tenant. Use Inventory Item Barcode search to edit the duplicate barcode.
 
 ### ii. Change all holdings sources to FOLIO
 
@@ -86,12 +86,15 @@ Replace ${tenant} by the name of your tenant. On a standard (test or demo) insta
 If the holdings source is anything other than FOLIO or MARC (e.g. -), then change it to FOLIO. 
 
 ### iii. Install Elasticsearch
-If you have not already done so in your Juniper Install (it was optional there) install Elasticsearch now in your running Juniper instance. Follow this guide to install a 3-node Elasticsearch cluster on a Single Server: [Installation of Elasticsearch](https://wiki.folio.org/display/SYSOPS/Installation+of+Elasticsearch). This also install mod-search and the frontend modules  folio_inventory-es and folio_search in Juniper.
+If you have not already done so in your Juniper Install (it was optional there) install Elasticsearch now in your running Juniper instance. Follow this guide to install a 3-node Elasticsearch cluster on a Single Server: [Installation of Elasticsearch](https://wiki.folio.org/display/SYSOPS/Installation+of+Elasticsearch). This will also install mod-search and the frontend modules  folio_inventory-es and folio_search in Juniper.
 
 ### iv.Install a minIO-Server
 If you want to use Data Export, you either have to use Amazon S3 or a minIO server.
+
 So, for anyone who plans to use MinIO server instead of Amazon S3:
+
 External storage for generated MARC records should be configured to MinIO server by changing ENV variable AWS_URL.
+
 Installation of a MinIO server is not being covered in this documentation. Refer to:
 [MinIO Deployment and Management](https://docs.min.io/minio/baremetal/installation/deployment-and-management.html#minio-installation) ,
 [Deploy MinIO Standalone](https://docs.min.io/minio/baremetal/installation/deploy-minio-standalone.html#deploy-minio-standalone-container) .
@@ -106,15 +109,13 @@ This documentation assumes that you have Juniper Hotfix#3 running. Upgrade proce
 #### Install and configure Okapi
 This needs to be done first, otherwise Okapi can not pull the new modules.
 
-Read the Okapi Release Version from the platform-\*/install.json file.
-
-In this installation guide, the ‘platform-core’ repository will be used.  If you would like to install ‘platform-complete’ you should replace every mention of platform-core with platform-complete in the instructions.
+Read the Okapi Release Version from the platform-complete/install.json file.
 
 - Clone the repository, change into that directory: 
 
 ```
-git clone https://github.com/folio-org/platform-core
-cd platform-core
+git clone https://github.com/folio-org/platform-complete
+cd platform-complete
 git fetch
 ```
 There is a new Branch R3-2021-hotfix-2. We will deploy this version.
@@ -149,7 +150,7 @@ sudo apt-get -y --allow-change-held-packages install okapi=4.11.1-1
 
 #### Start Okapi in cluster mode
 
-I install Okapi in cluster mode, because this is the appropriate way to install it in a production environment (although it is being done on a single server here, this procedure could also be applied to a multi-server environment). Strictly speaking, on a single server, it is not necessary to deploy Okapi in cluster mode. So you might want to stay with the default role "dev", instead.
+I install Okapi in cluster mode, because this is the appropriate way to install it in a production environment (although it is being done on a single server here, this procedure could also be applied to a multi-server environment). Strictly speaking, on a single server, it is not necessary to deploy Okapi in cluster mode. So you might want to stay with the default role "dev", instead of "cluster".
 
 Change the port range in okapi.conf . Compared to Juniper, this needs to be done now, because Elasticsearch will occupy ports 9200 and 9300 (or is already occupying them) :
 
@@ -161,8 +162,8 @@ vim /etc/folio/okapi/okapi.conf
       - cluster_port="9001"
       - port_start="9301"
       - port_end="9520"
-      - host="10.9.2.85"  # change to your host's IP address
-      - nodename="10.9.2.85"
+      - host="10.X.X.X"  # change to your host's IP address
+      - nodename="10.X.X.X"
 ```
 
 You can find out the node name that Okapi uses like this: curl -X GET http://localhost:9130/_/discovery/nodes . You have to use that value if you deploy Okapi in  cluster mode. Not your host name and not "localhost".
@@ -173,9 +174,9 @@ Edit interface and members in hazelcast.xml (if you deploy Okapi in cluster mode
 vim /etc/folio/okapi/hazelcast.xml
 ...
 <tcp-ip enabled="true">
-                <interface>10.9.2.85</interface>
+                <interface>10.X.X.X</interface>  # replace by your host's IP address
                 <member-list>
-                    <member>10.9.2.85</member>
+                    <member>10.X.X.X</member>    # replace by your host's IP address
                 </member-list>
 </tcp-ip>
 ```
@@ -183,8 +184,8 @@ vim /etc/folio/okapi/hazelcast.xml
 Send new Environment Variables for Hazelcast to Okapi (in case you haven't been using Hazelcast so far):
 
 ```
-curl -w '\n' -D - -X POST -H "Content-Type: application/json" -d "{\"name\":\"OKAPI_CLUSTERHOST\",\"value\":\"10.9.2.85\"}" http://localhost:9130/_/env
-curl -w '\n' -D - -X POST -H "Content-Type: application/json" -d "{\"name\":\"HAZELCAST_IP\",\"value\":\"10.9.2.85\"}" http://localhost:9130/_/env
+curl -w '\n' -D - -X POST -H "Content-Type: application/json" -d "{\"name\":\"OKAPI_CLUSTERHOST\",\"value\":\"10.X.X.X\"}" http://localhost:9130/_/env
+curl -w '\n' -D - -X POST -H "Content-Type: application/json" -d "{\"name\":\"HAZELCAST_IP\",\"value\":\"10.X.X.X\"}" http://localhost:9130/_/env
 curl -w '\n' -D - -X POST -H "Content-Type: application/json" -d "{\"name\":\"HAZELCAST_PORT\",\"value\":\"5701\"}" http://localhost:9130/_/env
 curl -w '\n' -D - -X POST -H "Content-Type: application/json" -d "{\"name\":\"HAZELCAST_FILE\",\"value\":\"/etc/folio/okapi/hazelcast.xml\"}" http://localhost:9130/_/env
 ```
@@ -220,9 +221,9 @@ curl -w '\n' -XGET http://localhost:9130/_/proxy/tenants/diku/modules
 } ]
 ```
 
-You should see 9 Edge modules (Starting from Juniper HF#3; if you have started from Juniper-GA, you will see only 8 Edge modules), 52 Frontend modules (folio_\*), 62 Backend modules (mod-\*) (These are the modules of Juniper, platform-complete) + the Kiwi-Version of Okapi (4.11.1).
+You should see 9 Edge modules (if you have started from Juniper HF#3; if you have started from Juniper-GA, you will see only 8 Edge modules), 52 Frontend modules (folio_\*), 62 Backend modules (mod-\*) (These are the modules of Juniper, platform-complete) + the Kiwi-Version of Okapi (4.11.1).
 
-### II.ii. Pull module descriptors from the central registry.
+### II.ii. Pull module descriptors from the central registry
 
 A module descriptor declares the basic module metadata (id, name, etc.), specifies the module's dependencies on other modules (interface identifiers to be precise), and reports all "provided" interfaces. As part of the continuous integration process, each Module Descriptor  is published to the FOLIO Registry at https://folio-registry.dev.folio.org.
 
@@ -245,14 +246,14 @@ Okapi log should show something like
 
 1.  Post data source information to the Okapi environment for use by deployed modules
 ```
-curl -w '\n' -D - -X POST -H "Content-Type: application/json" -d "{\"name\":\"ELASTICSEARCH_HOST\",\"value\":\"10.9.2.85\"}" http://localhost:9130/_/env;
-curl -w '\n' -D - -X POST -H "Content-Type: application/json" -d "{\"name\":\"ELASTICSEARCH_URL\",\"value\":\"http://10.9.2.85:9200\"}" http://localhost:9130/_/env;
+curl -w '\n' -D - -X POST -H "Content-Type: application/json" -d "{\"name\":\"ELASTICSEARCH_HOST\",\"value\":\"10.X.X.X\"}" http://localhost:9130/_/env;
+curl -w '\n' -D - -X POST -H "Content-Type: application/json" -d "{\"name\":\"ELASTICSEARCH_URL\",\"value\":\"http://10.X.X.X:9200\"}" http://localhost:9130/_/env;
 curl -w '\n' -D - -X POST -H "Content-Type: application/json" -d "{\"name\":\"ELASTICSEARCH_USERNAME\",\"value\":\"elastic\"}" http://localhost:9130/_/env;
-curl -w '\n' -D - -X POST -H "Content-Type: application/json" -d "{\"name\":\"ELASTICSEARCH_PASSWORD\",\"value\":\"s3cret\"}" http://localhost:9130/_/env;
-curl -w '\n' -D - -X POST -H "Content-Type: application/json" -d "{\"name\":\"INITIAL_LANGUAGES\",\"value\":\"eng, ger, swe\"}" http://localhost:9130/_/env;
+curl -w '\n' -D - -X POST -H "Content-Type: application/json" -d "{\"name\":\"ELASTICSEARCH_PASSWORD\",\"value\":\"s3cret\"}" http://localhost:9130/_/env;  # Use the password that you have chosen for Elasticsearch above !!
+curl -w '\n' -D - -X POST -H "Content-Type: application/json" -d "{\"name\":\"INITIAL_LANGUAGES\",\"value\":\"eng, ger, swe\"}" http://localhost:9130/_/env;  # replace by the language codes for the languages that you need to support
 ```
 
-Change 10.9.2.85 to your local IP address. Choose a  safe password ELASTICSEARCH_PASSWORD.  You can choose up to five INITIAL_LANGUAGES. To find out the language codes, view here [mod-search: multi language search support](https://github.com/folio-org/mod-search#multi-language-search-support) .
+Change 10.X.X.X to your local IP address. You can choose up to five INITIAL_LANGUAGES. To find out the language codes, view here [mod-search: multi language search support](https://github.com/folio-org/mod-search#multi-language-search-support) .
 
 The Okapi environment should now look something like this:
 
@@ -263,7 +264,7 @@ The Okapi environment should now look something like this:
   "value" : "folio"
 }, {
   "name" : "DB_HOST",
-  "value" : "10.9.2.62"
+  "value" : "10.X.X:X"
 }, {
   "name" : "DB_PASSWORD",
   "value" : "folio123"
@@ -275,13 +276,13 @@ The Okapi environment should now look something like this:
   "value" : "folio"
 }, {
   "name" : "ELASTICSEARCH_HOST",
-  "value" : "10.9.2.85"
+  "value" : "10.X.X.X"
 }, {
   "name" : "ELASTICSEARCH_PASSWORD",
   "value" : "s3cret"
 }, {
   "name" : "ELASTICSEARCH_URL",
-  "value" : "http://10.9.2.85:9200"
+  "value" : "http://10.X.X.X:9200"
 }, {
   "name" : "ELASTICSEARCH_USERNAME",
   "value" : "elastic"
@@ -290,32 +291,32 @@ The Okapi environment should now look something like this:
   "value" : "/etc/folio/okapi/hazelcast.xml"
 }, {
   "name" : "HAZELCAST_IP",
-  "value" : "10.9.2.85"
+  "value" : "10.X.X.X"
 }, {
   "name" : "HAZELCAST_PORT",
   "value" : "5701"
 }, {
   "name" : "INITIAL_LANGUAGES",
-  "value" : "ger, eng, fre, spa"
+  "value" : "eng, ger, swe"
 }, {
   "name" : "KAFKA_HOST",
-  "value" : "10.9.2.85"
+  "value" : "10.X.X.X"
 }, {
   "name" : "KAFKA_PORT",
   "value" : "9092"
 }, {
   "name" : "OKAPI_CLUSTERHOST",
-  "value" : "10.9.2.85"
+  "value" : "10.X.X.X"
 }, {
   "name" : "OKAPI_URL",
-  "value" : "http://10.9.2.85:9130"
+  "value" : "http://10.X.X.X:9130"
 }, {
   "name" : "SYSTEM_USER_PASSWORD",
   "value" : "pub-sub"
 } ]
 ```
 
-If you choose a different SYSTEM_USER_PASSWORD than the default (which you should do on a production system), then you will have to change the password of the user "pub-sub" in the system to the same value. Change the password of the user pub-sub via Settings - Passwords menu. Do this **before** you re-deploy pubsub. Thus, do this **now**, as the re-deployment of pub-sub is the next step.
+If you chose a different SYSTEM_USER_PASSWORD than the default (which you should do on a production system), then you will have to change the password of the user "pub-sub" in the system to the same value. Change the password of the user pub-sub via Settings - Passwords menu. Do this **before** you re-deploy pubsub. Thus, do this **now**, as the re-deployment of pub-sub is the next step.
 
 
 2. Deploy the backend modules
@@ -332,9 +333,16 @@ sudo docker ps | grep -v "^CONTAINER" | wc -l
 
 2.1. Upgrade and enable mod-pubsub
 
+First do a simulation run:
+
 ```
 curl -w '\n' -D - -X POST -H "Content-type: application/json" -d '[ { "id" : "mod-pubsub-2.4.3", "action" : "enable" } ]' http://localhost:9130/_/proxy/tenants/diku/install?simulate=true
-  curl -w '\n' -D - -X POST -H "Content-type: application/json" -d '[ { "id" : "mod-pubsub-2.4.3", "action" : "enable" } ]' http://localhost:9130/_/proxy/tenants/diku/install?deploy=true\&preRelease=false\&tenantParameters=loadReference%3Dtrue
+```
+
+The deploy the module and enable it for the tenant (replace "diku" by the name of your tenant):
+
+```
+curl -w '\n' -D - -X POST -H "Content-type: application/json" -d '[ { "id" : "mod-pubsub-2.4.3", "action" : "enable" } ]' http://localhost:9130/_/proxy/tenants/diku/install?deploy=true\&preRelease=false\&tenantParameters=loadReference%3Dtrue
 HTTP/1.1 200 OK
 ```
 
@@ -610,7 +618,7 @@ Kafka
 Zookeper
 In sum, these are 11 containers without backend modules (if one doesn't count Edge modules as backend modules).
 
-Also subtract the header line (of "docker ps"), et voilà on arrive à 77 - 12 = 65 containers with backend modules (the figure of the first wc).
+Also subtract the header line (of "docker ps"), and you will arrive at 77 - 12 = 65 containers with backend modules (the figure of the first "wc").
 
 C'EST FINI ! 
 
