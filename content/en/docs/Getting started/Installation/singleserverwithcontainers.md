@@ -34,7 +34,7 @@ There are some changes in the idea of this documentation as compared to the docu
 | CPU             | 8                       |
 | HD              | 350 GB SSD              |
 
-## Before the Upgrade
+## I. Before the Upgrade
 
 First do Ubuntu Updates & Upgrades
   
@@ -86,168 +86,130 @@ Replace ${tenant} by the name of your tenant. On a standard (test or demo) insta
 If the holdings source is anything other than FOLIO or MARC (e.g. -), then change it to FOLIO. 
 
 ### iii. Install Elasticsearch
-- hier weiter -
+If you have not already done so in your Juniper Install (it was optional there) install Elasticsearch now in your running Juniper instance. Follow this guide to install a 3-node Elasticsearch cluster on a Single Server: [Installation of Elasticsearch](https://wiki.folio.org/display/SYSOPS/Installation+of+Elasticsearch). This also install mod-search and the frontend modules  folio_inventory-es and folio_search in Juniper.
 
-## Installing Okapi
+### iv.Install a minIO-Server
+If you want to use Data Export, you either have to use Amazon S3 or a minIO server.
+So, for anyone who plans to use MinIO server instead of Amazon S3:
+External storage for generated MARC records should be configured to MinIO server by changing ENV variable AWS_URL.
+Installation of a MinIO server is not being covered in this documentation. Refer to:
+[MinIO Deployment and Management](https://docs.min.io/minio/baremetal/installation/deployment-and-management.html#minio-installation) ,
+[Deploy MinIO Standalone](https://docs.min.io/minio/baremetal/installation/deploy-minio-standalone.html#deploy-minio-standalone-container) .
 
-### Okapi requirements
+### v. More preparatory steps
+There might be more preparatory steps that you need to take for your installation. If you are unsure what other steps you might need to take, study the [Kiwi Release Notes](https://wiki.folio.org/display/REL/Kiwi+%28R3+2021%29+Release+Notes).
 
-1. Update the APT cache.
+## II. Main Processing: Upgrade Juniper => Kiwi 
+This documentation assumes that you have Juniper Hotfix#3 running. Upgrade procedures for other Hotfixes or the GA Release might vary slightly. In particular, if this documentation refers to Juniper Release module versions, check if you have exactly that version running and if not, use the version that you had deployed.
 
-```
-sudo apt update
-```
+### II.i. Upgrade the Okapi Version / Restart Okapi
+#### Install and configure Okapi
+This needs to be done first, otherwise Okapi can not pull the new modules.
 
-2. Install Java 11 and verify that Java 11 is the system default.
-```
-sudo apt -y install openjdk-11-jdk
-sudo update-java-alternatives --jre-headless --jre --set java-1.11.0-openjdk-amd64
-```
+Read the Okapi Release Version from the platform-\*/install.json file.
 
-3. Import the PostgreSQL signing key, add the PostgreSQL apt repository and install PostgreSQL.
-```
-wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
-sudo add-apt-repository "deb http://apt.postgresql.org/pub/repos/apt/ focal-pgdg main"
-sudo apt update
-sudo apt -y install postgresql-12 postgresql-client-12 postgresql-contrib-12 libpq-dev
-```
+In this installation guide, the ‘platform-core’ repository will be used.  If you would like to install ‘platform-complete’ you should replace every mention of platform-core with platform-complete in the instructions.
 
-4. Configure PostgreSQL to listen on all interfaces and allow connections from all addresses (to allow Docker connections).
-
-* Edit the file **/etc/postgresql/12/main/postgresql.conf** to add line **listen_addresses = '*'** in the "Connection Settings" section.
-* In the same file, increase **max_connections** (e.g. to 500)
-* Edit the file **/etc/postgresql/12/main/pg_hba.conf** to add line **host all all 0.0.0.0/0 md5**
-* Restart PostgreSQL with command **sudo systemctl restart postgresql**
-
-5. Import the Docker signing key, add the Docker apt repository and install the Docker engine.
-```
-sudo apt -y install apt-transport-https ca-certificates gnupg-agent software-properties-common
-wget --quiet -O - https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-sudo add-apt-repository "deb https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
-sudo apt update
-sudo apt -y install docker-ce docker-ce-cli containerd.io
-```
-
-6. Configure Docker engine to listen on network socket.
-
-- Create a configuration folder for Docker if it does not exist.  
+- Clone the repository, change into that directory: 
 
 ```
-sudo mkdir -p /etc/systemd/system/docker.service.d
+git clone https://github.com/folio-org/platform-core
+cd platform-core
+git fetch
 ```
-
-- Create a configuration file **/etc/systemd/system/docker.service.d/docker-opts.conf** with the following content.
-
-```
-[Service]
-ExecStart=
-ExecStart=/usr/bin/dockerd -H fd:// -H tcp://127.0.0.1:4243
-```
-
-- Restart Docker.
+There is a new Branch R3-2021-hotfix-2. We will deploy this version.
+Check out this Branch.
+Stash local changes. This should only pertain to stripes.config.js .
+Discard any changes which you might have made in Juniper on install.json etc.:
 
 ```
-sudo systemctl daemon-reload
-sudo systemctl restart docker
+git restore install.json
+git restore okapi-install.json
+git restore stripes-install.json
+git restore package.json
+ 
+git stash save
+git checkout master
+git pull
+git checkout R3-2021-hotfix-2
+git stash pop
 ```
 
-7. Install docker-compose.
+Read  the R3 Okapi version from install.json: **okapi-4.11.1**
 
-Follow the instructions from official documentation for [docker](https://docs.docker.com/compose/install/). The instructions may vary depending on the architecture and operating system of your server, but in most cases the following commands will work.
-
-```
-sudo curl -L \
-  "https://github.com/docker/compose/releases/download/1.27.4/docker-compose-$(uname -s)-$(uname -m)" \
-  -o /usr/local/bin/docker-compose
-sudo chmod +x /usr/local/bin/docker-compose
-```
-
-8. Install Apache Kafka and Apache ZooKeeper.  Apache Kafka and Apache ZooKeeper are required by FOLIO [mod-pubsub](https://github.com/folio-org/mod-pubsub).  Both Kafka and ZoopKeepr are installed below using docker-compose.
-
-Take into account that you have to change the **KAFKA_ADVERTISED_LISTENERS** value for the private IP of your server, instead of 10.0.2.15 for a Vagrant box.
+Fetch Okapi as a Debian package from repository.folio.org . 
+Import the FOLIO signing key, add the FOLIO apt repository, install okapi (of this release):
 
 ```
-mkdir ~/folio-install
-cd folio-install
-vim docker-compose-kafka-zk.yml
+wget --quiet -O - https://repository.folio.org/packages/debian/folio-apt-archive-key.asc | sudo apt-key add -
+sudo add-apt-repository "deb https://repository.folio.org/packages/ubuntu focal/"
+sudo apt-get update
+sudo apt-get -y --allow-change-held-packages install okapi=4.11.1-1
 ```
 
-Insert this content into the file. Change the IP Address in KAFKA_ADVERTISED_LISTENERS to the local IP of your server on which you run Kafka:
-```
-version: '2'
-services:
-  zookeeper:
-    image: wurstmeister/zookeeper
-    container_name: zookeeper
-    restart: always
-    ports:
-      - "2181:2181"
-  kafka:
-    image: wurstmeister/kafka
-    container_name: kafka
-    restart: always
-    ports:
-      - "9092:9092"
-      - "29092:29092"
-    environment:
-      KAFKA_LISTENERS: INTERNAL://:9092,LOCAL://:29092
-      KAFKA_ADVERTISED_LISTENERS: INTERNAL://<YOUR_IP_ADDRESS>:9092,LOCAL://localhost:29092
-      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: LOCAL:PLAINTEXT,INTERNAL:PLAINTEXT
-      KAFKA_INTER_BROKER_LISTENER_NAME: INTERNAL
-      KAFKA_AUTO_CREATE_TOPICS_ENABLE: "true"
-      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
-      KAFKA_BROKER_ID: 1
-      KAFKA_LOG_RETENTION_BYTES: -1
-      KAFKA_LOG_RETENTION_HOURS: -1
-```
+#### Start Okapi in cluster mode
 
-**Note**: The IP address <YOUR_IP_ADDRESS> should match the private IP of your server.  This IP address should be reachable from Docker containers.  Therefore, you can not use localhost.  You can use the /**ifconfig** command in order to determine the private IP. 
+I install Okapi in cluster mode, because this is the appropriate way to install it in a production environment (although it is being done on a single server here, this procedure could also be applied to a multi-server environment). Strictly speaking, on a single server, it is not necessary to deploy Okapi in cluster mode. So you might want to stay with the default role "dev", instead.
+
+Change the port range in okapi.conf . Compared to Juniper, this needs to be done now, because Elasticsearch will occupy ports 9200 and 9300 (or is already occupying them) :
 
 ```
-sudo mkdir /opt/kafka-zk
-sudo cp ~/folio-install/docker-compose-kafka-zk.yml /opt/kafka-zk/docker-compose.yml
-cd /opt/kafka-zk
-sudo docker-compose up -d
+vim /etc/folio/okapi/okapi.conf
+# then change the following lines to:
+      - role="cluster"
+      - cluster_config="-hazelcast-config-file /etc/folio/okapi/hazelcast.xml"
+      - cluster_port="9001"
+      - port_start="9301"
+      - port_end="9520"
+      - host="10.9.2.85"  # change to your host's IP address
+      - nodename="10.9.2.85"
 ```
 
-### Create a database and role for Okapi
+You can find out the node name that Okapi uses like this: curl -X GET http://localhost:9130/_/discovery/nodes . You have to use that value if you deploy Okapi in  cluster mode. Not your host name and not "localhost".
 
-You will need to create one database in PostgreSQL to persist the Okapi configuration.
-
-1. Log into the PostgreSQL server as a superuser.
+Edit interface and members in hazelcast.xml (if you deploy Okapi in cluster mode). If you run Okapi on a single server, this is your local IP address. 
 
 ```
-sudo su -c psql postgres postgres
+vim /etc/folio/okapi/hazelcast.xml
+...
+<tcp-ip enabled="true">
+                <interface>10.9.2.85</interface>
+                <member-list>
+                    <member>10.9.2.85</member>
+                </member-list>
+</tcp-ip>
 ```
 
-2. Create a database role for Okapi and a database to persist Okapi configuration.
-```
-CREATE ROLE okapi WITH PASSWORD 'okapi25' LOGIN CREATEDB;
-CREATE DATABASE okapi WITH OWNER okapi;
-```
-
-3. Create a database role and database to persist tenant data.
+Send new Environment Variables for Hazelcast to Okapi (in case you haven't been using Hazelcast so far):
 
 ```
-CREATE ROLE folio WITH PASSWORD 'folio123' LOGIN SUPERUSER;
-CREATE DATABASE folio WITH OWNER folio;
+curl -w '\n' -D - -X POST -H "Content-Type: application/json" -d "{\"name\":\"OKAPI_CLUSTERHOST\",\"value\":\"10.9.2.85\"}" http://localhost:9130/_/env
+curl -w '\n' -D - -X POST -H "Content-Type: application/json" -d "{\"name\":\"HAZELCAST_IP\",\"value\":\"10.9.2.85\"}" http://localhost:9130/_/env
+curl -w '\n' -D - -X POST -H "Content-Type: application/json" -d "{\"name\":\"HAZELCAST_PORT\",\"value\":\"5701\"}" http://localhost:9130/_/env
+curl -w '\n' -D - -X POST -H "Content-Type: application/json" -d "{\"name\":\"HAZELCAST_FILE\",\"value\":\"/etc/folio/okapi/hazelcast.xml\"}" http://localhost:9130/_/env
 ```
 
-4. Exit psql with **\q** command
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ### Install and configure Okapi
 
 Once you have installed the requirements for Okapi and created a database, you can proceed with the installation.  Okapi is available as a DEB package that can be easily installed in Debian-based operating systems. You only need to add the official APT repository to your server.
 
-1. Import the FOLIO signing key, add the FOLIO apt repository and install okapi.
-
-```
-wget --quiet -O - https://repository.folio.org/packages/debian/folio-apt-archive-key.asc | sudo apt-key add -
-sudo add-apt-repository "deb https://repository.folio.org/packages/ubuntu focal/"
-sudo apt update
-sudo apt-get -y --allow-change-held-packages install okapi=4.8.2-1 # R2-2021 Okapi version
-sudo apt-mark hold okapi
-```
+1.
 
 Please note that the R2-2021 FOLIO release version of Okapi is 4.8.2-1.  If you do not explicitly set the Okapi version, you will install the latest Okapi release.  There is some risk with installing the latest Okapi release.  The latest release may not have been tested with the rest of the components in the official release.
 
@@ -342,23 +304,7 @@ curl -w '\n' -D - -X POST -H "Content-Type: application/json" -d "{\"name\":\"SY
 
 **Note**: Make sure that you use your private IP for the properties **DB_HOST**, **KAFKA_HOST** and **OKAPI_URL**. 
 
-2. Decide if you would like to use platform-core or platform-complete for your tenant and clone the repository.  The tenant is now ready to add some Apps.
-
-The App installation process is similar for platform-core and platform-complete.  You have to clone one of these github repositories: https://github.com/folio-org/platform-core or https://github.com/folio-org/platform-complete.
-
-In this installation guide, the ‘platform-core’ repository will be used.  If you would like to install ‘platform-complete’ you should replace every mention of platform-core with platform-complete in the instructions.
-
-- Clone the repository
-
-```
-git clone https://github.com/folio-org/platform-core
-cd platform-core
-```
-- Checkout a stable branch of the repository
-
-```
-git checkout R2-2021-GA
-```
+2. 
 
 ### Elasticsearch support
 
