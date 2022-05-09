@@ -1,4 +1,3 @@
-
 ---
 title: "Requests"
 linkTitle: "Requests"
@@ -185,7 +184,7 @@ Some libraries store items at a remote storage facility that is not on campus. O
 
 If your library integrates FOLIO with a remote storage system, you will be able to request items from remote storage through the FOLIO Requests app. The basic workflows in the Requests app will be the same as for on-campus items.
 
-For more information on FOLIO’s remote storage functionality, see [the Settings documentation for Remote Storage.]({{< ref “/remotestorage.md” >”}})
+For more information on FOLIO’s remote storage functionality, see [the Settings documentation for Remote Storage.]({{< ref "/remotestorage.md" >}})
 
 ## Processing delivery requests
 
