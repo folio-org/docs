@@ -408,7 +408,7 @@ Lost item fee policies determine when overdue items automatically age to lost (t
 9. Enter a **Lost item processing fee**. This is an additional charge that will be added to the charge amount for the item when billed to the patron.
 10. Select whether to **Charge lost item processing fee if item declared lost by patron**.
 11. Select whether to **Charge lost item processing fee if item aged to lost by system**.
-12.  Enter an amount of time **For lost items not charged a fee/fine, close the loan after**.
+12. Enter an amount of time **For lost items not charged a fee/fine, close the loan after**. (This setting applies only to **Actual cost** lost item fee/fines, which is not yet implemented.)
 13. Select whether **If lost item returned, remove lost item processing fee**.
 14. Select whether to charge overdue fines **If lost item returned or renewed**.
 15. Select whether **Replacement allowed**.
