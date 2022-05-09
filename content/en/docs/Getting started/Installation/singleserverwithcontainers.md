@@ -374,54 +374,64 @@ docker ps --all | grep "mod-" | wc
 
 
 
-### Enable the backend modules for your tenant
+## II.iv. Enable the modules for your tenant
 
-Post the list of backend modules to Okapi to enable them for your tenant.  Also, you can set the (tenantParameters)[https://github.com/folio-org/okapi/blob/master/doc/guide.md#install-modules-per-tenant] to load their sample and reference data.
+Remove mod-pubsub-2.4.3 and okapi from ~/platform-complete/install.json because they have already been enabled.
 
-First do a simulation run:
-
-```
-  curl -w '\n' -D - -X POST -H "Content-type: application/json" -d @$HOME/platform-core/okapi-install.json http://localhost:9130/_/proxy/tenants/diku/install?simulate=true\&preRelease=false
-```
-
-**Note**: You will have to replace ‘diku’ with the id of your tenant.
-
-Decide whether you want to load a set of sample data (inventory: bibs, holdings and items) or not. If you want to load sample data, then change the value of "loadSample" from "false" to "true" in the following command line. Then execute this command line:
+Enable frontend and backend modules in a single post. But first, do a simulate run. Don't deploy the modules because they have already been deployed (use the parameter *deploy=false*). Load reference data of the modules, but no sample data. If you don't load reference data for the new modules, you might not be able to utilize the modules properly.
 
 ```
-  curl -w '\n' -D - -X POST -H "Content-type: application/json" -d @$HOME/platform-core/okapi-install.json http://localhost:9130/_/proxy/tenants/diku/install?deploy=false\&preRelease=false\&tenantParameters=loadReference%3Dtrue%2CloadSample%3Dfalse
+curl -w '\n' -D - -X POST -H "Content-type: application/json" -d @/usr/folio/platform-complete/install.json http://localhost:9130/_/proxy/tenants/diku/install?simulate=true\&preRelease=false
+curl -w '\n' -D - -X POST -H "Content-type: application/json" -d @/usr/folio/platform-complete/install.json http://localhost:9130/_/proxy/tenants/diku/install?deploy=false\&preRelease=false\&tenantParameters=loadReference%3Dtrue
+...
+HTTP/1.1 100 Continue
+ 
+HTTP/1.1 200 OK
 ```
+*Side Remark*: folio_inventory-es-6.4.0, a frontend module POC for using mod-inventory with Elasticsearch, has been kept and even updated. But in Kiwi, you won`t need it, because there, mod-inventory and folio_inventory work with Elasticsearch, anyway. Therefore, you might want to disable folio_inventory-es-6.4.0.
 
-Finally, check which backend modules have been enabled for your tenant:
-
-```
-curl -w '\n' -XGET http://localhost:9130/_/proxy/tenants/diku/modules | grep "id"
-```
-
-This should show the same set of modules as in okapi-install.json plus the Okapi module itself. Thus, the number of modules enabled for your tenant should be 62.
-
-The backend of the new tenant is ready.  Now, you have to set up a Stripes instance for the frontend of the tenant, create a superuser for the tenant and secure Okapi.
-
-
-
-
-## Install the frontend, Folio Stripes
-
-You have an Okapi instance running, you can proceed to install Stripes.  Stripes is bundled and deployed on a per tenant basis. 
-Install Stripes and nginx in a Docker container.
-
-### Configure the docker file and the nginx webserver
+Just for your information: Look, how many backend modules have now been deployed on your server:
 
 ```
-  cd ~/platform-core
-  edit docker/Dockerfile
+curl -w '\n' -D - http://localhost:9130/_/discovery/modules | grep srvcId | wc
+ 128
+```
+
+The number 128 includes 5  Edge modules, also. Another important information: Get a list of modules (frontend + backend) that have now been enabled for your tenant:
+
+```
+curl -w '\n' -XGET http://localhost:9130/_/proxy/tenants/diku/modules | grep id | wc
+  132
+```
+
+This number is the sum of the following:
+
+ - 56 Frontend modules (including folio_inventory-es)
+ - 10 Edge modules
+ - 65 Backend modules (R3-2021)
+ - 1 Okapi module (4.11.1)
+
+These are all R3 (Kiwi) modules.
+
+The backend of the new tenant is ready.  Now, you have to set up a Stripes instance for the frontend of the tenant.
+
+
+### II.v. Build an R3-2021 FOLIO Stripes platform
+
+Install Stripes and nginx in a Docker container. Use the docker file of platform-complete. Change OKAPI_URL to your server name or SAN - usually the name for which you have an SSL certificate. Change the TENANT_ID to your tenant ID:
+
+```
+cd ~/platform-core
+edit docker/Dockerfile
     ARG OKAPI_URL=http(s)://<YOUR_DOMAIN_NAME>/okapi
     ARG TENANT_ID=diku # Or change to your tenant's name
 ```
 
 Use https if possible, i.e. use an SSL certificate. <YOUR_DOMAIN_NAME> should then be the fully qualified domain name (FQDN) for which your certificate is valid, or a server alias name (SAN) which applies to your certificate. If using http, it is your server name (host name plus domain). The subpath /okapi of your domain name will be redirected to port 9130 below, in your nginx configuration. 
+
+Configure webserver to serve Stripes webpack: Edit docker/nginx.conf. Place your local server name – this is not necessarily equal to the server name for which you have an SSL certificate ! –  in server_name and use your IP address in proxy_pass :
    
-```   
+```
   edit docker/nginx.conf
 server {
   listen 80;
@@ -452,56 +462,12 @@ server {
 
 <YOUR_SERVER_NAME> should be the real name of your server in your network. <YOUR_SERVER_NAME> should consist of host name plus domain name, e.g. myserv.mydomain.edu. 
 
-If you want your FOLIO installation to be accessed from outside of your network, it is highly recommended to use https instead of http. In this case, your nginx.conf might look like this:
- 
- ```
- edit docker/nginx.conf
- server {
-  listen 443 ssl;
-  server_name  <YOUR_SERVER_NAME>;
-  ssl on;
-  ssl_certificate     cert_bundle.crt;
-  ssl_certificate_key <YOUR_SERVER_NAME>-key.no_enc.pem;
-  ssl_protocols       TLSv1 TLSv1.1 TLSv1.2;
-  ssl_prefer_server_ciphers on;
-  ssl_ciphers         HIGH:!aNULL:!MD5;
-
-  charset utf-8;
-  access_log  /var/log/nginx/host.access.log  combined;
-
-  # front-end requests:
-  # Serve index.html for any request not found
-  location / {
-    # Set path
-    root        /usr/share/nginx/html;
-    index       index.html index.htm;
-    include mime.types;
-    types {
-      text/plain lock;
-    }
-    try_files $uri /index.html;
-  }
-
-  # back-end requests:
-  location /okapi {
-    rewrite ^/okapi/(.*) /$1 break;
-    proxy_pass http://<YOUR_IP_ADDRESS>:9130/;
-  }
-
-}
-```
-
-The subpath /okapi of your domain is being redicrectd to your internal port 9130. Thus, the Okapi port 9130 does not need to be released to outside of your network.
-**Note**: If you want to host multiple tenants on a server, you can configure NGINX to either open a new port for each tenant or set up different paths on the same port (e.g. /tenat1, /tenant2).
 
 Edit the url and tenant in stripes.config.js. The url will be requested by a FOLIO client, thus a browser. Make sure that you use the public IP or domain of your serve. Use http only if you want to access your FOLIO installation only from within your network.
 
 ```
   edit stripes.config.js
       okapi: { 'url':'http(s)://<YOUR_DOMAIN_NAME>/okapi', 'tenant':'diku' },
-     
-      # remove this line, unless you are installing Elasticsearch :
-          '@folio/search' : {},
 ```
 
 
@@ -519,8 +485,7 @@ You might also edit branding in stripes.config.js, e.g. add your own logo and fa
   }
 ```
 
-
-### Build the Docker container
+Finally, build the docker container which will contain Stripes and nginx :
   
 ```
   sudo su
@@ -536,195 +501,118 @@ Successfully built 48a532266f21
 Successfully tagged stripes:latest
 ```
 
-This will run for quite a long time, approx. 15 minutes.
+This will run for approximately 15 minutes. 
 
-### Start the Docker container
-  Make sure nginx is not already running on your VM (do `sudo service nginx stop`). Make sure nothing else is running on port 80.
-  Redirect port 80 from the outside to port 80 of the docker container. When using SSL, port 443 has to be redirected.
+Stop the old Stripes container: docker stop <container id of your old stripes container which is still running>
+
+Completely free your port 80. Look if something is still running there: e.g., do
+  
+```
+netstat -taupn | grep 80
+```
+
+If there should be something still running on port 80, kill these processes.
+
+Start the stripes container:
+ 
+  Redirect port 80 from the outside to port 80 of the docker container.
   
 ```
   nohup docker run -d -p 80:80 stripes
 ```
   
-### Log in to the Docker container
-  Check if your config file looks o.k. and follow the access log inside the container:
+Log in to your frontend: E.g., go to https://demo.folio.hbz-nrw.de/ in your browser. 
+
+  - Can you see the R3 modules in Settings - Installation details ?
+
+  - Do you see the right okapi version, 4.11.1-1 ? 
+
+  - Does everything look good ?
+
+If so, remove the old stripes container: docker rm <container id of your old stripes container> .
+  
+### II.vi. Cleanup
+  
+Clean up. Undeploy all unused containers.
+
+In general, all R2 modules have to be removed now. But **care has to be taken** about which modules might be removed:
+
+Sometimes, R2 versions are the same as R3 versions. In this case, you have to find out which instance-ID of the module needs to be removed (if the module has been deployed twice). You can find this out via the port number (lower port numbers have been used for the R2 modules, higher numbers for the R3 modules, which have been installed later).
+If you have more than one tenant on your server, some tenants may still need R2 modules ! Check for your supertenant; did you enable anything else than okapi for it ?
+  
+#### Create a list of containers which are in your okapi discovery
   
 ```
-  docker exec -it <container_id> sh
-  vi /etc/nginx/conf.d/default.conf
+  curl -w '\n' -XGET http://localhost:9130/_/discovery/modules | jq '.[] | .srvcId + "/" + .instId' > dockerps.sh
+sort dockerps.sh > dockerps.todelete.sh
+  ```
   
-  tail -f /var/log/nginx/host.access.log
-```
+  This should still contain the module versions of the old release.
 
-### Post the list of Stripes modules to enable for your tenant.
+   => backend modules (mod-\*) of the old release (61 modules) + backend module of the new release (62 = 65 - 3 which are the same in the old release) + 5 Edge modules =128 modules.
 
-First, simulate what will happen:
-```
-curl -w '\n' -D - -X POST -H "Content-type: application/json" -d @stripes-install.json http://localhost:9130/_/proxy/tenants/diku/install?simulate=true\&preRelease=false
-```
+Of those 128 modules, 58 have now to be undeployed:
+   Undeploy all R2 modules (which are still running), except for mod-service-interaction:1.0.0, mod-graphql:1.9.0, mod-z3950-2.4.0.
 
-Then, enable the frontend modules for your tenant:
+If you have deployed mod-service-interaction:1.0.0, mod-graphql:1.9.0, mod-z3950-2.4.0 twice, you will need to undeploy 61 modules.
 
-```
-curl -w '\n' -D - -X POST -H "Content-type: application/json" -d @stripes-install.json http://localhost:9130/_/proxy/tenants/diku/install?preRelease=false
-```
-
-50 Stripes modules (folio*) and 9 Edge modules have been enabled.
-
-### Create a superuser
-
-You need to create a superuser for the newly created tenant.  This is a multi step process and the details can be found in the (Okapi documentation) [https://github.com/folio-org/okapi/blob/master/doc/guide.md#securing-okapi]. You can use a PERL script to execute these steps automatically.   You only need to provide the tenant id, a username/password for the superuser and the URL of Okapi.
-
-Install gcc on Ubuntu 20 (prerequisite to install Perl modules from cpan)
-```
-sudo apt install gcc
-gcc --version
-gcc (Ubuntu 9.3.0-17ubuntu1~20.04) 9.3.0
-```
-
-Install prerequiste Perl modules
-```
-sudo cpan install LWP.pm
-sudo cpan install JSON.pm
-sudo cpan install UUID::Tiny
-```
-
-Use this Perl script to create a superuser [https://github.com/folio-org/folio-install/blob/master/runbooks/single-server/scripts/bootstrap-superuser.pl ]. Use the version of the script which is applicable for mod-permissions of version < 5.15.0 :
-```
-wget "https://raw.githubusercontent.com/folio-org/folio-install/b2e75a058f6d821c4cc04f711aeb0d8dbab06f80/runbooks/single-server/scripts/bootstrap-superuser.pl"
-perl bootstrap-superuser.pl \
-  --tenant diku --user diku_admin --password admin \
-  --okapi http://localhost:9130
-```
-
-Now Stripes is running on port 80 or 443 and you can open it using a browser. Log in with the credentials of the superuser that you have created.
+#### Compare the list with list of R3 modules
+  
+  Compare  dockerps.todelete.sh with the list ~/platform-complete/okapi-install.sh (the R3 backend modules). First, sort this list:
+  
+  ```
+  sort okapi-install.json > okapi-install.json.sorted
+  ```
+  
+  Now, throw out all modules which are in okapi-install.json.sorted out of the list dockerps.todelete.sh . 
+This should leave you with a list of 58 modules which are to be deleted now. If you decided to delete one of the instances of those modules which have been deployed twice (be careful about which one to delete !!!) , you should now have a list of 61 modules.
+Edit  dockerps.todelete.sh once again to make each line look like this on each line (e.g.) :
+  
+  ```
+  curl -w '\n' -D - -XDELETE http://localhost:9130/_/discovery/modules/mod-agreements-4.1.1/<instId>
+  ```
+  
+  #### Finally, remove all unused modules
+  
+  Add a line #!/bin/bash at the top of your delete script, make the script executable and then call your delete script:
+  
+  ```
+   ./dockerps.todelete.sh
+  ```
+  
+  This will be acknowledged by an "HTTP/1.1 204 No Content" for each module.
 
 
-### Secure Okapi
 
-By default, Okapi API is open in order to facilitate the deployment process of FOLIO. However, in a production environment you must enable the security checks. You can use a Python script to secure Okapi, you should provide a username and password for Okapi.
+Now, finally once again get a list of the deployed backend modules:
+  
+  ```
+  curl -w '\n' -D - http://localhost:9130/_/discovery/modules | grep srvcId | wc
+ 70
+  ```
+  
+  This should only contain the module versions of the new release now : 65 backend modules of R3-2021 + 5 Edge modules.
+Compare this with the number of your running docker containers:
+  
+  ```
+  docker ps --all | grep "mod-" | wc
+    65
+ docker ps --all | wc
+    77
+  ```
+  
+  The following containers are running on your system, but do not contain backend modules:
 
-```
-python3 secure-supertenant.py -u USERNAME -p PASSWORD -o http://localhost:9130
-```
+5 containers with Edge modules
+Stripes
+3x Elasticsearch
+Kafka
+Zookeper
+In sum, these are 11 containers without backend modules (if one doesn't count Edge modules as backend modules).
 
-The script can be downloaded (here)[https://github.com/folio-org/folio-install/blob/master/runbooks/single-server/scripts/secure-supertenant.py].
+Also subtract the header line (of "docker ps"), et voilà on arrive à 77 - 12 = 65 containers with backend modules (the figure of the first wc).
 
-When Okapi is secured, you must login using **mod-authtoken** to obtain an authtoken and include it in the **x-okapi-token** header for every request to the Okapi API.  For example, if you want to repeat any of the calls to Okapi in this guide, you will need to include **x-okapi-token:YOURTOKEN** and **x-okapi-tenant:supertenant** as headers for any requests to the Okapi API.
-
-
-## Install and serve edge modules (platform-complete only)
-
-The Edge modules bridge the gap between some specific third-party services and FOLIO (e.g. RTAC, OAI-PMH).  In these FOLIO reference environments, the set of edge services are accessed via port 8000.  In this example, the edge-oai-pmh will be installed.
-
-You can find more information about the Edge modules of FOLIO in the Wiki https://wiki.folio.org/display/FOLIOtips/Edge+APIs.
-
-1. Create institutional user. An institutional user must be created with appropriate permissions to use the edge module. You can use the included create-user.py to create a user and assign permissions.
-
-```
-python3 create-user.py -u instuser -p instpass \
-    --permissions oai-pmh.all --tenant diku \
-    --admin-user diku_admin --admin-password admin
-```
-The script can be found (here) [https://github.com/folio-org/folio-install/blob/master/runbooks/single-server/scripts/create-user.py].
-
-If you need to specify an Okapi instance running somewhere other than http://localhost:9130, then add the --okapi-url flag to pass a different url.  If more than one permission set needs to be assigned, then use a comma delimited list, i.e. --permissions edge-rtac.all,edge-oai-pmh.all.
-
-2. The institutional user is created for each tenant for the purposes of edge APIs. The credentials are stored in one of the secure stores and retrieved as needed by the edge API. You can find more information about secure stores (here) [https://github.com/folio-org/edge-common#secure-stores].  In this example, a basic EphemeralStore using an **ephemeral.properties** file which stores credentials in plain text.  This is meant for development and demonstration purposes only.
-
-```
-sudo mkdir -p /etc/folio/edge
-sudo vi /etc/folio/edge/edge-oai-pmh-ephemeral.properties
-```
-The ephemeral properties file should look like this.
+C'EST FINI ! 
 
 
-```
-secureStore.type=Ephemeral
-# a comma separated list of tenants
-tenants=diku
-#######################################################
-# For each tenant, the institutional user password...
-#
-# Note: this is intended for development purposes only
-#######################################################
-# format: tenant=username,password
-diku=instuser,instpass
-```
 
-3. Start edge module Docker containers.
-You will need the version of the edge-modules available on Okapi for the tenant.  You can run a CURL request to Okapi and get the version of the **edge-oai-pmh** module.
-
-
-```
-curl -s http://localhost:9130/_/proxy/tenants/diku/modules | jq -r '.[].id' | grep 'edge-'
-```
-
-- Set up a docker compose file in **/etc/folio/edge/docker-compose.yml** that defines each edge module that is to be run as a service. The compose file should look like this.
-
-```
-version: '2'
-services:
-  edge-oai-pmh:
-    ports:
-      - "9700:8081"
-    image: folioorg/edge-oai-pmh:2.2.1
-    volumes:
-      - /etc/folio/edge:/mnt
-    command:
-      -"Dokapi_url=http://10.0.2.15:9130"
-      -"Dsecure_store_props=/mnt/edge-oai-pmh-ephemeral.properties"
-    restart: "always"
-```
-Make sure you use the private IP of the server for the Okapi URL.
-
-
-- Start the edge module containers.
-
-```
-cd /etc/folio/edge
-sudo docker-compose up -d
-```
-
-4. Set up NGINX.
-
-- Create a new virtual host configuration to proxy the edge modules.   Create a new NGINX file in the directory **/etc/nginx/sites-available/edge**. This needs to be done inside your Stripes container. You might want to modify the Docker file that builds your Stripes container, then re-build and re-run the container.
-
-```
-server {
-  listen 8130;
-  server_name localhost;
-  charset utf-8;
-
-  location /oai {
-    proxy_pass http://localhost:9700;
-  }
-}
-
-```
-- Link that new configuration and restart nginx (inside the Stripes container; or re-start that container).
-
-```
-sudo ln -s /etc/nginx/sites-available/edge /etc/nginx/sites-enabled/edge
-sudo service nginx restart
-
-```
-
-Now, an OAI service is running on http://server:8130/oai . 
-
-5. Follow this procedure to generate the API key for the tenant and institutional user that were configured in the previous sections.  Currently, the edge modules are protected through API Keys.
-
-```
-cd ~
-git clone https://github.com/folio-org/edge-common.git
-cd edge-common
-mvn package
-java -jar target/edge-common-api-key-utils.jar -g -t diku -u instuser
-```
-
-This will return an API key that must be included in requests to edge modules. With this APIKey, you can test the edge module access.  For instance, a test OAI request would look like this.
-
-```
-curl -s "http://localhost:8130/oai?apikey=APIKEY=&verb=Identify"
-```
-The specific method to construct a request for an edge module is documented in the developers website: https://dev.folio.org/source-code/map/ or you can refer to the github project of the edge module.
