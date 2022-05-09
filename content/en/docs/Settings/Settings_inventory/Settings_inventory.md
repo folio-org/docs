@@ -1,7 +1,7 @@
 ---
 title: "Settings > Inventory"
 linkTitle: "Inventory"
-date: 2022-03-21
+date: 2022-05-04
 weight: 130
 tags: ["subtopic"]   
 ---
@@ -304,7 +304,7 @@ Use this setting to create and manage holdings note types. Instance note types a
 
 ## Settings \> Inventory \> Holdings sources
 
-Use this setting to create and manage holdings sources. Holdings sources appear ? FOLIO provides holdings sources by default, which can be edited or deleted.
+Use this setting to create and manage holdings sources. Holdings source appears in the Administrative Data section of the Holdings record and is system supplied on record creation.  FOLIO provides holdings sources by default, which cannot be edited or deleted. New sources can be added and edited
 
 ### Creating a holdings source
 
@@ -318,10 +318,14 @@ Use this setting to create and manage holdings sources. Holdings sources appear 
 2. Edit the **Name**.
 3. Click **Save**. The Holdings source is saved.
 
+You can only edit local Holdings sources. Default sources cannot be edited.
+
 ### Deleting a holdings source
 
 1. Find the holdings source you want to edit and click the **delete icon**.
 2. In the **Delete Holdings source** dialog, click **Delete**. A confirmation message appears and the Holdings source is deleted.
+
+You can only delete local Holdings sources. Default sources cannot be deleted.
 
 ## Settings \> Inventory \> Holdings types
 
@@ -555,4 +559,22 @@ Use this setting to create and manage call number types. Call number types appea
 1. Find the call number type you want to edit and click the **delete icon**.
 2. In the **Delete Call number type** dialog, click **Delete**. A confirmation message appears and the Call number type is deleted.
 
-Note: Call number types that have at least one value assigned in Inventory cannot be deleted. The call numbersmust first be assigned a different type or deleted.
+Note: Call number types that have at least one value assigned in Inventory cannot be deleted. The call numbers must first be assigned a different type or deleted.
+
+## Settings \> Inventory \> Integrations
+
+### Z39.50 target profiles
+
+Targets created and enabled here will determine the available options for the single record import and overlay functionality in Inventory. 
+
+To create a new target
+1. Click **New**.
+2. Enter a Name for the target. This is the label that will appear in the import and overlay modal.
+3. Enter other information as needed for the target.
+4. Click **Save & close.**
+
+To edit an existing target (including enabling or disabling the target)
+1. Click on the target Name.
+2. Click **Edit**.
+3. Change desired information.
+4. Click **Save & close.**

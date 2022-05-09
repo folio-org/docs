@@ -1,7 +1,7 @@
 ---
 title: "Settings > Acquisition units"
 linkTitle: "Acquisition units"
-date: 2022-03-21
+date: 2022-05-04
 weight: 10
 tags: ["subtopic"]   
 ---
@@ -35,6 +35,9 @@ In order to interact with acquisition units settings, a user needs to be assigne
 
 Note: This is the only permission available for acquisition unit settings. You can assign permissions to users in the Users app.
 
+
+## Keyboard shortcuts
+Keyboard shortcuts allow you to perform actions in this setting using the keyboard.  See [Platform essentials > Keyboard shortcuts]({{< ref "/keyboardshortcuts.md" >}}) for more information.
 
 
 ## Creating an acquisition unit
