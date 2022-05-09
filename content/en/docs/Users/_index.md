@@ -2,6 +2,7 @@
 title: "Users"
 linkTitle: "Users"
 weight: 250
+date: 2022-05-09
 ---
 
 The Users app allows you to manage user information for patrons and library staff. Both patrons and library staff's user records are stored in the Users app. There is no separate directory or app for library staff users. The difference between a library staff user and a patron is that the library staff user record has FOLIO permissions assigned to it.
@@ -21,22 +22,24 @@ Note: For information on assigning permissions to users, see [Assigning permissi
 
 The following are all the User permissions:
 
--   **User import: All permissions.** This permission allows the user to import user records.  
+-   **User import - All permissions.** This permission allows the user to import user records.  
 -   **User: Can override item blocks.** This permission allows the user to override an item block in Check Out. 
 -   **User: Can override patron blocks.** This permission allows the user to override a patron block for borrowing, requesting, or renewing an item in Check Out.
 -   **Users: Can assign and unassign permissions to users.** This permission allows the user to assign or unassign permissions to another user. 
 -   **Users: Can assign and unassign service points to users.** This permission allows the user to view and edit service points assigned to users. The user can also view and edit basic user data elements.
 -   **Users: Can create new user.** This permission allows the user to create a new user record and add User information, Extended information, and Contact Information to the user record. 
+-   **Users: Can check open transactions.** This permission allows the user to check for open transactions on a user record. If there are no open transactions, the user record can be deleted.
 -   **Users: Can create, edit and remove fees/fines.** This permission allows the user to create, edit, remove, and view user fees/fines.
 -   **Users: Can create, edit and remove patron blocks.** This permission allows the user to see the Patron blocks section on the user record, and view, edit, and create blocks.
 -   **Users: Can create, edit and remove proxies.** This permission allows the user to view and edit proxies assigned to a user. The user can also view and edit basic user data elements.
+-   **Users: Can delete user profile if user does not have any open transactions. This permission allows a user profile to be deleted through the UI if the user has no open transactions. This permission must be used with **Users: Can check open transactions**.
 -   **Users: Can edit user profile.** This permission allows the user to edit and view the following sections in a user record: User information, Extended information, and Contact information.
 -   **Users: Can view permissions assigned to users.** This permission allows the user to view the permissions assigned to another user. 
 -   **Users: Can view proxies assigned to users.** This permission allows the user to see the Proxies section but not edit proxies assigned to a user. This permission also includes the ability to search and view user records (basic user fields only).
 -   **Users: Can view service points assigned to users.** This permission allows the user to see the Service points section but not edit service points assigned to a user. This permission also includes the ability to search and view user records (basic user fields only).
 -   **Users: Can view user profile.** This permission allows the user to search for user records and view the following sections in a user record: User information, Extended information, and Contact information.
 -   **Users: Create and download Cash drawer reconciliation report.** This permission allows the user to create and download a Cash drawer reconciliation report.
--   **Users: Create and download Financial transaction detail report.** This permission allows the user to create and download a Financial transaction detail report. Note that although this permission is listed as an option, the Financial transaction detail report is not functional in Juniper. It is recommended to wait until the Kiwi release to assign this permission to a user record. 
+-   **Users: Create and download Financial transaction detail report.** This permission allows the user to create and download a Financial transaction detail report. 
 -   **Users: Create and download Refunds to process manually report.** This permission allows the user to create and download a report of refunds to process manually. 
 -   **Users: Create/reset password.** This permission allows the user to send a password reset email to a user or copy the password reset link to share with a user to use the reset password functionality.
 -   **Users: User loans anonymize.** This permission allows the user to remove all user details from a loan. 
@@ -47,12 +50,12 @@ The following are all the User permissions:
 -   **Users: User loans renew.** This permission allows the user to renew loans to the extent that is permitted by the loan policy.
 -   **Users: User loans renew through override.** This permission allows the user to override failed renewals.
 -   **Users: User loans view.** This permission allows the user to view the Loans section on a user record, view the loans page and loan details. 
--   **Users: User loans view, edit, renew (all).** This permission allows the user to view the Loans section on a user record and to change a due date on a loan and renew loans.
+-   **Users: User loans view, change due date, renew.** This permission allows the user to view the Loans section on a user record, to change a due date on a loan, and renew loans.
 -   **Users: View requests.** This permission allows the user to view the Requests section on a user record. This permission also includes the ability to search and view user records (basic user fields only).
 
-## Keyboard shortcuts
+##Keyboard shortcuts
 
-Keyboard shortcuts allow you to perform actions in this app using the keyboard.  See [Platform essentials > Keyboard shortcuts]({{< ref "keyboardshortcuts.md" >}}) for more information.
+Keyboard shortcuts allow you to perform actions in this app using the keyboard.  See [Platform essentials > Keyboard shortcuts](< ref "/platform_essentials_keyboard_shortcuts.md" >) for more information.
 
 ## Creating a user record manually
 
@@ -67,8 +70,8 @@ Keyboard shortcuts allow you to perform actions in this app using the keyboard. 
 -   **Middle name.** The middle name of the user.
 -   **Preferred first name.** The name by which the user prefers to be called.
 -   **Patron group (required).** Select a patron group to assign to the user. Patron groups are classes of library users configured by your library in the Settings app. See [Settings \> Users \> Patron Groups](../settings/settings_users/settings_users/#settings--users--patron-groups) for more information.
--   **Status (required).** Select a status for the user: **Active** or **Inactive.** A user's status is tied to the expiration date set on their user record. Active status indicates current affiliation, employment, or enrollment within the library's institution. Inactive status indicates that the expiration date on the user's record has passed and the user is no longer affiliated, employed, or enrolled.
--   **Expiration date.** The amount of time set before the user record lapses and the user no longer has active permissions or the ability to borrow items. The expiration date determines when a user's status changes from Active to Inactive. You are prompted to set the default expiration date when creating a user record. In the **Set expiration date** pop-up window, click **Set** to accept the default expiration date for the patron group. Otherwise, if you wish to customize the expiration date, click **Cancel** and enter the date in the **Expiration date** field, or click the **calendar icon** to select a date. You can also leave the field blank.
+-   **Status (required).** Select a status for the user: **Active** or **Inactive.** A user's status is tied to the expiration date set on their user record. Active status indicates current affiliation, employment, or enrollment within the library's institution. Inactive status indicates that the expiration date on the user's record has passed and the user is no longer affiliated, employed, or enrolled. When a **Patron Group** is selected, the **Status** automatically defaults to **Active**.
+-   **Expiration date.** The amount of time set before the user record lapses and the user no longer has active permissions or the ability to borrow items. The expiration date determines when a user's status changes from Active to Inactive. After selecting a **Patron Group**, you are prompted to use the default expiration date for that patron group. In the **Set expiration date** pop-up window, click **Set** to accept the default expiration date for the patron group. Otherwise, if you wish to customize the expiration date, click **Cancel** and enter the date in the **Expiration date** field, or click the **calendar icon** to select a date. You can also leave the field blank.
 -   **Barcode.** The barcode number for the user's library card.
 
 ### Extended information
@@ -77,11 +80,10 @@ Keyboard shortcuts allow you to perform actions in this app using the keyboard. 
 -   **External system ID.** The external system ID for the user. This field is auto-populated if it is included in source data provided by an external system. 
 -   **Birth date.** The date of birth of the user in YYYY-MM-DD format.
 -   **Folio number.** A system-generated number for the user record.
--   **Request preferences.** **Hold Shelf** is selected by default for all users. 
-- If **Delivery** is also checked, select **Fulfillment preference**.
-    -  If **Delivery** is selected as the **Fulfillment preference**, select the **Default delivery address**. This field appears and is required only if **Delivery** is selected as a request preference. Addresses are added to the user record in the **Contact information** section. See [Users \> Contact information] (#contact-information) for more information.
-    -   If **Hold Shelf** is selected as the **Fulfillment preference**, select the **Default pickup service point.** All user records have at least one service point assigned to indicate the location for checking out or picking up requested items. Service points are configured by your library in the Settings app. See [Settings \> Tenant \> Service points](../settings/settings_tenant/settings_tenant/#settings--tenant-service-points) for more information.
--   **Department name.** Name of the user's department, if applicable. To associate the user with a department, click **Add Department** and select the department from the drop-down list. This action is repeatable, and departments can be deleted by clicking the **trash can icon**. Departments are configured by your library in the Settings app. See [Settings \> Users \> Departments](../settings/settings_users/settings_users/#settings--users--departments) for more information. 
+-   **Request preferences.** **Hold Shelf** is selected by default for all users. If **Delivery** is also checked, select **Fulfillment preference**. 
+-  If **Delivery** is selected as the **Fulfillment preference**, select the **Default delivery address**. This field appears and is required only if **Delivery** is selected as a request preference. Addresses are added to the user record in the **Contact information** section. See [Users \> Contact information] (#contact-information) for more information.
+-   If **Hold Shelf** is selected as the **Fulfillment preference**, select the **Default pickup service point.** All user records have at least one service point assigned to indicate the location for checking out or picking up requested items. Service points are configured by your library in the Settings app. See [Settings \> Tenant \> Service points](#.../settings/settings_tenant/settings_tenant/#settings–tenant--service-points) for more information.
+-   **Department name.** Name of the user's department, if applicable. To associate the user with a department, click **Add Department** and select the department from the drop-down list. This action is repeatable, and departments can be deleted by clicking the **trash can icon**. The **Add Department** button appears only if **Departments** are configured in the Settings app.   See [Settings \> Users \> Departments](../settings/settings_users/settings_users/#settings--users--departments) for more information. 
 -   **Username.** The name library staff use to log into FOLIO. Note: Patrons don't have a username because they don't need to log into FOLIO.
 
 ### Contact information
@@ -90,8 +92,10 @@ Keyboard shortcuts allow you to perform actions in this app using the keyboard. 
 -   **Phone.** The phone number of the user.
 -   **Mobile phone.** The mobile phone number of the user.
 -   **Preferred contact (required).** Select the user's preferred method of contact: Email, Mail (Primary Address), or Text Message.
--   **Address.** The address of the user. You can add multiple addresses. To add an address, click **Add Address**. Select **Use as primary address** if address is to be considered the user's main address. 
+-   **Address.** The address of the user. You can add multiple addresses. To add an address, click **Add Address**. 
+-   Select **Use as primary address** if address is to be considered the user's main address. 
 -   **Address Type.** Select the appropriate address type for the user's address. Address Types are configured by your library in the Settings app. See [Settings \> Users \> Address Types](../settings/settings_users/settings_users/#settings--users--address-types) for more information.
+-  Fill out the address information fields and click **Add Address** to save the address to the user’s record. 
 
 ## Searching for user records
 
@@ -121,7 +125,7 @@ Patron groups are configured in [Settings \> Users \> Patron groups](../settings
 To search for user records assigned with specific tags, follow these steps:
 
 1.  In the **User search** pane, expand the **Tags** accordion if needed. 
-2.  Select the tag(s) from the drop-down list. The search results appear in the User search results pane.
+2.  Select the tag(s) from the drop-down list. The search results appear in the User search results pane. 
 
 ## Viewing a user record
 
@@ -281,7 +285,7 @@ Library staff need to have permissions assigned to their user record in order to
 8.  Click **Save & close**. The permissions are added to the user record.
 9.  Click **Save & close**. The user record is saved.
 
-## Removing permissions from a user’s record
+##Removing permissions from a user’s record
 
 1.  [Find the user record](#searching-for-user-records) to which you want to remove permissions and select it.
 2.  In the **User record** pane, click **Edit**.
@@ -305,7 +309,7 @@ Permissions can also be removed by following a modified version of the process f
 
 A service point in FOLIO is a setting that libraries configure to support circulation functions. Every FOLIO item must have a location, and every location must have an attached service point. You must set up at least one service point to be able to check items in and out; allow patrons to request items; charge and collect fines; and put items in transit between locations at your library. 
 
-Staff who use the Check in, Check out, Users, or Requests apps must have a service point assigned to them in their user record. Service points are configured for your library in the Settings app. See [Settings \> Tenant \> Service Points](../settings/settings_tenant/settings_tenant/#settings--tenant--service-points) for more information. 
+Staff who use the Check in, Check out, Users, or Requests apps must have a service point assigned to them in their user record. Service points are configured for your library in the Settings app. See [Settings \> Tenant \> Service Points](#settings/settings_tenant/settings_tenant/#settings--tenant--service-points)for more information. 
 
 1.  [Find the user record](#searching-for-user-records) to which you want to add a service point and select it.
 2.  In the **User record** pane, click **Edit**.
@@ -316,7 +320,7 @@ Staff who use the Check in, Check out, Users, or Requests apps must have a servi
 7.  Select a **Service point preference** from the drop-down list. If you select **None**, then the user is prompted to select a service point every time they sign in to FOLIO.
 8.  Click **Save & Close**. The service point(s) are added to the user record.
 
-## Removing a service point from a user record
+##Removing a service point from a user record
 
 1.  [Find the user record](#searching-for-user-records) to which you want to remove a service point and select it.
 2.  In the **User record** pane, click **Edit**.
@@ -386,24 +390,6 @@ To remove a patron block with no assigned expiration date, follow these steps:
 4.  In the **user block** window, click **Delete**.
 5.  In the **Delete patron block** pop-up window, click **Delete**. The patron block is removed.
 
-## Creating a manual fee/fine
-
-Note that your library must configure fee/fine settings prior to charging fee/fines to patrons. See Settings > Users > Owners and Settings > Users> Manual Charges for more information.
-
-1.  [Find the user record](#searching-for-user-records) to which you want to add a fee/fine and select it.
-2.  In the **User record** pane, expand the **Fees/fines** accordion if needed.
-3.  Click **Create fee/fine**.
-4.  In the **New fee/fine** window, select the **Fee/fine owner**.
-5.  Select the **Fee/fine type**.
-6.  In the **Fee/fine amount** box, you can do one of three things:
-    - Keep the default fee/fine amount, if one is populated for the fee/fine type.
-    - Adjust the default fee/fine amount, if it is populated for the fee/fine type.
-    - Provide a fee/fine amount, if one did not populate.
-7.  Optional: To associate the fee/fine with an item, scan or enter the item barcode into the **Item information** box and click **Enter**.
-8.  Optional: Enter any **Additional information for staff** in the box.
-9. Click **Charge only** to apply the charge to the patron record. FOLIO users with appropriate permissions may be able to create the fine and immediately accept payment by clicking **Charge & pay now**.
-10.  Click either **Charge & pay now** to charge the patron and process the payment or **Charge Only** to only apply the charge to the user record.
-
 ## Creating requests
 
 Requests can be created in the Requests app or from the item record in the Inventory app. For information on creating requests, see [Creating a request](../access/requests/requests/#creating-a-request)
@@ -417,6 +403,16 @@ Requests can be created in the Requests app or from the item record in the Inven
 5.  Enter a **Note title** in the box.
 6.  Optional: Enter any **Details** about the note in the box.
 7.  Click **Save & close**. The note is saved.
+
+###Deleting A User Record in the UI 
+A user record can be deleted only if the user has no open transactions. To delete a user record, first check for open transactions. Once it’s confirmed that the user has no open transactions, the user record can be deleted. Follow these steps to check for open transactions and delete a user record in the UI:
+
+[Find the user record](#searching-for-user-records) for which you want to check for open transactions and select it.
+In the **Actions** menu, select **Check for open transactions/delete user**. 
+If there are no open transactions for this user, the message *No open transactions for user (Last Name, First Name). Are you sure you want to delete this user?* will appear in the **Check for open transactions/delete user** window.  
+Click **Yes** to delete the user record. A *User (Last Name, First Name) deleted successfully* message will confirm deletion of the user record. 
+Or click **No** to cancel the deletion and return to the user record. 
+If there are one or more open transactions for the user, the message *User (Last Name, First Name) has the following open transactions. Please resolve the transactions to proceed to delete this user.* Click **OK** to return to the user record. 
 
 ## Overdue loans report
 
@@ -445,7 +441,12 @@ Depending on your browser and its configurations the file is automatically downl
 
 ## Financial transaction detail report
 
-The Financial transaction detail report allow libraries to review transactions in specified time period at the fee/fine owner level. Although this option appears in the **Actions** menu, the Financial transaction detail report is not functional in Juniper. Full functionality is expected in the Kiwi release.
+The Financial transaction detail report allows libraries to review transactions in a specified time period at the fee/fine owner level. 
+-    In the **User search results** pane, click **Actions \>Financial transaction detail report (CSV)**. 
+-    In the **Financial transaction detail report** modal, specify a date range by entering a **Start date** and an **End date**. Select the **Fee/fine owner**. Select the **Associated service points** (optional). 
+-   Click on **Save & close**.
+
+Depending on your browser and its configurations, the file automatically downloads and you will be prompted to open it or save it. 
 
 ## Refunds to process manually report
 The Refunds to process manually report is a report that provides library administration with a list of patrons requiring refunds. It is available for download as a comma-separated values (CSV) file. 
@@ -455,9 +456,12 @@ The Refunds to process manually report is a report that provides library adminis
 
 Depending on your browser and its configurations, the file automatically downloads and you will be prompted to open it or save it. 
 
-## Managing loans for patrons
+## Managing loans and fee/fines for patrons
 
 From the loans section on a patron’s record, a FOLIO user with appropriate permissions can renew a loan for a patron; change the due date; mark the item claim returned; or declare the item lost.
+
+FOLIO users with appropriate permissions can manage fee/fines on patron accounts. This includes viewing fee/fine information, creating manual charges, accepting payment, waiving a fine, refunding a fine, 
+
 
 ### Renew a loan
 
@@ -465,9 +469,10 @@ To renew one or more loans for a patron:
 1. Use the check boxes on the left to select the appropriate loan(s).
 2. From the buttons at the top of the list, click **Renew**.
 
-If the renewal was successful, you will see a green success message in the bottom right corner appear. 
-
+If the renewal was successful, you will see a green success message in the bottom right corner appear. The new due date may be sooner than expected if the normal due date would be after a patron’s account has expired.
 If the renewal was not successful, a pop-up message will appear. If you have the correct permissions, you can click **Override** from the pop-up window to override the error and renew the loan.
+
+Alternatively, you can renew a loan from the Actions column, …>Renew.
 
 ### Change a due date
 
@@ -516,4 +521,66 @@ To mark a loan declared lost:
 4. Click **Confirm**.
 
 When an item is declared lost, FOLIO will check the associated lost item fee policy for the loan and charge fees/fines as configured in that policy.
+
+### Creating a manual fee/fine
+
+Note that your library must configure fee/fine settings prior to charging fee/fines to patrons. See Settings > Users > Owners and Settings > Users> Manual Charges for more information.
+
+1.  [Find the user record](#searching-for-user-records) to which you want to add a fee/fine and select it.
+2.  In the **User record** pane, expand the **Fees/fines** accordion if needed.
+3.  Click **Create fee/fine**.
+4.  In the **New fee/fine** window, select the **Fee/fine owner**.
+5.  Select the **Fee/fine type**.
+6.  In the **Fee/fine amount** box, you can do one of three things:
+Keep the default fee/fine amount, if one is populated for the fee/fine type.
+Adjust the default fee/fine amount, if it is populated for the fee/fine type.
+Provide a fee/fine amount, if one did not populate.
+7.  Optional: To associate the fee/fine with an item, scan or enter the item barcode into the **Item information** box and click **Enter**.
+8.  Optional: Enter any **Additional information for staff** in the box.
+9. Click **Charge only** to apply the charge to the patron record. FOLIO users with appropriate permissions may be able to create the fine and immediately accept payment by clicking **Charge & pay now**.
+10.  Click either **Charge & pay now** to charge the patron and process the payment or **Charge Only** to only apply the charge to the user record.
+
+### Accepting payment for a fee/fine
+
+1.  [Find the user record](#searching-for-user-records) to which you want to accept payment for a fee/fine and select it.
+2.  In the **User record** pane, expand the **Fees/fines** accordion if needed.
+3. Select **(number of) open fee/fine** to view the patron’s open fines.
+4. The **Fees/fines** modal will open. Click the fee/fine you wish to accept payment for.
+5. The **Fee/fine details** modal will open. Click **Pay**.
+6. The **Pay fee/fine** modal opens. Enter the Payment amount (required). FOLIO can handle full and partial payment. If you are accepting partial payment, the modal will calculate the remaining amount.
+7. Select **Payment method** (required).
+8. Input **Transaction information** and **Additional information for staff**. The **Additional information for staff** box may be required if your library has configured that option.
+9. Click **Pay**, then **Confirm**.
+
+The modal will close, and the **Fee/fine details** page will update with the payment transaction. 
+
+### Waiving a fee/fine
+
+Staff with appropriate permissions can apply a partial or full waive to a fee/fine.
+
+1.  [Find the user record](#searching-for-user-records) to which you want to accept payment for a fee/fine and select it.
+2.  In the **User record** pane, expand the **Fees/fines** accordion if needed.
+3. Select **(number of) open fee/fine** to view the patron’s open fines.
+4. The **Fees/fines** modal will open. Click the fee/fine you wish to waive.
+5. The **Fee/fine details** modal will open. Click **Waive**.
+6. The **Waive fee/fine** modal will open. Enter the amount to waive (required). You can waive some or all of the fine amount.  If you are only waiving part of the fine, FOLIO will automatically calculate the remaining amount. 
+7. Select the **Waive reason** (required) and enter **Additional information for staff**. The **Additional information for staff** box may be required if your library has configured that option.
+8. Click **Waive**, then **Confirm**.
+
+The modal will close, and the **Fee/fine details** page will update with the payment transaction.
+
+### Refund a fee/fine
+
+Staff with appropriate permissions can partially or fully refund a fee/fine. The payment method must allow refunds. 
+
+1.  [Find the user record](#searching-for-user-records) to which you want to refund a payment and click it.
+2.  In the **User record** pane, expand the **Fees/fines** accordion if needed.
+3. Select **View all fees/fines** to view the patron’s fines.
+4. The **Fees/fines** modal will open. Click the fee/fine you wish to refund a payment for. It may be **Open** or **Closed**.
+5. The **Fee/fine details** modal will open. Click **Refund**.
+6. The **Waive fee/fine** modal will open. Enter the amount to waive (required). You can waive some or all of the fine amount.  If you are only waiving part of the fine, FOLIO will automatically calculate the remaining amount. 
+7. Select the **Waive reason** (required) and enter **Additional information for staff**. The **Additional information for staff** box may be required if your library has configured that option.
+8. Click **Waive**, then **Confirm**.
+
+The modal will close, and the **Fee/fine details** page will update with the payment transaction.
 
