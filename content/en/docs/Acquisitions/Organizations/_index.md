@@ -1,8 +1,7 @@
-
 ---
 title: "Organizations"
 linkTitle: "Organizations"
-date: 2022-03-21
+date: 2022-05-02
 weight: 40
 tags: ["parenttopic"]
 ---
@@ -62,7 +61,7 @@ When creating an organization, you either create it as a general organization or
 *   **Organization status (required).** Select an organization status: Active, Inactive, or Pending. The status you select here is evaluated by the Orders and Invoices apps. Orders can only be opened and invoices can only be paid if the organization is a vendor with an Active status. You may want to use the Pending status to signify that the organization record is a draft.
 *   **Default language.** Select the organization’s default language.
 *   **Vendor.** If you are creating a vendor organization, select the **Vendor** checkbox . See [Creating a vendor](#creating-a-vendor) for more information.
-*   **Acquisition unit.** Select the Acquisition units you want to apply to the organization record. See [Settings > Acquisition units]({{< ref "/settings_acquisition_units.md" >}}) for more information.
+*   **Acquisition units.** Select the Acquisition units you want to apply to the organization record. See [Settings > Acquisition units]({{< ref "/settings_acquisition_units.md" >}}) for more information.
 *   **Description**. Enter a description of the organization.
 *   **Alternative names.** Alternative names used by the organization, such as abbreviations or prior names.
 

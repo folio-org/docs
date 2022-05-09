@@ -1,8 +1,7 @@
-
 ---
 title: "Receiving"
 linkTitle: "Receiving"
-date: 2022-03-21
+date: 2022-05-02
 weight: 50
 tags: ["parenttopic"]
 ---
@@ -28,7 +27,7 @@ The permissions listed below allow you to interact with the Receiving app and de
 
 *   **Receiving: View.** This permission allows the user to view receiving information for orders.
 *   **Receiving: View, edit.** This permission allows the user to receive and edit pieces that are associated with a purchase order line.
-*   **Receiving: View, edit, create.** This permission allows the user to view, edit, and create piece records. Note: Users can only create pieces if the related purchase order line has the [Manually add pieces for receiving](../orders/#po-line-details) checkbox selected.
+*   **Receiving: View, edit, create.** This permission allows the user to view, edit, and create piece records. Note: Users can only create pieces if the related purchase order line has the [Receiving workflow](../orders/#po-line-details) set to “Independent order and receipt quantity.”
 *   **Receiving: View, edit, delete.** This permission allows the user to view, edit and delete pieces in the Receiving app.
 *   **Settings (Receiving): Can view and edit settings.** This permission allows the user to manage receiving settings.
 
@@ -141,7 +140,7 @@ Note: Adding a product ID and type is optional, but if you click **Add product I
 
 ## Searching for a receiving title
 
-You can search for  orders to be received in the **Search & filter** pane. To search for orders, enter your search terms into the box. Select the **Keyword** drop-down list to search through one of the following fields:
+You can search for orders to be received in the **Search & filter** pane. To search for orders, enter your search terms into the box. Select the **Keyword** drop-down list to search through one of the following fields:
 
 
 
@@ -383,39 +382,44 @@ The **POL number look-up** function replaces the current POL number with a POL n
 
 An expected piece is a part of an order you expect to receive. For example, if you order a magazine subscription, you might expect to receive 12 different pieces during the year. If you order a book that comes with supplemental materials such as a CD or map, you might expect to receive multiple pieces with the order. The order does not initially display each piece that comes with it. Adding expected pieces to an order allows you to track which pieces of the order have been received and which are still expected. 
 
-Expected pieces can be found under the Expected section of an order. Expected pieces can also be received from this section. See [Quick receive](#quick-receive) for more information.
+Expected pieces can be found  in the Expected section of a Receiving app record. Expected pieces can also be received from this section. See [Quick receive](#quick-receive) for more information.
 
-Note: To add an expected piece to an order, the **Manually add pieces for receiving** checkbox must have been selected in the [Order line](../orders/#po-line-details) when the order was created.
+Note: To add an expected piece in Receiving, the [Receiving workflow](../orders/#po-line-details) on the order must be set to “Independent order and receipt quantity” when the order is opened.
 
 
 
 1. Find the receiving title to which you want to add a piece and select it.
 2. In the **Expected** section, click **Add piece**.
-3. In the **Add piece** dialog, fill out desired fields. See below for more information.
-4. Click **Save & close**. The new piece is displayed under the Expected section.
+3.  Add information about the piece in the **Add piece** dialog. See below for more information about each field.
+4. Click **Save & close**. The new piece is displayed in the Expected section.
 
 
 ### Add piece
 
 
 
-*   **Caption.** Enter a caption for the piece. 
+*   **Caption.**  A word, phrase or abbreviation indicating the parts into which the publisher has divided the serial, such as “volume,” “part,” or “band.”
+*   **Copy number.** The copy number of the piece.
+*   **Enumeration.** The enumeration of the piece which indicates the sequential numeric and/or alphabetic designation used by a publisher to identify the individual bibliographic or physical parts and to show the relationship of each part to the bibliographic unit as a whole.
+*   **Chronology.**  The chronology of the piece, such as “year, “month.”
+*   **Piece format.**  The order format, as selected in Orders. This field is not editable.
 *   **Expected receipt date.** The date the piece is expected to be received.
-*   **Select location.** The location, as selected in Orders. You can change the location by clicking [Assign a different location](#assign-a-different-location). 
-*   **Piece format.**  The order format, as selected in Orders. It can not be modified. 
-*   **Comment.** Enter any comments about the piece.
-*   **Create item.** Selecting the **Create item** checkbox connects the new piece to an instance in Inventory. This option is only available for pieces linked to an order with the purchase order line **Create inventory** value set to “Instance/holding/item.” . Note: In order to create an item in Inventory, a default instance status, instance type, and loan type must already be set up in Settings.  See [Settings > Orders]({{< ref "/settings_orders.md" >}}) for more information.*   **Supplement.** Selecting the **Supplement** checkbox indicates that the piece is a supplementary material such as a CD or a map. 
+*   **Comment.** Comments or notes about the piece.
+*   **Order line locations.**  A list of locations that were selected on the purchase order line.
+*   **Select location.**  In the drop down list, select the location for this piece. You can change the location by clicking [Create new holdings for location](#create-new-holdings-for-location). 
+*   **Create item.** Select the **Create item** checkbox to connect the new piece to an instance in Inventory. This option is only available for pieces linked to an order with the purchase order line **Create inventory** value set to “Instance/holding/item.” . Note: In order to create an item in Inventory, a default instance status, instance type, and loan type must already be set up in Settings.  See [Settings > Orders]({{< ref "/settings_orders.md" >}}) for more information.
+*   **Supplement.** Select the **Supplement** checkbox to indicate that the piece is a supplementary material such as a CD or a map. 
+*   **Display on holdings.**  Select the **Display on holdings** checkbox to indicate that information about this piece should be displayed in the Inventory app in the Acquisition section of the holding record.  See [Inventory > Acquisition]((../inventory/#acquisition) for more information.
+
+#### Create new holdings for location
+
+Note: If the location is changed for a specific piece and no holding exists for that location already, a new holding is created.
 
 
-#### Assign a different location
 
-Note: When the system is told to create a holding, a holding is created for the chosen location. If the location is changed for a specific piece and no holding exists for that location already, a new holding is created.
-
-
-
-1. In the **Add piece** dialog, click **Assign a different location**. 
+1. In the **Add piece** dialog, click **Select holdings**. 
 2. In the **Select permanent location** dialog, select an **Institution**, **Campus**, **Library**, and **Location**.
-3. Click **Save and close**. The changes appear in the **Select location** field of the **Add piece** dialog. The location is confirmed once the piece is saved. 
+3. Click **Save and close**. The changes appear in the **Select holdings** field of the **Add piece** dialog. The location is confirmed once the piece is saved. 
 
 
 ## Editing an expected or received piece
@@ -429,7 +433,7 @@ To edit an expected or received piece, make sure the correct receiving title is 
 
 1. Select the piece you want to edit.
 2. In the **Edit piece** dialog, the same fields as the [Add piece](#adding-an-expected-piece) dialog appear. See above for more information.
-3. Fill out the desired fields.
+3. Edit the contents of fields, as needed.
 4. Click **Save & close.** A confirmation message appears and the piece is updated.
 
 
@@ -438,7 +442,7 @@ To edit an expected or received piece, make sure the correct receiving title is 
 
 
 1. Select the piece you want to edit. 
-2. In the **Edit piece** dialog, the same fields as the **Add piece** dialog appear. See above for more information. Note: You cannot make changes to **Location**, **Piece format**, or **Create item** when editing a received piece. If the **Create item** checkbox was selected, it says **Connected** in place of **Create item**. If the checkbox was cleared, it still displays the **Create item** box, but the checkbox will be grayed out.
+2. In the **Edit piece** dialog, the same fields as the **Add piece** dialog appear. See above for more information. Note: You cannot make changes to **Piece format** or **Create item** when editing a received piece. If the **Create item** checkbox was selectedwhen the piece was created, the text **Connected** is displayed. If the checkbox was cleared, it still displays the **Create item** box, but the checkbox is not editable. 
 3. Fill out the desired fields.
 4. Click **Save & close**. A confirmation message appears and the piece is updated.
 
@@ -508,15 +512,19 @@ The Receive function can be used to receive multiple pieces at once.
 
 
 
-*   **Caption.** Create or change the caption of the piece. 
-*   **Barcode.** Create a barcode for the piece. You can only add a barcode if the piece is already **Connected** to an instance in Inventory, or if the **Create item** checkbox is selected.
-*   **Piece format.** The order format, as selected in Orders. It can not be modified. 
-*   **Request.** Information from the Requests app about this ordered material. If there is a request open for the piece, this field says “Yes”. 
-*   **Comment.** Enter any comments about the piece.
-*   **Select location.** The location, as selected in Orders. You can change the location by clicking [Assign a different location](#assign-a-different-location).
+*   **Order line locations.**  A list of locations that were selected on the purchase order line.
+*   **Caption.** A word, phrase or abbreviation indicating the parts into which the publisher has divided the serial, such as “volume,” “part,” or “band.”
+*   **Enumeration.** The enumeration of the piece which indicates the sequential numeric and/or alphabetic designation used by a publisher to identify the individual bibliographic or physical parts and to show the relationship of each part to the bibliographic unit as a whole.
+*   **Copy number.** The copy number of the piece.
+* 
+*   **Barcode.** A unique barcode for the piece. You can only add a barcode if the piece is already **Connected** to an instance in Inventory, or if the **Create item** checkbox is selected.
+*   **Piece format.** The order format, as selected in Orders. This field is not editable.
+*   **Request.** Information from the Requests app about this ordered material. A value of “Yes” indicates that a request is open for the piece. 
+*   **Comment.** Comments or notes about the piece.
+*   **Select location.** The location, as selected in Orders. You can change the location by clicking [Create new holdings for location](#create-new-holdings-for-location).
 *   **Item status.** This field is populated with the item status that will appear in Inventory after the item is received. The item status will change from “On order” to “In process.”
 *   **Call number.** Enter the call number for the piece. You can only add a call number if the piece is already **Connected** to an instance in Inventory, or if the **Create item** checkbox is selected.
-*   **Create item.** Selecting the **Create item** checkbox links the new piece to an instance in Inventory. This option is onlyavailable for pieces linked to an order with the purchase order line **Create inventory** value set to “Instance/holding/item.” Note: In order to create an item in Inventory, a default instance status, instance type, and loan type must already be set up in Settings.  See [Settings > Orders]({{< ref "/settings_orders.md" >}}) for more information.
+*   **Create item.** Selecting the **Create item** checkbox links the new piece to an instance in Inventory. This option is only available for pieces linked to an order with the purchase order line **Create inventory** value set to “Instance/holding/item.” Note: In order to create an item in Inventory, a default instance status, instance type, and loan type must already be set up in Settings.  See [Settings > Orders]({{< ref "/settings_orders.md" >}}) for more information.
 
 
 

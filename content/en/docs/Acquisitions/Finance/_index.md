@@ -1,8 +1,7 @@
-
 ---
 title: "Finance"
 linkTitle: "Finance"
-date: 2022-03-21
+date: 2022-05-02
 weight: 10
 tags: ["parenttopic"]
 ---
@@ -455,8 +454,10 @@ The group details pane contains group financial summary information and lists al
 *   **Encumbered.** The sum of encumbrance transaction amounts against all fund budgets for the group during the fiscal year selected.
 *   **Awaiting Payment.** The sum of pending payment transaction amounts against all fund budgets for the group during the fiscal year selected.  
 *   **Expended.** The sum of payment transaction amounts minus credit transaction amounts against all fund budgets for the group during the fiscal year selected.
-*   **Unavailable** Total amount unavailable across all fund budgets for the group during the fiscal year selected, calculated as the sum of the encumbered, awaiting payment, and expended amounts..
-*   **Available balance.** Total amount available across all fund budgets for the group during the fiscal year selected, calculated as **Total funding** amount minus the **Unavailable** amount.  Note: In this version of FOLIO, negative available balances display as zero.  For example, if the allowed expenditure field for the budget is blank, then there are no restrictions on how much can be expended against the budget.  If transactions have processed that exceed the total funding amount by $100, then the amount in the Available balance will display as zero rather than negative ($100).  Negative balance amounts will display in a future version of the system.
+*   **Unavailable** Total amount unavailable across all fund budgets for the group during the fiscal year selected, calculated as the sum of the encumbered, awaiting payment, and expended amounts.
+*   **Available balance.** Total amount available across all fund budgets for the group during the fiscal year selected, calculated as **Total funding** amount minus the **Unavailable** amount.  Note: In this version of FOLIO, negative available balances display as zero.  For example, if the allowed expenditure field for the budget is blank, then there are no restrictions on how much can be expended against the budget.  If transactions exceed the total funding amount by $100, then the amount in the Available balance will display as zero rather than negative ($100).  Negative balance amounts will display in a future version of the system.
+
+
 #### Fund
 
 The Fund table contains the following columns:
@@ -472,6 +473,8 @@ The Fund table contains the following columns:
 The Expense classes table contains the following columns:
 
 *   **Expense class.** Name of the expense class, a fiscal entity used to track transactions against a specific purpose or function within a fund.
+*   **Encumbered.**  Total amount encumbered for the expense class.
+*   **Awaiting payment.**  Total amount awaiting payment for the expense class.
 *   **Expended.** Total amount expended for the expense class.
 *   **Percent of total expended.** Total amount expended for the expense class as a percentage of total expended from across all expense classes for funds in the group.
 
@@ -578,19 +581,57 @@ The Budget information section contains the following fields:
 
 ## Allocating money to a budget
 
+Use the **Actions** menu to allocate money to a budget.  You can **Increase allocation**, **Decrease allocation**, or **Move allocation**.
 
+
+### Increasing allocation to a fund budget
 
 1. Find the budget to which you want to allocate money and select it.
-2. In the **Budget details** window, click **Actions > Allocate.**
-3. In the **Allocation** dialog, enter the following information:
+2. In the **Budget details** window, click **Actions > Increase allocation.**
+3. In the **Increase allocation** dialog, enter the following information:
 
-*   **From.** To allocate money to this fund without moving it from another fund, leave the **From** value  blank. To allocate an amount from another fund, select the name of the fund from the drop-down list.  The allocated amount will be included in the following year allocation amount for the **To** fund, depending on your fiscal year rollover settings . See [Transferring money between funds](#transferring-money-between-funds) for information about transfers to determine whether you want to move money using **Allocation** or **Transfer**.
-*   **To.** The name of the budget to which you want to allocate money.  The name of the budget you were viewing when you selected the **Allocate** action displays by default.  Use the drop-down list to select a different **To** budget.
-*   **Amount (required).** Enter an amount as a numeric value. Values with or without decimals are accepted (100 or 100.00). Negative values are not accepted.  If you need to decrease the allocation for this budget without moving money from another fund, select the name of the fund in the **From** drop-down list, leave the **To** field blank, and enter the value of the decrease in the **Amount** field.  
-*   **Tags.** Enter or select any tags from the drop-down list to apply to the allocation transaction.
-*   **Description.** Enter a description of the allocation.
+*   **Fund.**  The name of the fund to which you want to increase an allocation of money. This field displays the fund name and code for the budget you selected and is not editable. The display format is Fund name (fund code).
+*   **Amount (required).** Enter an amount as a numeric value. Values with or without decimals are accepted (100 or 100.00). The amount must be a positive number*   **Tags.** Enter or select any tags from the drop-down list to apply to the allocation transaction.
+*   **Description.** Enter a description of the allocation increase.
 
-4. Click **Confirm.** A confirmation message appears and the allocation transaction is complete.
+4. Click **Confirm.** A confirmation message appears and the increase allocation transaction is complete.
+
+
+
+### Decreasing allocation to a fund budget
+
+
+1. Find the budget to which you want to submit a decreased allocation and select it.
+2. In the **Budget details** window, click **Actions > Decrease allocation.**
+3. In the **Decrease allocation** dialog, enter the following information:
+
+*   **Fund.**  The name of the fund to which you want to submit a decreased allocation of money. This field displays the fund name and code for the budget you selected and is not editable. The display format is Fund name (fund code).
+*   **Amount (required).** Enter an amount as a numeric value. Values with or without decimals are accepted (100 or 100.00). The amount must be a positive number. 
+*   **Tags.** Enter or select any tags from the drop-down list to apply to the decrease allocation transaction.
+*   **Description.** Enter a description of the allocation decrease.
+
+4. Click **Confirm.** A confirmation message appears and the decrease allocation transaction is complete.
+
+
+### Moving allocation to another fund budget
+
+
+Use the **Move allocation** action to move money between fund current fiscal year budgets as allocation transactions. Allocated amounts can be included in the next fiscal year allocation amount for a fund, depending on your fiscal year rollover settings . See [Transferring money between funds](#transferring-money-between-funds) for information about transfers to determine whether you want to move money using **Move allocation** or **Transfer**.
+
+1. Find the budget to which you want to move an allocation and select it.
+2. In the **Budget details** window, click **Actions > Move allocation.**
+3. In the **Move allocation** dialog, enter the following information:
+
+*   **From (required).** Select the fund from which you want to allocate money. The display format is Fund name (fund code).
+*   **To (required).** Select the name of the fund to which you want to allocate money. This field displays the fund name (code) with which this budget is associated. You must populate either **From** or **To** with the fund for the budget you are currently viewing.
+*   **Amount (required).** Enter an amount as a numeric value. Values with or without decimals are accepted (100 or 100.00). The amount must be a positive number. 
+*   **Tags.** Enter or select any tags from the drop-down list to apply to the decrease allocation transaction.
+*   **Description.** Enter a description of the allocation move.
+
+4. Click **Confirm.** A confirmation message appears and the decrease allocation transaction is complete.
+
+
+
 
 
 ## Transferring money between funds
@@ -605,8 +646,8 @@ You can transfer money between the current fiscal year budgets of two funds. Thi
 2. In the **budget details** window, click **Actions > Transfer.**
 3. In the **Transfer** dialog, enter the following information:
 
-*   **From (required).** Select the name of the fund from which you want to transfer money.  
-*   **To (required).** Select the name of the fund to which you want to allocate money.
+*   **From (required).** Select the fund from which you want to transfer money.  
+*   **To (required).** Select the fund to which you want to transfer money.
 *   **Amount (required).** Enter an amount as a numeric value. Values with or without decimals are accepted (100 or 100.00). Negative values are accepted.  
 *   **Tags.** Enter or select any tags from the drop-down list you would like to apply to the transfer transaction.
 *   **Description.** Enter a description of the transfer.  
@@ -618,7 +659,7 @@ You can transfer money between the current fiscal year budgets of two funds. Thi
 ## Deleting a budget
 
 
-Note: Financial structure records cannot be deleted if they have other records assigned to them. Budgets cannot be deleted once they have any type of transaction other than Allocation transactions against them.
+Note: Financial structure records cannot be deleted if they have other records assigned to them. Budgets cannot be deleted once they have any type of transaction other than allocation transactions against them.
 
 
 1. [Find the budget](#viewing-budget-details) you want to delete and select it.
@@ -715,12 +756,12 @@ To view additional information about a transaction, click the transaction row in
 *   **Source.** Name of the user who created the record.
 *   **Transaction date.** Date of the transaction.
 *   **Fiscal year.**  The fiscal year for the budget.
-*   **Amount.** Amount for the transaction. Negative values are in parentheses.
+*   **Amount.** Amount of the transaction. Negative values are in parentheses.
 *   **Source.** Fiscal year or User.
 *   **Type.** Transaction type: Allocation.
 *   **From.** Fund name and fund code from which the allocation was made into this budget, if applicable.  See [Allocating money to a budget](#allocating-money-to-a-budget) for more information.
 *   **To.** Fund name and fund code of this budget to which the allocation was made.
-*   **Expense class.**  The expense class applied to 
+*   **Expense class.**  This field will be blank for allocation transactions since expense class designations for allocations aren’t supported by the system.
 *   **Tags.** Any tags associated with the transaction.
 *   **Description.**  A description entered by the user when [Allocating money to a budget](#allocating-money-to-a-budget).
 
@@ -735,7 +776,7 @@ The credit transaction detail pane contains many of the same fields as the [allo
 *   **Type.** Transaction type: Credit.
 *   **From.** This field will be blank for credit transactions. 
 *   **To.** Fund name and fund code of this budget to which the credit was made.
-*   **Description.**  This field will be blank for credit transactions.
+*   **Description.**  This field is blank for credit transactions.
 
 
 ### Viewing encumbrance transactions
@@ -747,6 +788,7 @@ When an order containing a PO Line with a fund distribution is opened, an **Encu
 *   **Type.** Transaction type: Encumbrance.
 *   **From.** Fund name and code for this budget to which this encumbrance was applied.  
 *   **To.** This field will be blank for encumbrance transactions.
+*   **Expense class.**  The expense class assigned to this encumbrance transaction.
 *   **Initial encumbrance.**  The amount originally encumbered by the related PO Line.  
 *   **Awaiting payment.**  The amount awaiting payment.  
 *   **Expended.**  The amount expended.  This amount is populated after an invoice for the related PO Line is paid.
@@ -887,3 +929,4 @@ The information in this section defines rollover behavior for encumbrances by or
 *   **Rollover.**  Check this box if you want encumbrances for open orders of this type of order to rollover to the upcoming fiscal year budget associated with each order.  Checking this box will activate the  **Based on** and **Increase by, %** fields.
 *   **Based on.**  From the drop down list, select **Expended** to encumber the total amount that was expended during the current fiscal year or select **Remaining** to encumber the amount that has not yet been paid.
 *   **Increase by, %.**  Enter a value if you want to increase the encumbrance amount by a defined percentage.   
+

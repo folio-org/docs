@@ -1,8 +1,7 @@
-
 ---
 title: "Orders"
 linkTitle: "Orders"
-date: 2022-03-21
+date: 2022-05-02
 weight: 30
 tags: ["parenttopic"]
 ---
@@ -479,6 +478,7 @@ See [Creating an order > Purchase order](#purchase-order) for more information o
 *   **Re-encumber.**  See [Creating a purchase order](#purchase-order) for a full description of this field. 
 *   **Created by.**  Name of the user that created the purchase order.
 *   **Created on.**  The date and time at which the purchase order was created.
+*   **Date ordered.**  The date and time at which the purchase order was opened.
 
 
 
@@ -535,14 +535,18 @@ This section displays information about purchase order lines for this order. The
 ### Related invoices
 
 
-This section displays information about invoices and invoice lines that link to this order. The invoice table list displays the following columns:
+This section displays information about invoices and invoice lines that link to this order. The invoice table list displays the following columns. To sort the list by **Invoice date**, click on the column header.
 
 
 *   **Invoice #.** The invoice number for the invoice that has an invoice line linked to this POL.  Click on the invoice number to open the Invoices app detail pane for the invoice.  Note: The link is to the general invoice, not to the specific invoice line that links to this POL.
-*   **Invoice date.**  The vendor invoice date.
-*   **Vendor name.**  The name of the vendor associated with the related invoice.
+*   **Invoice date.** The vendor invoice date.  Click on the column name to sort the list of related invoices by **Invoice date**.
+*   **Vendor name.** The name of the vendor associated with the related invoice.
+*   **Vendor invoice number.** The vendor-provided identifier for the related invoice.
 *   **Status.**  The status of the invoice: Open, Reviewed, Approved, Paid, or Cancelled.
+*   **Quantity.** The quantity for the related invoice.
 *   **Expended amount.** The expended amount of the invoice.  The amount displayed is the **Calculated total amount** of the general invoice.
+*   **Piece(s).**  The caption information, as entered on the piece record of the Receiving app, for this order.  See [Receiving >Add piece fields](../receiving/#add-piece-fields) for more information.
+
 
 
 ## Editing an order
@@ -698,12 +702,14 @@ To print or save a PDF file containing a snapshot of key information about an or
 
 3. In the **Add PO line** window, fill in the fields in the [Item details](#item-details), [PO line details](#po-line-details), [Vendor](#vendor), [Cost details](#cost-details), and [Fund distribution](#fund-distribution) sections. For more information on the fields and actions available in these sections, see the section descriptions below.
 
-4. Click **Save & close** or **Save & open order**, if applicable. For more information on saving and opening orders simultaneously, see [Settings > Orders > Opening purchase orders]({{< ref "/settings_orders.md#settings--orders--opening-purchase-orders" >}}).
+4. **Create another** checkbox: If the [Settings > Orders > Purchase orders line limit]({{< ref "/settings_orders.md#settings--orders-purchase-orders-line-limit" >}}) value is greater than one, click this checkbox at the bottom of the window to keep the **Add PO line** window open after saving the current order line.
+
+4. Click **Save**, **Save & close** or **Save & open order**, if applicable. For more information on saving and opening orders simultaneously, see [Settings > Orders > Opening purchase orders]({{< ref "/settings_orders.md#settings--orders--opening-purchase-orders" >}}).
 
 
 ### Item details
 
-*   **Package.** If you are adding a package, select the **Package** checkbox. If selected, Title becomes Package name. The **Manually add titles for receiving** checkbox will be automatically selected once you select the **Package** checkbox.
+*   **Package.** If you are adding a package, select the **Package** checkbox. If selected, Title becomes Package name. The **Receiving workflow** field will be automatically set to “Independent order and receipt quantity” once you select the **Package** checkbox.  See the [PO line details](#po-line-details) section below for more information about Receiving workflow.
 *   **Title/Package name.** Title of the item. If you already have the item in your Inventory app, you can use Title look-up to link the item to the Inventory record. This will automatically populate any applicable fields. To link to an inventory record, click **Title look-up**. In the **Select instance** dialog, find the title using the search box and/or the filters. Click the title to select it. The title appears in the Title box and relevant item fields are populated.
 *   **Receiving note.** Enter any notes about receiving the item. The notes display in the Receiving app for this order line.
 *   **Subscription from.** If the item is a subscription, select when the subscription starts.  The date displays in the Invoices app when this order line is added to an invoice.
@@ -767,8 +773,7 @@ To print or save a PDF file containing a snapshot of key information about an or
 *   **Cancellation restriction.** If there is a cancellation restriction on the item, select the **Cancellation restriction** checkbox.
 *   **Rush.** If the item needs rush processing, select the **Rush** checkbox.
 *   **Collection.** If the item is part of a collection, select the **Collection** checkbox.
-*   **Manually add pieces for receiving.** If you want to manually add pieces for receiving, select the **Manually add pieces for receiving** checkbox. When this checkbox is selected, the system doesn’t automatically create receiving records for the material in the Receiving app. If selected, you need to create the pieces manually in the Receiving app.
-*   **Cancellation description.** A note about the cancellation.
+*   **Receiving workflow.** Select a value from the drop down list to manage behavior in the Receiving app.  Select **Synchronized order and receipt quantity** to keep the order quantity and the number of pieces to be received in sync. When the order is opened, the system will generate Receiving app pieces based on the quantity value on the purchase order line. Updating the quantity on the order will update the number of pieces to be received and updates in the Receiving app will update the order.  Select **Independent order and receipt quantity** if you need to create an unpredictable quantity of Receiving pieces, such as for an ongoing order.  Note: In prior system releases, this field was a checkbox named “Manually add pieces for recieving.”*   **Cancellation description.** A note about the cancellation.
 *   **Line description.** A description of the purchase order line.
 *   **Tags.** Select or enter any tags you want to assign to the order line in the box.
 
@@ -785,9 +790,8 @@ To print or save a PDF file containing a snapshot of key information about an or
 
 ### Cost details
 
-Note: Only certain fields will be editable depending on the [Order format](#order-format) selected in the [PO line details](#po-line-details) section. Also, some fields are required based on the Order format.
-
-
+This section contains purchase order line cost, quantity, currency, and discount information. Only certain fields will be editable depending on the [Order format](#order-format) selected in the [PO line details](#po-line-details) section. Some fields are required based on the Order format.  
+Note: If the [Package checkbox](#item-details) is selected for the purchase order line, you will see **Unit price** and **Quantity** field labels rather than **Physical unit price** or **Electronic unit price** or quantity field labels.
 
 *   **Physical unit price.** The price of the physical unit. Required if the [Order format](#order-format) is Physical, P/E mix, or Other.
 *   **Quantity physical.** The number of items you are ordering. Required if the [Order format](#order-format) is Physical, P/E mix, or Other.
@@ -835,15 +839,22 @@ Location determines the effective location of the item once received. If you are
 
 #### Adding a location
 
+
+This field is required if the value of the **Create inventory** field includes Holdings. You can select from an existing holding for this title instance or add a new holding location for this title instance. See [E-resources details > Create inventory](#e-resources-details) for more information about the **Create inventory** field.
+
+To add a location, follow these steps:
+
 1. Click **Add location**.
 
-2. Select a **Name (code)** from the drop-down list.
+2. If the **Create inventory** field for this purchase order line includes Holdings and this title instance already has holdings, the **Select holdings** drop-down list contains the list of existing holdings.  Select a **Name (code)** from the drop-down list.
 
-3. Enter a **Quantity physical** in the box.
+3. If this title instance doesn’t already have holdings or you need to create a new holding location, click **Create new holdings for location**
+.
+4. Enter a **Quantity physical** in the box.
 
-4. Enter a **Quantity electronic** in the box.
+5. Enter a **Quantity electronic** in the box.
 
-5. Repeat as needed. The location saves once the order line is saved.
+6 Repeat as needed. The location saves and any new holdings are created once the order line is saved.
 
 
 #### Deleting a location
@@ -873,7 +884,7 @@ This section only appears if you select Electronic resource or P/E mix under [Or
 
 
 
-*   **Access provider.** The e-resource provider. To change the provider, click **Organization look-up** to select a vendor. In the **Select Organization** dialog, find the organization using the search box and/or filters. Click the organization to add it as the access provider.
+*   **Access provider.** The e-resource provider. The default value is set to the vendor organization. To change the provider organization, click **Organization look-up** to select a different organization. In the **Select Organization** dialog, find the organization using the search box and/or filters. Click the organization to add it as the access provider.
 *   **Activation status.** If the e-resource is activated, select the **Activation status** checkbox.
 *   **Activation due.** The date the activation is due. Note: If you have entered an interval in the Expected activation interval field in the Vendor information section of the vendor record, the activation due date is populated based on the number of days you entered as the interval. For example, if you set the interval to 365, the Activation due field is populated with the date that falls one year from the date of order line creation. 
 *   **Create inventory.** Select the types of records you want to create in the Inventory app once the order is opened. For information on configuring the default setting for this field based on [Order format](#order-format), see [Settings > Orders > Inventory interactions]({{< ref "/settings_orders.md#settings--orders--inventory-interactions" >}}).
@@ -1412,4 +1423,3 @@ If the PO Line has been linked to an Agreement line in the Agreements app, a Lin
 3. In the **Tags** pane, either select a tag from the box or enter a tag.
 
 4. Click the **X** on the Tags pane to close the pane and save the tag. The tag number updates to the number of tags applied to the order line.
-

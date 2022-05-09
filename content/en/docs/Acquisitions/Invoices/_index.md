@@ -1,8 +1,7 @@
-
 ---
 title: "Invoices"
 linkTitle: "Invoices"
-date: 2022-03-21
+date: 2022-05-02
 weight: 20
 tags: ["parenttopic"]
 ---
@@ -79,7 +78,7 @@ This section contains invoice header information. Invoice date, Status, and Batc
 *   **Total adjustments.** The total adjustments to the invoice calculated as the sum of all adjustments on the invoice header and all invoice lines. The system will generate this amount after the invoice is created.
 *   **Calculated total amount.** The total amount of the invoice calculated as the sum of the **Sub-total** value and the **Total adjustments** value. The system will generate this amount after the invoice is created.
 *   **Lock total** Check this box to indicate that you want to enter a total amount.  Leave this box unchecked if you want the system to calculate the total amount based on the invoice line amounts.  
-*   **Lock total amount.** The total expenditure for the invoice.  This field is editable only if the **Lock total** checkbox is checked. If entering a locked total, all invoice lines and adjustment values must equal this lock total amount before a user can approve the invoice.  
+*   **Lock total amount.** The total expenditure for the invoice.  This field is editable only if the **Lock total** checkbox is checked. If you enter a lock total amount, all invoice lines and adjustment values must equal this lock total amount before a user can approve the invoice.  
 *   **Note.** Any additional comments relevant to the invoice.
 
 
@@ -188,6 +187,20 @@ To create an invoice line that is not associated with an existing purchase order
 1. Click **New.**
 2. In the **Create vendor invoice line** window, fill in the Invoice information, Fund distribution, and Adjustments sections. For more information on the fields and actions available in these sections, see the section descriptions below.
 3. Click **Save & close**. A confirmation message appears and the invoice line appears in the Invoice lines table.
+
+
+## Linking an invoice line to a purchase order line
+
+When vendor EDIFACT format invoices are loaded to the system through data import, invoice lines are created based on information provided from the vendor.  The system may be unable to  automatically match some invoice lines to an existing purchase order line.  To manually link an invoice line to a purchase order line, follow these steps:
+
+
+1. From the vendor invoice pane, review the Invoice lines accordion to determine whether the system has automatically created a purchase order link.  A successfully linked invoice line contains a **POL number** value in the Invoice line table list.  If the **POL number** is blank, the system was unable to match to an existing purchase order.
+2. To manually link the invoice line, click on the link icon to invoke a POL lookup.
+3.  The **Select order lines** window opens. In the **Search & filter** box, enter keywords to search for the purchase order line (POL).
+4. Optional: Filter results.
+5. Click **Search**. Search results appear in the Search results pane.
+6. Click on the one order you want to link to the invoice line. The **POL number** value is populated and the link is created.
+
 
 
 ### Invoice line information
@@ -512,10 +525,19 @@ Deleting an invoice is possible while in an Open, Reviewed, or Cancelled status.
 
 ## Approving an invoice
 
-Only invoices with invoice lines can be approved. Only someone with the **Approve invoice** permission can perform this action.  Invoices require approval before the payment amounts are considered to be awaiting payment and in order for vouchers to be created. Once one or more invoices connected to a purchase order line have been “Approved,” the Payment status on the purchase order is changed to “Partially paid.”
 
-If entering a locked total, all invoice lines and adjustment values must equal this lock total amount before a user can approve the invoice. Approving an invoice triggers the creation of the voucher and pending payment transactions. Vouchers are a mechanism for providing the information necessary to make invoice payments and can be exported to an external payment system. Each invoice generates a single unique voucher on which all fund charges are grouped by the fund external account number.  For more information on exporting vouchers, see
+Invoices require approval before the payment amounts are considered to be awaiting payment and in order for vouchers to be created. Approving an invoice is possible when:
+*   The invoice status is Open or Reviewed. 
+*   One or more invoice lines are added to the invoice.. 
+*   The user account includes the **Approve invoice** permission.
+*   If you enter a **Lock total** value, all invoice lines and adjustment values must equal this lock total amount.  See [Invoice information > Lock total] (#invoice-information) for information about lock total. 
+
+
+Approving an invoice triggers the following system actions:
+*   Once one or more invoices connected to a purchase order line have been “Approved,” the purchase order **Payment status** is changed to “Partially paid.”  
+*   Voucher and pending payment transactions are created. Vouchers are a mechanism for providing the information necessary to make invoice payments and can be exported to an external payment system. Each invoice generates a single unique voucher on which all fund charges are grouped by the fund external account number.  For more information on exporting vouchers, see
  [Settings > Invoices > Batch group configuration](../../settings/settings_invoices/settings_invoices/#settings--invoices--batch-group-configuration).
+
 
 To approve an invoice, follow these steps:
 
@@ -606,7 +628,9 @@ To print an invoice voucher, follow these steps:
 
 
 
-Use the **Pay** action to update the invoice to the status of Paid. The **Pay** action is available in the Action menu if the [Settings > Invoices > Approvals](../../settings/settings_invoices/settings_invoices/#settings--invoices--approvals) **Approve and pay in one click** setting is turned off.  This enables a library to use separate actions to **Approve** invoices and **Pay** invoices.  If that setting is off, the invoice must be approved before the **Pay** action will be available.  Moving the invoice to paid status will trigger an update of the order status to **Closed** once the order is fully received. See [Settings > Invoices > Approvals](../../settings/settings_invoices/settings_invoices/#settings--invoices--approvals) for more information about the “Approve and pay in one click” setting.  
+Use the **Pay** action to update the invoice to the status of Paid. The **Pay** action is available in the Action menu if the [Settings > Invoices > Approvals](../../settings/settings_invoices/settings_invoices/#settings--invoices--approvals) **Approve and pay in one click** setting is turned off.  This enables a library to use separate actions to **Approve** invoices and **Pay** invoices.  If that setting is off, the invoice must be approved before the **Pay** action will be available.  
+
+Moving the invoice to paid status will trigger an update of the purchase order status to **Closed** once the order is fully received. See [Settings > Invoices > Approvals](../../settings/settings_invoices/settings_invoices/#settings--invoices--approvals) for more information about the “Approve and pay in one click” setting.  
 
 
 
@@ -614,11 +638,9 @@ To pay an invoice, follow these steps:
 
 
 
-1. Using the Search and Filter pane, find the invoice you want to pay and select it.
-2. In the action menu, select “Pay.”
-
-
-
+1. Using the Search and Filter pane, find the approved invoice that you want to pay and select it.
+2.  In the Voucher invoice number pane, select **Actions** > **Pay.**
+3. Click **Submit**.
 ## Viewing voucher export details and downloading the export file
 
 
@@ -697,4 +719,3 @@ The only fields that are editable on the voucher are:
 *   **Disbursement number.** Enter an identifier from an external system corresponding to a payment, such as a check number.
 *   **Disbursement date.**  Enter the date of the disbursement transaction in the external system.
 *   **Disbursement amount.**  Enter the amount of the disbursement, with or without decimal.
-
