@@ -317,6 +317,12 @@ weight: 800
    <td>The fourth level of the four-level location structure (Institution -> Campus -> Library -> Location). Locations are used in functionality including item routing, fees and fines, and remote storage configuration. Items may also have an “effective location” value that is used in circulation.
    </td>
   </tr>
+   <tr>
+   <td>Long-term loan
+   </td>
+   <td>A loan with a loan period interval specified in days, weeks, or months, or determined by a fixed due date. A long-term loan is always due at 11:59 PM on its due date. All of its notices are delivered in real time except for notices triggered by loan due date/time, which are delivered overnight.
+   </td>
+  </tr>
   <tr>
    <td>LSP
    </td>
@@ -351,6 +357,12 @@ weight: 800
    <td>Net transfers
    </td>
    <td>Money transferred between funds during a fiscal year.
+   </td>
+  </tr>
+   <tr>
+   <td>Okapi
+   </td>
+   <td>Okapi is the FOLIO-provided gateway system for managing apps and communication between system modules. System administrators and hosting providers use Okapi as an essential tool to manage FOLIO performance, upgrade or remove modules, and maintain available permissions. In contrast, library staff generally only use Okapi when they need to query FOLIO APIs for information. See <a href="https://github.com/folio-org/okapi/blob/master/doc/guide.md">https://github.com/folio-org/okapi/blob/master/doc/guide.md</a> for more detailed technical documentation.
    </td>
   </tr>
   <tr>
@@ -470,7 +482,13 @@ weight: 800
   <tr>
    <td>Shelving lag time
    </td>
-   <td>Locally determined time-frame between the return of material and the time it should be reshelved. This functionality is not yet in place for the Honeysuckle version of FOLIO.
+   <td>Locally determined time-frame between the return of material and the time it should be reshelved. This functionality is not yet in place for FOLIO.
+   </td>
+  </tr>
+   <tr>
+   <td>Short-term loan
+   </td>
+   <td>A loan with a loan period specified in minutes or hours. All short-term loan notices are delivered in real time.
    </td>
   </tr>
   <tr>
