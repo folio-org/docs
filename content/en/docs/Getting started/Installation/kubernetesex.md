@@ -5,7 +5,7 @@ weight: 30
 description: 
 tags: ["subtopic"]
 ---
- The Rancher/Kubernetes solution allows for the addition of new tenants and hardware resources on demand.  It is ideal if you need to scale-up your FOLIO instance in the future.  This guide describes a Rancher/Kubernetes installation.
+The Rancher/Kubernetes solution allows for the addition of new tenants and hardware resources on demand.  It is ideal if you need to scale-up your FOLIO instance in the future.  This guide describes a Rancher/Kubernetes installation.
 
 ![Kubernetes Deployment](/img/kubernetes_deployment.png)
 
@@ -37,4 +37,3 @@ You will need a Rancher server for managing the Kubernetes cluster for FOLIO.  T
 
 A sample configuration and deployment procedure can be found at
 <https://github.com/folio-org/folio-install/tree/tamu-r2-2021/alternative-install/kubernetes-rancher/TAMU>.
-

@@ -1,6 +1,6 @@
 # baseURL = "/"
-baseURL = "https://docs.folio.org/"
-title = "FOLIO Documentation"
+baseURL = "https://juniper.docs.folio.org/"
+title = "FOLIO Documentation - Juniper"
 
 enableRobotsTXT = true
 
@@ -76,8 +76,8 @@ languageName ="English"
 # Everything below this are Site Params
 
 [params]
-copyright = "The Docsy Authors"
-privacy_policy = "https://policies.google.com/privacy"
+copyright = "Open Library Foundation"
+privacy_policy = "https://openlibraryfoundation.org/privacy-policy/"
 
 #From Arnon
 custom_css = ["css/toc.css"]
@@ -101,24 +101,36 @@ version = "0.0"
 
 # A link to latest version of the docs. Used in the "version-banner" partial to
 # point people to the main doc site.
-url_latest_version = "https://example.com"
+url_latest_version = "https://docs.folio.org"
 
 # Repository configuration (URLs for in-page links to opening issues and suggesting changes)
-github_repo = "https://github.com/google/docsy-example"
+github_repo = "https://github.com/folio-org/docs"
 # An optional link to a related project repo. For example, the sibling repository where your product code lives.
-github_project_repo = "https://github.com/google/docsy"
+github_project_repo = "https://github.com/folio-org"
 
 # Specify a value here if your content directory is not in your repo's root directory
 # github_subdir = ""
 
 # Google Custom Search Engine ID. Remove or comment out to disable search.
-gcs_engine_id = "011737558837375720776:fsdu1nryfng"
+# gcs_engine_id = "011737558837375720776:fsdu1nryfng"
 
 # Enable Algolia DocSearch
-algolia_docsearch = false
+algolia_docsearch = true
 
 # Enable Lunr.js offline search
 offlineSearch = false
+
+[[params.versions]]
+  version = "Juniper"
+  url = "https://juniper.docs.folio.org/docs"
+
+[[params.versions]]
+  version = "Iris"
+  url = "https://iris.docs.folio.org/docs"
+
+[[params.versions]]
+  version = "Honeysuckle"
+  url = "https://honeysuckle.docs.folio.org/docs"
 
 # User interface configuration
 [params.ui]
@@ -127,7 +139,7 @@ sidebar_menu_compact = false
 #  Set to true to disable breadcrumb navigation.
 breadcrumb_disable = false
 #  Set to true to hide the sidebar search box (the top nav search box will still be displayed if search is enabled)
-sidebar_search_disable = false
+sidebar_search_disable = true
 #  Set to false if you don't want to display a logo (/assets/icons/logo.svg) in the top nav bar
 navbar_logo = true
 # Set to true to disable the About link in the site footer
@@ -150,37 +162,26 @@ no = 'Sorry to hear that. Please <a href="https://github.com/USERNAME/REPOSITORY
 enable = false
 
 [params.links]
-# End user relevant links. These will show up on left side of footer and in the community page if you have one.
-[[params.links.user]]
-	name = "User mailing list"
-	url = "https://example.org/mail"
-	icon = "fa fa-envelope"
-        desc = "Discussion and help from your fellow users"
-[[params.links.user]]
+# Relevant links. These will show up on right side of footer and in the community page if you have one.
+[[params.links.developer]]
 	name ="Twitter"
-	url = "https://example.org/twitter"
+	url = "https://twitter.com/FOLIO_LSP"
 	icon = "fab fa-twitter"
         desc = "Follow us on Twitter to get the latest news!"
-[[params.links.user]]
-	name = "Stack Overflow"
-	url = "https://example.org/stack"
-	icon = "fab fa-stack-overflow"
-        desc = "Practical questions and curated answers"
-# Developer relevant links. These will show up on right side of footer and in the community page if you have one.
 [[params.links.developer]]
 	name = "GitHub"
-	url = "https://github.com/google/docsy"
+	url = "https://github.com/folio-org"
 	icon = "fab fa-github"
         desc = "Development takes place here!"
 [[params.links.developer]]
 	name = "Slack"
-	url = "https://example.org/slack"
+	url = "https://slack-invitation.folio.org/"
 	icon = "fab fa-slack"
         desc = "Chat with other project developers"
 [[params.links.developer]]
-	name = "Developer mailing list"
-	url = "https://example.org/mail"
-	icon = "fa fa-envelope"
+	name = "Discuss"
+	url = "https://discuss.folio.org/"
+	icon = "fa fa-comment-alt"
         desc = "Discuss development issues around the project"
 
 #From Arnon

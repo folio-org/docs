@@ -1,9 +1,8 @@
-
 ---
 title: "Check in"
 linkTitle: "Check in"
-date: 2021-02-23
-weight: 20
+date: 2021-12-03
+weight: 10
 ---
 
 The Check in app allows you to process items at a service point, including items a patron returns to the library, items requested by a patron, or in process items. You can also use the Check in app to record in-house usage.
@@ -51,34 +50,33 @@ Once you check in an item, the following columns appear in the Scanned Items tab
 
 ### Getting additional item information
 
-To access more information about each item, you can do one of the following in the Actions column:
+If you have appropriate permissions, you can learn more information about the item or loan through the Actions column:
 
+* Click **...> Print transit slip** to print an item transit slip if needed. If the item did not go in transit when checked in, this option does not appear.
 * Click **... > Loan details** to open the Users app and view the loan details.
 * Click **... > Patron details** to open the Users app and view the patron’s user account.
 * Click **... > Item details** to open the Inventory app and get additional item details.
-* Click **... > Fee/fine details** to open the Users app and view the patron’s fees/fines. In the window that appears, you can create new fee/fines and pay, waive, refund, or transfer fee/fines. If there are no fees/fines associated with the checked in item, this option will appear grayed out.
+* Click **... > Fee/fine details** to open the Users app and view the patron’s fees/fines. In the window that appears, you can create new fee/fines and pay, waive, refund, or transfer fee/fines. If there are no fees/fines associated with the checked in item, this option does not appear.
 * Click **... > New Fee/Fine **to open the Users app and create a new fee/fine associated with the item.
 
 
 ## Checking in an item on route to another service point    
 
-There are two scenarios in which an item may need to be routed to another service point: a patron returns an item and the service point used at check in is not assigned to its effective location or a patron requests an item to be picked up at a different service point.
+There are two scenarios in which an item may need to be routed to another service point:
+* a patron returns an item and the service point used at check in is not assigned to its effective location
+* an item is requested by another patron to be picked up at a different service point.
 
 1. Either scan the barcode of the item, or enter the barcode and click **Enter**. If the item needs to be sent to another location, an **In transit** dialog appears noting the item is in transit and needs to be routed to a different service point.
-
-2. Optional: If you do not want to print a routing slip, clear the **Print slip** checkbox.
-
+2. If you do not want to print a routing slip, clear the **Print slip** checkbox if it is checked.
 3. Click **Close** to exit and print a routing slip, if selected. The item appears in the Scanned Items table and its status changes to In transit.
 
 
-## Checking in an item with a request (hold shelf fulfilment)
+## Checking in an item with a request (hold shelf fulfillment)
 
 When a patron requests an item, checking the item in at its requested pickup service point triggers the hold.
 
 1. Either scan the barcode of the item, or enter the barcode and click **Enter**. An **Awaiting pickup for a request** dialog appears noting the item is awaiting pickup and lists its pickup service point.
-
-2. Optional: If you do not want to print a hold slip, clear the **Print slip** checkbox.
-
+2. If you do not want to print a hold slip, clear the **Print slip** checkbox if it is checked.
 3. Click **Close** to exit and print a hold slip, if selected. The item appears in the Scanned Items table and its status changes to Awaiting pickup. If configured, a pickup notice is sent to the patron once the check in session ends.
 
 
@@ -91,19 +89,14 @@ When checking in a delivery request, you have two options: check the item out to
 To check the item out to the patron:
 
 1. Either scan the barcode of the item, or enter the barcode and click **Enter**.
-
-2. Optional: In the **Route for delivery request** dialog, if you do not want to print a request delivery slip, clear the **Print slip** checkbox.
-
+2. In the **Route for delivery request** dialog, if you do not want to print a request delivery slip, clear the **Print slip** checkbox if it is checked.
 3. To check out the item to the patron, click **Close and check out**. The check out window appears and the item is automatically checked out to the patron.
-
 4. To end the check out session, click **End Session**.
 
 To wait to process the request:
 
 1. Either scan the barcode of the item, or enter the barcode and click **Enter**.
-
-2. Optional: In the **Route for delivery request** dialog, if you do not want to print a hold slip, clear the **Print slip** checkbox.
-
+2. In the **Route for delivery request** dialog, if you do not want to print a hold slip, clear the **Print slip** checkbox if it is checked.
 3. Click **Close**. The Route for delivery request dialog closes, and the Item status changes to Awaiting delivery.
 
 
@@ -113,11 +106,15 @@ You may need to backdate a returned item if your library was closed on the date 
 
 For example, if your library was closed because of an emergency, you can mark all items returned the day your library was closed with the previous day’s date so that fees/fines will not accrue on patrons’ user records.
 
-1. Click the **pencil icon** under **Process as** or **Time returned**.
-
+1. Click the **pencil icon** under **Date Returned** or **Time returned**.
 2. Change the date and /or time.
-
 3. Either scan the barcode of the item, or enter the barcode and click **Enter**. The item appears in the Scanned items table and the backdated time is listed in the Time returned column. To view the actual check in time, click the **information icon** in the Time returned column.
+
+## Anonymizing a loan that has been checked in
+
+A library can configure FOLIO to anonymize loans after they have been checked in. Anonymizing removes the link between the loan record and the user record for the patron who borrowed the item. Your library can configure anonymization options in [**Settings > Circulation > Loans > Loan History**](../../../settings/settings_circulation/settings_circulation/#settings--circulation--loan-history).
+
+ If you select *Anonymize closed loans immediately after loan closes*, anonymization will occur after the check in session ends. The anonymization process is scheduled by your system administrator or hosting provider.
 
 
 ## Recording in-house use of an item
@@ -134,7 +131,6 @@ To mark an item as used, either scan the barcode of the item, or enter the barco
 If you forgot to print a transit slip or have transit slips turned off by default, you can print a transit slip after checking in an item. Transit slips are configured in the [Settings app]({{< ref "/settings_circulation.md#settings--circulation--staff-slips" >}}).
 
 1. [Check in the item](#checking-in-an-item).
-
 2. In the Actions column, click **... > Print transit slip.**
 
 
@@ -143,20 +139,13 @@ If you forgot to print a transit slip or have transit slips turned off by defaul
 You can manually create a new fee/fine for an item after checking it in.
 
 1. [Check in the item](#checking-in-an-item).
-
 2. In the Actions column, click **... > New Fee/Fine.**
-
 3. In the New fee/fine screen, select a **Fee/fine owner**.
-
 4. Select a **Fee/fine type**.
-
 5. Enter a **Fee/fine amount** in the box.
-
 6. Optional: Enter **Additional information for staff** in the box.
-
 7. Optional: If you do not want to notify the patron about the fee/fine, clear the **Notify patron** checkbox.
-
-8. To submit the fee/fine, click **Charge only**. 
+8. To submit the fee/fine, click **Charge only**.
 
 
 ## Ending a check in session
