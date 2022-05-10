@@ -68,16 +68,16 @@ Change "diku" to the name of your tenant. Use Inventory Item Barcode search to e
 
 Holdings created by a MARC Bib, not a MARC Holdings, showed the <em>source = MARC</em>. The behavior was changed to show <em>source = FOLIO</em> for such holdings. Database tables might contain holdings records with incorrect source value. See here [MODSOURMAN-627 - Script for retrieving holding by specific conditions](https://wiki.folio.org/pages/viewpage.action?pageId=79466342).
 Log in to your postgres database (on linux console, type "psql -U folio folio") and select the Holdings where source name is not FOLIO or MARC :
+
 ```
-SELECT
-*
-FROM ${tenant}_mod_inventory_storage.holdings_record
-WHERE ${tenant}_mod_inventory_storage.holdings_record.jsonb ->> 'sourceId' = (
-SELECT
-id::text
-FROM ${tenant}_mod_inventory_storage.holdings_records_source
-WHERE ${tenant}_mod_inventory_storage.holdings_records_source.jsonb ->> 'name' != 'FOLIO' AND
-${tenant}_mod_inventory_storage.holdings_records_source.jsonb ->> 'name' != 'MARC');
+SET search_path TO diku_mod_inventory_storage;
+SELECT *
+FROM holdings_record
+WHERE holdings_record.jsonb ->> 'sourceId' = (
+  SELECT id::text
+  FROM holdings_records_source
+  WHERE holdings_records_source.jsonb ->> 'name' != 'FOLIO' AND
+    holdings_records_source.jsonb ->> 'name' != 'MARC');
 (0 rows)
 
 (END)
@@ -264,7 +264,7 @@ The Okapi environment should now look something like this:
   "value" : "folio"
 }, {
   "name" : "DB_HOST",
-  "value" : "10.X.X:X"
+  "value" : "10.X.X.X"
 }, {
   "name" : "DB_PASSWORD",
   "value" : "folio123"
