@@ -13,14 +13,16 @@ The ldpmarc tool reads the SRS MARC data from the database tables public.srs_mar
 
 Once the MARC data is transformed, the public.srs_marctab table is ready to be used in queries that require MARC data from the reporting database. For example, the query below shows the contents of the MARC 008 field, which captures general bibliographic information about a library item.
 
-```SELECT 
+```
+SELECT 
     sm.instance_hrid,
     sm.field,
     sm.content
 FROM srs_marctab AS sm 
 WHERE (sm.field = '008')     
 LIMIT 10
-;```
+;
+```
 
 ### Installing and configuring the ldpmarc tool
 
