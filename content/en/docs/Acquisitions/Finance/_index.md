@@ -591,7 +591,8 @@ Use the **Actions** menu to allocate money to a budget.  You can **Increase allo
 3. In the **Increase allocation** dialog, enter the following information:
 
 *   **Fund.**  The name of the fund to which you want to increase an allocation of money. This field displays the fund name and code for the budget you selected and is not editable. The display format is Fund name (fund code).
-*   **Amount (required).** Enter an amount as a numeric value. Values with or without decimals are accepted (100 or 100.00). The amount must be a positive number*   **Tags.** Enter or select any tags from the drop-down list to apply to the allocation transaction.
+*   **Amount (required).** Enter an amount as a numeric value. Values with or without decimals are accepted (100 or 100.00). The amount must be a positive number.
+*   **Tags** Enter or select any tags from the drop-down list to apply to the allocation transaction.
 *   **Description.** Enter a description of the allocation increase.
 
 4. Click **Confirm.** A confirmation message appears and the increase allocation transaction is complete.
