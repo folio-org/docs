@@ -350,9 +350,9 @@ The old module instance, mod-pubsub-2.3.3, has been automatically undeployed by 
 
 2.2 Deploy all the other backend modules
 
-Remove mod-pubsub-2.4.3 from the list ~/platform-complete/okapi-install.json because it has already been deployed.
+Remove mod-pubsub-2.4.3 from the list `~/platform-complete/okapi-install.json` because it has already been deployed.
 
-Deploy all backend modules with this single script [deploy-all-backend-modules.sh]({{< ref "deploy-all-backend-modules.sh" >}}) . You will also need this script  [deploy-backend-module.sh]({{< ref "deploy-backend-module.sh" >}}) :
+Deploy all backend modules with this single script [deploy-all-backend-modules.sh](../deploy-all-backend-modules.sh) . You will also need this script  [deploy-backend-module.sh](../deploy-backend-module.sh) :
 
 This will download all the necessary container images for the backend modules from Docker Hub and deploy them as containers to the local system :
 
