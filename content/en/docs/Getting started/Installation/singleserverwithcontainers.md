@@ -606,22 +606,20 @@ Now, finally once again get a list of the deployed backend modules:
   
   ```
   curl -w '\n' -D - http://localhost:9130/_/discovery/modules | grep srvcId | wc
- 70
+ 65
   ```
   
-  This should only contain the module versions of the new release now : 65 backend modules of R3-2021 + 5 Edge modules.
+  This should only contain the module versions of the new release now : 65 backend modules of R3-2021.
 Compare this with the number of your running docker containers:
   
   ```
   docker ps --all | grep "mod-" | wc
     65
  docker ps --all | wc
-    77
+    72
   ```
   
   The following containers are running on your system, but do not contain backend modules:
-
-5 containers with Edge modules
   
 Stripes
   
@@ -631,9 +629,8 @@ Kafka
   
 Zookeper
   
-In sum, these are 11 containers without backend modules (if one doesn't count Edge modules as backend modules).
-
-Also subtract the header line (of "docker ps"), and you will arrive at 77 - 12 = 65 containers with backend modules (the figure of the first "wc").
+In sum, these are 6 containers without backend modules.
+Also subtract the header line (of "docker ps"), and you will arrive at 72 - 7 = 65 containers with backend modules (the figure of the first "wc").
 
 C'EST FINI ! 
 
