@@ -432,7 +432,8 @@ You can search for organizations in the **Search & filter** pane. To search for 
 *   **All.** All fields. This is the default search.
 *   **Name.** The name of the organization. 
 *   **Code.** A unique identifier for the organization.
-*   **Language.** The default language of the organization.  Enter the language code (ex: ‘eng’ or ‘fra’) to search for organizations with this default language.  Entering the language name in this search box will not retrieve results.*   **Alias.** Alternative names used by the organization, such as abbreviations or prior names.
+*   **Language.** The default language of the organization.  Enter the language code (ex: ‘eng’ or ‘fra’) to search for organizations with this default language.  Entering the language name in this search box will not retrieve results.
+*   **Alias.** Alternative names used by the organization, such as abbreviations or prior names.
 *   **Accounting code.** The accounting code used by your library in your payment system in reference to the organization.
 *   **Tax ID.** Your library’s tax identifier number.
 

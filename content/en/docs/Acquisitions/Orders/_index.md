@@ -615,7 +615,7 @@ Note: Unopening an order removes any encumbrances and item records with an On Or
 
 ## Closing an order
 
-The system will automatically close one-time orders that are fully received and fully paid, or those where receipt or payment is not required, as indicated by the purchase order line **Receipt status** and Payment status** values.  Only open orders can be closed. If you need to close an order manually, follow the steps below.. Note about **Item status**: If **Create inventory** on the purchase order line is set to “Instance/holdings/item”, an item was created in Inventory when the order was opened. Closing an order when the item is not yet received will update the **Item status** of the item to “Order Closed.”  For more information about item status see [Platform essentials > Item Status](< ref “/platform_essentials_items_status.md” >).
+The system will automatically close one-time orders that are fully received and fully paid, or those where receipt or payment is not required, as indicated by the purchase order line **Receipt status** and **Payment status** values.  Only open orders can be closed. If you need to close an order manually, follow the steps below. Note about **Item status**: If **Create inventory** on the purchase order line is set to "Instance/holdings/item", an item was created in Inventory when the order was opened. Closing an order when the item is not yet received will update the **Item status** of the item to "Order Closed."  For more information about item status see [Platform essentials \> Item Status]({{< ref "itemstatus.md" >}}).
 
 1. [Search for the order you want to close](#searching-for-an-order) and select it.
 
@@ -773,7 +773,8 @@ To print or save a PDF file containing a snapshot of key information about an or
 *   **Cancellation restriction.** If there is a cancellation restriction on the item, select the **Cancellation restriction** checkbox.
 *   **Rush.** If the item needs rush processing, select the **Rush** checkbox.
 *   **Collection.** If the item is part of a collection, select the **Collection** checkbox.
-*   **Receiving workflow.** Select a value from the drop down list to manage behavior in the Receiving app.  Select **Synchronized order and receipt quantity** to keep the order quantity and the number of pieces to be received in sync. When the order is opened, the system will generate Receiving app pieces based on the quantity value on the purchase order line. Updating the quantity on the order will update the number of pieces to be received and updates in the Receiving app will update the order.  Select **Independent order and receipt quantity** if you need to create an unpredictable quantity of Receiving pieces, such as for an ongoing order.  Note: In prior system releases, this field was a checkbox named “Manually add pieces for recieving.”*   **Cancellation description.** A note about the cancellation.
+*   **Receiving workflow.** Select a value from the drop down list to manage behavior in the Receiving app.  Select **Synchronized order and receipt quantity** to keep the order quantity and the number of pieces to be received in sync. When the order is opened, the system will generate Receiving app pieces based on the quantity value on the purchase order line. Updating the quantity on the order will update the number of pieces to be received and updates in the Receiving app will update the order.  Select **Independent order and receipt quantity** if you need to create an unpredictable quantity of Receiving pieces, such as for an ongoing order.  Note: In prior system releases, this field was a checkbox named "Manually add pieces for recieving.""
+*   **Cancellation description.** A note about the cancellation.
 *   **Line description.** A description of the purchase order line.
 *   **Tags.** Select or enter any tags you want to assign to the order line in the box.
 
@@ -816,7 +817,8 @@ If you want to encumber money to certain funds, enter your fund distributions in
 
 1. Click **Add fund distribution**.
 
-2. Select the **Fund ID** from the drop-down list. Note: The use of acquisitions units may restrict which funds appear in this list. If an acquisition unit is set up to restrict view permissions, then only funds that are assigned to the same acquisition unit as the user will display in the drop-down list.  For more information, see [Settings > Acquisition units](../../settings/acquisition units).
+2. Select the **Fund ID** from the drop-down list. Note: The use of acquisitions units may restrict which funds appear in this list. If an acquisition unit is set up to restrict view permissions, then only funds that are assigned to the same acquisition unit as the user will display in the drop-down list.  For more information, see [Settings > Acquisition units]({{< ref "/settings_acquisition_units.md" >}}).
+
 
 3. Select the **Expense class** from the list.
 
@@ -1040,7 +1042,7 @@ To search for order lines using a specific fund code, follow these steps:
 2. Select the fund code from the drop-down list. The search results appear in the Order lines pane.
 
 
-###Expense class
+### Expense class
 To search for order lines that have a fund distribution expense class assignment, follow these steps:
 
 1. In the **Search & filter** pane, click **Expense class**.

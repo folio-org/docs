@@ -328,7 +328,7 @@ This section displays the details of the purchase order lines.
 *   **Order type.** The type of order, either one-time or ongoing.
 *   **Vendor.** The organization from which the material was purchased. 
 *   **Material supplier.** The supplier of the material.
-*   **Requester.** The person who requested the item"
+*   **Requester.** The person who requested the item.
 *   **Rush.** This flag indicates whether rush handling should be applied to this order
 
 
@@ -401,7 +401,7 @@ Note: To add an expected piece in Receiving, the [Receiving workflow](../orders/
 *   **Caption.**  A word, phrase or abbreviation indicating the parts into which the publisher has divided the serial, such as “volume,” “part,” or “band.”
 *   **Copy number.** The copy number of the piece.
 *   **Enumeration.** The enumeration of the piece which indicates the sequential numeric and/or alphabetic designation used by a publisher to identify the individual bibliographic or physical parts and to show the relationship of each part to the bibliographic unit as a whole.
-*   **Chronology.**  The chronology of the piece, such as “year, “month.”
+*   **Chronology.**  The chronology of the piece, such as "year", "month."
 *   **Piece format.**  The order format, as selected in Orders. This field is not editable.
 *   **Expected receipt date.** The date the piece is expected to be received.
 *   **Comment.** Comments or notes about the piece.
@@ -409,7 +409,7 @@ Note: To add an expected piece in Receiving, the [Receiving workflow](../orders/
 *   **Select location.**  In the drop down list, select the location for this piece. You can change the location by clicking [Create new holdings for location](#create-new-holdings-for-location). 
 *   **Create item.** Select the **Create item** checkbox to connect the new piece to an instance in Inventory. This option is only available for pieces linked to an order with the purchase order line **Create inventory** value set to “Instance/holding/item.” . Note: In order to create an item in Inventory, a default instance status, instance type, and loan type must already be set up in Settings.  See [Settings > Orders]({{< ref "/settings_orders.md" >}}) for more information.
 *   **Supplement.** Select the **Supplement** checkbox to indicate that the piece is a supplementary material such as a CD or a map. 
-*   **Display on holdings.**  Select the **Display on holdings** checkbox to indicate that information about this piece should be displayed in the Inventory app in the Acquisition section of the holding record.  See [Inventory > Acquisition]((../inventory/#acquisition) for more information.
+*   **Display on holdings.**  Select the **Display on holdings** checkbox to indicate that information about this piece should be displayed in the Inventory app in the Acquisition section of the holding record.  See [Inventory > Acquisition](../inventory/#acquisition) for more information.
 
 #### Create new holdings for location
 
@@ -516,7 +516,6 @@ The Receive function can be used to receive multiple pieces at once.
 *   **Caption.** A word, phrase or abbreviation indicating the parts into which the publisher has divided the serial, such as “volume,” “part,” or “band.”
 *   **Enumeration.** The enumeration of the piece which indicates the sequential numeric and/or alphabetic designation used by a publisher to identify the individual bibliographic or physical parts and to show the relationship of each part to the bibliographic unit as a whole.
 *   **Copy number.** The copy number of the piece.
-* 
 *   **Barcode.** A unique barcode for the piece. You can only add a barcode if the piece is already **Connected** to an instance in Inventory, or if the **Create item** checkbox is selected.
 *   **Piece format.** The order format, as selected in Orders. This field is not editable.
 *   **Request.** Information from the Requests app about this ordered material. A value of “Yes” indicates that a request is open for the piece. 
