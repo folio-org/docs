@@ -551,11 +551,13 @@ If so, remove the old stripes container: docker rm \<container id of your old st
   
 Clean up. Undeploy all unused containers.
 
-In general, all R2 modules have to be removed now. But **care has to be taken** about which modules might be removed:
-
-Sometimes, R2 versions are the same as R3 versions. In this case, you have to find out which instance-ID of the module needs to be removed (if the module has been deployed twice). You can find this out via the port number (lower port numbers have been used for the R2 modules, higher numbers for the R3 modules, which have been installed later). If you are unsure, keep both instance-IDs of the module.
+In general, all R2 modules have to be removed now. But some care has to be taken.
   
-If you have more than one tenant on your server, some tenants may still need R2 modules ! Check for your supertenant; did you enable anything else than okapi for it ?
+a) If you have more than one tenant on your server, some tenants may still need R2 modules ! Don't delete those R2 modules. Check also for your supertenant; did you enable anything else than okapi for it ?
+
+b) Sometimes, R2 versions are the same as R3 versions. In this case, you will have two containers of the same module version running on your system (because we have deployed it twice). You might just leave it as is. Okapi will do some kind of round robin between the two module instances.
+
+But if you decide to delete (=undeploy) one of those containers from Okapi's discovery, you should disable and re-enable the module for your tenants, afterwards.
   
 #### Create a list of containers which are in your okapi discovery
   
@@ -569,9 +571,9 @@ This list should still contain the module versions of the old release:
    => backend modules (mod-\*) of the old release (61 modules) + backend modules of the new release (62 = 65 - 3 which are the same in the old release) + 5 Edge modules =128 modules.
 
 Of those 128 modules, 58 have now to be undeployed:
-   Undeploy all R2 modules (which are still running), except for mod-service-interaction:1.0.0, mod-graphql:1.9.0 and mod-z3950-2.4.0.
+   Undeploy all R2 modules (which are still running), except for at least one instance of mod-service-interaction:1.0.0, mod-graphql:1.9.0 and mod-z3950-2.4.0 (because they are on the same version in R2 and R3).
 
-If you have deployed mod-service-interaction:1.0.0, mod-graphql:1.9.0 and mod-z3950-2.4.0 twice, you will need to undeploy 61 modules.
+If you have deployed mod-service-interaction:1.0.0, mod-graphql:1.9.0 and mod-z3950-2.4.0 twice and want to undeploy one instance of them now,  you will need to undeploy 61 modules.
 
 #### Compare the list with list of R3 modules
   
@@ -582,7 +584,7 @@ If you have deployed mod-service-interaction:1.0.0, mod-graphql:1.9.0 and mod-z3
   ```
   
   Now, throw out all modules which are in okapi-install.json.sorted out of the list dockerps.todelete.sh . 
-This should leave you with a list of 58 modules which are to be deleted now. If you decided to delete one of the instances of those modules which have been deployed twice (be careful about which one to delete !!!) , you should now have a list of 61 modules.
+This should leave you with a list of 58 (or 61) modules which are to be deleted now. If you decided to delete one of the instances of those modules which have been deployed twice, you should now have a list of 61 modules.
   
 Edit  dockerps.todelete.sh once again to make each line look like this (e.g. for mod-agreements; i.e. prepend "curl -w '\n' -D - -XDELETE http://localhost:9130/_/discovery/modules/" to each line) :
   
@@ -634,5 +636,17 @@ Also subtract the header line (of "docker ps"), and you will arrive at 72 - 7 = 
 
 C'EST FINI ! 
 
-
+Aftermath:
+  If you have undeployed one instance of mod-service-interaction:1.0.0, mod-graphql:1.9.0 and mod-z3950-2.4.0 each, do *this* now:
+  Disable those modules for your tenant and re-enable them. This will prevent Okapi form still trying to round robin with the deleted module instance. You also need to disable folio_dashboard-2.0.0 because it depends on mod-service-interaction-1.0.0 :
+  Disable the modules:
+  ```
+  curl -w '\n' -D - -X POST -H "Content-type: application/json" -d '[ { "id": "mod-graphql-1.9.0", "action": "disable" }, { "id": "mod-z3950-2.4.0", "action": "disable" }, { "id": "mod-service-interaction-1.0.0", "action": "disable" }, { "id": "folio_dashboard-2.0.0", "action": "disable" } ]' http://localhost:9130/_/proxy/tenants/diku/install?simulate=true\&preRelease=false
+  curl -w '\n' -D - -X POST -H "Content-type: application/json" -d '[ { "id": "mod-graphql-1.9.0", "action": "disable" }, { "id": "mod-z3950-2.4.0", "action": "disable" }, { "id": "mod-service-interaction-1.0.0", "action": "disable" }, { "id": "folio_dashboard-2.0.0", "action": "disable" } ]' http://localhost:9130/_/proxy/tenants/diku/install?deploy=false\&preRelease=false\&tenantParameters=loadReference%3Dtrue%2CloadSample%3Dfalse
+  ```
+  Re-enable the modules:
+  ```
+  curl -w '\n' -D - -X POST -H "Content-type: application/json" -d '[ { "id": "mod-graphql-1.9.0", "action": "enable" }, { "id": "mod-z3950-2.4.0", "action": "enable" }, { "id": "mod-service-interaction-1.0.0", "action": "enable" }, { "id": "folio_dashboard-2.0.0", "action": "enable" } ]' http://localhost:9130/_/proxy/tenants/diku/install?simulate=true\&preRelease=false
+  curl -w '\n' -D - -X POST -H "Content-type: application/json" -d '[ { "id": "mod-graphql-1.9.0", "action": "enable" }, { "id": "mod-z3950-2.4.0", "action": "enable" }, { "id": "mod-service-interaction-1.0.0", "action": "enable" }, { "id": "folio_dashboard-2.0.0", "action": "enable" } ]' http://localhost:9130/_/proxy/tenants/diku/install?deploy=false\&preRelease=false\&tenantParameters=loadReference%3Dtrue%2CloadSample%3Dfalse
+  ```
 
