@@ -13,7 +13,7 @@ Note: quickMARC is a module that you can access through the Inventory app; it is
 Definition of terms related to quickMARC:
 
 -   **Instance record.** A record that contains bibliographic and administrative information about a particular resource. The Instance record is what is known as the bibliographic record. They are mostly derived from full bibliographic records (in MARC or other formats) and are intended to provide information for library staff to identify and select records in order to perform work on associated holdings and items. 
--  ***Holdings record.** A record that contains information such as location, call number, and volumes owned, that enables staff to locate and manage library holdings for materials in all formats. A Holdings record must be associated with an Instance record.
+-  **Holdings record.** A record that contains information such as location, call number, and volumes owned, that enables staff to locate and manage library holdings for materials in all formats. A Holdings record must be associated with an Instance record.
 -   **SRS.** Source Record Storage. A storage layer in FOLIO. If an instance or holdings has an underlying MARC record, then this record is stored in SRS.
 
 ## Permissions
