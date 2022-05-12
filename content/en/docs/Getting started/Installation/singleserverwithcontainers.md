@@ -316,7 +316,7 @@ The Okapi environment should now look something like this:
 } ]
 ```
 
-If you chose a different SYSTEM_USER_PASSWORD than the default (which you should do on a production system), then you will have to change the password of the user "pub-sub" in the system to the same value. Change the password of the user pub-sub via Settings - Passwords menu. Do this **before** you re-deploy pubsub. Thus, do this **now**, as the re-deployment of pub-sub is the next step.
+If you chose a different SYSTEM_USER_PASSWORD than the default (which you should do on a production system), then you will have to change the password of the user "pub-sub" in the system to the same value. Change the password of the user pub-sub via Settings - Passwords menu. **Attention:** If you change the password of the User pub-sub, then you will have to undeploy and re-deploy mod-pubsub ! Just upgrading mod-pubsub will not be enough. Otherwise, the cirulation log won't work.
 
 
 2. Deploy the backend modules
