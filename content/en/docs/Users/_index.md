@@ -2,7 +2,7 @@
 title: "Users"
 linkTitle: "Users"
 weight: 250
-date: 2022-05-09
+date: 2022-05-12
 ---
 
 The Users app allows you to manage user information for patrons and library staff. Both patrons and library staff's user records are stored in the Users app. There is no separate directory or app for library staff users. The difference between a library staff user and a patron is that the library staff user record has FOLIO permissions assigned to it.
@@ -32,7 +32,7 @@ The following are all the User permissions:
 -   **Users: Can create, edit and remove fees/fines.** This permission allows the user to create, edit, remove, and view user fees/fines.
 -   **Users: Can create, edit and remove patron blocks.** This permission allows the user to see the Patron blocks section on the user record, and view, edit, and create blocks.
 -   **Users: Can create, edit and remove proxies.** This permission allows the user to view and edit proxies assigned to a user. The user can also view and edit basic user data elements.
--   **Users: Can delete user profile if user does not have any open transactions. This permission allows a user profile to be deleted through the UI if the user has no open transactions. This permission must be used with **Users: Can check open transactions**.
+-   **Users: Can delete user profile if user does not have any open transactions.** This permission allows a user profile to be deleted through the UI if the user has no open transactions. This permission must be used with **Users: Can check open transactions**.
 -   **Users: Can edit user profile.** This permission allows the user to edit and view the following sections in a user record: User information, Extended information, and Contact information.
 -   **Users: Can view permissions assigned to users.** This permission allows the user to view the permissions assigned to another user. 
 -   **Users: Can view proxies assigned to users.** This permission allows the user to see the Proxies section but not edit proxies assigned to a user. This permission also includes the ability to search and view user records (basic user fields only).
@@ -53,9 +53,9 @@ The following are all the User permissions:
 -   **Users: User loans view, change due date, renew.** This permission allows the user to view the Loans section on a user record, to change a due date on a loan, and renew loans.
 -   **Users: View requests.** This permission allows the user to view the Requests section on a user record. This permission also includes the ability to search and view user records (basic user fields only).
 
-##Keyboard shortcuts
+## Keyboard shortcuts
 
-Keyboard shortcuts allow you to perform actions in this app using the keyboard.  See [Platform essentials > Keyboard shortcuts](< ref "/platform_essentials_keyboard_shortcuts.md" >) for more information.
+Keyboard shortcuts allow you to perform actions in this app using the keyboard.  See [Platform Essentials > Keyboard shortcuts](..platform-essentials/keyboard-shortcuts/keyboardshortcuts/) for more information.
 
 ## Creating a user record manually
 
@@ -82,7 +82,7 @@ Keyboard shortcuts allow you to perform actions in this app using the keyboard. 
 -   **Folio number.** A system-generated number for the user record.
 -   **Request preferences.** **Hold Shelf** is selected by default for all users. If **Delivery** is also checked, select **Fulfillment preference**. 
 -  If **Delivery** is selected as the **Fulfillment preference**, select the **Default delivery address**. This field appears and is required only if **Delivery** is selected as a request preference. Addresses are added to the user record in the **Contact information** section. See [Users \> Contact information] (#contact-information) for more information.
--   If **Hold Shelf** is selected as the **Fulfillment preference**, select the **Default pickup service point.** All user records have at least one service point assigned to indicate the location for checking out or picking up requested items. Service points are configured by your library in the Settings app. See [Settings \> Tenant \> Service points](#.../settings/settings_tenant/settings_tenant/#settings–tenant--service-points) for more information.
+-   If **Hold Shelf** is selected as the **Fulfillment preference**, select the **Default pickup service point.** All user records have at least one service point assigned to indicate the location for checking out or picking up requested items. Service points are configured by your library in the Settings app. See [Settings \> Tenant \> Service points](#../settings/settings_tenant/settings_tenant/#settings--tenant--service-points) for more information.
 -   **Department name.** Name of the user's department, if applicable. To associate the user with a department, click **Add Department** and select the department from the drop-down list. This action is repeatable, and departments can be deleted by clicking the **trash can icon**. The **Add Department** button appears only if **Departments** are configured in the Settings app.   See [Settings \> Users \> Departments](../settings/settings_users/settings_users/#settings--users--departments) for more information. 
 -   **Username.** The name library staff use to log into FOLIO. Note: Patrons don't have a username because they don't need to log into FOLIO.
 
@@ -164,7 +164,7 @@ The Proxy/sponsor section displays any proxies or sponsors associated with the u
 
 ### Fees/fines
 
-The Fees/fines section displays the number of open and closed fees/fines. To view additional details about the open or closed fees/fines, click **open fees/fines** or **closed fees/fines**, respectively. To view all fees/fines, click **View all fees/fines**.  For more information, see [Fees/fines](#fees/fines).
+The Fees/fines section displays the number of open and closed fees/fines. To view additional details about the open or closed fees/fines, click **open fees/fines** or **closed fees/fines**, respectively. To view all fees/fines, click **View all fees/fines**.  For more information, see [Fees/fines](#feesfines).
 
 You can also create manual fees/fines in the Fees/fines section. For more information, see [Creating a manual fee/fine](#creating-a-manual-feefine).
 
@@ -285,7 +285,7 @@ Library staff need to have permissions assigned to their user record in order to
 8.  Click **Save & close**. The permissions are added to the user record.
 9.  Click **Save & close**. The user record is saved.
 
-##Removing permissions from a user’s record
+## Removing permissions from a user’s record
 
 1.  [Find the user record](#searching-for-user-records) to which you want to remove permissions and select it.
 2.  In the **User record** pane, click **Edit**.
@@ -309,7 +309,7 @@ Permissions can also be removed by following a modified version of the process f
 
 A service point in FOLIO is a setting that libraries configure to support circulation functions. Every FOLIO item must have a location, and every location must have an attached service point. You must set up at least one service point to be able to check items in and out; allow patrons to request items; charge and collect fines; and put items in transit between locations at your library. 
 
-Staff who use the Check in, Check out, Users, or Requests apps must have a service point assigned to them in their user record. Service points are configured for your library in the Settings app. See [Settings \> Tenant \> Service Points](#settings/settings_tenant/settings_tenant/#settings--tenant--service-points)for more information. 
+Staff who use the Check in, Check out, Users, or Requests apps must have a service point assigned to them in their user record. Service points are configured for your library in the Settings app. See [Settings \> Tenant \> Service Points](../settings/settings_tenant/settings_tenant/#settings--tenant--service-points) for more information. 
 
 1.  [Find the user record](#searching-for-user-records) to which you want to add a service point and select it.
 2.  In the **User record** pane, click **Edit**.
@@ -320,7 +320,7 @@ Staff who use the Check in, Check out, Users, or Requests apps must have a servi
 7.  Select a **Service point preference** from the drop-down list. If you select **None**, then the user is prompted to select a service point every time they sign in to FOLIO.
 8.  Click **Save & Close**. The service point(s) are added to the user record.
 
-##Removing a service point from a user record
+## Removing a service point from a user record
 
 1.  [Find the user record](#searching-for-user-records) to which you want to remove a service point and select it.
 2.  In the **User record** pane, click **Edit**.
@@ -404,7 +404,7 @@ Requests can be created in the Requests app or from the item record in the Inven
 6.  Optional: Enter any **Details** about the note in the box.
 7.  Click **Save & close**. The note is saved.
 
-###Deleting A User Record in the UI 
+### Deleting A User Record in the UI 
 A user record can be deleted only if the user has no open transactions. To delete a user record, first check for open transactions. Once it’s confirmed that the user has no open transactions, the user record can be deleted. Follow these steps to check for open transactions and delete a user record in the UI:
 
 [Find the user record](#searching-for-user-records) for which you want to check for open transactions and select it.
@@ -418,13 +418,13 @@ If there are one or more open transactions for the user, the message *User (Last
 
 The Overdue loans report is a comma-separated values (CSV) file that displays all users with overdue materials.
 
--   In the **User search results** pane, click **Actions \> Overdue loans report (CSV)**.   Depending on your browser and its configurations, the file automatically downloads or you are prompted to save it.
+-   In the **User search results** pane, click **Actions \> Overdue loans report (CSV)**. 	Depending on your browser and its configurations, the file automatically downloads or you are prompted to save it.
 
 ## Claimed returned report
 
 The Claimed returned report is a comma-separated values (CSV) file that displays all users with claimed returned materials.
 
--   In the **User search results** pane, click **Actions \> Claimed returned report (CSV)**.    Depending on your browser and its configurations, the file automatically downloads or you are prompted to save it.
+-   In the **User search results** pane, click **Actions \> Claimed returned report (CSV)**. 	Depending on your browser and its configurations, the file automatically downloads or you are prompted to save it.
 
 ## Cash drawer reconciliation report
 
@@ -451,7 +451,7 @@ Depending on your browser and its configurations, the file automatically downloa
 ## Refunds to process manually report
 The Refunds to process manually report is a report that provides library administration with a list of patrons requiring refunds. It is available for download as a comma-separated values (CSV) file. 
 -    In the **User search results** pane, click **Actions \>Refunds to process manually report (CSV)**. 
--    In the **Refunds to process manually** modal, specify a date range by entering a **Start Date* and an **End Date**. Select the **Fee/Fine Owner**.
+-    In the **Refunds to process manually** modal, specify a date range by entering a **Start Date** and an **End Date**. Select the **Fee/Fine Owner**.
 -    Click **Save & close**.
 
 Depending on your browser and its configurations, the file automatically downloads and you will be prompted to open it or save it. 
@@ -469,10 +469,10 @@ To renew one or more loans for a patron:
 1. Use the check boxes on the left to select the appropriate loan(s).
 2. From the buttons at the top of the list, click **Renew**.
 
-If the renewal was successful, you will see a green success message in the bottom right corner appear. The new due date may be sooner than expected if the normal due date would be after a patron’s account has expired.
+If the renewal was successful, you will see a green success message in the bottom right corner. The new due date may be sooner than expected if the normal due date would be after a patron’s account has expired.
 If the renewal was not successful, a pop-up message will appear. If you have the correct permissions, you can click **Override** from the pop-up window to override the error and renew the loan.
 
-Alternatively, you can renew a loan from the Actions column, …>Renew.
+Alternatively, you can renew a loan by clicking on **Renew** in the **actions** column. 
 
 ### Change a due date
 
@@ -524,7 +524,7 @@ When an item is declared lost, FOLIO will check the associated lost item fee pol
 
 ### Creating a manual fee/fine
 
-Note that your library must configure fee/fine settings prior to charging fee/fines to patrons. See Settings > Users > Owners and Settings > Users> Manual Charges for more information.
+Note that your library must configure fee/fine settings prior to charging fee/fines to patrons. See [Settings > Users > Owners](../settings/settings_users/settings_users/#settings--users--owners) and [Settings > Users> Manual Charges](../settings/settings_users/settings_users/#settings--users--manual-charges) for more information.
 
 1.  [Find the user record](#searching-for-user-records) to which you want to add a fee/fine and select it.
 2.  In the **User record** pane, expand the **Fees/fines** accordion if needed.
@@ -583,4 +583,3 @@ Staff with appropriate permissions can partially or fully refund a fee/fine. The
 8. Click **Waive**, then **Confirm**.
 
 The modal will close, and the **Fee/fine details** page will update with the payment transaction.
-
