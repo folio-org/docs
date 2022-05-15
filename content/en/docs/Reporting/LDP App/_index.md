@@ -18,6 +18,11 @@ The following are all the LDP app permissions:
 * **LDP: all permissions**:  This permission allows the user to see and use the LDP app.
 * **Settings (LDP): Can view, create, edit, and remove**. This allows users to manage the settings in the Settings app.
 
+{{% alert title="Issue with Saving Settings" color="info"%}}
+Issue with Saving Settings when just having the two above permissions. Current workaround is also adding permission named **Settings (developer): Can edit locale entries for any user**.
+Issue: [UILDP-54](https://issues.folio.org/browse/UILDP-54)
+{{% /alert %}}
+
 ### Schema
 Think of schema as the “buckets” in which tables live.
 
