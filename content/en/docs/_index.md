@@ -6,7 +6,7 @@ weight: 10
 
 ---
 
-{{% alert title="DRAFT" color="info"%}}
+{{% alert title="VERSION" color="info"%}}
 This documentation supports the Kiwi version of FOLIO. Use the Releases menu to select another version as needed.
 {{% /alert %}}
 
