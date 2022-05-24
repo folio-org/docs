@@ -113,6 +113,13 @@ Audio alerts can be turned on to signal to library staff when a checkout is succ
 
 To enable audio alerts, select **Yes** from the drop-down list.
 
+### Perform wildcard lookup of items by barcode in circulation apps (Check in, Check out)
+
+Some libraries may want to use FOLIO and support circulating items that have the same barcode. They may be migrating to FOLIO from a prior system that allowed duplicate barcodes, or they may need to support consortial lending.
+
+The inventory app requires barcodes to be unique, so libraries who have this scenario need to append a string to the barcode to make it unique without changing the physical barcode on the item. The library then needs the Check in and Check out app to be able to understand what to do if they search for the physical barcode on the item and it's possible to retrieve more than one record.
+
+If your library could potentially encounter duplicate barcodes as described, you can check this box to enable the Check in and Check out apps to use a wildcard search for item barcodes and present a modal if duplicate barcodes are found, so library staff can select the correct item.
 
 ## Settings > Circulation > Staff slips
 
