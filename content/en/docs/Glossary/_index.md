@@ -30,6 +30,12 @@ weight: 800
    </td>
   </tr>
   <tr>
+   <td>Analytic
+   </td>
+   <td>An analytic is a portion of a work (like a volume in a series) that can be described separately from the work itself.  Analytics can be created for articles in a journal, volumes of a monograph, or issues of a serial
+   </td>
+  </tr>
+  <tr>
    <td>Availability
    </td>
    <td>The status of an item in terms of circulation (for example, available; recently returned). In FOLIO, "Item Status" displays availability.
