@@ -84,7 +84,7 @@ This is what FOLIO does when renewing Sofia’s items:
 * FOLIO updates the loan policy UUID stored on Sofia’s loans to the UUID for the policy `90-day-loan` and gives Sofia the new, 90-day rolling loan period.
 * There is no request policy stored on the loan record, so nothing changes there.
 * The overdue policy ID and lost item policy ID **are** stored on the loan record, but they are **not** updated when the loan is renewed or has the due date changed. That’s because a new overdue or lost item policy could potentially mean the patron owed more money than they were expecting if the item became overdue or aged to lost.
-* FOLIO reads in the notice policy from the circ rule beginning `g grad student ...`. FOLIO creates the scheduled notices in the notice database according to the policy and deletes previously scheduled notices that now don't need to be sent. 
+* FOLIO reads in the notice policy from the circ rule. FOLIO then creates the scheduled notices in the notice database according to the policy and deletes previously scheduled notices that now don't need to be sent. 
 
 ## What happens w/circulation rules and policies if you change item information after an item is loaned (e.g., change a loan type for an item that is checked out)?
 
@@ -150,4 +150,4 @@ FOLIO supports SIP2, an industry standard protocol for connecting self-service s
 
 Patron self-service systems can connect to FOLIO with SIP2 using FOLIO’s SIP2 edge module. Setting this up generally requires working with your FOLIO administrator and/or hosting provider. 
 
-More information on SIP2 configuration can be found in the edge module documentation in Github - https://github.com/folio-org/edge-sip2
+More information on SIP2 configuration can be found in the edge module documentation in Github - [https://github.com/folio-org/edge-sip2](https://github.com/folio-org/edge-sip2)
