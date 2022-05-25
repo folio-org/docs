@@ -3,7 +3,6 @@ title: "Loans"
 linkTitle: "Loans"
 weight: 20
 description: >
-  Note: This content is currently in draft status.
 tags: ["subtopic"]
 ---
 
@@ -43,26 +42,24 @@ In FOLIO, a loan object contains specific information that supports circulation 
 
 FOLIO treats loan activity differently depending on whether it is a short-term or a long-term loan. The distinction depends on the time interval of the loan. 
 
-If an item is loaned for **minutes** or **hours**, the loan is a **short-term loan**. 
-If an item is loaned for **days**, **weeks**, or **months**, the loan is a **long-term loan**.
+* If an item is loaned for **minutes** or **hours**, the loan is a **short-term loan**. 
+* If an item is loaned for **days**, **weeks**, or **months**, the loan is a **long-term loan**.
 
 Differences between the two types of loans include: 
 
-The time a loan is due. A short-term loan sets its due date based on the loan date/time and the loan policy; a long-term loan sets its due date based on the loan policy and the loan date, but the due time is always 11:59 PM. 
-For example: suppose a patron borrows an item from a service point open 9 AM to 10 PM seven days a week.. If they borrow the item at 11 AM on April 1st, and the loan policy says they can borrow it for 48 hours, it will be due at 11 AM on April 3rd. But, if the loan policy said they could borrow the item for 2 days, it would be instead be due at 11:59 PM on April 3rd, even though the service point is closed
+* The time a loan is due. A short-term loan sets its due date based on the loan date/time and the loan policy; a long-term loan sets its due date based on the loan policy and the loan date, but the due time is always 11:59 PM. 
+    * For example: suppose a patron borrows an item from a service point open 9 AM to 10 PM seven days a week. If they borrow the item at 11 AM on April 1st, and the loan policy says they can borrow it for 48 hours, it will be due at 11 AM on April 3rd. But, if the loan policy said they could borrow the item for 2 days, it would be instead be due at 11:59 PM on April 3rd, even though the service point is closed
 
-
-How notices are delivered. Notices for short-term loans are always delivered in real time. Most notices for long-term loans are also delivered in real-time, **except for** notices triggered by **Loan due date/time**. Those notices must use the **multiple items** tokens and are processed overnight (beginning at 11:59 PM).
+* How notices are delivered. Notices for short-term loans are always delivered in real time. Most notices for long-term loans are also delivered in real-time, **except for** notices triggered by **Loan due date/time**. Those notices must use the **multiple items** tokens and are processed overnight (beginning at 11:59 PM).
 
 ## When a loan is renewed, or a loan due date is changed, what circulation rule applies and what policies are used?
 
 When a patron or FOLIO user requests to renew a loan, or a FOLIO user changes a loan’s due date, FOLIO reviews the circulation rule file and may do several things, depending on what it finds.
 
-
-FOLIO will find the loan policy that applies and use that policy to determine if or how the loan can be changed. If the circulation rule file hasn’t changed, and the patron and item information hasn’t changed, FOLIO will retrieve and apply the same loan policy used the last time the loan was created or updated. 
-No request policy updates occur, because request policies aren’t stored on the loan. Since request policies only apply before the loan is created, there is no reason to keep a reference on the loan record. 
-FOLIO will **not** update the associated overdue policy and lost item policy, because it could cause the patron to be liable for more money than they had expected when they first borrowed the item.
-FOLIO **will** update scheduled notices. The notice policy UUID is not stored on the loan. Instead, FOLIO reads the applicable notice policy from the circulation rule and updates scheduled planned notices as part of the renewal transaction.
+* FOLIO will find the loan policy that applies and use that policy to determine if or how the loan can be changed. If the circulation rule file hasn’t changed, and the patron and item information hasn’t changed, FOLIO will retrieve and apply the same loan policy used the last time the loan was created or updated. 
+* No request policy updates occur, because request policies aren’t stored on the loan. Since request policies only apply before the loan is created, there is no reason to keep a reference on the loan record. 
+* FOLIO will **not** update the associated overdue policy and lost item policy, because it could cause the patron to be liable for more money than they had expected when they first borrowed the item.
+* FOLIO **will** update scheduled notices. The notice policy UUID is not stored on the loan. Instead, FOLIO reads the applicable notice policy from the circulation rule and updates scheduled planned notices as part of the renewal transaction.
 
 ### Example: An undergraduate becomes a graduate student
 
@@ -83,15 +80,15 @@ The next time Sofia renews their books, the **second line** of the circulation r
 
 This is what FOLIO does when renewing Sofia’s items:
 
-FOLIO checks the circulation rule file and determines that it should use the circ rule line that begins `g grad-student …’.
-FOLIO updates the loan policy UUID stored on Sofia’s loans to the UUID for the policy `90-day-loan’ and gives Sofia the new, 90-day rolling loan period.
-There is no request policy stored on the loan record, so nothing changes there.
-The overdue policy ID and lost item policy ID **are** stored on the loan record, but they are **not** updated when the loan is renewed or has the due date changed. That’s because a new overdue or lost item policy could potentially mean the patron owed more money than they were expecting if the item became overdue or aged to lost.
-FOLIO reads in the notice policy, and creates the scheduled notices in the notice database according to the policy, as well as deleting previous scheduled notices that now don’t need to be sent. 
+* FOLIO checks the circulation rule file and determines that it should use the circ rule line that begins `g grad-student …`
+* FOLIO updates the loan policy UUID stored on Sofia’s loans to the UUID for the policy `90-day-loan` and gives Sofia the new, 90-day rolling loan period.
+* There is no request policy stored on the loan record, so nothing changes there.
+* The overdue policy ID and lost item policy ID **are** stored on the loan record, but they are **not** updated when the loan is renewed or has the due date changed. That’s because a new overdue or lost item policy could potentially mean the patron owed more money than they were expecting if the item became overdue or aged to lost.
+* FOLIO reads in the notice policy from the circ rule beginning `g grad student ...`. FOLIO creates the scheduled notices in the notice database according to the policy and deletes previously scheduled notices that now don't need to be sent. 
 
 ## What happens w/circulation rules and policies if you change item information after an item is loaned (e.g., change a loan type for an item that is checked out)?
 
-If you change information about an item that is currently on loan, nothing happens to the loan record. The loan *may* change if the item is renewed or if the loan due date is changed, and the change in the item information means a different circulation rule applies.
+If you change information about an item that is currently on loan, nothing happens to the loan record. The loan **may** change if the item is renewed or if the loan due date is changed, and the change in the item information means a different circulation rule applies.
 
 ## What happens if/when you delete a circulation policy?
 
@@ -99,7 +96,7 @@ If you change information about an item that is currently on loan, nothing happe
 
 In Kiwi, you can delete a loan policy that is attached to an open loan. This can cause significant problems with circulation rules as patrons attempt to renew loans; therefore, it’s recommended that you check for existing loan records that reference the loan policy before attempting to delete it. 
 
-An API query tool like Postman can allow you to query your loan records for the loanPolicyId UUID. For example, if your loan policy ID was `ab-123-45’ then a query request for records that had that loan policy UUID would look like this, sent to your tenant instance of Okapi:
+An API query tool like Postman can allow you to query your loan records for the loanPolicyId UUID. For example, if your loan policy ID was `ab-123-45` then a query request for records that had that loan policy UUID would look like this, sent to your tenant instance of Okapi:
 
 GET /loan-storage/loans?query=loanPolicyId=="ab-123-45"
 
@@ -125,9 +122,9 @@ For example, suppose you need to delete the notice policy **faculty-semester-not
 
 In Kiwi, you can delete an overdue policy that is attached to an open loan. This can cause significant problems with circulation rules as items are returned and overdue loans might be applied; it’s recommended you not delete the policy without first checking to ensure it is not associated with any open loans.
 
-An API query tool like Postman can allow you to query your loan records for the overdueFinePolicyId. For example, if your overdue fine policy UUID was `py-67lp-12’ then a query request for records that had that loan policy UUID would look like this, sent to your tenant instance of Okapi:
+An API query tool like Postman can allow you to query your loan records for the overdueFinePolicyId. For example, if your overdue fine policy UUID was `py-67lp-12` then a query request for records that had that loan policy UUID would look like this, sent to your tenant instance of Okapi:
 
-GET /loan-storage/loans?query=overdueFinePolicyId==”py-67lp-12”
+GET /loan-storage/loans?query=overdueFinePolicyId=="py-67lp-12"
 
 As of Lotus, you will be prevented from deleting an overdue fine policy through Settings \> Circulation \> Fee/Fine if there are open loans associated with the policy.
 
@@ -137,7 +134,7 @@ In Kiwi, you can delete a lost item policy that is attached to an open loan. Thi
 
 An API query tool like Postman can allow you to query your loan records for the lostItemPolicyId. For example, if your overdue fine policy UUID was ‘fhg99-as1230o-11’ then a query request for records that had that policy ID would look like this, sent to your tenant instance of Okapi:
 
-GET /loan-storage/loans?query=lostItemPolicyId==”fhg99-as1230o-11”
+GET /loan-storage/loans?query=lostItemPolicyId=="fhg99-as1230o-11"
 
 As of Lotus, you will be prevented from deleting a lost item policy through Settings \> Circulation \> Fee/Fine if there are open loans associated with the policy.
 
@@ -154,5 +151,3 @@ FOLIO supports SIP2, an industry standard protocol for connecting self-service s
 Patron self-service systems can connect to FOLIO with SIP2 using FOLIO’s SIP2 edge module. Setting this up generally requires working with your FOLIO administrator and/or hosting provider. 
 
 More information on SIP2 configuration can be found in the edge module documentation in Github - https://github.com/folio-org/edge-sip2
-
-
