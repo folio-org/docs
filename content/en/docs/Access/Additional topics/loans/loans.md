@@ -52,7 +52,7 @@ Differences between the two types of loans include:
 
 * How notices are delivered. Notices for short-term loans are always delivered in real time. Most notices for long-term loans are also delivered in real-time, **except for** notices triggered by **Loan due date/time**. Those notices must use the **multiple items** tokens and are processed overnight (beginning at 11:59 PM).
 
-## When a loan is renewed, or a loan due date is changed, what circulation rule applies and what policies are used?
+## <a id="loanrenew"></a>When a loan is renewed, or a loan due date is changed, what circulation rule applies and what policies are used?
 
 When a patron or FOLIO user requests to renew a loan, or a FOLIO user changes a loan’s due date, FOLIO reviews the circulation rule file and may do several things, depending on what it finds.
 
@@ -88,7 +88,7 @@ This is what FOLIO does when renewing Sofia’s items:
 
 ## What happens w/circulation rules and policies if you change item information after an item is loaned (e.g., change a loan type for an item that is checked out)?
 
-If you change information about an item that is currently on loan, nothing happens to the loan record. The loan **may** change if the item is renewed or if the loan due date is changed, and the change in the item information means a different circulation rule applies.
+If you change information about an item that is currently on loan, nothing happens to the loan record. The loan **may** change if the item is renewed or if the loan due date is changed, and the change in the item information means a different circulation rule applies. See [When a loan is renewed, or a loan due date is changed, what circulation rule applies and what policies are used?](#loanrenew)
 
 ## What happens if/when you delete a circulation policy?
 
