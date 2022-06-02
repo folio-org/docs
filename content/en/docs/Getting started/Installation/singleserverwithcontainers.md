@@ -304,7 +304,8 @@ git checkout R2-2021-GA
 
 ### Elasticsearch support
 
-Elasticsearch support is being included in R2-2021.
+Elasticsearch support is being included in R2-2021 (Juniper) as a proof of concept. If you plan to use Elasticsearch queries in production, please choose a FOLIO flower version higher than Juniper. In Juniper, you can test FOLIO connecting and querying to Elasticsearch, but Juniper does not cover the full search capabilities in Elasticsearch as it does for CQL queries. If you plan to use Juniper in production, use the frontend module folio_inventory and don't use the frontend module folio_inventory-es. folio_inventory does not send queries to Elasticsearch.
+
 If you would like to build with ES, you have to install elasticsearch on your server and point the related modules, at least mod_pubsub and mod_search, to your Installation.
 
 Here is a prescription how to install ES under Ubuntu 18.04 : https://phoenixnap.com/kb/install-elasticsearch-ubuntu
