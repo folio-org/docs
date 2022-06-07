@@ -49,21 +49,21 @@ You can click the **Add ordering criterion** button to add one or more columns t
 ### Limit number of results
 The **Limit number of results** drop-down menu allows you to restrict the number of rows returned in your query results to 1, 10, 100, or 1000. This is useful if you just want to see a sample of the full results set, especially if you expect the number of rows returned to be particularly large.
 
-###Save icon
+### Save icon
 The Save icon at the top right of the Query builder allows you to save a query once you have built it. Once saved, queries will appear in the list in the **Saved queries** section of the LDP app. 
 
-###Saved queries
+### Saved queries
 The **Saved queries** section of the LDP app lists queries that have been saved by LDP app users by clicking the Save icon in the **Query builder** section of the LDP app. Anyone with access to the LDP app may click and run the queries in the Saved queries list. Queries may be removed from this list by clicking the trash can icon next to the individual query on the right end of the list.
 
 ## What can be changed in the Settings app
 You can use the Settings app to configure global settings for the LDP app. To get to LDP settings, choose Settings from the Apps menu, then choose LDP. 
 
-* Record limits
+### Record limits
 The **Record limits** setting allows you to set the default and maximum numbers of records to show in a user’s query results. You may also restrict the number of records a user can export using the **Maximum number to export** setting.
     * Default number to show
     * Maximum number to show
     * Maximum number of export
-* Table availability
+### Table availability
 The **Table availability** setting
     * Shows the schema and tables in the connected database and allows tables to be “turned off” from being able to query against them so that users cannot include them in queries. This is useful for tables that may contain restricted data, such as PII (Personally Identifiable Information).
 
@@ -72,9 +72,8 @@ It is currently recommended to disable tables: srs_marc, srs_marctab, srs_record
 Currently the app does not support indexing of certain columns. Keeping them enabled can cause performance issues and extra stress on the database.
 {{% /alert %}}
 
-###Database configuration
-The     * Configure database connection URL & credentials
+### Database configuration
 The **Configure database connection URL & credentials** setting is used to set the connection from the FOLIO application instance to the LDP reporting database instance. This is also used to set the username and password to be used by the LDP app to query the LDP reporting database.
 
-###Saved queries configuration
-The ** Saved queries configuration** setting allows you to configure a GitHub repository location for the queries that users save when they use the Save icon to save queries they have built using the Query builder. The GitHub repository owner, name, branch and OAth token for access to the repository must be specified here.
+### Saved queries configuration
+The **Saved queries configuration** setting allows you to configure a GitHub repository location for the queries that users save when they use the Save icon to save queries they have built using the Query builder. The GitHub repository owner, name, branch and OAth token for access to the repository must be specified here.
