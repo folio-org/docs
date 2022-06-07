@@ -23,7 +23,7 @@ The following are all the LDP app permissions:
 * **Settings (LDP): Can select which tables are available to search**
 
 ### Schema
-Think of schema as the “buckets” in which data tables live. The schema drop-down menu allows you to select one schema at a time to use in your query. Three schemas are available: public, folio_reporting, and local. For a fuller explanation of schemas and examples of some defaults included see [Library Data Platform - Using schemas](https://kiwi.docs.folio.org/docs/reporting/library-data-platform/#using-schemas).
+Think of schema as the “buckets” in which data tables live. The schema drop-down menu allows you to select one schema at a time to use in your query. Three schemas are available: public, folio_reporting, and local. For a fuller explanation of schemas and examples of some defaults included see [Library Data Platform - Using schemas](../Library%20Data%20Platform/_index.md#using-schemas).
 
 ### Table
 The **Table** drop-down menu allows you to select a data table from the schema you have selected to use in your query. Tables are where related data lives. Tables belong to a specific schema. With the schema and table selected, the other fields will unlock and update based on the selection.
