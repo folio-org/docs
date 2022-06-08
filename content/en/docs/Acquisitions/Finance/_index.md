@@ -1,7 +1,7 @@
 ---
 title: "Finance"
 linkTitle: "Finance"
-date: 2022-05-02
+date: 2022-06-07
 weight: 10
 tags: ["parenttopic"]
 ---
@@ -460,6 +460,16 @@ The group details pane contains group financial summary information and lists al
 
 #### Fund
 
+This section lists all funds assigned to the group. To assign the group to a fund that is not yet assigned to the group, follow these steps:
+
+1. Click **Add to group** in the fund accordion section.
+2. In the **Select funds** dialog, find the fund or multiple funds using the search box and/or filters.
+3. Click the fund(s) to select. 
+4. Click Save.  The funds are added to the group.
+
+To remove a fund from the group, click on the **X** at the end of the fund row in the Fund accordion table list.
+
+
 The Fund table contains the following columns:
 
 *   **Name.** Name of the fund.
@@ -468,9 +478,10 @@ The Fund table contains the following columns:
 *   **Unavailable.** Total amount unavailable across all funds with a budget for the fiscal year that are associated with the group.
 *   **Available.** Total amount available across all funds with a budget for the fiscal year that are associated with the group.
 
+
 #### Expense classes
 
-The Expense classes table contains the following columns:
+This section lists all expense classes associated with funds assigned to the group. The Expense classes table contains the following columns:
 
 *   **Expense class.** Name of the expense class, a fiscal entity used to track transactions against a specific purpose or function within a fund.
 *   **Encumbered.**  Total amount encumbered for the expense class.
@@ -592,7 +603,7 @@ Use the **Actions** menu to allocate money to a budget.  You can **Increase allo
 
 *   **Fund.**  The name of the fund to which you want to increase an allocation of money. This field displays the fund name and code for the budget you selected and is not editable. The display format is Fund name (fund code).
 *   **Amount (required).** Enter an amount as a numeric value. Values with or without decimals are accepted (100 or 100.00). The amount must be a positive number.
-*   **Tags** Enter or select any tags from the drop-down list to apply to the allocation transaction.
+*   **Tags.** Enter or select any tags from the drop-down list to apply to the allocation transaction.
 *   **Description.** Enter a description of the allocation increase.
 
 4. Click **Confirm.** A confirmation message appears and the increase allocation transaction is complete.
@@ -790,7 +801,7 @@ When an order containing a PO Line with a fund distribution is opened, an **Encu
 *   **From.** Fund name and code for this budget to which this encumbrance was applied.  
 *   **To.** This field will be blank for encumbrance transactions.
 *   **Expense class.**  The expense class assigned to this encumbrance transaction.
-*   **Initial encumbrance.**  The amount originally encumbered by the related PO Line.  
+*   **Initial encumbrance.**  The amount originally encumbered by the related PO Line; the estimated price value.  
 *   **Awaiting payment.**  The amount awaiting payment.  
 *   **Expended.**  The amount expended.  This amount is populated after an invoice for the related PO Line is paid.
 *   **Status.** The status of this encumbrance: Unreleased or Released.  The encumbrance can be [released manually](#releasing-encumbrances-manually) by the user or automatically by the system upon payment of an invoice.
@@ -928,6 +939,5 @@ The information in this section defines rollover behavior for budgets by fund ty
 The information in this section defines rollover behavior for encumbrances by order type: one-time, ongoing, or ongoing-subscription.  An order is considered an ongoing-subscription if the order type is **Ongoing** and the **Subscription** checkbox is checked. See [Orders > Creating an ongoing order > Ongoing order information](../orders/#ongoing-order-information) for more information about the subscription checkbox.   For each order type listed, select the appropriate settings for each of the fields defined below:
 
 *   **Rollover.**  Check this box if you want encumbrances for open orders of this type of order to rollover to the upcoming fiscal year budget associated with each order.  Checking this box will activate the  **Based on** and **Increase by, %** fields.
-*   **Based on.**  From the drop down list, select **Expended** to encumber the total amount that was expended during the current fiscal year or select **Remaining** to encumber the amount that has not yet been paid.
+*   **Based on.**  From the drop down list, select **Expended** to encumber the total amount that was expended during the current fiscal year. Select **Initial encumbrance** to encumber the purchase order line estimated price. Select **Remaining** to encumber the amount that has not yet been paid.
 *   **Increase by, %.**  Enter a value if you want to increase the encumbrance amount by a defined percentage.   
-

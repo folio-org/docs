@@ -1,7 +1,7 @@
 ---
 title: "Orders"
 linkTitle: "Orders"
-date: 2022-05-02
+date: 2022-06-07
 weight: 30
 tags: ["parenttopic"]
 ---
@@ -36,6 +36,7 @@ The following are all the Orders permissions:
 *   **Orders: Manage acquisition units.** This permission allows the user to change the assignment of acquisition units for an order or order line.
 *   **Orders: Remove orders.** This permission allows the user to delete orders. With this permission, the user can also view and edit existing orders. Additionally, they can view order settings.
 *   **Orders: Reopen purchase orders.** This permission allows the user to reopen an order.
+*   **Orders: Show all hidden fields.** This permission allows the user to view all fields on a purchase order that were hidden by creation from an order template.
 *   **Orders: Unopen purchase orders.** This permission allows the user to unopen an order.
 *   **Orders: Update encumbrances.** This permission allows the user to update encumbrances for an open order.
 *   **Orders: View order lines.** This permission allows the user to search for and view order lines. Additionally, they can view order settings.
@@ -324,7 +325,7 @@ To search for orders based on their renewal date, follow these steps:
 3. Click **Apply**. The search results appear in the Orders pane.
 
 
-### lManual renewal
+### Manual renewal
 
 In the **Search & filter** pane, click **Manual renewal** and select any applicable filters:
 
@@ -529,6 +530,8 @@ This section displays information about purchase order lines for this order. The
 *   **Product ID.**  Product ID of the item ordered on the PO line.  Note: all associated product IDs will be listed here.
 *   **Vendor reference number.**  The vendor reference number for this order line.
 *   **Fund code.**  The fund code of the fund distribution for the PO line.  Note:  If more than one fund code is associated with the PO line, each code will be listed here.
+*   **Estimated price.**  The calculated price based on the values you entered. Estimated price = list unit price(s) x quantities ordered + additional cost - discount.
+
 
 
 
@@ -538,14 +541,14 @@ This section displays information about purchase order lines for this order. The
 This section displays information about invoices and invoice lines that link to this order. The invoice table list displays the following columns. To sort the list by **Invoice date**, click on the column header.
 
 
-*   **Invoice #.** The invoice number for the invoice that has an invoice line linked to this POL.  Click on the invoice number to open the Invoices app detail pane for the invoice.  Note: The link is to the general invoice, not to the specific invoice line that links to this POL.
+*   **Vendor invoice number.** The vendor-provided identifier for the invoice related to this purchase order line..  *   **Invoice line #.** The line number of the invoice line linked to this purchase order line.  Click on the **Invoice line #** value to open the Invoices app detail pane for the invoice line.  
 *   **Invoice date.** The vendor invoice date.  Click on the column name to sort the list of related invoices by **Invoice date**.
 *   **Vendor name.** The name of the vendor associated with the related invoice.
-*   **Vendor invoice number.** The vendor-provided identifier for the related invoice.
+
 *   **Status.**  The status of the invoice: Open, Reviewed, Approved, Paid, or Cancelled.
 *   **Quantity.** The quantity for the related invoice.
-*   **Expended amount.** The expended amount of the invoice.  The amount displayed is the **Calculated total amount** of the general invoice.
-*   **Piece(s).**  The caption information, as entered on the piece record of the Receiving app, for this order.  See [Receiving >Add piece fields](../receiving/#add-piece-fields) for more information.
+*   **Amount.** The total amount of the invoice line calculated as the sub-total plus adjustments.
+*  **Comment.**  The invoice line comment.
 
 
 
@@ -615,7 +618,7 @@ Note: Unopening an order removes any encumbrances and item records with an On Or
 
 ## Closing an order
 
-The system will automatically close one-time orders that are fully received and fully paid, or those where receipt or payment is not required, as indicated by the purchase order line **Receipt status** and **Payment status** values.  Only open orders can be closed. If you need to close an order manually, follow the steps below. Note about **Item status**: If **Create inventory** on the purchase order line is set to "Instance/holdings/item", an item was created in Inventory when the order was opened. Closing an order when the item is not yet received will update the **Item status** of the item to "Order Closed."  For more information about item status see [Platform essentials \> Item Status]({{< ref "itemstatus.md" >}}).
+The system will automatically close one-time orders that are fully received and fully paid, or those where receipt or payment is not required, as indicated by the purchase order line **Receipt status** and **Payment status** values.  Only open orders can be closed. If you need to close an order manually, follow the steps below. Note about **Item status**: If **Create inventory** on the purchase order line is set to “Instance/holdings/item”, an item was created in Inventory when the order was opened. Closing an order when the item is not yet received will update the **Item status** of the item to “Order Closed.”  For more information about item status see [Platform essentials > Item Status](< ref “/platform_essentials_items_status.md” >).
 
 1. [Search for the order you want to close](#searching-for-an-order) and select it.
 
@@ -682,6 +685,16 @@ To print or save a PDF file containing a snapshot of key information about an or
 4. To save the PDF file without printing, open the **Destination** drop-down list and select **Save as pdf**.
 
 
+## Showing hidden fields
+
+To reveal fields that are hidden, as defined in [Settings > Orders > Creating an order template]({{< ref "/settings_orders.md#settings--orders--creating-an-order-template" >}})
+, follow these steps.  Note: The user permission **Show all hidden fields** must be assigned to the user.
+
+1. From the detail pane of the order, select **Actions > Show hidden fields.**  If any fields are hidden, they are added to the detail pane.
+
+2. To hide the fields again, select **Actions > hide fields.**
+
+
 
 ## Adding a tag to an order
 
@@ -704,7 +717,9 @@ To print or save a PDF file containing a snapshot of key information about an or
 
 4. **Create another** checkbox: If the [Settings > Orders > Purchase orders line limit]({{< ref "/settings_orders.md#settings--orders-purchase-orders-line-limit" >}}) value is greater than one, click this checkbox at the bottom of the window to keep the **Add PO line** window open after saving the current order line.
 
-4. Click **Save**, **Save & close** or **Save & open order**, if applicable. For more information on saving and opening orders simultaneously, see [Settings > Orders > Opening purchase orders]({{< ref "/settings_orders.md#settings--orders--opening-purchase-orders" >}}).
+5. Click **Save**, **Save & close** or **Save & open order**, if applicable. For more information on saving and opening orders simultaneously, see [Settings > Orders > Opening purchase orders]({{< ref "/settings_orders.md#settings--orders--opening-purchase-orders" >}}).
+
+6. Once the order line is created, you can add notes, See [Adding a note to an order line](#adding-a-note-to-an-order-line) for more information. If the order line is for a package, you can add package titles. See [Adding package titles to an order line](#adding-package-titles-to-an-order-line).
 
 
 ### Item details
@@ -762,7 +777,8 @@ To print or save a PDF file containing a snapshot of key information about an or
 
 
 
-*   **Acquisition method.** Select the method you are using to purchase the item: Approval plan, Demand driven acquisitions (DDA), Depository, Evidence based acquisitions (EBA), Exchange, Gift, Purchase at vendor system, Purchase, Technical.
+*   **Acquisition method.** Select the method you are using to purchase the item: Approval plan, Demand driven acquisitions (DDA), Depository, Evidence based acquisitions (EBA), Exchange, Free, Gift, Internal transfer, Membership, Other, Purchase, Purchase at vendor system,  Technical.
+*   **Automatic export.** Select this checkbox to include the order in automated EDI order export which is triggered when an order is opened when EDI is set up for the associated vendor. Leave the checkbox blank to prevent automatic export of the order when opened.
 *   **Order format.** Select the format of the item you are ordering: Electronic resource, Physical resource, P/E mix, or Other. The Order format determines which fields are required in the [Cost details](#cost-details) section and whether the [Physical resource details](#physical-resource-details) or [E-resources details](#e-resources-details) sections are displayed.
 *   **Receipt date.** The receipt date of the item.
 *   **Receipt status.** Select the receipt status of the item: Pending or Receipt not required.  For orders with type **Ongoing**, the receipt status is automatically set to **Ongoing** when the order is saved. If no selection is made, the order is created with a receipt status of **Pending**. Upon opening the order, the receipt status is automatically set to **Awaiting receipt**. Once an order is open, you can edit the Receipt status to **Cancelled**, **Fully received**, **Partially received**, or **Receipt not required**. The system will automatically close orders that have resolved both payment and receipt statuses either as “Payment not required” or “Receipt not required” or by reaching “Fully paid” and “Fully received” through actions taken in the Receiving app and the Invoices app.  It is advisable to consider your library’s needs when defining how to set this field.  For example, you may want to select “Receipt not required” for one-time e-resource orders so that the order will automatically close once invoice payment is complete. Otherwise, if your library doesn’t receive e-resources, a one-time e-resource order may be left open even after payment is complete which could impact your expected results during Fiscal Year rollover.
@@ -773,7 +789,7 @@ To print or save a PDF file containing a snapshot of key information about an or
 *   **Cancellation restriction.** If there is a cancellation restriction on the item, select the **Cancellation restriction** checkbox.
 *   **Rush.** If the item needs rush processing, select the **Rush** checkbox.
 *   **Collection.** If the item is part of a collection, select the **Collection** checkbox.
-*   **Receiving workflow.** Select a value from the drop down list to manage behavior in the Receiving app.  Select **Synchronized order and receipt quantity** to keep the order quantity and the number of pieces to be received in sync. When the order is opened, the system will generate Receiving app pieces based on the quantity value on the purchase order line. Updating the quantity on the order will update the number of pieces to be received and updates in the Receiving app will update the order.  Select **Independent order and receipt quantity** if you need to create an unpredictable quantity of Receiving pieces, such as for an ongoing order.  Note: In prior system releases, this field was a checkbox named "Manually add pieces for recieving.""
+*   **Receiving workflow.** Select a value from the drop down list to manage behavior in the Receiving app.  Select **Synchronized order and receipt quantity** to keep the order quantity and the number of pieces to be received in sync. When the order is opened, the system will generate Receiving app pieces based on the quantity value on the purchase order line. Updating the quantity on the order will update the number of pieces to be received and updates in the Receiving app will update the order.  Select **Independent order and receipt quantity** if you need to create an unpredictable quantity of Receiving pieces, such as for an ongoing order.  Note: In prior system releases, this field was a checkbox named “Manually add pieces for recieving.”
 *   **Cancellation description.** A note about the cancellation.
 *   **Line description.** A description of the purchase order line.
 *   **Tags.** Select or enter any tags you want to assign to the order line in the box.
@@ -817,8 +833,7 @@ If you want to encumber money to certain funds, enter your fund distributions in
 
 1. Click **Add fund distribution**.
 
-2. Select the **Fund ID** from the drop-down list. Note: The use of acquisitions units may restrict which funds appear in this list. If an acquisition unit is set up to restrict view permissions, then only funds that are assigned to the same acquisition unit as the user will display in the drop-down list.  For more information, see [Settings > Acquisition units]({{< ref "/settings_acquisition_units.md" >}}).
-
+2. Select the **Fund ID** from the drop-down list. Only **Active** funds appear in the list. Note: The use of acquisitions units may restrict which funds appear in this list. If an acquisition unit is set up to restrict view permissions, then only funds that are assigned to the same acquisition unit as the user will display in the drop-down list.  For more information, see See [Settings > Acquisition units]({{< ref "/settings_acquisition_units.md" >}}).
 
 3. Select the **Expense class** from the list.
 
@@ -920,6 +935,47 @@ This section only appears if you select Other under [Order format](#order-format
 *   **Material type.** The type of material.
 
 
+## Adding package titles to an order line
+
+The package titles section of the purchase order line display appears only if the [package title checkbox](#item-details) was selected during order creation.  
+
+1. [Find the order line to which you want to add package titles](#searching-for-order-lines) and select it.
+
+2. In the **Package titles** section, click **Add**.
+
+3. In the **Select instance** dialog, use the Search & Filter pane to find the package title.  Find the title using the search box and/or the filters.  Click the title to select it.  The title appears in the Package titles table list.
+
+
+
+## Adding a note to an order line
+
+1. [Find the order line to which you want to add a note](#searching-for-order-lines) and select it.
+
+2. In the **PO Line details** pane, under **Notes**, click **New**.
+
+3. In the **New note** window, select the **Note type** from the drop-down list. Note types are created in the Settings app.
+
+4. Enter a **Note title** in the box.
+
+5. Optional: Enter any **Details** about the note in the box.
+
+6. Click **Save & close**. The note is saved and appears in the Notes section in the PO Line details pane.
+
+
+## Adding a tag to an order line
+
+1. [Find the order line you want to tag](#searching-for-order-lines) and select it.
+
+2. In the **PO Line details** pane, click the **tag icon**.
+
+3. In the **Tags** pane, either select a tag from the box or enter a tag.
+
+4. Click the **X** on the Tags pane to close the pane and save the tag. The tag number updates to the number of tags applied to the order line.
+
+
+
+
+
 ## Searching for order lines
 
 You can search for order lines in the **Search & filter** pane. Order lines is selected by default. To search for order lines, enter your search terms into the box. Select the **Keyword** drop-down list to search through one of the following fields:
@@ -1014,9 +1070,15 @@ In the **Search & filter** pane, click **Acquisition method** and select any app
 *   **Depository.** Order lines acquired through a depository arrangement, such as for government publications.
 *   **Evidence based acquisitions (EBA).** Order lines acquired through EBA.
 *   **Exchange.** Order lines acquired through an exchange with another library or institution.
+Free
 *   **Gift.** Order line for materials granted to the library as a gift.
-*   **Purchase at vendor system.** Order lines purchased through an external vendor system.
+*   **Internal transfer.** Order lines acquired through internal transfer.
+*   **Membership.**  Order lines acquired through membership.
+*   **Other.** Order lines acquired by some other method not listed.
 *   **Purchase.** Order lines purchased by methods such as email or EDI.
+
+*   **Purchase at vendor system.** Order lines purchased through an external vendor system, such as a website.
+
 *   **Technical.** Order lines to track payments for technical expenses such as service orders or vendor processing fees. This value could also be used for items that have migrated from an external system.
 
 
@@ -1399,29 +1461,3 @@ If the PO Line has been linked to an Agreement line in the Agreements app, a Lin
 2. In the **PO Line details** pane, click **Actions > Delete**.
 
 3. In the Delete order line dialog, click **Delete**. A confirmation message appears and the order line is deleted.
-
-
-## Adding a note to an order line
-
-1. [Find the order line to which you want to add a note](#searching-for-order-lines) and select it.
-
-2. In the **PO Line details** pane, under **Notes**, click **New**.
-
-3. In the **New note** window, select the **Note type** from the drop-down list. Note types are created in the Settings app.
-
-4. Enter a **Note title** in the box.
-
-5. Optional: Enter any **Details** about the note in the box.
-
-6. Click **Save & close**. The note is saved and appears in the Notes section in the PO Line details pane.
-
-
-## Adding a tag to an order line
-
-1. [Find the order line you want to tag](#searching-for-order-lines) and select it.
-
-2. In the **PO Line details** pane, click the **tag icon**.
-
-3. In the **Tags** pane, either select a tag from the box or enter a tag.
-
-4. Click the **X** on the Tags pane to close the pane and save the tag. The tag number updates to the number of tags applied to the order line.

@@ -1,7 +1,7 @@
 ---
 title: "Organizations"
 linkTitle: "Organizations"
-date: 2022-05-02
+date: 2022-06-07
 weight: 40
 tags: ["parenttopic"]
 ---
@@ -25,7 +25,7 @@ Organizations permissions:
 
 
 
-*   **Organizations: Assign acquisitions units to new organization.** This permission allows the user to assign acquisition units to the organization when creating a new record.
+*   **Organizations: Assign acquisition units to new organization.** This permission allows the user to assign acquisition units to the organization when creating a new record.
 *   **Organizations: Interface usernames and passwords: view.** This permission allows the user to view the usernames and passwords that appear in the Interface section.
 *   **Organizations: Interface usernames and passwords: view, edit, create, delete.** This permission allows the user to create, edit, and delete the usernames and passwords that appear in the Interface section. Note: This permission must always be assigned in conjunction with either the Organizations: View, edit, create or Organizations: View, edit, delete permissions.
 *   **Organizations: Manage acquisition units.** This permission allows the user to change the assignment of acquisition units for the organization when editing a record.

@@ -1,7 +1,7 @@
 ---
 title: "Invoices"
 linkTitle: "Invoices"
-date: 2022-05-02
+date: 2022-06-07
 weight: 20
 tags: ["parenttopic"]
 ---
@@ -38,6 +38,7 @@ The following are all the Invoices permissions:
 *   **Invoice: Can view invoices and invoice lines.**  This permission allows the user to view invoices and invoice lines.
 *   **Invoice: Can view, edit and create new invoices and invoice lines.**  This permission allows the user to view, edit, and create new invoices and invoice lines.
 *   **Invoice: Can view, edit and delete invoices and invoice lines.**  This permission allows the user to view, edit, and delete invoices and invoice lines.
+*   **Invoice: Cancel invoice.** This permission allows users to cancel invoices.
 *   **Invoice: Download batch file from invoice record.** This permission allows users to download the batch file from the invoice record.
 *   **Invoice: Manage acquisition units.** This permission allows the user to change the assignment of acquisition units for an invoice.
 *   **Invoice: Pay Invoices.** This permission allows the user to approve invoices for payment.
@@ -122,8 +123,8 @@ The vendor information section is required.
 
 1. Select a **Payment method** from the drop-down menu: Cash, Credit card, EFT, Deposit account, Physical check, Bank draft, Internal transfer, or Other.
 2. If you want to check for existing subscriptions, select the **Check subscription overlap** checkbox. Note: System logic is not currently implemented, so the system doesn't check for overlapping subscriptions.
-3. If you want to send a voucher to an external financial system, click the **Export to accounting** checkbox.  The setting of the **Export to accounting** checkbox on the vendor’s Organization record determines the default value setting of this checkbox on invoices for the vendor.
-4. If you want to indicate to an external accounting system that an enclosure is needed with this invoice, click the **Enclosure needed** checkbox.  If the Export to accounting checkbox is set to true and a voucher is created for this invoice, the export voucher file will contain a value of true in the “Enclosure needed” data element.
+3. If you want to send a voucher to an external financial system, click the **Export to accounting** checkbox.  The setting of the **Export to accounting** checkbox on the vendor’s Organization record determines the default value setting of this checkbox on invoices for the vendor.  Note:  If this checkbox is set to true, then the **Accounting code** in the Vendor information section is a required field.
+4. If you want to indicate to an external accounting system that an enclosure is needed with this invoice, click the **Enclosure needed** checkbox.  If the Export to accounting checkbox is set to true and a voucher is created for this invoice, the export voucher file will contain a value of true in the **Enclosure needed** data element.
 4. Select a **Currency** from the drop-down list. The default value is stored in Tenant settings as the primary currency. For more information, see [Settings > Tenant > Language and localization](../../settings/settings_tenant/setting_tenant/#language-and-localization). If you select a currency other than the default, the system will display the **Current exchange rate**.
 5. If you want to enter an exchange rate value to override the **Current exchange rate** value, select the **Use set exchange rate** checkbox and enter the rate in the **Set exchange rate box**.
 
@@ -216,7 +217,7 @@ When vendor EDIFACT format invoices are loaded to the system through data import
 *   **Subscription start date.** The date the subscription starts.  
 *   **Subscription end date.** The date the subscription ends.
 *   **Comment.** Any additional comments for the invoice line.
-*   **Accounting code.** The accounting code for the invoice line. If you select an account number from the drop-down list, the associated accounting code will display here.
+*   **Accounting code.** The accounting code for the invoice line. If you select an account number from the drop-down list, the associated accounting code will display here. Note: If the **Export to accounting** checkbox is active, the **Accounting code** is required.
 *   **Account number.** The account number for the invoice line. This drop-down list contains vendor account numbers for the vendor selected on the invoice if any exist on the vendor’s Organization record. If one or more vendor accounts exist in the Organization record for the vendor, the first account appears in this field as the default value.
 *   **Quantity.** The number of items in the invoice line.
 *   **Sub-total.** The amount of this invoice line. Note: The subtotal amount must be distributed to one or more funds and is expressed in the currency defined in [Settings > Tenant > Language and localization](../../settings/settings_tenant/settings_tenant/#language-and-localization).
@@ -277,8 +278,7 @@ In the **Search & filter** pane, click **Status** and select any applicable filt
 *   **Reviewed.** Invoices that have been reviewed by your library.   To set an invoice as “Reviewed”, you can select the “Reviewed” status from the drop-down list on the “Create vendor invoice” screen or the “Edit vendor invoice” screen.
 *   **Approved.** Invoices that have been approved by your library.  Use the Action menu to Approve an invoice.
 *   **Paid.** Invoices that have been paid for by your library.  Use the Action menu to Pay an invoice.
-*   **Cancelled.** Invoices that have been cancelled by your library.  Note: The cancel invoice functionality will be available in future releases.
-
+*   **Cancelled.** Invoices that have been cancelled by your library.  
 
 ### Vendor name
 
@@ -316,9 +316,9 @@ To search for invoices based on their invoice date, follow these steps:
 3. Click **Apply**. The search results appear in the Invoices pane.  
 
 
-### Acquisition units
+### Acquisition unit
 
-To search for invoices assigned to a specific acquisition units, follow these steps:
+To search for invoices assigned to a specific acquisition unit, follow these steps:
 
 
 
@@ -404,6 +404,17 @@ To search for invoices by payment date, follow these steps:
 2. Click **Apply**. The search results appear in the Invoices pane.  
 
 
+### Batch group
+
+To search for invoices by batch group assignment, follow these steps:
+
+
+
+1. In the **Search & filter** pane, click **Batch group**.
+2. Select the batch group name from the drop-down list. The search results appear in the Invoices pane.  
+
+
+
 ## Viewing invoice details
 
 Once you search for an invoice, the following information appears in the Invoices search results pane:
@@ -432,25 +443,36 @@ For information about most of the fields in the Invoice information section, see
 
 ### Viewing invoice lines
 
-Invoice lines link an invoice to purchase order lines or areinvoice lines that are not associated with an existing order. Each line consists of the title, payment information, cost details, and adjustments.
+Invoice lines link an invoice to purchase order lines or are invoice lines that are not associated with an existing order. Each line consists of the title, payment information, cost details, and adjustments.
 
 The invoice lines section lists all invoice lines for the order. The invoice lines table list displays the following:
 
 
 
+*   **#**  The purchase order line (POL) number.  System generated. 
 *   **POL number.** The purchase order line number.
 *   **Description.** The ordered title from the purchase order line.
 *   **Fund code.** The code for the fund from which payment is made for the invoice line.
-*   **Quantity.** The quantity ordered.
-*   **Sub-total.** The cost of the invoice before adding adjustments.
-*   **Adjustments.** The adjustments associated with the invoice.
-*   **Total.** All the costs incurred.
+*   **PO status.** The purchase order workflow status from the purchase order line: Open, Pending, Closed.
+*   **Receipt status.** The receipt status of the purchase order line.
+*   **Payment status.**  The payment status of the purchase order line.
 *   **Vendor reference number.** A unique identifier for the material being acquired that is specific to the vendor. Different types of identifiers are provided by vendors for different types of material.  All associated vendor reference numbers are listed.
+*   **Quantity.** The quantity ordered.
+*   **Sub-total.** The priceof the invoice before adding adjustments.
+*   **Adjustments.** The adjustments associated with the invoice.
+*   **Total.** The total amount of the invoice line calculated as the **Sub-total** plus **Adjustments**.
+*   **Vendor code.** The vendor code for the vendor organization associated with the purchase order line.
+
 
 To view more information about the invoice line, click on the row in the invoice lines list.  A detail pane opens containing information about the invoice line. See [Creating a new invoice line](#creating-a-new-invoice-line) for descriptions of the fields in the invoice line detail pane.
 
 
-### Fund Distribution
+#### Viewing other related invoice lines
+
+The **View invoice line** detail pane includes an accordion section to list **Other related invoice lines**. This table lists any invoices that are related to the same purchase order line.  
+
+
+### Fund distribution
 
 
 
@@ -494,6 +516,7 @@ The Adjustment section of the invoice detail remains empty unless the invoice co
 *   **Vendor invoice number.** The vendor invoice number for the invoice.
 *   **Vendor name.** The name of the vendor.
 *   **Accounting code.** The accounting code for the invoice.
+*   **Address, Primary.**  The vendor’s primary address information.  This address is included on the invoice voucher and voucher export.
 
 
 ### Links and documents
@@ -530,7 +553,7 @@ Invoices require approval before the payment amounts are considered to be awaiti
 *   The invoice status is Open or Reviewed. 
 *   One or more invoice lines are added to the invoice.. 
 *   The user account includes the **Approve invoice** permission.
-*   If you enter a **Lock total** value, all invoice lines and adjustment values must equal this lock total amount.  See [Invoice information \> Lock total](#invoice-information) for information about lock total. 
+*   If you enter a **Lock total** value, all invoice lines and adjustment values must equal this lock total amount.  See [Invoice information > Lock total](#invoice-information) for information about lock total. 
 
 
 Approving an invoice triggers the following system actions:
@@ -641,11 +664,14 @@ To pay an invoice, follow these steps:
 1. Using the Search and Filter pane, find the approved invoice that you want to pay and select it.
 2.  In the Voucher invoice number pane, select **Actions** > **Pay.**
 3. Click **Submit**.
+
+
+
 ## Viewing voucher export details and downloading the export file
 
 
 
-The process to generate a batch file containing vouchers for export to an external accounts payable system is managed in [Settings > Invoices > Batch group configuration](../../settings/settings_invoices/settings_invoices/#settings--invoices--batch-group-configuration).  Only vouchers for invoices with the “Export to accounting” checkbox turned on with an invoice status of “Approved” that have not been extracted in a prior job run will be included in the export.  After the export job completes, you can view details about the export and view a copy of the full voucher export file by finding an invoice that was included in the export job.   To view voucher export details and download a copy of the full file to your local download folder, follow these steps:
+The process to generate a batch file containing vouchers for export to an external accounts payable system is managed in [Settings > Invoices > Batch group configuration](../../settings/settings_invoices/settings_invoices/#settings--invoices--batch-group-configuration).  Only vouchers for invoices with the **Export to accounting** checkbox turned on with an invoice status of “Approved” that have not been extracted in a prior job run will be included in the export.  After the export job completes, you can view details about the export and view a copy of the full voucher export file by finding an invoice that was included in the export job.   To view voucher export details and download a copy of the full file to your local download folder, follow these steps:
 
 
 
@@ -654,13 +680,23 @@ The process to generate a batch file containing vouchers for export to an extern
 3. To download the full voucher export file, click the downward arrow download icon next to the Batch file name.  This file will contain all vouchers that were in a Paid status that had not yet been exported at the time of job execution.
 
 
+## Cancelling an invoice
+Cancelling an invoice is possible while in an Approved or Paid status and when the user account includes the **Approve invoice** permission. Cancelling an invoice triggers the following system actions:
+*   All transactions against funds related to the invoice are voided.
+*   The invoice voucher status is set to **Cancelled**.
+*   Users are unable to Open, Approve, or Pay the invoice after cancelling.
+To cancel an invoice, follow these steps:
+1. Find the invoice you want to cancel and select it.
+2. In the **Vendor invoice number** pane, click **Actions** > **Cancel**.
+3. In the **Cancel invoice** dialog, optionally enter a **Cancellation note**.  The Cancellation note displays in the **Invoice information** accordion.
+ 
 ### Voucher export details
+
 
 
 *   **Batch group.**  The name of the batch group selected for the invoice.
 *   **Batch file name.**  The name of the file generated by the voucher export process, expressed as date-time.
 *   **Batch file status.**  The status of the voucher export batch file: **Uploaded** or **Error**.
-
 
 
 
@@ -671,6 +707,7 @@ The process to generate a batch file containing vouchers for export to an extern
 The voucher export file contains the following data elements: 
 
 *   accountingCode
+*   accountNo
 *   amount
 *   batchedVoucherLines/0/amount
 *   batchedVoucherLines/0/fundCodes/
@@ -679,6 +716,8 @@ The voucher export file contains the following data elements:
 *   exchangeRate
 *   folioInvoiceNo
 *   invoiceCurrency
+*   invoiceDate
+*   invoiceTerms
 *   status
 *   systemCurrency
 *   type

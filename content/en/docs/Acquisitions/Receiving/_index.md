@@ -1,7 +1,7 @@
 ---
 title: "Receiving"
 linkTitle: "Receiving"
-date: 2022-05-02
+date: 2022-06-07
 weight: 50
 tags: ["parenttopic"]
 ---
@@ -335,12 +335,12 @@ This section displays the details of the purchase order lines.
 
 ### Expected
 
-This section displays the pieces of the order that are still expected to be received. See [Adding an expected piece](#adding-an-expected-piece) for more information.
+This section displays a table list of the pieces of the order that are still expected to be received. See [Adding an expected piece](#adding-an-expected-piece) for more information.
 
 
 ### Received
 
-This section displays the pieces of the order that have been received. See [Receiving an order](#receiving-an-order) for more information.
+This section displays a table list of the pieces of the order that have been received. See [Receiving an order](#receiving-an-order) for more information.
 
 
 ## Editing receiving title information
@@ -390,8 +390,10 @@ Note: To add an expected piece in Receiving, the [Receiving workflow](../orders/
 
 1. Find the receiving title to which you want to add a piece and select it.
 2. In the **Expected** section, click **Add piece**.
-3.  Add information about the piece in the **Add piece** dialog. See below for more information about each field.
-4. Click **Save & close**. The new piece is displayed in the Expected section.
+3. Add information about the piece in the **Add piece** dialog. See below for more information about each field.
+4. To add another piece after saving or quick receiving this piece, click **Create another**. After you save & close or quick receive, the **Add piece** dialog form is populated with details from the previous piece form. 
+5. To save and receive the piece, click **Quick receive**.  The new piece is saved and listed in the Received section.
+6. To save without adding another piece, Click **Save & close**. The new piece is saved and listed in the Expected section.
 
 
 ### Add piece
@@ -401,7 +403,7 @@ Note: To add an expected piece in Receiving, the [Receiving workflow](../orders/
 *   **Caption.**  A word, phrase or abbreviation indicating the parts into which the publisher has divided the serial, such as “volume,” “part,” or “band.”
 *   **Copy number.** The copy number of the piece.
 *   **Enumeration.** The enumeration of the piece which indicates the sequential numeric and/or alphabetic designation used by a publisher to identify the individual bibliographic or physical parts and to show the relationship of each part to the bibliographic unit as a whole.
-*   **Chronology.**  The chronology of the piece, such as "year", "month."
+*   **Chronology.**  The chronology of the piece, such as “year”, “month.”
 *   **Piece format.**  The order format, as selected in Orders. This field is not editable.
 *   **Expected receipt date.** The date the piece is expected to be received.
 *   **Comment.** Comments or notes about the piece.
@@ -434,7 +436,9 @@ To edit an expected or received piece, make sure the correct receiving title is 
 1. Select the piece you want to edit.
 2. In the **Edit piece** dialog, the same fields as the [Add piece](#adding-an-expected-piece) dialog appear. See above for more information.
 3. Edit the contents of fields, as needed.
-4. Click **Save & close.** A confirmation message appears and the piece is updated.
+4. To add another piece after saving or quick receiving this piece, click **Create another**. After you save & close or quick receive, the **Add piece** dialog form is populated with details from the previous piece form. 
+5. To save and receive the piece, click **Quick receive**.  
+6. To save without adding another piece, Click **Save & close**. A confirmation message appears and the piece is updated.
 
 
 ### Editing a received piece
@@ -442,7 +446,7 @@ To edit an expected or received piece, make sure the correct receiving title is 
 
 
 1. Select the piece you want to edit. 
-2. In the **Edit piece** dialog, the same fields as the **Add piece** dialog appear. See above for more information. Note: You cannot make changes to **Piece format** or **Create item** when editing a received piece. If the **Create item** checkbox was selectedwhen the piece was created, the text **Connected** is displayed. If the checkbox was cleared, it still displays the **Create item** box, but the checkbox is not editable. 
+2. In the **Edit piece** dialog, the same fields as the **Add piece** dialog appear. See above for more information. Note: You cannot make changes to **Piece format** or **Create item** when editing a received piece. If the **Create item** checkbox was selected when the piece was created, the text **Connected** is displayed. If the checkbox was cleared, it still displays the **Create item** box, but the checkbox is not editable. 
 3. Fill out the desired fields.
 4. Click **Save & close**. A confirmation message appears and the piece is updated.
 
@@ -516,7 +520,7 @@ The Receive function can be used to receive multiple pieces at once.
 *   **Caption.** A word, phrase or abbreviation indicating the parts into which the publisher has divided the serial, such as “volume,” “part,” or “band.”
 *   **Enumeration.** The enumeration of the piece which indicates the sequential numeric and/or alphabetic designation used by a publisher to identify the individual bibliographic or physical parts and to show the relationship of each part to the bibliographic unit as a whole.
 *   **Copy number.** The copy number of the piece.
-*   **Barcode.** A unique barcode for the piece. You can only add a barcode if the piece is already **Connected** to an instance in Inventory, or if the **Create item** checkbox is selected.
+ *   **Barcode.** A unique barcode for the piece. You can only add a barcode if the piece is already **Connected** to an instance in Inventory, or if the **Create item** checkbox is selected.
 *   **Piece format.** The order format, as selected in Orders. This field is not editable.
 *   **Request.** Information from the Requests app about this ordered material. A value of “Yes” indicates that a request is open for the piece. 
 *   **Comment.** Comments or notes about the piece.
