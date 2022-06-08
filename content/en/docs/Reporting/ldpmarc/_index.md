@@ -28,8 +28,8 @@ LIMIT 10
 
 For detailed information about how to set up and configure the ldpmarc tool, please review any of the guides linked below that are available in the [ldpmarc repository] (https://github.com/library-data-platform/ldpmarc). There you also will find the latest versions and fixes for the ldpmarc tool.
 
-* [System requirements](https://github.com/library-data-platform/ldpmarc/tree/v1.3.3#system-requirements): software and hardware requirements
-* [Building](https://github.com/library-data-platform/ldpmarc/tree/v1.3.3#building-the-software): installing / building ldpmarc tool
-* [Running ldpmarc](https://github.com/library-data-platform/ldpmarc/tree/v1.3.3#running-ldpmarc): start and run ldpmarc tool
-* [Full vs. incremental update](https://github.com/library-data-platform/ldpmarc/tree/v1.3.3#full-vs-incremental-update): explains how ldpmarc updates works and how to force a full update
-* [Resetting ldpmarc](https://github.com/library-data-platform/ldpmarc/tree/v1.3.3#resetting-ldpmarc): how to reset ldpmarc database
+* [System requirements](https://github.com/library-data-platform/ldpmarc/tree/v1.4.1#system-requirements): software and hardware requirements
+* [Building](https://github.com/library-data-platform/ldpmarc/tree/v1.4.1#building-the-software): installing / building ldpmarc tool
+* [Running ldpmarc](https://github.com/library-data-platform/ldpmarc/tree/v1.4.1#running-ldpmarc): start and run ldpmarc tool
+* [Full vs. incremental update](https://github.com/library-data-platform/ldpmarc/tree/v1.4.1#full-vs-incremental-update): explains how ldpmarc updates works and how to force a full update
+* [Resetting ldpmarc](https://github.com/library-data-platform/ldpmarc/tree/v1.4.1#resetting-ldpmarc): how to reset ldpmarc database
