@@ -1,7 +1,7 @@
 ---
 title: "Settings > Agreements"
 linkTitle: "Agreements"
-date: 2021-12-03
+date: 2022-06-07
 weight: 20
 tags: ["subtopic"]   
 ---
@@ -18,6 +18,8 @@ In order to interact with Agreements settings, a user needs to be assigned the f
 *   **Settings (Agreements): Can view and edit general settings**. This permission allows the user to view and edit the Display settings in the General settings section of the agreements settings.
 *   **Settings (Agreements): Manage agreement supplementary properties**. This permission allows the user the ability to manage the available supplementary properties. It also grants all permissions included in “Settings (Agreements): Can view and edit general settings.”
 *   **Settings (Agreements): Manage pick lists and values**. This permission allows the user the ability to manage pick lists and pick list values. It also grants all permissions included in “Settings (Agreements): Can view and edit general settings.”
+*   **Settings (Agreements): Can view app settings**. This permission allows the user to view permissions to a set of "app settings" via the Settings. As of Lotus, the available app settings are to set up options for storing documents uploaded to the Agreements module in database (default) or S3 storage. 
+*   **Settings (Agreements): Can view and edit app settings**. This permission allows the user to view and edit permissions to a set of "app settings" via the Settings. As of Lotus, the available app settings are to set up options for storing documents uploaded to the Agreements module in database (default) or S3 storage.
 
 
 ## Settings > Agreements > Display settings
@@ -69,6 +71,17 @@ To disable the Suppress from discovery checkbox, follow these steps:
 
 1. To disable the Suppress from discovery checkbox on agreement lines, clear the **Agreement lines** checkbox.
 2. To disable the Supress from discovery checkbox on package content items, clear the **Package content items** checkbox.
+
+
+### Hide accordions in agreement edit view
+
+This setting allows institutions not using the eUsage module to not display the Usage data accordion in the Agreements edit screen.
+
+Selecting the checkbox causes the following to happen:
+
+
+
+*   The Usage data module in the Agreements app is hidden.
 
 
 ## Settings > Agreements > Supplementary properties

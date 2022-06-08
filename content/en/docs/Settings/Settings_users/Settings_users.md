@@ -1,8 +1,8 @@
 ---
 title: "Settings > Users"
 linkTitle: "Users"
-date: 2022-05-12
-weight: 270
+date: 2022-06-03
+weight: 220
 tags: ["subtopic"]   
 ---
 
@@ -73,30 +73,32 @@ Use this setting to create patron groups for your library. Patron groups are cla
 
 Only one patron group can be assigned to a user record. Patron groups are also used to create [Circulation rules](../../settings_circulation/settings_circulation/#settings--circulation--circulation-rules).
 
-### Creating a patron group
+### Creating a Patron group
 
-1.  In the **Patron groups** pane, click **New**.
-2.  Enter a name for the **Patron group** in the box. Patron group names need to be unique.
-3.  (Optional): Enter a **Description** of the patron group.
-4.  (Optional): Enter a number in the **Expiration date offset (days)** box. This number represents
+1.  In the **Settings app**, select **Users \> Patron groups**. 
+2.  In the **Patron groups** pane, click **New**.
+3.  Enter a name for the **Patron group** in the box. Patron group names need to be unique.
+4.  (Optional): Enter a **Description** of the patron group.
+5.  (Optional): Enter a number in the **Expiration date offset (days)** box. This number represents
      the number of days of active status for user records assigned to the patron group.  
-5.  Click **Save**. The patron group is saved.
+6.  Click **Save**. The patron group is saved.
 
-### Editing a patron group
+### Editing a Patron group
 
-1.  Find the patron group you want to edit and click the **pencil icon** in the **actions** column. 
-2.  Make your changes to the **Patron group**, **Description**, or **Expiration offset date (days)**. 
-3.  Click **Save**. The changes to the patron group are saved.
+1.  In the **Settings app**, select **Users \> Patron groups**.
+2.  In the **Patron groups** pane, find the **Patron group** you want to edit and click the **pencil icon** in the **actions** column. 
+3.  Make your changes to the **Patron group**, **Description**, or **Expiration offset date (days)**. 
+4.  Click **Save**. The changes to the patron group are saved.
 
-### Deleting a patron group
+### Deleting a Patron group
 
 A patron group can only be deleted if it is no longer applied to any user records. To delete a patron group, you should first check to be sure that no users are currently assigned to that group.
 
 To see the number of user records assigned to a patron group, complete the following: 
 
--   In the **Users app**, in the **User search** pane, select the checkbox next to the appropriate Patron group. The list of user records assigned to that patron group appears in the **User search results** pane. The number of records found displays at the top of the pane.
+-   In the **Users app**, in the **User search** pane, select the checkbox next to the appropriate Patron group. The list of user records assigned to that patron group appears in the **User search results** pane. The number of records found displays at the top of the pane. If *0 records found* appears, the Patron group can be deleted. 
 
-To delete a patron group, follow these steps:
+To delete a Patron group, follow these steps:
 
 1.  In the **Settings app**, select **Users \> Patron groups**.
 2.  In the **Patron groups** pane, find the patron group you want to delete and click the **trash can icon** in the **actions** column.
@@ -110,17 +112,19 @@ Note: Address types should be first configured here before bulk loading of patro
 
 ### Creating an address type
 
-1.  In the **Address Types** pane, click **New**.
-2.  Enter a name for the **Address Type** in the box. The Address Type must be unique.
-3.  Optional: Enter a **Description** of the Address Type.
-4.  Click **Save**. The Address Type is saved.
+1.  In the **Settings app**, select **Users \> Address Types**.
+2.  In the **Address Types** pane, click **New**.
+3.  Enter a name for the **Address Type** in the box. The Address Type must be unique.
+4.  Optional: Enter a **Description** of the Address Type.
+5.  Click **Save**. The **Address Type** is created.
 
 ### Editing an address type
 
-1.  In the **Address Types** pane, find the Address Type you want to edit and click the **pencil  
+1.  In the **Settings app**, select **Users \> Address Types**. 
+2.  In the **Address Types** pane, find the Address Type you want to edit and click the **pencil  
      icon** in the **actions** menu. 
-2.  Make your changes to the **Address Type** or **Description**.
-3.  Click **Save**. The Address Type is updated.
+3.  Make your changes to the **Address Type** or **Description**.
+4.  Click **Save**. The **Address Type** is saved.
 
 ### Deleting an address type
 
@@ -131,8 +135,9 @@ In Settings \> Users \> Address Types, the number of user records assigned to an
 
 To delete an **Address Type**, follow these steps:
 
-1.  In the **Address Types** pane, find the Address Type you want to delete and click the **trash can icon** in the **actions** column.
-2.  In the **Delete Address Type** dialog, click on the **Delete** button. A confirmation message appears and the **Address Type** is deleted.
+In the **Settings app**, select **Users \> Address Types**.  
+In the **Address Types** pane, find the Address Type you want to delete and click the **trash can icon** in the **actions** column.
+In the **Delete Address Type** dialog, click on the **Delete** button. A confirmation message appears and the **Address Type** is deleted.
 
 ## Settings \> Users \> Departments
 
@@ -140,21 +145,24 @@ Use this setting to configure departments. Departments can be added in the [Exte
 
 ### Creating a department
 
-1.  In the **Departments** pane, click **New**.
-2.  Enter a **Name** for the department in the box.
-3.  Enter a department **Code** in the box.
-4.  Click **Save**. The department is saved.
+1. In the **Settings app**, select **Users \> Department**. 
+2. In the **Departments** pane, click **New**.
+3.  Enter a **Name** for the department in the box.
+4.  Enter a department **Code** in the box.
+5.  Click **Save**. The department is saved.
 
 ### Editing a department
 
-1.  In the **Departments** pane, find the department you want to edit and click the **pencil icon** in the **actions** column.
-2.  Make your changes to the **Name** or **Code**.
-3.  Click **Save**. The department is updated.
+In the **Settings app**, select **Users \> Department**. 
+In the **Departments** pane, find the department you want to edit and click the **pencil icon** in the **actions** column.
+Make your changes to the **Name** or **Code**.
+Click **Save**. The department is updated.
 
 ### Deleting a department
 
-1.  In the **Departments** pane, find the department you want to delete and click the **trash can icon** in the **actions** column.
-2.  In the **Delete Department** dialog, click **Delete**. A confirmation message appears and the department is deleted.
+ In the **Settings app**, select **Users \> Department**.  
+In the **Departments** pane, find the department you want to delete and click the **trash can icon** in the **actions** column.
+In the **Delete Department** dialog, click **Delete**. A confirmation message appears and the department is deleted.
 
 ## Settings \> Users \> Custom fields
 

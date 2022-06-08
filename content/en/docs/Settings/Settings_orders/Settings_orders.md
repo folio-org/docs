@@ -1,7 +1,7 @@
 ---
 title: "Settings > Orders"
 linkTitle: "Orders"
-date: 2021-11-24
+date: 2022-06-07
 weight: 200
 tags: ["subtopic"]   
 ---
@@ -23,7 +23,7 @@ In order to interact with order settings, a user needs to be assigned the follow
 *   **Settings(Orders): Can view, edit, delete Order Templates.** This permission allows you to view, edit, and delete Order Templates in Settings > Orders.
 
 
-Note:. You can assign permissions to users in the Users app.
+Note: You can assign permissions to users in the Users app.
 
 
 ## Settings > Orders > Approvals
@@ -103,11 +103,13 @@ Order templates contain the same fields found in order records but also include 
 
 ### Creating an order template
 
-Note: Template name is the only required field.
+To create a new order template, follow the steps below.  To hide a field from view during order creation, click on the eye icon beside the field name.  The eye icon will display an angled slash mark to indicate that the field will be hidden.  When the user creates a new order and selects the template, only the fields with the eye turned on will display. Note: Template name is the only required field for a new order template.
 
 1. Click **New**.
 
-2. Fill in the fields. Follow the instructions under [Creating an order]({{< ref "/orders.md#creating-an-order" >}}) for more information.
+2. Click **Hide all eligible fields** to turn off visibility for all fields that can be hidden during order creation.  You can then turn on only the fields that you want to display by unselecting the eye icon beside those fields.
+
+3. Fill in information as needed for the remaining order creation fields. Follow the instructions under [Creating an order]({{< ref "/orders.md#creating-an-order" >}}) for more information. Click on the eye icon to hide fields as needed.
 
 3. Click **Save**. A confirmation message appears and the template is saved.
 
