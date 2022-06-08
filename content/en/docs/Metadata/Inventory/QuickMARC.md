@@ -1,6 +1,6 @@
 ---
 title: "quickMARC"
-linkTitle: "QuickMARC"
+linkTitle: "quickMARC"
 date: 2022-04-22
 weight: 4
 tags: ["subtopic"]   
