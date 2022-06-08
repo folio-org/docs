@@ -1,8 +1,8 @@
 ---
 title: "Users"
 linkTitle: "Users"
+date: 2022-06-03
 weight: 250
-date: 2022-05-12
 ---
 
 The Users app allows you to manage user information for patrons and library staff. Both patrons and library staff's user records are stored in the Users app. There is no separate directory or app for library staff users. The difference between a library staff user and a patron is that the library staff user record has FOLIO permissions assigned to it.
@@ -27,13 +27,14 @@ The following are all the User permissions:
 -   **User: Can override patron blocks.** This permission allows the user to override a patron block for borrowing, requesting, or renewing an item in Check Out.
 -   **Users: Can assign and unassign permissions to users.** This permission allows the user to assign or unassign permissions to another user. 
 -   **Users: Can assign and unassign service points to users.** This permission allows the user to view and edit service points assigned to users. The user can also view and edit basic user data elements.
--   **Users: Can create new user.** This permission allows the user to create a new user record and add User information, Extended information, and Contact Information to the user record. 
 -   **Users: Can check open transactions.** This permission allows the user to check for open transactions on a user record. If there are no open transactions, the user record can be deleted.
+-   **Users: Can create new user.** This permission allows the user to create a new user record and add User information, Extended information, and Contact Information to the user record. 
 -   **Users: Can create, edit and remove fees/fines.** This permission allows the user to create, edit, remove, and view user fees/fines.
 -   **Users: Can create, edit and remove patron blocks.** This permission allows the user to see the Patron blocks section on the user record, and view, edit, and create blocks.
 -   **Users: Can create, edit and remove proxies.** This permission allows the user to view and edit proxies assigned to a user. The user can also view and edit basic user data elements.
 -   **Users: Can delete user profile if user does not have any open transactions.** This permission allows a user profile to be deleted through the UI if the user has no open transactions. This permission must be used with **Users: Can check open transactions**.
 -   **Users: Can edit user profile.** This permission allows the user to edit and view the following sections in a user record: User information, Extended information, and Contact information.
+-   **Users: Can view fees/fines and loans.** This permission allows users to view fees/fines and loans of a user. 
 -   **Users: Can view permissions assigned to users.** This permission allows the user to view the permissions assigned to another user. 
 -   **Users: Can view proxies assigned to users.** This permission allows the user to see the Proxies section but not edit proxies assigned to a user. This permission also includes the ability to search and view user records (basic user fields only).
 -   **Users: Can view service points assigned to users.** This permission allows the user to see the Service points section but not edit service points assigned to a user. This permission also includes the ability to search and view user records (basic user fields only).
@@ -60,7 +61,7 @@ Keyboard shortcuts allow you to perform actions in this app using the keyboard. 
 ## Creating a user record manually
 
 1.  In the **User Search Results** pane, click **Actions \> New**.
-2.  In the **Create User** window, fill in the **User information**, **Extended information**, and **Contact information** sections. For more information on the fields and actions available in these sections, see the section descriptions below.
+2.  In the **Create User** window, fill in the **User information**, **Extended information**, and **Contact information**, and **Custom fields** sections. For more information on the fields and actions available in these sections, see the section descriptions below.
 3.  Once you have included all the information you want about the user, click **Save & Close**. The user record is saved.
 
 ### User information
@@ -68,7 +69,7 @@ Keyboard shortcuts allow you to perform actions in this app using the keyboard. 
 -   **Last name (required).** The surname of the user.
 -   **First name.** The given name of the user.
 -   **Middle name.** The middle name of the user.
--   **Preferred first name.** The name by which the user prefers to be called.
+-   **Preferred first name.** The name by which the user prefers to be called. If a preferred first name is provided, it will display in the user record in place of the first name. 
 -   **Patron group (required).** Select a patron group to assign to the user. Patron groups are classes of library users configured by your library in the Settings app. See [Settings \> Users \> Patron Groups](../settings/settings_users/settings_users/#settings--users--patron-groups) for more information.
 -   **Status (required).** Select a status for the user: **Active** or **Inactive.** A user's status is tied to the expiration date set on their user record. Active status indicates current affiliation, employment, or enrollment within the library's institution. Inactive status indicates that the expiration date on the user's record has passed and the user is no longer affiliated, employed, or enrolled. When a **Patron Group** is selected, the **Status** automatically defaults to **Active**.
 -   **Expiration date.** The amount of time set before the user record lapses and the user no longer has active permissions or the ability to borrow items. The expiration date determines when a user's status changes from Active to Inactive. After selecting a **Patron Group**, you are prompted to use the default expiration date for that patron group. In the **Set expiration date** pop-up window, click **Set** to accept the default expiration date for the patron group. Otherwise, if you wish to customize the expiration date, click **Cancel** and enter the date in the **Expiration date** field, or click the **calendar icon** to select a date. You can also leave the field blank.
@@ -97,9 +98,12 @@ Keyboard shortcuts allow you to perform actions in this app using the keyboard. 
 -   **Address Type.** Select the appropriate address type for the user's address. Address Types are configured by your library in the Settings app. See [Settings \> Users \> Address Types](../settings/settings_users/settings_users/#settings--users--address-types) for more information.
 -  Fill out the address information fields and click **Add Address** to save the address to the user’s record. 
 
+### Custom fields
+The **Custom fields** section will appear only if it is configured in the Settings>Users app. For more information on configuring the **Custom fields** section, see [Settings /> Users /> Custom fields](../settings/settings_users/settings_users/#settings--users--custom-fields).
+
 ## Searching for user records
 
-You can search for user records in the **User search** pane. To search for users, enter your search terms into the box and click **Search**. The user search box searches through these fields: Keyword (name, email, identifier), Barcode, Last Name, or Username.
+You can search for user records in the **User search** pane. To search for users, enter your search terms into the box and click **Search**. The user search box searches through these fields: Keyword (name, email, identifier), Barcode, Last Name, or Username. First name or Preferred first name can be used as name in the Keyword field. 
 
 You can also search for user records by selecting any of the filters in the **User search** pane. Additionally, you can apply the filters after you perform a search to limit your results. See the sections below for more information on the filters.
 
@@ -132,13 +136,13 @@ To search for user records assigned with specific tags, follow these steps:
 Once you search for a user record, the following information appears in the User search results pane:
 
 -   **Active.** The status of the user.
--   **Name.** Name of the user. (Last Name, First Name).
+-   **Name.** Name of the user. *Last Name, First Name* or *Last Name, Preferred first name (First name)*
 -   **Barcode.** The barcode number of the user.
 -   **Patron group.** The patron group to which the user belongs.
 -   **Username.** The username of the user.
 -   **Email.** The email address of the user.
 
-In the **User search results** pane, click on a user record to view it. The User record pane displays with additional information about the user record. See the sections below for more information on the accordions that appear in the user record.
+In the **User search results** pane, click on a user record to view it. The User record pane displays additional information about the user record. See the sections below for more information on the accordions that appear in the user record.
 
 ### User information
 
@@ -164,7 +168,7 @@ The Proxy/sponsor section displays any proxies or sponsors associated with the u
 
 ### Fees/fines
 
-The Fees/fines section displays the number of open and closed fees/fines. To view additional details about the open or closed fees/fines, click **open fees/fines** or **closed fees/fines**, respectively. To view all fees/fines, click **View all fees/fines**.  For more information, see [Fees/fines](#feesfines).
+The Fees/fines section displays the number of open and closed fees/fines. To view additional details about the users’ open or closed fees/fines, expand the **Fees/Fines** accordion and click on **open fees/fines** or **closed fees/fines** respectively. To view all fees/fines, click **View all fees/fines**.  For more information, see [Fees/fines](#feesfines).
 
 You can also create manual fees/fines in the Fees/fines section. For more information, see [Creating a manual fee/fine](#creating-a-manual-feefine).
 
@@ -174,9 +178,9 @@ The Loans section displays the number of open and closed loans.
 
 A patron has an open loan when they have borrowed an item and the item hasn’t yet been returned. A loan is also considered open when the patron has returned the item but needs to pay a fee/fine, or when a patron says they have returned an item and the library marks it as “claim returned” while they search the shelves.
 
-Once an item has been checked back in, and any associated fee/fines have been resolved, the loan is closed. Once a loan is closed, it can be anonymized according to the library’s anonymization settings.
+Once an item has been returned to the library and checked back in, and any associated fee/fines have been resolved, the loan is closed. Once a loan is closed, it can be anonymized according to the library’s anonymization settings.
 
- To view additional details about the open or closed loans, click **open loans** or **closed loans**, respectively.
+To view additional details about the user’s open or closed loans, expand the **Loans** accordion and click **open loans** or **closed loans**, respectively.
 
 ### Requests
 
@@ -186,7 +190,7 @@ A request is open when a patron hasn’t yet received the item they requested. T
 
 A request is closed when the patron picks up the item (Closed - fulfilled). It’s also closed if the patron cancels their request prior to pickup (Closed - Cancelled), if the patron didn’t come get the book before their hold expired (Closed - Pickup expired), or if the library was unable to fill the request before the request itself expired (Closed - Unfilled).
 
-To view additional details about the open or closed requests, click **open requests** or **closed requests**, respectively.
+To view additional details about the users’ open or closed requests, expand the **Requests** accordion and click **open requests** or **closed requests**, respectively.
 
 You can also create requests for the user in the Requests section. For more information, see [Creating requests](#creating-requests).
 
@@ -237,7 +241,7 @@ This functionality is provided only after the user record has been saved for the
 
 1.  [Find the user record](#searching-for-user-records) for which you want to send a password reset email and select it.
 2.  In the **User record** pane, click **Edit**.
-3.  In the **Edit** window, under **Folio password**, in the **Extended information** section, click **Send reset password email**. The reset password email is sent to the user.
+3.  In the **Edit** window, in the **Extended information**, click the **Send reset password email** link under **Folio password**. The reset password email is sent to the user.
 4.  Optional: In the **Reset password email sent** pop-up window, click **Copy link** to copy the password reset link and manually send the link to the user.
 5.  Click the **X** to close the pop-up window.
 
@@ -247,14 +251,14 @@ Users can authorize other users to borrow library materials on their behalf. Spo
 
 1.  [Find the user record](#searching-for-user-records) to which you want to add a sponsor and select it.
 2.  In the **User record** pane, click **Edit**.
-3.  In the **Edit** window, under **Proxy/sponsor**, in the **Sponsors** section, click **Add**.
-4.  In the **Select User** pop-up window, search for the sponsor user and select them. The sponsor is added to the user record.
-5.  Optional: In the **sponsor** box, select the **Relationship Status**: Active or Inactive.
-6.  Optional: Enter or select an **Expiration date**. The Expiration date indicates the expiration of the proxy/sponsor relationship.
-7.  Optional: Select whether the **Proxy can request for the sponsor**. If you select **Yes**, then the proxy can place requests on materials on behalf of the sponsor.
-8.  Optional: Select to whom notifications from the library are sent in the **Notifications sent to** drop-down list: Proxy or Sponsor.
-9.  Click **Add**.
-10.  Click **Save & Close**. The sponsor is added to the user record.
+3.  In the **Edit** window, expand the **Proxy/sponsor** accordion and click **Add** in the **Sponsors** section.
+4.  In the **Select User** pop-up window, search for the sponsor user and select them. 
+Optional: In the **sponsor** box, select the **Relationship Status**: **Active** or **Inactive**.
+Optional: Enter or select an **Expiration date**. The Expiration date indicates the expiration of the proxy/sponsor relationship.
+Optional: Select whether the **Proxy can request for the sponsor**. If you select **Yes**, then the proxy can place requests on materials on behalf of the sponsor.
+Optional: Select to whom notifications from the library are sent in the **Notifications sent to** drop-down list: **Proxy** or **Sponsor**.
+5.  Click **Add**.
+6.  Click **Save & Close**. The sponsor is added to the user record.
 
 ## Add a proxy to a user record
 
@@ -262,12 +266,12 @@ Users can authorize other patrons to borrow library materials on their behalf. P
 
 1.  [Find the user record](#searching-for-user-records) to which you want to add a proxy and select it.
 2.  In the **User record** pane, click **Edit**.
-3.  In the **Edit** window, under **Proxy/sponsor**, in the **Proxies** section, click **Add**.
-4.  In the **Select User** pop-up window, search for the proxy user and select them. The proxy is added to the user record.
-5.  Optional: In the **proxy** box, select the **Relationship Status**: Active or Inactive.
-6.  Optional: Enter or select an **Expiration date**. The Expiration date indicates the expiration of the proxy/sponsor relationship.
-7.  Optional: Select whether the **Proxy can request for the sponsor**. If you select **Yes**, then the proxy can place requests on materials on behalf of the sponsor.
-8.  Optional: Select to whom notifications from the library are sent in the **Notifications sent to** drop-down list: Proxy or Sponsor.
+3.  In the **Edit** window, expand the **Proxy/sponsor** accordion and click **Add** in the **Proxies** section.
+4.  In the **Select User** pop-up window, search for the proxy user and select them. 
+Optional: In the **proxy** box, select the **Relationship Status**: **Active** or **Inactive**.
+Optional: Enter or select an **Expiration date**. The Expiration date indicates the expiration of the proxy/sponsor relationship.
+Optional: Select whether the **Proxy can request for the sponsor**. If you select **Yes**, then the proxy can place requests on materials on behalf of the sponsor.
+Optional: Select to whom notifications from the library are sent in the **Notifications sent to** drop-down list: Proxy or Sponsor.
 9.  Click **Add**. 
 10.  Click **Save & Close**. The proxy is added to the user record.
 
@@ -280,17 +284,18 @@ Library staff need to have permissions assigned to their user record in order to
 3.  In the **Edit** window, expand the **User permissions** accordion if needed. 
 4.  Click **Add permission**.
 5.  In the **Select Permissions** pop-up window, search for the permission(s) or permissions set you want to assign to the user. 
-6.  Optional: Filter by **Permission type** or **Permission assignment status** in the **Search & Filter** pane.
+Optional: Filter by **Permission type** or **Permission assignment status** in the **Search & Filter** pane.
 7.  Select the **checkbox** next to the permissions you want to assign to the user.
-8.  Click **Save & close**. The permissions are added to the user record.
+8.  Click **Save & close**. The permissions are assigned to the user record.
 9.  Click **Save & close**. The user record is saved.
 
 ## Removing permissions from a user’s record
 
+###Remove assigned permission(s) 
 1.  [Find the user record](#searching-for-user-records) to which you want to remove permissions and select it.
 2.  In the **User record** pane, click **Edit**.
 3.  In the **Edit** window, expand the **User permissions** accordion if needed. 
-4.  Click the “x” next to the permission(s) you want to remove. The permission(s) are removed from the user record.
+4.  Click the “x” next to the individual permission(s) you want to remove. The permission(s) are removed from the user record.
 5.  Click **Save & close**. The user record is saved.
 
 Permissions can also be removed by following a modified version of the process for adding them:
@@ -300,10 +305,18 @@ Permissions can also be removed by following a modified version of the process f
 3.  In the **Edit** window, expand the **User permissions** accordion if needed. 
 4.  Click **Add permission**.
 5.  In the **Select Permissions** pop-up window, search for the permission(s) or permissions set you want to remove from the user. 
-6.  Optional: Filter by **Permission type** or **Permission assignment status** in the **Search & Filter** pane.
+Optional: Filter by **Permission type** or **Permission assignment status** in the **Search & Filter** pane.
 7.  Deselect the **checkbox** next to the permission(s) you want to remove from the user.
 8.  Click **Save & close**. The permission(s) are removed from the user record.
 9.  Click **Save & close**. The user record is saved.
+
+###Remove all permissions
+All assigned permissions can be removed from a user record in one click. 
+1.  [Find the user record](#searching-for-user-records) to which you want to remove permissions and select it.
+2.  In the **User record** pane, click **Edit**.
+3.  In the **Edit** window, expand the **User permissions** accordion if needed. 
+4.  Click the **Unassign all permissions** button.
+5.  In the **Unassign all permissions** pop-up window, click **Yes** to confirm that you want to unassign all permission. All assigned permissions will be removed from the user’s record.  
 
 ## Adding a service point to a user record
 
@@ -315,8 +328,8 @@ Staff who use the Check in, Check out, Users, or Requests apps must have a servi
 2.  In the **User record** pane, click **Edit**.
 3.  In the **Edit** window, expand the **Service points** accordion if needed. 
 4.  Click **Add service points**. 
-5.  In the **Add service points** pop-up window, select the **checkboxes** next to the service point(s) you want to add to the user record.
-6.  Click **Save & close**. The service point(s) are added to the user record.
+5.  In the **Add service points** pop-up window, select the **checkboxes** next to the service point(s) you want to assign to the user record.
+6.  Click **Save & close**. The service point(s) are assigned to the user record.
 7.  Select a **Service point preference** from the drop-down list. If you select **None**, then the user is prompted to select a service point every time they sign in to FOLIO.
 8.  Click **Save & Close**. The service point(s) are added to the user record.
 
@@ -385,10 +398,10 @@ Patron blocks with expiration dates are automatically removed on that date.
 To remove a patron block with no assigned expiration date, follow these steps:
 
 1.  [Find the user record](#searching-for-user-records) of the patron with the block you want to edit and select it.
-2.  In the **User record** pane, click **Patron blocks**.
-3.  In the **block table**, select the **block** you want to edit.
-4.  In the **user block** window, click **Delete**.
-5.  In the **Delete patron block** pop-up window, click **Delete**. The patron block is removed.
+2.  In the **User record** pane, expand the **Patron blocks** accordion.
+3.  Select the block you want to remove
+4.  In the user record window, click **Delete**.
+5.  In the **Delete patron block?** pop-up window, click **Delete**. The patron block is removed.
 
 ## Creating requests
 
@@ -418,13 +431,14 @@ If there are one or more open transactions for the user, the message *User (Last
 
 The Overdue loans report is a comma-separated values (CSV) file that displays all users with overdue materials.
 
--   In the **User search results** pane, click **Actions \> Overdue loans report (CSV)**. 	Depending on your browser and its configurations, the file automatically downloads or you are prompted to save it.
+-   In the **User search results** pane, click **Actions \> Overdue loans report (CSV)**. 	
+-  Depending on your browser and its configurations, an *Export in progress* message appears and the file automatically downloads or you are prompted to save it. If there are no overdue loans to report, a *No items found* message appears and no file is generated. 
 
 ## Claimed returned report
 
 The Claimed returned report is a comma-separated values (CSV) file that displays all users with claimed returned materials.
 
--   In the **User search results** pane, click **Actions \> Claimed returned report (CSV)**. 	Depending on your browser and its configurations, the file automatically downloads or you are prompted to save it.
+-   In the **User search results** pane, click **Actions \> Claimed returned report (CSV)**. 	A *Export in progress* message appears and depending on your browser and its configurations, the file either automatically downloads or you are prompted to open and save it. If there are no claimed return items to report, a *No items found* message will appear and no file is generated.
 
 ## Cash drawer reconciliation report
 
@@ -432,12 +446,12 @@ The Cash drawer reconciliation report is used by library staff to balance their 
 
 
 -   In the **User search results** pane, click **Actions \>Cash drawer reconciliation report (CSV, PDF)**. 
--   In the **Cash drawer reconciliation report** modal, enter a **Start Date* (required) and an **End Date**. Select **Service Point** (required) and **Sources**. 
--   Select **Report format**.
+-   In the **Cash drawer reconciliation report** modal, enter a **Start Date* (required) and an **End Date**. Select **Service Point** and **Sources** (optional). 
+-   Select **Report format**. You may select *CSV*, *PDF (Read Only)*, or *Both*.
 -   Click **Save & close**.
 
 
-Depending on your browser and its configurations the file is automatically downloaded and you are prompted to open or save it. 
+A *Export in progress* message appears and depending on your browser and its configurations, the file is either automatically downloaded or you are prompted to open and save it. If there are no transactions to report, a *No items found* message appears and no file is generated.
 
 ## Financial transaction detail report
 
@@ -446,7 +460,7 @@ The Financial transaction detail report allows libraries to review transactions 
 -    In the **Financial transaction detail report** modal, specify a date range by entering a **Start date** and an **End date**. Select the **Fee/fine owner**. Select the **Associated service points** (optional). 
 -   Click on **Save & close**.
 
-Depending on your browser and its configurations, the file automatically downloads and you will be prompted to open it or save it. 
+An *Export in progress* message will appear and depending on your browser and its configurations, the file either automatically downloads or you are prompted to open and save it. If there are no transactions to report, a *No items found* message appears and no file is generated.
 
 ## Refunds to process manually report
 The Refunds to process manually report is a report that provides library administration with a list of patrons requiring refunds. It is available for download as a comma-separated values (CSV) file. 
@@ -454,7 +468,7 @@ The Refunds to process manually report is a report that provides library adminis
 -    In the **Refunds to process manually** modal, specify a date range by entering a **Start Date** and an **End Date**. Select the **Fee/Fine Owner**.
 -    Click **Save & close**.
 
-Depending on your browser and its configurations, the file automatically downloads and you will be prompted to open it or save it. 
+A *Export in progress* message appears and depending on your browser and its configurations, the file either automatically downloads or you are prompted to open and save it. If no there are no refunds to process manually, a *No items found* message appears and no file is generated. 
 
 ## Managing loans and fee/fines for patrons
 
@@ -466,8 +480,10 @@ FOLIO users with appropriate permissions can manage fee/fines on patron accounts
 ### Renew a loan
 
 To renew one or more loans for a patron:
-1. Use the check boxes on the left to select the appropriate loan(s).
-2. From the buttons at the top of the list, click **Renew**.
+1. In the user record pane, expand the **Loans** accordion if needed.  
+2. Click on *Open loans*. 
+3. Use the check boxes on the left of the **Loans** window to select the appropriate loan(s).
+4. Click the **Renew** button located in the top right corner of the **Loans** window.
 
 If the renewal was successful, you will see a green success message in the bottom right corner. The new due date may be sooner than expected if the normal due date would be after a patron’s account has expired.
 If the renewal was not successful, a pop-up message will appear. If you have the correct permissions, you can click **Override** from the pop-up window to override the error and renew the loan.
@@ -477,10 +493,12 @@ Alternatively, you can renew a loan by clicking on **Renew** in the **actions** 
 ### Change a due date
 
 To change due dates on one or more loans for a patron:
-1. Use the check boxes on the left to select the appropriate loan(s).
-2. From the buttons at the top of the list, click **Change due date**.
-3. In the pop-up window that appears, enter a new due date or select one from the calendar drop-down.
-4. Click **Save and close**.
+1. In the user record pane, open the **Loans** accordion if needed. 
+2. Click on **open loans**.
+3. Select the check boxes on the left of the **Loans** window to select the appropriate loan(s).
+4. Click the **Change due date** button located in the top right corner of the **Loans** window. 
+5. In the pop-up window that appears, enter a new due date and time or select one from the calendar drop-down.
+6. Click **Save and close**.
 
 Note that if you have permissions to change a loan’s due date, you can change the due date/time to one in the past; FOLIO will give you a warning message but allow the change to go through.
 
@@ -489,14 +507,15 @@ Note that if you have permissions to change a loan’s due date, you can change 
 Occasionally, patrons may tell libraries that they have returned items that are still listed as checked out to them. The library has the option to mark the item as “claim returned.” This will place any associated fines in a suspended state while libraries can carry out workflows to search for the item on their shelves.
 
 To mark an item claim returned:
-1. Use the check boxes on the left to select the appropriate loan(s).
-2. From the buttons at the top of the list, click **Claim returned**.
-3. In the pop-up window that appears, enter additional information about the patron’s claim (required).
-4. Click **Confirm**.
+1. In the user record pane, expand the **Loans** accordion if needed.
+2. Use the check boxes on the left of the **Loans** window to select the appropriate loan(s).
+3. Click the **Claim returned** button located in the top right corner of the **Loans** window.
+4. In the pop-up window that appears, enter additional information about the patron’s claim 
+5. Click **Confirm**.
 
 The loan will remain in the patron’s list of open loans, but the item status will show that the item is claimed returned.
 
-If the library can’t locate the claimed returned item, it will need to decide whether to bill the patron for the item or mark the item missing without charging fines. In FOLIO, this action is referred to as resolving a claim.
+If the library cannot locate the claimed returned item, it will need to decide whether to bill the patron for the item or mark the item missing without charging fines. In FOLIO, this action is referred to as resolving a claim.
 
 To resolve a claim on an item:
 1. Click the appropriate loan to open the *Loan details* window.
