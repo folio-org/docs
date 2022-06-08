@@ -1,7 +1,7 @@
 ---
 title: "Keyboard shortcuts"
 linkTitle: "Keyboard shortcuts"
-date: 2022-04-29
+date: 2022-06-07
 weight: 50
 ---
 
@@ -18,13 +18,17 @@ Keyboard shortcuts allow you to perform actions using the keyboard.  These short
 | Expand all accordions            | Ctrl+alt+b    |
 | Collapse all accordions          | Ctrl+alt+g    |
 | Go to Search & Filter pane       | Ctrl+alt+h    |
+| View keyboard shortcuts list     | Ctrl+alt+k    |
+ 
+| Duplicate a record               | Alt+c         |
+| Add POL               | Alt+a         |
 | Close a modal or pop-up          | Esc           |
 | Copy                             | Ctrl+c        |
 | Cut                              | Ctrl+x        |
 | Paste                            | Ctrl+v        |
 | Find                             | Ctrl+f        |
-| View keyboard shortcuts list     | Ctrl+alt+k    |
-| Duplicate a record               | Alt+c         |
+ 
+ 
  
 
 ## Viewing the keyboard shortcuts list 
@@ -56,4 +60,3 @@ The following apps display the list of keyboard shortcuts which can be viewed by
 *   Organizations
 *   Receiving
 *   Users
- 
