@@ -86,7 +86,7 @@ Once you create an order, you need to [add at least one order line to the order]
 *   **Assigned to.** To assign the order to a user, click the **+**. In the **Select User** dialog, find the user using the search box and/or the filters. Click the user to select them. The user appears in the **Assigned to** box. If you need to remove the user, click the **x**. If you need to assign the order to a different user, click the **+** and repeat the above steps.
 *   **Bill to.** In the **Bill to** drop-down list, select the billing address for the order. Once you select an address, the billing address appears. Addresses are configured in the Settings app. For more information, see [Settings > Tenant > Addresses](../../settings/tenant/#addresses).
 *   **Ship to.** In the **Ship to** drop-down list, select the address the order items will be shipped to. Once you select an address, the shipping address appears. Addresses are configured in the Settings app. For more information, see [Settings > Tenant > Addresses](../../settings/tenant/#addresses).
-*   **Manual.** If the Manual checkbox is selected, it excludes the order from auto processing. For example, if EDI order submission is set up for the vendor, but you submitted the order on the vendor’s website and do not want to resend. EDI orders will be available in a future release, so this field is currently informational only.
+*   **Manual.** If the Manual checkbox is selected, it excludes the order from auto processing. For example, if EDI order submission is set up for the vendor, but you submitted the order on the vendor’s website and do not want to resend.
 *   **Re-encumber.** The Re-encumber checkbox is selected by default. If the checkbox is cleared, you are indicating that the order shouldn’t re-encumber during the fiscal year rollover even if it meets the criteria to re-encumber. However, if the checkbox is selected and the rollover settings indicate that this order doesn’t meet the criteria to re-encumber, money will not be committed to the next fiscal year for this order. The re-encumber toggle is only considered when the order meets the rollover criteria. If the checkbox is selected and the rollover settings indicate that this order meets the criteria to re-encumber, then money is committed to the next fiscal year for the order.
 *   **Tags.** Enter or select any tags from the drop-down list you would like to apply to the order.
 
@@ -475,7 +475,7 @@ See [Creating an order > Purchase order](#purchase-order) for more information o
 *   **Assigned to.**  The user assigned to this order, if applicable.
 *   **Bill to.** The billing address selected for the order. 
 *   **Ship to.** The ship to address selected for the order.
-*   **Manual.** If the Manual checkbox is selected, it excludes the order from automated processing. For example, this may be selected if you have EDI set up, but you submitted the order on the vendor’s site and do not want to resend it to them.  Note that EDI functionality is still under development.
+*   **Manual.** If the Manual checkbox is selected, it excludes the order from automated processing. For example, this may be selected if you have EDI set up, but you submitted the order on the vendor’s site and do not want to resend it to them.
 *   **Re-encumber.**  See [Creating a purchase order](#purchase-order) for a full description of this field. 
 *   **Created by.**  Name of the user that created the purchase order.
 *   **Created on.**  The date and time at which the purchase order was created.
@@ -538,17 +538,14 @@ This section displays information about purchase order lines for this order. The
 ### Related invoices
 
 
-This section displays information about invoices and invoice lines that link to this order. The invoice table list displays the following columns. To sort the list by **Invoice date**, click on the column header.
+This section displays information about invoices related to this order through a purchase order line link to an invoice line. The invoice table list displays the following columns. To sort the list by **Invoice date**, click on the column header.
 
 
-*   **Vendor invoice number.** The vendor-provided identifier for the invoice related to this purchase order line..  *   **Invoice line #.** The line number of the invoice line linked to this purchase order line.  Click on the **Invoice line #** value to open the Invoices app detail pane for the invoice line.  
+*   **Invoice #.** The vendor-provided identifier for the invoice related to this purchase order line.  
 *   **Invoice date.** The vendor invoice date.  Click on the column name to sort the list of related invoices by **Invoice date**.
 *   **Vendor name.** The name of the vendor associated with the related invoice.
-
-*   **Status.**  The status of the invoice: Open, Reviewed, Approved, Paid, or Cancelled.
-*   **Quantity.** The quantity for the related invoice.
-*   **Amount.** The total amount of the invoice line calculated as the sub-total plus adjustments.
-*  **Comment.**  The invoice line comment.
+*   **Vendor invoice number.***   **Status.**  The status of the invoice: Open, Reviewed, Approved, Paid, or Cancelled.
+*   **Expended amount.** The total expended amount of the invoice.
 
 
 
@@ -687,8 +684,7 @@ To print or save a PDF file containing a snapshot of key information about an or
 
 ## Showing hidden fields
 
-To reveal fields that are hidden, as defined in [Settings > Orders > Creating an order template]({{< ref "/settings_orders.md#settings--orders--creating-an-order-template" >}})
-, follow these steps.  Note: The user permission **Show all hidden fields** must be assigned to the user.
+To reveal fields that are hidden, as defined in [Settings > Orders > Creating an order template]({{< ref "/settings_orders.md#settings--orders--creating-an-order-template" >}}), follow these steps.  Note: The user permission **Show all hidden fields** must be assigned to the user.
 
 1. From the detail pane of the order, select **Actions > Show hidden fields.**  If any fields are hidden, they are added to the detail pane.
 
@@ -778,7 +774,7 @@ To reveal fields that are hidden, as defined in [Settings > Orders > Creating an
 
 
 *   **Acquisition method.** Select the method you are using to purchase the item: Approval plan, Demand driven acquisitions (DDA), Depository, Evidence based acquisitions (EBA), Exchange, Free, Gift, Internal transfer, Membership, Other, Purchase, Purchase at vendor system,  Technical.
-*   **Automatic export.** Select this checkbox to include the order in automated EDI order export which is triggered when an order is opened when EDI is set up for the associated vendor. Leave the checkbox blank to prevent automatic export of the order when opened.
+*   **Automatic export.** Select this checkbox to include the order in automated EDI order export which is triggered when an order is opened if EDI is set up for the associated vendor. Leave the checkbox blank to prevent automatic export of the purchase order line when opened.  See [Organizations > Adding integration details to a vendor organization]({{< ref "/organizations.md#organizations--adding-integration-details-to-a-vendor-organization" >}}) for more information about vendor organization integrations.
 *   **Order format.** Select the format of the item you are ordering: Electronic resource, Physical resource, P/E mix, or Other. The Order format determines which fields are required in the [Cost details](#cost-details) section and whether the [Physical resource details](#physical-resource-details) or [E-resources details](#e-resources-details) sections are displayed.
 *   **Receipt date.** The receipt date of the item.
 *   **Receipt status.** Select the receipt status of the item: Pending or Receipt not required.  For orders with type **Ongoing**, the receipt status is automatically set to **Ongoing** when the order is saved. If no selection is made, the order is created with a receipt status of **Pending**. Upon opening the order, the receipt status is automatically set to **Awaiting receipt**. Once an order is open, you can edit the Receipt status to **Cancelled**, **Fully received**, **Partially received**, or **Receipt not required**. The system will automatically close orders that have resolved both payment and receipt statuses either as “Payment not required” or “Receipt not required” or by reaching “Fully paid” and “Fully received” through actions taken in the Receiving app and the Invoices app.  It is advisable to consider your library’s needs when defining how to set this field.  For example, you may want to select “Receipt not required” for one-time e-resource orders so that the order will automatically close once invoice payment is complete. Otherwise, if your library doesn’t receive e-resources, a one-time e-resource order may be left open even after payment is complete which could impact your expected results during Fiscal Year rollover.
@@ -1076,9 +1072,7 @@ Free
 *   **Membership.**  Order lines acquired through membership.
 *   **Other.** Order lines acquired by some other method not listed.
 *   **Purchase.** Order lines purchased by methods such as email or EDI.
-
 *   **Purchase at vendor system.** Order lines purchased through an external vendor system, such as a website.
-
 *   **Technical.** Order lines to track payments for technical expenses such as service orders or vendor processing fees. This value could also be used for items that have migrated from an external system.
 
 
@@ -1420,13 +1414,15 @@ This section displays notes about the order.  See [Adding a note to an order lin
 This section displays information about invoices and invoice lines that link to this POL. The invoice table list displays the following columns:
 
 
-*   **Invoice #.** The invoice number for the invoice that has an invoice line linked to this POL.  Click on the invoice number to open the Invoices app detail pane for the invoice.  Note: The link is to the general invoice, not to the specific invoice line that links to this POL.
+*   **Invoice line #.** The invoice number for the invoice that has an invoice line linked to this POL.  Click on the invoice number to open the Invoices app detail pane for the invoice.  Note: The link is to the general invoice, not to the specific invoice line that links to this POL.
 *   **Invoice date.**  The vendor invoice date.
 *   **Vendor name.**  The name of the vendor associated with the related invoice.
+*   **Vendor invoice number.**  The vendor-provided identifier for the invoice related to this purchase order line.  
 *   **Status.**  The status of the invoice: Open, Reviewed, Approved, Paid, or Cancelled.
 *   **Quantity.** The quantity invoiced.  Note that the quantity shown is from the invoice line related to this order, not from the general invoice.
-*   **Expended amount.** The expended amount of the invoice.  In this version of FOLIO, the amount displayed is the **Calculated total amount** of the general invoice.  In future versions of FOLIO, the amount of the invoice line will display as the expended amount.
-*   **Piece(s).**  The caption information, as entered on the piece record of the Receiving app, for this order.  See [Receiving >Add piece fields](../receiving/#add-piece-fields) for more information.
+*   **Amount.** The total amount of the invoice line calculated as the sub-total plus adjustments.
+*   **Comment.**  The invoice line comment.
+
 
 
 ### Related agreements

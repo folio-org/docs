@@ -161,7 +161,7 @@ This is the end of the **Create new invoice** screen.  Click **Save & close** to
 
 You must **add or create new invoice lines** before the invoice can be approved or paid.  
 *   To link an existing open order purchase order line to the invoice, follow the steps to [add an invoice line to an invoice](#adding-an-invoice-line-to-an-invoice).  Information from the purchase order line populates fields on the invoice line, such as Subscription start date, Subscription end date, and quantity. The account number and accounting code are derived from the vendor’s organization record account section. See [Organizations > Accounts](../organizations/#accounts) for more information about vendor accounts.
-*   To create a new invoice line that is not associated with a purchase order, follow the steps to [create a new invoice line](#creating-a-new-invoice-line),
+*   To create a new invoice line that is not associated with a purchase order, follow the steps to [create a new invoice line](#creating-a-new-invoice-line).
 
 ## Adding an invoice line to an invoice
 
@@ -458,7 +458,7 @@ The invoice lines section lists all invoice lines for the order. The invoice lin
 *   **Payment status.**  The payment status of the purchase order line.
 *   **Vendor reference number.** A unique identifier for the material being acquired that is specific to the vendor. Different types of identifiers are provided by vendors for different types of material.  All associated vendor reference numbers are listed.
 *   **Quantity.** The quantity ordered.
-*   **Sub-total.** The priceof the invoice before adding adjustments.
+*   **Sub-total.** The price of the invoice before adding adjustments.
 *   **Adjustments.** The adjustments associated with the invoice.
 *   **Total.** The total amount of the invoice line calculated as the **Sub-total** plus **Adjustments**.
 *   **Vendor code.** The vendor code for the vendor organization associated with the purchase order line.

@@ -244,9 +244,11 @@ For more information, see [Creating an interface](#creating-an-interface).
 
 2. In the **Create organization** window, in the **Summary** section, select the **Vendor** checkbox. Vendor sections appear.
 
-3. Continue filling in the Summary section. Fill in the Contact information, Contact people, Interface, Vendor information, Vendor terms, EDI information, and Accounts sections. For more information on the fields and actions available in these sections, see the section descriptions below.
+3. Continue filling in the Summary section. Fill in the Contact information, Contact people, Interface, Vendor information, Vendor terms, and Accounts sections. For more information on the fields and actions available in these sections, see the section descriptions below.
 
 3. Once you have included all of the information you want about the vendor, click **Save & close**. The vendor is saved and added to the Organizations pane.
+
+4. In the newly created Organization record’s detail pane, see the accordion sections to add **Notes** and **Integration details**.  For more information, see [Adding a note to an organization](#adding-a-note-to-an-organization) and [Adding integration details to a vendor organization](#adding-integration-details-to-a-vendor-organization).
 
 
 ### Summary
@@ -327,57 +329,6 @@ Note: Adding vendor terms is optional, but if you click **Add**, you must add a 
 2. Select the **trash can icon**. The term is removed and is deleted once you save the vendor.
 
 
-### EDI information
-
-EDI (electronic data interchange) information is the information you use when sending or receiving orders or receiving invoices. Note: FOLIO and EDI functionality is currently under development and any information you enter in this section is for reference purposes only.
-
-
-#### EDI basic
-
-
-
-*   **Vendor EDI code.** The vendor identifier for EDI transactions
-*   **Vendor EDI type.** Select one of the Vendor EDI types, which designates the type of identifier used as the vendor identifier: 014/EAN, 31B/US-SAN, 091/Vendor-assigned, or 092/Customer-assigned.
-*   **Library EDI code.** The library identifier for EDI transactions
-*   **Library EDI type.** Select one of the Library EDI types, which designates the type of identifier used as the library identifier: 014/EAN, 31B/US-SAN, 091/Vendor-assigned, or 092/Customer-assigned.
-*   **Prorate tax.** If the tax is prorated on orders or invoices, select the **Prorate tax** checkbox. This indicates that the library expects to prorate summary tax on invoices from the vendor across all invoice lines as a percentage by value.
-*   **Prorate fees.** If fees are prorated on orders or invoices, select the **Prorate fees** checkbox. This indicates that the library expects to prorate fees on invoices from the vendor across all invoice lines as a percentage by value.
-*   **EDI naming convention.** The naming convention that sets the expected structure to be used for outgoing FOLIO EDI files, such as the prefix or file extension. Example: .edu
-*   **Send account number.** If you send your account number with orders or invoices, select the **Send account number** checkbox. If selected, the account number will be required for the PO/POL and output in the EDI order file.
-*   **What messages are expected for this vendor?** If your library expects to send EDI orders to the vendor, select the **Orders** checkbox. If your library expects to receive EDI invoices from the vendor, select the **Invoices** checkbox.
-*   **Notes.** Notes about the EDI information for this vendor.
-
-
-#### FTP details
-
-
-
-*   **EDI FTP.** Select FTP format in which the library expects to transact with the vendor: SFTP or FTP.
-*   **FTP mode.** Select the transmission mode the library expects to use with the vendor: ASCII or Binary.
-*   **Server address.** The address for the vendor’s FTP server.
-*   **FTP connection mode.** Select the connection mode: Active or Passive.
-*   **Username.** The username for the FTP, if a login username is required for this vendor.
-*   **Password.** The password for the FTP, if a login password is required for this vendor. The password is automatically hidden. Click **Show** to display the password. Click **Hide** to stop displaying the password.
-*   **FTP port.** The FTP port number.
-*   **Order directory.** The subdirectory where orders should be placed, if different from the main FTP directory for this vendor. Ex: /directory.
-*   **Invoice directory.** The subdirectory where invoices should be retrieved, if different from the main FTP directory for this vendor. Ex: /directory.
-*   **Notes.** Notes about the FTP details for this vendor.
-
-
-#### Scheduling
-
-
-
-*   **Schedule EDI.** If you want to schedule the EDI, select the **Schedule EDI** checkbox.
-*   **Date.** Select the date you want to begin the scheduled EDI.
-*   **Time.** Select the time for the scheduled EDI.
-*   **Weekly.** Select the days on which the EDI will run.
-*   **Send to emails.** A comma-separated list of emails to which vendor EDI notifications will be sent. Ex: [jane.doe@example.edu](mailto:jane.doe@example.edu), library.staff@example.edu
-*   **Notify all EDI.** If you want to notify the email addresses about any kind of EDI transaction, select the **Notify all EDI** checkbox.
-*   **Notify invoice only**. If you want to notify the email addresses about invoices only, select the **Notify invoice only** checkbox.
-*   **Notify error only.** If you want to notify the email addresses only if an EDI error occurs, select the **Notify error only** checkbox.
-*   **Check now.** To verify the EDI connection, click **Check now**. Note: This feature is currently in development.
-*   **Notes.** Notes about the EDI schedule.
 
 
 ### Accounts
@@ -542,13 +493,13 @@ In the search results, click on an organization to view it. The Organization det
 
 ### Changing a vendor to an organization
 
-Note: Changing a vendor to an organization removes all Vendor information, Vendor terms, EDI information, and Accounts from the record.
+Note: Changing a vendor to an organization removes all Vendor information, Vendor terms, and Accounts from the record.
 
 1. [Find the organization you want to edit](#searching-for-an-organization) and select it.
 
 2. In the **Organization details** pane, clear the **Vendor** checkbox.
 
-3. In the Confirm vendor data deletion dialog, click **Confirm**. The Vendor information, Vendor terms, EDI information, and Accounts sections are removed.
+3. In the Confirm vendor data deletion dialog, click **Confirm**. The Vendor information, Vendor terms, and Accounts sections are removed.
 
 4. Make any additional changes to the organization.
 
@@ -590,6 +541,75 @@ The system allows you to delete a vendor organization even if there are orders o
 5. Optional: Enter any **Details** about the note in the box.
 
 6. Click **Save & close**. The note is saved and appears in the Notes section in the Organization details pane.
+
+
+## Adding integration details to a vendor organization
+
+To add information about one or more integrations for a vendor organization, follow these steps:
+
+1. [Find the organization to which you want to add an integration](#searching-for-an-organization) and select it.
+
+2. In the **Organization details** pane, click on **Integration details** to expand the accordion section.
+
+3. Click **Add integration**. The **Create integration** window opens.
+
+4. Add information to the Integration information, EDI configuration, FTP details, and Scheduling sections. For more information on the fields and actions available in these sections, see the section descriptions below.
+
+5. Click **Save & close**. The integration is saved and appears in the Integration details section in the Organization details pane.
+
+
+
+
+### Integration information
+
+*   **Integration name (required).** The name for this integration.
+*   **Description** A description of this integration.
+*   **Default integration.** Select this checkbox to indicate that this integration is the default integration for the organization.
+
+
+### EDI configuration
+
+*   **Account numbers (required).** All account numbers created in **Vendor account** section of the organization are listed.  Click on the vendor account number for this integration.  To select multiple account numbers for this integration, use shift+click. When you move your cursor to another field you will see the highlight persist on the selected account number(s).
+*   **Automate order export for acquisition methods.**   All order acquisition methods are listed. To automatically export orders for this vendor using specific order acquisitions methods, click on the acquisition method name.  To select multiple acquisition methods to export automatically, use shift+click. When you move your cursor to another field you will see the highlight persist on the selected acquisition methods.
+*   **Vendor EDI code.** The vendor identifier for EDI transactions
+*   **Vendor EDI type.** Select one of the Vendor EDI types, which designates the type of identifier used as the vendor identifier: 014/EAN, 31B/US-SAN, 091/Vendor-assigned, or 092/Customer-assigned.
+*   **Library EDI code.** The library identifier for EDI transactions
+*   **Library EDI type.** Select one of the Library EDI types, which designates the type of identifier used as the library identifier: 014/EAN, 31B/US-SAN, 091/Vendor-assigned, or 092/Customer-assigned.
+*   **EDI naming convention.** The naming convention that sets the expected structure to be used for outgoing FOLIO EDI files, such as the prefix or file extension. Example: .edu  Note: When defining your naming convention you can use text or one of the following tokens. Tokens will be replace by the corresponding information from the export job. Possible tokens are organizationCode, integrationName, exportJobEndDate, jobID, numberSequence
+*   **Send account number.** If you send your account number with orders or invoices, select this checkbox. If selected, the account number is required for the PO/POL and is included in the EDI order file.
+*   **What messages are expected for this vendor?** If your library expects to send EDI orders to the vendor, select the **Orders** checkbox. If your library expects to receive EDI invoices from the vendor, select the **Invoices** checkbox.
+*   **Notes.** Notes about the integration details for this vendor.
+
+
+
+### FTP details
+
+
+
+*   **EDI FTP.** Select FTP format in which the library expects to transact with the vendor: SFTP or FTP.
+*   **FTP mode.** Select the transmission mode the library expects to use with the vendor: ASCII or Binary.
+*   **Server address.** The address for the vendor’s FTP server.
+*   **FTP connection mode.** Select the connection mode: Active or Passive.
+*   **Username.** The username for the FTP, if a login username is required for this vendor.
+*   **Password.** The password for the FTP, if a login password is required for this vendor. The password is automatically hidden. Click **Show** to display the password. Click **Hide** to stop displaying the password.
+*   **FTP port.** The FTP port number.
+*   **Order directory.** The subdirectory where orders should be placed, if different from the main FTP directory for this vendor. Ex: /directory.
+*   **Invoice directory.** The subdirectory where invoices should be retrieved, if different from the main FTP directory for this vendor. Ex: /directory.
+*   **Notes.** Notes about the FTP details for this vendor integration.
+
+
+### Scheduling
+
+
+*   **Schedule EDI.** If you want to schedule the EDI, select the **Schedule EDI** checkbox.
+*   **Schedule period.**  The period between automated exports to the vendor.  Choose from Hourly, Daily, Weekly, and Monthly.
+*   **Date.** If you choose a schedule period of Daily, the date field appears.  Use the calendar function to select the start date for this schedule.
+*   **Day.**  If you choose a schedule period of Monthly, the numeric date field appears.  Use the drop down to select the numeric day of the month for this automated export.
+*   **Schedule frequency.**  If you choose a schedule period of Hourly, Daily, or Weekly, the schedule frequency field appears.  Enter the numeric value for the hourly or daily frequency of this scheduled integration.
+*   **Time.**  If you choose a schedule period of Daily, Weekly or Monthly, the time field appears. Click on this field to view an hour and time select list.  Choose the scheduled time for this automated export.
+*   **S M T W Th F S.**  If you choose a schedule period of Weekly, the day of the week checkboxes appear. Choose the days for this weekly automated export.
+
+
 
 
 ## Creating a contact person
@@ -835,4 +855,3 @@ Deleting an interface removes it from your library’s list of interfaces. If yo
 3. In the contact window, click **Actions > Delete**.
 
 4. In the **Delete interface** dialog, click **Confirm**. The contact is deleted and the organization window appears.
-
