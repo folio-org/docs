@@ -1,7 +1,6 @@
 ---
 title: "quickMARC"
-linkTitle: "QuickMARC"
-date: 2022-04-22
+linkTitle: "quickMARC"
 weight: 4
 tags: ["subtopic"]   
 ---
@@ -24,6 +23,7 @@ The following are all the quickMARC permissions:
 
 -   **quickMARC: Create a new MARC holdings record.** This permission allows the user to create new MARC holdings records. (This cannot be done in the UI in Kiwi)
 -   **quickMARC: Derive new MARC bibliographic record.** This permission allows the user to duplicate and create new MARC bibliographic records.
+-   **quickMARC: View, edit MARC authorities record.** This permission allows the user to view and edit MARC authority records in the MARC authority app.
 -   **quickMARC: View, edit MARC bibliographic record.** This permission allows the user to view and edit MARC bibliographic records..
 -   **quickMARC: View, edit MARC holdings record.** This permission allows the user to view and edit MARC holdings records.
 
@@ -40,7 +40,6 @@ In the **Instance record details** pane, click **Actions \> Edit MARC bibliograp
 - To open a holdings record in quickMARC
 Select **View holdings**, click **Actions \> Edit in quickMARC**.  The Edit MARC record window appears. 
 
-
 ## Editing a MARC record using quickMARC
 
 To edit a MARC record, click on the appropriate Edit option, located in the Actions menu of an Inventory Instance or Holdings record. A MARC view of the record will display.
@@ -56,11 +55,11 @@ To edit a holdings record:
 3.  In the **Instance record details** pane, select **View holdings**, click **Actions \> Edit in quickMARC**.  The Edit MARC record window appears. 
 
 In the Edit MARC record window, you can perform the following actions:
-    -   **Add a field.** To add a field, click the **+**. The new field appears below.
-    -   **Delete a field.** To delete a field, click the **trash can icon**. The field will be deleted.
-    -   **Move a field up.** To move a field up, click the **up arrow** in the row of the field you want to move. The field is moved one row up.
-    -   **Move a field down.** To move a field down, click the **down arrow** in the row of the field you want to move. The field is moved one row down.
-    -   **Edit text within a field.** Click into a field to make changes to the text.
+-   **Add a field.** To add a field, click the **+**. The new field appears below.
+-   **Delete a field.** To delete a field, click the **trash can icon**. The field will be deleted.
+-   **Move a field up.** To move a field up, click the **up arrow** in the row of the field you want to move. The field is moved one row up.
+-   **Move a field down.** To move a field down, click the **down arrow** in the row of the field you want to move. The field is moved one row down.
+-   **Edit text within a field.** Click into a field to make changes to the text.
 Once you have made your desired changes, click **Save & close**. A confirmation record appears and the record is updated.
 
 ### Validations and restrictions
@@ -99,14 +98,16 @@ There are three record statuses:
 -   **In progress.** A change has been made to the record that has not made it to the Inventory record and/or SRS yet.
 -   **Error.** Something is preventing an update from moving to the Inventory record or SRS.
 
-## Deriving a new MARC record using quickMARC
+## Creating a new MARC record using quickMARC
 
-To create a new MARC bibliographic record, derive a new record from an existing MARC record.
+### To create a new **MARC bibliographic record**, derive a new record from an existing MARC record.
 
-1.  Start with an instance record that has an underlying MARC source record and the same {format/type} as the record you wish to create.
+1.  Start with an instance record that has an underlying MARC source record and the same [Resource type](../inventory/#resource-type) and [Format](../inventory/#format) as the record you wish to create.
 2.  Click **Actions \> Derive new MARC bibliographic record.**
 3.  Edit the new record following the instructions in [Editing a MARC record using quickMARC](#editing-a-marc-record-using-quickmarc).
 
-New MARC holdings records can only be created via Data Import in the Kiwi release.
+### To create a new **MARC holdings record**
 
-
+1.   [Find the instance record](../inventory/#searching-for-a-record) to which you want to add holdings and select it. The instance source must be MARC.
+2.  Click **Actions \> Add  MARC holdings record.** 
+3.  Edit the new record following the instructions in [Editing a MARC record using quickMARC](../#editing-a-marc-record-using-quickmarc).

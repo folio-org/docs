@@ -81,6 +81,18 @@ The Administrative data section contains technical information about the instanc
 1.  Find the statistical code you want to delete.
 2.  Click the **trash can icon** next to the code. The code is removed from the record and is deleted once you save the instance.
 
+-   **Administrative note.** Administrative notes are free text fields that can be used to record information about the instance record or actions taken on it.
+
+#### Adding an administrative note
+
+1.  Click **Add administrative note**.
+2.  Enter text.
+3. Repeat steps 1-2 as needed. The administrative note is saved once you save the instance.
+
+#### Deleting an administrative note
+
+Click the **trash can icon** next to the administrative note you wish to delete. The note is removed from the record and is deleted once you save the instance.
+
 ### Title data
 
 The Title data section contains information about the title of the resource.
@@ -325,7 +337,7 @@ Note: Adding a classification is optional, but if you click **Add classification
 In the Instance relationship section, you can add any relationships between the instance and other instances.
 
 -   **Parent instances.** The main link in a bound-with situation: It will have an item record (and thus barcode) that all other bibliographic records associated with a given bound-with volume can link to. Child records are those associated bibliographic records. Child records will have LKR fields in the bibliographic record that include the ADM number of the parent record and "Enum. Level.1" information found in the parent record's item record. Doing this allows all item record information in the parent record to display in the child record, so the same barcode, sublibrary, collection, description, call number, etc. will show up for all titles in a bound-with.
--   **Child instances.** Associated with linking bound-withs, which allows for "links" between separate bibliographic records and/or a bibliographic record and items belonging to another bibliographic record. Child recordsare those associated bibliographic records.
+-   **Child instances.** Associated with linking bound-withs, which allows for "links" between separate bibliographic records and/or a bibliographic record and items belonging to another bibliographic record. Child records are those associated bibliographic records.
 
 #### Adding a parent instance
 
@@ -453,12 +465,21 @@ Any other edits to the instance record data must be made by editing the source r
 
 ## Adding holdings to a record
 
+### Adding a MARC holdings record
+
+1.  [Find the instance record](#searching-for-a-record) to which you want to add holdings and select it.
+2.  In the **Instance record details** pane, in the **Holdings** section, click **Add MARC holdings record**.
+3.  Edit the new record following the instructions in [Editing a MARC record using quickMARC](quickmarc/#editing-a-marc-record-using-quickmarc).
+4.  Once you have included all of the information you want in the holdings record, click **Save & close**. The record is saved.
+
+### Adding a FOLIO holdings record
+
 1.  [Find the instance record](#searching-for-a-record) to which you want to add holdings and select it.
 2.  In the **Instance record details** pane, in the **Holdings** section, click **Add holdings**.
 3.  In the **Holdings record** window, fill in the Administrative data, Location, Holdings details, Holdings notes, Electronic access, Acquisition, and Receiving history sections. For more information on the fields and actions available in these sections, see the section descriptions below.
 4.  Once you have included all of the information you want in the holdings record, click **Save & close**. The record is saved.
 
-### Administrative data
+#### Administrative data
 
 The Administrative data section contains technical information about the holdings.
 
@@ -469,24 +490,24 @@ The Administrative data section contains technical information about the holding
 -   **Holdings type.** Indicates the type of bibliographic format of the holdings record. For example, print or electronic. Configured in [Settings \> Inventory \> Holdings types](../../settings/settings_inventory/settings_inventory/#settings--inventory--holdings-types).
 -   **Statistical code.** Statistical codes (e.g. ASER; name: Active serial; type: SERM (Serial management) or books; name: Book, print (books); type ARL (Collection stats) etc.). Configured in Settings.
 
-#### Adding former holdings IDs
+##### Adding former holdings IDs
 
 1.  Click **Add former holdings ID**.
 2.  Enter the **Former holdings ID** in the box.
 3.  Repeat steps 1-2 as needed. The former holdings ID is saved once you save the holdings record.
 
-#### Adding a statistical code
+##### Adding a statistical code
 
 1.  Click **Add statistical code**.
 2.  Select the statistical code from the drop-down list.
 3.  Repeat steps 1-2 as needed. The statistical code is saved once you save the holdings record.
 
-#### Deleting a former holdings ID or statistical code
+##### Deleting a former holdings ID or statistical code
 
 1.  Find the former holdings ID or statistical code you want to delete.
 2.  Click the **trash can icon** next to the ID or code. The ID or code is removed from the record and is deleted once you save the holdings record.
 
-### Location
+#### Location
 
 The Location section contains information on the physical or electronic location of the holdings.
 
@@ -500,7 +521,7 @@ The Location section contains information on the physical or electronic location
 -   **Call number.** Call Number is an identifier assigned to an item, usually printed on a label attached to the item. The call number is used to determine the items physical position in a shelving sequence (e.g. K1 .M44)
 -   **Call number suffix.** Suffix of the call number on the holdings level. For example, the year (2001).
 
-### Holdings details
+#### Holdings details
 
 The Holding details section contains additional details about the holdings.
 
@@ -510,7 +531,7 @@ The Holding details section contains additional details about the holdings.
 -   **Digitization policy.** Notes about the digitization policy.
 -   **Retention policy.** Notes about the retention policy.
 
-#### Adding a holdings statement
+##### Adding a holdings statement
 
 1.  Click **Add holdings statement**.
 2.  Optional: Enter a **Holdings statement**.
@@ -518,7 +539,7 @@ The Holding details section contains additional details about the holdings.
 4.  Optional: Enter a **Holdings statement staff note**. Bibliographic staff note associated to the holdings statement.
 5.  Repeat steps 1-4 as needed. The holdings statement is saved once you save the holdings record.
 
-#### Adding a holding statements for supplement
+##### Adding a holding statements for supplement
 
 Specifies the exact content of Supplements to which the library has access, typically for continuing publications.
 
@@ -528,7 +549,7 @@ Specifies the exact content of Supplements to which the library has access, typi
 4.  Optional: Enter a **Holdings statement for supplements staff note**.
 5.  Repeat steps 1-4 as needed. The holdings statement is saved once you save the holdings record.
 
-#### Adding a holding statements for indexes
+##### Adding a holding statements for indexes
 
 Specifies the exact content of Indexes to which the library has access, typically for continuing publications.
 
@@ -538,16 +559,16 @@ Specifies the exact content of Indexes to which the library has access, typicall
 4.  Optional: Enter a **Holdings statement for indexes staff note**.
 5.  Repeat steps 1-4 as needed. The holdings statement is saved once you save the holdings record.
 
-#### Deleting a holding statement
+##### Deleting a holding statement
 
 1.  Find the holdings statement you want to delete.
 2.  Click the **trash can icon** next to the holdings statement. The holdings statement is removed from the record and is deleted once you save the holdings record.
 
-### Holdings notes
+#### Holdings notes
 
 The Holdings notes section contains any notes about the holdings.
 
-#### Adding a note
+##### Adding a note
 
 1.  Click **Add note**.
 2.  Select the **Note type** from the drop-down list. Configured in [Settings \> Inventory \> Holdings note types](../../settings/settings_inventory/settings_inventory/#settings--inventory--holdings-note-types).
@@ -555,16 +576,16 @@ The Holdings notes section contains any notes about the holdings.
 4.  Optional: If you want the note to be visible to only staff with the proper permissions to view the note, select the **Staff only** checkbox.
 5.  Repeat steps 1-4 as needed. The note is saved once you save the instance.
 
-#### Removing a note
+##### Removing a note
 
 1.  Find the note you want to delete.
 2.  Click the **trash can icon** next to the note. The note is removed from the record and is deleted once you save the holdings record.
 
-### Electronic access
+#### Electronic access
 
 In the Electronic access section, you can add online access information for the resource.
 
-#### Adding electronic access
+##### Adding electronic access
 
 1.  Click **Add electronic access**.
 2.  Optional: Select a **Relationship** from the drop-down list.
@@ -574,12 +595,12 @@ In the Electronic access section, you can add online access information for the 
 6.  Optional: Enter a **URL public note** in the box.
 7.  Repeat steps 1-6 as needed. The electronic access is saved once you save the holdings record.
 
-#### Deleting electronic access
+##### Deleting electronic access
 
 1.  Find the electronic access you want to delete.
 2.  Click the **trash can icon** next to the electronic access. The electronic access is removed from the record and is deleted once you save the holdings record.
 
-### Acquisition
+#### Acquisition
 
 The Acquisition section contains information on the acquisition of the holdings.
 
@@ -587,11 +608,11 @@ The Acquisition section contains information on the acquisition of the holdings.
 -   **Order format.** The order format of the holding. For example, DVD or monograph.
 -   **Receipt status.** Receipt status. For example, Pending, Awaiting receipt, Partially Received, Fully received, Receipt not required, and Cancelled.
 
-### Receiving history
+#### Receiving history
 
 Receiving history is used for serials and continuing resources? Shows the materials that have already been received?
 
-#### Adding receiving history
+##### Adding receiving history
 
 1.  Click **Add receiving history**.
 2.  Optional: If you want to display the enumeration and chronology to the public, select the **Public display** checkbox.
@@ -599,7 +620,7 @@ Receiving history is used for serials and continuing resources? Shows the materi
 4.  Optional: Enter the **Chronology**.
 5.  Repeat steps 1-4 as needed. The receiving history is saved once you save the holdings record.
 
-#### Deleting receiving history
+##### Deleting receiving history
 
 1.  Find the receiving history you want to delete.
 2.  Click the **trash can icon** next to the receiving history. The receiving history is removed from the record and is deleted once you save the holdings record.
@@ -621,7 +642,7 @@ Receiving history is used for serials and continuing resources? Shows the materi
 -   **Item HRID.** The human readable ID, also called eye readable ID. A system-assigned sequential ID which maps to the Item ID
 -   **Barcode.** Generally a numerical sequence attached to the resource and validated by a barcode scanner. Must be a unique value.
 -   **Accession number.** A unique number assigned to an item in the order in which it is added to a library collection. Most libraries assign accession numbers in a continuous numerical sequence, but some use a code system to indicate type of material and/or year of accession in addition to order of accession. Also called inventar number.
--   **Item identifier.** Item identifier number. For example, imported from the union catalogue (read only).
+-   **Item identifier.** Item identifier number. For example, imported from the union catalog (read only).
 -   **Former identifier.** Previous identifiers assigned to the item.
 -   **Statistical code.** Statistical codes (e.g. ASER; name: Active serial; type: SERM (Serial management) or books; name: Book, print (books); type ARL (Collection stats) etc.)
 
@@ -796,13 +817,17 @@ To search, first select the record type (instance, holdings, or item); enter you
 -   **Subject.** Keyword search through all subject fields. This may include Library of Congress Subjects, FAST, and other subject vocabularies, including Genre/Form terms.
 -   **Instance HRID.** Human readable identifier for the record.
 -   **Instance UUID.** Universally unique identifier for the record.
+-   **All.** Searches across all fields in all record types. May impact performance.
 -   **Query search.** A search for advanced users to query by property names using CQL.
+-   **Call number.** [NEED TEXT HERE]
+-   **Browse call numbers.** The call number browse is based on the shelving order element in the item record; only Instances with item records will be retrieved. It includes LC, Dewey Decimal, NLM, SuDoc and Local call numbers.
+-   **Browse subjects.** The subject browse is based on  the Subject field in instance records.
 -   **Call number, eye readable.** Requires you to enter the call number exactly as it appears in the holdings record, including punctuation.
--   **Call number, normalized.** <i>NOT AVAILABLE IN KIWI </i>(will be available again in a subsequent release) Ignores any characters other than numbers and letters, such as punctuation and spaces.
+-   **Call number, normalized.** Ignores any characters other than numbers and letters, such as punctuation and spaces.
 -   **Holdings HRID.** Human readable identifier for the record.
 -   **Barcode.** Allows you to scan, copy/paste, or type a barcode.
 -   **Effective call number (item) eye readable.** Requires you to enter the call number exactly as it appears in the holdings record, including the punctuation and call number prefix.
--   **Effective call number (item), normalized.** <i>NOT AVAILABLE IN KIWI </i>(will be available again in a subsequent release) Ignores any characters other than numbers and letters, such as punctuation and spaces.
+-   **Effective call number (item), normalized.** Ignores any characters other than numbers and letters, such as punctuation and spaces.
 -   **Item HRID.** Human readable identifier for the record.
 
 You can also search for instance, holdings, or item records by selecting any of the filters in the **Search & filter** pane. Additionally, you can apply the filters after you perform a search to limit your results. The filters available vary depending on whether you are searching for an instance, holdings, or item record. See the sections below for more information.
@@ -968,10 +993,14 @@ To view an item record, follow these steps:
 3.  Make your desired changes to the instance record.
 4.  Click **Save and close**. The instance record is updated.
 
-## Editing an instance record with underlying MARC using the Re-import action in FOLIO
+## Editing an instance record with underlying MARC
+
+See [Editing a MARC record using quickMARC](quickmarc/#Editing a MARC record using quickmarc).
+
+## Updating an instance record with underlying MARC using the Overlay source bibliographic record action in FOLIO
 
 1.  [Find the instance](#searching-for-a-record) you want to edit and select it.
-2.  In the **Instance record details** pane, click **Actions \> Re-import**.
+2.  In the **Instance record details** pane, click **Actions \> Overlay source bibliographic record**.
 3. In the **Single Record Import** dialog box, select the source of the record to be imported (e.g., Library of Congress, OCLC WorldCat, BnF).
 4.  Enter the record number, without any prefixes, in the **Enter [source] identifier** box.
 5.  Click **Import**.
