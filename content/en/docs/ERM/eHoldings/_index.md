@@ -16,7 +16,7 @@ Definition of terms related to the eHoldings app:
 * **Knowledge base (KB)** A knowledge base is an extensive database maintained by a knowledge base supplier that contains information about electronic resources such as title lists and coverage dates etc. Knowledge bases typically organize the resources provided by a content provider into collections or databases that reflect specific content provider offerings, for example packages of e-journals, e-books, or other materials.
 * **Providers.** The provider of the e-resource, for example, the vendor or publisher.
 * **Packages.** A collection of e-resource titles bundled together as a unit and distributed by a provider.
-* **Titles.** The individual e-resources, for example a journal or ebook, contained within a package.
+* **Titles.** The individual e-resources, for example a journal or e-book, contained within a package.
 
 
 ## Permissions
@@ -131,8 +131,10 @@ To filter packages by content type, in the **Search & filter** pane, click **Con
 * **Abstract and Index.** Reference sources which provide bibliographic information about journals including abstracts of the articles.
 * **E-Book.** Electronic books.
 * **E-Journal.** Electronic journals (full text and bibliographic).
-* **Print.** Materials in print (or paper) format.
+* **Mixed Content.** Packages that include multiple types of content, like eBooks and eJournals
 * **Online Reference.** For example, dictionaries, almanacs, and encyclopedias that are available in electronic format.
+* **Print.** Materials in print (or paper) format.
+* **Streaming Media.** Video or audio content sent in compressed form over the Internet and played immediately.
 * **Unknown.** The content type is undefined.
 
 

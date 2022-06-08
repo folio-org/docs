@@ -29,6 +29,7 @@ The following are the Licenses permissions:
 *   **Licenses: Search & view licenses.** This permission allows the user to search and view existing licenses and amendments. This includes the permission to see and access the License app in the FOLIO interface.
 *   **Licenses: Edit licenses.** This permission grants all permissions included in "Licenses: Search & view licenses" plus it allows the user the ability to edit licenses and amendments, including the ability to add and edit documents and view, add and edit tags on a license.
 *   **Licenses: Delete licenses.** This permission grants all permissions included in "Licenses: Search & view licenses" plus it allows the user the ability to delete licenses and amendments.
+*   **Licenses: File download.** (ui-licenses.licenses.file.download) This permission grants permission for document downloads, as separate from document uploads.
 *   **Settings (Licenses): Manage pick lists and values.** This permission allows the user to access the License settings and the ability to manage pick lists and pick list values.
 *   **Settings (Licenses): Manage license terms.** This permission allows the user to access the License settings and the ability to manage the available terms. It includes the ability to view pick list information, which is necessary to manage license terms which use pick lists.
 
@@ -126,7 +127,7 @@ Internal contacts must have a user record created in the Users app in order to b
 
 Organizations are any institution with which your library interacts. You can add an organization to a license record to create a relationship between the organization and license. For example, you may want to add the licensor as an organization.
 
-Organizations must have an organization record created in the Organizations app in order to be assigned as an organization. Multiple organizations can be assigned to one license record.
+Organizations must have an organization record created in the Organizations app in order to be assigned as an organization. Multiple organizations can be assigned to one license record. To set one organization as the primary organization, check the **Set as primary organization** box.
 
 
 #### Adding an organization
