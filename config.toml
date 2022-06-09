@@ -121,6 +121,10 @@ algolia_docsearch = true
 offlineSearch = false
 
 [[params.versions]]
+  version = "Lotus"
+  url = "https://lotus.docs.folio.org/docs"
+
+[[params.versions]]
   version = "Kiwi"
   url = "https://kiwi.docs.folio.org/docs"
 
