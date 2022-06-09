@@ -291,7 +291,7 @@ Optional: Filter by **Permission type** or **Permission assignment status** in t
 
 ## Removing permissions from a user’s record
 
-###Remove assigned permission(s) 
+### Remove assigned permission(s) 
 1.  [Find the user record](#searching-for-user-records) to which you want to remove permissions and select it.
 2.  In the **User record** pane, click **Edit**.
 3.  In the **Edit** window, expand the **User permissions** accordion if needed. 
@@ -310,7 +310,7 @@ Optional: Filter by **Permission type** or **Permission assignment status** in t
 8.  Click **Save & close**. The permission(s) are removed from the user record.
 9.  Click **Save & close**. The user record is saved.
 
-###Remove all permissions
+### Remove all assigned permissions
 All assigned permissions can be removed from a user record in one click. 
 1.  [Find the user record](#searching-for-user-records) to which you want to remove permissions and select it.
 2.  In the **User record** pane, click **Edit**.
