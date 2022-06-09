@@ -26,7 +26,7 @@ LIMIT 10
 
 ### Installing and configuring the ldpmarc tool
 
-For detailed information about how to set up and configure the ldpmarc tool, please review any of the guides linked below that are available in the [ldpmarc repository] (https://github.com/library-data-platform/ldpmarc). There you also will find the latest versions and fixes for the ldpmarc tool.
+For detailed information about how to set up and configure the ldpmarc tool, please review any of the guides linked below that are available in the [ldpmarc repository](https://github.com/library-data-platform/ldpmarc). There you also will find the latest versions and fixes for the ldpmarc tool.
 
 * [System requirements](https://github.com/library-data-platform/ldpmarc/tree/v1.4.1#system-requirements): software and hardware requirements
 * [Building](https://github.com/library-data-platform/ldpmarc/tree/v1.4.1#building-the-software): installing / building ldpmarc tool
