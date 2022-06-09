@@ -1,7 +1,7 @@
 ---
 title: "MARC authority"
 linkTitle: "MARCauthority"
-date: 2022-05-31
+date: 2022-06-15
 weight: 30
 tags: ["subtopic"]
 ---
