@@ -595,10 +595,10 @@ Staff with appropriate permissions can partially or fully refund a fee/fine. The
 1.  [Find the user record](#searching-for-user-records) to which you want to refund a payment and click it.
 2.  In the **User record** pane, expand the **Fees/fines** accordion if needed.
 3. Select **View all fees/fines** to view the patron’s fines.
-4. The **Fees/fines** modal will open. Click the fee/fine you wish to refund a payment for. It may be **Open** or **Closed**.
+4. The **Fees/fines** modal will open. Click the fee/fine you wish to refund a payment for. It may be **Open** or **Closed**, depending on whether you are issuing a partial or full refund.
 5. The **Fee/fine details** modal will open. Click **Refund**.
-6. The **Waive fee/fine** modal will open. Enter the amount to waive (required). You can waive some or all of the fine amount.  If you are only waiving part of the fine, FOLIO will automatically calculate the remaining amount. 
-7. Select the **Waive reason** (required) and enter **Additional information for staff**. The **Additional information for staff** box may be required if your library has configured that option.
-8. Click **Waive**, then **Confirm**.
+6. The **Refund fee/fine** modal will open. Enter the amount to refund (required). You can refund some or all of the fine amount.  If you are only waiving part of the fine, FOLIO will automatically calculate the remaining amount. 
+7. Select the **Refund reason** (required) and enter **Additional information for staff**. The **Additional information for staff** box may be required if your library has configured that option.
+8. Click **Refund**, then **Confirm**.
 
 The modal will close, and the **Fee/fine details** page will update with the payment transaction.
