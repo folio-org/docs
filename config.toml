@@ -1,5 +1,5 @@
 # baseURL = "/"
-baseURL = "https://kiwi.docs.folio.org/"
+baseURL = "https://lotus.docs.folio.org/"
 title = "FOLIO Documentation - Kiwi"
 
 enableRobotsTXT = true
