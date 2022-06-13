@@ -29,12 +29,12 @@ Think of schema as the “buckets” in which data tables live. The schema drop-
 The **Table** drop-down menu allows you to select a data table from the schema you have selected to use in your query. Tables are where related data lives. Tables belong to a specific schema. With the schema and table selected, the other fields will unlock and update based on the selection.
 
 ### Filter by column
-The **Filter by column** drop-down menu allows you to filter the results of your query by data in one column from the table you have selected. You may further restrict the results by entering a particular data point in the field to the right of the “Filter by column” field.
+The **Filter by column** allows you to refining your results by select a column/field and applying a contraint to it.
 
 {{% alert title="Additional options to come in subsequent versions" color="info"%}}
 Currently you can only use the “equal to” operator (equality operations). Inequality operations (not equal to, greater than, less than, like, and non-case sensitive ILIKE) will be included in a future release.
-Example of equal to operation – find where previously_held = TRUE
-Example of inequality – find where _version > 1
+Example of equal to operation – find where previously_held = TRUE.
+Example of inequality – find where _version > 1.
 {{% /alert %}}
 
 ### Show columns
