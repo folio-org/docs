@@ -14,4 +14,4 @@ LDLite allows users to query FOLIO directly. Once connected to Okapi-based servi
 
 LDLite can also be used to report on MARC data retrieved from Source Record Storage (SRS). This feature is still in the experimental stages and not officially supported at this time. Instructions for setting up access to MARC data from LDLite are available on [GitHub](https://github.com/library-data-platform/ldlite/blob/main/srs.md).
 
-For more information about LDLite and access to the code base, see the [GitHub repository](https://github.com/library-data-platform/ldlite). Users do not need a specific version of LDLite for compatibility with the Kiwi release of FOLIO. 
+For more information about LDLite and access to the code base, see the [GitHub repository](https://github.com/library-data-platform/ldlite).
