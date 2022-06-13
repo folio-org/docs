@@ -22,6 +22,8 @@ The first section below outlines how to make use of the report queries in the FO
 
 ## Using queries from the FOLIO Analytics repository
 
+\*Releases of FOLIO Analytics are tied to a specific flower release. Please refere to the version [matrix](../library-data-platform/#installing-and-configuring-the-ldp) for compatibility.
+
 Report queries in the FOLIO Analytics repository are laid out in a particular structure that will make it easy for you to find the various areas you need as you build your knowledge of SQL.
 
 * **Introductory comments.** Queries may start with a short block of text that is not part of the query. These "comments" often describe basic components of the query and give a brief description of the purpose.
