@@ -1,9 +1,9 @@
 ---
 title: "MARC authority"
 linkTitle: "MARCauthority"
-date: 2022-06-15
+date: 2022-05-31
 weight: 30
-tags: ["subtopic"]
+tags: ["parenttopic"]
 ---
 
 The MARC authority app allows the management of MARC authority records within FOLIO.
@@ -22,22 +22,22 @@ The permissions listed below allow you to interact with the Inventory app and de
 -   **Edit MARC authority record.** This permission allows the user to edit authority records.
 -   **quickMARC: View, edit MARC authority record.** This permission allows the user to view and edit MARC authority records.
 
-## Creating MARC authority records via Data import – link to DATA IMPORT
-## Updating MARC authority records via Data import – link to DATA IMPORT
+## Creating MARC authority records 
+MARC authority records are created via [Data import](../data-import/)
 ## Searching for authority records
-You can search for MARC authority records in the **Search & filter** pane. Enter your search terms in the search box and click **Search**to search for MARC authority records. The app searches through the following fields:
+You can search for MARC authority records in the **Search & filter** pane. Enter your search terms in the box and click **Search**. Select the **Keyword** drop-down list to search through one of the following:
 
 -   **Keyword.** Keyword search through the title, contributor, and identifier fields.
--   **Identifier (all).** Searches through all identifier types.
--   **Personal name.** This may include the author's forenames, surnames, and family names. 
--   **Corporate/Conference name.** Corporate body or group associated with the work.
--   **Geographic name.** Geographical area associated with the work.
--   **Name-title.** Consists of both a name and a title of a work. Used when a work has appeared under varying titles.
--   **Uniform title.** Consists of a title not associated with a particular author.
+-   **Identifier (all).** Keyword search through all identifier types. 
+-   **Personal name.** Keyword search through the personal name field. The search terms must be ordered as follows: Last Name, First Name, Initial. 
+-   **Corporate/Conference name.** Keyword search through the name corporate/conference name field. 
+-   **Geographic name.** Keyword search through the geographic name field. The search terms must be ordered as follows: City, State/Province, Country. 
+-   **Name-title.** Keyword search through the name-title field. The search terms must be ordered as follows: Last Name, First Name, Title. 
+-   **Uniform title.** Keyword search through the uniform title field.
 -   **Subject.** Keyword search through all subject fields. This may include a single term, phrase, or a group of terms.
--   **Children’s subject heading.** Subject headings for children's literature. This provides easier subject access to the materials.
--   **Genre.** Describes general categories or genres that apply to various types of information resources.
--   **Advanced search.** Allows you to enter search terms into multiple fields.
+-   **Children’s subject heading.** Keyword search through all children's subject heading fields. 
+-   **Genre.** Keyword search through all genre/form fields.
+-   **Advanced search.** Keyword search through multiple fields.
 
 ### Advanced Search
 
@@ -46,17 +46,17 @@ Advanced Search allows you to add additional requirements to your search.
 To use Advanced Search, follow these steps:
 
 1.  Select **Advanced Search** in the **Search & filter** pane. A pop-up box will appear.
-2.  Enter a search term into the box.
+2.  Enter a search term into the first box.
 3.  On the same row, click the **Keyword** drop-down list and select a field. 
-4.  In the following row, click the **AND** drop-down list.
-5.  Select an operator from the list below:
+4.  To enter search terms into additional rows, you must select an operator from the **AND** drop-down list.
+5.  Click the **AND** drop-down list and select an operator from the list below:
 -   **AND.** Results include records containing all of the search terms.
 -   **OR.**  Results include all records containing at least one of the search terms.
 -   **NOT.** Results do not include records containing the search terms in this row.
+6.  Continue entering additional search terms and selecting the appropriate fields for each row.
+7.  Click **Search**.
 
-
-
-You can limit results by selecting any of the filters in the **Search & filter** pane after performing a search.
+After performing a search, you can limit results by selecting any of the filters in the **Search & filter** pane.
 
 When using filters, keep the following in mind:
 
@@ -65,18 +65,22 @@ When using filters, keep the following in mind:
 -   Multiple values in different filters are combined with "AND."
 
 ## Browsing authority headings and references
--   **Personal name.**
--   **Corporate/Conference name.**
--   **Geographic name.**
--   **Name-title.**
--   **Uniform title.**
--   **Subject.**
--   **Genre.**
+You can browse for MARC authority records in the **Search & filter** pane. Enter your search terms in the box and click **Search**. Select the **Select a browse option** drop-down list to search through one of the following: 
+
+-   **Personal name.** 
+-   **Corporate/Conference name.** 
+-   **Geographic name.** 
+-   **Name-title.** 
+-   **Uniform title.** 
+-   **Subject.** 
+-   **Genre.** 
 
 
 ## Viewing a MARC authority record
 The full MARC record opens in the third pane once you search for and select an authority record. The heading or reference you selected will be highlighted in the record.
-## Editing MARC authority records via quickMARC
+## Editing MARC authority records 
+### Updating MARC authority records via [Data import](../data-import/)
+### Editing MARC authority records via quickMARC
 When viewing the MARC authority record you wish to edit, click **Edit** in the upper right. The record opens in edit mode. 
 In the Edit MARC authority record window, you can perform the following actions:
 -   **Add a field.** To add a field, click the **+**. The new field appears below.
@@ -96,5 +100,5 @@ The following validation rules and restrictions apply:
 
 -   Fields 001 and 999ff are system supplied and cannot be edited or deleted.
 -   The LDR cannot be edited.
--   1xx is required and non-repeatable
+-   1xx is required and non-repeatable.
 -   No other validation is performed.
