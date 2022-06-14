@@ -16,14 +16,15 @@ In order for LDP software to connect to FOLIO, it needs read-only access to Okap
 
 FOLIO Reporting components Matrix
 
-| Folio Release | LDP version | ldpmarc | LDP Analytics | LDLite  |
-| :------------ | :---------- | :------ | :------------ | :------ |
-| Lotus         | v1.7.0      | v1.4.1  | v1.3.0        | v0.0.31 |
-| Kiwi          | v1.4.2      | v1.3.3  | v1.2.0        | v0.0.31 |
-| Juniper       | v1.3.0      | v1.2.0  | v1.2.0        | v0.0.22 |
-| Iris          | v1.2.2      | v1.0.2  | v1.1.1        | -       |
-| Honeysuckle   | v1.1.11     | -       | v1.0          | -       |
+| Folio Release | LDP version    | ldpmarc          | FOLIO Analytics* |
+| :------------ | :------------- | :--------------- | :--------------- |
+| Lotus         | 1.7.0 or later | v1.5.0 or later  | v1.3.0           |
+| Kiwi          | 1.7.0 or later | v1.5.0 or later  | v1.2.0           |
+| Juniper       | 1.7.0 or later | v1.5.0 or later  | v1.2.0           |
+| Iris          | 1.7.0 or later | v1.5.0 or later  | v1.1.1           |
+| Honeysuckle   | 1.7.0 or later | -                | v1.0             |
 
+\* FOLIO Analytics version is tied to a specific release. See the [Releases and branches](https://github.com/folio-org/folio-analytics#releases-and-branches) section of the folio-analytics repository for the latest.
 
 For detailed information about how to set up and configure the LDP, please review any of the guides linked below that are available in the LDP repository. There you also will find the latest versions and fixes of the LDP.  
 
