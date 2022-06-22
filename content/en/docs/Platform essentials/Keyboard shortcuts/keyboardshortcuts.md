@@ -19,9 +19,8 @@ Keyboard shortcuts allow you to perform actions using the keyboard.  These short
 | Collapse all accordions          | Ctrl+alt+g    |
 | Go to Search & Filter pane       | Ctrl+alt+h    |
 | View keyboard shortcuts list     | Ctrl+alt+k    |
- 
 | Duplicate a record               | Alt+c         |
-| Add POL               | Alt+a         |
+| Add POL                          | Alt+a         |
 | Close a modal or pop-up          | Esc           |
 | Copy                             | Ctrl+c        |
 | Cut                              | Ctrl+x        |
