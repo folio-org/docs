@@ -14,7 +14,9 @@ Look for these modules to find out which FOLIO flower release the system runs. T
 
 | mod-configuration | mod-inventory-storage | mod-login-saml | release |
 | ----- | ------- | ----- | - |
+| 5.7.8 | 23.0.5  | 2.4.5 | [R1-2022-hotfix-1](https://github.com/folio-org/platform-complete/blob/R1-2022-hotfix-1/install.json) |
 | 5.7.6 | 23.0.2  | 2.4.4 | [Lotus R1-2022-GA](https://github.com/folio-org/platform-complete/blob/R1-2022-GA/install.json) |
+| 5.7.7 | 22.0.4  | 2.4.5 | [Kiwi R3-2021-hotfix-3](https://github.com/folio-org/platform-complete/blob/R3-2021-hotfix-3/install.json) |
 | 5.7.5 | 22.0.4  | 2.4.2 | [Kiwi R3-2021-hotfix-2](https://github.com/folio-org/platform-complete/blob/R3-2021-hotfix-2/install.json) |
 | 5.7.4 | 22.0.4  | 2.4.2 | [Kiwi R3-2021-hotfix-1](https://github.com/folio-org/platform-complete/blob/R3-2021-hotfix-1/install.json) |
 | 5.7.3 | 22.0.4  | 2.3.2 | [Kiwi R3-2021-GA](https://github.com/folio-org/platform-complete/blob/R3-2021-GA/install.json) |
