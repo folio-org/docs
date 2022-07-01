@@ -104,6 +104,8 @@ A ledger is a collection of funds that need to be kept fiscally separate from an
 *   **Fiscal year one (required).** The first fiscal year for the ledger. Ledgers can continue to be used for multiple fiscal years. If the fiscal year does not appear in the list, you can click **New fiscal year** to create a new one.
 *   **Status (required).** Select the status of the ledger: Active, Frozen, or Inactive. Active means the ledger is ongoing, Frozen means the ledger has been put on pause, and Inactive means the ledger is no longer in use.
 *   **Acquisition Units.** If you only want particular users within certain acquisition units to be able to edit the ledger, enter or select the Acquisition units from the drop-down list. You can select multiple units. If blank, any users with the appropriate permissions are allowed to edit the ledger's information. For more information, see [Settings > Acquisition units]({{< ref "/settings_acquisition_units.md" >}}).
+*   **Enforce all budget encumbrance limits.**  This box is checked by default.  Leave this box checked if you want the system to reject any encumbrances against funds related to this ledger that would exceed the available amount of the current budget.  Uncheck this box to allow encumbrance amounts on the current year budget without restrictions.
+*   **Enforce all budget expenditure limits.**  This box is checked by default.  Leave this box checked if you want the system to reject any expenditures against funds related to this ledger that would exceed the available amount of the current budget.  Uncheck this box to allow expenditure amounts on the current year budget without restrictions.
 *   **Description.** A description of the ledger.
 
 
@@ -914,9 +916,10 @@ If your institution runs rollover before or after the fiscal year end date, you�
 *   **Period begin date.**  The fiscal year begin date for the **Fiscal year** selected.   See [Creating a fiscal year](#creating-a-fiscal-year) for more information about period dates.
 *   **Period end date.** The Fiscal Year end date for the Fiscal year selected.  Note: The **Period end date** must be greater than the current date to initiate rollover from the current year to an upcoming year. 
 *   **Fiscal year.**  Select the next fiscal year.  If the next fiscal year has not yet been set up, click **New fiscal year** to create one.  See  [Creating a fiscal year](#creating-a-fiscal-year) for more information.
-*   **Do not restrict encumbrances.** Check this box to allow encumbrance amounts on the current year budget to rollover to the upcoming year budget without restrictions based on the budget’s available amount.  Leave this box unchecked if you want the system to reject any encumbrances that would exceed the available amount. For example, if your institution typically doesn’t rollover allocations and adds initial allocation amounts manually after rollover, you might want to check this box to allow current year encumbrances to be applied to the upcoming year budgets that are awaiting initial allocations.
-*   **Do not restrict expenditures.** Check this box to allow expenditures to rollover even if the new budget has insufficient funds allocated.  
+*   **Enforce all budget encumbrance limits.** This box is checked by default.  Leave this box checked if you want the system to reject any encumbrances that would exceed the available amount. For example, if your institution typically doesn’t rollover allocations and adds initial allocation amounts manually after rollover, you might want to check this box to allow current year encumbrances to be applied to the upcoming year budgets that are awaiting initial allocations.  Uncheck this box to allow encumbrance amounts on the current year budget to rollover to the upcoming year budget without restrictions based on the budget’s available amount.  
+*   **Enforce all budget expenditure limits.** This box is checked by default. Uncheck this box to allow expenditures to rollover even if the new budget has insufficient funds allocated.  
 *   **Close all current budgets.**  This checkbox is selected by default and indicates that you want to close all the current fiscal year budgets as part of this rollover.
+
 
 
 #### Rollover budgets 
