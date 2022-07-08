@@ -233,7 +233,7 @@ Check that only one module instance of mod-authtoken-2.9.1 is running. Authentic
 
 ## II.v. Enable the frontend modules for your tenant
 
-Use the parameter *deploy=false* for the frontend modules and post the complete list of modules install.json to the okapi install endpoint. This will enable all modules of the release version for your tenant. Don't load reference if you are doing a system upgrade.
+Use the parameter *deploy=false* for the frontend modules and post the complete list of modules install.json to the okapi install endpoint. This will enable all modules of the release version for your tenant. Don't load reference data if you are doing a system upgrade.
 
 ```
 curl -w '\n' -D - -X POST -H "Content-type: application/json" -d @/usr/folio/platform-complete/install.json http://localhost:9130/_/proxy/tenants/diku/install?simulate=true\&preRelease=false
