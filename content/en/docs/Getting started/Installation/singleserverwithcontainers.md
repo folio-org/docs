@@ -90,7 +90,7 @@ There might be more preparatory steps that you need to take for your installatio
 
 
 ## II. Reinstall the Backend, Migrate from Kiwi to Lotus
-## II.i) Fetch a new version of platform-complete
+### II.i) Fetch a new version of platform-complete
 Fetch the new release version of platform-complete, change into that directory: 
 ```
 cd platform-complete
@@ -114,7 +114,7 @@ git checkout R1-2022-hotfix-1
 git stash pop
 ```
 
-## II.ii) Upgrade Okapi
+### II.ii) Upgrade Okapi
 Upgrade the Okapi version and restart Okapi.
 Read the R1 Okapi version from install.json: **okapi-4.13.2**
 
@@ -176,7 +176,7 @@ curl -w '\n' -XGET http://localhost:9130/_/proxy/tenants/diku/modules
 
 You should see 10 Edge modules, 50 Frontend modules (folio_\*), 65 Backend modules (mod-\*), if you are starting from Kiwi, platform-complete + the Lotus-Version of Okapi (4.13.2).
 
-### II.iii. Pull module descriptors from the central registry
+### II.iii) Pull module descriptors from the central registry
 
 A module descriptor declares the basic module metadata (id, name, etc.), specifies the module's dependencies on other modules (interface identifiers to be precise), and reports all "provided" interfaces. As part of the continuous integration process, each module descriptor  is published to the FOLIO Registry at https://folio-registry.dev.folio.org.
 
@@ -195,7 +195,7 @@ Okapi log should show something like
  INFO  ProxyContext         283828/proxy RES 200 93096323us okapi-4.13.2 /_/proxy/pull/modules
 ```
 
-### II.iii. Deploy a compatible FOLIO backend
+### II.iv) Deploy a compatible FOLIO backend
 
 
 Check your Okapi environment:
@@ -231,7 +231,7 @@ If that fails, remedy the error cause and try again until the post succeeds. In 
 
 Check that only one module instance of mod-authtoken-2.9.1 is running. Authentication will not work if multiple instances of mod-authtoken are running and have been started without setting the startup parameter "jwt.signing.key". For our single server setup, we will proceed with only one instance of mod-authtoken-2.9.1.
 
-## II.v. Enable the frontend modules for your tenant
+### II.v) Enable the frontend modules for your tenant
 
 Use the parameter *deploy=false* for the frontend modules and post the complete list of modules install.json to the okapi install endpoint. This will enable all modules of the release version for your tenant. Don't load reference data if you are doing a system upgrade.
 
@@ -240,7 +240,7 @@ curl -w '\n' -D - -X POST -H "Content-type: application/json" -d @/usr/folio/pla
 curl -w '\n' -D - -X POST -H "Content-type: application/json" -d @/usr/folio/platform-complete/install.json http://localhost:9130/_/proxy/tenants/diku/install?deploy=false\&preRelease=false\&tenantParameters=loadReference%3Dfalse
 ```
 
-### II.vi. Cleanup
+### II.vi) Cleanup
   
 Clean up. Undeploy all unused containers.
 Go through the list install.json, check if all modules mentioned there have actually been deployed for your tenant (compare the two lists):
