@@ -178,7 +178,7 @@ You should see 10 Edge modules, 50 Frontend modules (folio_\*), 65 Backend modul
 
 ### II.iii. Pull module descriptors from the central registry
 
-A module descriptor declares the basic module metadata (id, name, etc.), specifies the module's dependencies on other modules (interface identifiers to be precise), and reports all "provided" interfaces. As part of the continuous integration process, each Module Descriptor  is published to the FOLIO Registry at https://folio-registry.dev.folio.org.
+A module descriptor declares the basic module metadata (id, name, etc.), specifies the module's dependencies on other modules (interface identifiers to be precise), and reports all "provided" interfaces. As part of the continuous integration process, each module descriptor  is published to the FOLIO Registry at https://folio-registry.dev.folio.org.
 
 ```
 curl -w '\n' -D - -X POST -H "Content-type: application/json" \
