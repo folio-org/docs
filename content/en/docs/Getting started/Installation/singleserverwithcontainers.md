@@ -19,7 +19,7 @@ A FOLIO instance is divided into two main components.  The first component is Ok
 
 * This documentation shows how to upgrade to a **platform-complete** distribution of Lotus.
 
-* Throughout this documentation, the sample tenant "diku" will be used. Replace with the name of your tenant.
+* Throughout this documentation, the sample tenant "diku" will be used. Replace with the name of your tenant, as appropriate.
 
 ## System requirements
 
