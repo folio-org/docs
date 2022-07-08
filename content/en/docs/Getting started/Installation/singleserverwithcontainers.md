@@ -204,7 +204,7 @@ Check your Okapi environment:
  curl -X GET http://localhost:9130/_/env
 ```
 
-At this point, (re-)configure the environment variables of the modules, as needed.
+At this point, (re-)configure the environment variables of your modules, as needed.
 Study the release notes for any changes in module configurations.
 E.g. (and just as an example), if you are going to use mod-data-export-worker for the first time and need to connect it to Kafka and a minio server, set these environment variables in mod-data-export-worker-1.3.5 :
 ```
