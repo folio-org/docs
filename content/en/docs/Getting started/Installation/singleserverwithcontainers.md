@@ -386,7 +386,9 @@ Apply the same steps as for the module descriptor of mod-pubsub to these modules
 
 Deploy the backend modules one by one. This will pull the Docker image from Docker Hub and spin up a container on your host for each backend module. 
 
-Use this script [deploy-all-backend-modules.sh](../deploy-all-backend-modules.sh) to deploy all backend modules, one after the other, on your host:
+Download these files to a local folder: [deploy-backend-module.sh](../deploy-backend-module.sh),  [deploy-all-backend-modules.sh](../deploy-all-backend-modules.sh) .
+
+Then execute the file [deploy-all-backend-modules.sh](../deploy-all-backend-modules.sh) to deploy all backend modules, one after the other, on your host:
 
 ```
 ./deploy-all-backend-modules.sh ~/platform-core/okapi-install.json <YOUR_IP_ADDRESS>
