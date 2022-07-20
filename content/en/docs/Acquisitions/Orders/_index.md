@@ -590,6 +590,7 @@ After you create an order, it has the status of Pending until you open it. Once 
 *   Inventory records are created. If **Create inventory** on the purchase order line is set to “Instance/holdings/item”, an item is created with an item status of “On order.” For more information about item status see [Platform essentials > Item Status](< ref “/platform_essentials_items_status.md” >).Inventory records are not created if **Create inventory** on the order line is set to None. For more information about **Create inventory**, see the [E-resources details](#e-resources-details) and [Physical details](#physical-resource-details) sections below.
 *   Date ordered is set to today’s date.
 *   Approval date is set to today’s date if the order hasn’t already been approved by a user.
+*   If possible duplicates are found, based on title and product ID values, a modal displays with a list of possible duplicate orders. Select continue or cancel. This duplicate check can be disabled in Settings. See [Settings > Orders > Opening purchase orders]({{< ref "/settings_orders.md#settings--orders--opening-purchase-orders" >}}).
 *   Order lines cannot be added after the order is opened unless you [unopen](#unopening-an-order) the order.
 *   Fields such as Order type, Title, Acquisition method, and Order format are not editable once an order is opened. The order would need to be unopened to edit those fields. For more information, see [Unopening an order](#unopening-an-order).
 
@@ -713,7 +714,7 @@ To reveal fields that are hidden, as defined in [Settings > Orders > Creating an
 
 4. **Create another** checkbox: If the [Settings > Orders > Purchase orders line limit]({{< ref "/settings_orders.md#settings--orders-purchase-orders-line-limit" >}}) value is greater than one, click this checkbox at the bottom of the window to keep the **Add PO line** window open after saving the current order line.
 
-5. Click **Save**, **Save & close** or **Save & open order**, if applicable. For more information on saving and opening orders simultaneously, see [Settings > Orders > Opening purchase orders]({{< ref "/settings_orders.md#settings--orders--opening-purchase-orders" >}}).
+5. Click **Save**, **Save & close** or **Save & open order**, if applicable. If possible duplicates are found, based on title and product ID values, a modal displays with a list of possible duplicate orders. Select continue or cancel. This duplicate check can be disabled in Settings. For more information on saving and opening orders simultaneously, see [Settings > Orders > Opening purchase orders]({{< ref "/settings_orders.md#settings--orders--opening-purchase-orders" >}}).
 
 6. Once the order line is created, you can add notes, See [Adding a note to an order line](#adding-a-note-to-an-order-line) for more information. If the order line is for a package, you can add package titles. See [Adding package titles to an order line](#adding-package-titles-to-an-order-line).
 
