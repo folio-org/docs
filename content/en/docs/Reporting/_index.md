@@ -5,7 +5,7 @@ weight: 650
 ---
 
 {{% alert color="info"%}}
-<b>Note:</b> This documentation covers [LDP v1.7.0](https://github.com/library-data-platform/ldp/tree/1.7.0) and [FOLIO Analytics v1.3.0](https://github.com/folio-org/folio-analytics/tree/v1.3.0), which were released at approximately the same time as the FOLIO Lotus release.
+<b>Note:</b> This documentation covers [LDP v1.8.0](https://github.com/library-data-platform/ldp/tree/1.8.0) and [FOLIO Analytics v1.4.0](https://github.com/folio-org/folio-analytics/tree/v1.4.0), which were released at approximately the same time as the FOLIO Morning Glory release.
 {{% /alert %}}
 
 The [Library Data Platform (LDP)](library-data-platform) is a project that develops an open-source platform which is utilized by both the [FOLIO](http://folio.org/) and [ReShare](https://projectreshare.org/) projects to provide statistical and operational analytics. LDP software extracts data from FOLIO modules into a relational database (informally called “the LDP” by many in the FOLIO community), making it possible to engage in complex reporting and analytics using FOLIO data. While some FOLIO apps have built-in reports or the ability to download results from a search-and-filter workflow, the LDP supports larger and more complex queries that combine data from across the FOLIO apps.
