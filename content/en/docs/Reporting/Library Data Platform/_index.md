@@ -46,9 +46,9 @@ For detailed information about how to set up and configure the LDP, please revie
 * [Reference](https://github.com/library-data-platform/ldp/blob/1.8.0/doc/Config_Guide.md#reference): reference for the configuration file: dbconfig.general
 
 ## Setting up derived tables
-To let report users take full advantage of the community-developed [report queries](../folio-analytics/#using-queries-from-the-folio-analytics-repository) as well as having a good starting point for [ad hoc querying](../folio-analytics/#ad-hoc-querying-using-ldp-tables), it is strongly recommended to set up a nightly update on [derived tables](https://github.com/folio-org/folio-analytics/tree/v1.4.0/sql/derived_tables). Note that the use of *views* and *materialized views* is not supported in LDP databases and may cause the LDP software to be unable to perform data updates.
+To let report users take full advantage of the community-developed [report queries](../folio-analytics/#using-queries-from-the-folio-analytics-repository) as well as having a good starting point for [ad hoc querying](../folio-analytics/#ad-hoc-querying-using-ldp-tables), it is strongly recommended to set up a nightly update on [derived tables](https://github.com/folio-org/folio-analytics/tree/release-1.4/sql/derived_tables). Note that the use of *views* and *materialized views* is not supported in LDP databases and may cause the LDP software to be unable to perform data updates.
 
-You can find instructions in Github on how to set up [FOLIO Reporting Derived Tables](https://github.com/folio-org/folio-analytics/blob/v1.4.0/sql/derived_tables/README.md).
+You can find instructions in Github on how to set up [FOLIO Reporting Derived Tables](https://github.com/folio-org/folio-analytics/blob/release-1.4/sql/derived_tables/README.md).
 
 ## Data privacy
 
@@ -70,7 +70,7 @@ The concept of schemas allows you to organize tables and permissions within one 
 
 * public: contains all extracted tables and its current data from the bound FOLIO tenant
 * [history](https://github.com/library-data-platform/ldp/blob/1.8.0/doc/User_Guide.md#5-historical-data): stores data that have been updated in the past or may no longer exist
-* [folio_reporting](https://github.com/folio-org/folio-analytics/blob/v1.4.0/sql/derived_tables/README.md): contains all [derived tables](https://github.com/folio-org/folio-analytics/tree/v1.4.0/sql/derived_tables) created and supported by the community
+* [folio_reporting](https://github.com/folio-org/folio-analytics/blob/release-1.4/sql/derived_tables/README.md): contains all [derived tables](https://github.com/folio-org/folio-analytics/tree/release-1.4/sql/derived_tables) created and supported by the community
 * [local](https://github.com/library-data-platform/ldp/blob/1.8.0/doc/User_Guide.md#4-local-tables): common area for report users to create or import own data
 
 Beside existing schemas, you are free to create more schemas for your local needs (e.g., to provide data for different departments, to separate and protect sensitive data).
