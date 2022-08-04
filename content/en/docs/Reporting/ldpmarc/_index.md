@@ -5,7 +5,6 @@ date: 2022-04-29
 weight: 20
 tags: ["parenttopic"]
 ---
-## ldpmarc
 
 The ldpmarc tool part of the Library Data Platform (LDP) project. The ldpmarc tool converts SRS/MARC records from JSON to tabular format in preparation for loading them into an LDP reporting database. SRS stands for Source Record Storage. MARC stands for Machine-Readable Cataloging, which is a standard format for storing data elements within bibliographic records in computer systems. Once the MARC data has been loaded into the reporting database, ldpmarc performs incremental updates to the data, which saves time on the data transfer from the transactional to the reporting database.
 

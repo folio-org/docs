@@ -6,7 +6,6 @@ weight: 40
 tags: ["parenttopic"]
 ---
 
-## LDP App
 The LDP app provides a FOLIO interface for interacting with an LDP database. There are two section to the app, the **Query builder** and **Saved queries**. The **Query builder** allows you to build a query with the option to save it for later use. **Saved queries** allows you to load a previous query into the **Query builder** to start editing or run.
 
 ### Permissions
