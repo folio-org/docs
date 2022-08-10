@@ -1,6 +1,6 @@
 # baseURL = "/"
-baseURL = "https://docs.folio.org/"
-title = "FOLIO Documentation"
+baseURL = "https://lotus.docs.folio.org/"
+title = "FOLIO Documentation - Kiwi"
 
 enableRobotsTXT = true
 
@@ -130,15 +130,15 @@ offlineSearch = false
 
 [[params.versions]]
   version = "Juniper"
-  url = "https://juniper.docs.folio.org/docs/"
+  url = "https://juniper.docs.folio.org/docs"
 
 [[params.versions]]
   version = "Iris"
-  url = "https://iris.docs.folio.org/docs/"
+  url = "https://iris.docs.folio.org/docs"
 
 [[params.versions]]
   version = "Honeysuckle"
-  url = "https://honeysuckle.docs.folio.org/docs/"
+  url = "https://honeysuckle.docs.folio.org/docs"
 
 # User interface configuration
 [params.ui]
@@ -170,23 +170,12 @@ no = 'Sorry to hear that. Please <a href="https://github.com/USERNAME/REPOSITORY
 enable = false
 
 [params.links]
-# End user relevant links. These will show up on left side of footer and in the community page if you have one.
-[[params.links.user]]
-	name = "User mailing list"
-	url = "https://example.org/mail"
-	icon = "fa fa-envelope"
-        desc = "Discussion and help from your fellow users"
-[[params.links.user]]
+# Relevant links. These will show up on right side of footer and in the community page if you have one.
+[[params.links.developer]]
 	name ="Twitter"
 	url = "https://twitter.com/FOLIO_LSP"
 	icon = "fab fa-twitter"
         desc = "Follow us on Twitter to get the latest news!"
-[[params.links.user]]
-	name = "Stack Overflow"
-	url = "https://example.org/stack"
-	icon = "fab fa-stack-overflow"
-        desc = "Practical questions and curated answers"
-# Developer relevant links. These will show up on right side of footer and in the community page if you have one.
 [[params.links.developer]]
 	name = "GitHub"
 	url = "https://github.com/folio-org"

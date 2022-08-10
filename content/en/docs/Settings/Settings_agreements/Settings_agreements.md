@@ -1,7 +1,7 @@
 ---
 title: "Settings > Agreements"
 linkTitle: "Agreements"
-date: 2021-06-23
+date: 2022-06-07
 weight: 20
 tags: ["subtopic"]   
 ---
@@ -18,12 +18,13 @@ In order to interact with Agreements settings, a user needs to be assigned the f
 *   **Settings (Agreements): Can view and edit general settings**. This permission allows the user to view and edit the Display settings in the General settings section of the agreements settings.
 *   **Settings (Agreements): Manage agreement supplementary properties**. This permission allows the user the ability to manage the available supplementary properties. It also grants all permissions included in “Settings (Agreements): Can view and edit general settings.”
 *   **Settings (Agreements): Manage pick lists and values**. This permission allows the user the ability to manage pick lists and pick list values. It also grants all permissions included in “Settings (Agreements): Can view and edit general settings.”
+*   **Settings (Agreements): Can view app settings**. This permission allows the user to view permissions to a set of "app settings" via the Settings. As of Lotus, the available app settings are to set up options for storing documents uploaded to the Agreements module in database (default) or S3 storage. 
+*   **Settings (Agreements): Can view and edit app settings**. This permission allows the user to view and edit permissions to a set of "app settings" via the Settings. As of Lotus, the available app settings are to set up options for storing documents uploaded to the Agreements module in database (default) or S3 storage.
 
 
 ## Settings > Agreements > Display settings
 
 Use the settings in this section to turn certain features in agreement records on or off.
-
 
 ### Hide internal agreements knowledgebase
 
@@ -36,6 +37,19 @@ Selecting the checkbox causes the following to happen:
 *   The E-resources tab in the Agreements app is hidden.
 *   The basket icon in the Agreements app is hidden.
 *   The E-resources covered by this agreement section does not appear in the agreement details pane.
+
+
+### Tabular list pagination
+
+Use this setting to control the number of lines to show per page (i.e. before showing the "Load more" button) in multi-column lists (tabular lists) across the Agreements application. The default value for all lists is 10. The multi-column lists affected are:
+
+
+
+*   Agreement view pane > Agreement lines
+*   Agreement view pane > E-resources covered by this agreement
+*   E-resource view pane > Options for acquiring e-resource
+*   Package view pane > E-resources in package
+*   E-resource view pane > Agreements for this e-resource
 
 
 ### Display "Suppress from discovery" setting on
@@ -57,6 +71,17 @@ To disable the Suppress from discovery checkbox, follow these steps:
 
 1. To disable the Suppress from discovery checkbox on agreement lines, clear the **Agreement lines** checkbox.
 2. To disable the Supress from discovery checkbox on package content items, clear the **Package content items** checkbox.
+
+
+### Hide accordions in agreement edit view
+
+This setting allows institutions not using the eUsage module to not display the Usage data accordion in the Agreements edit screen.
+
+Selecting the checkbox causes the following to happen:
+
+
+
+*   The Usage data module in the Agreements app is hidden.
 
 
 ## Settings > Agreements > Supplementary properties

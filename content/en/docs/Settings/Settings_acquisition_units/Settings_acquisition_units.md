@@ -1,7 +1,7 @@
 ---
 title: "Settings > Acquisition units"
 linkTitle: "Acquisition units"
-date: 2021-05-10
+date: 2022-05-04
 weight: 10
 tags: ["subtopic"]   
 ---
@@ -23,6 +23,21 @@ Acquisitions units can be applied to the following types of records in FOLIO:
 *   Organizations
 
 Note: Restricting the actions of users based on acquisition units is not fully functional in the following apps: Finance and Receiving. However, you can still add acquisition units to records within those apps.
+
+
+## Permissions
+
+In order to interact with acquisition units settings, a user needs to be assigned the following permission:
+
+
+
+*   **Settings (acquisition units): Can view, edit, create and delete settings.** This permission allows you to manage acquisition unit settings.
+
+Note: This is the only permission available for acquisition unit settings. You can assign permissions to users in the Users app.
+
+
+## Keyboard shortcuts
+Keyboard shortcuts allow you to perform actions in this setting using the keyboard.  See [Platform essentials > Keyboard shortcuts]({{< ref "/keyboardshortcuts.md" >}}) for more information.
 
 
 ## Creating an acquisition unit

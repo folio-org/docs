@@ -1,7 +1,7 @@
 ---
 title: "Settings > Licenses"
 linkTitle: "Licenses"
-date: 2021-06-23
+date: 2022-06-07
 weight: 150
 tags: ["subtopic"]   
 ---
@@ -17,6 +17,8 @@ In order to interact with License settings, a user needs to be assigned the foll
 
 *   **Settings (Licenses): Manage pick lists and values**. This permission allows the user to access the License settings and the ability to manage pick lists and pick list values.
 *   **Settings (Licenses): Manage license terms**. This permission allows the user to access the License settings and the ability to manage the available license terms.
+*   **Settings (Licenses): Can view app settings**. This permission allows the user to view permissions to a set of "app settings" via the Settings. As of Lotus, the available app settings are to set up options for storing documents uploaded to the Licenses module in database (default) or S3 storage. 
+*   **Settings (Licenses): Can view and edit app settings**. This permission allows the user to view and edit permissions to a set of "app settings" via the Settings. As of Lotus, the available app settings are to set up options for storing documents uploaded to the Licenses module in database (default) or S3 storage. 
 
 
 ## Settings > Licenses > Terms
@@ -129,3 +131,4 @@ Note: If you edit a pick list value, only the Label changes and not the Value te
 1. Select the **Pick list** with the value you want to delete in the drop-down list.
 2. In the row of the value you want to edit, click the **trash can icon**.
 3. In the **Delete Value** dialog, click **Delete**. A confirmation message appears and the value is deleted.
+

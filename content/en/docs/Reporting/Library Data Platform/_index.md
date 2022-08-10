@@ -10,37 +10,49 @@ tags: ["parenttopic"]
 <b>Note:</b> This [WOLFcon 2021 presentation](https://www.youtube.com/watch?v=SM1vq0zvxsY) gives an overview of the Library Data Platform.
 {{% /alert %}}
 
-In order for LDP software to connect to FOLIO, it needs read-only access to Okapi and the FOLIO database. The LDP can be hosted and administered locally by an institution’s own staff or by contracting hosting services out to a third party. You can find specific [system requirements](https://github.com/library-data-platform/ldp/blob/release-1.1/doc/Admin_Guide.md#software) in the LDP documentation.
+In order for LDP software to connect to FOLIO, it needs read-only access to Okapi and the FOLIO database. The LDP can be hosted and administered locally by an institution's own staff or by contracting hosting services out to a third party. You can find specific [system requirements](https://github.com/library-data-platform/ldp/blob/1.7.0/doc/Admin_Guide.md#2-system-requirements) in the LDP documentation.
 
 ## Installing and configuring the LDP
+
+FOLIO Reporting components Matrix
+
+| Folio Release | LDP version    | ldpmarc          | FOLIO Analytics* |
+| :------------ | :------------- | :--------------- | :--------------- |
+| Lotus         | 1.7.0 or later | v1.5.0 or later  | v1.3.0           |
+| Kiwi          | 1.7.0 or later | v1.5.0 or later  | v1.2.0           |
+| Juniper       | 1.7.0 or later | v1.5.0 or later  | v1.2.0           |
+| Iris          | 1.7.0 or later | v1.5.0 or later  | v1.1.1           |
+| Honeysuckle   | 1.7.0 or later | -                | v1.0             |
+
+\* FOLIO Analytics version is tied to a specific release. See the [Releases and branches](https://github.com/folio-org/folio-analytics#releases-and-branches) section of the folio-analytics repository for the latest.
 
 For detailed information about how to set up and configure the LDP, please review any of the guides linked below that are available in the LDP repository. There you also will find the latest versions and fixes of the LDP.  
 
 ### Administration Guide
-* [Overview](https://github.com/library-data-platform/ldp/blob/1.1.11/doc/Admin_Guide.md#1-overview): brief introduction and summary
-* [System requirements](https://github.com/library-data-platform/ldp/blob/1.1.11/doc/Admin_Guide.md#2-system-requirements): software and hardware requirements
-* [Installation](https://github.com/library-data-platform/ldp/blob/1.1.11/doc/Admin_Guide.md#3-installation): installing prerequisites and building LDP
-* [Database configuration](https://github.com/library-data-platform/ldp/blob/1.1.11/doc/Admin_Guide.md#4-database-configuration): setting up and configuring the database
-* [Server configuration](https://github.com/library-data-platform/ldp/blob/1.1.11/doc/Admin_Guide.md#5-server-configuration): setting up, configuring, starting and updating the server
-* [Direct extraction](https://github.com/library-data-platform/ldp/blob/1.1.11/doc/Admin_Guide.md#6-direct-extraction): setting up direct extraction from FOLIOs database
-* [Data privacy](https://github.com/library-data-platform/ldp/blob/1.1.11/doc/Admin_Guide.md#7-data-privacy): options to anonymize personal data
-* [Reference](https://github.com/library-data-platform/ldp/blob/1.1.11/doc/Admin_Guide.md#reference): reference of the configuration file: ldpconf.json
+* [Overview](https://github.com/library-data-platform/ldp/blob/1.7.0/doc/Admin_Guide.md#1-overview): brief introduction and summary
+* [System requirements](https://github.com/library-data-platform/ldp/blob/1.7.0/doc/Admin_Guide.md#2-system-requirements): software and hardware requirements
+* [Installation](https://github.com/library-data-platform/ldp/blob/1.7.0/doc/Admin_Guide.md#3-installation): installing prerequisites and building LDP
+* [Database configuration](https://github.com/library-data-platform/ldp/blob/1.7.0/doc/Admin_Guide.md#4-database-configuration): setting up and configuring the database
+* [Server configuration](https://github.com/library-data-platform/ldp/blob/1.7.0/doc/Admin_Guide.md#5-ldp-configuration): setting up, configuring, starting and upgrading the LDP
+* [Data privacy](https://github.com/library-data-platform/ldp/blob/1.7.0/doc/Admin_Guide.md#7-data-privacy): options to anonymize personal data
+* [Optional columns](https://github.com/library-data-platform/ldp/blob/1.7.0/doc/Admin_Guide.md#8-optional-columns): specifying optional FOLIO columns that should always appear in LDP tables
+* [Historical data](https://github.com/library-data-platform/ldp/blob/1.7.0/doc/Admin_Guide.md#9-historical-data): description of historical data feature and instructions for disabling
+* [Reference](https://github.com/library-data-platform/ldp/blob/1.7.0/doc/Admin_Guide.md#reference): reference for the configuration file: ldpconf.json
 
 ### Configuration Guide
-* [Scheduling full updates](https://github.com/library-data-platform/ldp/blob/1.1.11/doc/Config_Guide.md#1-scheduling-full-updates): configuring full updates  
-* [Foreign keys](https://github.com/library-data-platform/ldp/blob/1.1.11/doc/Config_Guide.md#2-foreign-keys): enabling capability to infer foreign keys
-* [Reference](https://github.com/library-data-platform/ldp/blob/1.1.11/doc/Config_Guide.md#reference): reference of the configuration file: dbconfig.general
+* [Foreign keys](https://github.com/library-data-platform/ldp/blob/1.7.0/doc/Config_Guide.md#1-foreign-keys): enabling capability to infer foreign keys
+* [Reference](https://github.com/library-data-platform/ldp/blob/1.7.0/doc/Config_Guide.md#reference): reference for the configuration file: dbconfig.general
 
 ## Setting up derived tables
-To let report users take full advantage of the community-developed [report queries](../folio-analytics/#using-queries-from-the-folio-analytics-repository) as well as having a good starting point for [ad hoc querying](../folio-analytics/#ad-hoc-querying-using-ldp-tables), it is strongly recommended to set up a nightly update on [derived tables](https://github.com/folio-org/folio-analytics/tree/release-1.0/sql/derived_tables). Note that the use of *views* and *materialized views* is not supported in LDP databases and may cause the LDP software to be unable to perform data updates.
+To let report users take full advantage of the community-developed [report queries](../folio-analytics/#using-queries-from-the-folio-analytics-repository) as well as having a good starting point for [ad hoc querying](../folio-analytics/#ad-hoc-querying-using-ldp-tables), it is strongly recommended to set up a nightly update on [derived tables](https://github.com/folio-org/folio-analytics/tree/v1.2.0/sql/derived_tables). Note that the use of *views* and *materialized views* is not supported in LDP databases and may cause the LDP software to be unable to perform data updates.
 
-You can find instructions in Github on how to set up [FOLIO Reporting Derived Tables (Guide)](https://github.com/folio-org/folio-analytics/blob/release-1.0/sql/derived_tables/README.md).
+You can find instructions in Github on how to set up [FOLIO Reporting Derived Tables](https://github.com/folio-org/folio-analytics/blob/v1.3.0/sql/derived_tables/README.md).
 
 ## Data privacy
 
 The LDP is designed to support GDPR and other data privacy requirements. Administrators can exclude a predefined set of tables.
 
-See the [Anonymization Guide](https://github.com/library-data-platform/ldp/blob/1.1.11/doc/Admin_Guide.md#7-data-privacy) for information on how to activate and configure these features.
+See the [Anonymization Guide](https://github.com/library-data-platform/ldp/blob/1.7.0/doc/Admin_Guide.md#7-data-privacy) for information on how to activate and configure these features.
 
 The pages linked below list attributes that contain potential personal data:
 
@@ -49,36 +61,41 @@ The pages linked below list attributes that contain potential personal data:
 
 ## Adding local data
 
-As documented in the [user guide](https://github.com/library-data-platform/ldp/blob/1.1.11/doc/User_Guide.md#4-local-tables), it is also possible to load and create local data into your LDP. Besides using the local schema, you might consider setting up separate schemas for different user groups or purposes.
+As documented in the [user guide](https://github.com/library-data-platform/ldp/blob/1.7.0/doc/User_Guide.md#4-local-tables), it is also possible to load and create local data into your LDP. Besides using the local schema, you might consider setting up separate schemas for different user groups or purposes.
 
 ### Using schemas
 The concept of schemas allows you to organize tables and permissions within one database. In LDP we have initially four relevant schemas:
 
 * public: contains all extracted tables and its current data from the bound FOLIO tenant
-* [history](https://github.com/library-data-platform/ldp/blob/1.1.11/doc/User_Guide.md#5-historical-data): stores data that have been updated in the past or may no longer exist
-* [folio_reporting](https://github.com/folio-org/folio-analytics/blob/release-1.0/sql/derived_tables/README.md): contains all [derived tables](https://github.com/folio-org/folio-analytics/tree/release-1.0/sql/derived_tables) created and supported by the community
-* [local](https://github.com/library-data-platform/ldp/blob/1.1.11/doc/User_Guide.md#4-local-tables): common area for report users to create or import own data
+* [history](https://github.com/library-data-platform/ldp/blob/1.7.0/doc/User_Guide.md#5-historical-data): stores data that have been updated in the past or may no longer exist
+* [folio_reporting](https://github.com/folio-org/folio-analytics/blob/v1.3.0/sql/derived_tables/README.md): contains all [derived tables](https://github.com/folio-org/folio-analytics/tree/v1.3.0/sql/derived_tables) created and supported by the community
+* [local](https://github.com/library-data-platform/ldp/blob/1.7.0/doc/User_Guide.md#4-local-tables): common area for report users to create or import own data
 
 Beside existing schemas, you are free to create more schemas for your local needs (e.g., to provide data for different departments, to separate and protect sensitive data).
 
-Learn more about the schema concept and how to configure schemas using [Postgres’s Schema Documentation](https://www.postgresql.org/docs/11/ddl-schemas.html#DDL-SCHEMAS-PRIV).
+Learn more about the schema concept and how to configure schemas using [Postgres's Schema Documentation](https://www.postgresql.org/docs/13/ddl-schemas.html#DDL-SCHEMAS-PRIV).
 
-For a granular set up of permissions see also the built-in [Roles](https://www.postgresql.org/docs/11/user-manag.html) and [Privileges](https://www.postgresql.org/docs/11/ddl-priv.html) concepts of Postgres.
+For a granular set up of permissions see also the built-in [Roles](https://www.postgresql.org/docs/13/user-manag.html) and [Privileges](https://www.postgresql.org/docs/13/ddl-priv.html) concepts of Postgres.
 
 ### Moving and loading data
 Loading and moving data into LDP is as simple as it is for databases in general.
 
 For Postgres there are two common approaches:
 
-* [COPY](https://www.postgresql.org/docs/11/sql-copy.html): SQL command for moving table data via csv files
-* [pg_dump](https://www.postgresql.org/docs/11/app-pgdump.html) / [pg_restore](https://www.postgresql.org/docs/11/app-pgrestore.html): Postgres command line tools for importing and exporting data
+* [COPY](https://www.postgresql.org/docs/13/sql-copy.html): SQL command for moving table data via csv files
+* [pg_dump](https://www.postgresql.org/docs/13/app-pgdump.html) / [pg_restore](https://www.postgresql.org/docs/12/app-pgrestore.html): Postgres command line tools for importing and exporting data
 
 ## FOLIO Data Coverage in the LDP
 
-As of [version 1.1.11](https://github.com/library-data-platform/ldp/tree/1.1.11), the LDP pulls data from the following FOLIO modules:
+The LDP utilizes the FOLIO APIs to get most of its content. To see more details about the APIs can be found at FOLIO Developers [API documentation](https://dev.folio.org/reference/api/).
 
+As of [version 1.7.0](https://github.com/library-data-platform/ldp/tree/1.7.0), the LDP pulls data from the following FOLIO modules:
+
+* mod-audit
+    * /audit-data/circulation/logs
 * mod-circulation-storage
     * /cancellation-reason-storage/cancellation-reasons
+    * /check-in-storage/check-ins
     * /fixed-due-date-schedule-storage/fixed-due-date-schedules
     * /loan-policy-storage/loan-policies
     * /loan-storage/loans
@@ -92,6 +109,16 @@ As of [version 1.1.11](https://github.com/library-data-platform/ldp/tree/1.1.11)
     * /staff-slips-storage/staff-slips
 * mod-configuration
     * /configurations/entries
+* mod-courses
+    * /coursereserves/copyrightstatuses
+    * /coursereserves/courselistings
+    * /coursereserves/courses
+    * /coursereserves/coursetypes
+    * /coursereserves/departments
+    * /coursereserves/processingstatuses
+    * /coursereserves/reserves
+    * /coursereserves/roles
+    * /coursereserves/terms
 * mod-email
     * /email
 * mod-feesfines
@@ -108,18 +135,9 @@ As of [version 1.1.11](https://github.com/library-data-platform/ldp/tree/1.1.11)
     * /transfer-criterias
     * /transfers
     * /waives
-* mod-courses
-    * /coursereserves/copyrightstatuses
-    * /coursereserves/courselistings
-    * /coursereserves/courses
-    * /coursereserves/coursetypes
-    * /coursereserves/departments
-    * /coursereserves/processingstatuses
-    * /coursereserves/reserves
-    * /coursereserves/roles
-    * /coursereserves/terms
 * mod-finance-storage
     * /finance-storage/budgets
+    * /finance-storage/expense-classes
     * /finance-storage/fiscal-years
     * /finance-storage/fund-types
     * /finance-storage/funds
@@ -166,6 +184,8 @@ As of [version 1.1.11](https://github.com/library-data-platform/ldp/tree/1.1.11)
     * /invoice-storage/invoices
     * /voucher-storage/voucher-lines
     * /voucher-storage/vouchers
+* mod-notes
+    * /notes
 * mod-orders-storage
     * /acquisitions-units-storage/memberships
     * /acquisitions-units-storage/units
@@ -186,11 +206,12 @@ As of [version 1.1.11](https://github.com/library-data-platform/ldp/tree/1.1.11)
     * /organizations-storage/organizations
     * /organizations-storage/phone-numbers
     * /organizations-storage/urls
+* mod-source-record-storage
+    * srs::marc_records_lb*
+    * srs::records_lb*
 * mod-users
     * /addresstypes
     * /departments
     * /groups
     * /proxiesfor
     * /users
-
-\* - The LDP supports [direct extraction](https://github.com/library-data-platform/ldp/blob/1.1.11/doc/Admin_Guide.md#6-direct-extraction) for these tables, rather than using the module APIs.

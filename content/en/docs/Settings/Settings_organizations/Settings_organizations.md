@@ -20,7 +20,7 @@ In order to interact with Organizations settings, a user needs to be assigned th
 Note: This is the only permission available for [Organizations settings]({{< ref "/organizations.md#permissions" >}}). With some other Organizations permissions, the user is able to view the settings, but they are unable to create, edit, or delete the settings. You can assign permissions to users in the Users app.
 
 
-## Settings > Organizations > Categories
+## Settings \> Organizations \> Categories
 
 Categories are a way to classify the contact people and contact information you add to an organization. Categories are defined by your library and can be used to group contact information and contact people to make them easier to find and identify. You need to first add the categories in the Settings app in order to assign them to organization contacts.
 

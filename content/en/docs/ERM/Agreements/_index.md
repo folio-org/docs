@@ -2,7 +2,7 @@
 ---
 title: "Agreements"
 linkTitle: "Agreements"
-date: 2022-02-18
+date: 2022-03-21
 weight: 10
 tags: ["parenttopic"]
 ---
@@ -44,6 +44,10 @@ The following permissions are only applicable if your library is using the inter
 *   **Agreements: Edit e-resources.** This permission allows the user to edit the e-resources. It also grants all permissions included in "Agreements: Search & view e-resources."
 *   **Agreements: Search & view platforms.** This permission allows the user to search and view platforms in the internal KB. This includes the permission to see and access the Agreement app in the FOLIO interface.
 *   **Agreements: Edit platforms.** This permission allows the user to edit platform properties. It also grants all permissions included in "Agreements: Search & view e-resources."
+
+
+## Keyboard shortcuts
+Keyboard shortcuts allow you to perform actions in this app using the keyboard.  See [Platform essentials > Keyboard shortcuts]({{< ref "keyboardshortcuts.md" >}}) for more information.
 
 
 ## Creating an agreement
@@ -96,9 +100,13 @@ When adding agreement periods, you should consider the following:
 
 
 *   Every record must have at least one agreement period.
+*   If only a single agreement period is used, no other information is displayed in relation to periods.
 *   If you add multiple periods to the record, their dates cannot overlap.
 *   Each period must have a start date.
+*   The earliest period start date is treated as the agreement start date.
 *   End dates are optional, but only one period in a set can be left without an end date. This is referred to as an open-ended period, which has a start date but is assumed to continue for an indefinite amount of time.
+*   The latest period end date is treated as the agreement end date, or if there is a blank period end date the agreement is treated as having no end date.
+*   You can navigate between past, present, and future periods by clicking on the **Previous**, **Current**, or **Next** buttons.
 
 
 #### Adding an agreement period
@@ -169,7 +177,7 @@ Note: You can add multiple license records to an agreement record, but only one 
 
 #### Adding a license created in the Licenses app to an agreement
 
-Note: If the license you link to the agreement has amendments present, once you link the license the Amendments also display. They also need to have a status in relation to the agreement set. This is important as it is the combination of the applicable (controlling) licenses and amendments that dictate the terms that apply to the agreement.
+Note: If the license you link to the agreement has amendments present, once you link the license the amendments also display. They also need to have a status in relation to the agreement set. This is important as it is the combination of the applicable (controlling) licenses and amendments that dictate the terms that apply to the agreement.
 
 
 
@@ -193,7 +201,7 @@ External licenses are any license not available through the Licenses app.
 2. Enter a **Name** in the box.
 3. (Optional): Enter a **Note** about the license.
 4. You must complete at least one of the following:
-    * Upload a file into the agreement record by dragging and dropping the file in the **Drag & drop to upload** box, or click **or choose file**.
+    * Upload a file into the license record by dragging and dropping the file in the **Drag & drop to upload** box, or click **or choose file**.
     * Enter the **Physical location** of the license in the box.
     * Enter the **URL** of the license in the box.
 5. Repeat steps 1-5 as needed. The external license saves once you save the agreement record.
@@ -428,6 +436,18 @@ Renewal priority values are configured in [Settings > Agreements > Pick list val
 To filter agreements by whether or not they are perpetual, select **Yes** or **No**.
 
 
+### Start date
+
+To filter agreements by their start date, enter a date into the **On or after** and/or **On or before** search box, or click the **calendar icon** to select a date from the calendar.
+
+
+### End date
+
+To filter agreements by their end date, enter a date into the **On or after** and/or **On or before** search box, or click the **calendar icon** to select a date from the calendar.
+
+You can also check the box **Include agreements with no end date set** to locate agreements without end dates.
+
+
 ### Organizations
 
 To filter agreements associated with a specific organization, follow these steps:
@@ -503,7 +523,7 @@ To filter agreements by their supplementary properties, follow these steps:
 
 ## Viewing an agreement
 
-Once you search for an agreement, the following information appears in the Agreements pane:
+Once you search for an agreement, the following information appears in the Agreement pane:
 
 
 
@@ -513,7 +533,7 @@ Once you search for an agreement, the following information appears in the Agree
 *   **Period end.** The date the agreement period ends.
 *   **Cancellation deadline.** The date by which you need to cancel the agreement if you do not want to renew the material covered by the agreement.
 
-In the search results, click an agreement to view it. The agreement details pane displays with additional information about the agreement.
+In the search results, click an agreement to view it. The agreement details pane displays with additional information about the agreement. In the agreement display, any accordions not populated with data and not otherwise required are not displayed to the user.
 
 
 ## Editing an agreement
@@ -521,7 +541,7 @@ In the search results, click an agreement to view it. The agreement details pane
 
 
 1. Find the agreement you want to edit.
-2. In the **agreement details** pane, click **Edit**.
+2. In the **agreement details** pane, click **Actions > Edit**.
 3. Make your desired changes to the agreement.
 4. Click **Save & close**. The agreement is updated.
 
@@ -636,7 +656,9 @@ Adding an agreement line by linking to the eHoldings app cannot be done in an ag
 
 ### Adding a purchase order line to an agreement line
 
-You have the option of adding a purchase order line (POL) to an agreement line. Linking the agreement line to a POL adds context to the agreement line. For example, it can show how you paid for, or the method by which you ordered, the material.
+You have the option of adding a purchase order line (POL) to an agreement line. Linking the agreement line to a POL adds context to the agreement line. For example, it can show how you paid for, or the method by which you ordered, the material. 
+
+When an agreement line is linked to a POL that is linked to an Inventory instance, a link directly to the Inventory instance is displayed in the Agreement Line display.
 
 Note: If you are already editing an agreement line, skip to step 5.
 
@@ -860,3 +882,10 @@ You can add and assign notes to agreement records and agreement lines. Assigning
 4. In the **Agreement lines** pane, under **Notes**, find the note you want to remove and select it.
 5. In the **Note** window, click **Actions > Delete**.
 6. In the **Delete note** dialog, click **Delete**. The note is deleted and removed from any records to which it was attached.
+
+
+### Dashboard widgets for the Agreements app
+
+The Dashboard app is designed to enable a personalized view of key information from across FOLIO apps at a glance. In its first release (included in the Juniper flower release), the Dashboard includes the ability to display information from the Agreements and Licenses applications.
+
+In the Juniper release, the Agreements app comes with two dashboard widgets ("ERM Agreements" and "ERM Agreement Jobs"). There are examples of how you can use these two widget definitions to achieve a wide range of outcomes in the [Example widget configurations](https://wiki.folio.org/display/FOLIOtips/Example+widget+configurations) documentation.

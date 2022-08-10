@@ -2,8 +2,8 @@
 ---
 title: "Licenses"
 linkTitle: "Licenses"
-date: 2021-06-23
-weight: 40
+date: 2022-03-21
+weight: 50
 tags: ["parenttopic"]
 ---
 
@@ -29,8 +29,9 @@ The following are the Licenses permissions:
 *   **Licenses: Search & view licenses.** This permission allows the user to search and view existing licenses and amendments. This includes the permission to see and access the License app in the FOLIO interface.
 *   **Licenses: Edit licenses.** This permission grants all permissions included in "Licenses: Search & view licenses" plus it allows the user the ability to edit licenses and amendments, including the ability to add and edit documents and view, add and edit tags on a license.
 *   **Licenses: Delete licenses.** This permission grants all permissions included in "Licenses: Search & view licenses" plus it allows the user the ability to delete licenses and amendments.
+*   **Licenses: File download.** (ui-licenses.licenses.file.download) This permission grants permission for document downloads, as separate from document uploads.
 *   **Settings (Licenses): Manage pick lists and values.** This permission allows the user to access the License settings and the ability to manage pick lists and pick list values.
-*   **Settings (Licenses): Manage license terms.** This permission allows the user to access the License settings and the ability to manage the available terms.
+*   **Settings (Licenses): Manage license terms.** This permission allows the user to access the License settings and the ability to manage the available terms. It includes the ability to view pick list information, which is necessary to manage license terms which use pick lists.
 
 If you want to link or view organizations and/or internal contacts in a license record, you also need to have the following Organizations and Users permissions:
 
@@ -41,11 +42,15 @@ If you want to link or view organizations and/or internal contacts in a license 
 *   **Users: Can view user profile.**
 
 
+## Keyboard shortcuts
+Keyboard shortcuts allow you to perform actions in this app using the keyboard.  See [Platform essentials > Keyboard shortcuts]({{< ref "keyboardshortcuts.md" >}}) for more information.
+
+
 ## Creating a license
 
 
 
-1. In the **Licenses** pane, click **New**.
+1. In the **Licenses** pane, click **Actions > New**.
 2. In the **New license** window, enter a **Name** for the license record.
 3. Select a license **Type** from the drop-down list. For example, local or consortial. License Types are configured in the Settings app. For more information, see [Settings > Licenses > Pick list values]({{< ref "/settings_licenses.md#settings--licenses--pick-list-values" >}}).
 4. Select a **Status** from the drop-down list. License Statuses are configured in the Settings app. For more information, see [Settings > Licenses > Pick list values]({{< ref "/settings_licenses.md#settings--licenses--pick-list-values" >}}).
@@ -122,7 +127,7 @@ Internal contacts must have a user record created in the Users app in order to b
 
 Organizations are any institution with which your library interacts. You can add an organization to a license record to create a relationship between the organization and license. For example, you may want to add the licensor as an organization.
 
-Organizations must have an organization record created in the Organizations app in order to be assigned as an organization. Multiple organizations can be assigned to one license record.
+Organizations must have an organization record created in the Organizations app in order to be assigned as an organization. Multiple organizations can be assigned to one license record. To set one organization as the primary organization, check the **Set as primary organization** box.
 
 
 #### Adding an organization
@@ -256,7 +261,7 @@ A supplementary document is any additional document relevant to the license reco
 
 You can search for licenses in the **Search & filter** pane. To search for licenses, enter your search terms in the search box and click **Search**.
 
-You can also search for licenses by selecting any of the filters in the **Search & filter** pane: Status, Type, Organizations, Organization role, Tags, and Terms. For more information on the filters, see the filter descriptions below.
+You can also search for licenses by selecting any of the filters in the **Search & filter** pane: Status, Type, Organizations, Organization role, Tags, Start date, End date, and Terms. For more information on the filters, see the filter descriptions below.
 
 
 ### Status
@@ -317,6 +322,20 @@ To search for licenses assigned specific tags, follow these steps:
 2. Select the tag(s) from the drop-down list. The search results appear in the Licenses pane.
 
 
+### Start date
+
+To filter licenses by their start date, enter a date into the **On or after** and/or **On or before** search box, or click the **calendar icon** to select a date from the calendar.
+
+You can also check the box **Include licenses with no end date set** to locate licenses without end dates.
+
+
+### End date
+
+To filter licenses by their end date, enter a date into the **On or after** and/or **On or before** search box, or click the **calendar icon** to select a date from the calendar.
+
+You can also check the box **Include licenses with no end date set** to locate licenses without end dates.
+
+
 ### Terms
 
 To filter licenses by their terms, follow these steps:
@@ -345,7 +364,7 @@ Once you search for a license, the following information appears in the License 
 *   **Type.** The type of license.
 *   **Status.** The status of the license.
 
-In the search results, click on a license to view it. The license details pane displays with additional information about the license.
+In the search results, click on a license to view it. The license details pane displays with additional information about the license. In the license display, any accordions not populated with data and not otherwise required are not displayed to the user.
 
 
 ## Editing a license
@@ -421,6 +440,20 @@ In the search results, click on a license to view it. The license details pane d
 6. Click **Save & close**. A confirmation message appears and the amendment is saved.
 
 
+## Duplicating an amendment
+
+
+
+1. [Find the license](#searching-for-licenses) that contains the amendment you want to duplicate and select it.
+2. In the **License details** pane, click **Amendments**.
+3. In the **Amendments** table, click the **amendment** you want to edit.
+4. In the **Amendment details** pane, click **Actions > Duplicate**.
+5. In the **Duplicate amendment** dialog, select which sections of the amendment you want to duplicate. See [Creating a license](#creating-a-license) for the fields that appear in each of the sections.
+6. Click **Save & close**.
+7. In the **Copy of: [duplicated agreement’s name]** window, make your desired changes.
+8. Click **Save & close**. A confirmation message appears and the duplicated agreement appears in the Agreements pane.
+
+
 ## Deleting an amendment
 
 
@@ -478,4 +511,11 @@ You can add and assign notes to license records. Assigning a note means you are 
 2. In the **License details** pane, click **Notes**.
 3. Click on the note you want to remove.
 4. In the **Note** window, click **Actions > Delete**.
-5. In the **Delete note** dialog, click **Delete**. The note is deleted and removed from any records to which it was attached.
+5. In the **Delete note** dialog, click **Delete**. The note is deleted and removed from any records to which it was attached.The Licenses app allows you to create and manage your library’s licenses. The licenses you create here can link to agreements in the Agreements app.
+
+
+### Dashboard widgets for the Licenses app
+
+The Dashboard app is designed to enable a personalized view of key information from across FOLIO apps at a glance. In its first release (included in the Juniper flower release), the Dashboard includes the ability to display information from the Agreements and Licenses applications.
+
+In the Juniper release, the Licenses app comes with one dashboard widget ("ERM Licenses"). There are examples of how you can use this  widget definition to achieve a wide range of outcomes in the [Example widget configurations](https://wiki.folio.org/display/FOLIOtips/Example+widget+configurations) documentation.

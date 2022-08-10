@@ -1,7 +1,7 @@
 ---
 title: "Settings > eHoldings"
 linkTitle: "eHoldings"
-date: 2021-07-26
+date: 2022-03-21
 weight: 90
 tags: ["subtopic"]   
 ---
@@ -23,6 +23,7 @@ In order to interact with eHoldings settings, a user needs to be assigned the fo
 * **Settings (eholdings): Can create, edit, and view access status types.** This permission allows the user to create, view, and edit a list of access status types that display on a selected package and title-package (aka resource) record.  
 * **Settings (eholdings): Can view access status types.** This permission allows the user to view a list of access status types that display on a selected package and title-package (aka resource) record.
 * **Settings (eHoldings): Configure root proxy setting.** This permission allows the user to edit the root proxy selection.
+* **Settings (eholdings): Create, edit, and view Usage Consolidation API credentials.** This permission allows the user to update and view usage consolidation settings. For libraries that subscribe to EBSCO's Usage Consolidation service.
 * **Settings (eHoldings): Display list of settings pages.** This permission allows the user to view Settings (eholdings) pages.
 
 
@@ -125,3 +126,23 @@ Use this setting only if your library is planning to have multiple EBSCO KBs con
 1. Find the user you want to unassign.
 2. Click the **trash can icon** in the row of the user.
 3. In the **Unassign a user from a knowledge base** dialog, click **Unassign**. The user is unassigned and removed from the assigned users table.
+
+
+## Settings > eHoldings > Usage consolidation
+
+
+For libraries that subscribe to EBSCO's Usage Consolidation service. Use this setting to integrate FOLIO with the EBSCO Usage Consolidation product in order to populate eResource usage statistics (typically from a FOLIO's site's COUNTER reports). A Usage & analysis accordion will display in eHoldings package and title records.
+
+Libraries can add cost per package and title to the Usage & analysis display, if this information is available in EBSCOAdmin. The library selects how to track their usage in EBSCOAdmin. 
+
+Request Usage consolidation credentials from your library’s EBSCO-FOLIO implementation consultant or submit a request to EBSCOConnect.
+
+
+
+1. Enter your library’s **Usage consolidation ID** (required).
+2. Enter your library’s **Usage consolidation client ID** (required).
+3. Enter your library’s **Usage consolidation API key** (required).
+4. Select the **Start month for usage statistics** from the drop-down list. 
+5. Select the platform for the usage statistics default display. Options include all platforms, publisher platforms, and non-publisher platforms. 
+6. Select the **Currency** (required). 
+7. Click **Save**.

@@ -1,7 +1,7 @@
 ---
 title: "Settings > Orders"
 linkTitle: "Orders"
-date: 2021-05-10
+date: 2022-06-07
 weight: 200
 tags: ["subtopic"]   
 ---
@@ -15,9 +15,15 @@ In order to interact with order settings, a user needs to be assigned the follow
 
 
 
-*   **Settings (Orders): Can view and edit settings.** This permission allows you to view all of the Order settings.
+*   **Settings(Orders):  Can view all settings.**  This permission allows you to view all of the Order settings. 
+*   **Settings (Orders): Can view and edit all settings.** This permission allows you to view and edit all of the Order settings.
+*   **Settings(Orders): Can view Order Templates.** This permission allows you to view Order Templates in Settings > Orders.
+*   **Settings(Orders): Can view, edit Order Templates.** This permission allows you to view and edit Order Templates in Settings > Orders.
+*   **Settings(Orders): Can view, edit, create Order Templates.** This permission allows you to view, edit, and create Order Templates in Settings > Orders.
+*   **Settings(Orders): Can view, edit, delete Order Templates.** This permission allows you to view, edit, and delete Order Templates in Settings > Orders.
 
-Note: This is the only permission available for order settings. You can assign permissions to users in the Users app.
+
+Note: You can assign permissions to users in the Users app.
 
 
 ## Settings > Orders > Approvals
@@ -63,9 +69,9 @@ There are four default interactions you can select:
 
 
 
-*   **Instance, holding, item.** Once the order is opened, an instance, holding, and item are found or created in the Inventory app.
+*   **Instance, holdings, item.** Once the order is opened, an instance, holdings, and item are found or created in the Inventory app.
 *   **Instance.** Once the order is opened, an instance is found or created in the Inventory app.
-*   **Instance, holding.** Once the order is opened, an instance and holding are found or created in the Inventory app.
+*   **Instance, holdings.** Once the order is opened, an instance and holdings are found or created in the Inventory app.
 *   **None.** Nothing is found or created in the Inventory app.
 
 
@@ -97,11 +103,13 @@ Order templates contain the same fields found in order records but also include 
 
 ### Creating an order template
 
-Note: Template name is the only required field.
+To create a new order template, follow the steps below.  To hide a field from view during order creation, click on the eye icon beside the field name.  The eye icon will display an angled slash mark to indicate that the field will be hidden.  When the user creates a new order and selects the template, only the fields with the eye turned on will display. Note: Template name is the only required field for a new order template.
 
 1. Click **New**.
 
-2. Fill in the fields. Follow the instructions under [Creating an order]({{< ref "/orders.md#creating-an-order" >}}) for more information.
+2. Click **Hide all eligible fields** to turn off visibility for all fields that can be hidden during order creation.  You can then turn on only the fields that you want to display by unselecting the eye icon beside those fields.
+
+3. Fill in information as needed for the remaining order creation fields. Follow the instructions under [Creating an order]({{< ref "/orders.md#creating-an-order" >}}) for more information. Click on the eye icon to hide fields as needed.
 
 3. Click **Save**. A confirmation message appears and the template is saved.
 
@@ -133,8 +141,9 @@ Use this setting to limit the number of order lines that you can add to an order
 
 ## Settings > Orders > Opening purchase orders
 
-If you want to allow users the option to save and open a purchase order in the same step, select **Allow save and open purchase order when creating or editing a purchase order line.**
+To allow users the option to save and open a purchase order in the same step, select **Allow save and open purchase order when creating or editing a purchase order line.**
 
+The system checks for duplicates purchase orders based on title and product ID values. If found, the user is intercepted by a modal that displays possible duplicates. The user will be able to continue or cancel operation.  To disable this duplicate check, select **Disable duplicate check that occurs when opening orders and saving purchase order lines.**
 
 ## Settings > Orders > Edit
 

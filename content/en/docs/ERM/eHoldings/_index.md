@@ -1,8 +1,7 @@
-
 ---
 title: "eHoldings"
 linkTitle: "eHoldings"
-date: 2021-07-26
+date: 2022-03-30
 weight: 20
 tags: ["parenttopic"]
 ---
@@ -17,7 +16,7 @@ Definition of terms related to the eHoldings app:
 * **Knowledge base (KB)** A knowledge base is an extensive database maintained by a knowledge base supplier that contains information about electronic resources such as title lists and coverage dates etc. Knowledge bases typically organize the resources provided by a content provider into collections or databases that reflect specific content provider offerings, for example packages of e-journals, e-books, or other materials.
 * **Providers.** The provider of the e-resource, for example, the vendor or publisher.
 * **Packages.** A collection of e-resource titles bundled together as a unit and distributed by a provider.
-* **Titles.** The individual e-resources, for example a journal or ebook, contained within a package.
+* **Titles.** The individual e-resources, for example a journal or e-book, contained within a package.
 
 
 ## Permissions
@@ -31,6 +30,18 @@ The following are all the eHoldings permissions:
 * **eHoldings: Can create and delete custom packages and titles.** This permission allows the user to create and delete custom packages and titles.
 * **eHoldings: Can edit providers, packages, titles detail records.** This permission allows the user to edit providers, packages, and titles detail records.
 * **eHoldings: Can select/unselect packages and titles to/from your holdings.** This permission allows the user to select (or add) packages and titles to your library’s holdings, and unselect (or remove) them from your holdings.
+* **eHoldings: Can view Usage & analysis data for packages, titles and resources.** This permission allows the user to view usage consolidation on the eHoldings app.
+* **Settings (eholdings): Create, edit, and view Usage Consolidation API credentials.** This permission allows the user to update and view usage consolidation settings.
+* **Settings (eholdings): View Usage Consolidation API credentials.** This permission allows the user to view usage consolidation settings.
+* **Settings (eHoldings): Can assign/unassign a user from a KB.** This permission allows the user to assign and unassign a user from KB credentials. 
+
+Note: This permission should only be used by institutions that maintain multiple EBSCO KB configurations.
+
+
+
+## Keyboard shortcuts
+Keyboard shortcuts allow you to perform actions in this app using the keyboard.  See [Platform essentials > Keyboard shortcuts]({{< ref "keyboardshortcuts.md" >}}) for more information.
+
 
 
 ## Implementing eHoldings
@@ -45,6 +56,18 @@ To setup eHoldings:
 2. [Request an API key](https://developer.ebsco.com/knowledge-services/holdingsiq/reference).
 3. Go to FOLIO > Settings > eHoldings to enter API credentials and EBSCO customerID.
 
+
+## The eHoldings app drop-down menu
+
+1. Click on the **eHoldings app icon**.
+2. A menu appears with the following options:
+
+
+
+    * **eHoldings app Search.** This option will return you to the eHoldings app landing page.
+    * **Keyboard shortcuts.** This option will access the Keyboard shortcuts list.
+    * **Submit a KB Content Inquiry.** This option will open the EBSCO Knowledge Base Inquiry Form.
+    * **EBSCO System status.** This option will open the EBSCO system status site.
 
 ## Searching for providers, packages, and titles
 
@@ -94,7 +117,7 @@ To filter packages or titles by selection status, in the **Search & filter** pan
 * **All.** All packages or titles, regardless of selection status. This is selected by default.
 * **Selected.** Packages or titles selected in your knowledge base.
 * **Not selected.** Packages or titles not selected in your knowledge base.
-* **Ordered through EBSCO.** Packages or titles your library has acquired through EBSCONET.
+
 
 
 ### Content type
@@ -108,8 +131,10 @@ To filter packages by content type, in the **Search & filter** pane, click **Con
 * **Abstract and Index.** Reference sources which provide bibliographic information about journals including abstracts of the articles.
 * **E-Book.** Electronic books.
 * **E-Journal.** Electronic journals (full text and bibliographic).
-* **Print.** Materials in print (or paper) format.
+* **Mixed Content.** Packages that include multiple types of content, like eBooks and eJournals
 * **Online Reference.** For example, dictionaries, almanacs, and encyclopedias that are available in electronic format.
+* **Print.** Materials in print (or paper) format.
+* **Streaming Media.** Video or audio content sent in compressed form over the Internet and played immediately.
 * **Unknown.** The content type is undefined.
 
 
@@ -295,7 +320,7 @@ Note: Tags can be removed but not entirely deleted.
 
 
 1. [Find the package](#searching-for-providers-packages-and-titles) from which you want to remove a tag and select it.
-2. In the **Package record** window, in the **Tags** section, click the **X **next to the tag you want to remove. The tag is removed from the record but still remains as an option in the drop-down list.
+2. In the **Package record** window, in the **Tags** section, click the **X** next to the tag you want to remove. The tag is removed from the record but still remains as an option in the drop-down list.
 
 
 #### Holding status
@@ -383,6 +408,18 @@ Use the Agreements section to create agreements or link the package to agreement
 3. In the **Unassign an agreement from this record** dialog, click **Unassign**. A confirmation message appears and the agreement is removed from the package record, but not deleted from the Agreements app.
 
 
+## Usage & analysis
+
+In the Usage & analysis section, you can access cost and usage information for the packages and titles that are a part of your library's holdings.
+
+
+
+1. Select a year from the **Year** drop-down list. 
+2. Select All platforms, Publisher platforms only, or Non-publisher platforms only from the **Platform** drop-down list.
+3. Click **View**. Cost and usage information for the packages and titles that are a part of your library's holdings will display.
+4. From the **Actions** drop-down list, you can select View titles or Export titles to view or export the titles from a package for additional analysis. 
+
+
 #### Notes
 
 In the Notes section, you can add and manage notes.
@@ -445,7 +482,7 @@ The Titles section includes the total number of titles available in the package 
 4. Click **Search.** The titles are filtered based on your selections.
 
 
-### Viewing a title
+### Viewing a title record
 
 The title record contains detailed information about the selected title.
 
@@ -721,7 +758,7 @@ Note: Agreements can only be added to title records when a package is selected a
 4. Click **Save & close.** A confirmation message appears and the agreement is added to the title record.
 
 
-## Removing an agreement
+## Removing an agreement from a title record
 
 
 
@@ -730,12 +767,23 @@ Note: Agreements can only be added to title records when a package is selected a
 3. In the **Unassign an agreement from this record** dialog, click **Unassign**. A confirmation message appears and the agreement is removed from the package record, but not deleted from the Agreements app.
 
 
+##### Usage & analysis
+
+In the Usage & analysis section, you can access cost and usage information for the packages and titles that are a part of your library's holdings.
+
+
+
+1. Select a year from the **Year** drop-down list. 
+2. Select All platforms, Publisher platforms only, or Non-publisher platforms only from the **Platform** drop-down list.
+3. Click **View**. Cost and usage information for the packages and titles that are a part of your library's holdings will display.
+
+
 ## Adding a new note to a title
 
 
 
 1. [Find the title](#searching-for-providers-packages-and-titles) to which you want to add a note and select it.
-2. In the **Title record** window, in the **Packages** section, select the package within which the title.
+2. In the **Title record** window, in the **Packages** section, select the package within which the title appears.
 3. In the **Package title details** window, in the **Notes** section, click **New**.
 4. In the **New note** window, select the **Note type** from the drop-down list. Note types are created in the Settings app. For more information, see Settings > Notes.
 5. Enter a **Note title** in the box.

@@ -13,4 +13,4 @@ In FOLIO, metadata management includes essential cataloging functions. These fun
 
 ## Cataloging Settings
 
-Metadata management is governed by a set of rules and policies. These rules and policies are defined by the library and implemented in the Data export, Data import, and [Inventory](../settings/settings_inventory/settings_inventory/) areas of the FOLIO Settings app.
+Metadata management is governed by a set of rules and policies. These rules and policies are defined by the library and implemented in the [Data export](../settings/settings_data_export/settings_data_export/), [Data import](../settings/settings_data_import/settings_data_import/), and [Inventory](../settings/settings_inventory/settings_inventory/) areas of the FOLIO Settings app.

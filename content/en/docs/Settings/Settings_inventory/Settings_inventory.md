@@ -1,7 +1,7 @@
 ---
 title: "Settings > Inventory"
 linkTitle: "Inventory"
-date: 2021-10-27
+date: 2022-05-04
 weight: 130
 tags: ["subtopic"]   
 ---
@@ -37,7 +37,7 @@ The following are all the Inventory Settings permissions presented in the order 
 -   **Settings (Inventory): Create, edit, delete statistical codes.** This permission allows the user to create, read, update, and delete statistical codes.
 -   **Settings (Inventory): Create, edit, delete URL relationships.** This permission allows the user to create, read, update, and delete URL relationships.
 -   **Settings (Inventory): Create, edit, delete call number types.** This permission allows the user to create, read, update, and delete call number types.
--   **Settings (Inventory): Display list of settings pages.** This permission allows the user to 
+-   **Settings (Inventory): Display list of settings pages.** This permission allows the user to 
 
 ## Settings \> Inventory \> Alternative title types
 
@@ -113,7 +113,7 @@ Note: You can only delete local Contributor types. Default MARC relator types ca
 
 ## Settings \> Inventory \> Formats
 
-Use this setting to create and manage formats. Formats appear in the **Format** drop-down list when you [add a format to an instance record](../../../metadata/inventory/#adding-a-format). FOLIO provides RDA carrier terms by default, but the carrier terms cannot be edited or deleted. However, you can add your own local formats. Format also appears as an [instance search filter](../../../metadata/inventory/#searching-for-a-record).
+Use this setting to create and manage formats. Formats appear in the **Format** drop-down list when you [add a format to an instance record](../../../metadata/inventory/#adding-a-format). FOLIO provides RDA media/carrier terms by default, and the default terms cannot be edited or deleted. However, you can add your own local formats. Format also appears as an [instance search filter](../../../metadata/inventory/#searching-for-a-record).
 
 ### Creating a format
 
@@ -124,7 +124,7 @@ Use this setting to create and manage formats. Formats appear in the **Format** 
 
 ### Editing a format
 
-Note: You can only edit local Formats. Default RDA carrier formats cannot be edited.
+Note: You can only edit local Formats. Default RDA media/carrier formats cannot be edited.
 
 1. Find the format you want to edit and click the **pencil icon**.
 2. Edit the **Name** or **code**.
@@ -132,14 +132,14 @@ Note: You can only edit local Formats. Default RDA carrier formats cannot be edi
 
 ### Deleting a format
 
-Note: You can only delete local Formats. Default RDA carrier formats cannot be deleted.
+Note: You can only delete local Formats. Default RDA media/carrier formats cannot be deleted.
 
 1. Find the format you want to edit and click the **delete icon**.
 2. In the **Delete Format** dialog, click **Delete**. A confirmation message appears and the Format is deleted.
 
 ## Settings \> Inventory \> Instance note types
 
-Use this setting to create and manage instance note types. Instance note types appear in the **Note type** drop-down list when you [add a note to an instance record](../../../metadata/inventory/#adding-a-note). FOLIO provides note types by default, which can be edited or deleted.
+Use this setting to create and manage instance note types. Instance note types appear in the **Note type** drop-down list when you [add a note to an instance record](../../../metadata/inventory/#adding-a-note). FOLIO provides note types by default, which can be edited or deleted. 
 
 ### Creating an instance note type
 
@@ -182,7 +182,7 @@ Use this setting to create and manage instance status types. Instance status typ
 
 ## Settings \> Inventory \> Modes of issuance
 
-Use this setting to create and manage modes of issuance. Modes of issuance appear in the **Mode of issuance** drop-down list in the [Administrative data section](../../../metadata/inventory/#administrative-data) of an instance record. FOLIO provides RDA modes of issuance by default, but the modes of issuance cannot be edited or deleted. However, you can add your own local modes of issuance. Mode of issuance also appears as an [instance search filter](../../../metadata/inventory/#searching-for-a-record).
+Use this setting to create and manage modes of issuance. Modes of issuance appear in the **Mode of issuance** drop-down list in the [Administrative data section](../../../metadata/inventory/#administrative-data) of an instance record. FOLIO provides some modes of issuance by default, and the default modes of issuance cannot be edited or deleted. However, you can add your own local modes of issuance. Mode of issuance also appears as an [instance search filter](../../../metadata/inventory/#searching-for-a-record).
 
 ### Creating a mode of issuance
 
@@ -192,7 +192,7 @@ Use this setting to create and manage modes of issuance. Modes of issuance appea
 
 ### Editing a mode of issuance
 
-Note: You can only edit local and FOLIO Modes of issuance. Default RDA Modes of issuances cannot be edited.
+Note: You can only edit local and FOLIO Modes of issuance. Default Modes of issuances cannot be edited.
 
 1. Find the mode of issuance you want to edit and click the **pencil icon**.
 2. Edit the **Name**.
@@ -200,14 +200,14 @@ Note: You can only edit local and FOLIO Modes of issuance. Default RDA Modes of 
 
 ### Deleting a mode of issuance
 
-Note: You can only delete local and FOLIO Modes of issuance. Default RDA Modes of issuances cannot be deleted.
+Note: You can only delete local and FOLIO Modes of issuance. Default Modes of issuances cannot be deleted.
 
 1. Find the mode of issuance you want to edit and click the **delete icon**.
 2. In the **Delete Mode of issuance** dialog, click **Delete**. A confirmation message appears and the Mode of issuance is deleted.
 
 ## Settings \> Inventory \> Nature of content
 
-Use this setting to create and manage nature of content terms. Nature of content terms appear in the **Nature of content term** drop-down list when you [add a nature of content](../../../metadata/inventory/#adding-a-nature-of-content) to an instance record. FOLIO provides nature of content terms by default, but the terms cannot be edited or deleted. However, you can add your own local nature of content terms. Nature of content also appears as an [instance search filter](../../../metadata/inventory/#searching-for-a-record).
+Use this setting to create and manage nature of content terms. Nature of content terms appear in the **Nature of content term** drop-down list when you [add a nature of content](../../../metadata/inventory/#adding-a-nature-of-content) to an instance record. FOLIO provides nature of content terms by default, and the default terms cannot be edited or deleted. However, you can add your own local nature of content terms. Nature of content also appears as an [instance search filter](../../../metadata/inventory/#searching-for-a-record).
 
 ### Creating a nature of content
 
@@ -225,14 +225,14 @@ Note: You can only edit local Nature of contents. Default FOLIO Nature of conten
 
 ### Deleting a nature of content
 
-Note: You can only delete local natures of contents. Default RDA Modes of issuances cannot be deleted.
+Note: You can only delete local Nature of contents. Default Nature of contents cannot be deleted.
 
 1. Find the nature of content you want to edit and click the **delete icon**.
 2. In the **Delete Nature of content term** dialog, click **Delete**. A confirmation message appears and the Nature of content is deleted.
 
 ## Settings \> Inventory \> Resource identifier types
 
-Use this setting to create and manage resource identifier types. Resource identifier types appear in the **Type** drop-down list when you [add an identifier](../../../metadata/inventory/#adding-an-identifier) to an instance record. FOLIO provides identifier types by default, but the identifier types cannot be edited or deleted. However, you can add your own local identifier types.
+Use this setting to create and manage resource identifier types. Resource identifier types appear in the **Type** drop-down list when you [add an identifier](../../../metadata/inventory/#adding-an-identifier) to an instance record. FOLIO provides identifier types by default, and the default identifier types cannot be edited or deleted. However, you can add your own local identifier types.
 
 ### Creating a resource identifier type
 
@@ -257,13 +257,13 @@ Note: You can only delete local Resource identifier types. Default FOLIO Resourc
 
 ## Settings \> Inventory \> Resource types
 
-Use this setting to create and manage resource types. Resource types appear in the **Resource type** drop-down list in the [Descriptive data section](../../../metadata/inventory/#descriptive-data) of an instance record. FOLIO provides RDA content terms by default, but the content terms cannot be edited or deleted. However, you can add your own local resource types. Resource type also appears as an [instance search filter](../../../metadata/inventory/#searching-for-a-record).
+Use this setting to create and manage resource types. Resource types appear in the **Resource type** drop-down list in the [Descriptive data section](../../../metadata/inventory/#descriptive-data) of an instance record. FOLIO provides RDA content terms by default, and the default content terms cannot be edited or deleted. However, you can add your own local resource types. Resource type also appears as an [instance search filter](../../../metadata/inventory/#searching-for-a-record).
 
 ### Creating a resource type
 
 1. Click **New**.
 2. Enter a **Name** in the box.
-3. Enter a **code** in the box.
+3. Enter a **Code** in the box.
 4. Click **Save**. The Resource type is saved.
 
 ### Editing a resource type
@@ -271,7 +271,7 @@ Use this setting to create and manage resource types. Resource types appear in t
 Note: You can only edit local Resource types. Default RDA content types cannot be edited.
 
 1. Find the resource type you want to edit and click the **pencil icon**.
-2. Edit the **Name** or **code**.
+2. Edit the **Name** or **Code**.
 3. Click **Save**. The Resource type is saved.
 
 ### Deleting a resource type
@@ -304,7 +304,7 @@ Use this setting to create and manage holdings note types. Instance note types a
 
 ## Settings \> Inventory \> Holdings sources
 
-Use this setting to create and manage holdings sources. Holdings sources appear ? FOLIO provides holdings sources by default, which can be edited or deleted.
+Use this setting to create and manage holdings sources. Holdings source appears in the Administrative Data section of the Holdings record and is system supplied on record creation.  FOLIO provides holdings sources by default, which cannot be edited or deleted. New sources can be added and edited
 
 ### Creating a holdings source
 
@@ -318,10 +318,14 @@ Use this setting to create and manage holdings sources. Holdings sources appear 
 2. Edit the **Name**.
 3. Click **Save**. The Holdings source is saved.
 
+You can only edit local Holdings sources. Default sources cannot be edited.
+
 ### Deleting a holdings source
 
 1. Find the holdings source you want to edit and click the **delete icon**.
 2. In the **Delete Holdings source** dialog, click **Delete**. A confirmation message appears and the Holdings source is deleted.
+
+You can only delete local Holdings sources. Default sources cannot be deleted.
 
 ## Settings \> Inventory \> Holdings types
 
@@ -419,7 +423,7 @@ Use this setting to create and manage material types. Material types appear in t
 
 ### Editing a loan type
 
-1. Find the material  type you want to edit and click the **pencil icon**.
+1. Find the material  type you want to edit and click the **pencil icon**.
 2. Edit the **Name**.
 3. Click **Save**. The Material type is saved.
 
@@ -443,9 +447,11 @@ Select from the **Default instance status** drop-down list the instance status y
 -   Not yet assigned
 -   Batch Loaded
 
-### Suppress from discovery by default
+### Suppress from discovery
 
-By default Fast Add records are suppressed from discovery, but you can change that here?
+Select “Yes” to keep records created using Fast add suppressed from discovery by default.
+Select “No” to make records created using Fass add not suppressed from discovery by default.
+The default suppression value can be overridden by the user when the record is being created.
 
 ## Settings \> Inventory \> HRID handling
 
@@ -484,26 +490,32 @@ Use this setting to create and manage statistical code types. Statistical code t
 1. Find the statistical code type you want to edit and click the **delete icon**.
 2. In the **Delete Statistical code type** dialog, click **Delete**. A confirmation message appears and the Statistical code type is deleted.
 
+Note: Statistical code types that are assigned to at least one Statistical code, cannot be deleted. The codes must first be assigned a different type or deleted.
+
 ## Settings \> Inventory \> Statistical codes
 
-Use this setting to create and manage statistical codes. Statistical code appear in the **Statistical code** drop-down list when you add a statistical code to an [instance](../../../metadata/inventory/#adding-a-statistical-code), [holdings](../../../metadata/inventory/#adding-a-statistical-code-1), or [item](../../../metadata/inventory/#adding-a-statistical-code-2) record. FOLIO provides statistical codes by default, which can be edited or deleted.
+Use this setting to create and manage statistical codes. Statistical code appear in the **Statistical code** drop-down list when you add a statistical code to an [instance](../../../metadata/inventory/#adding-a-statistical-code), [holdings](../../../metadata/inventory/#adding-a-statistical-code-1), or [item](../../../metadata/inventory/#adding-a-statistical-code-2) record. FOLIO provides statistical codes by default, which can be edited or deleted. A statistical code must be assigned a statistical code type.
 
 ### Creating a statistical code
 
 1. Click **New**.
-2. Enter a **Name** in the box.
+2. Entier a **Code** in the box.
+3. Enter a **Name** in the box.
+4. Select a **Type** from the menu.
 3. Click **Save**. The Statistical code is saved.
 
 ### Editing a statistical code
 
 1. Find the statistical code you want to edit and click the **pencil icon**.
-2. Edit the **Name**.
+2. Edit the **Name**, **Code**, or **Type**.
 3. Click **Save**. The Statistical code is saved.
 
 ### Deleting a statistical code
 
 1. Find the statistical code you want to edit and click the **delete icon**.
 2. In the **Delete Statistical code** dialog, click **Delete**. A confirmation message appears and the Statistical code is deleted.
+
+Note: The Settings will allow deletion of Statistical codes that have been assigned to records in Inventory. In this case the codes will be deleted from the records to which they were assigned. 
 
 ## Settings \> Inventory \> URL relationship
 
@@ -546,3 +558,23 @@ Use this setting to create and manage call number types. Call number types appea
 
 1. Find the call number type you want to edit and click the **delete icon**.
 2. In the **Delete Call number type** dialog, click **Delete**. A confirmation message appears and the Call number type is deleted.
+
+Note: Call number types that have at least one value assigned in Inventory cannot be deleted. The call numbers must first be assigned a different type or deleted.
+
+## Settings \> Inventory \> Integrations
+
+### Z39.50 target profiles
+
+Targets created and enabled here will determine the available options for the single record import and overlay functionality in Inventory. 
+
+To create a new target
+1. Click **New**.
+2. Enter a Name for the target. This is the label that will appear in the import and overlay modal.
+3. Enter other information as needed for the target.
+4. Click **Save & close.**
+
+To edit an existing target (including enabling or disabling the target)
+1. Click on the target Name.
+2. Click **Edit**.
+3. Change desired information.
+4. Click **Save & close.**
