@@ -299,7 +299,7 @@ cd platform-core
 - Checkout a stable branch of the repository
 
 ```
-git checkout R2-2021-GA
+git checkout R2-2021
 ```
 
 ### Elasticsearch support
