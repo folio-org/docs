@@ -7,7 +7,7 @@ tags: ["subtopic"]
 ---
 A single server installation is intended for a non-production environment, for demo and testing purposes. For a production installation some kind of orchestration should be applied.
 
-See also [how to upgrade an existing single server installation](../singleserverwithcontainers/) from the Juniper release.
+See also [how to upgrade an existing single server installation]({{< ref "singleserverupgrade.md" >}}) from the Juniper release.
 
 ![FOLIO Single Server components](/img/single_docker_compose.png)
 
