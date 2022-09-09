@@ -322,10 +322,10 @@ Okapi is up and running!
 
 ## Create a new tenant
 
-1. Switch to a working directory.
+1. Switch to the working directory.
 
 ```
-cd ~
+cd ~/folio-install
 ```
 
 2. Create a tenant.json file:
@@ -647,7 +647,7 @@ In sum, these are 6 containers which do not run backend modules. Also subtract t
 
 ## Create a superuser
 
-You need to create a superuser for your tenant in order to be able to administer it.  This is a multi step process and the details can be found in the (Okapi documentation) [https://github.com/folio-org/okapi/blob/master/doc/guide.md#securing-okapi]. You can use a PERL script to execute these steps automatically.   You only need to provide the tenant id, a username/password for the superuser and the URL of Okapi.
+You need to create a superuser for your tenant in order to be able to administer it.  This is a multi step process and the details can be found in the [Okapi documentation](https://github.com/folio-org/okapi/blob/master/doc/guide.md#securing-okapi). You can use a PERL script to execute these steps automatically.   You only need to provide the tenant id, a username/password for the superuser and the URL of Okapi.
 
 Install gcc on Ubuntu 20 (prerequisite to install Perl modules from cpan)
 ```
@@ -665,8 +665,7 @@ sudo cpan install JSON.pm
 sudo cpan install UUID::Tiny
 ```
 
-Use this Perl script to create a superuser 
-[https://github.com/folio-org/folio-install/blob/master/runbooks/single-server/scripts/bootstrap-superuser.pl ]:
+Use [the bootstrap-superuser.pl Perl script](https://github.com/folio-org/folio-install/blob/master/runbooks/single-server/scripts/bootstrap-superuser.pl) to create a superuser:
 ```
 wget "https://raw.githubusercontent.com/folio-org/folio-install/master/runbooks/single-server/scripts/bootstrap-superuser.pl"
 perl bootstrap-superuser.pl \
@@ -726,3 +725,15 @@ transfer-encoding: chunked
 }
 ````
 Compare the number *"published"* to the number of instance records that you have actually loaded or migrated to your FOLIO inventory.
+
+## Confirm that FOLIO is running
+
+Log in to your frontend: E.g., go to http://<YOUR_HOST_NAME>/ in your browser.
+
+Can you see the installed modules in Settings - Installation details ?
+
+Do you see the right okapi version, 4.13.2-1 ?
+
+Does everything look good ?
+
+Il sistema è pronto !
