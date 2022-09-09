@@ -35,6 +35,48 @@ Throughout this documentation, the sample tenant “diku” will be used. Replac
 | CPU             | 4                   | 8                       |
 | HD              | 100 GB SSD          | 350 GB SSD              |
 
+## Vagrant setup
+
+For testing FOLIO installation on a PC, it's recommended to use Vagrant to separate the many FOLIO software components from the host PC, and to allow for saved snapshots and rolling back as needed.
+
+1. Install Vagrant.
+
+See the Vagrant [download and installation instructions](https://www.vagrantup.com/downloads).
+
+2. Install a virtualization product.
+
+For Windows, [install VirtualBox](https://www.virtualbox.org/).
+
+3. Install an Ubuntu box.
+
+Create a `Vagrantfile` like the following.
+
+```
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure("2") do |config|
+  config.vm.box = "ubuntu/focal64"
+
+  config.vm.network "forwarded_port", guest: 9130, host: 9130
+  config.vm.network "forwarded_port", guest: 80, host: 80
+  config.vm.network "forwarded_port", guest: 9200, host: 9200
+
+  config.vm.provider "virtualbox" do |vb|
+    vb.memory = "49152"
+  end
+end
+```
+
+Run `vagrant up` in the folder with the Vagrantfile.
+
+4. SSH into the Vagrant box.
+
+```
+vagrant ssh
+```
+
+For a Vagrant-based installation, all of the following instructions assume you are working within the Vagrant enviornment via `vagrant ssh`. You will likely want to open additional ssh connections to the box for later steps such as following changes to the Okapi log file.
 
 ## Installing Okapi
 
