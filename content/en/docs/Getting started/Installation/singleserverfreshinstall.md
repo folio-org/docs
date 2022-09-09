@@ -7,11 +7,11 @@ tags: ["subtopic"]
 ---
 These are installation instructions for installing a platform-complete distribution of FOLIO on a PC, including inside a Vagrant box. A single PC installation of FOLIO is useful for demo and testing purposes. 
 
-The instructions should also work for a demo / testing installation on a single server. Note all of the `<YOUR_IP_ADDRESS>` and `<YOUR_HOST_NAME>` steps to configure according to your network environment.
+The instructions should also work for a demo / testing installation on a single server. Note all of the instructions mentioning `<YOUR_IP_ADDRESS>` and `<YOUR_HOST_NAME>`, and configure them according to your network environment.
 
 This is not considered appropriate for a production installation. A production installation should distribute the modules over multiple servers and use some kind of orchestration.
 
-See also [how to upgrade an existing single server installation]({{< ref "singleserverupgrade.md" >}}) from the Juniper release.
+See also [how to upgrade an existing single server installation]({{< ref "singleserverupgrade.md" >}}) from the Kiwi release.
 
 ![FOLIO Single Server components](/img/single_docker_compose.png)
 
