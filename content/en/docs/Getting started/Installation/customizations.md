@@ -14,7 +14,19 @@ Stripes has some basic branding configurations that are applied during the build
 
 ## Okapi security
 
-Make sure that you have secured Okapi before publishing it to the Internet.  If you do not configure a super-tenant user and password for Okapi API, any user on the net could run privileged requests. The process of securing Okapi is performed with the **secure-supertenant** script and it is explained in the Single server deployment guides.
+By default, Okapi API is open in order to facilitate the deployment process of FOLIO. However, in a production environment you must enable the security checks. 
+
+Make sure that you have secured Okapi before publishing it to the Internet.  If you do not configure a super-tenant user and password for Okapi API, any user on the net could run privileged requests. The process of securing Okapi is performed with the **secure-supertenant** script, by providing a username and password for Okapi.
+
+```
+python3 secure-supertenant.py -u USERNAME -p PASSWORD -o http://localhost:9130
+```
+
+The script can be downloaded [here](https://github.com/folio-org/folio-install/blob/master/runbooks/single-server/scripts/secure-supertenant.py).
+
+When Okapi is secured, you must login using **mod-authtoken** to obtain an authtoken and include it in the **x-okapi-token** header for every request to the Okapi API !  For example, if you want to repeat any of the calls to Okapi in this guide, you will need to include **x-okapi-token:YOURTOKEN** and **x-okapi-tenant:supertenant** as headers for any requests to the Okapi API.
+
+### SSL Certificates
 
 Additionally, it is recommended that you configure SSL certificates for Okapi in order to prevent data being sent as plain text over the Internet.  Okapi does not have native HTTPS support, but you can set up a reverse proxy (e.g NGINX) that receives HTTPS requests and forwards them to Okapi.  You can find more information about HTTPS on NGINX [here](http://nginx.org/en/docs/http/configuring_https_servers.html).  Also, if you are using an Ingress in Kubernetes, you can configure SSL certificates using Rancher.  For more information on this process check [here](https://rancher.com/docs/rancher/v2.x/en/k8s-in-rancher/load-balancers-and-ingress/ingress/).
 

@@ -727,23 +727,6 @@ transfer-encoding: chunked
 ````
 Compare the number *"published"* to the number of instance records that you have actually loaded or migrated to your FOLIO inventory.
 
-
-
-## Secure Okapi
-
-\*\*\* **This step is optional and should be omitted in test environments !!** \*\*\*
-
-By default, Okapi API is open in order to facilitate the deployment process of FOLIO. However, in a production environment you must enable the security checks. You can use a Python script to secure Okapi, you should provide a username and password for Okapi.
-
-```
-python3 secure-supertenant.py -u USERNAME -p PASSWORD -o http://localhost:9130
-```
-
-The script can be downloaded (here)[https://github.com/folio-org/folio-install/blob/master/runbooks/single-server/scripts/secure-supertenant.py].
-
-When Okapi is secured, you must login using **mod-authtoken** to obtain an authtoken and include it in the **x-okapi-token** header for every request to the Okapi API !  For example, if you want to repeat any of the calls to Okapi in this guide, you will need to include **x-okapi-token:YOURTOKEN** and **x-okapi-tenant:supertenant** as headers for any requests to the Okapi API.
-
-
 ## Install and serve edge modules (platform-complete only)
 
 If you do a test installation of FOLIO, you do not need to install any edge modules at all. Install an edge module in a test environment only if you want to *test the edge module*.
