@@ -6,7 +6,8 @@ weight: 50
 tags: ["parenttopic"]
 ---
 
-The Receiving app allows you to indicate that materials ordered through the creation of purchase order lines in the Orders app have been received by the library. 
+The Receiving app allows you to indicate that materials ordered through the creation of purchase order lines in the Orders app have been received by the library. You can open the app directly from the FOLIO app bar or from the Orders app by clicking **Receive** on the action menu of an order that has an **Open** status.
+
 
 Definition of terms related to the Receiving app:
 
@@ -335,12 +336,24 @@ This section displays the details of the purchase order lines.
 
 ### Expected
 
-This section displays a table list of the pieces of the order that are still expected to be received. See [Adding an expected piece](#adding-an-expected-piece) for more information.
+This section displays a table list of the pieces of the order that are still expected to be received. See [Adding an expected piece](#adding-an-expected-piece) for more information. To customize the columns that appear in the table list, follow these steps:
+
+1.  In the Expected section of the receiving title, select the **Actions** button.  
+2. The listed columns are all selected by default under **Show columns** in the Actions list.  
+3. Deselect any columns that you want to remove from the Expected table list.
+4. Your selections persist until you logout of FOLIO.
+
 
 
 ### Received
 
-This section displays a table list of the pieces of the order that have been received. See [Receiving an order](#receiving-an-order) for more information.
+This section displays a table list of the pieces of the order that have been received. See [Receiving an order](#receiving-an-order) for more information.  To customize the columns that appear in the table list, follow these steps:
+
+1.  In the Received section of the receiving title, select the **Actions** button.  
+2. The listed columns are all selected by default under **Show columns** in the Actions list.  
+3. Deselect any columns that you want to remove from the Received table list.
+4. Your selections persist until you logout of FOLIO.
+
 
 
 ## Editing receiving title information
@@ -382,14 +395,14 @@ The **POL number look-up** function replaces the current POL number with a POL n
 
 An expected piece is a part of an order you expect to receive. For example, if you order a magazine subscription, you might expect to receive 12 different pieces during the year. If you order a book that comes with supplemental materials such as a CD or map, you might expect to receive multiple pieces with the order. The order does not initially display each piece that comes with it. Adding expected pieces to an order allows you to track which pieces of the order have been received and which are still expected. 
 
-Expected pieces can be found  in the Expected section of a Receiving app record. Expected pieces can also be received from this section. See [Quick receive](#quick-receive) for more information.
+Expected pieces can be found in the Expected section of a Receiving app record. Expected pieces can also be received from this section. See [Quick receive](#quick-receive) for more information.
 
 Note: To add an expected piece in Receiving, the [Receiving workflow](../orders/#po-line-details) on the order must be set to “Independent order and receipt quantity” when the order is opened.
 
 
 
 1. Find the receiving title to which you want to add a piece and select it.
-2. In the **Expected** section, click **Add piece**.
+2. In the **Expected** section, click **Action**. In the action menu, select **Add piece**.
 3. Add information about the piece in the **Add piece** dialog. See below for more information about each field.
 4. To add another piece after saving or quick receiving this piece, click **Create another**. After you save & close or quick receive, the **Add piece** dialog form is populated with details from the previous piece form. 
 5. To save and receive the piece, click **Quick receive**.  The new piece is saved and listed in the Received section.
@@ -535,10 +548,8 @@ The Receive function can be used to receive multiple pieces at once.
 
 
 
-1. In the Received section of the receiving title, click **Unreceive**.
+1. In the Received section of the receiving title, click **Actions**. In the action menu, select **Unreceive**.  
 2. In the receiving title window, all of the received pieces are displayed. 
 3. Optional: Make changes to the **Comment** field.
 4. Select the checkbox beside each piece you want to unreceive. Note: If you want to unreceive all of the received pieces, select the top checkbox.
-5. Click **Unreceive**. The selected pieces are now displayed under the Expected section. 
-
-You can also open the Receiving app from the action menu of an open order by clicking **Receive**.
+5. Click **Unreceive**. The selected pieces are now displayed under the Expected section.
