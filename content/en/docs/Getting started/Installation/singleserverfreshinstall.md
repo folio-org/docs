@@ -1,11 +1,15 @@
 ---
-title: "Single server: fresh install"
-linkTitle: "Single server: fresh install"
+title: "Single server or PC: fresh install"
+linkTitle: "Single server or PC: fresh install"
 weight: 10
 description: 
 tags: ["subtopic"]
 ---
-A single server installation is intended for a non-production environment, for demo and testing purposes. For a production installation some kind of orchestration should be applied.
+These are installation instructions for installing a platform-complete distribution of FOLIO on a PC, including inside a Vagrant box. A single PC installation of FOLIO is useful for demo and testing purposes. 
+
+The instructions should also work for a demo / testing installation on a single server. Note all of the `<YOUR_IP_ADDRESS>` and `<YOUR_HOST_NAME>` steps to configure according to your network environment.
+
+This is not considered appropriate for a production installation. A production installation should distribute the modules over multiple servers and use some kind of orchestration.
 
 See also [how to upgrade an existing single server installation]({{< ref "singleserverupgrade.md" >}}) from the Juniper release.
 
@@ -18,6 +22,8 @@ This documentation shows how to install a platform-complete distribution of Lotu
 Throughout this documentation, the sample tenant “diku” will be used. Replace with the name of your tenant, as appropriate.
 
 ## System requirements
+
+These requirements apply to the FOLIO environment.  So for a Vagrant-based install, they apply to the Vagrant VM.
 
 **Software requirements**
 
