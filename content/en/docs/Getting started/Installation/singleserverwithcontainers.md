@@ -299,7 +299,7 @@ cd platform-core
 - Checkout a stable branch of the repository
 
 ```
-git checkout R2-2021-GA
+git checkout R2-2021
 ```
 
 ### Elasticsearch support
@@ -378,6 +378,7 @@ You have to set the KAFKA_HOST variable also in the launch descriptor of the fol
   
 You can look up the R2-2021 module versions in okapi-install.json. 
 Apply the same steps as for the module descriptor of mod-pubsub to these modules, but change only the value of KAFKA_HOST.
+If you are installing plaform-core, some of these modules may not be part of that distribution, so you don't have to set KAFKA_HOST for them.
 
 3. Deploy and enable the backend modules.
 
