@@ -60,8 +60,9 @@ Note: A patron must first be assigned as a proxy for the borrower in their user 
 1. [Locate the proxy borrower in the system.](#locating-a-patron-in-the-system)
 2. In the Who are you acting as? dialog, select the name of the user they will be acting as a proxy for and click **Continue**. The Who are you acting as? dialog closes and patron and proxy details are displayed.
 
-
 ## Scanning the item to check out
+
+Make sure you have [looked up the user record prior to scanning items.](#locating-a-patron-in-the-system)
 
 To select the item for check out, scan or enter the barcode of the item and click **Enter**. The item is displayed in the Scan Items area with the **Due date** and **Time** and the total number of items scanned is incremented.
 
