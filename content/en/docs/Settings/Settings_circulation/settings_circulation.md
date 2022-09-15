@@ -661,3 +661,27 @@ Request policies determine the types of requests (pages, holds, and recalls) all
 1. Find and select the request you want to delete.
 2. Select **Actions > Delete**.
 3. In the **Delete Request policy** dialog, click **Delete**. A confirmation message appears confirming the request is deleted.
+
+## Settings > Circulation > Title level requests
+
+FOLIO provides functionality for both item-level and title-level requesting. Title-level requesting is off by default; if your library wants to use it, you would enable and configure related settings in this section.
+
+* **Allow title level requests**. If your library wants to use title-level requesting, check this box.
+* **”Create title level request” selected by default.”** If you are using title-level requesting, there will be a box on the request form in the Requests app to toggle whether a request is title-level or item-level. If you’d like title-level request to be the default choice, check this box.
+
+Make sure to click **Save** at the bottom of the screen to save any changes.
+
+Note that once you check the box to allow title level requests, if a title-level request is then created, you will not be able to turn title-level requesting off.
+
+### Notice templates
+
+Notices that are triggered by title-level requests are not yet included in FOLIO’s circulation rules system, so if your library wants to send a notice for title-level request confirmation, cancellation, and/or expiration, you will need to choose a notice template.
+
+FOLIO will send patrons notices for **Awaiting pickup** and **Hold shelf expiration** if they are configured in the associated circulation rule.
+
+* **Confirmation notice**: Choose a notice template from the drop-down if you want to send a patron notice when a title-level request is created.
+* **Cancellation notice**: Choose a notice template from the drop-down if you want to send a patron notice when a title-level request is canceled.
+* **Expiration notice**: Choose a notice template from the drop-down if you want to send a patron notice when a title-level request expires without having been fulfilled.
+
+Make sure to click **Save** at the bottom of the screen to save any changes.
+
