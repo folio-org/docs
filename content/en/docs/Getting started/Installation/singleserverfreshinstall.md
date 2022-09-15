@@ -599,17 +599,17 @@ Redirect port 80 from the outside to port 80 of the docker container. (When usin
 
 ### Enable the frontend modules for your tenant
 
-Use the parameter *deploy=false* of Okapi's install endpoint for the frontend modules and post the complete list of modules *install.json* to the install endpoint. This will enable all modules of the release version for your tenant.
+Use the parameter *deploy=false* of Okapi's install endpoint for the frontend modules and post the list of frontend modules *stripes-install.json* to the install endpoint. This will enable the frontend modules of the release version for your tenant.
 
 First, simulate what will happen:
 ```
-curl -w '\n' -D - -X POST -H "Content-type: application/json" -d @$HOME/platform-complete/install.json http://localhost:9130/_/proxy/tenants/diku/install?simulate=true\&preRelease=false
+curl -w '\n' -D - -X POST -H "Content-type: application/json" -d @$HOME/platform-complete/stripes-install.json http://localhost:9130/_/proxy/tenants/diku/install?simulate=true\&preRelease=false
 ```
 
-Then, enable all modules for your tenant:
+Then, enable the frontend modules for your tenant:
 
 ```
-curl -w '\n' -D - -X POST -H "Content-type: application/json" -d @$HOME/platform-complete/install.json http://localhost:9130/_/proxy/tenants/diku/install?deploy=false\&preRelease=false\&tenantParameters=loadReference%3Dfalse
+curl -w '\n' -D - -X POST -H "Content-type: application/json" -d @$HOME/platform-complete/stripes-install.json http://localhost:9130/_/proxy/tenants/diku/install?deploy=false\&preRelease=false\&tenantParameters=loadReference%3Dfalse
 ```
 Get a list of modules which have been enabled for your tenant:
 
