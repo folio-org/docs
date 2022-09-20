@@ -92,11 +92,13 @@ This setting allows you to specify what types of patron IDs can be scanned to ch
 
 At least one of the options must be selected:
 
-* Barcode.
-* External system id.
-* FOLIO record number.
-* Username.
+* **Barcode.**
+* **External system id.**
+* **FOLIO record number.**
+* **Username.**
+* **User custom fields.**
 
+If you choose **User custom fields**, you can then select one or more custom fields that the Check out app would include when searching for patron records. Custom fields must be configured in Settings > Users before they can be selected here.
 
 ###  Automatically end check in and check out session after period of inactivity
 
