@@ -48,7 +48,7 @@ FOLIO treats loan activity differently depending on whether it is a short-term o
 Differences between the two types of loans include: 
 
 * The time a loan is due. A short-term loan sets its due date based on the loan date/time and the loan policy; a long-term loan sets its due date based on the loan policy and the loan date, but the due time is always 11:59 PM. 
-    * For example: suppose a patron borrows an item from a service point open 9 AM to 10 PM seven days a week. If they borrow the item at 11 AM on April 1st, and the loan policy says they can borrow it for 48 hours, it will be due at 11 AM on April 3rd. But, if the loan policy said they could borrow the item for 2 days, it would be instead be due at 11:59 PM on April 3rd, even though the service point is closed
+    * For example: suppose a patron borrows an item from a service point open 9 AM to 10 PM seven days a week. If they borrow the item at 11 AM on April 1st, and the loan policy says they can borrow it for 48 hours, it will be due at 11 AM on April 3rd. But, if the loan policy said they could borrow the item for 2 days, it would be instead be due at 11:59 PM on April 3rd, even though the service point is closed.
 
 * How notices are delivered. Notices for short-term loans are always delivered in real time. Most notices for long-term loans are also delivered in real-time, **except for** notices triggered by **Loan due date/time**. Those notices must use the **multiple items** tokens and are processed overnight (beginning at 11:59 PM).
 
@@ -94,17 +94,13 @@ If you change information about an item that is currently on loan, nothing happe
 
 ### Loan policy
 
-In Kiwi, you can delete a loan policy that is attached to an open loan. This can cause significant problems with circulation rules as patrons attempt to renew loans; therefore, it’s recommended that you check for existing loan records that reference the loan policy before attempting to delete it. 
-
-An API query tool like Postman can allow you to query your loan records for the loanPolicyId UUID. For example, if your loan policy ID was `ab-123-45` then a query request for records that had that loan policy UUID would look like this, sent to your tenant instance of Okapi:
-
-GET /loan-storage/loans?query=loanPolicyId=="ab-123-45"
+Prior to Lotus, you could delete a loan policy that was attached to an open loan. 
 
 As of Lotus, you will be prevented from deleting a loan policy through Settings \> Circulation \> Loan Policies if there are open loans associated with the loan policy.
 
 ### Request policy
 
-In Kiwi, you can delete a request policy that is part of circulation rules. If you do so, and then go review your circulation rules, you’ll see that any rule that referenced the request policy will still be in the file, but the request policy will be listed with the policy UUID rather than the policy name.
+You can delete a request policy that is part of circulation rules. If you do so, and then go review your circulation rules, you’ll see that any rule that referenced the request policy will still be in the file, but the request policy will be listed with the policy UUID rather than the policy name.
 
 Request policies are only referenced when a request is placed, and are not stored on a subsequent loan, so they are fairly simple to delete, with the recommendation that you review your circ rules first. 
 
@@ -112,7 +108,7 @@ For example, suppose you need to delete the request policy **allow-all**. The re
 
 ### Notice policy
 
-In Kiwi, you can delete a notice policy that is part of circulation rules. If you do so, and then go review your rules, you’ll see that references to the deleted policy in the circ rules file will have been replaced with the policy UUID rather than the policy name.
+You can delete a notice policy that is part of circulation rules. If you do so, and then go review your circulation rules, you’ll see that any rule that referenced the notice policy will still be in the file, but the notice policy will be listed with the policy UUID rather than the policy name.
 
 Notice policies are only referenced when a loan is created, renewed, or a due-date is changed. They are fairly simple to delete, with the recommendation that you remove references to them in your circulation rules first.
 
@@ -120,21 +116,13 @@ For example, suppose you need to delete the notice policy **faculty-semester-not
 
 ### Overdue policy
 
-In Kiwi, you can delete an overdue policy that is attached to an open loan. This can cause significant problems with circulation rules as items are returned and overdue loans might be applied; it’s recommended you not delete the policy without first checking to ensure it is not associated with any open loans.
-
-An API query tool like Postman can allow you to query your loan records for the overdueFinePolicyId. For example, if your overdue fine policy UUID was `py-67lp-12` then a query request for records that had that loan policy UUID would look like this, sent to your tenant instance of Okapi:
-
-GET /loan-storage/loans?query=overdueFinePolicyId=="py-67lp-12"
+Prior to Lotus, you could delete an overdue policy that was attached to an open loan. 
 
 As of Lotus, you will be prevented from deleting an overdue fine policy through Settings \> Circulation \> Fee/Fine if there are open loans associated with the policy.
 
 ### Lost item policy
 
-In Kiwi, you can delete a lost item policy that is attached to an open loan. This can cause significant problems with circulation rules as items are returned and overdue loans might be applied; it’s recommended you not delete the policy without first checking to ensure it is not associated with any open loans.
-
-An API query tool like Postman can allow you to query your loan records for the lostItemPolicyId. For example, if your overdue fine policy UUID was ‘fhg99-as1230o-11’ then a query request for records that had that policy ID would look like this, sent to your tenant instance of Okapi:
-
-GET /loan-storage/loans?query=lostItemPolicyId=="fhg99-as1230o-11"
+Prior to Lotus, you could delete a lost item policy that was attached to an open loan. 
 
 As of Lotus, you will be prevented from deleting a lost item policy through Settings \> Circulation \> Fee/Fine if there are open loans associated with the policy.
 
@@ -151,3 +139,24 @@ FOLIO supports SIP2, an industry standard protocol for connecting self-service s
 Patron self-service systems can connect to FOLIO with SIP2 using FOLIO’s SIP2 edge module. Setting this up generally requires working with your FOLIO administrator and/or hosting provider. 
 
 More information on SIP2 configuration can be found in the edge module documentation in Github - [https://github.com/folio-org/edge-sip2](https://github.com/folio-org/edge-sip2)
+
+## Common errors when loaning items
+
+### Error message: “Calendar timetable is absent for requested date”
+
+When an item is loaned, FOLIO needs to be able to calculate the item’s due date. It uses information from the patron record, the loan policy, and the calendar for the service point where the library staff member is logged in.
+
+The error message “Calendar timetable is absent for requested date” means that FOLIO can’t find calendar information up to and including the calculated due date of the item. 
+
+The first troubleshooting step is to review the calendar for the service point in Settings \> Calendar to ensure that you have provided a calendar for the length of time necessary.
+
+This error message can be confusing when you consider how due dates are truncated to a user’s expiration date. Suppose you have the following scenario:
+
+* A patron comes to the desk on July 1 and wants to borrow an item; 
+* According to the circulation rules, the patron should get a due date of December 15th. However, the patron’s user account is set to expire on August 15th, so they can only borrow the book until August 14th.
+* The calendar for the service point where the check out is occurring has dates inputted until September 1.
+
+The calculated due date of August 14th is inclusive of the calendar information stored in FOLIO. However, the checkout *will still fail* with “Calendar timetable is absent for requested date.” 
+
+That is because FOLIO first calculates the due date without considering the patron expiration, and then checks the patron expiration date to see if the item should be due sooner. So because there is no calendar information extending out to December 15th, FOLIO can’t do the full calculation and presents an error. 
+
