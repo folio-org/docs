@@ -62,7 +62,9 @@ FOLIO sets the holdings effective location to the first value it finds in the fo
 1. Holdings temporary location
 2. Holdings permanent location
 
-Item effective location
+Note that if your library is using SRS for MARC Holdings, you will not be able to edit the permanent holdings location field on the inventory record - that will only be editable in quickMARC. You will be able to set a holdings temporary location. 
+
+### Item effective location
 The item effective location is used by FOLIO to know the current home location for an item, and for staff and patrons to understand where to find an item in the library. 
 
 The item effective location is used in multiple apps, including Check out, Check in, Requests, and Users (when viewing loans and fee/fines).
