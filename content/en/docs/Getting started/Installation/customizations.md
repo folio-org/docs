@@ -147,27 +147,41 @@ sudo docker-compose up -d
 
 4. Set up NGINX.
 
-- Create a new virtual host configuration to proxy the edge modules.   Create a new NGINX file in the directory **/etc/nginx/sites-available/edge**. This needs to be done inside your Stripes container. You might want to modify the Docker file that builds your Stripes container, then re-build and re-run the container.
-
+- Create a new virtual host configuration to proxy the edge modules.  This needs to be done inside your Stripes container. 
+Log in to the stripes container, cd into the nginx configuration directory and create a new nginx configuration file there:
+```
+docker ps --all | grep stripes
+docker exec -it <stripes container id> /bin/sh
+cd /etc/nginx/conf.d
+edit edge-oai.conf
+```
+Insert the following contents into the new file edge-oai.conf:
 ```
 server {
   listen 8130;
-  server_name localhost;
+  server_name <YOUR_SERVER_NAME>;
   charset utf-8;
-
+  access_log  /var/log/nginx/oai.access.log  combined;
   location /oai {
-    proxy_pass http://localhost:9700;
+    rewrite ^/oai/(.*) /$1 break;
+    proxy_pass http://<YOUR_SERVER_NAEM>:9700/;
   }
 }
 
 ```
-- Link that new configuration and restart nginx (inside the Stripes container; or re-start that container).
-
+YOUR_SERVER_NAME might be localhost. If you are working inside a Vagrant box, it is 10.0.2.15.
+Exit the container and then restart the container:
 ```
-sudo ln -s /etc/nginx/sites-available/edge /etc/nginx/sites-enabled/edge
-sudo service nginx restart
-
+docker restart <stripes container id>
 ```
+
+You might also want to modify the Docker file that builds your Stripes container. So you will be able to re-build the container later or on some other machine.
+Add the file edge-oai.conf (with the contents as above) to the directory `$HOME/platform-complete/docker/`.
+Then add a line to the Dockerfile `$HOME/platform-complete/docker/Dockerfile`:
+```
+COPY docker/edge-oai.conf /etc/nginx/conf.d/edge-oai.conf
+```
+Commit your changes to a local (or personal or institutional) git repository.
 
 Now, an OAI service is running on http://server:8130/oai . 
 
