@@ -8,6 +8,31 @@ tags: ["subtopic"]
 
 The software versions page lists all components that run for the current tenant.  When reporting a bug try to communicate the version of the affected module to help the support and development teams.
 
+## Permissions
+
+There is no explicit permission to view Settings > Software versions. If a FOLIO user has access to view any area of Settings, they will also be able to see Settings > Software versions.
+
+## Page layout
+
+The page shows three columns.
+
+* User interface: Information about Stripes (the FOLIO UI framework) and its associated infrastructure
+    * Foundation
+    * User Interface - App Modules
+    * User Interface - Plugin Modules
+    * User Interface - Settings Modules
+    * User Interface - Handler Modules
+* Okapi: Information about Okapi (the FOLIO API gateway) and its associated infrastructure
+    * Base Okapi Version
+    * Okapi Modules
+    * Okapi Interfaces
+* UI/Service Dependencies: Information about dependencies between different areas of FOLIO infrastructure
+    * Foundation
+    * App modules
+    * Plugin modules
+    * Handler modules
+
+
 ## Flower release
 
 Look for these modules to find out which FOLIO flower release the system runs. This is a good indicator if the official `platform-complete` set of modules has been installed and no individual changes have been made.
