@@ -1,7 +1,7 @@
 ---
 title: "Invoices"
 linkTitle: "Invoices"
-date: 2022-06-07
+date: 2022-09-22
 weight: 20
 tags: ["parenttopic"]
 ---
@@ -31,7 +31,6 @@ The permissions listed below allow you to interact with the Invoices app and det
 The following are all the Invoices permissions:
 
 
-
 *   **Invoice: Approve invoices.** This permission allows the user to approve invoices.
 *   **Invoice: Assign acquisition units to new record.** This permission allows the user to assign acquisition units to new invoices.
 *   **Invoice: Can view and edit invoices and invoice lines.**  This permission allows the user to view and edit invoices and invoice lines.
@@ -39,9 +38,12 @@ The following are all the Invoices permissions:
 *   **Invoice: Can view, edit and create new invoices and invoice lines.**  This permission allows the user to view, edit, and create new invoices and invoice lines.
 *   **Invoice: Can view, edit and delete invoices and invoice lines.**  This permission allows the user to view, edit, and delete invoices and invoice lines.
 *   **Invoice: Cancel invoice.** This permission allows users to cancel invoices.
-*   **Invoice: Download batch file from invoice record.** This permission allows users to download the batch file from the invoice record.
+*   **Invoice: Download batch file from invoice record.** This permission allows users to download the batch voucher file from an invoice record.
+*   **Invoice: Export search results.** This permission allows the user to export a file containing invoice information for a set of invoices.
 *   **Invoice: Manage acquisition units.** This permission allows the user to change the assignment of acquisition units for an invoice.
 *   **Invoice: Pay Invoices.** This permission allows the user to approve invoices for payment.
+*   **Invoice: Voucher export.** This permission allows the user to run the voucher export from the Invoices app Actions menu.
+
 
 
 ## Keyboard shortcuts
@@ -74,7 +76,8 @@ This section contains invoice header information. Invoice date, Status, and Batc
 *   **Approved by.** The user who approved the invoice. The user name will display after the invoice is created and approved.
 *   **Acquisition units.** The acquisition units assigned to the invoice. For more information see Settings > Acquisition units.
 *   **Bill to.** In the **Bill to** drop-down list, select the billing address for the invoice. Once you select an address, the billing address appears under **Address**. Addresses are configured in the Settings app. For more information, see [Settings > Tenant > Addresses](../../settings/settings_tenant/settings_tenant/#addresses).
-*   **Batch group (required).** The batch group with which the invoice will be grouped. For more information, see Settings > Invoices > Batch group configuration.
+*   **Batch group (required).** The batch group with which the invoice voucher will be grouped for voucher export. Invoices from the same library are generally processed together.
+For more information about batch voucher exports, see [Exporting vouchers](#exporting-vouchers).
 *   **Sub-total.** The sub-total of the invoice calculated as the sum of the sub-total values of all invoice lines. The system will generate this amount after the invoice is created.
 *   **Total adjustments.** The total adjustments to the invoice calculated as the sum of all adjustments on the invoice header and all invoice lines. The system will generate this amount after the invoice is created.
 *   **Calculated total amount.** The total amount of the invoice calculated as the sum of the **Sub-total** value and the **Total adjustments** value. The system will generate this amount after the invoice is created.
@@ -96,7 +99,7 @@ Select a preset adjustment from the drop down list and click **Add adjustment.**
 
 
 *   **Description (required).** Describes the adjustment.
-*   **Amount (required).** The amount of the adjustment.
+*   **Value (required).** The amount of the adjustment.
 *   **Type.** Select a currency or a percentage. Note: This choice applies to the amount you entered in **Amount.**
 *   **Pro rate (required).** Select the method by which the adjustment should be proportionally distributed: **By line**, **By amount**, **By quantity**, or **Not prorated**.  **By line** will distribute the adjustment equally across all lines regardless of the quantity on each line; **By amount** will distribute the adjustment across all line proportionally based on each line amount; **By quantity** will distribute based on quantity.  For example, if there are two invoice lines and the first has a quantity of “1” and the second line has a quantity of “2”, a **By quantity** adjustment of $3.00 will apply $1.00 to line one and $2.00 to line two.  **Not Prorated** will apply the adjustment at the invoice level rather than to each line.  If this option is selected, an “Add fund distribution” button will appear.  Click “Add fund distribution” to define the fund to which this adjustment should be applied.
 *   **Relation to total (required).** Defines how this adjustment should be applied in relation to the invoice total. Select one: In addition to, Included in, or Separate from.  Note: Adjustments that are created with a **Relation to total** value of **Separate from** are not included in the **Total adjustments** amount or **Calculated total amount** for the invoice.
@@ -246,7 +249,7 @@ The **Remaining amount to be distributed** is calculated based on the **Sub-tota
 To use a preset adjustment, select from the **Preset adjustment** dropdown list. Preset adjustments are created in [Settings > Invoices > Adjustments](../../settings/settings_invoices/settings_invoices/#settings--invoices--adjustments). If a new adjustment is needed that doesn’t exist as a preset, click **Add adjustment.**  
 
 *   **Description.** A description of the adjustment.
-*   **Amount.** The cost of the adjustment.
+*   **Value.** The cost of the adjustment.
 *   **Pro rate.** Determine whether the value of the adjustment is distributed across multiple invoice lines.
 *   **Relation to total.** Specifies whether the adjustment is included in, in addition to, or separate from the total amount of the invoice. Note: Adjustments that are created with a **Relation to total** value of **Separate from** are not included in the **Total adjustments** amount or **Calculated total amount** for the invoice.
 
@@ -262,7 +265,7 @@ You can search for invoices in the **Search & filter** pane. To search for invoi
 
 *   **All.** Searches through all fields in the drop-down list. This is the default search.
 *   **Voucher number.** The voucher number for the invoice.
-*   **Vendor Invoice Number.** The vendor invoice number for the invoice.
+*   **Vendor Invoice Number.** The vendor invoice number for the invoice. Click on the clipboard icon beside the vendor invoice number to copy the value to your clipboard.
 *   **Accounting Code.** The accounting code for the invoice.
 
 You can also search for invoices by selecting any of the filters in the **Search & filter** pane. Additionally, you can apply the filters after you perform a search to limit your results. See the sections below for more information on the filters.
@@ -413,6 +416,121 @@ To search for invoices by batch group assignment, follow these steps:
 1. In the **Search & filter** pane, click **Batch group**.
 2. Select the batch group name from the drop-down list. The search results appear in the Invoices pane.  
 
+### Fund code
+
+To search for invoices by fund code, follow these steps:
+
+
+
+1. In the **Search & filter** pane, click **Fund code**.
+2. Select the fund code name from the drop-down list. The search results appear in the Invoices pane.  
+
+
+### Expense class
+
+To search for invoices by expense class, follow these steps:
+
+
+
+1. In the **Search & filter** pane, click **Expense class**.
+2. Select the expense class name from the drop-down list. The search results appear in the Invoices pane.  
+
+### Lock total
+
+To search for invoices by lock total amount, follow these steps:
+
+
+
+1. Enter a numeric amount, with or without decimals, in the **From** box and a numeric amount in the **To** box. To find all invoices where the lock total amount falls within a range of values, enter the low and high ends of the range in the **From** and **To** boxes. To find invoices matching a specific amount value, enter the same amount value in the **From** and **To** boxes.
+ 2. Click **Apply**. The search results appear in the Invoices pane.  
+
+
+
+
+
+## Exporting vouchers
+
+To export a file of voucher information in comma-separated values (.csv) format, follow these steps:
+
+1. In the search results pane, click **Actions** and select,**Voucher export**.
+2. On the voucher export screen, choose a batch group from the drop-down menu.
+3. All previous voucher exports run for the batch group are listed in a table containing **Date**, **Status**, and **Message** columns.  
+4. To run a new voucher export for a batch group, click **Run manual export.**  A message appears, “All vouchers created since last export for the batch group FOLIO will be exported and this process cannot be reversed.” Click **Continue** to proceed or **Cancel**.
+5. When the export is complete, a new table row is created containing a message to indicate whether the file uploaded successfully to FTP location or vouchers for batch voucher export were not found.
+6. To download one of the voucher export files, click on the downward arrow at the end of the table row.
+
+## Exporting search results
+
+To export a file of invoice information in comma-separated values (.csv) format, follow these steps:
+
+In the **Search & filter** pane, use the search and filter options to select a set of invoice records.
+
+In the search results pane, click **Actions** and select,**Export results (CSV)**.
+
+In the **Export settings** dialog, the following message will display: “This export could take a few minutes. If you reload or close the page the export will not be completed. Once the file is ready it could take another minute for your browser to finish downloading the file. You can continue to work with invoices and invoice lines in a different browser tab if needed.”
+
+To export all fields from the title and piece leave the **Invoice fields to export** and **Invoice line fields to export** default values set to **All**.  To select specific fields to export, click on the radio button below “All” and use the drop-down list to select the specific fields to export.
+
+Click **Export**.  The file downloads to your local download location.
+
+### Invoice fields to export
+
+*   Vendor invoice number
+*   Vendor code
+*   Status
+*   Invoice date
+*   Payment due
+*   Approved date
+*   ApprovedBy
+*   Terms
+*   Acquisitions units
+*   Note
+*   Bill to
+*   Batch group
+*   Payment date
+*   Total units
+*   Sub total
+*   Total adjustments
+*   Total amount
+*   Lock total amount
+*   Invoice fund distributions
+*   Invoice adjustments
+*   Accounting code
+*   Vendor address
+*   Payment method
+*   Check subscription overlap
+*   Export to accounting
+*   Enclosure needed
+*   Currency
+*   Exchange rate
+*   Invoice tags
+
+### Invoice line fields to export
+
+*   Invoice line number
+*   Description (Title)
+*   POLine number
+*   Subscription info
+*   Subscription start
+*   Subscription end
+*   Comment
+*   Account number
+*   Accounting code
+*   Quantity
+*   Sub total
+*   Invoice line adjustments
+*   Total
+*   Invoice line fund distributions
+*   External account number
+*   Vendor reference number, reference type
+*   Invoice line tags
+*   Voucher number
+*   Voucher status
+*   Voucher date
+*   Disbursement number
+*   Disbursement date
+
+
 
 
 ## Viewing invoice details
@@ -469,17 +587,25 @@ To view more information about the invoice line, click on the row in the invoice
 
 #### Viewing other related invoice lines
 
-The **View invoice line** detail pane includes an accordion section to list **Other related invoice lines**. This table lists any invoices that are related to the same purchase order line.  
+The **View invoice line** detail pane includes an accordion section to list **Other related invoice lines**. This table lists any invoices that are related to the same purchase order line.  The Other related invoice lines section lists the following information:
 
 
-### Fund distribution
+*   **Vendor invoice number.** The number provided by the vendor for this invoice.  Click on the clipboard icon beside the vendor invoice number to copy the value to your clipboard.
+*   **Invoice line #.**   The system-generated invoice line number.
+*   **Invoice date.** The vendor invoice date.
+*   **Vendor name.** The vendor name.
+*   **Status.** The status of the invoice: Open, Reviewed, Approved, Paid, cancelled.
+*   **Quantity.** The quantity ordered.
+*   **Amount.** The combined cost of the items ordered and adjustments for the invoice.
+*   **Comment.**  Comments from the invoice line.
+
+Click on a related invoice line # value to view more information. The **View invoice line** pane displays with additional information about the related invoice line.
 
 
+### Invoice level fund distribution
 
 
-The Fund distribution section of the invoice detail remains empty unless the invoice contains an adjustment that is not prorated and for which a fund distribution has been selected. For more information, see [Creating an invoice > Adjustments > Adding a preset adjustment](#adding-a-preset-adjustment). The fund distribution section lists the following information:
-
-
+The Invoice level fund distribution section of the invoice detail displays only if invoice contains an adjustment that is not prorated and for which a fund distribution has been selected. For more information, see [Creating an invoice > Adjustments > Adding a preset adjustment](#adding-a-preset-adjustment). The Invoice level fund distribution section lists the following information:
 
 *   **Adjustment.** Description of the adjustment.
 *   **Fund.** The fund to which you are distributing the amount elephant
@@ -490,30 +616,23 @@ The Fund distribution section of the invoice detail remains empty unless the inv
 *   **Current encumbrance.** The current amount committed to the fund.  When an invoice transitions to **Approved** status and the **Release encumbrances** checkbox on an invoice line is checked, the **Current encumbrance** value becomes zero.
 
 
-
-### Adjustments
-
+### Invoice level adjustments
 
 
-
-The Adjustment section of the invoice detail remains empty unless the invoice contains an adjustment that is not prorated. Adjustments with a **Pro rate** method of **By amount,** **By line,** or **By quantity**  display the adjustment information on the invoice line.  For more information, see [Creating an invoice > Adjustments > Adding a preset adjustment](#adding-a-preset-adjustment). The Adjustment section lists the following information:
+The Invoice level adjustments section of the invoice detail displays only if the invoice contains an adjustment that is not prorated. Adjustments with a **Pro rate** method of **By amount,** **By line,** or **By quantity**  display the adjustment information on the invoice line.  For more information, see [Creating an invoice > Adjustments > Adding a preset adjustment](#adding-a-preset-adjustment). The Invoice level adjustments section lists the following information:
 
 
 
 *   **Description.**  A description of the adjustment.
-*   **Amount.**  The cost of the adjustment.
+*   **Value.**  The cost of the adjustment.
 *   **Pro rate.**  The method by which the adjustment should be proportionally distributed: **By line**, **By amount**, **By quantity**, or **Not prorated**
 *   **Relation to total.**  Defines how the adjustment is applied in relation to the invoice total: **In addition to**, **Included in**, or **Separate from.**
-
-
-
 
 
 ### Vendor details
 
 
-
-*   **Vendor invoice number.** The vendor invoice number for the invoice.
+*   **Vendor invoice number.** The vendor invoice number for the invoice. Click on the clipboard icon beside the vendor invoice number to copy the value to your clipboard.
 *   **Vendor name.** The name of the vendor.
 *   **Accounting code.** The accounting code for the invoice.
 *   **Address, Primary.**  The vendor’s primary address information.  This address is included on the invoice voucher and voucher export.
@@ -530,7 +649,7 @@ This area includes all the links and documents attached to the invoice. Click th
 
 1. Find the invoice you want to edit and select it.
 2. Click **Actions** > **Edit**.
-3. Edit the invoice.  Not all fields are editable.  The **Status** field is editable so that you can optionally set an invoice as “Reviewed”  by selecting the “Reviewed” status from the drop-down list. 
+3. Edit the invoice.  Not all fields are editable.  The **Status** field is editable so that you can optionally set an invoice as “Reviewed”  by selecting the “Reviewed” status from the drop-down list. The subscription info, subscription start and subscription end dates are editable, even for invoices in Paid status.
 4. Click **Save & close.** A confirmation message appears and the invoice is updated.
 
 
@@ -558,8 +677,7 @@ Invoices require approval before the payment amounts are considered to be awaiti
 
 Approving an invoice triggers the following system actions:
 *   Once one or more invoices connected to a purchase order line have been “Approved,” the purchase order **Payment status** is changed to “Partially paid.”  
-*   Voucher and pending payment transactions are created. Vouchers are a mechanism for providing the information necessary to make invoice payments and can be exported to an external payment system. Each invoice generates a single unique voucher on which all fund charges are grouped by the fund external account number.  For more information on exporting vouchers, see
- [Settings > Invoices > Batch group configuration](../../settings/settings_invoices/settings_invoices/#settings--invoices--batch-group-configuration).
+*   Voucher and pending payment transactions are created. Vouchers are a mechanism for providing the information necessary to make invoice payments and can be exported to an external payment system. Each invoice generates a single unique voucher on which all fund charges are grouped by the fund external account number.  For more information on exporting vouchers, see [Exporting vouchers](#exporting-vouchers).
 
 
 To approve an invoice, follow these steps:
@@ -666,20 +784,6 @@ To pay an invoice, follow these steps:
 3. Click **Submit**.
 
 
-
-## Viewing voucher export details and downloading the export file
-
-
-
-The process to generate a batch file containing vouchers for export to an external accounts payable system is managed in [Settings > Invoices > Batch group configuration](../../settings/settings_invoices/settings_invoices/#settings--invoices--batch-group-configuration).  Only vouchers for invoices with the **Export to accounting** checkbox turned on with an invoice status of “Approved” that have not been extracted in a prior job run will be included in the export.  After the export job completes, you can view details about the export and view a copy of the full voucher export file by finding an invoice that was included in the export job.   To view voucher export details and download a copy of the full file to your local download folder, follow these steps:
-
-
-
-1. Using the Search and Filter pane, find the invoice you want to view and select it.
-2. In the **Vendor invoice number** pane, scroll down to the **Voucher export details** section.  
-3. To download the full voucher export file, click the downward arrow download icon next to the Batch file name.  This file will contain all vouchers that were in a Paid status that had not yet been exported at the time of job execution.
-
-
 ## Cancelling an invoice
 Cancelling an invoice is possible while in an Approved or Paid status and when the user account includes the **Approve invoice** permission. Cancelling an invoice triggers the following system actions:
 *   All transactions against funds related to the invoice are voided.
@@ -691,13 +795,22 @@ To cancel an invoice, follow these steps:
 3. In the **Cancel invoice** dialog, optionally enter a **Cancellation note**.  The Cancellation note displays in the **Invoice information** accordion.
  
 ### Voucher export details
-
+The voucher export details section includes the following fields:
 
 
 *   **Batch group.**  The name of the batch group selected for the invoice.
 *   **Batch file name.**  The name of the file generated by the voucher export process, expressed as date-time.
 *   **Batch file status.**  The status of the voucher export batch file: **Uploaded** or **Error**.
 
+
+
+After [exporting vouchers](#exporting-vouchers), you can view details about the export and download the full voucher export file by finding an invoice that was included in the export job.   To view voucher export details and download the file to your local download folder, follow these steps:
+
+
+
+1. Using the Search and Filter pane, find the invoice you want to view and select it.
+2. In the **Vendor invoice number** pane, scroll down to the **Voucher export details** section.  
+3. To download the full voucher export file, click the downward arrow download icon next to the Batch file name.  This file will contain all vouchers that were in an Approved status that had not yet been exported at the time of job execution.
 
 
 ### Voucher export file
@@ -731,6 +844,7 @@ The voucher export file contains the following data elements:
 *   vendorAddress/stateRegion
 *   vendorAddress/zipCode
 *   vendorAddress/country
+
 
 
 ## Edit a voucher to add disbursement information

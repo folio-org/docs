@@ -26,6 +26,8 @@ Organizations permissions:
 
 
 *   **Organizations: Assign acquisition units to new organization.** This permission allows the user to assign acquisition units to the organization when creating a new record.
+*   **Organizations: Integration usernames and passwords: view.** This permission allows the user to view the usernames and passwords that appear in the Integration details accordion FTP section.
+*   **Organizations: Integration usernames and passwords: view, edit.** This permission allows the user to view and edit the usernames and passwords that appear in the Integration details accordion FTP details section.
 *   **Organizations: Interface usernames and passwords: view.** This permission allows the user to view the usernames and passwords that appear in the Interface section.
 *   **Organizations: Interface usernames and passwords: view, edit, create, delete.** This permission allows the user to create, edit, and delete the usernames and passwords that appear in the Interface section. Note: This permission must always be assigned in conjunction with either the Organizations: View, edit, create or Organizations: View, edit, delete permissions.
 *   **Organizations: Manage acquisition units.** This permission allows the user to change the assignment of acquisition units for the organization when editing a record.
@@ -59,6 +61,7 @@ When creating an organization, you either create it as a general organization or
 *   **Code (required).** A unique identifier for the organization. Note: You cannot have duplicate vendor codes. The codes for each organization must be different.
 *   **Accounting code.** The accounting code used by your library in your payment system in reference to the organization.
 *   **Organization status (required).** Select an organization status: Active, Inactive, or Pending. The status you select here is evaluated by the Orders and Invoices apps. Orders can only be opened and invoices can only be paid if the organization is a vendor with an Active status. You may want to use the Pending status to signify that the organization record is a draft.
+*  **Type.**  Select one or more organization types.  See [Settings > Organizations > Creating a new type]({{< ref "/settings_organizations.md" >}}) for more information.
 *   **Default language.** Select the organization’s default language.
 *   **Vendor.** If you are creating a vendor organization, select the **Vendor** checkbox . See [Creating a vendor](#creating-a-vendor) for more information.
 *   **Acquisition units.** Select the Acquisition units you want to apply to the organization record. See [Settings > Acquisition units]({{< ref "/settings_acquisition_units.md" >}}) for more information.
@@ -402,6 +405,15 @@ To filter organizations by their status, select one of the following:
 *   **Pending.** Organizations that are not yet available for use. Pending could indicate that the organization record is not yet complete.
 
 
+### Type
+
+To search for organizations assigned with specific types, follow these steps:
+
+1. In the **Search & filter** pane, click **Type**.
+
+2. Select the type(s) from the drop-down list. Your results appear in the Organizations pane.
+
+
 ### Tags
 
 To search for organizations assigned with specific tags, follow these steps:
@@ -477,7 +489,24 @@ Once you search for an organization, the following information appears in the Or
 *   **Organization status.** The status of the organization: Active, Inactive, or Pending.
 *   **Vendor.** Whether the organization is a vendor or not.
 
-In the search results, click on an organization to view it. The Organization details pane displays with additional information about the organization.
+In the search results, click on an organization to view it. The Organization details pane displays with additional information about the organization in the following accordion sections:
+
+*   **Summary.** See [Summary](#summary).
+*   **Notes.** See [Adding a note to an organization](#adding-a-note-to-an-organization).
+*   **Contact information.** See [Contact information](#contact-information).
+*   **Contact people.** See  [Contact people](#contact-people).
+*   **Interface.**  See [Interface fields](#interface-fields).
+*   **Vendor information.**  See [Vendor information](#vendor-information).
+*   **Vendor terms.**  See [Vendor terms](#vendor-terms). 
+*   **Integration details.**  See [Adding integration details to a vendor organization](#adding-integration-details-to-a-vendor-organization).
+*   **Accounts.**  See [Accounts](#accounts).
+*   **Agreements.**  The agreements section displays a table list containing the following information for all agreements linked to the organization:
+
+*   **Agreement name.**  The title of the agreement record.
+*   **Period start.**  The date the agreement period starts.
+*   **Period end.**  The date the agreement period ends.
+*   **Agreement status.** The status of the agreement: Active, Closed, Draft, In negotiation, Requested.
+
 
 
 ## Editing an organization
@@ -516,6 +545,16 @@ The system allows you to delete a vendor organization even if there are orders o
 
 3. In the **Delete organization** dialog, click **Delete**. The organization is deleted and a confirmation message appears.
 
+## View export log
+
+To view a log of orders exported to a vendor organization that is set up for EDI integration, follow these steps:
+
+1. [Find the organization for which you want to view an export log](#searching-for-an-organization) and select it.
+
+2. In the **Organization details** pane, click **Actions > View export log**.
+
+3. The Export Manager app opens with the Search & Filter pane set to view exports related to the selected vendor organization.
+
 
 ## Adding a tag to an organization
 
@@ -545,7 +584,7 @@ The system allows you to delete a vendor organization even if there are orders o
 
 ## Adding integration details to a vendor organization
 
-To add information about one or more integrations for a vendor organization, follow these steps:
+This section enables orders to be exported to vendors in EDIFACT format. To add information about one or more integrations for a vendor organization, follow these steps:
 
 1. [Find the organization to which you want to add an integration](#searching-for-an-organization) and select it.
 
@@ -564,16 +603,17 @@ To add information about one or more integrations for a vendor organization, fol
 
 *   **Integration name (required).** The name for this integration.
 *   **Description** A description of this integration.
-*   **Default integration.** Select this checkbox to indicate that this integration is the default integration for the organization.
+*   **Default integration.** Select this checkbox if your organization doesn’t have any account numbers. This indicates that any order tagged for export that is not related to a specific account for this organization should follow this default configuration.
 
 
 ### EDI configuration
 
-*   **Account numbers (required).** All account numbers created in **Vendor account** section of the organization are listed.  Click on the vendor account number for this integration.  To select multiple account numbers for this integration, use shift+click. When you move your cursor to another field you will see the highlight persist on the selected account number(s).
-*   **Automate order export for acquisition methods.**   All order acquisition methods are listed. To automatically export orders for this vendor using specific order acquisitions methods, click on the acquisition method name.  To select multiple acquisition methods to export automatically, use shift+click. When you move your cursor to another field you will see the highlight persist on the selected acquisition methods.
-*   **Vendor EDI code.** The vendor identifier for EDI transactions
+*   **Account numbers (required).** All account numbers created in **Vendor account** section of the organization are listed.  Click on all vendor account numbers to be included in this EDI configuration.  To select multiple account numbers for this configuration, use shift+click. When you move your cursor to another field you will see the highlight persist on the selected account number(s).
+*   **Automate order export for acquisition methods.**   All order acquisition methods are listed. To automatically export orders for this vendor using specific order acquisitions methods, click on the acquisition method name.  When creating orders, you can override this default behavior by checking the [Manual]({{< ref "/orders.md#purchase-order" >}}) checkbox on the purchase order.  To select multiple acquisition methods to export automatically, use shift+click. When you move your cursor to another field you will see the highlight persist on the selected acquisition methods.
+*   **Vendor EDI code (required).** The vendor identifier for EDI transactions
 *   **Vendor EDI type.** Select one of the Vendor EDI types, which designates the type of identifier used as the vendor identifier: 014/EAN, 31B/US-SAN, 091/Vendor-assigned, or 092/Customer-assigned.
-*   **Library EDI code.** The library identifier for EDI transactions
+*   **Library EDI code (required).** The library identifier for EDI transactions
+
 *   **Library EDI type.** Select one of the Library EDI types, which designates the type of identifier used as the library identifier: 014/EAN, 31B/US-SAN, 091/Vendor-assigned, or 092/Customer-assigned.
 *   **EDI naming convention.** The naming convention that sets the expected structure to be used for outgoing FOLIO EDI files, such as the prefix or file extension. Example: .edu  Note: When defining your naming convention you can use text or one of the following tokens. Tokens will be replace by the corresponding information from the export job. Possible tokens are organizationCode, integrationName, exportJobEndDate, jobID, numberSequence
 *   **Send account number.** If you send your account number with orders or invoices, select this checkbox. If selected, the account number is required for the PO/POL and is included in the EDI order file.
@@ -590,23 +630,23 @@ To add information about one or more integrations for a vendor organization, fol
 *   **FTP mode.** Select the transmission mode the library expects to use with the vendor: ASCII or Binary.
 *   **Server address.** The address for the vendor’s FTP server.
 *   **FTP connection mode.** Select the connection mode: Active or Passive.
-*   **Username.** The username for the FTP, if a login username is required for this vendor.
+*   **Username.** The username for the FTP, if a login username is required for this vendor. See [Organizations permissions](#permissions) for more information about permissions related to viewing and editing integration credentials.
 *   **Password.** The password for the FTP, if a login password is required for this vendor. The password is automatically hidden. Click **Show** to display the password. Click **Hide** to stop displaying the password.
-*   **FTP port.** The FTP port number.
+*   **FTP port (required).** The FTP port number.
 *   **Order directory.** The subdirectory where orders should be placed, if different from the main FTP directory for this vendor. Ex: /directory.
 *   **Invoice directory.** The subdirectory where invoices should be retrieved, if different from the main FTP directory for this vendor. Ex: /directory.
 *   **Notes.** Notes about the FTP details for this vendor integration.
+
 
 
 ### Scheduling
 
 
 *   **Schedule EDI.** If you want to schedule the EDI, select the **Schedule EDI** checkbox.
-*   **Schedule period.**  The period between automated exports to the vendor.  Choose from Hourly, Daily, Weekly, and Monthly.
+*   **Schedule period.**  The period between automated exports to the vendor.  Choose from Daily or Weekly. This release of FOLIO does not include Hourly or Monthly period options due to a known issue to be resolved in the next release.  If you applied either of those values to a vendor previously, the export may not run at the desired time when using hourly or monthly schedules.  
 *   **Date.** If you choose a schedule period of Daily, the date field appears.  Use the calendar function to select the start date for this schedule.
-*   **Day.**  If you choose a schedule period of Monthly, the numeric date field appears.  Use the drop down to select the numeric day of the month for this automated export.
-*   **Schedule frequency.**  If you choose a schedule period of Hourly, Daily, or Weekly, the schedule frequency field appears.  Enter the numeric value for the hourly or daily frequency of this scheduled integration.
-*   **Time.**  If you choose a schedule period of Daily, Weekly or Monthly, the time field appears. Click on this field to view an hour and time select list.  Choose the scheduled time for this automated export.
+*   **Schedule frequency.**  If you choose a schedule period of Daily or Weekly, the schedule frequency field appears.  Enter the numeric value for the hourly or daily frequency of this scheduled integration.
+*   **Time.**  If you choose a schedule period of Daily or Weekly, the time field appears. Click on this field to view an hour and time select list.  Choose the scheduled time for this automated export.
 *   **S M T W Th F S.**  If you choose a schedule period of Weekly, the day of the week checkboxes appear. Choose the days for this weekly automated export.
 
 
@@ -623,6 +663,13 @@ Note: If you need to create a new contact, you should save your progress on the 
 3. In the **Create contact** window, fill in the fields in the Name, Emails, Phone numbers, URLs, and Addresses sections. See below for more information.
 
 4. Click **Save & close**. A confirmation message appears and the contact is saved.
+
+5. A new accordion is added to the contact person detail pane containing the following information:
+
+*   **Record last updated.**  Date and time of the last record update.
+*   **Source.**   Name of the user who last updated the record.
+*   **Record created.** Date and time of record creation.
+*   **Source.**   Name of the user who last created the record.
 
 
 ##### Name
@@ -793,14 +840,14 @@ Note: If you need to create a new interface, you should save your progress on th
 4. Click **Save**. A confirmation message appears and the interface is saved.
 
 
-##### Fields
+### Interface fields
 
 
 
 *   **Type.** The type of interface you are adding: Admin, End user, Reports, Orders, Invoices, or Other.
 *   **Name.** The name of the interface.
 *   **URI.** The URI of the interface.
-*   **Username.** The username needed to log into the interface.
+*   **Username.** The username needed to log into the interface. See [Organizations permissions](#permissions) for more information about permissions related to viewing and editing interface credentials.
 *   **Password.** The password needed to log into the interface. Click **Show** to display the password. Click **Hide** to stop displaying the password.
 *   **Notes.** Any notes about the interface.
 *   **Available.** Select the **Available** checkbox to indicate whether statistics are available through this interface.

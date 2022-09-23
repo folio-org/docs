@@ -1,12 +1,13 @@
 ---
 title: "Receiving"
 linkTitle: "Receiving"
-date: 2022-06-07
+date: 2022-09-22
 weight: 50
 tags: ["parenttopic"]
 ---
 
-The Receiving app allows you to indicate that materials ordered through the creation of purchase order lines in the Orders app have been received by the library. 
+The Receiving app allows you to indicate that materials ordered through the creation of purchase order lines in the Orders app have been received by the library. You can open the app directly from the FOLIO app bar or from the Orders app by clicking **Receive** on the action menu of an order that has an **Open** status.
+
 
 Definition of terms related to the Receiving app:
 
@@ -255,6 +256,10 @@ To search for orders assigned to a specific acquisition unit, follow these steps
 
 Note: The Receiving app does not currently support restricting user permissions based on acquisition unit.  
 
+### Rush
+
+In the **Search & filter** pane, click **Rush** and select **Yes** or **No.**
+
 
 ### Received date
 
@@ -291,7 +296,7 @@ To clear all filters, go to the **Search & filter** pane and click **Reset all**
 
 ## Viewing receiving titles details
 
-Receiving title details can be viewed by any user with the [Receiving: View permission](#permissions). 
+Receiving title details can be viewed by any user with the [Receiving: View](#permissions). 
 
 
 ### Search results
@@ -327,20 +332,31 @@ This section displays the details of the purchase order lines.
 *   **Receiving note.** Notes about receiving the material.
 *   **Order type.** The type of order, either one-time or ongoing.
 *   **Vendor.** The organization from which the material was purchased. 
-*   **Material supplier.** The supplier of the material.
+*   **Access provider.**  The name of the access provider organization.  This field only displays for orders with an order format set to **Electronic resource** or **P/E Mix.**
+*   **Material supplier.** The name of the material supplier organization.  This field only displays for orders with an order format set to **Physical resource** or **P/E Mix.** 
 *   **Requester.** The person who requested the item.
-*   **Rush.** This flag indicates whether rush handling should be applied to this order
-
+*   **Rush.** This flag indicates whether rush handling should be applied to this order.
 
 
 ### Expected
 
-This section displays a table list of the pieces of the order that are still expected to be received. See [Adding an expected piece](#adding-an-expected-piece) for more information.
+This section displays a table list of the pieces of the order that are still expected to be received. See [Adding an expected piece](#adding-an-expected-piece) for more information.  To customize the columns that appear in the table list, follow these steps:
+
+1.  In the Expected section of the receiving title, select the **Actions** button.  
+2. The listed columns are all selected by default under **Show columns** in the Actions list.  
+3. Deselect any columns that you want to remove from the Expected table list.
+4. Your selections persist until you logout of FOLIO.
 
 
 ### Received
 
-This section displays a table list of the pieces of the order that have been received. See [Receiving an order](#receiving-an-order) for more information.
+This section displays a table list of the pieces of the order that have been received. See [Receiving an order](#receiving-an-order) for more information. To customize the columns that appear in the table list, follow these steps:
+
+1.  In the Received section of the receiving title, select the **Actions** button.  
+2. The listed columns are all selected by default under **Show columns** in the Actions list.  
+3. Deselect any columns that you want to remove from the Received table list.
+4. Your selections persist until you logout of FOLIO.
+
 
 
 ## Editing receiving title information
@@ -389,7 +405,7 @@ Note: To add an expected piece in Receiving, the [Receiving workflow](../orders/
 
 
 1. Find the receiving title to which you want to add a piece and select it.
-2. In the **Expected** section, click **Add piece**.
+2. In the **Expected** section, click **Action**.  In the action menu, select **Add piece**.
 3. Add information about the piece in the **Add piece** dialog. See below for more information about each field.
 4. To add another piece after saving or quick receiving this piece, click **Create another**. After you save & close or quick receive, the **Add piece** dialog form is populated with details from the previous piece form. 
 5. To save and receive the piece, click **Quick receive**.  The new piece is saved and listed in the Received section.
@@ -507,9 +523,10 @@ The Receive function can be used to receive multiple pieces at once.
 
 1. Using the **Search & filter** pane, find the receiving title you want to receive and select it.
 2. In the Expected section of the receiving title, click **Receive**.
-3. In the receiving title window, all of the expected pieces are displayed. Here, you can make changes to the pieces. See below for more information.
-4. Select the checkbox beside each piece you want to receive. Note: If you want to receive all of the pieces, click the top checkbox.
-5. Click **Receive**. The selected pieces are now displayed under the Received section.
+3. A receiving note popup window will display if the purchase order line field **[Must acknowledge receiving note]({{< ref "/orders.md#item-details.md" >}})** is checked.  Click **Continue** to close the popup window.
+4. In the receiving title window, all of the expected pieces are displayed. Here, you can make changes to the pieces. See below for more information.
+5. Select the checkbox beside each piece you want to receive. Note: If you want to receive all of the pieces, click the top checkbox.
+6. Click **Receive**. The selected pieces are now displayed under the Received section.
 
 
 #### Receive
@@ -535,10 +552,9 @@ The Receive function can be used to receive multiple pieces at once.
 
 
 
-1. In the Received section of the receiving title, click **Unreceive**.
-2. In the receiving title window, all of the received pieces are displayed. 
+1. In the Received section of the receiving title, click **Actions**.  In the action menu, select **Unreceive.**
+2. In the receiving title window, all of the received pieces are displayed in a table list containing barcode, caption, enumeration, piece format, request, comment, select location, and call number. 
 3. Optional: Make changes to the **Comment** field.
 4. Select the checkbox beside each piece you want to unreceive. Note: If you want to unreceive all of the received pieces, select the top checkbox.
 5. Click **Unreceive**. The selected pieces are now displayed under the Expected section. 
 
-You can also open the Receiving app from the action menu of an open order by clicking **Receive**.
