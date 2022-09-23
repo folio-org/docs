@@ -1,7 +1,7 @@
 ---
 title: "Settings > Organizations"
 linkTitle: "Organizations"
-date: 2021-05-10
+date: 2022-09-22
 weight: 210
 tags: ["subtopic"]   
 ---
@@ -52,3 +52,33 @@ For more information on adding contact information and contact people to organiz
 2. Click the **trash can icon**.
 
 3. In the **Delete Category** dialog, click **Delete**. The category is deleted and a confirmation message appears.
+
+
+### Creating a new type
+
+1. Click **New**.
+
+2. Enter a type **Name** in the box.
+
+3. Enter a type **Status**: Active or Inactive.
+
+3. Click **Save**. The type is saved and appears in the Types list.
+
+
+### Editing a type
+
+1. Find the type you want to edit and click the **pencil icon**.
+
+2. Make the changes to the type name or status.
+
+3. Click **Save**. The type is updated.
+
+
+### Deleting a type
+
+1. Find the type you want to delete.
+
+2. Click the **trash can icon**.
+
+3. In the **Delete Type** dialog, click **Delete**. The type is deleted and a confirmation message appears.
+

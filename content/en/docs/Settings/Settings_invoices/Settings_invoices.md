@@ -1,7 +1,7 @@
 ---
 title: "Settings > Invoices"
 linkTitle: "Invoices"
-date: 2021-11-23
+date: 2022-09-22
 weight: 140
 tags: ["subtopic"]   
 ---
@@ -38,7 +38,7 @@ Use this setting to create preset adjustments that you can add to invoices at an
 2. Enter a **Description** in the box. 
 3. Select a **Type** from the list: Percent, Amount. 
 4. Select the **Always show** checkbox if you want the adjustment to show up automatically when you create a new invoice. Note: You can still remove an adjustment from invoices with this option enabled. 
-5. Enter a **Default amount** in the box. 
+5. Enter a **Value** in the box. 
 6. Select a **Pro rate** from the list: By line, By amount, By quantity, Not prorated.  
 7. Select a **Relation to total** from the list: In addition to, Separate from. Note: Adjustments that are created with a "Relation to total" value of "Separate from" are not included in the **Total adjustments** amount or **Calculated total amount** for the invoice."  
 8. Select the **Export to accounting** checkbox if you want to send a copy of the adjustment to an external financial system. 
@@ -66,7 +66,7 @@ Use this setting to create preset adjustments that you can add to invoices at an
 
 ## Settings > Invoices > Batch groups
 
-Use this setting to create, edit, and delete batch groups, which are used to organize invoices, especially for export as vouchers to an external payment system. 
+Use this setting to create, edit, and delete batch groups, which are used to organize invoices  for export as vouchers to an external payment system.
 
 
 ### Creating a batch group
@@ -96,7 +96,7 @@ Use this setting to create, edit, and delete batch groups, which are used to org
 
 ## Settings > Invoices > Batch group configuration
 
-Use this setting to configure batch groups for use in organizing invoices. This configuration enables you to export a file containing all vouchers created since the last export. For more information about how vouchers are created, see Invoices > Approving an invoice.  All vouchers with the Export to accounting checkbox selected that were created since the last export for the batch group will be exported to a file. For more information about the Export to accounting checkbox, see Invoices > Extended information and Invoices > Creating an adjustment.  Each invoice generates a single unique voucher on which all fund charges are grouped by the fund external account number.  
+Use this setting to configure batch group voucher exports. This configuration enables you to setup automated exports of files containing all invoice vouchers created since the last export. For more information about how vouchers are created, see  [Invoices > Approving an invoice]({{< ref "/invoices.md#approving-an-invoice" >}}).  All vouchers with the Export to accounting checkbox selected that were created since the last export for the batch group will be exported to a file. For more information about the Export to accounting checkbox, see  [Invoices > Extended information]({{< ref "/invoices.md#extended-information" >}}).  Each invoice generates a single unique voucher on which all fund charges are grouped by the fund external account number. 
 
 
 
@@ -112,15 +112,6 @@ Use this setting to configure batch groups for use in organizing invoices. This 
 
 Click **Show credentials/Hide credentials** to show or hide the password. If you want to test the connection with the upload location, click **Test connection**. 
 
-
-### Running a manual export
-
-Note: If you run a manual export, all vouchers created since the last export for the batch group will be exported and this process cannot be reversed.
-
-
-
-1. Click **Run manual export.** 
-2. In the Run manual export dialog, click **Continue.** in the confirmation message. 
 
 
 ## Settings > Invoices > Voucher number

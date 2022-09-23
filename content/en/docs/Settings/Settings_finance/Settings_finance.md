@@ -1,7 +1,7 @@
 ---
 title: "Settings > Finance"
 linkTitle: "Finance"
-date: 2021-05-10
+date: 2021-09-22
 weight: 120
 tags: ["subtopic"]   
 ---
@@ -42,7 +42,7 @@ For more information on adding funds and fund information, see Creating a new fu
 
 2. Edit the Name.
 
-3. Click **Save**. The fund type is updated.
+3. Click **Save**. The fund type is updated. Note: if another user edited and saved the same fund type record while you were editing, the following message appears: "You are editing an old version of this data. To load the latest version click cancel, refresh the page and try again."
 
 
 ### Deleting a fund type
@@ -80,7 +80,7 @@ For more information on adding funds and fund information, see Creating a new fu
 
 2. Edit the Name, Code, or External account number extension.
 
-3. Click **Save**. The expense class is updated.
+3. Click **Save**. The expense class is updated. Note: if another user edited and saved while you were editing the same expense class, the following message appears: "You are editing an old version of this data. To load the latest version click cancel, refresh the page and try again."
 
 
 ### Deleting an expense class
