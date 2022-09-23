@@ -23,8 +23,10 @@ The following are all the quickMARC permissions:
 
 -   **quickMARC: Create a new MARC holdings record.** This permission allows the user to create new MARC holdings records. (This cannot be done in the UI in Kiwi)
 -   **quickMARC: Derive new MARC bibliographic record.** This permission allows the user to duplicate and create new MARC bibliographic records.
+-   **quickMARC: View, MARC bibliographic record.** This permission allows the user to view MARC bibliographic records in the Inventory app.
+-   **quickMARC: View, MARC holdings  record.** This permission allows the user to view MARC holdings records in the Inventory app.
 -   **quickMARC: View, edit MARC authorities record.** This permission allows the user to view and edit MARC authority records in the MARC authority app.
--   **quickMARC: View, edit MARC bibliographic record.** This permission allows the user to view and edit MARC bibliographic records..
+-   **quickMARC: View, edit MARC bibliographic record.** This permission allows the user to view and edit MARC bibliographic records.
 -   **quickMARC: View, edit MARC holdings record.** This permission allows the user to view and edit MARC holdings records.
 
 ## Accessing quickMARC
@@ -102,12 +104,12 @@ There are three record statuses:
 
 ### To create a new **MARC bibliographic record**, derive a new record from an existing MARC record.
 
-1.  Start with an instance record that has an underlying MARC source record and the same [Resource type](../inventory/#resource-type) and [Format](../inventory/#format) as the record you wish to create.
+1.  Start with an instance record that has an underlying MARC source record and the same [Resource type](../inventory/#resource-type) and [Format](../#format) as the record you wish to create.
 2.  Click **Actions \> Derive new MARC bibliographic record.**
 3.  Edit the new record following the instructions in [Editing a MARC record using quickMARC](#editing-a-marc-record-using-quickmarc).
 
 ### To create a new **MARC holdings record**
 
-1.   [Find the instance record](../inventory/#searching-for-a-record) to which you want to add holdings and select it. The instance source must be MARC.
+1.   [Find the instance record](../#searching-for-a-record) to which you want to add holdings and select it. The instance source must be MARC.
 2.  Click **Actions \> Add  MARC holdings record.** 
-3.  Edit the new record following the instructions in [Editing a MARC record using quickMARC](../#editing-a-marc-record-using-quickmarc).
+3.  Edit the new record following the instructions in [Editing a MARC record using quickMARC](#editing-a-marc-record-using-quickmarc).

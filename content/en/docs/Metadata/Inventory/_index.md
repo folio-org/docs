@@ -1,7 +1,7 @@
 ---
 title: "Inventory"
 linkTitle: "Inventory"
-date: 2022-04-21
+date: 2022-09-22
 weight: 30
 tags: ["parenttopic"]
 ---
@@ -25,6 +25,7 @@ The permissions listed below allow you to interact with the Inventory app and de
 The following are all the Inventory permissions:
 
 -   **Inventory: All permissions.** This permission allows the user to perform all actions in Inventory.
+-   **Inventory: Create order from instance.” This permission allows the user to initiate the creation of a new purchase order or a new purchase order line (in the Orders app) from an Instance record in Inventory.
 -   **Inventory: Import single bibliographic records.** This permission allows the user to import and overlay Instance records from external sources. External sources must be configured in Settings.
 -   **Inventory: Mark items in process.** This permission allows the user to update an item record's Item status to In process.
 -   **Inventory: Mark items in process (non-requestable).** This permission allows the user to update an item record's Item status to In process (non-requestable).
@@ -101,7 +102,7 @@ The Title data section contains information about the title of the resource.
 -   **Alternative titles.** An alternative title for the resource. For example, the original language version title of a movie. You can add multiple alternative titles to a record.
 -   **Index title.** Title normalized for browsing and searching based on the title without initial articles.
 -   **Series statements.** A series title associated with the resource. For example, Harry Potter or Lecture Notes in Mathematics.
--   **Preceding titles.** The immediately preceding tile by which the resource was formerly identified. You can add multiple preceding titles to a record. For example, there may be multiple preceding titles which merged to form the one current title.
+-   **Preceding titles.** The immediately preceding title by which the resource was formerly identified. You can add multiple preceding titles to a record. For example, there may be multiple preceding titles which merged to form the one current title.
 -   **Succeeding titles.** The immediately succeeding title of the resource. You can add multiple succeeding titles to a record. For example, there may be multiple succeeding titles if the current publication splits into multiple succeeding publications.
 
 #### Adding an alternative title
@@ -201,9 +202,9 @@ Descriptive data contains descriptive information about the resource.
 -   **Publication frequency.** The interval at which serial issues are released or an integrating resource is updated. For example, daily, weekly, monthly, quarterly, etc.
 -   **Publication range.** Range of sequential designation/chronology of publication, or date range.
 
-#### Adding a publication
+#### Adding publication
 
-Note: Adding a contributor is optional, but if you click **Add publication**, you must enter a **Publisher**, **Place**, or **Publication date** or [delete the publication](#deleting-a-publication-edition-description-nature-of-content-format-language-publication-frequency-or-publication-range) in order to save the instance record.
+Note: Adding publication information is optional, but if you click **Add publication**, you must enter a **Publisher**, **Place**, or **Publication date** or [delete the publication](#deleting-a-publication-edition-description-nature-of-content-format-language-publication-frequency-or-publication-range) in order to save the instance record.
 
 1.  Click **Add publication**.
 2.  Optional: Enter a **Publisher** in the box.
@@ -286,6 +287,8 @@ In the Electronic access section, you can add online access information for the 
 
 #### Adding electronic access
 
+Note: Adding electronic access is optional, but if you click **Add electronic access**, you must enter a **URI** or [delete the electronic access](#deleting-electronic-access) in order to save the instance.
+
 1.  Click **Add electronic access**.
 2.  Optional: Select a **Relationship** from the drop-down list.
 3.  Optional: Enter a **URI** in the box.
@@ -306,7 +309,7 @@ In the Subject section, you can add any subjects that pertain to the resource.
 #### Adding a subject
 
 1.  Click **Add subject**.
-2.  Enter the **Subjects** in the box.
+2.  Enter the **Subject** in the box.
 3.  Repeat steps 1-2 as needed. The subject is saved once you save the instance.
 
 #### Removing a subject
@@ -350,7 +353,7 @@ Note: Adding a parent instance is optional, but if you click **Add parent instan
 
 #### Adding a child instance
 
-Note: Adding a classification is optional, but if you click **Add child instance**, you must enter **Child instance** and **Type of relation** or [delete the child instance](#removing-a-parent-or-child-instance) in order to save the instance record.
+Note: Adding a child instance is optional, but if you click **Add child instance**, you must enter **Child instance** and **Type of relation** or [delete the child instance](#removing-a-parent-or-child-instance) in order to save the instance record.
 
 1.  Click **Add child instance**.
 2.  Enter the **Child instance** in the box.
@@ -453,6 +456,8 @@ A check in or check out note is required by default.
 2.  Click the **trash can icon** next to the electronic access. The electronic access is removed from the record and is deleted once you save the fast add record.
 
 ## Creating an instance record using the Import action in FOLIO
+
+Note: Import options are configured in [Settings \> Inventory \> Integrations]((../../settings/settings_inventory/settings_inventory/#settings--inventory--integrations). 
 
 1.  In the default or middle pane, click **Actions > Import**.
 2.  In the **Single Record Import** dialog box, select the source of the record to be imported (e.g., Library of Congress, OCLC WorldCat, BnF).
@@ -579,13 +584,15 @@ The Holdings notes section contains any notes about the holdings.
 ##### Removing a note
 
 1.  Find the note you want to delete.
-2.  Click the **trash can icon** next to the note. The note is removed from the record and is deleted once you save the holdings record.
+2.  Click the **trash can icon** next to the note. The note is removed from the record and is deleted once you save the holdings.
 
 #### Electronic access
 
 In the Electronic access section, you can add online access information for the resource.
 
 ##### Adding electronic access
+
+Note: Adding electronic access is optional, but if you click **Add electronic access**, you must enter a **URI** or [delete the electronic access](#deleting-electronic-access) in order to save the holdings.
 
 1.  Click **Add electronic access**.
 2.  Optional: Select a **Relationship** from the drop-down list.
@@ -759,6 +766,8 @@ In the Electronic access section, you can add online access information for the 
 
 #### Adding electronic access
 
+Note: Adding electronic access is optional, but if you click **Add electronic access**, you must enter a **URI** or [delete the electronic access](#deleting-electronic-access) in order to save the instance..
+
 1.  Click **Add electronic access**.
 2.  Optional: Select a **Relationship** from the drop-down list.
 3.  Optional: Enter a **URI** in the box.
@@ -814,21 +823,25 @@ To search, first select the record type (instance, holdings, or item); enter you
 -   **Identifier (all).** Searches through all identifier types. Not normalized: the search may be left truncated, otherwise the entire identifier, including any prefix, must be entered.
 -   **ISBN.** Searches the number exactly as it appears in the data. For example, if there are hyphens in the data, the hyphens must be entered in the search.
 -   **ISSN.** Searches should include hyphens.
+-   **OCLC number, normalized.** Searches for the OCLC number with or without any prefixes.
 -   **Subject.** Keyword search through all subject fields. This may include Library of Congress Subjects, FAST, and other subject vocabularies, including Genre/Form terms.
--   **Instance HRID.** Human readable identifier for the record.
--   **Instance UUID.** Universally unique identifier for the record.
+-   **Effective call number (item), shelving order.** Retrieves Instance records based on the shelving order element in the item record.
+-   **Instance HRID.** Human readable identifier for the instance record.
+-   **Instance UUID.** Universally unique identifier for the instance record.
 -   **All.** Searches across all fields in all record types. May impact performance.
 -   **Query search.** A search for advanced users to query by property names using CQL.
--   **Call number.** [NEED TEXT HERE]
 -   **Browse call numbers.** The call number browse is based on the shelving order element in the item record; only Instances with item records will be retrieved. It includes LC, Dewey Decimal, NLM, SuDoc and Local call numbers.
--   **Browse subjects.** The subject browse is based on  the Subject field in instance records.
+-   **Browse contributors.** The contributor browse is based on the contributor field in Instance records. Names should be entered as they appear in the contributor field.
+-   **Browse subjects.** The subject browse is based on the Subject field in instance records.
 -   **Call number, eye readable.** Requires you to enter the call number exactly as it appears in the holdings record, including punctuation.
 -   **Call number, normalized.** Ignores any characters other than numbers and letters, such as punctuation and spaces.
--   **Holdings HRID.** Human readable identifier for the record.
+-   **Holdings HRID.** Human readable identifier for the holdings record.
+-   **Holdings UUID.** Universally unique identifier for the holdings record.
 -   **Barcode.** Allows you to scan, copy/paste, or type a barcode.
 -   **Effective call number (item) eye readable.** Requires you to enter the call number exactly as it appears in the holdings record, including the punctuation and call number prefix.
 -   **Effective call number (item), normalized.** Ignores any characters other than numbers and letters, such as punctuation and spaces.
--   **Item HRID.** Human readable identifier for the record.
+-   **Item HRID.** Human readable identifier for the item record.
+-   **Item UUID.** Universally unique identifier for the item record.
 
 You can also search for instance, holdings, or item records by selecting any of the filters in the **Search & filter** pane. Additionally, you can apply the filters after you perform a search to limit your results. The filters available vary depending on whether you are searching for an instance, holdings, or item record. See the sections below for more information.
 
@@ -902,6 +915,14 @@ To search for instances, holdings, or items by whether or not they are suppresse
 -   **Yes.** The instance, holding, or item is suppressed from discovery
 -   **No.** The instance, holding, or item is not suppressed from discovery.
 
+### Statistical code
+
+To search for instances, holdings, or items based on their statistical code, follow these steps:
+
+1.  In the **Search & filter** pane, click **Statistical code**.
+2.  Click the drop-down list and either enter the code/code name or select it from the list.
+3.  Repeat step 2 to add more than one statistical code. Your search results appear in the Inventory pane.
+
 ### Date created
 
 To search for instances based on the date they were created, follow these steps:
@@ -918,10 +939,25 @@ To search for instances based on the date they were last updated, follow these s
 2.  Enter a start date in the **From** box and an end date in the **To** box.
 3.  Click **Apply**. Your search results appear in the Inventory pane.
 
+### Instance status
+
+To search for instances based on the instance status, follow these steps:
+
+1.  In the **Search & filter** pane, click **Instance status**.
+2.  Select the status from the list.
+3.  Repeat step 2 to select multiple instance statuses. 
+4.  Your search results appear in the Inventory pane.
+
 ### Source
 
-To search for instances based on their source, in the **Search & filter** pane, click **Source** and select one of the following:
+To search for instances based on their source, follow these steps: 
 
+1.  In the **Search & filter** pane, click **Source.**
+2.  Select the source from the list.
+3.  Repeat step 2 to select multiple sources
+4.  Your search results appear in the Inventory pane.
+
+Note: Sources may vary across institutions. The following are examples of sources that may appear:
 -   **FOLIO.** The instance was created in FOLIO.
 -   **MARC.** The instance was created by uploading MARC records.
 
@@ -941,6 +977,14 @@ To search for holdings or items based on their holdings permanent location, foll
 2.  Click the drop-down list and either enter the holdings permanent location or select it from the list.
 3.  Repeat step 2 to add more than one holdings permanent location. Your search results appear in the Inventory pane.
 
+### Holdings type
+
+To search for holdings or items based on their holdings type, follow these steps:
+
+1.  In the **Search & filter** pane, click **Holdings type**.
+2.  Click the drop-down list and either enter the holdings type or select it from the list.
+3.  Repeat step 2 to add more than one holdings type. Your search results appear in the Inventory pane.
+
 ### Item status
 
 To search for items based on their item status, follow these steps:
@@ -956,6 +1000,7 @@ To search for items based on their material type, follow these steps:
 1.  In the **Search & filter** pane, click **Material type**.
 2.  Click the drop-down list and either enter the material type or select it from the list.
 3.  Repeat step 2 to add more than one material type. Your search results appear in the Inventory pane.
+
 
 ## Viewing an instance record
 
@@ -975,7 +1020,7 @@ Holdings records can be viewed once you have an instance record opened.
 To view a holdings record, follow these steps:
 
 1.  [Find the instance](#searching-for-a-record) with the holdings record you want to view and select it.
-2.  In the **Instance record details** pane, in the **Holdings** section, click **View holdings**. The Holding record details window appears.
+2.  In the **Instance record details** pane, the **Holdings** section, click **View holdings**. The Holding record details window appears.
 
 ### Viewing an item record
 
@@ -984,7 +1029,8 @@ Item records can be viewed once you have an instance record opened.
 To view an item record, follow these steps:
 
 1.  [Find the instance](#searching-for-a-record) with the item record you want to view and select it.
-2.  In the **Instance record details** pane, in the **Holdings** section, click the **Item barcode** of the item you want to view. The Item record details window appears.
+2.  In the **Instance record details** pane, expand  the **Holdings** accordion.
+3. Click the **Item barcode** of the item you want to view. The Item record details window appears.
 
 ## Editing an instance record
 
@@ -1109,6 +1155,12 @@ Note: An instance record cannot be deleted, but it may be suppressed.
 4.  In the **Confirm item status ** dialog, click **Confirm**. The item record is updated and its Item status changes to the value selected.
 
 Note: See **[Platform Essentials](../../platform-essentials/item-status/itemstatus/)** for more information on Item status.
+
+## Creating a new order
+
+1.  [Find the instance](#searching-for-a-record) for which you want to add an order.
+2.  In the **Instance record details** pane, click **Actions \> New order**.
+3.  In the **Create order** dialog box, you can enter an existing PO number to add a new purchase order line to an existing purchase order: [Orders > Adding an order line to an order](../../#acquisitions/orders--adding-an-order-line-to-an-order), or leave the PO number field black to create a new purchase order and purchase order line: [Orders > Creating an order](../../#acquisitions/orders--creating-an-order)
 
 ## Creating a new request
 
