@@ -1,7 +1,7 @@
 ---
 title: "Settings > Data import"
 linkTitle: "Data import"
-date: 2022-03-21
+date: 2022-09-22
 weight: 70
 tags: ["subtopic"]   
 ---
@@ -21,6 +21,8 @@ In order to interact with Data import settings, a user needs to be assigned the 
 
 -   **Settings (Data import): Can view, create, edit, and remove.** This permission allows the user to see and use the Data import settings.
 
+-   **Settings (Data import): Can view only.** This permission allows the user to see the Data import settings but not make changes.
+
 Note: This is the only permission available for Data import settings. You are unable to view and access Data import settings if you do not have this permission assigned to you. You can assign permissions to users in the Users app.
 
 ## Settings \> Data import \> Job profiles
@@ -38,7 +40,7 @@ Job profiles define the type of import at the highest level. A job profile conta
 
 ### Searching for an import job profile
 
-Use the search bar to search for job profiles contained in the Job profile table.
+Use the search bar to search for job profiles contained in the Job profile table. 
 
 The Job profiles table contains the following columns:
 
@@ -87,7 +89,7 @@ Exporting an import job profile is not implemented at this time.
 
 ## Settings \> Data import \> Match profiles
 
-Match profiles define the match between an incoming record and existing record. Match profiles can be used for multiple job profiles.
+Match profiles define the match between an incoming record and existing record. Match profiles can be used for multiple job profiles. 
 
 Before creating a match profile, you should first create action profiles and field mapping profiles.
 
@@ -102,7 +104,7 @@ Before creating a match profile, you should first create action profiles and fie
 
 ### Searching for an import match profile
 
-Use the search bar to search for match profiles contained in the Match profile table.
+Use the search bar to search for match profiles contained in the Match profile table. 
 
 The Match profiles table contains the following columns:
 
@@ -171,7 +173,7 @@ Before creating an action profile, you should first create field mapping profile
 
 ### Searching for an import action profile
 
-Use the search bar to search for action profiles contained in the Action profile table.
+Use the search bar to search for action profiles contained in the Action profile table. 
 
 The Action profiles table contains the following columns:
 
@@ -227,8 +229,8 @@ Field mapping profiles map fields of the incoming records to FOLIO according to 
 
 1.  In the **Field mapping profiles** pane, click **Actions \> New field mapping profile**.
 2.  In the **New field mapping profile** window, enter a **Name** for the field mapping profile.
-3.  Select an **Incoming record type** from the drop-down list: MARC Bibliographic or EDIFACT invoice.
-4.  Select a **FOLIO record type** from the drop-down list: Instance, Holdings, Item, Invoice, or MARC Bibliographic. Depending on your selection, different options appear. The field mapping details are designed to mimic the FOLIO record's create/edit screen as much as possible. However individual fields may be populated with a reference to a particular field in the incoming record, a default value, or a combination of both. See the sections below for more information.
+3.  Select an **Incoming record type** from the drop-down list: MARC Bibliographic, MARC Authority or EDIFACT invoice.
+4.  Select a **FOLIO record type** from the drop-down list: Instance, Holdings, Item, Invoice, MARC Bibliographic, or MARC Authority. Depending on your selection, different options appear. The field mapping details are designed to mimic the FOLIO record's create/edit screen as much as possible. However individual fields may be populated with a reference to a particular field in the incoming record, a default value, or a combination of both. See the sections below for more information.
 5.  Optional: Enter a **Description** for the field mapping profile.
 6.  Optional: To link action profiles to the field mapping profile, under **Associated action profiles**, click **Link Profile**, and follow these steps:
     <ol type="a">
@@ -276,7 +278,7 @@ Note: Inactive fields cannot be mapped because they are controlled by the system
 
 ### Searching for an import field mapping profile
 
-Use the search bar to search for field mapping profiles contained in the Field mapping profile table.
+Use the search bar to search for field mapping profiles contained in the Field mapping profile table. 
 
 The Field mapping profiles table contains the following columns:
 
@@ -339,7 +341,7 @@ Use File extensions to configure which file formats are allowed for import and w
 
 ### Searching for a file extension
 
-Use the search bar to search for file extensions contained in the File extensions table.
+Use the search bar to search for file extensions contained in the File extensions table. 
 
 The File extensions table contains the following columns:
 
@@ -393,3 +395,5 @@ The asterisk (\*) is the only available wildcard. When used, it means anything.
 
 1.  In the **MARC field protection** pane, click the **trash can icon** in the row of the field you want to delete.
 2.  In the **Delete MARC field protection** dialog, click **Delete**. A confirmation message appears and the MARC field protection is deleted.
+
+

@@ -1,7 +1,7 @@
 ---
 title: "Data import"
 linkTitle: "Data import"
-date: 2022-03-21
+date: 2022-09-22
 weight: 20
 tags: ["parenttopic"]
 ---
@@ -17,7 +17,9 @@ Definition of terms related to the Data Import app:
 
 In order to view and interact with the Data import app, a user needs to be assigned the following permission:
 
--   **Data import: all permissions.** This permission allows the user to see and use the Data import app.
+-   **Data import: Can upload files, import, and view logs.** This permission allows the user to see and use the Data import app. The user can perform all functions besides deleting logs.
+
+-   **Data import: Can delete import logs.** This permission allows the user to delete logs in the Data import app.
 
 Note: This is the only permission available for the Data import app. You are unable to view and access Data import if you do not have this permission assigned to you. You can assign permissions to users in the Users app.
 
@@ -109,3 +111,5 @@ For all exports with the Status of *Completed* or *Completed with errors*, you c
 ## Troubleshooting failed exports
 
 For all exports with the Status of *Fail* or *Completed with errors*, click in the **row** of the export to view the error log. For all failed exports, a MARC file is not generated.
+
+

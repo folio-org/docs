@@ -1,7 +1,7 @@
 ---
 title: "Settings > Data export"
 linkTitle: "Data export"
-date: 2021-11-14
+date: 2022-09-22
 weight: 60
 tags: ["subtopic"]   
 ---
@@ -35,9 +35,8 @@ If you use the default job profile, simplified MARC bibliographic records are ge
 1.  In the **Job profiles** pane, click **New**.
 2.  Enter a **Name** for the job profile.
 3.  Select a **Mapping profile** from the drop-down list. Field mapping profiles are created in Settings. See [Settings \> Data export \> Field mapping profiles](#settings--data-export--field-mapping-profiles) for more information.
-4.  Optional: Select a **TCP/IP** value from the drop-down list.
-5.  Optional: Enter a **Description** of the job profile.
-6.  Click **Save & close**. A confirmation message appears and the job profile is created.
+4.  Optional: Enter a **Description** of the job profile.
+5.  Click **Save & close**. A confirmation message appears and the job profile is created.
 
 ### Searching for an export job profile
 
@@ -46,7 +45,6 @@ Use the search bar to search for profiles contained in the Job profile table.
 The Job profiles table contains the following columns:
 
 -   **Name.** Name of the job profile.
--   **TCP/IP.** Transmission Control Protocol/Internet Protocol.
 -   **Updated.** Date the job profile was last updated.
 -   **Updated by.** User who last updated the job profile.
 
@@ -92,7 +90,7 @@ The system comes with a default field mapping profile that is associated with th
 6.  Optional: To add a transformation, click **Add transformations** and follow these steps:
     <ol type="a">
       <li>In the <strong>Select transformations</strong> dialog, use the search box and filters to find the transformations you want to add to the field mapping profile.</li>
-      <li>For every transformation you want to add, select the <strong>checkbox</strong> next to it and fill out the field number, indicators, and subfield boxes.Subfields must begin with a $.</li>
+      <li>For every transformation you want to add, select the <strong>checkbox</strong> next to it and fill out the field number, indicators, and subfield boxes. Subfields must begin with a $.</li>
       <li>Once you have added all transformations, click <strong>Save & close<strong>. A confirmation message appears and the transformations are added to the field mapping profile.</li>
     </ol>
 7.  Click **Save & close**. A confirmation message appears and the field mapping profile is created.
