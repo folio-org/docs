@@ -1,7 +1,7 @@
 ---
 title: "Settings > Users"
 linkTitle: "Users"
-date: 2022-06-03
+date: 2022-08-08
 weight: 220
 tags: ["subtopic"]   
 ---
@@ -77,7 +77,7 @@ Only one patron group can be assigned to a user record. Patron groups are also u
 
 1.  In the **Settings app**, select **Users \> Patron groups**. 
 2.  In the **Patron groups** pane, click **New**.
-3.  Enter a name for the **Patron group** in the box. Patron group names need to be unique.
+3.  Enter a name for the **Patron group** in the box. Patron group names need to be unique and should not contain any punctuation.
 4.  (Optional): Enter a **Description** of the patron group.
 5.  (Optional): Enter a number in the **Expiration date offset (days)** box. This number represents
      the number of days of active status for user records assigned to the patron group.  

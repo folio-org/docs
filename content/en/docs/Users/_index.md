@@ -1,11 +1,11 @@
 ---
 title: "Users"
 linkTitle: "Users"
-date: 2022-06-03
+date: 2022-08-08
 weight: 250
 ---
 
-The Users app allows you to manage user information for patrons and library staff. Both patrons and library staff's user records are stored in the Users app. There is no separate directory or app for library staff users. The difference between a library staff user and a patron is that the library staff user record has FOLIO permissions assigned to it.
+The Users app allows you to manage user information for patrons and library staff. Both patrons and library staff's user records are stored in the Users app. There is no separate directory or app for library staff users. The difference between a library staff user and a patron is that the library staff user record has FOLIO permissions, username, and password assigned to it.
 
 Definition of terms related to the Users app:
 
@@ -86,6 +86,17 @@ Keyboard shortcuts allow you to perform actions in this app using the keyboard. 
 -   If **Hold Shelf** is selected as the **Fulfillment preference**, select the **Default pickup service point.** All user records have at least one service point assigned to indicate the location for checking out or picking up requested items. Service points are configured by your library in the Settings app. See [Settings \> Tenant \> Service points](#../settings/settings_tenant/settings_tenant/#settings--tenant--service-points) for more information.
 -   **Department name.** Name of the user's department, if applicable. To associate the user with a department, click **Add Department** and select the department from the drop-down list. This action is repeatable, and departments can be deleted by clicking the **trash can icon**. The **Add Department** button appears only if **Departments** are configured in the Settings app.   See [Settings \> Users \> Departments](../settings/settings_users/settings_users/#settings--users--departments) for more information. 
 -   **Username.** The name library staff use to log into FOLIO. Note: Patrons don't have a username because they don't need to log into FOLIO.
+-   **Password.** Users can be sent a reset password link via email. This link expires after 24 hours. The password must meet the following default validation rules:
+	- Contain a minimum of 8 characters.
+	- Contain both uppercase and lowercase letters.
+	- Contain at least 1 numeric character.
+	- Contain at least 1 special character.
+	- Does not contain the username.
+	- Does not contain a keyboard sequence.
+	- Does not contain the same character.
+	- Does not contain whitespace.
+	- Does not contain two consecutive whitespaces. 
+Note: The institution may decide to apply different password validation rules for their users. 
 
 ### Contact information
 
@@ -94,7 +105,7 @@ Keyboard shortcuts allow you to perform actions in this app using the keyboard. 
 -   **Mobile phone.** The mobile phone number of the user.
 -   **Preferred contact (required).** Select the user's preferred method of contact: Email, Mail (Primary Address), or Text Message.
 -   **Address.** The address of the user. You can add multiple addresses. To add an address, click **Add Address**. 
--   Select **Use as primary address** if address is to be considered the user's main address. 
+-   Select **Use as primary address** if the address is to be considered the user's main address. 
 -   **Address Type.** Select the appropriate address type for the user's address. Address Types are configured by your library in the Settings app. See [Settings \> Users \> Address Types](../settings/settings_users/settings_users/#settings--users--address-types) for more information.
 -  Fill out the address information fields and click **Add Address** to save the address to the user’s record. 
 
@@ -188,7 +199,7 @@ The Requests section displays the number of open and closed requests.
 
 A request is open when a patron hasn’t yet received the item they requested. That can be the case when they are waiting in line for a patron to return the item, or when the item is being pulled from a shelf (Open - Not yet filled, Open - Awaiting delivery, or Open - In transit). The request is also open if the item has been brought to the requested service point and the patron has been notified to come pick it up (Open - Awaiting pickup).
 
-A request is closed when the patron picks up the item (Closed - fulfilled). It’s also closed if the patron cancels their request prior to pickup (Closed - Cancelled), if the patron didn’t come get the book before their hold expired (Closed - Pickup expired), or if the library was unable to fill the request before the request itself expired (Closed - Unfilled).
+A request is closed when the patron picks up the item (Closed - fulfilled). It’s also closed if the patron or library staff cancels their request prior to pickup (Closed - Cancelled), if the patron didn’t come get the book before their hold expired (Closed - Pickup expired), or if the library was unable to fill the request before the request itself expired (Closed - Unfilled).
 
 To view additional details about the users’ open or closed requests, expand the **Requests** accordion and click **open requests** or **closed requests**, respectively.
 
@@ -341,7 +352,7 @@ Staff who use the Check in, Check out, Users, or Requests apps must have a servi
 4.  Click the “x” next to the service point(s) you want to remove. The service point(s) are removed from the user record.
 5. Click **Save & close**. The user record is saved.
 
-Permissions can also be removed by following a modified version of the process for adding them:
+Service points can also be removed by following a modified version of the process for adding them:
 
 1.  [Find the user record](#searching-for-user-records) to which you want to remove a service point and select it.
 2.  In the **User record** pane, click **Edit**.
@@ -438,7 +449,7 @@ The Overdue loans report is a comma-separated values (CSV) file that displays al
 
 The Claimed returned report is a comma-separated values (CSV) file that displays all users with claimed returned materials.
 
--   In the **User search results** pane, click **Actions \> Claimed returned report (CSV)**. 	A *Export in progress* message appears and depending on your browser and its configurations, the file either automatically downloads or you are prompted to open and save it. If there are no claimed return items to report, a *No items found* message will appear and no file is generated.
+-   In the **User search results** pane, click **Actions \> Claimed returned report (CSV)**. 	An *Export in progress* message appears and depending on your browser and its configurations, the file either automatically downloads or you are prompted to open and save it. If there are no claimed return items to report, a *No items found* message will appear and no file is generated.
 
 ## Cash drawer reconciliation report
 
@@ -451,7 +462,7 @@ The Cash drawer reconciliation report is used by library staff to balance their 
 -   Click **Save & close**.
 
 
-A *Export in progress* message appears and depending on your browser and its configurations, the file is either automatically downloaded or you are prompted to open and save it. If there are no transactions to report, a *No items found* message appears and no file is generated.
+An *Export in progress* message appears and depending on your browser and its configurations, the file is either automatically downloaded or you are prompted to open and save it. If there are no transactions to report, a *No items found* message appears and no file is generated.
 
 ## Financial transaction detail report
 
@@ -481,7 +492,7 @@ FOLIO users with appropriate permissions can manage fee/fines on patron accounts
 
 To renew one or more loans for a patron:
 1. In the user record pane, expand the **Loans** accordion if needed.  
-2. Click on *Open loans*. 
+2. Click on **Open loans**. 
 3. Use the check boxes on the left of the **Loans** window to select the appropriate loan(s).
 4. Click the **Renew** button located in the top right corner of the **Loans** window.
 
@@ -597,8 +608,9 @@ Staff with appropriate permissions can partially or fully refund a fee/fine. The
 3. Select **View all fees/fines** to view the patron’s fines.
 4. The **Fees/fines** modal will open. Click the fee/fine you wish to refund a payment for. It may be **Open** or **Closed**.
 5. The **Fee/fine details** modal will open. Click **Refund**.
-6. The **Waive fee/fine** modal will open. Enter the amount to waive (required). You can waive some or all of the fine amount.  If you are only waiving part of the fine, FOLIO will automatically calculate the remaining amount. 
-7. Select the **Waive reason** (required) and enter **Additional information for staff**. The **Additional information for staff** box may be required if your library has configured that option.
-8. Click **Waive**, then **Confirm**.
+6. The **Refund fee/fine** modal will open. Enter the amount to refund (required). You can refund some or all of the fine amount.  If you are only refunding part of the fine, FOLIO will automatically calculate the remaining amount. 
+7. Select the **Refund reason** (required) and enter **Additional information for staff**. The **Additional information for staff** box may be required if your library has configured that option.
+8. Click **Refund**, then **Confirm**.
 
 The modal will close, and the **Fee/fine details** page will update with the payment transaction.
+
