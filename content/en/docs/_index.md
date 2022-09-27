@@ -7,7 +7,7 @@ weight: 10
 ---
 
 {{% alert color="info"%}}
-This documentation supports the Lotus version of FOLIO. Use the Releases menu to select another version as needed.
+This documentation supports the Morning Glory version of FOLIO. Use the Releases menu to select another version as needed.
 {{% /alert %}}
 
 Welcome to FOLIO documentation. FOLIO is an open source project that creates a new paradigm for collaboration between libraries, developers, and vendors.  This open platform moves the industry well beyond the traditional library management system, offering libraries more choices of features and services.
