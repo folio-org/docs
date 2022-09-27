@@ -1,6 +1,6 @@
 # baseURL = "/"
-baseURL = "https://kiwi.docs.folio.org/"
-title = "FOLIO Documentation - Kiwi"
+baseURL = "https://morning-glory.docs.folio.org/"
+title = "FOLIO Documentation - Morning Glory"
 
 enableRobotsTXT = true
 
@@ -119,6 +119,10 @@ algolia_docsearch = true
 
 # Enable Lunr.js offline search
 offlineSearch = false
+
+[[params.versions]]
+  version = "Morning Glory"
+  url = "https://morning-glory.docs.folio.org/docs"
 
 [[params.versions]]
   version = "Lotus"
