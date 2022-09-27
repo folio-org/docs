@@ -2,8 +2,6 @@
 title: "Customizations"
 linkTitle: "Customizations"
 weight: 50
-description: >
-  Note: This content is currently in draft status.
 tags: ["subtopic"]
 ---
 
@@ -63,7 +61,7 @@ curl -X POST \
    }'
 ```
 
-Take into account that this configuration is performed on a per tenant basis and the tenant ID is defined in the **X-Okapi-Tenant** header.  Also, you have to be logged in as the superuser of the tenant and provide the access token in the header **x-okapi-token**.   You can find an example of a login request (here)[https://github.com/folio-org/folio-install/tree/master/runbooks/single-server#load-mods-records].
+Take into account that this configuration is performed on a per tenant basis and the tenant ID is defined in the **X-Okapi-Tenant** header.  Also, you have to be logged in as the superuser of the tenant and provide the access token in the header **x-okapi-token**.   You can find an example of a login request [here](https://github.com/folio-org/folio-install/tree/master/runbooks/single-server#load-mods-records).
 
 Once you have configured the mod-email module, you should configure other modules related to the email configuration.  You should configure the users module and edge-sip2.  You can find a Bash script that could be used to automate this process [here](https://github.com/folio-org/folio-install/blob/kube-rancher/alternative-install/kubernetes-rancher/TAMU/deploy-jobs/create-email/create-email-config.sh).  Make sure that you replace all of the environment variables required for the script.
 
