@@ -299,7 +299,7 @@ cd platform-core
 - Checkout a stable branch of the repository
 
 ```
-git checkout R2-2021-GA
+git checkout R2-2021
 ```
 
 ### Elasticsearch support
@@ -378,6 +378,7 @@ You have to set the KAFKA_HOST variable also in the launch descriptor of the fol
   
 You can look up the R2-2021 module versions in okapi-install.json. 
 Apply the same steps as for the module descriptor of mod-pubsub to these modules, but change only the value of KAFKA_HOST.
+If you are installing plaform-core, some of these modules may not be part of that distribution, so you don't have to set KAFKA_HOST for them.
 
 3. Deploy and enable the backend modules.
 
@@ -386,7 +387,9 @@ Apply the same steps as for the module descriptor of mod-pubsub to these modules
 
 Deploy the backend modules one by one. This will pull the Docker image from Docker Hub and spin up a container on your host for each backend module. 
 
-Use this script [deploy-all-backend-modules.sh](../deploy-all-backend-modules.sh) to deploy all backend modules, one after the other, on your host:
+Download these files to a local folder: [deploy-backend-module.sh](../deploy-backend-module.sh),  [deploy-all-backend-modules.sh](../deploy-all-backend-modules.sh) .
+
+Then execute the file [deploy-all-backend-modules.sh](../deploy-all-backend-modules.sh) to deploy all backend modules, one after the other, on your host:
 
 ```
 ./deploy-all-backend-modules.sh ~/platform-core/okapi-install.json <YOUR_IP_ADDRESS>
