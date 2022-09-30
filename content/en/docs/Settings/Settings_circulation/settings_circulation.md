@@ -28,6 +28,12 @@ The following are all the Circulation Settings permissions presented in the orde
 * **Settings (Circ): Can create, edit and remove patron notice templates.** This permission allows the user to create, read, update, and delete patron notice templates.
 * **Settings (Circ): Can create, edit and remove cancellation reasons.** This permission allows the user to create, read, update, and delete request cancellation reasons.
 * **Settings (Circ): Can create, edit and remove request policies.** This permission allows the user to create, read, update, and delete request policies.
+* **Settings (Circ): Can view loan history.** This permission allows the user to view Settings > Circulation > Loan History, but not make changes.
+* **Settings (Circ): Can view loan policies.** This permission allows the user to view loan policies, but tnot make changes.
+* **Settings (Circ): Can view lost item fee policies.** This permission allows the user to view lost item fee policies, but not make changes.
+* **Settings (Circ): Can view overdue fine policies.** This permission allows the user to view overdue fine policies, but not make changes.
+* **Settings (Circulation): Title level request edit.** This permissions allows the user to enable title level requests and change related settings.
+
 
 
 ## Settings > Circulation > Circulation rules
@@ -35,8 +41,6 @@ The following are all the Circulation Settings permissions presented in the orde
 Libraries can use circulation rules to determine how their items circulate. Circulation rules follow FOLIO specific criteria and logic. Each circulation rule is made up of one or more criteria and the policies to be associated with those criteria. When a defined set of criteria matches a circulation action, the policies that are attached to that criteria are then applied. The guidelines for constructing circulation rules are found in the [FOLIO GitHub Circulation rules documentation](https://github.com/folio-org/mod-circulation/blob/master/doc/circulationrules.md).
 
 You can write circulation rules to determine the following:
-
-
 
 * The groups of patrons that can borrow items.
 * The rules for items in different locations, libraries, campuses, or institutions.
