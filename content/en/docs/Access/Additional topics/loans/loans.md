@@ -54,12 +54,15 @@ Differences between the two types of loans include:
 
 ## <a id="loanrenew"></a>When a loan is renewed, or a loan due date is changed, what circulation rule applies and what policies are used?
 
-When a patron or FOLIO user requests to renew a loan, or a FOLIO user changes a loan’s due date, FOLIO reviews the circulation rule file and may do several things, depending on what it finds.
+When a patron or FOLIO user requests to renew a loan, or a FOLIO user changes a loan’s due date, FOLIO reviews the circulation rule file and may do several things, depending on what it finds (and not necessarily in the order listed below.)
 
+* FOLIO checks to see if the patron is blocked from renewal (either manually or automatically). If they are not blocked, the process can continue.
+* FOLIO checks the patron record to make sure the record is not inactive or expired. If they are not inactive or expired, the process can continue.
 * FOLIO will find the loan policy that applies and use that policy to determine if or how the loan can be changed. If the circulation rule file hasn’t changed, and the patron and item information hasn’t changed, FOLIO will retrieve and apply the same loan policy used the last time the loan was created or updated. 
 * No request policy updates occur, because request policies aren’t stored on the loan. Since request policies only apply before the loan is created, there is no reason to keep a reference on the loan record. 
 * FOLIO will **not** update the associated overdue policy and lost item policy, because it could cause the patron to be liable for more money than they had expected when they first borrowed the item.
-* FOLIO **will** update scheduled notices. The notice policy UUID is not stored on the loan. Instead, FOLIO reads the applicable notice policy from the circulation rule and updates scheduled planned notices as part of the renewal transaction.
+* FOLIO **will** update scheduled notices. The notice policy UUID is not stored on the loan. Instead, FOLIO reads the applicable notice policy from the circulation rule, removes the previous notices, and then creates the appropriate notices to run on the new dates. 
+* FOLIO **will** create an entry in the circulation log to show that the item was renewed, or that the due date changed.
 
 ### Example: An undergraduate becomes a graduate student
 
