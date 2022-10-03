@@ -119,9 +119,7 @@ When an item is checked in in FOLIO, the following steps happen (not necessarily
 
 ### Loan policy
 
-Prior to Lotus, you could delete a loan policy that was attached to an open loan. 
-
-As of Lotus, you will be prevented from deleting a loan policy through Settings \> Circulation \> Loan Policies if there are open loans associated with the loan policy.
+You are prevented from deleting a loan policy through Settings \> Circulation \> Loan Policies if there are open loans associated with the loan policy.
 
 ### Request policy
 
@@ -141,15 +139,11 @@ For example, suppose you need to delete the notice policy **faculty-semester-not
 
 ### Overdue policy
 
-Prior to Lotus, you could delete an overdue policy that was attached to an open loan. 
-
-As of Lotus, you will be prevented from deleting an overdue fine policy through Settings \> Circulation \> Fee/Fine if there are open loans associated with the policy.
+You are prevented from deleting an overdue fine policy through Settings \> Circulation \> Fee/Fine if there are open loans associated with the policy.
 
 ### Lost item policy
 
-Prior to Lotus, you could delete a lost item policy that was attached to an open loan. 
-
-As of Lotus, you will be prevented from deleting a lost item policy through Settings \> Circulation \> Fee/Fine if there are open loans associated with the policy.
+You are prevented from deleting a lost item policy through Settings \> Circulation \> Fee/Fine if there are open loans associated with the policy.
 
 ## What happens if/when you delete a circulation rule?
 
