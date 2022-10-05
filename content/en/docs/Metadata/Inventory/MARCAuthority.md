@@ -23,7 +23,7 @@ The permissions listed below allow you to interact with the Inventory app and de
 -   **quickMARC: View, edit MARC authority record.** This permission allows the user to view and edit MARC authority records.
 
 ## Creating MARC authority records 
-MARC authority records are created via [Data import](../data-import/)
+MARC authority records are created via [Data import](../../data-import/)
 ## Searching for authority records
 You can search for MARC authority records in the **Search & filter** pane. Enter your search terms in the box and click **Search**. Select the **Keyword** drop-down list to search through one of the following:
 
@@ -79,7 +79,7 @@ You can browse for MARC authority records in the **Search & filter** pane. Enter
 ## Viewing a MARC authority record
 The full MARC record opens in the third pane once you search for and select an authority record. The heading or reference you selected will be highlighted in the record.
 ## Editing MARC authority records 
-### Updating MARC authority records via [Data import](../data-import/)
+### Updating MARC authority records via [Data import](../../data-import/)
 ### Editing MARC authority records via quickMARC
 When viewing the MARC authority record you wish to edit, click **Edit** in the upper right. The record opens in edit mode. 
 In the Edit MARC authority record window, you can perform the following actions:
