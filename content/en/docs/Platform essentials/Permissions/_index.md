@@ -103,7 +103,7 @@ The general approach is:
 
 The reason to use this process rather than simply logging in as an appropriate administrator and assigning the invisible permission to staff is that other users could come in after you assign the invisible permission, edit the staff member’s account, and overwrite that administrator’s changes.
 
-For example:
+### Example: Using invisible permissions and permission sets to grant extra access to a user
 
 Suppose Jameca Jones, a FOLIO administrator, decides that Jeanne Dupont, a FOLIO user, needs the invisible permission "circulation-rules.storage.get" to help with troubleshooting circulation questions.
 
@@ -134,3 +134,48 @@ A few days later, Max realizes that Jeanne also needs the permission "Courses: R
 3. Max adds the permission "Courses: Read All" to Jeanne’s account and saves his changes.
 
 When Max saves his changes, FOLIO saves a completely new copy of Jeanne’s permissions that still includes only the permissions Max could view. But because Max could see the permission set that Jameca created, it gets re-saved to Jeanne’s account, and she doesn’t lose the access that she needs.
+
+## Deprecated permissions
+
+### What are deprecated permissions?
+
+During development of a FOLIO app, developers will sometimes make changes to app permissions - to rename them, add or remove subpermissions, or remove a permission from the app entirely.
+
+As part of upgrading a FOLIO app and its assorted modules, hosting providers will run a process to manage these permission changes so that library staff don't need to reassign a bunch of permission sets suddenly, or find that they can  no longer get access to an app or an app's feature.
+
+In the specific case where a permission has been removed between one version of a module and the next, FOLIO considers the permission to be deprecated, and changes how it shows up in the user interface to indicate that it should no longer be used.
+
+You will typically see this appear after your site has been upgraded to a new FOLIO flower release. Those permissions that have been removed will still be in your FOLIO instance, but the name will have **(deprecated)** prepended, like this:
+
+**(deprecated) Courses: Add, edit and remove items**
+
+If a permission has been deprecated, it should no longer be used. You need to review who has the permission assigned to them and review any permission sets to determine what actions need to happen to meet your library's needs. After the deprecated permission is no longer in use, your hosting provider or system administrator can then run another process to complete remove the deprecated permissions from your FOLIO tenant.
+
+### Example: Developing a Bookmobile app
+
+Suppose Zhang Wei is a library developer who creates a new app to manage their library's bookmobile service. They call the app Bookmobile.
+
+In version 1.0 of the app, they have one permission set to manage all access in the user interface to the bookmobile app. That permission has a permissionName of **ui-bookmobile.all.** In the FOLIO user interface, the permission name is **Bookmobile: All permissions.**
+
+As they continue development and prepares Bookmobile version 2.0, they decide to break down the "all" permission set into smaller chunks that better reflect how the app is used.
+
+In order to make sure libraries don't accidentally give more permissions than they want to to app users, they decide to deprecate ui-bookmobile.all by removing it from the module code.
+
+When the system administrator running the Bookmobile app upgrades from version 1.0 to 2.0, they run a process with the permissions module that compares the permissions in each version.
+
+In this case, the review process would flag that ui-bookmobile.all has been removed.
+
+That review process than does a few things to the definition of ui-bookmobile.all that is still present on the FOLIO system:
+
+* It adds an attribute to the permission definition called "inactive", and sets the value to true.
+* It changes the display of the permission in the user interface, adding (deprecated) before the permission name.
+
+Finally, it leaves ui-bookmobile.all installed on the library's version of FOLIO.
+
+Once the new system is upgraded, library staff can review the list of permissions and see that ui-bookmobile.all has been deprecated. They can then review the staff who have that permission assigned and make changes so they can still do their work. 
+
+Once all the users who had been using ui-bookmobile.all have had that permission removed, the system administrator can run a second process that will remove ui-bookmobile.all from the system.
+
+
+
+
