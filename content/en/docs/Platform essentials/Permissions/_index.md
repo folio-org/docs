@@ -2,7 +2,7 @@
 title: "Permissions"
 linkTitle: "Permissions"
 date: 2022-01-12
-weight: 60
+weight: 70
 ---
 
 FOLIO has a user permissions system that allows for granular control over what individual FOLIO users can access.
@@ -57,7 +57,7 @@ Permission names generally follow one of two formats:
 * **CRUD.** CRUD stands for "Create, Read, Update and Delete." You may see it used as a shortcut terminology in permissions discussions. Most FOLIO permissions allow “CRUD” functionality - they give you the ability to create, read, update and/or delete FOLIO records.
   * Note that a permission that allows for access to create, or update or delete a record will generally include the ability to view the record. For example, the permission “Users: Can edit user profile” includes a subpermission to allow viewing of user profiles. You do not need to grant a FOLIO user both permissions to allow them to view and edit user records.
 * **Visible permission.** A visible permission is one that you can see in the list of permissions in the UI. They can be assigned to patrons directly, and/or you can add them to a permission set through Settings → Users → General →  Permission Sets.
-* Invisible Permission: An invisible permission is hidden from the FOLIO user interface, and is not usually assigned directly to a FOLIO user. Invisible permissions are commonly part of a backend module. They provide very specific, limited access to functionality in FOLIO.
+* **Invisible Permission.** An invisible permission is hidden from the FOLIO user interface, and is not usually assigned directly to a FOLIO user. Invisible permissions are commonly part of a backend module. They usually provide very granular and specific access to functionality in FOLIO.
 
 ## Common Workflows
 
@@ -70,7 +70,7 @@ Common permissions workflows include:
 
 FOLIO permissions can be either "visible" or "invisible."
 
-Permissions that you see in the Users app or in Settings > Users > Permission sets are **visible** permissions. Developers create visible permissions by defining a group of very granular, specific permissions that when put together provide a specific function. They have a friendly display name that helps explain what the permission allows a FOLIO user to do. 
+Permissions that you see in the Users app or in Settings > Users > Permission sets are **visible** permissions. Developers create visible permissions by defining a group of very granular, specific permissions that when put together provide a specific function. They have a friendly name that helps explain what the permission allows a FOLIO user to do. 
 
 **Invisible** permissions do not appear in the Users app by default. They are created by developers in a backend module and are not intended to be assigned directly to users. Usually, they are very granular, and control one particular action - such as the ability to view one specific type of record in an app. They have less friendly display names such as “addresstypes collection get.”
 
@@ -84,7 +84,7 @@ However, occasionally bugs with permissions appear, or a feature may only be par
 
 The ability to see invisible permissions is determined user-by-user. The logged-in user must have access to Settings → Developer. 
 
-1. Go to Settings > Developer > Configuration.
+1. Go to **Settings \> Developer \> Configuration.**
 2. Check the box for **List ‘invisible’ permissions in add-perm menus?**
 3. Save your changes.
 
@@ -95,8 +95,9 @@ It is not recommended to leave this setting on permanently; there are thousands 
 You should use permission sets.
 
 The general approach is:
+
 1. Log in as a user with appropriate permissions and turn on listing invisible permissions in FOLIO.
-2. Go to Settings\>Users\> Permission sets and create a new permission set with only the invisible permissions that you need to be able to assign.
+2. Go to **Settings\>Users\> Permission sets** and create a new permission set with only the invisible permissions that you need to be able to assign.
 3. Turn off the ability to see invisible permissions.
 4. Assign that permission set that you created to the users who need the invisible permission.
 
@@ -104,7 +105,7 @@ The reason to use this process rather than simply logging in as an appropriate a
 
 For example:
 
-Suppose Jameca Jones, a FOLIO administrator, decides that Jeanne Dupont, a FOLIO user, needs the invisible permission "circulation-rules.storage.get" to help with troubleshooting delivery issues in FOLIO.
+Suppose Jameca Jones, a FOLIO administrator, decides that Jeanne Dupont, a FOLIO user, needs the invisible permission "circulation-rules.storage.get" to help with troubleshooting circulation questions.
 
 1. Jameca logs into FOLIO  and enables the invisible permission option in Setting > Developer.
 2. Jameca goes to the Users App and finds Jeanne's record.
@@ -132,7 +133,4 @@ A few days later, Max realizes that Jeanne also needs the permission "Courses: R
 2. Max doesn’t know what “Troubleshooting - Circulation Rules Permissions” is for, but knows that administrators have been using permission sets to debug issues, so he leaves it assigned to Jeanne.
 3. Max adds the permission "Courses: Read All" to Jeanne’s account and saves his changes.
 
-When Max saves his changes, FOLIO saves a completely new copy of Jeanne’s permissions that **still includes** only the permissions Max could view. But because Max **could see the permission set** that Jameca created, it gets re-saved to Jeanne’s account, and she doesn’t lose the access that she needs.
-
-
-
+When Max saves his changes, FOLIO saves a completely new copy of Jeanne’s permissions that still includes only the permissions Max could view. But because Max could see the permission set that Jameca created, it gets re-saved to Jeanne’s account, and she doesn’t lose the access that she needs.
