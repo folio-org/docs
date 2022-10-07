@@ -38,6 +38,7 @@ Permissions are named to indicate what a FOLIO user with the permission can do w
 Permission names generally follow one of two formats:
 
 **\[Appname\]: \[What the user can do\]**
+
 **Settings \(\[Area of Settings or Appname\]\): \[What the user can do\]**
 
 ### Examples:
