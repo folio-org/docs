@@ -5,7 +5,6 @@ date: 2022-02-25
 weight: 220
 tags: ["subtopic"]
 ---
-<!-- written with Juniper release -->
 
 The Remote storage section of the Settings app is where you configure options to connect to an external remote storage system.   
 
@@ -24,15 +23,14 @@ The permissions listed below determine what you can do or not do with the indivi
 
 ## Settings > Configurations
 
-A configuration entry must be created for each remote storage system. Directions are different for Dematic EMS, Dematic StagingDirector, and CAIASoft.
+A configuration entry must be created for each remote storage system. Directions are different for Dematic EMS (API), StagingDirector (TCP/IP), and CAIASoft.
 
-### Create a configuration for Dematic EMS
+### Create a configuration for Dematic EMS (API)
 1. Click **New**.
 2. In the **Create configuration** screen, provide the **Remote storage name**, **Provider name**, and **URL (domain)**. 
-3. For the **Data synchronization schedule**, choose how often FOLIO and your remote storage system will synchronize data. You may choose an interval of minute(s), hour(s), day(s), week(s), or month(s).
-4. Click **Save & close**.
+3. Click **Save & close**.
 
-### Create a configuration for Dematic StagingDirector
+### Create a configuration for StagingDirector (TCP/IP).
 1. Click **New**.
 2. In the **Create configuration** screen, provide the **Remote storage name**, **Provider name**, **URL (domain)**, and **Status URL**.
 3. For the **Data synchronization schedule**, choose how often FOLIO and your remote storage system will synchronize data. You may choose an interval of minute(s), hour(s), day(s), week(s), or month(s).
@@ -42,14 +40,13 @@ A configuration entry must be created for each remote storage system. Directions
 
 1. Click **New**.
 2. In the **Create configuration** screen, provide the **Remote storage name**, **Provider name**, **URL (domain)**, and **Credential properties**.
-3. For the **Data synchronization schedule**, choose how often FOLIO and your remote storage system will synchronize data. You may choose an interval of minute(s), hour(s), day(s), week(s), or month(s).
-4. For **Accession holding workflow preference**, choose one of two options:
+3. For **Accession holding workflow preference**, choose one of two options:
   * **Change permanent location**: When an item is accessioned into CAIASoft, if the holdings permanent location does not have the same location as the new remote location of the item, the holdings permanent location is changed.
   * **Duplicate holdings**: When an item is accessioned into CAIASoft, and a holdings record for the new  remote location does not already exist, the non-remote holdings record is duplicated, the location on the new holdings record is changed to the item’s location, and the item is moved to that new holdings record.
-5. For **Returning workflow preference**, choose one of two options:
+4. For **Returning workflow preference**, choose one of two options:
   * **Items received at remote storage scanned into FOLIO**: When this option is selected, FOLIO will expect that an item will be scanned directly in FOLIO and FOLIO will send an update to CAIASoft indicating that the item is expected to be stored, and set the item’s FOLIO item status to **Available**.
   * **Items received at remote storage scanned into CAIASoft**: When this option is selected, FOLIO expects that items will be scanned for return in CAIASoft. When items are scanned in CAIASoft, CAIASoft will send information to FOLIO; if FOLIO finds open requests on the item, CAIASoft will immediately move the item into requesting workflows. If the item is not requested, FOLIO will check the item in and change the item status to **Available**.
-6. Click **Save & close**.
+5. Click **Save & close**.
   
 ### Edit a configuration
 
@@ -72,7 +69,7 @@ Libraries only need to configure accession tables if they are using CAIASoft.
 
 Accession tables provide a way to configure how locations change when items are accessioned into CAIASoft. The **Original location** is the item’s location at the library (non-remote); the **Final location (Remote)** is the location that that item should be moved to when received in CAIASoft. The location chosen as the **Final location (Remote)** must be associated with your CAIASoft provider as part of its configuration options.
 
-To configure accession tables, first choose your provider name from the drop-down list. 
+To configure accession tables, first choose your **Remote storage name** from the drop-down list. 
 
 ### Map an original location to a final location
 1. Click the pencil icon under **Actions** for the location you wish to configure.
