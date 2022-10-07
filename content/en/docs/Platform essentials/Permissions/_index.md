@@ -3,6 +3,7 @@ title: "Permissions"
 linkTitle: "Permissions"
 date: 2022-01-12
 weight: 70
+tags: ["parenttopic"]
 ---
 
 FOLIO has a user permissions system that allows for granular control over what individual FOLIO users can access.
