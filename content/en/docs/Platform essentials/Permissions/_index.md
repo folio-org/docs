@@ -2,41 +2,43 @@
 title: "Permissions"
 linkTitle: "Permissions"
 date: 2022-01-12
-weight: 50
+weight: 60
 ---
 
-FOLIO has a user permissions system that allows for granular control over what users can access in their FOLIO installation. 
-
-Each app defines its own permissions for the frontend and backend modules that it uses. 
+FOLIO has a user permissions system that allows for granular control over what individual FOLIO users can access.
 
 By default, a FOLIO installation does not provide roles or permission profiles for library staff. Instead, FOLIO administrators can build their own groups of permissions called **permission sets** that correspond to their local needs. They can then assign those permissions to users through the Users app.
 
 ## What is a permission?
+
 A permission is an object in FOLIO that can be used to control access to FOLIO apps, workflows, and data.
 
-A permission can have a number of different attributes, depending on whether you are viewing the permission in FOLIO’s code or whether you are looking at permissions for a user on a FOLIO tenant. Attributes can include:
+A permission can have a number of different attributes, depending on whether you are viewing the permission in FOLIO’s code, or whether you are looking at permissions for a user on a FOLIO tenant. Attributes include:
 
-**permissionName.** This represents the unique name of the permission. 
-**displayName.** This is a human-readable name for the permission that usually corresponds to the name shown in the user interface.
-Note that what appears in the FOLIO user interface is a translated label for the permissionName; translations are stored for supported languages with each FOLIO module. The displayName was used in earlier versions of FOLIO but no longer serves a purpose in the FOLIO user interface.
-**id**. The **id** is a tenant-level unique identifier for the permission, created when the relevant FOLIO module is installed.
-**Description.** A description of the permission as provided by the developer. This field is optional.
-**subPermissions.** Many permissions are actually a grouping of more specific permissions - if this is the case, **subPermissions** is where those more specific permissions are listed.
-**childOf.** If a permission is a subPermission for another permission, that “parent” permission is listed.
-**grantedTo.** If the permission has been granted to any FOLIO users, their permissions user ID is listed.
-**mutable.** A permission can be either **mutable** or **immutable**; permissions are immutable by default. 
-If a permission is defined as **“mutable” : false**, then it cannot be changed without modifying the associated module code and restarting the module. If a permission is defined as **“mutable” : true**, it can be changed in the UI without having to stop and restart the associated module. 
-**visible.** A permission can be either visible or invisible. A permission is invisible by default.
-If a permission is defined as **”visible” : true**, then it is viewable in the FOLIO user interface. If a permission is defined as **”visible” : false**, then it is not viewable by default in the FOLIO user interface.
-deprecated
-**moduleName** and **moduleVersion.** These fields will only appear when looking at a FOLIO installation directly, they are not in the code. These fields tell you what module provided the permission definition, and what version of that module is running.
+* **permissionName.** This represents the unique name of the permission. 
+* **displayName.** This is a human-readable name for the permission that usually corresponds to the name shown in the user interface.
+    * Note that what appears in the FOLIO user interface is a translated label for the permissionName; translations are stored in the FOLIO module that defined the permission. The displayName was used in earlier versions of FOLIO but no longer serves a purpose in the FOLIO user interface.
+* **id**. The **id** is a tenant-level UUID for the permission, created when the relevant FOLIO module is installed.
+* **Description.** A description of the permission as provided by the developer. This field is optional.
+* **subPermissions.** Many permissions are actually a grouping of more specific permissions - if this is the case, **subPermissions** is where those more specific permissions are listed.
+* **childOf.** If a permission is a subPermission for another permission, that “parent” permission is listed.
+* **grantedTo.** If the permission has been granted to any FOLIO users, their permissions user ID is listed.
+* **mutable.** A permission can be either **mutable** or **immutable**; permissions are immutable by default. 
+    * If a permission attribute is **“mutable” : false**, then it cannot be changed without modifying the associated module code and restarting the module. If a permission attribute is **“mutable” : true**, it can be changed in the UI without having to stop and restart the associated module. 
+    * In practice, permission sets configured in settings are mutable; all other permissions are immutable.
+* **visible.** A permission can be either visible or invisible. A permission is invisible by default.
+    * If a permission is defined as **”visible” : true**, then it is viewable in the FOLIO user interface. If a permission is defined as **”visible” : false**, then it is not viewable by default in the FOLIO user interface.
+* **deprecated.** A permission is **deprecated** if the FOLIO developers have decided that the permission should no longer be used. It is marked as deprecated so that individual FOLIO libraries can make the decision about when to remove the permission from the system.
+* **moduleName** and **moduleVersion.** These fields will only appear when looking at a FOLIO installation directly, they are not in the code. These fields tell you what module provided the permission definition, and what version of that module is running.
+
 ## Naming Convention
+
 Permissions are named to indicate what a FOLIO user with the permission can do within the app. 
 
 Permission names generally follow one of two formats:
 
-\[Appname\]: \[What the user can do\]
-Settings \(\[Area of Settings or Appname\]\): \[What the user can do\]
+**\[Appname\]: \[What the user can do\]**
+**Settings \(\[Area of Settings or Appname\]\): \[What the user can do\]**
 
 ### Examples:
 
