@@ -1496,7 +1496,7 @@ To change the Inventory instance connection for a purchase order line, follow th
 
 ## Cancelling an order line
 
-To cancel a purchase order, follow the steps below.  Cancelling an order line removes all encumbrances and item records associated with the order line.  Note: Only order lines with an order status of Open will display the cancel option in the Action menu.To cancel an entire purchase order, see [Cancelling an order](#cancelling-an-order). You can [reopen an order[(#reopening-an-order) after performing the cancel action.
+To cancel a purchase order, follow the steps below.  Cancelling an order line removes all encumbrances and item records associated with the order line.  Note: Only order lines with an order status of Open will display the cancel option in the Action menu.To cancel an entire purchase order, see [Cancelling an order](#cancelling-an-order). You can [reopen an order](#reopening-an-order) after performing the cancel action.
 
 
 1. [Search for the order line you want to cancel](#searching-for-order-lines) and select it.
