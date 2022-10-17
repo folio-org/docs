@@ -25,12 +25,11 @@ Definition of terms related to the Receiving app:
 The permissions listed below allow you to interact with the Receiving app and determine what you can or cannot do within the app. You can assign permissions to users in the Users app. If none of these permissions are assigned to a user, they are unable to see the Receiving app or any related information.
 
 
-
+*   **Receiving: Export search results.** This permission allows the user to export receiving search results in .csv format.
 *   **Receiving: View.** This permission allows the user to view receiving information for orders.
 *   **Receiving: View, edit.** This permission allows the user to receive and edit pieces that are associated with a purchase order line.
 *   **Receiving: View, edit, create.** This permission allows the user to view, edit, and create piece records. Note: Users can only create pieces if the related purchase order line has the [Receiving workflow](../orders/#po-line-details) set to “Independent order and receipt quantity.”
 *   **Receiving: View, edit, delete.** This permission allows the user to view, edit and delete pieces in the Receiving app.
-*   **Settings (Receiving): Can view and edit settings.** This permission allows the user to manage receiving settings.
 
 
 ## Keyboard shortcuts
