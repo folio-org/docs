@@ -20,7 +20,7 @@ The following are all the Circulation Settings permissions presented in the orde
 * **Settings (Circ): Can create, edit and remove other settings.** This permission allows the user to create, read, update, and delete other settings.
 * **Settings (Circ): Can create, edit and remove staff slips.** This permission allows the user to create, read, update, and delete staff slips.
 * **Settings (Circ): Can create, edit and remove fixed due date schedules.** This permission allows the user to create, read, update, and delete fixed due date schedules.
-* **Settings (Circ): Can view loan history.** This permission allows the user to view loan history settings.
+* **Settings (Circ): Can view loan history.** This permission allows the user to view loan anonymization settings.
 * **Settings (Circ): Can create, edit and remove loan policies.** This permission allows the user to create, read, update, and delete loan policies.
 * **Settings (Circ): Can create, edit and remove overdue fine policies.** This permission allows the user to create, read, update, and delete overdue fine policies.
 * **Settings (Circ): Can create, edit and remove lost item fee policies.** This permission allows the user to create, read, update, and delete lost item fee policies.
@@ -184,13 +184,11 @@ Fixed due date schedules are used in Loan policies when you want to have a loan 
 4. In the **Delete fixed due date schedule** dialog, click **Delete**. The fixed due date schedule is deleted and a confirmation message appears.
 
 
-## Settings > Circulation > Loan history
+## Settings > Circulation > Loan anonymization
 
-Loan history allows you to anonymize closed loans. When closed loans are anonymized, all related patron information is removed from the loan, but the action will still appear in the Circulation log.
-
+When closed loans are anonymized, all related patron information is removed from the loan, but the action will still appear in the Circulation log.
 
 ### Closed loans
-
 
 #### Anonymize closed loans
 
