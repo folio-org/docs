@@ -1,7 +1,7 @@
 ---
 title: "Settings > Agreements"
 linkTitle: "Agreements"
-date: 2022-06-07
+date: 2022-10-17
 weight: 20
 tags: ["subtopic"]   
 ---
@@ -97,14 +97,16 @@ When you configure supplementary properties, the Supplementary properties sectio
 
 1. Click **New**.
 2. In the **New supplementary property** box, fill in all the fields:
+    * **Type.** Select a property **Type** from the drop-down list: Decimal, Integer, Text, Pick list, Pick list (multi-select), or Date.
+    * **Pick list** and **Pick list (multi-select).** If the property type selected is **Pick list**or **Pick list (multi-select)**, a pick list field displays. Select the **Pick list** you want to use from the drop-down list. For more information on pick lists, see [Settings > Agreements > Pick lists](#settings--agreements--pick-lists).
     * **Label.** The property name that appears when displaying the property to users in FOLIO. It is recommended that you create a short text string that clearly communicates the information recorded in the property. If you need to further explain the property, you should use the Description field.
     * **Name.** Used when outputting property data in a machine readable format. It is not intended to be displayed to users (staff or patrons). It should be a short Latin alphabet string that can be used by any external systems or programs that access the agreement property data. Use of camelCase is suggested but not required. Changes to the Name affects any external systems using agreement property data and changes should not be made without consulting those responsible for relevant external systems and software.
     * **Description.** Use to provide further explanation of the property. In the Agreements app, you can display the description by clicking the **information icon** next to the property's label.
+    * **Category.** (Not required.) Supplementary properties can be categorized for Open Access and other uses. Each category will appear as a separate accordion when viewing or editing the agreement. You can also filter properties by category under the **Category** drop-down list, which contains any categories that you have allocated to properties. To add a category, click on the **Category** box. You are offered a list of existing categories that will filter as you type. You can add new categories by typing a new value and clicking the option to **Add context <value>**. If you remove all occurrences of a category across all properties, it will be removed from the list of existing categories.
     * **Order weight.** To determine the order in which the properties appear in the agreement record, enter a number. If you do not set a value and leave the order weight at 0 for each property, or they all contain the same number, then they are sorted alphabetically. When sorted alphabetically, uppercase letters are sorted before lowercase letters. For example, “Zebra” appears before “aardvark.”
     * **Primary property.** Select whether the property is a primary property. Primary properties always display in agreement records. If you select **No**, then the property will be optional, and you have to manually add it to an agreement record whenever you want to use that property.
+    * **Deprecated.** Use to indicate if a property should be deprecated. If **Yes** is selected, then the property will be preserved in past agreements, but will not display in the list of available properties when adding properties to an agreement going forward.
     * **Default visibility.** Select whether you would like the property to display internally within FOLIO, or externally to the public (for example, if you are setting up properties to display in your catalog).
-    * **Type.** Select a property **Type** from the drop-down list: Decimal, Integer, Text, or Pick list.
-    * **Pick list.** If the property type selected is **Pick list**, a pick list field displays. Select the **Pick list** you want to use from the drop-down list. For more information on pick lists, see [Settings > Agreements > Pick lists](#settings--agreements--pick-lists).
 3. Click **Save**. A confirmation message appears, and the supplementary property is saved and appears in the Supplementary properties pane.
 
 
@@ -127,9 +129,20 @@ Note: You can only delete a property if it is not assigned to any agreement reco
 2. In the **Delete supplementary property** dialog, click **Delete**. A confirmation message appears and the property is deleted.
 
 
+### Searching a supplementary property
+
+
+
+You can search for a supplementary property in the search box. To search for a property, enter the property in the search box and click **Search**.
+
+You can also filter properties by category. Select a category from the **Category** drop-down list, and click **Search.** The drop-down list contains any categories that you have allocated to properties.
+
+
 ## Settings > Agreements > Pick lists
 
 A pick list is a customizable drop-down list used in the Agreements app. Pick lists are applied to Supplementary properties that have Pick list as their property type. Additionally, default pick lists like Status, Reason for closure, and Renewal priority can be found in this setting.
+
+A multi-select pick list permits you to select multiple values from the pick list. All selected values will display in the agreement record.
 
 Use this setting to establish the names of your available pick lists. Once you have named your pick lists, you can configure the values that are available in each pick list in [Settings > Agreements > Pick list values](#settings--agreements--pick-list-values) .
 
