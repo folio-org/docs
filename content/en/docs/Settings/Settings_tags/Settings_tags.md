@@ -16,6 +16,12 @@ To interact with Tag settings, a user needs to be assigned the following permiss
 
 Note: This is the only permission available for Tags settings. You are unable to view and access Tags settings if you do not have this permission assigned to you. You can assign permissions to users in the Users app.
 
+## Allowed characters
+
+Tags cannot be saved with space characters or pipe characters (|). They are removed before the tag is created. 
+
+Upper case characters will be converted to lower case when the tag is saved.
+
 ## Settings > Tags > General
 
 Use this setting to enable or disable tags across the following FOLIO apps:
