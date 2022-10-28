@@ -8,7 +8,7 @@ tags: ["subtopic"]
 
 The Calendar section of the Settings app is where you edit open and closed hours for the library service points. 
 
-The Check out app references the logged-in user’s service point when loaning items to patrons and calculating their due dates. That means that the service point must have an existing calendar that covers the time period that the item is being loaned for in order for the check out to be successful.
+The Check out app references the logged-in user’s service point when loaning items to patrons and calculating their due dates. That means that the service point must have an existing calendar that covers the time period that the item could potentially be loaned for in order for the check out to be successful.
 
 ## Permissions
 
@@ -18,9 +18,16 @@ To interact with Settings > Calendar, a user needs to be assigned at least one o
 * **Settings (Calendar): Can create, view, edit, and remove calendar events.** This permission allows the user to create, view, edit, and remove calendar events.
 * **Settings (Calendar): Can create, view, and edit calendar events.** This permission allows the user to create, view, and edit calendar events.
 
-## Settings > Calendar > Library Hours
+## Settings > Calendar > All calendars
 
-Use this setting to manage library hours. The library hours include both regular library hours and actual library hours. The regular library hours are the expected hours for each library service point. The actual library hours include exception periods such as weather closings or expanded hours for exams. 
+
+## Settings > Calendar > Current calendar assignments
+
+## Settings > Calendar > Monthly calendar view
+
+Use this option to view the service point calendar for the current month. You can use the arrows to go to different months, including reviewing past calendars.
+
+
 
 ### Creating Regular Library Hours
 
