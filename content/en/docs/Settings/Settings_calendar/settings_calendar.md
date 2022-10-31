@@ -10,6 +10,8 @@ The Calendar section of the Settings app is where you edit open and closed hours
 
 The Check out app references the logged-in user’s service point when loaning items to patrons and calculating their due dates. That means that the service point must have an existing calendar that covers the time period that the item could potentially be loaned for in order for the check out to be successful.
 
+The Calendar section of Settings allows you to create a new calendar, edit existing calendars, duplicate existing calendars, and delete calendars. You can create a single calendar and assign it to multiple service points.
+
 ## Permissions
 
 To interact with Settings > Calendar, a user needs to be assigned at least one of the following permission: 
@@ -33,6 +35,10 @@ From here, you can click **New** to create a brand new calendar to assign to a s
 ## Settings > Calendar > Monthly calendar view
 
 Use this option to view the service point calendar for the current month. You can use the arrows to go to different months, including reviewing past calendars.
+
+## Creating a new calendar
+
+
 
 ### Creating Regular Library Hours
 
