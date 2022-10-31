@@ -1,7 +1,7 @@
 ---
 title: "Settings > Calendar"
 linkTitle: "Calendar"
-date: 2022-03-25
+date: 2022-11-01
 weight: 30
 tags: ["subtopic"]
 ---
@@ -20,14 +20,19 @@ To interact with Settings > Calendar, a user needs to be assigned at least one o
 
 ## Settings > Calendar > All calendars
 
+Use this option to see all calendars on your system (including those with end dates in the past) and what service points those calendars were assigned too.
+
+From here you can use the Action menu to edit and/or duplicate an existing calendar, or create a brand new calendar.
 
 ## Settings > Calendar > Current calendar assignments
+
+Use this option to see only calendars that are currently in effect for each service point in your FOLIO instance.
+
+From here, you can click **New** to create a brand new calendar to assign to a service point.
 
 ## Settings > Calendar > Monthly calendar view
 
 Use this option to view the service point calendar for the current month. You can use the arrows to go to different months, including reviewing past calendars.
-
-
 
 ### Creating Regular Library Hours
 
