@@ -14,17 +14,19 @@ The Calendar section of Settings allows you to create a new calendar, edit exist
 
 ## Permissions
 
-To interact with Settings > Calendar, a user needs to be assigned at least one of the following permission: 
+To interact with Settings > Calendar, a user needs to be assigned at least one of the following permissions.
 
-* **Settings (Calendar): Can view calendar events.** This permission allows the user to view calendar events.
-* **Settings (Calendar): Can create, view, edit, and remove calendar events.** This permission allows the user to create, view, edit, and remove calendar events.
-* **Settings (Calendar): Can create, view, and edit calendar events.** This permission allows the user to create, view, and edit calendar events.
+* **Settings (Calendar): Can view existing calendars**. This permission allows a user to open **Settings \> Calendar** and view the three options: **All calendars**, **Current calendar assignments**, and **Monthly calendar view**.
+* **Settings (Calendar): Can create and assign new calendars**. This permission grants a user the view permissions in **Settings (Calendar): Can view existing calendars.** In addition, in **All calendars**, the user can select **Actions \> New**, create a new calendar, and assign it to one or more service points. In **Current calendar assignments**, the user can select **New** and create a new calendar and assign it to one or more service points. They can also choose a service point with a calendar assignment and choose **Actions \> Duplicate**
+* **Settings (Calendar): Can edit and reassign existing calendars**. This permission grants a user the view permissions in **Settings (Calendar): Can view existing calendars.** In addition, in **All calendars**, the user can choose an existing calendar, select **Actions \> Edit**, and edit the calendar. In **Current calendar assignments**, the user can select a service point with an assigned calendar and select **Actions \> Edit** to edit the calendar.
+* **Settings (Calendar): Can delete existing calendars**. This permission grants a user the view permissions in **Settings (Calendar): Can view existing calendars.** In addition, from **All calendars**, the user can choose a calendar and select **Actions \> Delete** to delete the calendar.
+
 
 ## Settings > Calendar > All calendars
 
-Use this option to see all calendars on your system (including those with end dates in the past) and what service points those calendars were assigned too.
+Use this option to see all calendars on your system (including those with end dates in the past) and what service points those calendars were/are assigned to.
 
-From here you can use the Action menu to edit and/or duplicate an existing calendar, or create a brand new calendar.
+From here, a user with appropriate permissions can use the Actions menu to edit and/or duplicate an existing calendar, create a brand new calendar, or delete a calendar
 
 ## Settings > Calendar > Current calendar assignments
 
@@ -38,53 +40,40 @@ Use this option to view the service point calendar for the current month. You ca
 
 ## Creating a new calendar
 
+To create a new calendar, go to **All calendars**. 
 
+1. Select **Actions \> New**. 
+2. Enter a **Calendar name**. 
+3. Enter a **Start date** and **End date**.
+4. Select one or more **Service points** to assign the calendar to. You can also leave this option blank, and assign the calendar to a service point later.
 
-### Creating Regular Library Hours
+Next, you will add your service point hours.
 
-1. Select the service point to add regular library hours.
-2. Click **New**.
-3. Enter **Valid from** and **Valid to** dates in the boxes. The dates cannot overlap with another existing library hours schedule.
-4. Enter a **Name**.
-5. Click and drag to select the time blocks on the calendar when the service point will be open.
-6. Click **Save & Close**.
+Hours are represented on the calendar as a table, each row representing a slot of **Hours of operation** - a period when the service point opened for service, and then closed. 
+
+If a service point opens on one day and then does not close until a future day, the **Start day** and **End day** of a particular row may be different days. This may happen if, for example, a library remains open overnight for students studying for final exams.
+
+If a library's standard hours include a day when it is completely closed, it is recommended that you still set a row for that day, and just designate the status as closed. For example, if a library is always closed on Sundays, you would represent that day with a row with a status of **Closed**, a **Start day** of Sunday, and an **End day** of Sunday.
+
+To add **Hours of operation**:
+
+1. From **Status**, choose **Open** or **Closed**. 
+2. Choose the start day for your **Hours of operation** time slot.
+3. Choose the **Start time** when the service point opens. If the **Status** of the row is Closed, you do not set a start time.
+4. Choose the **End day** when the service point closes. If your library remains open after 11:59 PM, your end day will be different than your start day.
+5. Choose the **End time** when the service point closes. If the **Status** of the row is Closed, you do not set an end time.
+6. Click **Add row** to add additional rows as needed.
+7. When you are finished adding your hours of operation, click **Save and close** at the bottom to save your calendar.
+
 
 ### Editing Regular Library Hours
 
-1. Click the **pencil icon** next to the regular library hours you want to edit.
-2. To add new open hours, click and drag to create a new time block on the calendar. If you need to shorten an open block, you will need to delete the block and then recreate it with the shorter hours. 
-3. Click **Save & Close**. The regular library hours are updated. 
 
 ### Deleting Regular Library Hours
 
-1. Click the **pencil icon** next to the regular library hours you want to delete. 
-2. At the bottom of the screen, click **Delete**.
-3. In the Delete Regular Library Hours dialog, click **Delete**. The regular library hours are deleted.
 
 ### Creating Exception Periods
-
-1. In the calendar pane, click **Open Calendar to Add Exceptions**.
-3. At the bottom of the screen, click **+ New Exception Period**.
-4. In the **Service points** pane, select the service point(s) where you want to add exceptions to regular hours. 
-5. In the **New: Exception Period** pane, enter **Valid from** and **Valid to** dates in the boxes.
-6. Enter a **Name** in the box.
-7. Enter **Valid from** and **Valid to** dates in the boxes.
-8. If the service point will be closed all day on the dates specified, click **Closed**. 
-9. Enter the **Opening Time** and **Closing Time** in the boxes, if appropriate.
-10. Click **Save & Close**. The exceptions to regular library hours are updated. 
-
 ### Editing Exception Periods
 
-1. In the calendar **Circulation desk** pane, click **Open Calendar to Add Exceptions**.
-2. In the **Service Point** pane, select the service point you want to edit.
-3. Click the exception period you want to edit. The exception periods are highlighted in red. 
-4. In the **Edit: Exception Period** pane, edit the exception period.
-5. Click **Save & Close**. The exceptions to regular hours are updated.
 
 ### Deleting Exception Periods
-
-1. Click **Open Calendar to Add Exceptions**. 
-2. In the **Service Point** pane, select the service point you want to delete.
-3. Click the exception period you want to delete. The exception periods are highlighted in red. 
-4. In the **Edit: Exception Period** pane, in the bottom right, click **Delete**. 
-5. In the Delete Exceptional Period dialog, click **Delete**. The exception period is deleted.
