@@ -40,12 +40,13 @@ Use this option to view the service point calendar for the current month. You ca
 
 ## Creating a new calendar
 
-To create a new calendar, go to **All calendars**. 
+To create a new calendar:
 
-1. Select **Actions \> New**. 
-2. Enter a **Calendar name**. 
-3. Enter a **Start date** and **End date**.
-4. Select one or more **Service points** to assign the calendar to. You can also leave this option blank, and assign the calendar to a service point later.
+1. Go to **All calendars**.
+2. Select **Actions \> New**. 
+3. Enter a **Calendar name**. 
+4. Enter a **Start date** and **End date**.
+5. Select one or more **Service points** to assign the calendar to. You can also leave this option blank, and assign the calendar to a service point later.
 
 Next, you will add your service point hours.
 
@@ -59,11 +60,41 @@ To add **Hours of operation**:
 
 1. From **Status**, choose **Open** or **Closed**. 
 2. Choose the start day for your **Hours of operation** time slot.
-3. Choose the **Start time** when the service point opens. If the **Status** of the row is Closed, you do not set a start time.
+3. Choose the **Start time** when the service point opens. If the status of the row is **Closed**, you do not set a start time.
 4. Choose the **End day** when the service point closes. If your library remains open after 11:59 PM, your end day will be different than your start day.
-5. Choose the **End time** when the service point closes. If the **Status** of the row is Closed, you do not set an end time.
+5. Choose the **End time** when the service point closes. If the status of the row is **Closed**, you do not set an end time.
 6. Click **Add row** to add additional rows as needed.
 7. When you are finished adding your hours of operation, click **Save and close** at the bottom to save your calendar.
+
+If you make a mistake with a calendar row, click the Trash can under **Actions** to remove it and add a new time slot. When you save your changes, FOLIO will sort the rows so that they display in a standard week order.
+
+## Duplicating an existing calendar
+
+Instead of creating a service point calendar from scratch, you may want to duplicate an existing calendar and modify 
+
+## Adding exceptions to a calendar
+
+Libraries will often have standard hours that apply for a lengthy period of time, like a semester or a year, but also want to be able to change their hours for specific days like holidays or for severe weather when the library closes early. To this, you create a specific **Exception** tied to a particular calendar period.
+
+A library can use exceptions to completely close a service point, or to change a service point's hours. For example, a library may be open 9 AM to midnight Sunday through Saturday during the academic year, but only be open 9 AM to 5 PM Monday through Friday during Spring Break. 
+
+To add an exception to a calendar:
+1. Under the **Exceptions** accordion, click **Add row**.
+2. Provide a **Name** for the exception period.
+3. From **Status**, choose **Open** or **Closed**.
+4. Choose the **Start date** when the exception period begins. Note that unlike **Hours of operation**, you are specifying a specific date, rather than a generic day of the week.
+5. Choose the **Start time** when the service point opens. If the status of the row is **Closed**, you do not set a start time.
+6. Choose the **End date** when the exception period ends. 
+7. Choose the **End time** when the service point closes. If the status of the row is **Closed**, you do not set an end time.
+
+If your exception has a status of **Open**, you can add additional date/time periods to the exception by clicking the **+** in the **Actions** column.
+
+
+
+
+
+
+
 
 
 ### Editing Regular Library Hours
