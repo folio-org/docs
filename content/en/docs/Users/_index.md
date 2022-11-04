@@ -420,12 +420,12 @@ Requests can be created in the Requests app or from the item record in the Inven
 ### Deleting A User Record in the UI 
 A user record can be deleted only if the user has no open transactions. To delete a user record, first check for open transactions. Once it’s confirmed that the user has no open transactions, the user record can be deleted. Follow these steps to check for open transactions and delete a user record in the UI:
 
-[Find the user record](#searching-for-user-records) for which you want to check for open transactions and select it.
-In the **Actions** menu, select **Check for open transactions/delete user**. 
-If there are no open transactions for this user, the message *No open transactions for user (Last Name, First Name). Are you sure you want to delete this user?* will appear in the **Check for open transactions/delete user** window.  
-Click **Yes** to delete the user record. A *User (Last Name, First Name) deleted successfully* message will confirm deletion of the user record. 
-Or click **No** to cancel the deletion and return to the user record. 
-If there are one or more open transactions for the user, the message *User (Last Name, First Name) has the following open transactions. Please resolve the transactions to proceed to delete this user.* Click **OK** to return to the user record. 
+1. [Find the user record](#searching-for-user-records) for which you want to check for open transactions and select it.
+2. In the **Actions** menu, select **Check for open transactions/delete user**. 
+3. If there are no open transactions for this user, the message *No open transactions for user (Last Name, First Name). Are you sure you want to delete this user?* will appear in the **Check for open transactions/delete user** window.  
+    1. Click **Yes** to delete the user record. A *User (Last Name, First Name) deleted successfully* message will confirm deletion of the user record. 
+    2. Or click **No** to cancel the deletion and return to the user record. 
+4. If there are one or more open transactions for the user, the message *User (Last Name, First Name) has the following open transactions. Please resolve the transactions to proceed to delete this user.* Click **OK** to return to the user record. 
 
 ## Overdue loans report
 
