@@ -6,9 +6,9 @@ weight: 30
 tags: ["subtopic"]
 ---
 
-The Calendar section of the Settings app is where you edit open and closed hours for the library service points. 
+The Calendar section of the Settings app is where you edit open and closed hours for  library service points. 
 
-The Check out app references the logged-in user’s service point when loaning items to patrons and calculating their due dates. That means that the service point must have an existing calendar that covers the time period that the item could potentially be loaned for in order for the check out to be successful.
+Check out workflows reference service points when loaning items to patrons and calculating due dates. That means that the service point must have an existing calendar that covers the time period that the item could potentially be loaned for in order for the check out to be successful.
 
 The Calendar section of Settings allows you to create a new calendar, edit existing calendars, duplicate existing calendars, and delete calendars. You can create a single calendar and assign it to multiple service points.
 
@@ -54,7 +54,7 @@ Hours are represented on the calendar as a table, each row representing a slot o
 
 If a service point opens on one day and then does not close until a future day, the **Start day** and **End day** of a particular row may be different days. This may happen if, for example, a library remains open overnight for students studying for final exams.
 
-If a library's standard hours include a day when it is completely closed, it is recommended that you still set a row for that day, and just designate the status as closed. For example, if a library is always closed on Sundays, you would represent that day with a row with a status of **Closed**, a **Start day** of Sunday, and an **End day** of Sunday.
+If a library's standard hours include a day when it is completely closed, it is recommended that you still set a row for that day and designate the status as closed. For example, if a service point is always closed on Sundays, you would represent that day with a row with a status of **Closed**, a **Start day** of Sunday, and an **End day** of Sunday.
 
 To add **Hours of operation**:
 
@@ -70,7 +70,13 @@ If you make a mistake with a calendar row, click the Trash can under **Actions**
 
 ## Duplicating an existing calendar
 
-Instead of creating a service point calendar from scratch, you may want to duplicate an existing calendar and modify 
+Instead of creating a service point calendar from scratch, you may want to duplicate an existing calendar and modify it instead.
+
+To duplicate a calendar:
+1. In **All calendars**, click the calendar you wish to duplicate.
+2. Click **Actions \> Duplicate**.
+
+This will open a copy of that calendar for you to edit and then save. Note that you can save two calendars with the same name, but it is recommended that you use different names to reduce errors.
 
 ## Adding exceptions to a calendar
 
@@ -89,22 +95,13 @@ To add an exception to a calendar:
 
 If your exception has a status of **Open**, you can add additional date/time periods to the exception by clicking the **+** in the **Actions** column.
 
+## Deleting a calendar
 
+Users with appropriate permissions can delete FOLIO calendars.
 
+Note that FOLIO will not warn you if deleting a calendar will leave a service point without an active calendar, and it will not warn you if deleting a calendar will leave a service point with a gap in calendar coverage in the future. Accordingly, before you delete a calendar, you should review the dates on the calendar and any service point assignments to ensure that you can address any gaps in calendar coverage.
 
-
-
-
-
-
-### Editing Regular Library Hours
-
-
-### Deleting Regular Library Hours
-
-
-### Creating Exception Periods
-### Editing Exception Periods
-
-
-### Deleting Exception Periods
+To delete a calendar:
+1. In **All calendars**, click the calendar you wish to delete.
+2. Click **Actions \> Delete**.
+3. In the confirmation box, click **Delete** to confirm you wish to delete the calendar.
