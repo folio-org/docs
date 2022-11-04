@@ -1,14 +1,14 @@
 ---
 title: "Settings > Calendar"
 linkTitle: "Calendar"
-date: 2022-11-01
+date: 2022-11-04
 weight: 30
 tags: ["subtopic"]
 ---
 
 The Calendar section of the Settings app is where you edit open and closed hours for  library service points. 
 
-Check out workflows reference service points when loaning items to patrons and calculating due dates. That means that the service point must have an existing calendar that covers the time period that the item could potentially be loaned for in order for the check out to be successful.
+Item check out workflows reference service points when calculating due dates. That means that the service point must have an existing calendar that covers the time period that the item could potentially be loaned for in order for the check out to be successful.
 
 The Calendar section of Settings allows you to create a new calendar, edit existing calendars, duplicate existing calendars, and delete calendars. You can create a single calendar and assign it to multiple service points.
 
@@ -68,21 +68,11 @@ To add **Hours of operation**:
 
 If you make a mistake with a calendar row, click the Trash can under **Actions** to remove it and add a new time slot. When you save your changes, FOLIO will sort the rows so that they display in a standard week order.
 
-## Duplicating an existing calendar
-
-Instead of creating a service point calendar from scratch, you may want to duplicate an existing calendar and modify it instead.
-
-To duplicate a calendar:
-1. In **All calendars**, click the calendar you wish to duplicate.
-2. Click **Actions \> Duplicate**.
-
-This will open a copy of that calendar for you to edit and then save. Note that you can save two calendars with the same name, but it is recommended that you use different names to reduce errors.
-
 ## Adding exceptions to a calendar
 
-Libraries will often have standard hours that apply for a lengthy period of time, like a semester or a year, but also want to be able to change their hours for specific days like holidays or for severe weather when the library closes early. To this, you create a specific **Exception** tied to a particular calendar period.
+Libraries will often have standard hours that apply for a long period of time, such as an academic semester, but also want to be able to change their hours for specific dates like local holidays. To do this, you create am **Exception** tied to a particular calendar period.
 
-A library can use exceptions to completely close a service point, or to change a service point's hours. For example, a library may be open 9 AM to midnight Sunday through Saturday during the academic year, but only be open 9 AM to 5 PM Monday through Friday during Spring Break. 
+A library can use exceptions to completely close a service point, or to change a service point's hours. For example, a library may be open 9 AM to midnight Sunday through Saturday during the academic year, but only be open 9 AM to 5 PM Monday through Friday during Spring Break. Exceptions would allow them to set up the 9 AM to 5 PM schedule and apply it to a specific week.
 
 To add an exception to a calendar:
 1. Under the **Exceptions** accordion, click **Add row**.
@@ -94,6 +84,32 @@ To add an exception to a calendar:
 7. Choose the **End time** when the service point closes. If the status of the row is **Closed**, you do not set an end time.
 
 If your exception has a status of **Open**, you can add additional date/time periods to the exception by clicking the **+** in the **Actions** column.
+
+### Example with Calendar Exceptions: Closing to celebrate the Chinese New Year.
+
+Suppose a university library is open 9 AM to midnight seven days a week for the spring semester, but will be closed some days, and open for shorter hours other days, during the Chinese New Year holiday, from Saturday January 21 2023 to Sunday January 29 2023.
+
+For the library main service point, they could do the following:
+1. Create a calendar named "Spring 2023 Main Library Hours."
+2. Set a start date for the first day of classes in January, and an end date for the last day of classes in May. 
+3. Assign the calendar to the service point "Main Library."
+4. Under **Hours of operation**, create a row for each calendar day, with a status of "Open", a start time of 9 AM, and an end time of 11:59 PM.
+5. Under **Exceptions**, create an exception named "Chinese New Year Holiday - First Weekend". Set the status to "Closed," with a start date of January 21 2023 and an end date of January 22 2023. This would close the library the first weekend.
+6. Create a second exception called "Chinese New Year Holiday - Weekday". Set the status to "Open". For the first row, set the start and end date to January 23 2023, with a start time of 9 AM and an end time of 4 PM. Then add a second row by clicking the **+** sign under **Actions**, and set the start date and end date to January 24, 2023, with a start time of 9 AM and an end time of 4 PM. Repeat this to add a row for each of the five days that week.
+7. Create a third exception called "Chinese New Year Holiday - Second Weekend." Set the status to "Closed", with a start date of January 28 2023 and an end date of January 29 2023.
+8. Click **Save and close** to save the calendar.
+
+Once this calendar is created, it could then be reused in future years by duplicating the calendar and changing the dates, rather than creating the schedule again from scratch.
+
+## Duplicating an existing calendar
+
+Instead of creating a service point calendar from scratch, you may want to duplicate an existing calendar and modify it instead.
+
+To duplicate a calendar:
+1. In **All calendars**, click the calendar you wish to duplicate.
+2. Click **Actions \> Duplicate**.
+
+This will open a copy of that calendar for you to edit and then save. Note that you can save two calendars with the same name, but it is recommended that you use different names to reduce errors.
 
 ## Deleting a calendar
 
