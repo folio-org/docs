@@ -893,7 +893,7 @@ If a title instance is related to an incorrect identifier, you can transfer iden
 5. Under **Destination title**, click **Select title**.
 6. Repeat steps 3 and 4 for the Destination title.
 7. Click **Preview**.
-8. In the **Preview** window, click **Update titles & close** to complete the transaction, or **Update titles & move more identifiers** to continue moving identifiers. You can track the status of the job in the Local KB admin app.
+8. In the **Preview** window, click **Update titles & close** to complete the transaction, or **Update titles & move more identifiers** to continue moving identifiers. You can track the status of the job in the [Local KB admin app](../local-kb-admin).
 
 
 ## Adding a tag to an e-resource
@@ -921,9 +921,9 @@ You can view platforms by clicking on the tab **Local KB search** and selecting 
 
 In the **Platforms** pane, click a platform to view it. The platform details pane displays with additional information about the platform. The Locators field is populated with the platform’s base URL from the internal KB. For the Local platform code, see [Editing platforms](#editing-platforms). The following accordions also display:
 
-**Platform URL customization settings.** See [Adding URL customization](#adding-url-customization). 
+**Platform URL customization settings.** See [Adding URL  customization](#adding-url-customization). 
 
-**Platform proxy server settings.** In Settings > Local KB admin > Proxy server settings, you can add a proxy server setting and exclude platforms one by one. Every platform that is not listed in the array of excluded platforms will contain a generated list of proxy URLs.
+**Platform proxy server settings.** In Settings > Local KB admin > Proxy serversettings, you can add a proxy server setting and exclude platforms one by one. Every platform that is not listed in the array of excluded platforms will contain a generated list of proxy URLs.
 
 
 ## Editing platforms
@@ -1065,5 +1065,4 @@ You can add and assign notes to agreement records, agreement lines, and e-resour
 
 The Dashboard app is designed to enable a personalized view of key information from across FOLIO apps at a glance. In its first release (included in the Juniper flower release), the Dashboard includes the ability to display information from the Agreements and Licenses applications.
 
-In the Morning Glory release, the Agreements app comes with two dashboard widgets ("ERM Agreements" and "ERM Agreement Jobs"). There are examples of how you can use these two 
-widget definitions to achieve a wide range of outcomes in the Example widget configurations documentation.
+In the Morning Glory release, the Agreements app comes with two dashboard widgets ("ERM Agreements" and "ERM Agreement Jobs"). There are examples of how you can use these two widget definitions to achieve a wide range of outcomes in the Example widget configurations documentation.
