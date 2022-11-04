@@ -111,6 +111,14 @@ To duplicate a calendar:
 
 This will open a copy of that calendar for you to edit and then save. Note that you can save two calendars with the same name, but it is recommended that you use different names to reduce errors.
 
+## Editing a calendar
+
+To edit an existing calendar:
+1. From **All calendars**, click the calendar you wish to edit.
+2. Click **Actions \> Edit**.
+
+Make changes as desired, and then click **Save and close** to save your changes.
+
 ## Deleting a calendar
 
 Users with appropriate permissions can delete FOLIO calendars.
