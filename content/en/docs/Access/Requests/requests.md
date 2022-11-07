@@ -183,7 +183,7 @@ If no items are available on the instance when the request is created, the reque
 
 If the request is a hold, it will remain in the request queue for the title, but it will not be associated with an item until the request is first in the queue and an item is returned.
 
-If the request is a recall, the recall will apply to the loan with a due date closest to the current due date . When the item is returned, it goes to the first open request, regardless of whether that request is the recall that triggered the item's return.
+If the request is a recall, the recall will apply to the loan with a due date closest to the current due date. When the item is returned, it goes to the first open request, regardless of whether that request is the recall that triggered the item's return.
 
 ### Viewing Title Level Requests
 
@@ -236,8 +236,6 @@ In this section, the **Item barcode** column may contain item information, or it
 * Item level request - you will see the barcode of the requested item.
 * Title level recall - you will see the barcode of the item that was recalled. Note that if the item is returned and it could fill a request that is higher in the queue, it will fill that request, not the request that triggered the recall.
 * Title level hold request - the **Item barcode** column will be empty.
-
-If there are requests in the queue that have a status of **Closed - pickup expired**, the queue numbers may be incorrect because the closed request is no longer visible. This is a known issue that is planned to be fixed in Nolana.
  
 ### Canceling a title level request
 
