@@ -10,7 +10,7 @@ tags: ["parenttopic"]
 <b>Note:</b> This [WOLFcon 2021 presentation](https://www.youtube.com/watch?v=SM1vq0zvxsY) gives an overview of the Library Data Platform.
 {{% /alert %}}
 
-In order for LDP software to connect to FOLIO, it needs read-only access to Okapi and the FOLIO database. The LDP can be hosted and administered locally by an institution's own staff or by contracting hosting services out to a third party. You can find specific [system requirements](https://github.com/library-data-platform/ldp/blob/1.8.0/doc/Admin_Guide.md#2-system-requirements) in the LDP documentation.
+In order for LDP software to connect to FOLIO, it needs read-only access to Okapi and the FOLIO database. The LDP can be hosted and administered locally by an institution's own staff or by contracting hosting services out to a third party. You can find specific [system requirements](https://github.com/library-data-platform/ldp/blob/1.8.2/doc/Admin_Guide.md#2-system-requirements) in the LDP documentation.
 
 ## Installing and configuring the LDP
 
@@ -18,6 +18,7 @@ FOLIO Reporting components Matrix
 
 | Folio Release | LDP version    | ldpmarc          | FOLIO Analytics* |
 | :------------ | :------------- | :--------------- | :--------------- |
+| Nolana        | 1.8.0 or later | v1.5.0 or later  | v1.5.0           |
 | Morning Glory        | 1.8.0 or later | v1.5.0 or later  | v1.4.0           |
 | Lotus         | 1.8.0 or later | v1.5.0 or later  | v1.3.0           |
 | Kiwi          | 1.8.0 or later | v1.5.0 or later  | v1.2.0           |
@@ -30,31 +31,31 @@ FOLIO Reporting components Matrix
 For detailed information about how to set up and configure the LDP, please review any of the guides linked below that are available in the LDP repository. There you also will find the latest versions and fixes of the LDP.
 
 ### Administration Guide
-* [Overview](https://github.com/library-data-platform/ldp/blob/1.8.0/doc/Admin_Guide.md#1-overview): brief introduction and summary
-* [System requirements](https://github.com/library-data-platform/ldp/blob/1.8.0/doc/Admin_Guide.md#2-system-requirements): software and hardware requirements
-* [Installation](https://github.com/library-data-platform/ldp/blob/1.8.0/doc/Admin_Guide.md#3-installation): installing prerequisites and building LDP
-* [Database configuration](https://github.com/library-data-platform/ldp/blob/1.8.0/doc/Admin_Guide.md#4-database-configuration): setting up and configuring the database
-* [Server configuration](https://github.com/library-data-platform/ldp/blob/1.8.0/doc/Admin_Guide.md#5-ldp-configuration): setting up, configuring, starting and upgrading the LDP
-* [Data privacy](https://github.com/library-data-platform/ldp/blob/1.8.0/doc/Admin_Guide.md#6-data-privacy): options to anonymize personal data
-* [Optional columns](https://github.com/library-data-platform/ldp/blob/1.8.0/doc/Admin_Guide.md#7-optional-columns): specifying optional FOLIO columns that should always appear in LDP tables
-* [Historical data](https://github.com/library-data-platform/ldp/blob/1.8.0/doc/Admin_Guide.md#8-historical-data): description of historical data feature and instructions for disabling
-* [User accounts](https://github.com/library-data-platform/ldp/blob/1.8.0/doc/Admin_Guide.md#9-user-accounts): how to set up user accounts and enable LDP to set permissions
-* [Reference](https://github.com/library-data-platform/ldp/blob/1.8.0/doc/Admin_Guide.md#reference): reference for the configuration file: ldpconf.json
+* [Overview](https://github.com/library-data-platform/ldp/blob/1.8.2/doc/Admin_Guide.md#1-overview): brief introduction and summary
+* [System requirements](https://github.com/library-data-platform/ldp/blob/1.8.2/doc/Admin_Guide.md#2-system-requirements): software and hardware requirements
+* [Installation](https://github.com/library-data-platform/ldp/blob/1.8.2/doc/Admin_Guide.md#3-installation): installing prerequisites and building LDP
+* [Database configuration](https://github.com/library-data-platform/ldp/blob/1.8.2/doc/Admin_Guide.md#4-database-configuration): setting up and configuring the database
+* [Server configuration](https://github.com/library-data-platform/ldp/blob/1.8.2/doc/Admin_Guide.md#5-ldp-configuration): setting up, configuring, starting and upgrading the LDP
+* [Data privacy](https://github.com/library-data-platform/ldp/blob/1.8.2/doc/Admin_Guide.md#6-data-privacy): options to anonymize personal data
+* [Optional columns](https://github.com/library-data-platform/ldp/blob/1.8.2/doc/Admin_Guide.md#7-optional-columns): specifying optional FOLIO columns that should always appear in LDP tables
+* [Historical data](https://github.com/library-data-platform/ldp/blob/1.8.2/doc/Admin_Guide.md#8-historical-data): description of historical data feature and instructions for disabling
+* [User accounts](https://github.com/library-data-platform/ldp/blob/1.8.2/doc/Admin_Guide.md#9-user-accounts): how to set up user accounts and enable LDP to set permissions
+* [Reference](https://github.com/library-data-platform/ldp/blob/1.8.2/doc/Admin_Guide.md#reference): reference for the configuration file: ldpconf.json
 
 ### Configuration Guide
-* [Foreign keys](https://github.com/library-data-platform/ldp/blob/1.8.0/doc/Config_Guide.md#1-foreign-keys): enabling capability to infer foreign keys
-* [Reference](https://github.com/library-data-platform/ldp/blob/1.8.0/doc/Config_Guide.md#reference): reference for the configuration file: dbconfig.general
+* [Foreign keys](https://github.com/library-data-platform/ldp/blob/1.8.2/doc/Config_Guide.md#1-foreign-keys): enabling capability to infer foreign keys
+* [Reference](https://github.com/library-data-platform/ldp/blob/1.8.2/doc/Config_Guide.md#reference): reference for the configuration file: dbconfig.general
 
 ## Setting up derived tables
-To let report users take full advantage of the community-developed [report queries](../folio-analytics/#using-queries-from-the-folio-analytics-repository) as well as having a good starting point for [ad hoc querying](../folio-analytics/#ad-hoc-querying-using-ldp-tables), it is strongly recommended to set up a nightly update on [derived tables](https://github.com/folio-org/folio-analytics/tree/release-1.4/sql/derived_tables). Note that the use of *views* and *materialized views* is not supported in LDP databases and may cause the LDP software to be unable to perform data updates.
+To let report users take full advantage of the community-developed [report queries](../folio-analytics/#using-queries-from-the-folio-analytics-repository) as well as having a good starting point for [ad hoc querying](../folio-analytics/#ad-hoc-querying-using-ldp-tables), it is strongly recommended to set up a nightly update on [derived tables](https://github.com/folio-org/folio-analytics/tree/release-1.5/sql/derived_tables). Note that the use of *views* and *materialized views* is not supported in LDP databases and may cause the LDP software to be unable to perform data updates.
 
-You can find instructions in Github on how to set up [FOLIO Reporting Derived Tables](https://github.com/folio-org/folio-analytics/blob/release-1.4/sql/derived_tables/README.md).
+You can find instructions in Github on how to set up [FOLIO Reporting Derived Tables](https://github.com/folio-org/folio-analytics/blob/release-1.5/sql/derived_tables/README.md).
 
 ## Data privacy
 
 The LDP is designed to support GDPR and other data privacy requirements. Administrators can exclude a predefined set of tables.
 
-See the [Anonymization Guide](https://github.com/library-data-platform/ldp/blob/1.8.0/doc/Admin_Guide.md#7-data-privacy) for information on how to activate and configure these features.
+See the [Anonymization Guide](https://github.com/library-data-platform/ldp/blob/1.8.2/doc/Admin_Guide.md#7-data-privacy) for information on how to activate and configure these features.
 
 The pages linked below list attributes that contain potential personal data:
 
@@ -63,15 +64,15 @@ The pages linked below list attributes that contain potential personal data:
 
 ## Adding local data
 
-As documented in the [user guide](https://github.com/library-data-platform/ldp/blob/1.8.0/doc/User_Guide.md#4-local-tables), it is also possible to load and create local data into your LDP. Besides using the local schema, you might consider setting up separate schemas for different user groups or purposes.
+As documented in the [user guide](https://github.com/library-data-platform/ldp/blob/1.8.2/doc/User_Guide.md#4-local-tables), it is also possible to load and create local data into your LDP. Besides using the local schema, you might consider setting up separate schemas for different user groups or purposes.
 
 ### Using schemas
 The concept of schemas allows you to organize tables and permissions within one database. In LDP we have initially four relevant schemas:
 
 * public: contains all extracted tables and its current data from the bound FOLIO tenant
-* [history](https://github.com/library-data-platform/ldp/blob/1.8.0/doc/User_Guide.md#5-historical-data): stores data that have been updated in the past or may no longer exist
-* [folio_reporting](https://github.com/folio-org/folio-analytics/blob/release-1.4/sql/derived_tables/README.md): contains all [derived tables](https://github.com/folio-org/folio-analytics/tree/release-1.4/sql/derived_tables) created and supported by the community
-* [local](https://github.com/library-data-platform/ldp/blob/1.8.0/doc/User_Guide.md#4-local-tables): common area for report users to create or import own data
+* [history](https://github.com/library-data-platform/ldp/blob/1.8.2/doc/User_Guide.md#5-historical-data): stores data that have been updated in the past or may no longer exist
+* [folio_reporting](https://github.com/folio-org/folio-analytics/blob/release-1.5/sql/derived_tables/README.md): contains all [derived tables](https://github.com/folio-org/folio-analytics/tree/release-1.5/sql/derived_tables) created and supported by the community
+* [local](https://github.com/library-data-platform/ldp/blob/1.8.2/doc/User_Guide.md#4-local-tables): common area for report users to create or import own data
 
 Beside existing schemas, you are free to create more schemas for your local needs (e.g., to provide data for different departments, to separate and protect sensitive data).
 
@@ -91,7 +92,7 @@ For Postgres there are two common approaches:
 
 The LDP utilizes the FOLIO APIs to get most of its content. To see more details about the APIs can be found at FOLIO Developers [API documentation](https://dev.folio.org/reference/api/).
 
-As of [version 1.8.0](https://github.com/library-data-platform/ldp/tree/1.8.0), the LDP pulls data from the following FOLIO modules:
+As of [version 1.8.2](https://github.com/library-data-platform/ldp/tree/1.8.2), the LDP pulls data from the following FOLIO modules:
 
 * mod-audit
   * /audit-data/circulation/logs
