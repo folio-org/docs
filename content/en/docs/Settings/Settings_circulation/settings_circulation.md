@@ -13,14 +13,12 @@ The Circulation section of the Settings app is where you establish your loan pol
 
 Each setting within Circulation has its own permission associated with it. If a user has one of the below permissions assigned to their user record, they will be able to view and interact with that particular setting. You can assign permissions to users in the Users app.
 
-The following are all the Circulation Settings permissions presented in the order the configurations appear in the Settings app:
-
+The following are all the Circulation Settings permissions:
 
 * **Settings (Circ): Can create, edit and remove circulation rules.** This permission allows the user to create, read, update, and delete circulation rules.
 * **Settings (Circ): Can create, edit and remove other settings.** This permission allows the user to create, read, update, and delete other settings.
 * **Settings (Circ): Can create, edit and remove staff slips.** This permission allows the user to create, read, update, and delete staff slips.
 * **Settings (Circ): Can create, edit and remove fixed due date schedules.** This permission allows the user to create, read, update, and delete fixed due date schedules.
-* **Settings (Circ): Can view loan history.** This permission allows the user to view loan anonymization settings.
 * **Settings (Circ): Can create, edit and remove loan policies.** This permission allows the user to create, read, update, and delete loan policies.
 * **Settings (Circ): Can create, edit and remove overdue fine policies.** This permission allows the user to create, read, update, and delete overdue fine policies.
 * **Settings (Circ): Can create, edit and remove lost item fee policies.** This permission allows the user to create, read, update, and delete lost item fee policies.
@@ -28,6 +26,12 @@ The following are all the Circulation Settings permissions presented in the orde
 * **Settings (Circ): Can create, edit and remove patron notice templates.** This permission allows the user to create, read, update, and delete patron notice templates.
 * **Settings (Circ): Can create, edit and remove cancellation reasons.** This permission allows the user to create, read, update, and delete request cancellation reasons.
 * **Settings (Circ): Can create, edit and remove request policies.** This permission allows the user to create, read, update, and delete request policies.
+* **Settings (Circ): Can view loan history.** This permission allows the user to view settings in Settings \> Circulation \> Loan anonymization.
+* **Settings (Circ): Can edit loan history.** This permission allows the user to edit settings in Settings \> Circulation \> Loan anonymization.
+* **Settings (Circ): Can view loan policies.** This permission allows the user to view loan policies but does not allow create, edit or delete.
+* **Settings (Circ): Can view lost item fee policies.** This permission allows the user to view lost item fee policies but does not allow create, edit or delete.
+* **Settings (Circ): Can view overdue fine policies.** This permission allows the user to view overdue fine policies but does not allow create, edit or delete. 
+* **Settings (Circulation): Title level request edit.** This permission allows users to enable and configure title-level requesting. Note that if title level requesting is enabled, and a title-level request is created, it can no longer be turned off via Settings.
 
 
 ## Settings > Circulation > Circulation rules
