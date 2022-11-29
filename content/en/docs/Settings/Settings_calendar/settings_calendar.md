@@ -37,6 +37,20 @@ From here, you can click **New** to create a brand new calendar to assign to a s
 
 Use this option to view a service point's calendar for a particular month. Each day will show the service point's open and closed hours. Schedule exceptions are emphasized with an exclamation mark. 
 
+## View a calendar
+
+To view a calendar, click on the calendar from **All calendars** or **Current calendar assignments**. The calendar will open in the fourth pane.
+
+A calendar has ____ sections:
+* **Calendar information**. This shows the calendar name, start date, and end date.
+* **Service point assignments**. This shows if the calendar is assigned to any service points.
+* **Hours of operation**. This shows a table with open times and close times by weekday. 
+** If a weekday closing time extends into the next day between 12 AM and 4 AM, the open and closing time will both show on the opening weekday. These times are denoted with a `*`.
+** If a library is open for 24 hours over multiple days, the opening and closing times on those days will have dashes.
+* **Exceptions --- openings**. If a library has exceptions that change a service point's open hours, the exception name will be shown alongside all start and end times.
+* **Exceptions --- closures**. If a library has exceptions that close a service point for one or more days, the exception name will be shown, along with the start and end dates.
+* **Record metadata
+
 ## Create a new calendar
 
 To create a new calendar:
@@ -134,9 +148,9 @@ To delete a single calendar:
 Over time, institutions may end up with a large number of historical calendars, and want to remove them to improve usability and performance. This can be done through the **Purge old calendars** function.
 
 1. Go to **All calendars**.
-2. Select **Actions \> Purge old calendars**. A modal will appear.
+2. Select **Actions \> Purge old calendars**. A dialog will appear.
 3. From **Purge calendars that ended...**, choose a date option from the drop down.
 4. From **And were**, you can choose whether to include calendars that were assigned to service points or calendars that were not assigned to service points. 
 
-The modal will show a preview of the calendars that will be deleted. Click **Delete** to remove them.
+The dialog will show a preview of the calendars that will be deleted. Click **Delete** to remove them.
 
