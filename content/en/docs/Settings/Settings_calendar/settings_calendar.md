@@ -1,7 +1,7 @@
 ---
 title: "Settings > Calendar"
 linkTitle: "Calendar"
-date: 2022-11-04
+date: 2022-12-01
 weight: 30
 tags: ["subtopic"]
 ---
@@ -83,18 +83,22 @@ If you make a mistake with a calendar row, click the Trash can under **Actions**
 
 ## Add exceptions to a calendar
 
-Libraries will often have standard hours that apply for a long period of time, such as an academic semester, but also want to be able to change their hours for specific dates like local holidays. To do this, you create am **Exception** tied to a particular calendar period.
+Libraries will often have standard hours that apply for a long period of time, such as an academic semester, but also want to be able to change their hours for specific dates like local holidays or exam periods. Exceptions provide a way to override a service point's regular hours.
 
 A library can use exceptions to completely close a service point, or to change a service point's hours. For example, a library may be open 9 AM to midnight Sunday through Saturday during the academic year, but only be open 9 AM to 5 PM Monday through Friday during Spring Break. Exceptions would allow them to set up the 9 AM to 5 PM schedule and apply it to a specific week.
+
+There are two types of exceptions:
+* Closures: Exceptional closures will close a service point from the start to the end date, inclusive. These can be applied to one or more calendar days.
+* Openings: Exceptional openings can allow you to specify multiple date/time ranges, allowing you change opening and closing hours on a day.
 
 To add an exception to a calendar:
 1. Under the **Exceptions** accordion, click **Add row**.
 2. Provide a **Name** for the exception period.
-3. From **Status**, choose **Open** or **Closed**.
+3. From **Status**, choose **Open** to create an exceptional opening period, or **Closed** to create an exceptional closure period.
 4. Choose the **Start date** when the exception period begins. Note that unlike **Hours of operation**, you are specifying a specific date, rather than a generic day of the week.
-5. Choose the **Start time** when the service point opens. If the status of the row is **Closed**, you do not set a start time.
+5. If the status of the row is **Open**, set a start time. 
 6. Choose the **End date** when the exception period ends. 
-7. Choose the **End time** when the service point closes. If the status of the row is **Closed**, you do not set an end time.
+7. If the status of the row is **Open**, set a close time.
 
 If your exception has a status of **Open**, you can add additional date/time periods to the exception by clicking the **+** in the **Actions** column.
 
