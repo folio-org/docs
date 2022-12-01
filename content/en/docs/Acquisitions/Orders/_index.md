@@ -22,21 +22,22 @@ The permissions listed below allow you to interact with the Orders app and deter
 
 Note: The below permissions only pertain to the Orders app. Within the app, orders and order lines may link to records in other apps, like Inventory and Receiving, and the ability to interact with those records could require separate permissions.
 
-The following are all the Orders permissions:
+Orders permissions:
 
-
+*   **Orders: Approve purchase orders.** This permission allows the user to approve purchase orders.
 *   **Orders: Assign acquisition units to new order.** This permission allows the user to assign acquisition units to orders when creating a new order.
 *   **Orders: Can create new Orders and Order lines.** This permission allows the user to create new orders and order lines.
  *   **Orders: Can delete Orders and Order lines.** This permission allows the user to delete orders and order lines. 
 *   **Orders: Can edit Orders and Order lines.** This permission allows the user to view and edit orders and order lines. 
+*   **Orders: Can view Orders and Order lines.** This permission allows the user to view orders and order lines.
+*   **Orders: Cancel order lines.** This permission allows the user to cancel order lines.
+*   **Orders: Cancel purchase orders.** This permission allows the user to cancel order lines.
 *   **Orders: Export search results.** This permission allows the user to export search results in .csv format.
 *   **Orders: Manage acquisition units.** This permission allows the user to change the assignment of acquisition units for an order or order line.
-*   **Orders: Remove orders.** This permission allows the user to delete orders. 
 *   **Orders: Reopen purchase orders.** This permission allows the user to reopen an order.
 *   **Orders: Show all hidden fields.** This permission allows the user to view all fields on a purchase order that were hidden by creation from an order template.
 *   **Orders: Unopen purchase orders.** This permission allows the user to unopen an order.
 *   **Orders: Update encumbrances.** This permission allows the user to update encumbrances for an open order.
-*   **Orders: Can view Orders and Order lines.** This permission allows the user to search for and view orders and order lines. 
 
 
 
@@ -619,6 +620,20 @@ Note: Unopening an order removes any encumbrances and item records with an On Or
 3. In the **Unopen - purchase order** dialog, click **Submit**. A confirmation message appears and the order’s status changes to Open.
 
 
+## Cancelling an order
+
+To cancel an open purchase order, follow the steps below.  Cancelling a purchase order removes all encumbrances and updates all associated item records for all purchase order lines to an **Item status** of Order closed.  To cancel individual order lines, see [Cancelling an order line](#cancelling-an-order-line). You can [reopen an order[(#reopening-an-order) after performing the cancel action.
+
+1. [Search for the order you want to cancel](#searching-for-an-order) and select it.
+
+2. In the **Purchase order** pane, select **Actions > Cancel**. Note: Only orders in Open status display the cancel option in the Action menu.
+
+3. In the **Close - purchase order** dialog, optionally add **Notes** text and click **Submit**. A confirmation message appears. 
+
+Upon cancellation, the order **Workflow status** changes to Closed, the **Reason for closure** is set to Cancelled, and any optionally added notes appear in the PO Summary **Notes on closure** field. All PO line fund distribution **Current encumbrance** amounts are set to $0.00.  In the PO line search results pane and on the Purchase order detail pane PO lines section, a red circle with a diagonal line icon appears beside the cancelled order line.
+
+
+
 ## Closing an order
 
 The system will automatically close one-time orders that are fully received and fully paid, or those where receipt or payment is not required, as indicated by the purchase order line **Receipt status** and **Payment status** values.  Only open orders can be closed. If you need to close an order manually, follow the steps below. Note about **Item status**: If **Create inventory** on the purchase order line is set to “Instance/holdings/item”, an item was created in Inventory when the order was opened. Closing an order when the item is not yet received will update the **Item status** of the item to “Order Closed.”  For more information about item status see [Platform essentials > Item Status](< ref “/platform_essentials_items_status.md” >).
@@ -677,15 +692,17 @@ Note: When you delete an order, received items remain in the system, but the rec
 
 
 ## Printing an order
+
 To print or save a PDF file containing a snapshot of key information about an order, follow these steps:
 
-1. [Search for the order you want to delete](#searching-for-an-order) and select it.
+1. [Search for the order you want to print](#searching-for-an-order) and select it.
 
-2. To print the order, adjust the printer settings as needed and select **Print**.
+2. In the **Purchase order** pane, select **Actions > Print**.  A print preview window will open.
 
-3. In the **Purchase order** pane, select **Actions > Print**.  A print preview window will open.
+3. To print the order, adjust the printer settings as needed and select **Print**.
 
 4. To save the PDF file without printing, open the **Destination** drop-down list and select **Save as pdf**.
+
 
 
 ## Showing hidden fields
@@ -1450,6 +1467,24 @@ If the PO Line has been linked to an Agreement line in the Agreements app, a Lin
 4. Click **Save & close**. A confirmation message appears and the order line is updated.
 
 
+## Changing an instance connection
+
+To change the Inventory instance connection for a purchase order line, follow these steps:
+
+1. [Find the order line you want to change](#searching-for-order-lines) and select it.
+
+2. In the **PO Line details** pane, click **Actions > Change instance connection.** The Select instance search window opens.
+
+3. Find the title using the search box and/or the filters. Click the title to select it. The Change title window opens, “You have changed the title information of this purchase order line from (old title name) to (new title name). All related item records will be moved to the new instance.  How would you like to address the related Holdings? 
+
+4. Click the **How to update holdings** drop-down list and select **Move**, **Find or create new**, or **Create new.**  
+
+5. If you choose to create new holdings or find matching holdings based on the current location of items, FOLIO will ask you if you want to delete the abandoned Holdings where possible. A popup window will display, “This piece is connected to records in inventory.  After this edit, there will be no other pieces OR items connected to the related Holdings record. After making this change, would you like FOLIO to delete the holdings?” Select **Submit** to complete the instance connection change. Select either **Keep holdings** or **Delete holdings** to continue.
+
+6. The confirmation message, “Order instance connection has been successfully updated.” displays.
+
+
+
 ## Receiving an order line
 
 1. [Find the order line you want to receive](#searching-for-order-lines) and select it.
@@ -1457,6 +1492,18 @@ If the PO Line has been linked to an Agreement line in the Agreements app, a Lin
 2. In the **PO Line details** pane, click **Actions > Receive.** The order line opens in the Receiving app.
 
 3. Follow the steps as outlined in the [Receiving app documentation](../receiving).
+
+
+## Cancelling an order line
+
+To cancel a purchase order, follow the steps below.  Cancelling an order line removes all encumbrances and item records associated with the order line.  Note: Only order lines with an order status of Open will display the cancel option in the Action menu.To cancel an entire purchase order, see [Cancelling an order](#cancelling-an-order). You can [reopen an order](#reopening-an-order) after performing the cancel action.
+
+
+1. [Search for the order line you want to cancel](#searching-for-order-lines) and select it.
+
+2. In the **PO Line detail** pane, select **Actions > Cancel**. A confirmation dialog asks, “Are you sure you want to cancel this purchase order line?”. Select Cancel order line to continue. A confirmation message appears.
+
+Upon cancellation, the PO line **Receipt status** and **Payment status** values change to Cancelled. The fund distribution **Current encumbrance** amount is set to $0.00. In this release of FOLIO, if there is an associated item in Inventory, the **Item status** value remains set to On order.  The “POL receipt status” is set to Cancelled. In the PO line search results pane and on the Purchase order detail pane PO lines section, a red circle with a diagonal line icon appears beside the cancelled order line.
 
 
 ## Deleting an order line

@@ -1,7 +1,7 @@
 ---
 title: "Receiving"
 linkTitle: "Receiving"
-date: 2022-09-22
+date: 2022-10-17
 weight: 50
 tags: ["parenttopic"]
 ---
@@ -26,11 +26,12 @@ The permissions listed below allow you to interact with the Receiving app and de
 
 
 
+*   **Receiving: Export search results.** This permission allows the user to export receiving search results in .csv format.
 *   **Receiving: View.** This permission allows the user to view receiving information for orders.
 *   **Receiving: View, edit.** This permission allows the user to receive and edit pieces that are associated with a purchase order line.
 *   **Receiving: View, edit, create.** This permission allows the user to view, edit, and create piece records. Note: Users can only create pieces if the related purchase order line has the [Receiving workflow](../orders/#po-line-details) set to “Independent order and receipt quantity.”
 *   **Receiving: View, edit, delete.** This permission allows the user to view, edit and delete pieces in the Receiving app.
-*   **Settings (Receiving): Can view and edit settings.** This permission allows the user to manage receiving settings.
+
 
 
 ## Keyboard shortcuts
@@ -141,7 +142,7 @@ Note: Adding a product ID and type is optional, but if you click **Add product I
 
 ## Searching for a receiving title
 
-You can search for orders to be received in the **Search & filter** pane. To search for orders, enter your search terms into the box. Select the **Keyword** drop-down list to search through one of the following fields:
+You can search for orders to be received in the **Search & filter** pane. To search, enter your search terms into the box. Select the **Keyword** drop-down list to search through one of the following fields:
 
 
 
@@ -256,10 +257,11 @@ To search for orders assigned to a specific acquisition unit, follow these steps
 
 Note: The Receiving app does not currently support restricting user permissions based on acquisition unit.  
 
+
 ### Rush
 
 In the **Search & filter** pane, click **Rush** and select **Yes** or **No.**
-
+ 
 
 ### Received date
 
@@ -294,9 +296,57 @@ To search by the receipt due date from the order purchase order line, follow the
 To clear all filters, go to the **Search & filter** pane and click **Reset all**.
 
 
+## Exporting search results
+
+To export a file of title and/or piece information in comma-separated values (.csv) format, follow these steps:
+
+In the **Search & filter** pane, use the search and filter options to select a set of receiving records.
+
+In the search results pane, click **Actions** and select,**Export results (CSV)**.
+
+In the **Export settings** dialog, the following message will display: “This export could take a few minutes. If you reload or close the page the export will not be completed. Once the file is ready it could take another minute for your browser to finish downloading the file. You can continue to work with titles and pieces in a different browser tab if needed.”
+
+To export all fields from the title and piece leave the **Title fields** and **Piece fields** default values set to **All**.  To select specific fields to export, click on the radio button below “All” and use the drop-down list to select the specific fields to export.
+
+Click **Export**. The file downloads to your local download location.
+
+
+### Title fields
+
+*   Title
+*   Publisher
+*   Published date
+*   Edition
+*   Subscription from
+*   Subscription to
+*   Contributors
+*   Product IDs
+*   Order type
+*   Vendor
+*   Requester
+*   Rush
+
+### Piece fields
+
+*   Caption
+*   Copy number
+*   Enumeration
+*   Chronology
+*   Barcode
+*   Call number
+*   Piece format
+*   Expected receipt date
+*   Comment
+*   Location
+*   Supplement
+*   Display on holding
+*   Item HRID
+
+
+
 ## Viewing receiving titles details
 
-Receiving title details can be viewed by any user with the [Receiving: View](#permissions). 
+Receiving title details can be viewed by any user with the permission [Receiving: View(#permissions). 
 
 
 ### Search results
@@ -338,6 +388,7 @@ This section displays the details of the purchase order lines.
 *   **Rush.** This flag indicates whether rush handling should be applied to this order.
 
 
+
 ### Expected
 
 This section displays a table list of the pieces of the order that are still expected to be received. See [Adding an expected piece](#adding-an-expected-piece) for more information.  To customize the columns that appear in the table list, follow these steps:
@@ -348,9 +399,10 @@ This section displays a table list of the pieces of the order that are still exp
 4. Your selections persist until you logout of FOLIO.
 
 
+
 ### Received
 
-This section displays a table list of the pieces of the order that have been received. See [Receiving an order](#receiving-an-order) for more information. To customize the columns that appear in the table list, follow these steps:
+This section displays a table list of the pieces of the order that have been received. See [Receiving an order](#receiving-an-order) for more information.  To customize the columns that appear in the table list, follow these steps:
 
 1.  In the Received section of the receiving title, select the **Actions** button.  
 2. The listed columns are all selected by default under **Show columns** in the Actions list.  
@@ -557,4 +609,3 @@ The Receive function can be used to receive multiple pieces at once.
 3. Optional: Make changes to the **Comment** field.
 4. Select the checkbox beside each piece you want to unreceive. Note: If you want to unreceive all of the received pieces, select the top checkbox.
 5. Click **Unreceive**. The selected pieces are now displayed under the Expected section. 
-

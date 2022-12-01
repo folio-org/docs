@@ -1,8 +1,7 @@
-
 ---
 title: "Agreements"
 linkTitle: "Agreements"
-date: 2022-03-21
+date: 2022-10-17
 weight: 10
 tags: ["parenttopic"]
 ---
@@ -35,6 +34,7 @@ The following permissions are applicable to all libraries using the Agreements a
 *   **Agreements: Search & view agreements.** This permission allows the user to search and view existing agreements. It also allows the user to see and access the Agreement app in the FOLIO interface.
 *   **Agreements: Edit agreements.** This permission allows the user to edit agreements, including the ability to add and edit agreement lines; to add and edit documents; and to view, add and edit tags on an agreement. It also grants all permissions included in "Agreements: Search & view agreements.”
 *   **Agreements: Delete agreements.** This permission allows the user to delete agreements. (This does not include the ability to edit agreements, only to delete them.) It also grants all permissions included in "Agreements: Search & view agreements.”
+*   **Agreements: File download.** (ui-agreements.agreements.file.download) This permission grants permission for document downloads, as separate from document uploads.
 
 The following permissions are only applicable if your library is using the internal KB:
 
@@ -45,9 +45,15 @@ The following permissions are only applicable if your library is using the inter
 *   **Agreements: Search & view platforms.** This permission allows the user to search and view platforms in the internal KB. This includes the permission to see and access the Agreement app in the FOLIO interface.
 *   **Agreements: Edit platforms.** This permission allows the user to edit platform properties. It also grants all permissions included in "Agreements: Search & view e-resources."
 
+If you want to eUsage data in an agreement record, you also need to have the following eUsage permission:
+
+
+
+*   **eUsage reports: charts may be viewed.** This permission adds an accordion to the Agreement record in the Agreement app that displays charts and graphs of eUsage data for the titles related to an agreement.
+
 
 ## Keyboard shortcuts
-Keyboard shortcuts allow you to perform actions in this app using the keyboard.  See [Platform essentials > Keyboard shortcuts]({{< ref "keyboardshortcuts.md" >}}) for more information.
+Keyboard shortcuts allow you to perform actions in this app using the keyboard.  See [Platform essentials > Keyboard shortcuts]({{< ref "/platform_essentials_keyboard_shortcuts.md" >}}) for more information.
 
 
 ## Creating an agreement
@@ -226,7 +232,7 @@ External licenses are any license not available through the Licenses app.
 
 ### Organizations
 
-Organizations are any institution with which your library interacts. For example, you may want to add a vendor or consortium associated with the agreement. Multiple organizations can be added to a record, but the organizations must first be created in the [Organizations app]({{< ref "/organizations.md" >}}).
+Organizations are any institution with which your library interacts. For example, you may want to add a vendor or consortium associated with the agreement. Multiple organizations can be added to a record, but the organizations must first be created in the [Organizations app]({{< ref "/organizations.md" >}}). To set one organization as the primary organization, check the **Set as primary organization** box.
 
 
 #### Adding an organization
@@ -402,6 +408,8 @@ A related agreement is an agreement relevant to the current agreement. This sect
 ## Searching for agreements
 
 You can search for agreements in the **Search & filter** pane. To search for agreements, enter your search terms in the search box and click **Search**. The search box searches through the Name, Description, and Alternative names fields.
+
+Note: When using the internal KB, click **Agreements search** in order to search for agreements. 
 
 You can also search for agreements by selecting any of the filters in the **Search & filter** pane: Status, Renewal priority, Is perpetual, Start date, End date, Organizations, Organization role, Internal contacts, Internal contacts role, Tags, and Supplementary properties. For more information on the filters, see the filter descriptions below.
 
@@ -773,8 +781,6 @@ Exporting an agreement generates a JSON file. Note: Resources are only included 
 2. In the **Agreement details** pane, select **Actions > Export**. Depending on your browser and its configurations, the file automatically downloads or you are prompted to save it.
 
 
-
-
 ## Exporting e-resources
 
 Exporting e-resources covered by an agreement is only possible if using the internal KB, and if e-resources are linked to the agreement as agreement lines.
@@ -789,9 +795,180 @@ Note: E-resources can be filtered by Current, Future, or Dropped. These options 
 4. Click **Export as… > JSON** or **KBART**. Depending on your browser and its configurations, the file automatically downloads or you are prompted to save it.
 
 
+## Searching for e-resources
+
+Searching for e-resources covered by an agreement is only possible if using the internal KB. 
+
+You can search for e-resources in the **Search & filter** pane by clicking on **E-resources**. Enter your search terms in the search box and click **Search**. The search box searches through the Name, Description, and Alternative names fields.
+
+You can also search for e-resources by selecting any of the filters in the **Search & filter** pane: Tags and Is package; Type and Publication type under Title filters; and External data source, Scope, Status, and Content Type under Package filters. For more information on the filters, see the filter descriptions below.
+
+
+### Tags
+
+To search for e-resources assigned specific tags, follow these steps:
+
+
+
+1. In the **Search & filter** pane, click **Tags**.
+2. Select the tag(s) from the drop-down list. Your results appear in the E-resources pane.
+
+
+### Is package
+
+To filter e-resources by whether or not they are a package, select **Yes** or **No**.
+
+
+### Type
+
+To filter e-resources by type, select **Monograph** or **Serial**.
+
+
+### Publication type
+
+To filter e-resources by publication type, select **Monograph**, **Serial**, or **journal**.
+
+
+### External data source
+
+To search for e-resources by external data source, follow these steps:
+
+
+
+1. In the **Search & filter** pane, click **External data source**.
+2. Select the external data source from the drop-down list. Your results appear in the E-resources pane.
+
+
+### Scope
+
+To filter e-resources by scope, select **Consortial**, **Global**, **Local**, or **Regional**.
+
+
+### Status
+
+To filter e-resources by status, select **Current**, **Deleted**, **Expected**, or **Retired**.
+
+
+### Content type
+
+To filter e-resources by content type, select **Databases**, **Monographs**, or **Serials**.
+
+
+## Viewing an e-resource
+
+Viewing e-resources covered by agreements is only possible if using the internal KB. 
+
+You can view e-resources by clicking on **E-resources** in the **Search & filter** pane. 
+
+In the E-resources pane, click an e-resource to view it. The e-resource details pane displays with additional information about the e-resource. Publication type, Material type, First author, First editor, Publication date, Edition, Volume, ISBN, and Related title fields are populated from the internal KB. The following accordions also display:
+
+**Agreements for this e-resource.** This accordion displays agreements that cover this e-resource. To add an e-resource from the internal KB to an agreement see [Adding an agreement line via the internal KB](#adding-an-agreement-line-via-the-internal-kb).
+
+**Options for acquiring this e-resource.** See [Adding e-resources to the basket](#adding-e-resources-to-the-basket). 
+
+**Notes.** For information on Notes see [Adding and removing notes](#adding-and-removing-notes).
+
+**Discovery settings.** For information on Discovery settings see [Editing e-resources](#editing-e-resources).
+
+
+## Editing e-resources
+
+
+
+1. Find the e-resource you want to edit.
+2. In the **e-resource details** pane, click **Edit**.
+3. You can choose whether to suppress the e-resource from discovery by checking the **Suppress from discovery** box. 
+4. Click **Save & close**. The e-resource is updated.
+
+
+### Move identifier(s) between titles
+
+If a title instance is related to an incorrect identifier, you can transfer identifiers between title instances by:
+
+
+1. In the **E-resources** pane, click **Actions > Move identifier(s)**.
+2. Under **Source title**, click **Select title**.
+3. Select a title from the **Select e-resource** window. In the **Search & filter** pane of the **Select e-resource** window, you can search e-resources by Name, ISBN and ISSN, and filter by Type.
+4. Select the **Identifier(s) to be moved** by checking the desired boxes.
+5. Under **Destination title**, click **Select title**.
+6. Repeat steps 3 and 4 for the Destination title.
+7. Click **Preview**.
+8. In the **Preview** window, click **Update titles & close** to complete the transaction, or **Update titles & move more identifiers** to continue moving identifiers. You can track the status of the job in the Local KB admin app.
+
+
+## Adding a tag to an e-resource
+
+
+
+1. [Find the e-resource](#searching-for-e-resources) you want to tag and select it.
+2. In the **e-resource details** pane, click the **tag icon**.
+3. In the **Tags** pane, either select a tag from the box or enter a tag.
+4. Click the **X** on the Tags pane to close the pane and save the tag. The tag number updates to the number of tags applied to the e-resource.
+
+
+## Searching for platforms
+
+Searching for platforms covered by an agreement is only possible if using the internal KB. 
+
+You can search for platforms by clicking on the tab **Local KB search** and selecting **Platforms** in the **Search & filter** pane Enter your search terms in the search box and click **Search**. The search box searches the name field.
+
+
+## Viewing a platform
+
+Viewing platforms covered by agreements is only possible if using the internal KB. 
+
+You can view platforms by clicking on the tab **Local KB search** and selecting **Platforms** in the **Search & filter** pane. 
+
+In the **Platforms** pane, click a platform to view it. The platform details pane displays with additional information about the platform. The Locators field is populated with the platform’s base URL from the internal KB. For the Local platform code, see [Editing platforms](#editing-platforms). The following accordions also display:
+
+**Platform URL customization settings.** See [Adding URL customization](#adding-url-customization). 
+
+**Platform proxy server settings.** In Settings > Local KB admin > Proxy server settings, you can add a proxy server setting and exclude platforms one by one. Every platform that is not listed in the array of excluded platforms will contain a generated list of proxy URLs.
+
+
+## Editing platforms
+
+
+
+1. Find the platform you want to edit.
+2. In the **platform details** pane, click **Actions > Edit**.
+3. You can add a local platform code in the **Local platform code** box. 
+4. Click **Save & close**. The platform is updated.
+
+
+### Adding URL customization
+
+
+
+1. Find the platform you want to edit.
+2.  In the **platform details** pane under the **Platform URL customization settings** accordion, click **Add URL Customization**.
+3. In the **New URL customization** window, enter a Name for the URL. 
+4. Enter a **Customization code**. The Customization code is the template that will be used to generate a proxied URL. Please refer to [Proxy server configuration and URL customizations](https://wiki.folio.org/x/qYL-Ag) for further details about the available codes.
+5. Click **Save & close**.
+
+
+### Editing URL customization
+
+
+
+1.  In the **platform details** pane under the **Platform URL customization settings** accordion, click on the URL customization.
+2. In the **URL customization** window, click **Actions > Edit**. 
+3. Make the desired changes to the Name or Customization code.
+4. Click **Save & close**.
+
+
+### Deleting URL customization
+
+
+
+1.  In the **platform details** pane under the **Platform URL customization settings** accordion, click on the URL customization.
+2. In the **URL customization** window, click **Actions > Delete**. 
+3. In the **Delete URL customization** dialog box, click **Delete**.
+
+
 ## Adding and removing notes
 
-You can add and assign notes to agreement records and agreement lines. Assigning a note means you are reusing a previously created note.
+You can add and assign notes to agreement records, agreement lines, and e-resources (internal KB only). Assigning a note means you are reusing a previously created note.
 
 
 ### Adding a new note to an agreement
@@ -888,4 +1065,4 @@ You can add and assign notes to agreement records and agreement lines. Assigning
 
 The Dashboard app is designed to enable a personalized view of key information from across FOLIO apps at a glance. In its first release (included in the Juniper flower release), the Dashboard includes the ability to display information from the Agreements and Licenses applications.
 
-In the Juniper release, the Agreements app comes with two dashboard widgets ("ERM Agreements" and "ERM Agreement Jobs"). There are examples of how you can use these two widget definitions to achieve a wide range of outcomes in the [Example widget configurations](https://wiki.folio.org/display/FOLIOtips/Example+widget+configurations) documentation.
+In the Morning Glory release, the Agreements app comes with two dashboard widgets ("ERM Agreements" and "ERM Agreement Jobs"). There are examples of how you can use these two widget definitions to achieve a wide range of outcomes in the Example widget configurations documentation.
