@@ -1,7 +1,7 @@
 ---
 title: "Settings > Users"
 linkTitle: "Users"
-date: 2022-08-08
+date: 2022-12-06   
 weight: 220
 tags: ["subtopic"]   
 ---
@@ -17,7 +17,6 @@ The following are all the permissions for Users Settings:
 -   **Settings (Users): Can create, edit and remove comments.**
 -   **Settings (Users): Can create, edit and remove feefines.**
 -   **Settings (Users): Can create, edit and remove owners.**
--   **Settings (Users): Can create, edit and remove patron blocks conditions.**
 -   **Settings (Users): Can create, edit and remove patron blocks limits.**
 -   **Settings (Users): Can create, edit and remove patron blocks templates.**
 -   **Settings (Users): Can create, edit and remove patron groups.**
@@ -29,6 +28,7 @@ The following are all the permissions for Users Settings:
 -   **Settings (Users): Can create, edit and remove waives.**
 -   **Settings (Users): Can create, edit, and view custom fields.**
 -   **Settings (Users): Can create, edit, view and delete custom fields.**
+-   **Settings (Users): Can view and edit patron blocks conditions.**
 -   **Settings (Users): Can view custom fields.**
 -   **Settings (Users): Create, edit, and view departments.**
 -   **Settings (Users): Create, edit, view, and delete departments.**
@@ -43,7 +43,8 @@ Additionally, if permissions change because of a new release, a FOLIO administra
 ### Creating a permission set
 
 1.  In the **Permission sets** pane, click **New**.
-2.  To name the permissions set, enter a **Permission set name**.
+2.  To name the permissions set, enter a **Permission set name**. The system does not automatically enforce uniqueness in naming permission sets. To avoid creating permission sets with duplicate display names, make sure this new permission set has a unique name. 
+Make sure the permission set name is unique. 
 3.  Optional: Enter a **Description** of the permission set.
 4.  Under **Assigned permissions**, click **Add permission**. You can assign individual permissions or existing permission sets to the new permission set. 
 5.  In the **Select Permissions** modal, search and filter by **Permission type** and/or **Permission assignment status** or type in the name of the permission or permission set into the search box. 
@@ -166,14 +167,14 @@ In the **Delete Department** dialog, click **Delete**. A confirmation message ap
 
 ## Settings \> Users \> Custom fields
 
-Use this setting to configure custom fields, which you can add to the user record to track additional information about the user not already recorded.
+Use this setting to configure custom fields. Custom fields are used to track additional information in a user record.
 
 ### Creating a custom field
 
 1.  In the **Custom fields** pane, click **New**.
 2.  In the **Edit custom fields** pane, in the **Accordion title** box, enter the name of the user record section for the custom field(s). 
 3.  Click **Add custom field** and select the type of field you want to create: **Checkbox**, **Multi-select**, **Radio button set**, **Single select**, **Text area**, or **Text field**.
-4.  Configure the custom field by checking the box next to **Hidden** and/or **Required**. Add a name for the field in the **Field name** box. 
+4.  Configure the custom field by checking the box next to **Hidden** and/or **Required*. Add a name for the field in the **Field name** box. 
 5.  Optional: To add additional custom fields, repeat steps 3-4.
 6.  Click **Save & close**. The custom field(s) are saved.
 
@@ -206,7 +207,8 @@ When manually creating a fee/fine, Fee/fine owner is a required field.
 1.  In the **Fee/fine: Owners** pane, click **New**.
 2.  Enter a name for the **Owner** in the box.
 3.  Optional: Enter a **Description** about the owner.
-4.  Optional: Select the desired **Associated service points**. Note that while a fee/fine owner does not have to have associated service points, you will not be able to use the fee/fine owner in workflows unless it has service points associated with it. 5.  Click **Save**. The fee/fine owner is saved.
+4.  Optional: Select the desired **Associated service points**. Note that while a fee/fine owner does not have to have associated service points, you will not be able to use the fee/fine owner in workflows unless it has service points associated with it. 
+5.  Click **Save**. The fee/fine owner is saved.
 
 ### Editing a fee/fine owner
 
@@ -356,6 +358,23 @@ Use this setting to configure available transfer accounts. Transfer accounts are
 1.  Find the transfer account you want to edit and click the **trash can icon** in the **actions** column.
 2.  In the **Delete Transfer account** dialog, click **Delete**. A confirmation message appears and the transfer account is deleted.
 
+## Settings \> Users \> Transfer criteria
+
+Use this setting to configure the criteria for transferring accounts. For more information about transfer accounts, see [Settings \> Users \> Transfer accounts](#settings–users–transfer-accounts).
+
+### Creating transfer criteria
+
+To create **Transfer criteria**, follow these steps:
+
+In the **Transfer criteria** pane, select the **Schedule period**.
+Add a number to the **Fee/Fines older than (days)** field.
+Click the + sign to add patron group(s) in the **Patron groups** list.
+Select the transfer owner from the **Transfer owner** drop-down list.
+Select a transfer account from the **Transfer account** drop-down list.
+Select the **Fee/fine owner**.
+Add **Transfer type**, **Transfer description**, and **Transfer code** to each **Fee/fine type**.
+Click **Save** to save the transfer criteria or click **Run manually** to run a report. 
+
 ## Settings \> Users \> Conditions
 
 Automatic patron blocks allow the library to set limits that are automatically enforced. The limits are applied in real time and displayed in the same areas as manual blocks. Patrons can be automatically blocked from checking out, renewing, and/or requesting.
@@ -366,9 +385,7 @@ The block is automatically removed once the patron falls below the limit.
 
 Note: Conditions and limits have to be in place in order for automated patron blocks to work.
 
-### Conditions/Limits categories
-
-Conditions determine what actions patrons are barred from doing once they hit the limits as outlined for their patron group in [Settings \> Users \> Limits](#settings--users--limits).
+Conditions determine which actions patrons are barred from doing once they hit the limits as outlined for their patron group in [Settings \> Users \> Limits](#settings--users--limits).
 
 These are all the categories for which you can set conditions and limits:
 
@@ -379,7 +396,7 @@ These are all the categories for which you can set conditions and limits:
 -   Maximum outstanding fee/fine balance
 -   Recall overdue by maximum number of days
 
-### Create patron block conditions
+### Configuring patron block conditions
 
 1.  In the **Conditions** pane, select the condition you want to configure.
 2.  In the selected condition pane, select the action(s) that occur when the defined limits are exceeded: Block borrowing, Block renewals, and/or Block requests.
