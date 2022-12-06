@@ -224,13 +224,18 @@ If the note is assigned to multiple courses, any edits will apply to the note fo
 
 ## Adding a reserve item to a course when the item exists in Inventory
 
-When you add an item to a course, the following information is copied from the original record: Title and Contributor from the Instance record; Barcode, Status, Permanent location, Copy, Volume, Enumeration, and URL/PDF link from the Item record; and Effective call number.
-
-The Start date, End date, and Temporary location are automatically updated based on the Term and Location applied at the courses level. If you need to change these fields, or update reserve item level information, you will need to [edit the reserve item.](#editing-a-reserve-item)
-
 1. [Find the course](#searching-for-courses) and click on it in the **Courses** list.
 2. In the **Items** section, either scan the item barcode into the box, or enter the barcode and click **Add item**. The item is added to the course and appears in the Items section.
 
+Note that when you put an item on reserve for a course, FOLIO copies information from Inventory into the reserve record in order to support searching within the Courses app.
+
+This means that if any information about that reserve changes in Inventory after it was put on Reserve, you may need to remove and re-add the item record to bring over the information into the Courses app.
+
+Information that is copied to support searching includes:
+* Title and contributor from the instance record;
+* Barcode, permanent location, call number, volume, copy, enumeration, and electronic access link from the item record
+
+A reserve item's start date and end date are maintained in the Reserve app. FOLIO will update the item's temporary location in inventory when you first add it on reserve, based on the location listed on the course record.
 
 ## Adding a reserve item to a course using Fast Add
 
@@ -241,6 +246,8 @@ The Fast Add workflow is meant to support putting personal copies, scanned artic
 1. From the associated course, scroll to the bottom and click **Add Fast Add item**.
 2. From the New fast add record, fill in the Instance, Holdings, and Item sections with the appropriate values.
 3. Once you have included all of the information needed for the item, click **Save and close** to create your inventory records and add the item on reserve for the course.
+
+Note that Fast Add is not usually appropriate for re-adding an item to a course since it will create additional duplication of records in Inventory. If you need to re-add an item, you should use the function to add an item by barcode.
 
 
 ## Editing a reserve item
