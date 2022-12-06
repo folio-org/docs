@@ -1,7 +1,7 @@
 ---
 title: "Settings > Orders"
 linkTitle: "Orders"
-date: 2022-06-07
+date: 2022-12-03
 weight: 200
 tags: ["subtopic"]   
 ---
@@ -11,7 +11,7 @@ The Orders section of the Settings app is where you establish whether you want t
 
 ## Permissions
 
-In order to interact with order settings, a user needs to be assigned the following permission:
+In order to interact with order settings, a user needs to be assigned the following permissions:
 
 
 
@@ -23,7 +23,7 @@ In order to interact with order settings, a user needs to be assigned the follow
 *   **Settings(Orders): Can view, edit, delete Order Templates.** This permission allows you to view, edit, and delete Order Templates in Settings > Orders.
 
 
-Note: You can assign permissions to users in the Users app.
+For information on assigning permissions to users, see [Assigning permissions to a user record]({{< ref "/users.md#assigning-permissions-to-a-user-record" >}}).
 
 
 ## Settings > Orders > Approvals
