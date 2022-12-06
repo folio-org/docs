@@ -1,7 +1,7 @@
 ---
 title: "Requests"
 linkTitle: "Requests"
-date: 2022-09-20
+date: 2022-11-10
 weight: 50
 ---
 
@@ -150,7 +150,7 @@ Note: When cancelling a request, you should consider the following:
 
 Library staff create requests in the Request app.  They can also start the request process from a user record in Users, or an item record in Inventory; those apps will route you into the Requests app to create the request. 
 
-Note that you must have permission to create requests in the Requests app in order to see the option to create a request from Inventory.
+Note that you must have permission to create requests in the Requests app in order to see the option to create a request from Inventory. Also note that a title-level request can only be placed on an instance if that instance has a holdings record. An item record is not required to create the request, but it is required to fill the request.
 
 1. In the **Requests** pane, select **Actions > New**.
 2. To create a title level request, make sure **Create title level request is checked.**.
@@ -183,7 +183,7 @@ If no items are available on the instance when the request is created, the reque
 
 If the request is a hold, it will remain in the request queue for the title, but it will not be associated with an item until the request is first in the queue and an item is returned.
 
-If the request is a recall, the recall will apply to the loan with a due date closest to the current due date . When the item is returned, it goes to the first open request, regardless of whether that request is the recall that triggered the item's return.
+If the request is a recall, the recall will apply to the loan with a due date closest to the current due date. When the item is returned, it goes to the first open request, regardless of whether that request is the recall that triggered the item's return.
 
 ### Viewing Title Level Requests
 
@@ -236,8 +236,6 @@ In this section, the **Item barcode** column may contain item information, or it
 * Item level request - you will see the barcode of the requested item.
 * Title level recall - you will see the barcode of the item that was recalled. Note that if the item is returned and it could fill a request that is higher in the queue, it will fill that request, not the request that triggered the recall.
 * Title level hold request - the **Item barcode** column will be empty.
-
-If there are requests in the queue that have a status of **Closed - pickup expired**, the queue numbers may be incorrect because the closed request is no longer visible. This is a known issue that is planned to be fixed in Nolana.
  
 ### Canceling a title level request
 
