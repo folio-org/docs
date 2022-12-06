@@ -1,7 +1,7 @@
 ---
 title: "Users"
 linkTitle: "Users"
-date: 2022-08-08
+date: 2022-11-29	
 weight: 250
 ---
 
@@ -34,6 +34,7 @@ The following are all the User permissions:
 -   **Users: Can create, edit and remove proxies.** This permission allows the user to view and edit proxies assigned to a user. The user can also view and edit basic user data elements.
 -   **Users: Can delete user profile if user does not have any open transactions.** This permission allows a user profile to be deleted through the UI if the user has no open transactions. This permission must be used with **Users: Can check open transactions**.
 -   **Users: Can edit user profile.** This permission allows the user to edit and view the following sections in a user record: User information, Extended information, and Contact information.
+-   **Users: Can process lost items requiring actual cost.** This permission allows the user to use the “Lost items requiring actual cost processing” page to bill for lost items. Actual cost will not be fully implemented in Nolana. It is recommended to wait until Orchid to use actual cost processing. 
 -   **Users: Can view fees/fines and loans.** This permission allows users to view fees/fines and loans of a user. 
 -   **Users: Can view permissions assigned to users.** This permission allows the user to view the permissions assigned to another user. 
 -   **Users: Can view proxies assigned to users.** This permission allows the user to see the Proxies section but not edit proxies assigned to a user. This permission also includes the ability to search and view user records (basic user fields only).
@@ -61,7 +62,7 @@ Keyboard shortcuts allow you to perform actions in this app using the keyboard. 
 ## Creating a user record manually
 
 1.  In the **User Search Results** pane, click **Actions \> New**.
-2.  In the **Create User** window, fill in the **User information**, **Extended information**, and **Contact information**, and **Custom fields** sections. For more information on the fields and actions available in these sections, see the section descriptions below.
+2.  In the **Create User** window, fill in the **User information**, **Extended information**, and **Contact information**. Fill in the **Custom fields** sections, if configured by your institution. For more information on the fields and actions available in these sections, see the section descriptions below.
 3.  Once you have included all the information you want about the user, click **Save & Close**. The user record is saved.
 
 ### User information
@@ -94,8 +95,7 @@ Keyboard shortcuts allow you to perform actions in this app using the keyboard. 
 	- Does not contain the username.
 	- Does not contain a keyboard sequence.
 	- Does not contain the same character.
-	- Does not contain whitespace.
-	- Does not contain two consecutive whitespaces. 
+	- Does not contain whitespace(s).
 Note: The institution may decide to apply different password validation rules for their users. 
 
 ### Contact information
@@ -110,7 +110,7 @@ Note: The institution may decide to apply different password validation rules fo
 -  Fill out the address information fields and click **Add Address** to save the address to the user’s record. 
 
 ### Custom fields
-The **Custom fields** section will appear only if it is configured in the Settings>Users app. For more information on configuring the **Custom fields** section, see [Settings /> Users /> Custom fields](../settings/settings_users/settings_users/#settings--users--custom-fields).
+The **Custom fields** section appears only if it is configured in the **Settings>Users** app. For more information on configuring the **Custom fields** section, see [Settings /> Users /> Custom fields](../settings/settings_users/settings_users/#settings--users--custom-fields).
 
 ## Searching for user records
 
@@ -145,9 +145,8 @@ To search for user records assigned with specific tags, follow these steps:
 ## Viewing a user record
 
 Once you search for a user record, the following information appears in the User search results pane:
-
--   **Active.** The status of the user.
 -   **Name.** Name of the user. *Last Name, First Name* or *Last Name, Preferred first name (First name)*
+-   **Active.** The status of the user.
 -   **Barcode.** The barcode number of the user.
 -   **Patron group.** The patron group to which the user belongs.
 -   **Username.** The username of the user.
@@ -172,6 +171,10 @@ For information about the fields displayed in the Extended information section, 
 ### Contact information
 
 For information about the fields displayed in the Contact information section, see [Creating a user record \> Contact information](#contact-information).
+
+###Custom fields
+
+Custom fields are configured by your institution and allow additional information in the user record. For more information about custom fields see [Settings \> Users \> Custom fields](#settings/settings_users/settings_users/#settings--users--custom-fields). 
 
 ### Proxy/sponsor
 
@@ -203,7 +206,7 @@ A request is closed when the patron picks up the item (Closed - fulfilled). It�
 
 To view additional details about the users’ open or closed requests, expand the **Requests** accordion and click **open requests** or **closed requests**, respectively.
 
-You can also create requests for the user in the Requests section. For more information, see [Creating requests](#creating-requests).
+You can also create requests for the user by clicking the **Create request** button in the Requests section of the user record or in the **Requests** app. For more information, see [Creating requests](#creating-requests).
 
 ### User permissions
 
@@ -248,7 +251,7 @@ A user's status can be changed between Active or Inactive based on changes in th
 
 ## Sending a password reset email
 
-This functionality is provided only after the user record has been saved for the first time. The library staff user created or changed is sent an email with a URL to the email address specified in the Contact information section. After accessing the URL, the user is taken to a form where the FOLIO password can be set or changed. Alternatively, the URL can be copied and manually sent to the user.
+This functionality is provided only after the user record has been saved for the first time. The library staff user created or changed is sent a URL to the email address specified in the Contact information section. After accessing the URL, the user is taken to a form where the FOLIO password can be set or changed. Alternatively, the URL can be copied and manually sent to the user.
 
 1.  [Find the user record](#searching-for-user-records) for which you want to send a password reset email and select it.
 2.  In the **User record** pane, click **Edit**.
@@ -266,7 +269,7 @@ Users can authorize other users to borrow library materials on their behalf. Spo
 4.  In the **Select User** pop-up window, search for the sponsor user and select them. 
 Optional: In the **sponsor** box, select the **Relationship Status**: **Active** or **Inactive**.
 Optional: Enter or select an **Expiration date**. The Expiration date indicates the expiration of the proxy/sponsor relationship.
-Optional: Select whether the **Proxy can request for the sponsor**. If you select **Yes**, then the proxy can place requests on materials on behalf of the sponsor.
+Optional: Select whether the **Proxy can request for the sponsor**. If you select **Yes**, then the proxy can place requests for materials on behalf of the sponsor.
 Optional: Select to whom notifications from the library are sent in the **Notifications sent to** drop-down list: **Proxy** or **Sponsor**.
 5.  Click **Add**.
 6.  Click **Save & Close**. The sponsor is added to the user record.
@@ -281,7 +284,7 @@ Users can authorize other patrons to borrow library materials on their behalf. P
 4.  In the **Select User** pop-up window, search for the proxy user and select them. 
 Optional: In the **proxy** box, select the **Relationship Status**: **Active** or **Inactive**.
 Optional: Enter or select an **Expiration date**. The Expiration date indicates the expiration of the proxy/sponsor relationship.
-Optional: Select whether the **Proxy can request for the sponsor**. If you select **Yes**, then the proxy can place requests on materials on behalf of the sponsor.
+Optional: Select whether the **Proxy can request for the sponsor**. If you select **Yes**, then the proxy can place requests for materials on behalf of the sponsor.
 Optional: Select to whom notifications from the library are sent in the **Notifications sent to** drop-down list: Proxy or Sponsor.
 9.  Click **Add**. 
 10.  Click **Save & Close**. The proxy is added to the user record.
@@ -296,7 +299,7 @@ Library staff need to have permissions assigned to their user record in order to
 4.  Click **Add permission**.
 5.  In the **Select Permissions** pop-up window, search for the permission(s) or permissions set you want to assign to the user. 
 Optional: Filter by **Permission type** or **Permission assignment status** in the **Search & Filter** pane.
-7.  Select the **checkbox** next to the permissions you want to assign to the user.
+7.  Select the checkbox(es) next to the permission(s) you want to assign to the user.
 8.  Click **Save & close**. The permissions are assigned to the user record.
 9.  Click **Save & close**. The user record is saved.
 
@@ -327,7 +330,7 @@ All assigned permissions can be removed from a user record in one click.
 2.  In the **User record** pane, click **Edit**.
 3.  In the **Edit** window, expand the **User permissions** accordion if needed. 
 4.  Click the **Unassign all permissions** button.
-5.  In the **Unassign all permissions** pop-up window, click **Yes** to confirm that you want to unassign all permission. All assigned permissions will be removed from the user’s record.  
+5.  In the **Unassign all permissions** pop-up window, click **Yes** to confirm that you want to unassign all permissions. All assigned permissions will be removed from the user’s record.  
 
 ## Adding a service point to a user record
 
@@ -363,7 +366,7 @@ Service points can also be removed by following a modified version of the proces
 
 ## Adding a tag to a user record
 
-Note that tags must be enabled for your FOLIO instance in order to use tags in the Users app.
+Note that tags must be enabled for your FOLIO instance in order to use tags in the Users app. See [Settings > Tags](../settings/settings_tags/settings_tags/) for more information. 
 
 1.  [Find the user record](#searching-for-user-records) to which you want to add a tag and select it.
 2.  In the **User record** pane, click the **tag icon**.
@@ -426,17 +429,21 @@ Requests can be created in the Requests app or from the item record in the Inven
 4.  In the **New note** window, select the **Note type** from the drop-down list. Note types are created in the Settings app. For more information, see Settings \> Notes.
 5.  Enter a **Note title** in the box.
 6.  Optional: Enter any **Details** about the note in the box.
-7.  Click **Save & close**. The note is saved.
+7. If this note should appear as a pop-up whenever the user record is opened in the Check Out and/or Users app, check the **Check Out app** box and/or the **User app** box under the **Display note as a pop-up**. 
+8.  Click **Save & close**. The note is saved.
 
-### Deleting A User Record in the UI 
-A user record can be deleted only if the user has no open transactions. To delete a user record, first check for open transactions. Once it’s confirmed that the user has no open transactions, the user record can be deleted. Follow these steps to check for open transactions and delete a user record in the UI:
+## Deleting A User Record in the UI 
+A user record can be deleted only if the user has no open transactions. To delete a user record, first check for open transactions. Once it’s confirmed that the user has no open transactions, the user record can be deleted.
 
+Follow these steps to check for open transactions and delete a user record in the UI:
 [Find the user record](#searching-for-user-records) for which you want to check for open transactions and select it.
 In the **Actions** menu, select **Check for open transactions/delete user**. 
 If there are no open transactions for this user, the message *No open transactions for user (Last Name, First Name). Are you sure you want to delete this user?* will appear in the **Check for open transactions/delete user** window.  
 Click **Yes** to delete the user record. A *User (Last Name, First Name) deleted successfully* message will confirm deletion of the user record. 
 Or click **No** to cancel the deletion and return to the user record. 
 If there are one or more open transactions for the user, the message *User (Last Name, First Name) has the following open transactions. Please resolve the transactions to proceed to delete this user.* Click **OK** to return to the user record. 
+
+If the deleted user had permissions to edit records, the Source listed in the metadata history becomes "Unknown user".
 
 ## Overdue loans report
 
@@ -576,7 +583,7 @@ Provide a fee/fine amount, if one did not populate.
 2.  In the **User record** pane, expand the **Fees/fines** accordion if needed.
 3. Select **(number of) open fee/fine** to view the patron’s open fines.
 4. The **Fees/fines** modal will open. Click the fee/fine you wish to accept payment for.
-5. The **Fee/fine details** modal will open. Click **Pay**.
+5. The **Fee/fine details** modal will open. Click **Actions \> Pay **.
 6. The **Pay fee/fine** modal opens. Enter the Payment amount (required). FOLIO can handle full and partial payment. If you are accepting partial payment, the modal will calculate the remaining amount.
 7. Select **Payment method** (required).
 8. Input **Transaction information** and **Additional information for staff**. The **Additional information for staff** box may be required if your library has configured that option.
@@ -592,7 +599,7 @@ Staff with appropriate permissions can apply a partial or full waive to a fee/fi
 2.  In the **User record** pane, expand the **Fees/fines** accordion if needed.
 3. Select **(number of) open fee/fine** to view the patron’s open fines.
 4. The **Fees/fines** modal will open. Click the fee/fine you wish to waive.
-5. The **Fee/fine details** modal will open. Click **Waive**.
+5. The **Fee/fine details** modal will open. Click **Actions \> Waive**.
 6. The **Waive fee/fine** modal will open. Enter the amount to waive (required). You can waive some or all of the fine amount.  If you are only waiving part of the fine, FOLIO will automatically calculate the remaining amount. 
 7. Select the **Waive reason** (required) and enter **Additional information for staff**. The **Additional information for staff** box may be required if your library has configured that option.
 8. Click **Waive**, then **Confirm**.
@@ -607,10 +614,25 @@ Staff with appropriate permissions can partially or fully refund a fee/fine. The
 2.  In the **User record** pane, expand the **Fees/fines** accordion if needed.
 3. Select **View all fees/fines** to view the patron’s fines.
 4. The **Fees/fines** modal will open. Click the fee/fine you wish to refund a payment for. It may be **Open** or **Closed**.
-5. The **Fee/fine details** modal will open. Click **Refund**.
+5. The **Fee/fine details** modal will open. Click **Actions \>Refund**.
 6. The **Refund fee/fine** modal will open. Enter the amount to refund (required). You can refund some or all of the fine amount.  If you are only refunding part of the fine, FOLIO will automatically calculate the remaining amount. 
 7. Select the **Refund reason** (required) and enter **Additional information for staff**. The **Additional information for staff** box may be required if your library has configured that option.
 8. Click **Refund**, then **Confirm**.
 
 The modal will close, and the **Fee/fine details** page will update with the payment transaction.
 
+### Mark a fee/fine as error (Cancel fee/fine)
+
+Staff with appropriate permissions can mark a fee/fine as an error; this has the effect of cancelling the fee/fine.
+
+Note that an error can only be applied to a fine in an **Outstanding** payment status. Marking a fine as an error is intended to be used when the fine is charged as a result of a staff or system/error and as such none of it should be paid.
+
+1.  [Find the user record](#searching-for-user-records) to which you want to refund a payment and click it.
+2.  In the **User record** pane, expand the **Fees/fines** accordion if needed.
+3. Select **View all fees/fines** to view the patron’s fines.
+4. The **Fees/fines** modal will open. Click the fee/fine you wish to refund a payment for. It may be **Open** or **Closed**.
+5. The **Fee/fine details** modal will open. Click **Actions \> Error**.
+6. The **Confirm fee/fine cancellation** modal will open. Enter **Additional information for staff** (required).
+7. Click **Confirm**.
+
+The modal will close, and the **Fee/fine details** page will update with the cancellation transaction.
