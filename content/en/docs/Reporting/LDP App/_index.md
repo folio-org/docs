@@ -27,14 +27,22 @@ Think of schema as the “buckets” in which data tables live. The schema drop-
 ### Table
 The **Table** drop-down menu allows you to select a data table from the schema you have selected to use in your query. Tables are where related data lives. Tables belong to a specific schema. With the schema and table selected, the other fields will unlock and update based on the selection.
 
-### Filter by column
-The **Filter by column** allows you to refining your results by select a column/field and applying a contraint to it.
+## Filter by column
+The **Filter by column** drop-down menu allows you to refine your results by selecting a column and applying constraints. You can create multiple filters using the Add Filter button. When you use multiple filters, results are generated using the AND operator. Once you select a column to filter on, you may select equality and inequality operations in combination with a numeric value (e.g., a date or a count), TRUE, or FALSE. Operators include:
+* **equal to (=)
+* **not equal to (<>)
+* **less than (<)
+* **less than or equal to (<=)
+* **greater than (>)
+* **greater than or equal to (>=)
+* **TRUE (not case sensitive)
+* **FALSE (not case sensitive)
 
-{{% alert title="Additional options to come in subsequent versions" color="info"%}}
-Currently you can only use the “equal to” operator (equality operations). Inequality operations (not equal to, greater than, less than, like, and non-case sensitive ILIKE) will be included in a future release.
-Example of equal to operation – find where previously_held = TRUE.
-Example of inequality – find where _version > 1.
-{{% /alert %}}
+Here are some examples for filtering by column:
+* **find where previously_held = TRUE
+* **find where _version > 1
+
+When entering date ranges, both YYYY-MM-DD and MM/DD/YYYY are supported. The LIKE and ILIKE operators, which allow pattern matching within character-based column data, will be included in a future release. LIKE is case-sensitive, while ILIKE is case-insensitive.
 
 ### Show columns
 The **Show columns** drop-down menu allows you to select one or more fields from the schema and table you have selected to show in your query results. By default all columns will be present. The list of columns you wish to include will build as you select each column from the drop-down menu.
@@ -74,5 +82,5 @@ Currently the app does not support indexing of certain columns. Keeping them ena
 ### Database configuration
 The **Configure database connection URL & credentials** setting is used to set the connection from the FOLIO application instance to the LDP reporting database instance. This is also used to set the username and password to be used by the LDP app to query the LDP reporting database.
 
-### Saved queries configuration
-The **Saved queries configuration** setting allows you to configure a GitHub repository location for the queries that users save when they use the Save icon to save queries they have built using the Query builder. The GitHub repository owner, name, branch and OAth token for access to the repository must be specified here.
+### Saved queries configuration (experimental feature)
+The **Saved queries configuration** setting allows you to configure a GitHub repository location for the queries that users save when they use the Save icon to save queries they have built using the Query builder. The GitHub repository owner, name, branch and OAuth token for access to the repository must be specified here.
