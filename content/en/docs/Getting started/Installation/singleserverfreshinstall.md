@@ -11,9 +11,7 @@ The instructions should also work for a demo / testing installation on a single 
 
 This is not considered appropriate for a production installation. A production installation should distribute the modules over multiple servers and use some kind of orchestration.
 
-See also [how to upgrade an existing single server installation]({{< ref "singleserverupgrade.md" >}}) from the Kiwi release.
-
-![FOLIO Single Server components](/img/single_docker_compose.png)
+[FOLIO Single Server components](/img/single_docker_compose.png)
 
 A FOLIO instance is divided into two main components.  The first component is Okapi, the gateway.  The second component is the UI layer which is called Stripes.  The single server with containers installation method will install both.
 
