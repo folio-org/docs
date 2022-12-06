@@ -54,12 +54,15 @@ Differences between the two types of loans include:
 
 ## <a id="loanrenew"></a>When a loan is renewed, or a loan due date is changed, what circulation rule applies and what policies are used?
 
-When a patron or FOLIO user requests to renew a loan, or a FOLIO user changes a loan’s due date, FOLIO reviews the circulation rule file and may do several things, depending on what it finds.
+When a patron or FOLIO user requests to renew a loan, or a FOLIO user changes a loan’s due date, FOLIO reviews the circulation rule file and may do several things, depending on what it finds (and not necessarily in the order listed below.)
 
+* FOLIO checks to see if the patron is blocked from renewal (either manually or automatically). If they are not blocked, the process can continue.
+* FOLIO checks the patron record to make sure the record is not inactive or expired. If they are not inactive or expired, the process can continue.
 * FOLIO will find the loan policy that applies and use that policy to determine if or how the loan can be changed. If the circulation rule file hasn’t changed, and the patron and item information hasn’t changed, FOLIO will retrieve and apply the same loan policy used the last time the loan was created or updated. 
 * No request policy updates occur, because request policies aren’t stored on the loan. Since request policies only apply before the loan is created, there is no reason to keep a reference on the loan record. 
 * FOLIO will **not** update the associated overdue policy and lost item policy, because it could cause the patron to be liable for more money than they had expected when they first borrowed the item.
-* FOLIO **will** update scheduled notices. The notice policy UUID is not stored on the loan. Instead, FOLIO reads the applicable notice policy from the circulation rule and updates scheduled planned notices as part of the renewal transaction.
+* FOLIO **will** update scheduled notices. The notice policy UUID is not stored on the loan. Instead, FOLIO reads the applicable notice policy from the circulation rule, removes the previous notices, and then creates the appropriate notices to run on the new dates. 
+* FOLIO **will** create an entry in the circulation log to show that the item was renewed, or that the due date changed.
 
 ### Example: An undergraduate becomes a graduate student
 
@@ -90,13 +93,33 @@ This is what FOLIO does when renewing Sofia’s items:
 
 If you change information about an item that is currently on loan, nothing happens to the loan record. The loan **may** change if the item is renewed or if the loan due date is changed, and the change in the item information means a different circulation rule applies. See [When a loan is renewed, or a loan due date is changed, what circulation rule applies and what policies are used?](#loanrenew)
 
+## What happens in FOLIO when an item is checked in?
+
+When an item is checked in in FOLIO, the following steps happen (not necessarily in this order.)
+
+* FOLIO checks the item status.
+* If an item has a status of **Available**, FOLIO will count it as in-house use.
+* If an item has a status of **In transit**, FOLIO will check the logged-in service point to see if it is the primary service point for the item's effective location. If the logged-in service point does not match, the item status remains **In transit**. If the logged-in service point does match, FOLIO changes the item status to **Available
+
+
+
+* FOLIO checks the loan policy, overdue policy and lost item policy to determine in any actions need to be taken.
+* If the item is determined to be overdue but has not been recalled, FOLIO calculates overdue fines based on the associated policy, and applies them to the patron's account if the fine is greater than zero.
+* If the item is recalled and overdue, FOLIO calculates overdue recall fines based on the associated policy, and applies them to the patron's account if the fine is greater than zero.
+* If an item status is **Declared lost** or **Aged to lost**, FOLIO presents a warning message, and staff must choose the option to continue check in.
+** When check in proceeds, FOLIO then references the lost item policy to determine if any fees should be credited back to the patron, and applies them to the patron's account.
+* If the associated notice policy to the loan says that any fee/fine notices should be sent, those notices are generated and sent.
+
+
+
+* If an item has a status of **Checked out**, **Declared lost**, or **Aged to lost**:
+** If an item is **Declared lost** or **Aged to lost**, FOLIO presents a warning message and staff members must select from the prompt to continue check in.
+
 ## What happens if/when you delete a circulation policy?
 
 ### Loan policy
 
-Prior to Lotus, you could delete a loan policy that was attached to an open loan. 
-
-As of Lotus, you will be prevented from deleting a loan policy through Settings \> Circulation \> Loan Policies if there are open loans associated with the loan policy.
+You are prevented from deleting a loan policy through Settings \> Circulation \> Loan Policies if there are open loans associated with the loan policy.
 
 ### Request policy
 
@@ -116,15 +139,11 @@ For example, suppose you need to delete the notice policy **faculty-semester-not
 
 ### Overdue policy
 
-Prior to Lotus, you could delete an overdue policy that was attached to an open loan. 
-
-As of Lotus, you will be prevented from deleting an overdue fine policy through Settings \> Circulation \> Fee/Fine if there are open loans associated with the policy.
+You are prevented from deleting an overdue fine policy through Settings \> Circulation \> Fee/Fine if there are open loans associated with the policy.
 
 ### Lost item policy
 
-Prior to Lotus, you could delete a lost item policy that was attached to an open loan. 
-
-As of Lotus, you will be prevented from deleting a lost item policy through Settings \> Circulation \> Fee/Fine if there are open loans associated with the policy.
+You are prevented from deleting a lost item policy through Settings \> Circulation \> Fee/Fine if there are open loans associated with the policy.
 
 ## What happens if/when you delete a circulation rule?
 
