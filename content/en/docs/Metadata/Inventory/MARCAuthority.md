@@ -1,7 +1,7 @@
 ---
 title: "MARC authority"
 linkTitle: "MARCauthority"
-date: 2022-09-22
+date: 2022-11-30
 weight: 30
 tags: ["parenttopic"]
 ---
@@ -37,7 +37,7 @@ You can search for MARC authority records in the **Search & filter** pane. Enter
 -   **Subject.** Keyword search through all subject fields. This may include a single term, phrase, or a group of terms.
 -   **Children’s subject heading.** Keyword search through all children's subject heading fields. 
 -   **Genre.** Keyword search through all genre/form fields.
--   **Advanced search.** Keyword search through multiple fields.
+-   **Advanced search.** Keyword search through multiple fields. 
 
 ### Advanced Search
 
@@ -45,7 +45,7 @@ Advanced Search allows you to add additional requirements to your search.
 
 To use Advanced Search, follow these steps:
 
-1.  Select **Advanced Search** in the **Search & filter** pane. A pop-up box will appear.
+1.  Select **Advanced Search** in the Search segment drop-down list on **Search & filter** pane. A pop-up box will appear.
 2.  Enter a search term into the first box.
 3.  On the same row, click the **Keyword** drop-down list and select a field. 
 4.  To enter search terms into additional rows, you must select an operator from the **AND** drop-down list.
@@ -75,6 +75,25 @@ You can browse for MARC authority records in the **Search & filter** pane. Enter
 -   **Subject.** 
 -   **Genre.** 
 
+Some filters can also be applied to Browse results.
+
+When using filters, keep the following in mind:
+
+-   Multiple filters can be combined to limit searches further.
+-   Multiple values in the same filter are combined with "OR."
+-   Multiple values in different filters are combined with "AND."
+
+
+## Exporting MARC authority records
+
+MARC authority records can be exported in the same way that instance records are exported as MARC (See [Exporting instances (MARC)](../../data-export/#exporting-instances-marc).
+Note: At this time, full MARC export via Quick Export is not implemented. Following these steps will instead export a .csv of the selected files’ UUIDs for use in the Data Export module.
+
+1.  Open the **MARC authority** app. 
+2.  In the **MARC authority** pane, find the records you want to export, and for each record, select the **checkbox** in the first column. Note that associated references in the results list will also be checked; the message at the top of the pane will display the accurate number of records selected.
+3.  Click **Actions \> Export selected records (CSV/MARC)**. Depending on your browser and its configurations, the file automatically downloads or you are prompted to save it. The export is logged in the Data export app.
+
+To view the exported records, follow the instructions in [Retrieving data export results](../../data-export/#retrieving-data-export-results)
 
 ## Viewing a MARC authority record
 The full MARC record opens in the third pane once you search for and select an authority record. The heading or reference you selected will be highlighted in the record.
@@ -102,3 +121,10 @@ The following validation rules and restrictions apply:
 -   The LDR cannot be edited.
 -   1xx is required and non-repeatable.
 -   No other validation is performed.
+
+## Deleting MARC authority records
+
+Edit permission in the MARC authority app also enables a user to delete records. 
+To delete a MARC authority record, follow these steps:
+Click **Actions \> Delete**
+In the **Confirm deletion of authority record** dialog, click **Delete**. The authority record is deleted.

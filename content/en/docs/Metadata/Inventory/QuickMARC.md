@@ -74,8 +74,7 @@ The following validation rules and restrictions apply when working with bibliogr
 
 -   Fields 005 and 999ff are system supplied and cannot be edited or deleted.
 -   The Leader must contain 24 characters, including null spaces
--   Only positions 5, 8, 17, 18, and/or 19 in the Leader can be edited
--   008 bytes Type and BLvl must match positions 6 and 7 in the Leader 
+-   Only positions 5-8, 17, 18, and/or 19 in the Leader can be edited. Invalid values in the leader will result in an error message
 -   245 is required and non-repeatable
 
 

@@ -1,7 +1,7 @@
 ---
 title: "Inventory"
 linkTitle: "Inventory"
-date: 2022-09-22
+date: 2022-11-21
 weight: 30
 tags: ["parenttopic"]
 ---
@@ -339,8 +339,8 @@ Note: Adding a classification is optional, but if you click **Add classification
 
 In the Instance relationship section, you can add any relationships between the instance and other instances.
 
--   **Parent instances.** The main link in a bound-with situation: It will have an item record (and thus barcode) that all other bibliographic records associated with a given bound-with volume can link to. Child records are those associated bibliographic records. Child records will have LKR fields in the bibliographic record that include the ADM number of the parent record and "Enum. Level.1" information found in the parent record's item record. Doing this allows all item record information in the parent record to display in the child record, so the same barcode, sublibrary, collection, description, call number, etc. will show up for all titles in a bound-with.
--   **Child instances.** Associated with linking bound-withs, which allows for "links" between separate bibliographic records and/or a bibliographic record and items belonging to another bibliographic record. Child records are those associated bibliographic records.
+-   **Parent instances.** The parent instance is the record chosen as the primary record and to which all other child records are linked. Information about parent instances (Title, Instance HRID, Publisher, Publication date, ISBN, ISSN) including a link to the corresponding parent instance record displays on the child instance record(s).
+-   **Child instances.** A child instance record is any record that has been associated with a parent record. Information about child instances (Title, Instance HRID, Publisher, Publication date, ISBN, ISSN) including a link to each corresponding child instance record displays on the parent instance record.
 
 #### Adding a parent instance
 
@@ -824,6 +824,8 @@ To search, first select the record type (instance, holdings, or item); enter you
 -   **ISBN.** Searches the number exactly as it appears in the data. For example, if there are hyphens in the data, the hyphens must be entered in the search.
 -   **ISSN.** Searches should include hyphens.
 -   **OCLC number, normalized.** Searches for the OCLC number with or without any prefixes.
+-   **Instance notes (all).** Keyword search across all Instance notes; includes administrative notes. 
+-   **Instance administrative notes.** Keyword search of instance record administrative notes.
 -   **Subject.** Keyword search through all subject fields. This may include Library of Congress Subjects, FAST, and other subject vocabularies, including Genre/Form terms.
 -   **Effective call number (item), shelving order.** Retrieves Instance records based on the shelving order element in the item record.
 -   **Instance HRID.** Human readable identifier for the instance record.
@@ -835,11 +837,16 @@ To search, first select the record type (instance, holdings, or item); enter you
 -   **Browse subjects.** The subject browse is based on the Subject field in instance records.
 -   **Call number, eye readable.** Requires you to enter the call number exactly as it appears in the holdings record, including punctuation.
 -   **Call number, normalized.** Ignores any characters other than numbers and letters, such as punctuation and spaces.
+-   **Holdings notes (all).** Keyword search across all Holdings notes; includes administrative notes. 
+-   **Holdings administrative notes.** Keyword search of holdings record administrative notes.
 -   **Holdings HRID.** Human readable identifier for the holdings record.
 -   **Holdings UUID.** Universally unique identifier for the holdings record.
 -   **Barcode.** Allows you to scan, copy/paste, or type a barcode.
 -   **Effective call number (item) eye readable.** Requires you to enter the call number exactly as it appears in the holdings record, including the punctuation and call number prefix.
 -   **Effective call number (item), normalized.** Ignores any characters other than numbers and letters, such as punctuation and spaces.
+-   **Item notes (all).** Keyword search across all item notes; includes administrative notes, check in and check out notes.
+-   **IItem administrative notes.** Keyword search of item record administrative notes.
+-   **Circulation notes.** Keyword search across check in and check out notes.
 -   **Item HRID.** Human readable identifier for the item record.
 -   **Item UUID.** Universally unique identifier for the item record.
 
