@@ -1,7 +1,7 @@
 ---
 title: "Organizations"
 linkTitle: "Organizations"
-date: 2022-06-07
+date: 2022-12-02
 weight: 40
 tags: ["parenttopic"]
 ---
@@ -553,7 +553,7 @@ To view a log of orders exported to a vendor organization that is set up for EDI
 
 2. In the **Organization details** pane, click **Actions > View export log**.
 
-3. The Export Manager app opens with the Search & Filter pane set to view exports related to the selected vendor organization.
+3. The Export Manager app opens with the Search & Filter pane set to view exports related to the selected vendor organization. See the [Export Manager](/export-manager) for more information about viewing export jobs.
 
 
 ## Adding a tag to an organization

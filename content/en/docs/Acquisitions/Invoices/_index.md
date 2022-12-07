@@ -1,7 +1,7 @@
 ---
 title: "Invoices"
 linkTitle: "Invoices"
-date: 2022-09-22
+date: 2022-12-02
 weight: 20
 tags: ["parenttopic"]
 ---
@@ -31,6 +31,7 @@ The permissions listed below allow you to interact with the Invoices app and det
 The following are all the Invoices permissions:
 
 
+
 *   **Invoice: Approve invoices.** This permission allows the user to approve invoices.
 *   **Invoice: Assign acquisition units to new record.** This permission allows the user to assign acquisition units to new invoices.
 *   **Invoice: Can view and edit invoices and invoice lines.**  This permission allows the user to view and edit invoices and invoice lines.
@@ -43,7 +44,6 @@ The following are all the Invoices permissions:
 *   **Invoice: Manage acquisition units.** This permission allows the user to change the assignment of acquisition units for an invoice.
 *   **Invoice: Pay Invoices.** This permission allows the user to approve invoices for payment.
 *   **Invoice: Voucher export.** This permission allows the user to run the voucher export from the Invoices app Actions menu.
-
 
 
 ## Keyboard shortcuts
@@ -416,6 +416,7 @@ To search for invoices by batch group assignment, follow these steps:
 1. In the **Search & filter** pane, click **Batch group**.
 2. Select the batch group name from the drop-down list. The search results appear in the Invoices pane.  
 
+
 ### Fund code
 
 To search for invoices by fund code, follow these steps:
@@ -434,6 +435,7 @@ To search for invoices by expense class, follow these steps:
 
 1. In the **Search & filter** pane, click **Expense class**.
 2. Select the expense class name from the drop-down list. The search results appear in the Invoices pane.  
+
 
 ### Lock total
 
@@ -458,6 +460,7 @@ To export a file of voucher information in comma-separated values (.csv) format,
 4. To run a new voucher export for a batch group, click **Run manual export.**  A message appears, “All vouchers created since last export for the batch group FOLIO will be exported and this process cannot be reversed.” Click **Continue** to proceed or **Cancel**.
 5. When the export is complete, a new table row is created containing a message to indicate whether the file uploaded successfully to FTP location or vouchers for batch voucher export were not found.
 6. To download one of the voucher export files, click on the downward arrow at the end of the table row.
+
 
 ## Exporting search results
 
@@ -532,7 +535,6 @@ Click **Export**.  The file downloads to your local download location.
 
 
 
-
 ## Viewing invoice details
 
 Once you search for an invoice, the following information appears in the Invoices search results pane:
@@ -540,7 +542,7 @@ Once you search for an invoice, the following information appears in the Invoice
 
 
 *   **Vendor invoice number.** The number provided by the vendor for this invoice.
-*   **Vendor.** The vendor name.
+*   **Vendor.** The vendor code.
 *   **Invoice date.** The vendor invoice date.
 *   **Status.** The status of the invoice: Open, Reviewed, Approved, Paid, cancelled.
 *   **Total amount (system).** The combined cost of the items ordered and adjustments for the invoice.
@@ -602,10 +604,17 @@ The **View invoice line** detail pane includes an accordion section to list **Ot
 Click on a related invoice line # value to view more information. The **View invoice line** pane displays with additional information about the related invoice line.
 
 
+
+
+
 ### Invoice level fund distribution
 
 
+
+
 The Invoice level fund distribution section of the invoice detail displays only if invoice contains an adjustment that is not prorated and for which a fund distribution has been selected. For more information, see [Creating an invoice > Adjustments > Adding a preset adjustment](#adding-a-preset-adjustment). The Invoice level fund distribution section lists the following information:
+
+
 
 *   **Adjustment.** Description of the adjustment.
 *   **Fund.** The fund to which you are distributing the amount elephant
@@ -614,6 +623,7 @@ The Invoice level fund distribution section of the invoice detail displays only 
 *   **Amount.** The amount of money committed to the fund.
 *   **Initial encumbrance.**  The initial amount committed to the fund.
 *   **Current encumbrance.** The current amount committed to the fund.  When an invoice transitions to **Approved** status and the **Release encumbrances** checkbox on an invoice line is checked, the **Current encumbrance** value becomes zero.
+
 
 
 ### Invoice level adjustments
@@ -629,10 +639,14 @@ The Invoice level adjustments section of the invoice detail displays only if the
 *   **Relation to total.**  Defines how the adjustment is applied in relation to the invoice total: **In addition to**, **Included in**, or **Separate from.**
 
 
+
+
+
 ### Vendor details
 
 
-*   **Vendor invoice number.** The vendor invoice number for the invoice. Click on the clipboard icon beside the vendor invoice number to copy the value to your clipboard.
+
+*   **Vendor invoice number.** The vendor invoice number for the invoice.  Click on the clipboard icon beside the vendor invoice number to copy the value to your clipboard.
 *   **Vendor name.** The name of the vendor.
 *   **Accounting code.** The accounting code for the invoice.
 *   **Address, Primary.**  The vendor’s primary address information.  This address is included on the invoice voucher and voucher export.
@@ -784,6 +798,9 @@ To pay an invoice, follow these steps:
 3. Click **Submit**.
 
 
+
+
+
 ## Cancelling an invoice
 Cancelling an invoice is possible while in an Approved or Paid status and when the user account includes the **Approve invoice** permission. Cancelling an invoice triggers the following system actions:
 *   All transactions against funds related to the invoice are voided.
@@ -846,7 +863,6 @@ The voucher export file contains the following data elements:
 *   vendorAddress/country
 
 
-
 ## Edit a voucher to add disbursement information
 
 
@@ -871,3 +887,5 @@ The only fields that are editable on the voucher are:
 *   **Disbursement number.** Enter an identifier from an external system corresponding to a payment, such as a check number.
 *   **Disbursement date.**  Enter the date of the disbursement transaction in the external system.
 *   **Disbursement amount.**  Enter the amount of the disbursement, with or without decimal.
+
+

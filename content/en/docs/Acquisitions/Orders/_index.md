@@ -1,7 +1,7 @@
 ---
 title: "Orders"
 linkTitle: "Orders"
-date: 2022-09-22
+date: 2022-12-02
 weight: 30
 tags: ["parenttopic"]
 ---
@@ -553,6 +553,17 @@ This section displays information about invoices related to this order through a
 *   **Vendor invoice number.***   **Status.**  The status of the invoice: Open, Reviewed, Approved, Paid, or Cancelled.
 *   **Expended amount.** The total expended amount of the invoice.
 
+### Export details
+
+This section displays information about order exports to vendors related to this order.  The 
+
+*   **Job ID.**   Identification number of the export.
+*   **Export date.**  Date that the export job was run.
+*   **File name.**  Name of the export file.
+*   **Export method.**  The **Integration name** on the associated Organization record’s [Integration details]({{< ref "/organizations.md#adding-integration-details-to-a-vendor-organization" >}}).
+
+See the [Export Manager](/export-manager.md#viewing-export-jobs) for more information about viewing export jobs.
+
 
 
 ## Editing an order
@@ -669,7 +680,7 @@ You can only receive open orders.
 3. Follow the steps as outlined in [Receiving > Receiving an order](../receiving/#receiving-an-order").
 
 
-## Update encumbrances for an order
+## Updating encumbrances for an order
 
 You can update encumbrances for open orders. Use this action to reset encumbrances based on an order’s current price and fund distributions.  If an order failed to encumber during rollover due to reasons such as insufficient budget funds or distribution to an inactive fund, make the appropriate edits to the budget or order and then select this **Update encumbrances** action to rerun the system encumbrance logic.
 
@@ -678,6 +689,24 @@ You can update encumbrances for open orders. Use this action to reset encumbranc
 2. In the **Purchase order** pane, select **Actions > Update encumbrances.**
 
 3.  A confirmation message appears and the order encumbrances are updated based on the order’s current price and fund distributions.
+
+## Creating a new invoice for an order
+
+You can create an invoice for Open status orders from within the Orders app using the Action menu.  Note: Purchase order lines containing payment status values of "Payment not required" or "Fully paid" are not linked to a new invoice created through the **+ New invoice** action.
+
+
+1. [Search for the order for which you want to create an invoice](#searching-for-an-order) and select it.
+
+2. In the **Purchase order** pane, select **Actions > + New invoice**
+
+3. In response to the Create invoice dialog prompt, “Do you want to create an invoice from this order?” click **Submit**.  The **Create invoice** window opens.
+
+4. Follow the steps in [Creating an invoice]({{< ref "/invoices.md#creating-an-invoice" >}}) to complete the Create invoice window and click **Save and close**.
+
+5. If the order contains more than one purchase order line, the **Edit sequence of invoice lines** window opens containing a table list of all purchase order lines related to the order. You can optionally drag and drop order line rows to resequence them to match the vendor invoice sequence.  When finished, click **Save and close**.
+
+6. Two green toast messages display to indicate that the invoice and invoice line(s) have been saved. The invoice line(s) are automatically created and link to the purchase order line from which you initiated the **+ New invoice** action.
+
 
 
 ## Deleting an order
@@ -1503,7 +1532,7 @@ To cancel a purchase order, follow the steps below.  Cancelling an order line re
 
 2. In the **PO Line detail** pane, select **Actions > Cancel**. A confirmation dialog asks, “Are you sure you want to cancel this purchase order line?”. Select Cancel order line to continue. A confirmation message appears.
 
-Upon cancellation, the PO line **Receipt status** and **Payment status** values change to Cancelled. The fund distribution **Current encumbrance** amount is set to $0.00. In this release of FOLIO, if there is an associated item in Inventory, the **Item status** value remains set to On order.  The “POL receipt status” is set to Cancelled. In the PO line search results pane and on the Purchase order detail pane PO lines section, a red circle with a diagonal line icon appears beside the cancelled order line.
+Upon cancellation, the PO line **Receipt status** and **Payment status** values change to Cancelled. The fund distribution **Current encumbrance** amount is set to $0.00.  If there is an associated item in Inventory, the **Item status** value is set to Order closed.  The **POL receipt status** is set to Cancelled. In the PO line search results pane and on the Purchase order detail pane PO lines section, a red circle with a diagonal line icon appears beside the cancelled order line.
 
 
 ## Deleting an order line

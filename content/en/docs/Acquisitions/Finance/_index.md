@@ -1,7 +1,7 @@
 ---
 title: "Finance"
 linkTitle: "Finance"
-date: 2022-09-22
+date: 2022-12-02
 weight: 10
 tags: ["parenttopic"]
 ---
@@ -84,6 +84,7 @@ A fiscal year is the twelve-month period your library uses for accounting and bu
 *   **Period End Date (required).** The date when the fiscal year ends.
 *   **Description.** A description of the fiscal year.
 Note about Currency:  The currency value does not display on the Fiscal year detail pane after creation, but the system does associate a currency with the Fiscal year based on the currency value from [Settings > Tenant > Language and localization]({{< ref "/settings_tenant.md#settings--tenant--language-and-localization" >}}). See [Viewing fund details > Fund information](#viewing-fund-details) for a description of expected system behavior for budget transaction when the Tenant currency value is changed.
+
 
 
 ## Creating a ledger
@@ -419,6 +420,7 @@ The Group table contains the following columns:
 
 This section displays a table of all funds associated with the ledger. The table contains the same columns as the Group table.
 
+
 #### Fiscal year rollover error log
 
 This section displays the list of rollover error logs. Click on the .csv file name to download the error log.
@@ -427,12 +429,16 @@ This section displays the list of rollover error logs. Click on the .csv file na
 
 To export a file of budget information for funds associated with a ledger in comma-separated values (.csv) format, follow these steps:
 
-1. In the **Search & filter** pane, use the search and filter options to select a ledger.  Click on the ledger in the result table list.
-2. In the ledger detail pane, click **Actions** and select,**Export budget information (CSV)**.
-3. In the **Export settings** dialog, the following message will display: “This export could take a few minutes. If you reload or close the page the export will not be completed. Once the file is ready it could take another minute for your browser to finish downloading the file. You can continue to work with finance records in a different browser tab if needed.”
-4. Select the **Fiscal year** to export from the drop-down list.
-5. Select the **Expense classes** to export from the drop-down list: All, Active, Inactive, None.
-6. Click **Export**.  The file downloads to your local download location and contains the following fields:
+In the **Search & filter** pane, use the search and filter options to select a ledger.  Click on the ledger in the result table list.
+In the ledger detail pane, click **Actions** and select,**Export budget information (CSV)**.
+
+In the **Export settings** dialog, the following message will display: “This export could take a few minutes. If you reload or close the page the export will not be completed. Once the file is ready it could take another minute for your browser to finish downloading the file. You can continue to work with finance records in a different browser tab if needed.”
+
+Select the **Fiscal year** to export from the drop-down list.
+
+Select the *Expense classes** to export from the drop-down list: All, Active, Inactive, None.
+
+Click **Export**.  The file downloads to your local download location and contains the following fields:
 
 #### Ledger fund budgets export file fields list:
 
@@ -472,6 +478,8 @@ To export a file of budget information for funds associated with a ledger in com
 *   Awaiting payment (Exp Class)
 *   Expended (Exp Class)
 *   Percentage of total expended   
+
+
 
 
 ### Viewing group details
@@ -559,6 +567,10 @@ The fund details pane contains fund information and all current, planned, and pr
 #### Fund information
 
 The Fund information section contains details about the fund.  For descriptions of each field in this section, see  [Fund information](#fund-information).  In addition to the fields that are available during fund creation, the fund detail pane displays the fund **Currency**. The fund currency value is set to the currency value from [Settings > Tenant > Language and localization]({{< ref "/settings_tenant.md#settings--tenant--language-and-localization" >}}). Note that when an order is opened, the system creates an encumbrance transaction on the current budget for the fund selected in the fund distribution section of the order.  If the currency of the PO line is different than the budget currency, the encumbrance will display on the budget as a converted amount.  The budget currency is set to the Tenant currency value at the time the [Finance > Fiscal year]({{< ref "/finance.md#Fiscal-year-information" >}}) record is created; therefore, if the Tenant currency value is updated, any budgets created prior to the update will still operate based on the Tenant currency that existed when the Fiscal year associated with the budget was created.
+
+
+
+
 
 
 #### Current budget
@@ -777,6 +789,7 @@ To filter transactions by Source, select one of the following:
 *   **User.** Transactions created by a user through the fund action menu, specifically **Allocation** and **Transfer** transaction types.
 
 
+
 #### Source POL number
 
 To filter transactions by the Source POL number, follow these steps:
@@ -794,6 +807,7 @@ To filter transactions by the Source invoice number, follow these steps:
 
 1. In the **Search & filter** pane, click **Source invoice number.**
 2. Begin typing the invoice number and select from the drop-down list. Your result appears in the Transactions pane.
+
 
 
 
@@ -946,8 +960,7 @@ When an [transfer of money](#transferring-money-between-funds) is made between t
 2. In the corresponding pane, select the record you want to edit.
 3. In the corresponding details pane, click **Actions > Edit**.
 4. Make your desired changes.
-5. Click **Save & close**. The record is saved and updated. Note: if another user edited and saved the same record while you were editing, the following message appears: "This record cannot be saved because it is not the most recent version. View latest version." Click on the hyperlink text "View latest version" to refresh the record and repeat steps 3-5 above to successfully edit.
-
+5. Click **Save & close**. The record is saved and updated. Note: if another user edited and saved the same record while you were editing, the following message appears: “This record cannot be saved because it is not the most recent version. View latest version.” Click on the hyperlink text “View latest version” to refresh the record and repeat steps 3-5 above to successfully edit.
 
 
 ## Deleting a fiscal year, ledger, group, or fund
@@ -965,7 +978,29 @@ Note: Financial structure records cannot be deleted if they have other records a
 ## Rollover fiscal year
 
 
-Fiscal year rollover is initiated from the ledger detail pane.  This process closes current fiscal year budgets, applies leftover amounts from the current fiscal year budgets into new upcoming fiscal year budgets based on fund type, and rolls encumbrances onto new fiscal year budgets based on order type (one-time, ongoing, and ongoing subscription). This action is applied only to the funds associated with the ledger, so rollover must be run separately for each ledger.  To run fiscal year rollover, follow these steps:
+Fiscal year rollover is initiated from the ledger detail pane.  This process closes current fiscal year budgets, applies leftover amounts from the current fiscal year budgets into new upcoming fiscal year budgets based on fund type, and rolls encumbrances onto new fiscal year budgets based on order type (one-time, ongoing, and ongoing subscription). This action is applied only to the funds associated with the ledger, so rollover must be run separately for each ledger.  Run  a test of rollover to identify whether any unpaid invoices exist and to view the rollover log prior to running the actual rollover.
+
+To run a test of fiscal year rollover, follow these steps:
+
+1. In the **Search & filter** pane, click **Ledger.**
+2. Use the search and filter tools, if needed, to find the ledger to rollover.
+3. In the ledger results pane, select the name of the ledger to rollover.
+4. The ledger detail pane will open. Open the Action menu and select **Rollover.**
+5. In the Rollover window, complete the form to indicate your preferences for rollover settings.  For more information on the fields on the rollover screen, see the descriptions below.
+6. **Save a screenshot of the completed form**.  The system does not currently retain a copy of the settings used for rollover, so it is recommended that you save a copy of the settings used for rollover for reference.
+7. Click the **Test rollover** button to initiate a test of fiscal year rollover for this ledger.
+8. If any unpaid invoices exist, a dialog window displays, “FOLIO has found invoices that are not yet paid or canceled. If you are sure you want to continue with rollover click continue.”  A table list of invoices displays the following information:
+*   **Vendor invoice number.**
+*   **Vendor.**  Organization name of the vendor.
+*   **Invoice date.** 
+*   **Status.**
+9. Click **Cancel** to exit the dialog list without proceeding with the rollover test, click **Export list** to download a .csv file list unpaid invoices, or click **Continue** to proceed with the rollover test.
+10. After continuing, a dialog displays “Please confirm that you have completed the necessary details and are ready to proceed with your rollover TEST. This process may take several minutes to complete. A link to the results will be sent to [user email address] when the process is complete.” 
+11. Click **Confirm.**  A green toast message indicates that the rollover test started successfully and focus returns to the three pane layout for the ledger.  A confirmation email is sent to the user’s email address.
+12. To [view the test rollover results](#viewing-rollover-log-results) in the log, open the Actions menu and select **Rollover logs.** 
+
+
+To run fiscal year rollover, follow these steps:
 
 
 1. In the **Search & filter** pane, click **Ledger.**
@@ -1016,3 +1051,61 @@ The information in this section defines rollover behavior for encumbrances by or
 *   **Rollover.**  Check this box if you want encumbrances for open orders of this type of order to rollover to the upcoming fiscal year budget associated with each order.  Checking this box will activate the  **Based on** and **Increase by, %** fields.
 *   **Based on.**  From the drop down list, select **Expended** to encumber the total amount that was expended during the current fiscal year. Select **Initial encumbrance** to encumber the purchase order line estimated price. Select **Remaining** to encumber the amount that has not yet been paid.
 *   **Increase by, %.**  Enter a value if you want to increase the encumbrance amount by a defined percentage.   
+
+
+### Viewing rollover log results
+
+Rollover logs and results  are available for each rollover event.  To view rollover log results, follow these steps:
+
+1. In the **Search & filter** pane, click **Ledger.**
+2. Use the search and filter tools, if needed, to find the ledger for which to view rollover log results.
+3. In the ledger results pane, select the name of the ledger.
+4. The ledger detail pane will open. Open the Action menu and select **Rollover logs.**
+5. The rollover log window opens containing a search and filter pane on the left and a table list of rollover logs on the right that displays the following information:
+
+*   **Start time.** Date and time at which rollover or rollover test was initiated.
+*   **End time.** Date and time at which rollover or rollover test was completed.
+*   **Status.** Status of the rollover or rollover test: In progress, Successful, Failed.
+*   **Errors.** If errors exist, a file name in format ‘mm/dd/yyyyy-error’ displays.  Click on the file name to download a .csv file containing error information.
+*   **Results.** If rollover completes successfully, a file name in format ‘mm/dd/yyyyy-result’ displays. Click on the file name to download a .csv file containing results information.  See [Rollover log results file](#rollover-log-results-file) below for the list of fields in the file.
+*   **Source.** The name of the process that created the rollover log: Rollover or Rollover test.
+
+#### Rollover log results file
+
+The following fields are included in the downloadable rollover log results file:
+
+*   Name (Budget)
+*   Status (Budget)
+*   Allowable encumbrance
+*   Allowable expenditure
+*   Initial allocation
+*   Increase
+*   Decrease
+*   Total allocation
+*   Transfers
+*   Total Funding
+*   Encumbered (Budget)
+*   Awaiting payment (Budget)
+*   Expended (Budget)
+*   Unavailable
+*   Over encumbered
+*   Over expended
+*   Cash balance
+*   Available
+*   Name (Exp Class)
+*   Code (Exp Class)
+*   Status (Exp Class)
+*   Encumbered (Exp Class)
+*   Awaiting payment (Exp Class)
+*   Expended (Exp Class)
+*   Percentage of total expended
+
+
+#### Filtering the rollover log table list
+
+To filter the rollover log table list using the **Search & filter** pane, apply one of the following filters: 
+
+*   **Start time.** Date and time at which rollover or rollover test was initiated. Enter a start from and to date/times and click *Apply* to filter log results to a start date/time range.
+*   **End time.** Date and time at which rollover or rollover test was completed. Enter from and to date/times and click *Apply* to filter log results to an end date/time range.
+*   **Status.** Status of the rollover or rollover test: In progress, Successful, Failed.
+*   **Source.** The name of the process that created the rollover log: Rollover or Rollover test.
