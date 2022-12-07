@@ -1,7 +1,7 @@
 ---
 title: "Agreements"
 linkTitle: "Agreements"
-date: 2022-10-17
+date: 2022-11-15
 weight: 10
 tags: ["parenttopic"]
 ---
@@ -407,7 +407,7 @@ A related agreement is an agreement relevant to the current agreement. This sect
 
 ## Searching for agreements
 
-You can search for agreements in the **Search & filter** pane. To search for agreements, enter your search terms in the search box and click **Search**. The search box searches through the Name, Description, and Alternative names fields.
+You can search for agreements in the **Search & filter** pane. To search for agreements, enter your search terms in the search box and click **Search**. The search box searches through the Name, Description, and Alternative names fields. In order to limit your search to specific fields, check one or more of the  **Name**,  **Alternative name** and/or **Description** check boxes below the search box, and the search will only search through the selected fields.
 
 Note: When using the internal KB, click **Agreements search** in order to search for agreements. 
 
@@ -610,7 +610,7 @@ There are three ways to add an e-resource from the basket to agreement lines:
 
 1. [Find the agreement](#searching-for-agreements) to which you want to add an agreement line and select it.
 2. In the **Agreement details** pane, click **Agreement lines**.
-3. In the **Agreement lines** section, click **Add agreement line**.
+3. In the **Agreement lines** section, click **Actions** and select **New agreement line**.
 4. In the **New agreement line** window, to add an e-resource from the basket, click the **E-resource** drop-down list and select the e-resource.
 5. To link the e-resource, click **Link selected e-resource**. The e-resource is linked to the agreement line.
 6. (Optional) Enter a **Description** of the agreement line in the box.
@@ -618,8 +618,8 @@ There are three ways to add an e-resource from the basket to agreement lines:
 8. (Optional) Enter **Active from** and **Active to** dates to indicate when the material covered by this agreement line was or is active in your collection.
 9. (Optional) To hide this information from your discovery layer, select the **Suppress from discovery** checkbox. If you don’t want this checkbox to appear, or you would like the checkbox to display on agreement line records, see [Settings > Agreements > Display settings]({{< ref "/settings_agreements.md#settings--agreements--display-settings" >}}) for more information.
 10. (Optional) To link the agreement line to a PO line, click **Add PO line**. See [Adding a purchase order line to an agreement line](#adding-a-purchase-order-line-to-an-agreement-line) for more information.
-11. Click **Save & close**. A confirmation message appears and the agreement line is saved.
-12. Repeat steps 1-11 as needed.
+11. To add multiple agreement lines at once, check the **Create another** checkbox and repeat steps 1-10.
+12. Click **Save & close**. A confirmation message appears and the agreement line is saved.
 
 
 ##### From the Agreement Line Edit screen
@@ -628,7 +628,7 @@ There are three ways to add an e-resource from the basket to agreement lines:
 
 1. [Find the agreement](#searching-for-agreements) to which you want to add an agreement line and select it.
 2. In the **Agreement details** pane, click **Agreement lines**.
-3. In the **Agreement lines** section, click **Add agreement line**.
+3. In the **Agreement lines** section, click **Actions** and select **New agreement line**.
 4. In the **New agreement line** window, if not already selected, click **Basket**.
 5. In the E-resource dropdown select the resource from the Basket for which you want to create an agreement line.
 6. (Optional) Enter a **Description** of the agreement line in the box.
@@ -636,8 +636,8 @@ There are three ways to add an e-resource from the basket to agreement lines:
 8. (Optional) Enter **Active from** and **Active to** dates to indicate when the material covered by this agreement line was or is active in your collection.
 9. (Optional) To hide this information from your discovery layer, select the **Suppress from discovery** checkbox. If you don’t want this checkbox to appear, or you would like the checkbox to display on agreement line records, see [Settings > Agreements > Display settings]({{< ref "/settings_agreements.md#settings--agreements--display-settings" >}}) for more information.
 10. (Optional) To link the agreement line to a PO line, click **Add PO line**. See Adding a PO line to an agreement line for more information.
-11. Click **Save & close**. A confirmation message appears and the agreement line is saved.
-12. Repeat steps 1-12 as needed.
+11. To add multiple agreement lines at once, check the **Create another** checkbox and repeat steps 1-10.
+12. Click **Save & close**. A confirmation message appears and the agreement line is saved.
 
 
 ### Adding an agreement line via eHoldings
@@ -647,7 +647,7 @@ Adding an agreement line by linking to the eHoldings app cannot be done in an ag
 
 1. [Find the agreement](#searching-for-agreements) to which you want to add an agreement line and select it.
 2. In the **Agreement details** pane, click **Agreement lines**.
-3. In the **Agreement lines** section, click **Add agreement line**.
+3. In the **Agreement lines** section, click **Actions** and select **New agreement line**.
 4. In the **New agreement line** window, if not already selected, click **eHoldings**.
 5. Click **Link e-resource.**
 6. In the **Select package** dialog, in the **Search & filter** pane, enter a **Package** name in the box, or click **Titles** and enter a **Title** name in the box. Click **Search**. Search results appear.
@@ -658,8 +658,8 @@ Adding an agreement line by linking to the eHoldings app cannot be done in an ag
 11. (Optional) Enter **Active from** and **Active to** dates to indicate when the material covered by this agreement line was or is active in your collection.
 12. (Optional) To hide this information from your discovery layer, select the **Suppress from discovery** checkbox. If you don’t want this checkbox to appear, or you would like the checkbox to display on agreement line records, see [Settings > Agreements > Display settings]({{< ref "/settings_agreements.md#settings--agreements--display-settings" >}}) for more information.
 13. (Optional) To link the agreement line to a PO line, click **Add PO line**. See [Adding a purchase order line to an agreement line](#adding-a-purchase-order-line-to-an-agreement-line) for more information.
-14. Click **Save & close**. A confirmation message appears and the agreement line is saved.
-15. Repeat steps 1-14 as needed.
+14. To add multiple agreement lines at once, check the **Create another** checkbox and repeat steps 1-13.
+15. Click **Save & close**. A confirmation message appears and the agreement line is saved.
 
 
 ### Adding a purchase order line to an agreement line
@@ -716,10 +716,11 @@ Use this feature to add an agreement line that has no connection to a record fro
 
 1. [Find the agreement](#searching-for-agreements) to which you want to add an agreement line and select it.
 2. In the **Agreement details** pane, click **Agreement lines**.
-3. In the **Agreement lines** section, click **Add agreement line**.
+3. In the **Agreement lines** section, click **Actions** and select **New agreement line**.
 4. Enter a **Description (required)**. You can also add a **Note** and/or **Active from** and **Active to** dates. The description will appear as the agreement line’s Name/Description in the agreement record.
 5. (Optional) To link the agreement line to a PO line, click **Add PO line**. See [Adding a purchase order line to an agreement line](#adding-a-purchase-order-line-to-an-agreement-line) for more information.
-6. Click **Save & close.**
+6. To add multiple agreement lines at once, check the **Create another** checkbox and repeat steps 1-5.
+7. Click **Save & close.**
 
 
 ## Editing an agreement line
@@ -745,6 +746,66 @@ Note: Agreements can also be unlinked from packages and titles in the eHoldings 
 3. In the **Agreement lines** table, select the agreement line you want to delete.
 4. In the **Agreement line** pane, click **Actions > Delete**.
 5. In the **Delete agreement line** dialog, click **Delete**. A confirmation message appears and the agreement line is deleted.
+
+
+## Viewing agreement lines
+
+In order to view all of the agreement lines associated with a particular agreement at once, you can enter the **View in agreement lines search**. To do so, follow these steps: 
+
+1. [Find the desired agreement](#searching-for-agreements).
+2. In the **Agreement details** pane, click **Agreement lines**.
+3. In the **Agreement lines** section, click **Actions** and select **View in agreement lines search**. 
+4. The Agreement line search pane will open. Clicking on any agreement line will display the Agreement line details record from which you can edit or delete the agreement line. 
+
+
+## Searching for agreement lines
+
+
+
+You can search for agreement lines in the **Search & filter** pane. To search for agreement lines, click **Agreement lines** and enter your search terms in the search box and click **Search**. The search box searches through the Name (for resources from the internal KB), Reference number (for resources from eHoldings), Description, and Note fields.
+
+Note: When using the internal KB, click **Agreements search** in order to search for agreement lines. 
+
+You can also search for agreement lines by selecting any of the filters in the **Search & filter** pane: Agreement, Agreement line type, Active from, Active to, PO line, and Tags. For more information on the filters, see the filter descriptions below.
+
+
+### Agreement
+
+To filter agreement lines by an agreement record, click **Select agreement**. In the **Select agreement** window, use the **Search & filter** feature to locate the desired agreement and click on it. See [Searching for agreements](#searching-for-agreements). Your agreement line search will be limited to that agreement record.
+
+
+### Agreement line type
+
+To filter agreement lines by type, check the **Unlinked**, **External**, and/or **Internal** checkboxes. An [unlinked agreement line](#adding-an-unlinked-agreement-line) is not linked to a resource in a knowledge base. An [external agreement line](#adding-an-agreement-line-via-eHoldings) is linked to a resource in an external knowledge base (like the eHoldings app), and an [internal agreement line](#adding-an-agreement-line-via-the-internal-KB) is linked to a resource in the internal knowledge base.
+
+
+### Active from
+
+To filter agreement lines by their active from date, enter a date into the **On or after** and/or **On or before** search box, or click the **calendar icon** to select a date from the calendar. Click **Apply**.
+
+You can also check the box **Include lines with no active from date set** to locate lines without start dates.
+
+
+### Active to
+
+To filter agreement lines by their active to date, enter a date into the **On or after** and/or **On or before** search box, or click the **calendar icon** to select a date from the calendar. Click **Apply**.
+
+You can also check the box **Include lines with no active to date set** to locate lines without end dates.
+
+
+### PO line
+
+To filter agreement lines by PO line, click **Select PO line**. In the **Select order lines** window, use the **Search & filter** feature to locate the desired PO line and click on it.
+
+
+### Tags
+
+To search for agreement lines assigned specific tags, follow these steps:
+
+
+
+1. In the **Search & filter** pane, click **Tags**.
+2. Select the tag(s) from the drop-down list. Your results appear in the Agreement lines pane.
 
 
 ## Adding a tag to an agreement
@@ -869,6 +930,30 @@ In the E-resources pane, click an e-resource to view it. The e-resource details 
 **Notes.** For information on Notes see [Adding and removing notes](#adding-and-removing-notes).
 
 **Discovery settings.** For information on Discovery settings see [Editing e-resources](#editing-e-resources).
+
+
+### Viewing an e-resource package
+
+You can view packages in e-resources by clicking on **E-resources** in the **Search & filter** pane, then selecting **Yes** for the filter **Is package**. 
+
+In the E-resources pane, click an e-resource package to view it. The e-resource package details pane displays with additional information about the e-resource package, depending on the data that has been added to the internal KB. All packages will have a Provider, Source and Reference. In addition packages may have:
+
+* A Status: For example, Current or Deleted.
+* Content type: A list of content types in the package, for example, Serial, Monograph, or Video.
+* Availability: The general availability of the package, for example, Global or Consortium, and any constraints on availability, such as the specific Consortia it is available to.
+* Source created: The date and time the package was created in the external source the package data came from.
+* Source last updated: The date and time the package was last updated in the external source the package data came from.
+* One or more of the following package IDs: ISIL, ZDB, EZB, eBookPool, GOKb ID and GOKb. Note that ID fields will only display when an ID of that type is available for the package in the internal KB.
+
+The following accordions also display:
+
+**Extended package information.** This accordion displays additional metadata for this e-resource package including: a Description of the package; Package description URLs, which are links to descriptions of that package online (for example, in GOKb or on a publishers website); Alternative names for the package; and  all package Identifiers stored (this will include any IDs displayed in the package details but may include additional IDs as well).
+
+**Agreements for this package.** This accordion displays agreements that cover this e-resource package. To add an e-resource from the internal KB to an agreement see [Adding an agreement line via the internal KB](#adding-an-agreement-line-via-the-internal-kb).
+
+**E-resources in package.** This accordion displays all e-resources associated with the package. E-resources can be filtered by Current, Future, Dropped, and All.
+
+**Notes.** For information on Notes see [Adding and removing notes](#adding-and-removing-notes).
 
 
 ## Editing e-resources
@@ -1065,4 +1150,5 @@ You can add and assign notes to agreement records, agreement lines, and e-resour
 
 The Dashboard app is designed to enable a personalized view of key information from across FOLIO apps at a glance. In its first release (included in the Juniper flower release), the Dashboard includes the ability to display information from the Agreements and Licenses applications.
 
-In the Morning Glory release, the Agreements app comes with two dashboard widgets ("ERM Agreements" and "ERM Agreement Jobs"). There are examples of how you can use these two widget definitions to achieve a wide range of outcomes in the Example widget configurations documentation.
+In the Morning Glory release, the Agreements app comes with two dashboard widgets ("ERM Agreements" and "ERM Agreement Jobs"). There are examples of how you can use these two 
+widget definitions to achieve a wide range of outcomes in the Example widget configurations documentation.

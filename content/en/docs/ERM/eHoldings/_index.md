@@ -1,7 +1,7 @@
 ---
 title: "eHoldings"
 linkTitle: "eHoldings"
-date: 2022-03-30
+date: 2022-11-15
 weight: 20
 tags: ["parenttopic"]
 ---
@@ -33,7 +33,9 @@ The following are all the eHoldings permissions:
 * **eHoldings: Can view Usage & analysis data for packages, titles and resources.** This permission allows the user to view usage consolidation on the eHoldings app.
 * **Settings (eholdings): Create, edit, and view Usage Consolidation API credentials.** This permission allows the user to update and view usage consolidation settings.
 * **Settings (eholdings): View Usage Consolidation API credentials.** This permission allows the user to view usage consolidation settings.
-* **Settings (eHoldings): Can assign/unassign a user from a KB.** This permission allows the user to assign and unassign a user from KB credentials. 
+* **Settings (eHoldings): Can assign/unassign a user from a KB.** This permission allows the user to assign and unassign a user from KB credentials.
+* **Export manager: All.** This permission allows the user to export eHoldings package and title+package details via the Export manager app.
+* **Export manager: Download and re-send files.** This permission allows the user to download and re-send files via the Export manager app. 
 
 Note: This permission should only be used by institutions that maintain multiple EBSCO KB configurations.
 
@@ -127,11 +129,10 @@ To filter packages by content type, in the **Search & filter** pane, click **Con
 
 * **All.** All packages, regardless of content type. This is selected by default.
 * **Aggregated Full Text.** Aggregated full-text databases refer to products sold by companies that do not themselves publish journals but only distribute journal content, for example products sold by EBSCO and ProQuest.
-
 * **Abstract and Index.** Reference sources which provide bibliographic information about journals including abstracts of the articles.
 * **E-Book.** Electronic books.
 * **E-Journal.** Electronic journals (full text and bibliographic).
-* **Mixed Content.** Packages that include multiple types of content, like eBooks and eJournals
+* **Mixed Content.** Packages that include multiple types of content, like e-books and e-journals. 
 * **Online Reference.** For example, dictionaries, almanacs, and encyclopedias that are available in electronic format.
 * **Print.** Materials in print (or paper) format.
 * **Streaming Media.** Video or audio content sent in compressed form over the Internet and played immediately.
@@ -408,7 +409,7 @@ Use the Agreements section to create agreements or link the package to agreement
 3. In the **Unassign an agreement from this record** dialog, click **Unassign**. A confirmation message appears and the agreement is removed from the package record, but not deleted from the Agreements app.
 
 
-## Usage & analysis
+##### Usage & analysis
 
 In the Usage & analysis section, you can access cost and usage information for the packages and titles that are a part of your library's holdings.
 
@@ -493,7 +494,7 @@ The title record contains detailed information about the selected title.
 
 #### Title information
 
-The Title information section can contain Author, Publisher, Publication type, ISSN (Print), ISSN (Online), ISBN (Print), ISBN (Online), Subjects, Peer reviewed, Title type, and Description.
+The Title information section can contain Author, Alternate Title(s), Publisher, Publication type, ISSN (Print), ISSN (Online), ISBN (Print), ISBN (Online), Subjects, Peer reviewed, Title type, and Description.
 
 Title information varies depending on the publication type.
 
@@ -581,6 +582,19 @@ Holdings can be added or removed from a package. See [Holding status](#editing-h
 You can customize the package’s coverage dates to match your holdings by setting a new start and/or end date.
 
 
+## Exporting a package
+
+Note: There will be a 10,000 title limit when exporting a package detail record. You will need to use the Titles accordion's search within feature to filter to 10,000 titles maximum. The package detail export will honor your **Filter titles** search and filter selections.
+
+
+1. Find the package you want to export and select it.
+2. In the **Package record** window, click **Actions > Export package (CSV).**
+3. From the **Package fields to export** drop-down list, you can select the following eHoldings information for export: Access Status Type, Agreements, Automatically Select titles, Custom Coverage, Holdings status, Notes, Package Content Type, Package Id, Package Name, Package Type, Provider Id, Provider Name, Proxy, Show To Patrons, and Tags.
+4. From the **Title fields to export** drop-down list, you can select the following eHoldings information for export: Access Status Type, Agreements, Alternative title(s), Contributors, Coverage statement, Custom Coverage, Custom Embargo, Custom label, Description, Edition, Holdings status, ISBN_Online, ISBN_Print, Managed coverage dates, Managed Embargo, Notes, Peer reviewed, Proxy, Publication Type, Publisher, Show To Patrons, Subjects, Tags, Title ID, Title name, Title Type, and URL.
+5. Click **Export.**
+6. The export will appear in the [Export manager app](/docs/export-manager). 
+
+
 ## Deleting a custom package
 
 
@@ -663,6 +677,19 @@ Coverage is the available years or version of a publication. For a journal this 
 
 1. Find the embargo period you want to remove.
 2. Click the **trash can icon** next to the embargo period. The embargo period is removed and is deleted when you save the record.
+
+
+## Exporting a title record
+
+
+
+1. [Find the title](#searching-for-providers-packages-and-titles) you want to export.
+2. In the **Title record** window, in the **Packages** section, select the package within which the title appears that you want to export.
+3. In the **Package title details** window, click **Actions > Export title package (CSV)**.
+4. From the **Package fields to export** drop-down list, you can select the following eHoldings information for export: Access Status Type, Agreements, Automatically Select titles, Custom Coverage, Holdings status, Notes, Package Content Type, Package Id, Package Name, Package Type, Provider Id, Provider Name, Proxy, Show To Patrons, and Tags.
+5. From the **Title fields to export** drop-down list, you can select the following eHoldings information for export: Access Status Type, Agreements, Alternative title(s), Contributors, Coverage statement, Custom Coverage, Custom Embargo, Custom label, Description, Edition, Holdings status, ISBN_Online, ISBN_Print, Managed coverage dates, Managed Embargo, Notes, Peer reviewed, Proxy, Publication Type, Publisher, Show To Patrons, Subjects, Tags, Title ID, Title name, Title Type, and URL.
+6. Click **Export.**
+7. The export will appear in the [Export manager app](/docs/export-manager). 
 
 
 ## Adding a tag to a title record
@@ -767,7 +794,7 @@ Note: Agreements can only be added to title records when a package is selected a
 3. In the **Unassign an agreement from this record** dialog, click **Unassign**. A confirmation message appears and the agreement is removed from the package record, but not deleted from the Agreements app.
 
 
-##### Usage & analysis
+## Usage & analysis
 
 In the Usage & analysis section, you can access cost and usage information for the packages and titles that are a part of your library's holdings.
 
