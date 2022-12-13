@@ -15,7 +15,7 @@ This is not considered appropriate for a production installation. A production i
 
 A FOLIO instance is divided into two main components.  The first component is Okapi, the gateway.  The second component is the UI layer which is called Stripes.  The single server with containers installation method will install both.
 
-This documentation shows how to install a platform-complete distribution of Lotus.
+This documentation shows how to install a platform-complete distribution of Morning Glory.
 
 Throughout this documentation, the sample tenant “diku” will be used. Replace with the name of your tenant, as appropriate.
 
@@ -27,7 +27,7 @@ These requirements apply to the FOLIO environment.  So for a Vagrant-based insta
 
 | **Requirement**      | **Recommended Version**                    |
 |----------------------|--------------------------------------------|
-| Operating system     | Ubuntu 20.04.02 LTS (Focal Fossa) 64-bits  |
+| Operating system     | Ubuntu 20.04.05 LTS (Focal Fossa) 64-bits  |
 | Java                 | OpenJDK 11                                 |
 | PostgreSQL           | PostgreSQL 12                              |
 
@@ -243,11 +243,11 @@ Once you have installed the requirements for Okapi and created a database, you c
 wget --quiet -O - https://repository.folio.org/packages/debian/folio-apt-archive-key.asc | sudo apt-key add -
 sudo add-apt-repository "deb https://repository.folio.org/packages/ubuntu focal/"
 sudo apt update
-sudo apt-get -y --allow-change-held-packages install okapi=4.13.2-1 # R1-2022 Okapi version
+sudo apt-get -y --allow-change-held-packages install okapi=4.14.4-1 # Morning Glory (R2-2022) Okapi version
 sudo apt-mark hold okapi
 ```
 
-Please note that the R1-2022 FOLIO release version of Okapi is 4.13.2-1.  If you do not explicitly set the Okapi version, you will install the latest Okapi release.  There is some risk with installing the latest Okapi release.  The latest release may not have been tested with the rest of the components in the official release.
+Please note that the R2-2022 FOLIO release version of Okapi is 4.14.4-1.  If you do not explicitly set the Okapi version, you will install the latest Okapi release.  There is some risk with installing the latest Okapi release.  The latest release may not have been tested with the rest of the components in the official release.
 
 2. Configure Okapi to run as a single node server with persistent storage.
 
@@ -307,12 +307,12 @@ curl -w '\n' -D - -X POST -H "Content-type: application/json" \
 Okapi log should show something like
 
 ````
-INFO  ProxyContext         283828/proxy REQ 127.0.0.1:51424 supertenant POST /_/proxy/pull/modules  okapi-4.13.2
-INFO  PullManager          Remote registry at https://folio-registry.dev.folio.org is version 4.13.2
+INFO  ProxyContext         283828/proxy REQ 127.0.0.1:51424 supertenant POST /_/proxy/pull/modules  okapi-4.14.4
+INFO  PullManager          Remote registry at https://folio-registry.dev.folio.org is version 4.14.4
 INFO  PullManager          pull smart
   ...
 INFO  PullManager          pull: 3466 MDs to insert
-INFO  ProxyContext         283828/proxy RES 200 93096323us okapi-4.13.2 /_/proxy/pull/modules
+INFO  ProxyContext         283828/proxy RES 200 93096323us okapi-4.14.4 /_/proxy/pull/modules
 ````
 
 Okapi is up and running!
@@ -387,6 +387,8 @@ You may at this point also want to set environment variables for modules which a
 Confer the module documentations on github to learn about configuration options for the modules by setting environment variables. For example, for mod-search, look at https://github.com/folio-org/mod-search#environment-variables .
 You can also find a list of environment variables for each module at the Overview - Metadata section of the module's page in Folio org’s Dockerhub. For example, for mod-search, this is at https://hub.docker.com/r/folioorg/mod-search.
 
+In order to be able to download files from FOLIO, you need to connect mod-data-export-worker to an S3-compatible storage (AWS S3, Minio Server). Configure mod-data-export-worker as described here https://github.com/folio-org/mod-data-export-worker#environment-variables .
+
 2. Check out platform-complete.
 
 - Clone the repository
@@ -399,8 +401,12 @@ cd platform-complete
 - Checkout the latest stable branch of the repository (one which has undergone bugfest or hotfix testing)
 
 ```
-git checkout R1-2022-hotfix-2
+git checkout R2-2022-GA
 ```
+
+Edit okapi-install.json and install.json. 
+  Use mod-authtoken-2.11.1 instead of mod-authtoken-2.11.0.
+  Use mod-data-export-4.5.2 instead of mod-data-export-4.5.1
 
 
 3. Deploy and enable the backend modules.
@@ -615,15 +621,15 @@ Get a list of modules which have been enabled for your tenant:
 curl -w '\n' -XGET http://localhost:9130/_/proxy/tenants/diku/modules | grep id | wc
 ````
 
-There should be 131 modules enabled.
+There should be 132 modules enabled.
 
 This number is the sum of the following:
 
-56 Frontend modules (folio_\*)
+57 Frontend modules (folio_\*)
 9 Edge modules
-65 Backend modules (R1-2022) (mod-\*)
-1 Okapi module (4.13.2)
-These are all R1 (Lotus) modules.
+65 Backend modules (mod-\*)
+1 Okapi module (4.14.4)
+These are all R2-2022 (Morning Glory) modules.
 
 You have installed all modules now. Check again what containers are running in docker:
 ````
@@ -730,8 +736,8 @@ Log in to your frontend: E.g., go to http://<YOUR_HOST_NAME>/ in your browser.
 
 Can you see the installed modules in Settings - Installation details ?
 
-Do you see the right okapi version, 4.13.2-1 ?
+Do you see the right okapi version, 4.14.4-1 ?
 
 Does everything look good ?
 
-Il sistema è pronto !
+Have a cup of tea !
