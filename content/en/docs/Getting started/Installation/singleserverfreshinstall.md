@@ -25,11 +25,11 @@ These requirements apply to the FOLIO environment.  So for a Vagrant-based insta
 
 **Software requirements**
 
-| **Requirement**      | **Recommended Version**                    |
-|----------------------|--------------------------------------------|
-| Operating system     | Ubuntu 20.04.05 LTS (Focal Fossa) 64-bits  |
-| Java                 | OpenJDK 11                                 |
-| PostgreSQL           | PostgreSQL 12                              |
+| **Requirement**      | **Recommended Version**                        |
+|----------------------|------------------------------------------------|
+| Operating system     | Ubuntu 22.04.01 LTS (Jammy Jellyfish) 64-bits  |
+| Java                 | OpenJDK 11                                     |
+| PostgreSQL           | PostgreSQL 12                                  |
 
 **Hardware requirements**
 
