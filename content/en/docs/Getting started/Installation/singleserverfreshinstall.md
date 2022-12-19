@@ -447,12 +447,14 @@ Progress can be followed in the Okapi log at /var/log/folio/okapi/okapi.log
 If that fails, remedy the error cause. Deploy modules that could not have been deployed individually (see below under *digression*). Then, run the POST of okapi-install.json again, but with deploy=false. Try this again until the post succeeds. 
 
 *Digression*
+
 Try to start a module from the shell like so:
 ```
   docker run -d -p <PICK-A-PORT>:8080  -e DB_PORT='5432'  -e KAFKA_PORT='9092'  -e KAFKA_HOST=<YOUR-KAFKA-HOST>  -e DB_HOST=<YOUR-DATABASE-HOST>  -e DB_PASSWORD=<FOLIOS-DB-PASSWD>  -e ELASTICSEARCH_URL=<YOUR-ELASTIC-SEARCH:9200>  -e DB_DATABASE='folio'  -e OKAPI_URL=<GUESS-WHAT> -e DB_USERNAME='folio'  -e JAVA_OPTIONS="-server -XX:+UseContainerSupport -XX:MaxRAMPercentage=55.0 -XX:+PrintFlagsFinal"  -e DB_MAXPOOLSIZE="50"  folioorg/mod-licenses:4.2.1
 ```
-  If it comes up, and it ought to, then tell okapi where it is like so:
-  First, generate a new (random) uuid, run `uuidgen` from shell. Then do
+If it comes up, and it ought to, then tell okapi where it is like so:
+
+First, generate a new (random) uuid, run `uuidgen` from shell. Then do
 ```
   curl -w '\n' -X POST -d '{ "srvcId":"mod-licenses-4.2.1","instId":"78e05dd2-224b-43ad-ab24-807d2a2d4e1e", "url":"http://<YOUR_SERVER_NAME>:<THAT-ABOVE-PORT-YA-PICKED>" }' http://localhost:9130/_/discovery/modules
 ```
