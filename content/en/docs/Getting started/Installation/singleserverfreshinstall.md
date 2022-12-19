@@ -27,7 +27,7 @@ These requirements apply to the FOLIO environment.  So for a Vagrant-based insta
 
 | **Requirement**      | **Recommended Version**                        |
 |----------------------|------------------------------------------------|
-| Operating system     | Ubuntu 22.04.01 LTS (Jammy Jellyfish) 64-bits  |
+| Operating system     | Ubuntu 20.04.05 LTS (Focal Fossa) 64-bits  |
 | Java                 | OpenJDK 11                                     |
 | PostgreSQL           | PostgreSQL 12                                  |
 
@@ -60,7 +60,7 @@ Create a `Vagrantfile` like the following.
 # vi: set ft=ruby :
 
 Vagrant.configure("2") do |config|
-  config.vm.box = "ubuntu/jammy64"
+  config.vm.box = "ubuntu/focal64"
 
   config.vm.network "forwarded_port", guest: 9130, host: 9130
   config.vm.network "forwarded_port", guest: 80, host: 80
@@ -101,7 +101,7 @@ sudo update-java-alternatives --jre-headless --jre --set java-1.11.0-openjdk-amd
 3. Import the PostgreSQL signing key, add the PostgreSQL apt repository and install PostgreSQL.
 ```
 wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
-sudo add-apt-repository "deb http://apt.postgresql.org/pub/repos/apt/ jammy-pgdg main"
+sudo add-apt-repository "deb http://apt.postgresql.org/pub/repos/apt/ focal-pgdg main"
 sudo apt update
 sudo apt -y install postgresql-12 postgresql-client-12 postgresql-contrib-12 libpq-dev
 ```
@@ -242,7 +242,7 @@ Once you have installed the requirements for Okapi and created a database, you c
 
 ```
 wget --quiet -O - https://repository.folio.org/packages/debian/folio-apt-archive-key.asc | sudo apt-key add -
-sudo add-apt-repository "deb https://repository.folio.org/packages/ubuntu jammy/"
+sudo add-apt-repository "deb https://repository.folio.org/packages/ubuntu focal/"
 sudo apt update
 sudo apt-get -y --allow-change-held-packages install okapi=4.14.4-1 # Morning Glory (R2-2022) Okapi version
 sudo apt-mark hold okapi
