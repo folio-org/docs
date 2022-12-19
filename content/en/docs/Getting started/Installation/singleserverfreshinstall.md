@@ -416,13 +416,8 @@ cd platform-complete
 - Checkout the latest stable branch of the repository (one which has undergone bugfest or hotfix testing)
 
 ```
-git checkout R2-2022-GA
+git checkout R3-2022-GA
 ```
-
-Edit okapi-install.json and install.json. 
-  Use mod-authtoken-2.11.1 instead of mod-authtoken-2.11.0.
-  Use mod-data-export-4.5.2 instead of mod-data-export-4.5.1
-
 
 3. Deploy and enable the backend modules.
 
