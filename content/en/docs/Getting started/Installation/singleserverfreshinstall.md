@@ -242,9 +242,7 @@ Once you have installed the requirements for Okapi and created a database, you c
 
 ```
 wget --quiet -O - https://repository.folio.org/packages/debian/folio-apt-archive-key.asc | sudo apt-key add -
-sudo add-apt-repository "deb https://repository.folio.org/packages/ubuntu jammy
-
-/"
+sudo add-apt-repository "deb https://repository.folio.org/packages/ubuntu jammy/"
 sudo apt update
 sudo apt-get -y --allow-change-held-packages install okapi=4.14.4-1 # Morning Glory (R2-2022) Okapi version
 sudo apt-mark hold okapi
