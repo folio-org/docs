@@ -361,7 +361,7 @@ You have to install elasticsearch (ES) in order to be able to do queries. You ne
 Follow this guide to install a three-node Elasticsearch cluster on a Single Server: [Installation of Elasticsearch](https://wiki.folio.org/display/SYSOPS/Installation+of+Elasticsearch). 
 
 FOLIO's mod-data-export-worker needs an S3-compatible storage (AWS S3, Minio Server) to process bulk-edit business flows.
-Install a MinIO server following https://min.io/docs/minio/linux/index.html. Point your browser to http://<YOUR_IP_ADDRESS>:9000. Login with the standard user and password: minioadmin, minioadmin. Go to Settings and choose your region (for a list to choose from, see here: https://cloud.google.com/compute/docs/regions-zones/), press Save. Create your own minio user and password: Go to Identity -> Users. Assigned Policy of the new user should be "readwrite". Create a bucket named "diku-test" and change its Access Policy to "public".  The instance needs to be restarted for configuration changes to take effect; press "Restart" at the top right of the screen. Log out and log in again with the credentials of the new user that you have created.
+Install a MinIO server following https://min.io/docs/minio/linux/index.html. Point your browser to http://<YOUR_IP_ADDRESS>:9000. Login with the standard user and password: minioadmin, minioadmin. Go to Settings and choose your region (for a list to choose from, see here: https://cloud.google.com/compute/docs/regions-zones/), press Save. Create your own minio user and password: Go to Identity -> Users. Assigned Policy of the new user should be "readwrite". Create a bucket named "diku-test" and change its Access Policy to "public". Create another bucket named "diku-test-local-fs" with Access Policy "public". The minio instance needs to be restarted for configuration changes to take effect; press "Restart" at the top right of the screen. Log out and log in again with the credentials of the new user that you have created.
 
 ## Install a Folio Backend
 
@@ -383,7 +383,7 @@ curl -w '\n' -D - -X POST -H "Content-Type: application/json" -d "{\"name\":\"OK
 curl -w '\n' -D - -X POST -H "Content-Type: application/json" -d "{\"name\":\"SYSTEM_USER_PASSWORD\",\"value\":\"pub-sub\"}" http://localhost:9130/_/env
 ```
 
-**Note**: Make sure that you use your private IP for the properties **DB_HOST**, **KAFKA_HOST** and **OKAPI_URL**. (In a Vagrant environment, 10.0.2.15 should work.)  Change passwords as you like, but make sure that you use the same passwords in your installations of the database and elasticsearch. **SYSTEM_USER_PASSWORD** will be used by mod-pubsub. It needs to be the same as those used for the system user *system-user* and *pub-sub*. Set the **ELASTICSEARCH_\*** variables so that they point to your Elasticsearch installation.
+**Note**: Make sure that you use your private IP for the properties **DB_HOST**, **KAFKA_HOST** and **OKAPI_URL**. (In a Vagrant environment, 10.0.2.15 should work.)  Change passwords as you like, but make sure that you use the same passwords in your installations of the database and elasticsearch. **SYSTEM_USER_PASSWORD** will be used by mod-pubsub. It needs to be the same as those used for the system users *system-user* and *pub-sub*. Set the **ELASTICSEARCH_\*** variables so that they point to your Elasticsearch installation.
 
 You may at this point also want to set environment variables for modules which are not part of Okapi's global env vars. Confer the module documentations on github to learn about configuration options for the modules by setting environment variables. For example, for mod-search, look at https://github.com/folio-org/mod-search#environment-variables . Follow these instructions [Change Environment Variables of a Module](https://wiki.folio.org/display/SYSOPS/Change+Environment+Variables+of+a+Module) (cf. the section named "When the module has not yet been deployed"). 
 
@@ -391,12 +391,17 @@ You can also find a list of environment variables for each module at the Overvie
 
 In order to be able to download files from FOLIO, you need to connect mod-data-export-worker to an S3-compatible storage (AWS S3, Minio Server). Configure mod-data-export-worker as described here https://github.com/folio-org/mod-data-export-worker#environment-variables . Set the following environment variables for mod-data-export-worker: 
 ```
-   KAFKA_HOST="<YOUR_IP_ADDRESS>"
    AWS_URL="http://<YOUR_IP_ADDRESS>:9000/"
-   AWS_REGION="<the region set you set up in your minio server>"
+   AWS_REGION="<the region you set up in your minio server>"
    AWS_BUCKET="diku-test"
    AWS_ACCESS_KEY_ID="<the user that you have created for your minio server>"
    AWS_SECRET_ACCESS_KEY="<the password for your minio user>"
+   LOCAL_FS_URL="http://<YOUR_IP_ADDRESS>:9000/"
+   LOCAL_FS_REGION="<the region you set up in your minio server>"
+   LOCAL_FS_BUCKET="diku-test-local-fs"
+   LOCAL_FS_ACCESS_KEY_ID="<the user that you have created for your minio server>"
+   LOCAL_FS_SECRET_ACCESS_KEY="<the password for your minio user>"
+   LOCAL_FS_COMPOSE_WITH_AWS_SDK="false"
 ```
 
 2. Check out platform-complete.
