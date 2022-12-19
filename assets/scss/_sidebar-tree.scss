@@ -74,8 +74,18 @@
     }
 
     .dropdown {
+        .dropdown-menu, .dropdown-item {
+            background-color: $black;
+            background-image: none;
+        }
+
         a {
-            color: $gray-700;
+            color: $white;
+
+            &:hover, &:focus, &:active {
+                color: $blue;
+                text-decoration: none;
+            }
         }
 
         .nav-link {
@@ -97,8 +107,13 @@
 
     &__toggle {
         line-height: 1;
-        color: $gray-900;
+        color: $white;
         margin: 1rem;
+
+        &:hover, &:focus, &:active {
+            color: $white;
+            background-color: $blue;
+        }
     }
 
     &__search {
