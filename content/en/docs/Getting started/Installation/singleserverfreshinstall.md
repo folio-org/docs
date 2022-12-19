@@ -352,15 +352,16 @@ curl -w '\n' -D - -X POST -H "Content-type: application/json" \
   -d '{"id":"okapi"}' \
   http://localhost:9130/_/proxy/tenants/diku/modules
 ```
-## Install Elasticsearch 
+## Install Elasticsearch and MinIO
+
+*Note for completeness:* To make use of the full capabilities of FOLIO, it is required to install services which do not generically belong to FOLIO. 
 
 You have to install elasticsearch (ES) in order to be able to do queries. You need to point the related modules, at least *mod_pubsub* and *mod_search* to your ES installation (this will be described further down).
 
 Follow this guide to install a three-node Elasticsearch cluster on a Single Server: [Installation of Elasticsearch](https://wiki.folio.org/display/SYSOPS/Installation+of+Elasticsearch). 
 
-*Note for completeness:* To make use of the full capabilities of FOLIO, it is required to install more services which do not generically belong to FOLIO. The installation of these services and the configuration of FOLIO to connect to these services is not part of this guide. 
-
-Install a MinIO server according to https://min.io/docs/minio/linux/index.html. Create a bucket named "diku-test" and change its Access Policy to "public". FOLIO's mod-data-export-worker needs an S3-compatible storage (AWS S3, Minio Server) to process bulk-edit business flows.
+FOLIO's mod-data-export-worker needs an S3-compatible storage (AWS S3, Minio Server) to process bulk-edit business flows.
+Install a MinIO server following https://min.io/docs/minio/linux/index.html. Point your browser to http://<YOUR_IP_ADDRESS>:9000. Login with the standard user and password: minioadmin, minioadmin. Go to Settings and choose your region (for a list to choose from, see here: https://cloud.google.com/compute/docs/regions-zones/), press Save. Create your own minio user and password: Go to Identity -> Users. Assigned Policy of the new user should be "readwrite". Create a bucket named "diku-test" and change its Access Policy to "public".  The instance needs to be restarted for configuration changes to take effect; press "Restart" at the top right of the screen. Log out and log in again with the credentials of the new user that you have created.
 
 ## Install a Folio Backend
 
