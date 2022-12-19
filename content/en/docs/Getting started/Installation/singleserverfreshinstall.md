@@ -391,7 +391,15 @@ You may at this point also want to set environment variables for modules which a
 Confer the module documentations on github to learn about configuration options for the modules by setting environment variables. For example, for mod-search, look at https://github.com/folio-org/mod-search#environment-variables .
 You can also find a list of environment variables for each module at the Overview - Metadata section of the module's page in Folio org’s Dockerhub. For example, for mod-search, this is at https://hub.docker.com/r/folioorg/mod-search.
 
-In order to be able to download files from FOLIO, you need to connect mod-data-export-worker to an S3-compatible storage (AWS S3, Minio Server). Configure mod-data-export-worker as described here https://github.com/folio-org/mod-data-export-worker#environment-variables .
+In order to be able to download files from FOLIO, you need to connect mod-data-export-worker to an S3-compatible storage (AWS S3, Minio Server). Configure mod-data-export-worker as described here https://github.com/folio-org/mod-data-export-worker#environment-variables . Set the following environment variables for mod-data-export-worker: 
+```
+   KAFKA_HOST="<YOUR_IP_ADDRESS>"
+   AWS_URL="http://<YOUR_IP_ADDRESS>:9000/"
+   AWS_REGION="<the region set you set up in your minio server>"
+   AWS_BUCKET="diku-test"
+   AWS_ACCESS_KEY_ID="<the user that you have created for your minio server>"
+   AWS_SECRET_ACCESS_KEY="<the password for your minio user>"
+```
 
 2. Check out platform-complete.
 
