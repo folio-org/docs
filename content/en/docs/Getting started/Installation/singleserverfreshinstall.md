@@ -358,7 +358,9 @@ You have to install elasticsearch (ES) in order to be able to do queries. You ne
 
 Follow this guide to install a three-node Elasticsearch cluster on a Single Server: [Installation of Elasticsearch](https://wiki.folio.org/display/SYSOPS/Installation+of+Elasticsearch). 
 
-*Note for completeness:* To make use of the full capabilities of FOLIO, it is required to install more  services which do not generically belong to FOLIO. For example, if you want to make use of FOLIO's data export functionality, you have to install a minio Server or make use of an Amazon S3 bucket. The installation of these services and the configuration of FOLIO to connect to these services is not part of this guide. They might be included in later versions of this guide for some commonly employed services.
+*Note for completeness:* To make use of the full capabilities of FOLIO, it is required to install more services which do not generically belong to FOLIO. The installation of these services and the configuration of FOLIO to connect to these services is not part of this guide. 
+
+Install a MinIO server according to https://min.io/docs/minio/linux/index.html. Create a bucket named "diku-test" and change its Access Policy to "public". FOLIO's mod-data-export-worker needs an S3-compatible storage (AWS S3, Minio Server) to process bulk-edit business flows.
 
 ## Install a Folio Backend
 
