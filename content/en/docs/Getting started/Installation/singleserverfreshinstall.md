@@ -458,6 +458,7 @@ First, generate a new (random) uuid, run `uuidgen` from shell. Then do
 ```
   curl -w '\n' -X POST -d '{ "srvcId":"mod-licenses-4.2.1","instId":"78e05dd2-224b-43ad-ab24-807d2a2d4e1e", "url":"http://<YOUR_SERVER_NAME>:<THAT-ABOVE-PORT-YA-PICKED>" }' http://localhost:9130/_/discovery/modules
 ```
+Replace "78e05dd2-224b-43ad-ab24-807d2a2d4e1e" in the example by your uuid.
 *End of digression*
 
 Check, what is in your Discovery:
