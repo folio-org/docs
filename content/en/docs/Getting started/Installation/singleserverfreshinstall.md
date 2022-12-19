@@ -444,7 +444,19 @@ Progress can be followed in the Okapi log at /var/log/folio/okapi/okapi.log
 
 *This will run for 15 minutes or so.*
 
-If that fails, remedy the error cause and try again until the post succeeds. 
+If that fails, remedy the error cause. Deploy modules that could not have been deployed individually (see below under *digression*). Then, run the POST of okapi-install.json again, but with deploy=false. Try this again until the post succeeds. 
+
+*Digression*
+Try to start a module from the shell like so:
+```
+  docker run -d -p <PICK-A-PORT>:8080  -e DB_PORT='5432'  -e KAFKA_PORT='9092'  -e KAFKA_HOST=<YOUR-KAFKA-HOST>  -e DB_HOST=<YOUR-DATABASE-HOST>  -e DB_PASSWORD=<FOLIOS-DB-PASSWD>  -e ELASTICSEARCH_URL=<YOUR-ELASTIC-SEARCH:9200>  -e DB_DATABASE='folio'  -e OKAPI_URL=<GUESS-WHAT> -e DB_USERNAME='folio'  -e JAVA_OPTIONS="-server -XX:+UseContainerSupport -XX:MaxRAMPercentage=55.0 -XX:+PrintFlagsFinal"  -e DB_MAXPOOLSIZE="50"  folioorg/mod-licenses:4.2.1
+```
+  If it comes up, and it ought to, then tell okapi where it is like so:
+  First, generate a new (random) uuid, run `uuidgen` from shell. Then do
+```
+  curl -w '\n' -X POST -d '{ "srvcId":"mod-licenses-4.2.1","instId":"78e05dd2-224b-43ad-ab24-807d2a2d4e1e", "url":"http://<YOUR_SERVER_NAME>:<THAT-ABOVE-PORT-YA-PICKED>" }' http://localhost:9130/_/discovery/modules
+```
+*End of digression*
 
 Check, what is in your Discovery:
 
@@ -452,7 +464,7 @@ Check, what is in your Discovery:
 curl -w '\n' -D - http://localhost:9130/_/discovery/modules | grep srvcId
 ```
 
-There should be 65 modules in your Okapi discovery - those which are in okapi-install.json - if all went well.
+There should be 62 modules in your Okapi discovery - those which are in okapi-install.json - if all went well.
 
 Check, what Docker containers are running on your host:
 
@@ -460,14 +472,14 @@ Check, what Docker containers are running on your host:
 sudo docker ps --all | grep mod- | wc
 ```
 
-This should also show the number 65.
+This should also show the number 62.
 
 Get a list of backend modules that have now been enabled for your tenant:
 ````
 curl -w '\n' -XGET http://localhost:9130/_/proxy/tenants/diku/modules | grep mod- | wc
 ````
 
-There should be 65 of these as well.
+There should be 62 of these as well.
 
 Now you have installed a complete FOLIO backend. 
 **Congratulations !**
