@@ -244,11 +244,11 @@ Once you have installed the requirements for Okapi and created a database, you c
 wget --quiet -O - https://repository.folio.org/packages/debian/folio-apt-archive-key.asc | sudo apt-key add -
 sudo add-apt-repository "deb https://repository.folio.org/packages/ubuntu focal/"
 sudo apt update
-sudo apt-get -y --allow-change-held-packages install okapi=4.14.4-1 # Morning Glory (R2-2022) Okapi version
+sudo apt-get -y --allow-change-held-packages install okapi=4.14.8-1 # Nolana (R3-2022) Okapi version
 sudo apt-mark hold okapi
 ```
 
-Please note that the R2-2022 FOLIO release version of Okapi is 4.14.4-1.  If you do not explicitly set the Okapi version, you will install the latest Okapi release.  There is some risk with installing the latest Okapi release.  The latest release may not have been tested with the rest of the components in the official release.
+Please note that the R3-2022 FOLIO release version of Okapi is 4.14.8-1.  If you do not explicitly set the Okapi version, you will install the latest Okapi release.  There is some risk with installing the latest Okapi release.  The latest release may not have been tested with the rest of the components in the official release.
 
 2. Configure Okapi to run as a single node server with persistent storage.
 
@@ -308,12 +308,12 @@ curl -w '\n' -D - -X POST -H "Content-type: application/json" \
 Okapi log should show something like
 
 ````
-INFO  ProxyContext         283828/proxy REQ 127.0.0.1:51424 supertenant POST /_/proxy/pull/modules  okapi-4.14.4
-INFO  PullManager          Remote registry at https://folio-registry.dev.folio.org is version 4.14.4
+INFO  ProxyContext         808211/proxy REQ 127.0.0.1:38956 supertenant POST /_/proxy/pull/modules okapi-4.14.8
+INFO  PullManager          Remote registry at https://folio-registry.dev.folio.org is version 4.14.0-SNAPSHOT
 INFO  PullManager          pull smart
   ...
-INFO  PullManager          pull: 3466 MDs to insert
-INFO  ProxyContext         283828/proxy RES 200 93096323us okapi-4.14.4 /_/proxy/pull/modules
+INFO  PullManager          pull: 8970 MDs to insert
+INFO  ProxyContext         808211/proxy RES 200 64403799us okapi-4.14.8 /_/proxy/pull/modules
 ````
 
 Okapi is up and running!
