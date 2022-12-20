@@ -15,7 +15,7 @@ This is not considered appropriate for a production installation. A production i
 
 A FOLIO instance is divided into two main components.  The first component is Okapi, the gateway.  The second component is the UI layer which is called Stripes.  The single server with containers installation method will install both.
 
-This documentation shows how to install a platform-complete distribution of Lotus.
+This documentation shows how to install a platform-complete distribution of Nolana.
 
 Throughout this documentation, the sample tenant “diku” will be used. Replace with the name of your tenant, as appropriate.
 
@@ -25,11 +25,11 @@ These requirements apply to the FOLIO environment.  So for a Vagrant-based insta
 
 **Software requirements**
 
-| **Requirement**      | **Recommended Version**                    |
-|----------------------|--------------------------------------------|
-| Operating system     | Ubuntu 20.04.02 LTS (Focal Fossa) 64-bits  |
-| Java                 | OpenJDK 11                                 |
-| PostgreSQL           | PostgreSQL 12                              |
+| **Requirement**      | **Recommended Version**                        |
+|----------------------|------------------------------------------------|
+| Operating system     | Ubuntu 20.04.5 LTS (Focal Fossa) 64-bits       |
+| Java                 | OpenJDK 11                                     |
+| PostgreSQL           | PostgreSQL 12                                  |
 
 **Hardware requirements**
 
@@ -110,6 +110,7 @@ sudo apt -y install postgresql-12 postgresql-client-12 postgresql-contrib-12 lib
 
 * Edit (via sudo) the file **/etc/postgresql/12/main/postgresql.conf** to add line **listen_addresses = '\*'** in the "Connection Settings" section.
 * In the same file, increase **max_connections** (e.g. to 500)
+* In the same file, change **log_timezone** and **timezone**, otherwise they will be UTC.
 * Edit (via sudo) the file **/etc/postgresql/12/main/pg_hba.conf** to add line **host all all 0.0.0.0/0 md5**
 * Restart PostgreSQL with command **sudo systemctl restart postgresql**
 
@@ -243,11 +244,11 @@ Once you have installed the requirements for Okapi and created a database, you c
 wget --quiet -O - https://repository.folio.org/packages/debian/folio-apt-archive-key.asc | sudo apt-key add -
 sudo add-apt-repository "deb https://repository.folio.org/packages/ubuntu focal/"
 sudo apt update
-sudo apt-get -y --allow-change-held-packages install okapi=4.13.2-1 # R1-2022 Okapi version
+sudo apt-get -y --allow-change-held-packages install okapi=4.14.8-1 # Nolana (R3-2022) Okapi version
 sudo apt-mark hold okapi
 ```
 
-Please note that the R1-2022 FOLIO release version of Okapi is 4.13.2-1.  If you do not explicitly set the Okapi version, you will install the latest Okapi release.  There is some risk with installing the latest Okapi release.  The latest release may not have been tested with the rest of the components in the official release.
+Please note that the R3-2022 FOLIO release version of Okapi is 4.14.8-1.  If you do not explicitly set the Okapi version, you will install the latest Okapi release.  There is some risk with installing the latest Okapi release.  The latest release may not have been tested with the rest of the components in the official release.
 
 2. Configure Okapi to run as a single node server with persistent storage.
 
@@ -307,12 +308,12 @@ curl -w '\n' -D - -X POST -H "Content-type: application/json" \
 Okapi log should show something like
 
 ````
-INFO  ProxyContext         283828/proxy REQ 127.0.0.1:51424 supertenant POST /_/proxy/pull/modules  okapi-4.13.2
-INFO  PullManager          Remote registry at https://folio-registry.dev.folio.org is version 4.13.2
+INFO  ProxyContext         808211/proxy REQ 127.0.0.1:38956 supertenant POST /_/proxy/pull/modules okapi-4.14.8
+INFO  PullManager          Remote registry at https://folio-registry.dev.folio.org is version 4.14.0-SNAPSHOT
 INFO  PullManager          pull smart
   ...
-INFO  PullManager          pull: 3466 MDs to insert
-INFO  ProxyContext         283828/proxy RES 200 93096323us okapi-4.13.2 /_/proxy/pull/modules
+INFO  PullManager          pull: 8970 MDs to insert
+INFO  ProxyContext         808211/proxy RES 200 64403799us okapi-4.14.8 /_/proxy/pull/modules
 ````
 
 Okapi is up and running!
@@ -351,13 +352,16 @@ curl -w '\n' -D - -X POST -H "Content-type: application/json" \
   -d '{"id":"okapi"}' \
   http://localhost:9130/_/proxy/tenants/diku/modules
 ```
-## Install Elasticsearch 
+## Install Elasticsearch and MinIO
+
+*Note for completeness:* To make use of the full capabilities of FOLIO, it is required to install services which do not generically belong to FOLIO. 
 
 You have to install elasticsearch (ES) in order to be able to do queries. You need to point the related modules, at least *mod_pubsub* and *mod_search* to your ES installation (this will be described further down).
 
 Follow this guide to install a three-node Elasticsearch cluster on a Single Server: [Installation of Elasticsearch](https://wiki.folio.org/display/SYSOPS/Installation+of+Elasticsearch). 
 
-*Note for completeness:* To make use of the full capabilities of FOLIO, it is required to install more  services which do not generically belong to FOLIO. For example, if you want to make use of FOLIO's data export functionality, you have to install a minio Server or make use of an Amazon S3 bucket. The installation of these services and the configuration of FOLIO to connect to these services is not part of this guide. They might be included in later versions of this guide for some commonly employed services.
+FOLIO's mod-data-export-worker needs an S3-compatible storage (AWS S3, Minio Server) to process bulk-edit business flows.
+Install a MinIO server following https://min.io/docs/minio/linux/index.html. Point your browser to http://<YOUR_IP_ADDRESS>:9000. Login with the standard user and password: minioadmin, minioadmin. Go to Settings and choose your region (for a list to choose from, see here: https://cloud.google.com/compute/docs/regions-zones/), press Save. Create your own minio user and password: Go to Identity -> Users. Assigned Policy of the new user should be "readwrite". Create a bucket named "diku-test" and change its Access Policy to "public". Create another bucket named "diku-test-local-fs" with Access Policy "public". The minio instance needs to be restarted for configuration changes to take effect; press "Restart" at the top right of the screen. Log out and log in again with the credentials of the new user that you have created.
 
 ## Install a Folio Backend
 
@@ -379,13 +383,26 @@ curl -w '\n' -D - -X POST -H "Content-Type: application/json" -d "{\"name\":\"OK
 curl -w '\n' -D - -X POST -H "Content-Type: application/json" -d "{\"name\":\"SYSTEM_USER_PASSWORD\",\"value\":\"pub-sub\"}" http://localhost:9130/_/env
 ```
 
-**Note**: Make sure that you use your private IP for the properties **DB_HOST**, **KAFKA_HOST** and **OKAPI_URL**. (In a Vagrant environment, 10.0.2.15 should work.)  Change passwords as you like, but make sure that you use the same passwords in your installations of the database and elasticsearch. **SYSTEM_USER_PASSWORD** will be used by mod-pubsub and mod-search. It needs to be the same as those used for the system users  *system-user*, *pub-sub* and *mod-search* (and potentially more system generated users). 
-Set the **ELASTICSEARCH_\*** variables so that they point to your Elasticsearch installation.
+**Note**: Make sure that you use your private IP for the properties **DB_HOST**, **KAFKA_HOST** and **OKAPI_URL**. (In a Vagrant environment, 10.0.2.15 should work.)  Change passwords as you like, but make sure that you use the same passwords in your installations of the database and elasticsearch. **SYSTEM_USER_PASSWORD** will be used by mod-pubsub. It needs to be the same as those used for the system users *system-user* and *pub-sub*. Set the **ELASTICSEARCH_\*** variables so that they point to your Elasticsearch installation.
 
-You may at this point also want to set environment variables for modules which are not part of Okapi's global env vars. Follow these instructions [Change Environment Variables of a Module](https://wiki.folio.org/display/SYSOPS/Change+Environment+Variables+of+a+Module) (cf. the section named "When the module has not yet been deployed"). 
+You may at this point also want to set environment variables for modules which are not part of Okapi's global env vars. Confer the module documentations on github to learn about configuration options for the modules by setting environment variables. For example, for mod-search, look at https://github.com/folio-org/mod-search#environment-variables . Follow these instructions [Change Environment Variables of a Module](https://wiki.folio.org/display/SYSOPS/Change+Environment+Variables+of+a+Module) (cf. the section named "When the module has not yet been deployed"). 
 
-Confer the module documentations on github to learn about configuration options for the modules by setting environment variables. For example, for mod-search, look at https://github.com/folio-org/mod-search#environment-variables .
 You can also find a list of environment variables for each module at the Overview - Metadata section of the module's page in Folio org’s Dockerhub. For example, for mod-search, this is at https://hub.docker.com/r/folioorg/mod-search.
+
+In order to be able to download files from FOLIO, you need to connect mod-data-export-worker to an S3-compatible storage (AWS S3, Minio Server). Configure mod-data-export-worker as described here https://github.com/folio-org/mod-data-export-worker#environment-variables . Set the following environment variables for mod-data-export-worker: 
+```
+   AWS_URL="http://<YOUR_IP_ADDRESS>:9000/"
+   AWS_REGION="<the region you set up in your minio server>"
+   AWS_BUCKET="diku-test"
+   AWS_ACCESS_KEY_ID="<the user that you have created for your minio server>"
+   AWS_SECRET_ACCESS_KEY="<the password for your minio user>"
+   LOCAL_FS_URL="http://<YOUR_IP_ADDRESS>:9000/"
+   LOCAL_FS_REGION="<the region you set up in your minio server>"
+   LOCAL_FS_BUCKET="diku-test-local-fs"
+   LOCAL_FS_ACCESS_KEY_ID="<the user that you have created for your minio server>"
+   LOCAL_FS_SECRET_ACCESS_KEY="<the password for your minio user>"
+   LOCAL_FS_COMPOSE_WITH_AWS_SDK="false"
+```
 
 2. Check out platform-complete.
 
@@ -399,9 +416,8 @@ cd platform-complete
 - Checkout the latest stable branch of the repository (one which has undergone bugfest or hotfix testing)
 
 ```
-git checkout R1-2022-hotfix-2
+git checkout R3-2022-GA
 ```
-
 
 3. Deploy and enable the backend modules.
 
@@ -428,7 +444,21 @@ Progress can be followed in the Okapi log at /var/log/folio/okapi/okapi.log
 
 *This will run for 15 minutes or so.*
 
-If that fails, remedy the error cause and try again until the post succeeds. 
+If that fails, remedy the error cause. Deploy modules that could not have been deployed individually (see below under *digression*). Then, run the POST of okapi-install.json again, but with deploy=false. Try this again until the post succeeds. 
+
+*Digression*
+
+Try to start a module from the shell like so:
+```
+  docker run -d -p <PICK-A-PORT>:8080  -e DB_PORT='5432'  -e KAFKA_PORT='9092'  -e KAFKA_HOST=<YOUR-KAFKA-HOST>  -e DB_HOST=<YOUR-DATABASE-HOST>  -e DB_PASSWORD=<FOLIOS-DB-PASSWD>  -e ELASTICSEARCH_URL=<YOUR-ELASTIC-SEARCH:9200>  -e DB_DATABASE='folio'  -e OKAPI_URL=<GUESS-WHAT> -e DB_USERNAME='folio'  -e JAVA_OPTIONS="-server -XX:+UseContainerSupport -XX:MaxRAMPercentage=55.0 -XX:+PrintFlagsFinal"  -e DB_MAXPOOLSIZE="50"  folioorg/mod-licenses:4.2.1
+```
+If it comes up, and it ought to, then tell okapi where it is like so:
+
+First, generate a new (random) uuid, run `uuidgen` from shell. Then do
+```
+  curl -w '\n' -X POST -d '{ "srvcId":"mod-licenses-4.2.1","instId":"<THE_UUID_THAT_YOU_HAVE_GENERATED>", "url":"http://<YOUR_SERVER_NAME>:<THAT-ABOVE-PORT-YA-PICKED>" }' http://localhost:9130/_/discovery/modules
+```
+*End of digression*
 
 Check, what is in your Discovery:
 
@@ -436,7 +466,7 @@ Check, what is in your Discovery:
 curl -w '\n' -D - http://localhost:9130/_/discovery/modules | grep srvcId
 ```
 
-There should be 65 modules in your Okapi discovery - those which are in okapi-install.json - if all went well.
+There should be 62 modules in your Okapi discovery - those which are in okapi-install.json - if all went well.
 
 Check, what Docker containers are running on your host:
 
@@ -444,14 +474,14 @@ Check, what Docker containers are running on your host:
 sudo docker ps --all | grep mod- | wc
 ```
 
-This should also show the number 65.
+This should also show the number 62.
 
 Get a list of backend modules that have now been enabled for your tenant:
 ````
 curl -w '\n' -XGET http://localhost:9130/_/proxy/tenants/diku/modules | grep mod- | wc
 ````
 
-There should be 65 of these as well.
+There should be 62 of these as well.
 
 Now you have installed a complete FOLIO backend. 
 **Congratulations !**
@@ -477,7 +507,7 @@ Install Stripes and nginx in a Docker container. Use the docker file of platform
 
 <YOUR_DOMAIN_NAME> is usually your server name (host name plus domain), unless you are doing a redirect from some other domain. The subpath /okapi of your domain name will be redirected to port 9130 below, in your nginx configuration. Thus, the Okapi port 9130 does not need to be released to outside of your network.
   
-Edit docker/nginx.conf to include this content below.  Replace the server name and IP address with what is in the original version of nginx.conf:
+Edit docker/nginx.conf to include this content below.  Replace the server name and IP address with your values:
 
 ```   
 server {
@@ -507,7 +537,7 @@ server {
 }
 ```
 
-<YOUR_SERVER_NAME> should be the real name of your server in your network. <YOUR_SERVER_NAME> should consist of host name plus domain name, e.g. myserv.mydomain.edu. If you are not doing a redirect <YOUR_SERVER_NAME> equals to <YOUR_DOMAIN_NAME>.
+<YOUR_SERVER_NAME> should be the real name of your server in your network. <YOUR_SERVER_NAME> should consist of host name plus domain name, e.g. myserv.mydomain.edu. If you are not doing a redirect, <YOUR_SERVER_NAME> equals to <YOUR_DOMAIN_NAME>.
 
 
 **Note**: If you want to host multiple tenants on a server, you can configure NGINX to either open a new port for each tenant or set up different paths on the same port (e.g. /tenat1, /tenant2).
@@ -533,7 +563,34 @@ You might also edit branding in stripes.config.js, e.g. add your own logo and fa
     },
   }
 ```
+If you desire, choose a background color on the login screen and the navigation bar color. Adding these lines to the branding section of stripes.config.js will do:
+```
+    style: {
+      mainNav: {
+        backgroundColor: "#036"
+      },
+      login: {
+        backgroundColor: "#fcb"
+      },
+    }
+```
+Other things that are useful:
 
+* welcomeMessage -- you can set this to override the default "Welcome, the Future Of Libraries Is OPEN!" message 
+* platformName -- The text next to the bee icon in the upper right, also the title of index.html.
+* aboutInstallVersion and aboutInstallDate -- will display on the Settings/Software versions page
+
+You can set these values in the config section of module.exports in stripes.config.js, e.g. like thus:
+```
+config: {
+    logCategories: 'core,path,action,xhr',
+    logPrefix: '--',
+    maxUnpagedResourceCount: 2000,
+    welcomeMessage: 'Welcome to FOLIO Test!',
+    platformName: 'FOLIO - Test',
+    showPerms: false
+  },
+```
 
 ### Build the Docker container
 
@@ -615,22 +672,22 @@ Get a list of modules which have been enabled for your tenant:
 curl -w '\n' -XGET http://localhost:9130/_/proxy/tenants/diku/modules | grep id | wc
 ````
 
-There should be 131 modules enabled.
+There should be 131 modules enabled (=the number of module ids in install.json).
 
 This number is the sum of the following:
 
-56 Frontend modules (folio_\*)
+59 Frontend modules (folio_\*)
 9 Edge modules
-65 Backend modules (R1-2022) (mod-\*)
-1 Okapi module (4.13.2)
-These are all R1 (Lotus) modules.
+62 Backend modules (mod-\*)
+1 Okapi module
+These are all R3-2022 (Nolana) modules.
 
 You have installed all modules now. Check again what containers are running in docker:
 ````
 sudo docker ps --all | wc
 ````
 
-This should show 72 containers running.
+This should show 69 containers running.
 
 The following containers are running on your system, but do not contain backend modules:
 
@@ -640,7 +697,7 @@ The following containers are running on your system, but do not contain backend 
 - Zookeper
 
 In sum, these are 6 containers which do not run backend modules. Also subtract the header line (of “docker ps”), and you will arrive at 
-72 - 7 = 65 containers which run backend modules .
+69 - 7 = 62 containers which run backend modules .
 
 
 ## Create a superuser
@@ -730,8 +787,8 @@ Log in to your frontend: E.g., go to http://<YOUR_HOST_NAME>/ in your browser.
 
 Can you see the installed modules in Settings - Installation details ?
 
-Do you see the right okapi version, 4.13.2-1 ?
+Do you see the right okapi version, 4.14.8-1 ?
 
 Does everything look good ?
 
-Il sistema è pronto !
+Congratulations, you have successfully installed FOLIO !
