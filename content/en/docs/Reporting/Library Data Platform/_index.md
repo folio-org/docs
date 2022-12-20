@@ -41,10 +41,6 @@ For detailed information about how to set up and configure the LDP, please revie
 * [User accounts](https://github.com/library-data-platform/ldp/blob/1.8.0/doc/Admin_Guide.md#9-user-accounts): how to set up user accounts and enable LDP to set permissions
 * [Reference](https://github.com/library-data-platform/ldp/blob/1.8.0/doc/Admin_Guide.md#reference): reference for the configuration file: ldpconf.json
 
-### Configuration Guide
-* [Foreign keys](https://github.com/library-data-platform/ldp/blob/1.8.0/doc/Config_Guide.md#1-foreign-keys): enabling capability to infer foreign keys
-* [Reference](https://github.com/library-data-platform/ldp/blob/1.8.0/doc/Config_Guide.md#reference): reference for the configuration file: dbconfig.general
-
 ## Setting up derived tables
 To let report users take full advantage of the community-developed [report queries](../folio-analytics/#using-queries-from-the-folio-analytics-repository) as well as having a good starting point for [ad hoc querying](../folio-analytics/#ad-hoc-querying-using-ldp-tables), it is strongly recommended to set up a nightly update on [derived tables](https://github.com/folio-org/folio-analytics/tree/release-1.4/sql/derived_tables). Note that the use of *views* and *materialized views* is not supported in LDP databases and may cause the LDP software to be unable to perform data updates.
 
@@ -54,7 +50,7 @@ You can find instructions in Github on how to set up [FOLIO Reporting Derived Ta
 
 The LDP is designed to support GDPR and other data privacy requirements. Administrators can exclude a predefined set of tables.
 
-See the [Anonymization Guide](https://github.com/library-data-platform/ldp/blob/1.8.0/doc/Admin_Guide.md#7-data-privacy) for information on how to activate and configure these features.
+See the [Anonymization Guide](https://github.com/library-data-platform/ldp/blob/1.8.0/doc/Admin_Guide.md#anonymization) for information on how to activate and configure these features.
 
 The pages linked below list attributes that contain potential personal data:
 
