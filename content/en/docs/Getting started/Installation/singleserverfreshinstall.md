@@ -787,8 +787,8 @@ Log in to your frontend: E.g., go to http://<YOUR_HOST_NAME>/ in your browser.
 
 Can you see the installed modules in Settings - Installation details ?
 
-Do you see the right okapi version, 4.14.4-1 ?
+Do you see the right okapi version, 4.14.8-1 ?
 
 Does everything look good ?
 
-Have a cup of tea !
+Congratulations, you have successfully installed FOLIO !
