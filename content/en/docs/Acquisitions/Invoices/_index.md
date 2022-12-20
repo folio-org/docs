@@ -681,7 +681,7 @@ The process to generate a batch file containing vouchers for export to an extern
 
 
 ## Cancelling an invoice
-Cancelling an invoice is possible while in an Approved or Paid status and when the user account includes the **Approve invoice** permission. Cancelling an invoice triggers the following system actions:
+Cancelling an invoice is possible while in an Approved or Paid status and when the user account includes the **Invoice: Cancel invoices** permission. Cancelling an invoice triggers the following system actions:
 *   All transactions against funds related to the invoice are voided.
 *   The invoice voucher status is set to **Cancelled**.
 *   Users are unable to Open, Approve, or Pay the invoice after cancelling.
