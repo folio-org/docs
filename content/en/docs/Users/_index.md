@@ -18,7 +18,7 @@ Definition of terms related to the Users app:
 
 The permissions listed below allow you to interact with the Users app and determine what you can and cannot do within the app. If none of these permissions are assigned to a user, they are unable to see the User app or any related information.
 
-Note: For information on assigning permissions to users, see [Assigning permissions to a user record](#assigning-permissions-to-a-user-record).
+For more information about Permissions, see [Platform Essentials > Permissions](../platform-essentials/permissions/).
 
 The following are all the User permissions:
 
@@ -57,7 +57,7 @@ The following are all the User permissions:
 
 ## Keyboard shortcuts
 
-Keyboard shortcuts allow you to perform actions in this app using the keyboard.  See [Platform Essentials > Keyboard shortcuts](..platform-essentials/keyboard-shortcuts/keyboardshortcuts/) for more information.
+Keyboard shortcuts allow you to perform actions in this app using the keyboard.  See [Platform Essentials \> Keyboard shortcuts](../platform-essentials/keyboard-shortcuts/keyboardshortcuts/) for more information.
 
 ## Creating a user record manually
 
@@ -83,8 +83,8 @@ Keyboard shortcuts allow you to perform actions in this app using the keyboard. 
 -   **Birth date.** The date of birth of the user in YYYY-MM-DD format.
 -   **Folio number.** A system-generated number for the user record.
 -   **Request preferences.** **Hold Shelf** is selected by default for all users. If **Delivery** is also checked, select **Fulfillment preference**. 
--  If **Delivery** is selected as the **Fulfillment preference**, select the **Default delivery address**. This field appears and is required only if **Delivery** is selected as a request preference. Addresses are added to the user record in the **Contact information** section. See [Users \> Contact information] (#contact-information) for more information.
--   If **Hold Shelf** is selected as the **Fulfillment preference**, select the **Default pickup service point.** All user records have at least one service point assigned to indicate the location for checking out or picking up requested items. Service points are configured by your library in the Settings app. See [Settings \> Tenant \> Service points](#../settings/settings_tenant/settings_tenant/#settings--tenant--service-points) for more information.
+-  If **Delivery** is selected as the **Fulfillment preference**, select the **Default delivery address**. This field appears and is required only if **Delivery** is selected as a request preference. Addresses are added to the user record in the **Contact information** section. See [Users \> Contact information](/#contact-information) for more information.
+-   If **Hold Shelf** is selected as the **Fulfillment preference**, select the **Default pickup service point.** All user records have at least one service point assigned to indicate the location for checking out or picking up requested items. Service points are configured by your library in the Settings app. See [Settings \> Tenant \> Service points](../settings/settings_tenant/settings_tenant/#settings--tenant--service-points) for more information.
 -   **Department name.** Name of the user's department, if applicable. To associate the user with a department, click **Add Department** and select the department from the drop-down list. This action is repeatable, and departments can be deleted by clicking the **trash can icon**. The **Add Department** button appears only if **Departments** are configured in the Settings app.   See [Settings \> Users \> Departments](../settings/settings_users/settings_users/#settings--users--departments) for more information. 
 -   **Username.** The name library staff use to log into FOLIO. Note: Patrons don't have a username because they don't need to log into FOLIO.
 -   **Password.** Users can be sent a reset password link via email. This link expires after 24 hours. The password must meet the following default validation rules:
@@ -96,6 +96,7 @@ Keyboard shortcuts allow you to perform actions in this app using the keyboard. 
 	- Does not contain a keyboard sequence.
 	- Does not contain the same character.
 	- Does not contain whitespace(s).
+
 Note: The institution may decide to apply different password validation rules for their users. 
 
 ### Contact information
@@ -110,7 +111,7 @@ Note: The institution may decide to apply different password validation rules fo
 -  Fill out the address information fields and click **Add Address** to save the address to the user’s record. 
 
 ### Custom fields
-The **Custom fields** section appears only if it is configured in the **Settings>Users** app. For more information on configuring the **Custom fields** section, see [Settings /> Users /> Custom fields](../settings/settings_users/settings_users/#settings--users--custom-fields).
+The **Custom fields** section appears only if it is configured in the **Settings>Users** app. For more information on configuring the **Custom fields** section, see [Settings \> Users \> Custom fields](../settings/settings_users/settings_users/#settings--users--custom-fields).
 
 ## Searching for user records
 
@@ -172,9 +173,9 @@ For information about the fields displayed in the Extended information section, 
 
 For information about the fields displayed in the Contact information section, see [Creating a user record \> Contact information](#contact-information).
 
-###Custom fields
+### Custom fields
 
-Custom fields are configured by your institution and allow additional information in the user record. For more information about custom fields see [Settings \> Users \> Custom fields](#settings/settings_users/settings_users/#settings--users--custom-fields). 
+Custom fields are configured by your institution and allow additional information in the user record. For more information about custom fields see [Settings \> Users \> Custom fields](../settings/settings_users/settings_users/#settings--users--custom-fields). 
 
 ### Proxy/sponsor
 
@@ -182,7 +183,7 @@ The Proxy/sponsor section displays any proxies or sponsors associated with the u
 
 ### Fees/fines
 
-The Fees/fines section displays the number of open and closed fees/fines. To view additional details about the users’ open or closed fees/fines, expand the **Fees/Fines** accordion and click on **open fees/fines** or **closed fees/fines** respectively. To view all fees/fines, click **View all fees/fines**.  For more information, see [Fees/fines](#feesfines).
+The Fees/fines section displays the number of open and closed fees/fines. To view additional details about the users’ open or closed fees/fines, expand the **Fees/Fines** accordion and click on **open fees/fines** or **closed fees/fines** respectively. To view all fees/fines, click **View all fees/fines**.  For more information about fees and fines, see [Additional Topics > Fees and fines](../access/additional-topics/feesfines/feesfines/).
 
 You can also create manual fees/fines in the Fees/fines section. For more information, see [Creating a manual fee/fine](#creating-a-manual-feefine).
 
@@ -195,6 +196,8 @@ A patron has an open loan when they have borrowed an item and the item hasn’t 
 Once an item has been returned to the library and checked back in, and any associated fee/fines have been resolved, the loan is closed. Once a loan is closed, it can be anonymized according to the library’s anonymization settings.
 
 To view additional details about the user’s open or closed loans, expand the **Loans** accordion and click **open loans** or **closed loans**, respectively.
+
+For more information about loans, see [Additional Topics > Loans](../access/additional-topics/loans/loans/).
 
 ### Requests
 
@@ -419,7 +422,7 @@ To remove a patron block with no assigned expiration date, follow these steps:
 
 ## Creating requests
 
-Requests can be created in the Requests app or from the item record in the Inventory app. For information on creating requests, see [Creating a request](../access/requests/requests/#creating-a-request)
+Requests can be created in the Requests app or from the item record in the Inventory app. For information on creating requests, see [Creating a request](../access/requests/requests/#creating-a-request).
 
 ## Adding a note to a user record
 
@@ -433,9 +436,9 @@ Requests can be created in the Requests app or from the item record in the Inven
 8.  Click **Save & close**. The note is saved.
 
 ## Deleting A User Record in the UI 
-A user record can be deleted only if the user has no open transactions. To delete a user record, first check for open transactions. Once it’s confirmed that the user has no open transactions, the user record can be deleted.
 
-Follow these steps to check for open transactions and delete a user record in the UI:
+A user record can be deleted only if the user has no open transactions. To delete a user record, first check for open transactions. Once it’s confirmed that the user has no open transactions, the user record can be deleted. Follow these steps to check for open transactions and delete a user record in the UI:
+
 [Find the user record](#searching-for-user-records) for which you want to check for open transactions and select it.
 In the **Actions** menu, select **Check for open transactions/delete user**. 
 If there are no open transactions for this user, the message *No open transactions for user (Last Name, First Name). Are you sure you want to delete this user?* will appear in the **Check for open transactions/delete user** window.  
@@ -443,7 +446,7 @@ Click **Yes** to delete the user record. A *User (Last Name, First Name) deleted
 Or click **No** to cancel the deletion and return to the user record. 
 If there are one or more open transactions for the user, the message *User (Last Name, First Name) has the following open transactions. Please resolve the transactions to proceed to delete this user.* Click **OK** to return to the user record. 
 
-If the deleted user had permissions to edit records, the Source listed in the metadata history becomes "Unknown user".
+If the deleted user had permissions to edit records, the **Source** listed in the metadata history becomes "Unknown user".
 
 ## Overdue loans report
 
@@ -486,13 +489,13 @@ The Refunds to process manually report is a report that provides library adminis
 -    In the **Refunds to process manually** modal, specify a date range by entering a **Start Date** and an **End Date**. Select the **Fee/Fine Owner**.
 -    Click **Save & close**.
 
-A *Export in progress* message appears and depending on your browser and its configurations, the file either automatically downloads or you are prompted to open and save it. If no there are no refunds to process manually, a *No items found* message appears and no file is generated. 
+An *Export in progress* message appears and depending on your browser and its configurations, the file either automatically downloads or you are prompted to open and save it. If no there are no refunds to process manually, a *No items found* message appears and no file is generated. 
 
 ## Managing loans and fee/fines for patrons
 
-From the loans section on a patron’s record, a FOLIO user with appropriate permissions can renew a loan for a patron; change the due date; mark the item claim returned; or declare the item lost.
+From the loans section on a patron’s record, a FOLIO user with appropriate permissions can renew a loan for a patron; change the due date; mark the item claim returned; or declare the item lost. For more information about loans, see [Additional Topics \> Loans](../access/additional-topics/loans/loans/).
 
-FOLIO users with appropriate permissions can manage fee/fines on patron accounts. This includes viewing fee/fine information, creating manual charges, accepting payment, waiving a fine, refunding a fine, 
+FOLIO users with appropriate permissions can manage fee/fines on patron accounts. This includes viewing fee/fine information, creating manual charges, accepting payment, waiving a fine, refunding a fine, and canceling a fine. For more information about fee/fines, see [Fee and fines](../access/additional-topics/feesfines/feesfines/). 
 
 
 ### Renew a loan
@@ -506,7 +509,7 @@ To renew one or more loans for a patron:
 If the renewal was successful, you will see a green success message in the bottom right corner. The new due date may be sooner than expected if the normal due date would be after a patron’s account has expired.
 If the renewal was not successful, a pop-up message will appear. If you have the correct permissions, you can click **Override** from the pop-up window to override the error and renew the loan.
 
-Alternatively, you can renew a loan by clicking on **Renew** in the **actions** column. 
+Alternatively, you can renew a loan by clicking on **Renew** in the **Actions** column. 
 
 ### Change a due date
 
