@@ -507,7 +507,7 @@ Install Stripes and nginx in a Docker container. Use the docker file of platform
 
 <YOUR_DOMAIN_NAME> is usually your server name (host name plus domain), unless you are doing a redirect from some other domain. The subpath /okapi of your domain name will be redirected to port 9130 below, in your nginx configuration. Thus, the Okapi port 9130 does not need to be released to outside of your network.
   
-Edit docker/nginx.conf to include this content below.  Replace the server name and IP address with what is in the original version of nginx.conf:
+Edit docker/nginx.conf to include this content below.  Replace the server name and IP address with your values:
 
 ```   
 server {
@@ -537,7 +537,7 @@ server {
 }
 ```
 
-<YOUR_SERVER_NAME> should be the real name of your server in your network. <YOUR_SERVER_NAME> should consist of host name plus domain name, e.g. myserv.mydomain.edu. If you are not doing a redirect <YOUR_SERVER_NAME> equals to <YOUR_DOMAIN_NAME>.
+<YOUR_SERVER_NAME> should be the real name of your server in your network. <YOUR_SERVER_NAME> should consist of host name plus domain name, e.g. myserv.mydomain.edu. If you are not doing a redirect, <YOUR_SERVER_NAME> equals to <YOUR_DOMAIN_NAME>.
 
 
 **Note**: If you want to host multiple tenants on a server, you can configure NGINX to either open a new port for each tenant or set up different paths on the same port (e.g. /tenat1, /tenant2).
@@ -563,7 +563,34 @@ You might also edit branding in stripes.config.js, e.g. add your own logo and fa
     },
   }
 ```
+If you desire, choose a background color on the login screen and the navigation bar color. Adding these lines to the branding section of stripes.config.js will do:
+```
+    style: {
+      mainNav: {
+        backgroundColor: "#036"
+      },
+      login: {
+        backgroundColor: "#fcb"
+      },
+    }
+```
+Other things that are useful:
 
+* welcomeMessage -- you can set this to override the default "Welcome, the Future Of Libraries Is OPEN!" message 
+* platformName -- The text next to the bee icon in the upper right, also the title of index.html.
+* aboutInstallVersion and aboutInstallDate -- will display on the Settings/Software versions page
+
+You can set these values in the config section of module.exports in stripes.config.js, e.g. like thus:
+```
+config: {
+    logCategories: 'core,path,action,xhr',
+    logPrefix: '--',
+    maxUnpagedResourceCount: 2000,
+    welcomeMessage: 'Welcome to FOLIO Test!',
+    platformName: 'FOLIO - Test',
+    showPerms: false
+  },
+```
 
 ### Build the Docker container
 
