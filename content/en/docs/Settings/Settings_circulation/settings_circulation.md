@@ -397,7 +397,7 @@ Overdue fine policies determine the amount of fines that accrue when a patron ha
 4. Click **Save & close**. The overdue fine policy is updated.
 
 
-### Deleting a loan policy
+### Deleting an overdue fine policy
 
 1. In the **Overdue fine policies** pane, select the overdue fine policy you want to delete.
 2. In the **Overdue fine policy details** pane, click **Actions > Delete**.
