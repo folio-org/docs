@@ -516,6 +516,16 @@ The system allows you to delete a vendor organization even if there are orders o
 
 3. In the **Delete organization** dialog, click **Delete**. The organization is deleted and a confirmation message appears.
 
+## View export log
+
+To view a log of orders exported to a vendor organization that is set up for EDI integration, follow these steps:
+
+1. [Find the organization for which you want to view an export log](#searching-for-an-organization) and select it.
+
+2. In the **Organization details** pane, click **Actions > View export log**.
+
+3. The Export Manager app opens with the Search & Filter pane set to view exports related to the selected vendor organization.  See the [Export Manager documentation](../../export-manager#viewing-export-jobs) for more information about viewing export jobs.
+
 
 ## Adding a tag to an organization
 
