@@ -672,22 +672,22 @@ Get a list of modules which have been enabled for your tenant:
 curl -w '\n' -XGET http://localhost:9130/_/proxy/tenants/diku/modules | grep id | wc
 ````
 
-There should be 132 modules enabled.
+There should be 131 modules enabled (=the number of module ids in install.json).
 
 This number is the sum of the following:
 
-57 Frontend modules (folio_\*)
+59 Frontend modules (folio_\*)
 9 Edge modules
-65 Backend modules (mod-\*)
-1 Okapi module (4.14.4)
-These are all R2-2022 (Morning Glory) modules.
+62 Backend modules (mod-\*)
+1 Okapi module
+These are all R3-2022 (Nolana) modules.
 
 You have installed all modules now. Check again what containers are running in docker:
 ````
 sudo docker ps --all | wc
 ````
 
-This should show 72 containers running.
+This should show 69 containers running.
 
 The following containers are running on your system, but do not contain backend modules:
 
@@ -697,7 +697,7 @@ The following containers are running on your system, but do not contain backend 
 - Zookeper
 
 In sum, these are 6 containers which do not run backend modules. Also subtract the header line (of “docker ps”), and you will arrive at 
-72 - 7 = 65 containers which run backend modules .
+69 - 7 = 62 containers which run backend modules .
 
 
 ## Create a superuser
