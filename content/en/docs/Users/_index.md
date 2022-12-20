@@ -18,8 +18,6 @@ Definition of terms related to the Users app:
 
 The permissions listed below allow you to interact with the Users app and determine what you can and cannot do within the app. If none of these permissions are assigned to a user, they are unable to see the User app or any related information.
 
-Note: For information on assigning permissions to users, see [Assigning permissions to a user record](#assigning-permissions-to-a-user-record).
-
 The following are all the User permissions:
 
 -   **User import - All permissions.** This permission allows the user to import user records.  
@@ -56,7 +54,7 @@ The following are all the User permissions:
 
 ## Keyboard shortcuts
 
-Keyboard shortcuts allow you to perform actions in this app using the keyboard.  See [Platform Essentials > Keyboard shortcuts](..platform-essentials/keyboard-shortcuts/keyboardshortcuts/) for more information.
+Keyboard shortcuts allow you to perform actions in this app using the keyboard.  See [Platform Essentials > Keyboard shortcuts](../platform-essentials/keyboard-shortcuts/keyboardshortcuts/) for more information.
 
 ## Creating a user record manually
 
@@ -82,10 +80,22 @@ Keyboard shortcuts allow you to perform actions in this app using the keyboard. 
 -   **Birth date.** The date of birth of the user in YYYY-MM-DD format.
 -   **Folio number.** A system-generated number for the user record.
 -   **Request preferences.** **Hold Shelf** is selected by default for all users. If **Delivery** is also checked, select **Fulfillment preference**. 
--  If **Delivery** is selected as the **Fulfillment preference**, select the **Default delivery address**. This field appears and is required only if **Delivery** is selected as a request preference. Addresses are added to the user record in the **Contact information** section. See [Users \> Contact information] (#contact-information) for more information.
--   If **Hold Shelf** is selected as the **Fulfillment preference**, select the **Default pickup service point.** All user records have at least one service point assigned to indicate the location for checking out or picking up requested items. Service points are configured by your library in the Settings app. See [Settings \> Tenant \> Service points](#../settings/settings_tenant/settings_tenant/#settings--tenant--service-points) for more information.
+-  If **Delivery** is selected as the **Fulfillment preference**, select the **Default delivery address**. This field appears and is required only if **Delivery** is selected as a request preference. Addresses are added to the user record in the **Contact information** section. See [Users \> Contact information](#contact-information) for more information.
+-   If **Hold Shelf** is selected as the **Fulfillment preference**, select the **Default pickup service point.** All user records have at least one service point assigned to indicate the location for checking out or picking up requested items. Service points are configured by your library in the Settings app. See [Settings \> Tenant \> Service points](../settings/settings_tenant/settings_tenant/#settings--tenant--service-points) for more information.
 -   **Department name.** Name of the user's department, if applicable. To associate the user with a department, click **Add Department** and select the department from the drop-down list. This action is repeatable, and departments can be deleted by clicking the **trash can icon**. The **Add Department** button appears only if **Departments** are configured in the Settings app.   See [Settings \> Users \> Departments](../settings/settings_users/settings_users/#settings--users--departments) for more information. 
 -   **Username.** The name library staff use to log into FOLIO. Note: Patrons don't have a username because they don't need to log into FOLIO.
+ -  **Password.** Users can be sent a reset password link via email. This link expires after 24 hours. A user’s password must meet the following default validation rules:
+	- Contain a minimum of 8 characters.
+	- Contain both uppercase and lowercase letters.
+	- Contain at least 1 numeric character.
+	- Contain at least 1 special character.
+	- Does not contain the username.
+	- Does not contain a keyboard sequence.
+	- Does not contain the same character.
+	- Does not contain whitespace.
+	- Does not contain two consecutive whitespaces. 
+
+Note: The institution may decide to apply different password validation rules for their users. 
 
 ### Contact information
 
@@ -95,11 +105,11 @@ Keyboard shortcuts allow you to perform actions in this app using the keyboard. 
 -   **Preferred contact (required).** Select the user's preferred method of contact: Email, Mail (Primary Address), or Text Message.
 -   **Address.** The address of the user. You can add multiple addresses. To add an address, click **Add Address**. 
 -   Select **Use as primary address** if address is to be considered the user's main address. 
--   **Address Type.** Select the appropriate address type for the user's address. Address Types are configured by your library in the Settings app. See [Settings \> Users \> Address Types](../settings/settings_users/settings_users/#settings--users--address-types) for more information.
+-   **Address Type.** Select the appropriate address type for the user's address. Address Types are configured by your library in the Settings app. See [Settings > Users > Address Types](../settings/settings_users/settings_users/#settings--users--address-types) for more information.
 -  Fill out the address information fields and click **Add Address** to save the address to the user’s record. 
 
 ### Custom fields
-The **Custom fields** section will appear only if it is configured in the Settings>Users app. For more information on configuring the **Custom fields** section, see [Settings /> Users /> Custom fields](../settings/settings_users/settings_users/#settings--users--custom-fields).
+The **Custom fields** section will appear only if it is configured in the Settings>Users app. For more information on configuring the **Custom fields** section, see [Settings \> Users \> Custom fields](../settings/settings_users/settings_users/#settings--users--custom-fields).
 
 ## Searching for user records
 
@@ -168,9 +178,11 @@ The Proxy/sponsor section displays any proxies or sponsors associated with the u
 
 ### Fees/fines
 
-The Fees/fines section displays the number of open and closed fees/fines. To view additional details about the users’ open or closed fees/fines, expand the **Fees/Fines** accordion and click on **open fees/fines** or **closed fees/fines** respectively. To view all fees/fines, click **View all fees/fines**.  For more information, see [Fees/fines](#feesfines).
+The Fees/fines section displays the number of open and closed fees/fines. To view additional details about the users’ open or closed fees/fines, expand the **Fees/Fines** accordion and click on **open fees/fines** or **closed fees/fines** respectively. To view all fees/fines, click **View all fees/fines**. For more information about fees and fines, see [Additional Topics > Fees and fines](../access/additional-topics/feesfines/feesfines/)
 
 You can also create manual fees/fines in the Fees/fines section. For more information, see [Creating a manual fee/fine](#creating-a-manual-feefine).
+
+
 
 ### Loans
 
@@ -181,6 +193,8 @@ A patron has an open loan when they have borrowed an item and the item hasn’t 
 Once an item has been returned to the library and checked back in, and any associated fee/fines have been resolved, the loan is closed. Once a loan is closed, it can be anonymized according to the library’s anonymization settings.
 
 To view additional details about the user’s open or closed loans, expand the **Loans** accordion and click **open loans** or **closed loans**, respectively.
+
+For more information about loans, see [Additional Topics > Loans](../access/additional-topics/loans/loans/).
 
 ### Requests
 
@@ -405,7 +419,7 @@ To remove a patron block with no assigned expiration date, follow these steps:
 
 ## Creating requests
 
-Requests can be created in the Requests app or from the item record in the Inventory app. For information on creating requests, see [Creating a request](../access/requests/requests/#creating-a-request)
+Requests can be created in the Requests app or from the item record in the Inventory app. For information on creating requests, see [Creating a request](../access/requests/requests/#creating-a-request).
 
 ## Adding a note to a user record
 
@@ -417,15 +431,15 @@ Requests can be created in the Requests app or from the item record in the Inven
 6.  Optional: Enter any **Details** about the note in the box.
 7.  Click **Save & close**. The note is saved.
 
-### Deleting A User Record in the UI 
+## Deleting A User Record in the UI 
 A user record can be deleted only if the user has no open transactions. To delete a user record, first check for open transactions. Once it’s confirmed that the user has no open transactions, the user record can be deleted. Follow these steps to check for open transactions and delete a user record in the UI:
 
-1. [Find the user record](#searching-for-user-records) for which you want to check for open transactions and select it.
-2. In the **Actions** menu, select **Check for open transactions/delete user**. 
-3. If there are no open transactions for this user, the message *No open transactions for user (Last Name, First Name). Are you sure you want to delete this user?* will appear in the **Check for open transactions/delete user** window.  
-    1. Click **Yes** to delete the user record. A *User (Last Name, First Name) deleted successfully* message will confirm deletion of the user record. 
-    2. Or click **No** to cancel the deletion and return to the user record. 
-4. If there are one or more open transactions for the user, the message *User (Last Name, First Name) has the following open transactions. Please resolve the transactions to proceed to delete this user.* Click **OK** to return to the user record. 
+[Find the user record](#searching-for-user-records) for which you want to check for open transactions and select it.
+In the **Actions** menu, select **Check for open transactions/delete user**. 
+If there are no open transactions for this user, the message *No open transactions for user (Last Name, First Name). Are you sure you want to delete this user?* will appear in the **Check for open transactions/delete user** window.  
+Click **Yes** to delete the user record. A *User (Last Name, First Name) deleted successfully* message will confirm deletion of the user record. 
+Or click **No** to cancel the deletion and return to the user record. 
+If there are one or more open transactions for the user, the message *User (Last Name, First Name) has the following open transactions. Please resolve the transactions to proceed to delete this user.* Click **OK** to return to the user record. 
 
 ## Overdue loans report
 
@@ -438,7 +452,7 @@ The Overdue loans report is a comma-separated values (CSV) file that displays al
 
 The Claimed returned report is a comma-separated values (CSV) file that displays all users with claimed returned materials.
 
--   In the **User search results** pane, click **Actions \> Claimed returned report (CSV)**. 	A *Export in progress* message appears and depending on your browser and its configurations, the file either automatically downloads or you are prompted to open and save it. If there are no claimed return items to report, a *No items found* message will appear and no file is generated.
+-   In the **User search results** pane, click **Actions \> Claimed returned report (CSV)**. 	An *Export in progress* message appears and depending on your browser and its configurations, the file either automatically downloads or you are prompted to open and save it. If there are no claimed return items to report, a *No items found* message will appear and no file is generated.
 
 ## Cash drawer reconciliation report
 
@@ -451,7 +465,7 @@ The Cash drawer reconciliation report is used by library staff to balance their 
 -   Click **Save & close**.
 
 
-A *Export in progress* message appears and depending on your browser and its configurations, the file is either automatically downloaded or you are prompted to open and save it. If there are no transactions to report, a *No items found* message appears and no file is generated.
+An *Export in progress* message appears and depending on your browser and its configurations, the file is either automatically downloaded or you are prompted to open and save it. If there are no transactions to report, a *No items found* message appears and no file is generated.
 
 ## Financial transaction detail report
 
@@ -468,14 +482,13 @@ The Refunds to process manually report is a report that provides library adminis
 -    In the **Refunds to process manually** modal, specify a date range by entering a **Start Date** and an **End Date**. Select the **Fee/Fine Owner**.
 -    Click **Save & close**.
 
-A *Export in progress* message appears and depending on your browser and its configurations, the file either automatically downloads or you are prompted to open and save it. If no there are no refunds to process manually, a *No items found* message appears and no file is generated. 
+An *Export in progress* message appears and depending on your browser and its configurations, the file either automatically downloads or you are prompted to open and save it. If no there are no refunds to process manually, a *No items found* message appears and no file is generated. 
 
 ## Managing loans and fee/fines for patrons
 
-From the loans section on a patron’s record, a FOLIO user with appropriate permissions can renew a loan for a patron; change the due date; mark the item claim returned; or declare the item lost.
+From the loans section on a patron’s record, a FOLIO user with appropriate permissions can renew a loan for a patron; change the due date; mark the item claim returned; or declare the item lost. For more information about loans, see [Additional Topics \> Loans](../access/additional-topics/loans/loans/).
 
-FOLIO users with appropriate permissions can manage fee/fines on patron accounts. This includes viewing fee/fine information, creating manual charges, accepting payment, waiving a fine, refunding a fine, 
-
+FOLIO users with appropriate permissions can manage fee/fines on patron accounts. This includes viewing fee/fine information, creating manual charges, accepting payment, waiving a fine, refunding a fine, and canceling a fine. For more information about fees and fines, see [Additional Topics \> Fees and fines]((../access/additional-topics/feesfines/feesfines/).
 
 ### Renew a loan
 
@@ -488,13 +501,13 @@ To renew one or more loans for a patron:
 If the renewal was successful, you will see a green success message in the bottom right corner. The new due date may be sooner than expected if the normal due date would be after a patron’s account has expired.
 If the renewal was not successful, a pop-up message will appear. If you have the correct permissions, you can click **Override** from the pop-up window to override the error and renew the loan.
 
-Alternatively, you can renew a loan by clicking on **Renew** in the **actions** column. 
+Alternatively, you can renew a loan by clicking on **Renew** in the **Actions** column. 
 
 ### Change a due date
 
 To change due dates on one or more loans for a patron:
 1. In the user record pane, open the **Loans** accordion if needed. 
-2. Click on **open loans**.
+2. Click on **open loans*.
 3. Select the check boxes on the left of the **Loans** window to select the appropriate loan(s).
 4. Click the **Change due date** button located in the top right corner of the **Loans** window. 
 5. In the pop-up window that appears, enter a new due date and time or select one from the calendar drop-down.
@@ -583,7 +596,7 @@ Staff with appropriate permissions can apply a partial or full waive to a fee/fi
 4. The **Fees/fines** modal will open. Click the fee/fine you wish to waive.
 5. The **Fee/fine details** modal will open. Click **Waive**.
 6. The **Waive fee/fine** modal will open. Enter the amount to waive (required). You can waive some or all of the fine amount.  If you are only waiving part of the fine, FOLIO will automatically calculate the remaining amount. 
-7. Select the **Waive reason** (required) and enter **Additional information for staff**. The **Additional information for staff** box may be required if your library has configured that option.
+7. Select the **Waive reason** (required) and enter **Additional information for staff*. The **Additional information for staff** box may be required if your library has configured that option.
 8. Click **Waive**, then **Confirm**.
 
 The modal will close, and the **Fee/fine details** page will update with the payment transaction.
@@ -595,10 +608,10 @@ Staff with appropriate permissions can partially or fully refund a fee/fine. The
 1.  [Find the user record](#searching-for-user-records) to which you want to refund a payment and click it.
 2.  In the **User record** pane, expand the **Fees/fines** accordion if needed.
 3. Select **View all fees/fines** to view the patron’s fines.
-4. The **Fees/fines** modal will open. Click the fee/fine you wish to refund a payment for. It may be **Open** or **Closed**, depending on whether you are issuing a partial or full refund.
+4. The **Fees/fines** modal will open. Click the fee/fine you wish to refund a payment for. It may be **Open** or **Closed**.
 5. The **Fee/fine details** modal will open. Click **Refund**.
-6. The **Refund fee/fine** modal will open. Enter the amount to refund (required). You can refund some or all of the fine amount.  If you are only waiving part of the fine, FOLIO will automatically calculate the remaining amount. 
-7. Select the **Refund reason** (required) and enter **Additional information for staff**. The **Additional information for staff** box may be required if your library has configured that option.
-8. Click **Refund**, then **Confirm**.
+6. The **Waive fee/fine** modal will open. Enter the amount to waive (required). You can waive some or all of the fine amount.  If you are only waiving part of the fine, FOLIO will automatically calculate the remaining amount. 
+7. Select the **Waive reason** (required) and enter **Additional information for staff*. The **Additional information for staff** box may be required if your library has configured that option.
+8. Click **Waive**, then **Confirm**.
 
 The modal will close, and the **Fee/fine details** page will update with the payment transaction.
