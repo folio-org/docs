@@ -27,11 +27,20 @@ The following are all the Orders permissions:
 
 
 *   **Orders: Assign acquisition units to new order.** This permission allows the user to assign acquisition units to orders when creating a new order.
+<<<<<<< HEAD
 *   **Orders: Create order lines.** This permission allows the user to create new order lines. With this permission, the user can also view and edit existing order lines. Additionally, they can view order settings.
 *   **Orders: Create orders.** This permission allows the user to create new orders. With this permission, the user can also view and edit existing orders. Additionally, they can view order settings.
 *   **Orders: Delete order lines.** This permission allows the user to delete order lines. With this permission, the user can also view and edit existing order lines. Additionally, they can view order settings.
 *   **Orders: Edit order lines.** This permission allows the user to view and edit order lines. Additionally, they can view order settings.
 *   **Orders: Edit orders.** This permission allows the user to view and edit orders. Additionally, they can view order settings.
+=======
+*   **Orders: Can create new Orders and Order lines.** This permission allows the user to create new orders and order lines.
+*   **Orders: Can delete Orders and Order lines.** This permission allows the user to delete orders and order lines. 
+*   **Orders: Can edit Orders and Order lines.** This permission allows the user to view and edit orders and order lines. 
+*   **Orders: Can view Orders and Order lines.** This permission allows the user to view orders and order lines.
+*   **Orders: Cancel order lines.** This permission allows the user to cancel order lines.
+*   **Orders: Cancel purchase orders.** This permission allows the user to cancel order lines.
+>>>>>>> 2407426... Minor fix to Orders
 *   **Orders: Export search results.** This permission allows the user to export search results in .csv format.
 *   **Orders: Manage acquisition units.** This permission allows the user to change the assignment of acquisition units for an order or order line.
 *   **Orders: Remove orders.** This permission allows the user to delete orders. With this permission, the user can also view and edit existing orders. Additionally, they can view order settings.
@@ -544,7 +553,8 @@ This section displays information about invoices related to this order through a
 *   **Invoice #.** The vendor-provided identifier for the invoice related to this purchase order line.  
 *   **Invoice date.** The vendor invoice date.  Click on the column name to sort the list of related invoices by **Invoice date**.
 *   **Vendor name.** The name of the vendor associated with the related invoice.
-*   **Vendor invoice number.***   **Status.**  The status of the invoice: Open, Reviewed, Approved, Paid, or Cancelled.
+*   **Vendor invoice number.**
+*   **Status.**  The status of the invoice: Open, Reviewed, Approved, Paid, or Cancelled.
 *   **Expended amount.** The total expended amount of the invoice.
 
 
