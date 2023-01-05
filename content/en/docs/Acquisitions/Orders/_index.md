@@ -27,7 +27,7 @@ Orders permissions:
 *   **Orders: Approve purchase orders.** This permission allows the user to approve purchase orders.
 *   **Orders: Assign acquisition units to new order.** This permission allows the user to assign acquisition units to orders when creating a new order.
 *   **Orders: Can create new Orders and Order lines.** This permission allows the user to create new orders and order lines.
- *   **Orders: Can delete Orders and Order lines.** This permission allows the user to delete orders and order lines. 
+*   **Orders: Can delete Orders and Order lines.** This permission allows the user to delete orders and order lines. 
 *   **Orders: Can edit Orders and Order lines.** This permission allows the user to view and edit orders and order lines. 
 *   **Orders: Can view Orders and Order lines.** This permission allows the user to view orders and order lines.
 *   **Orders: Cancel order lines.** This permission allows the user to cancel order lines.
@@ -550,7 +550,8 @@ This section displays information about invoices related to this order through a
 *   **Invoice #.** The vendor-provided identifier for the invoice related to this purchase order line.  
 *   **Invoice date.** The vendor invoice date.  Click on the column name to sort the list of related invoices by **Invoice date**.
 *   **Vendor name.** The name of the vendor associated with the related invoice.
-*   **Vendor invoice number.***   **Status.**  The status of the invoice: Open, Reviewed, Approved, Paid, or Cancelled.
+*   **Vendor invoice number.**
+*   **Status.**  The status of the invoice: Open, Reviewed, Approved, Paid, or Cancelled.
 *   **Expended amount.** The total expended amount of the invoice.
 
 
