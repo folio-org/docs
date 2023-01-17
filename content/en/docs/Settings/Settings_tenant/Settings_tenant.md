@@ -17,6 +17,7 @@ The permissions listed below determine what you can do or not do with the indivi
 
 * **Settings (tenant): Can create, edit and remove service points.** This permission allows the user to create, read, update, and delete service points.
 * **Settings (tenant): Can create, edit and remove locations.** This permission allows the user to create, read, update, and delete institutions, campuses, libraries, and locations.
+* **Settings (tenant): View locations.** This permission allows the user to view institutions, campuses, libraries and locations.
 * **Settings (tenant): Can edit language, localization, and currency.** This permission allows the user to change the locale, time zone, and primary currency.
 * **Settings (tenant): Can maintain preferred plugins.** This permission allows the user to edit preferred plugins.
 * **Settings (tenant): Can maintain SSO settings.** This permission allows the user to create, edit, and delete SSO configurations.
