@@ -99,21 +99,25 @@ When an item is checked in in FOLIO, the following steps happen (not necessarily
 
 * FOLIO checks the item status.
 * If an item has a status of **Available**, FOLIO will count it as in-house use.
-* If an item has a status of **In transit**, FOLIO will check the logged-in service point to see if it is the primary service point for the item's effective location. If the logged-in service point does not match, the item status remains **In transit**. If the logged-in service point does match, FOLIO changes the item status to **Available
-
-
-
+* If an item has a status of **In transit**, FOLIO will check the logged-in service point to see if it is the primary service point for the item's effective location. If the logged-in service point does not match, the item status remains **In transit**. If the logged-in service point does match, FOLIO changes the item status to **Available**.
 * FOLIO checks the loan policy, overdue policy and lost item policy to determine in any actions need to be taken.
 * If the item is determined to be overdue but has not been recalled, FOLIO calculates overdue fines based on the associated policy, and applies them to the patron's account if the fine is greater than zero.
 * If the item is recalled and overdue, FOLIO calculates overdue recall fines based on the associated policy, and applies them to the patron's account if the fine is greater than zero.
 * If an item status is **Declared lost** or **Aged to lost**, FOLIO presents a warning message, and staff must choose the option to continue check in.
 ** When check in proceeds, FOLIO then references the lost item policy to determine if any fees should be credited back to the patron, and applies them to the patron's account.
 * If the associated notice policy to the loan says that any fee/fine notices should be sent, those notices are generated and sent.
-
-
-
 * If an item has a status of **Checked out**, **Declared lost**, or **Aged to lost**:
 ** If an item is **Declared lost** or **Aged to lost**, FOLIO presents a warning message and staff members must select from the prompt to continue check in.
+
+## How is in-house use tracked in FOLIO data?
+
+FOLIO does not track an explicit data attribute for in-house use of an item. Instead, FOLIO considers an item to be used "in-house" based on how the item status changes when it is checked in. If the item had a status of "Available" prior to check-in, FOLIO considers that to be in-house use.
+
+There is currently no way to generate a report of in-house use with an in-app report. One way to get at in-house use data is to use a tool like Postman to query the FOLIO API to return check-in records. Sending a GET request to your FOLIO instance like this:
+
+/check-in-storage/check-ins?query=itemStatusPriorToCheckIn=="Available"
+
+will return check-in records for in-house use.
 
 ## What happens if/when you delete a circulation policy?
 
