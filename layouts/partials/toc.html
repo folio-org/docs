@@ -1,6 +1,6 @@
 {{ partial "page-meta-links.html" . }}
 {{ if not .Params.nosidetoc }}
-<p>In this Topic</p>
+<p>{{ T "in_this_topic" }}</p>
 {{ with .TableOfContents }}
 {{ if ge (len .) 200 }}
 {{ . }}
