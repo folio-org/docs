@@ -433,7 +433,7 @@ The system will show you what it will do. It will also enable dependent frontend
 
 Now, actually deploy and enable the backend modules.
 
-Note: Edit the following to  "loadSample%3Dtrue" instead if you want to load some reference data (this will populate your inventory with sample data, which might be unwanted if you want to later migrate your own inventory data):
+Note: Edit the following to  "loadSample%3Dtrue" instead if you want to load some sample data (this will populate your inventory with sample data, which might be unwanted if you want to later migrate your own inventory data):
 ```
 curl -w '\n' -D - -X POST -H "Content-type: application/json" -d @$HOME/platform-complete/okapi-install.json http://localhost:9130/_/proxy/tenants/diku/install?deploy=true\&preRelease=false\&tenantParameters=loadReference%3Dtrue%2CloadSample%3Dfalse
 ```
@@ -623,7 +623,7 @@ You will get an error if it was not already running, which is fine.
 ### Make sure nothing else is running on port 80.
 
 ```
-sudo apt install net-stat
+sudo apt install net-tools
 netstat -anpe | grep ":80"
 ```
 
