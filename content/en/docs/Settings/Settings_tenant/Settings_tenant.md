@@ -106,7 +106,6 @@ Use this setting to configure your library’s service points. In FOLIO, a servi
 
 A service point is needed when you want to have at least one of the following services at that location: 
 
-
 * Check in items.
 * Check out items.
 * Request items for patron delivery.
@@ -119,6 +118,8 @@ Every location that has physical materials needs an associated primary service p
 Staff who use the Check in, Check out, Requests, and Users apps must have a service point assigned to them in their user record.
 
 There is no requirement that a service point be a place that is providing service to patrons. Libraries may find that it is helpful to establish internal service points for areas such as shelving, conservation, or collection development.
+
+All service points should be associated to a fee/fine owner in Settings\>Users, even if you do not expect to charge fines to patrons. Setting up the connection will ensure that fine transactions do not unexpectedly fail in the future if your library begins to use fines (manual or automatically charged.)
 
 
 ### Creating a service point
