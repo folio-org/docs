@@ -125,17 +125,20 @@ All service points should be associated to a fee/fine owner in Settings\>Users, 
 
 ### Creating a service point
 
-
-
 1. In the **Service points** pane, click **New**.
 2. In the **New service point** window, enter a **Name** for the service point. The name must be unique to your FOLIO tenant.
 3. Enter a **Code**. The code is the machine readable name of the service point and must be unique to your FOLIO tenant.
 4. Enter a **Discovery display name**. This name is used in discovery services to identify the service point to patrons. It does not have to be unique.
 5. (Optional): Enter a **Description** of the service point. The description only appears in Settings.
 6. (Optional): Enter the location’s **Shelving lag time (minutes)**. This number is used to set expectations for how long until materials returned to this service point are reshelved.
-7. (Optional): Select whether the service point is a **Pickup location**. If the service point is a pickup location, it appears as a Pickup location option for patrons in the Requests and Users app. If you select **Yes**, you must enter a **Hold shelf expiration period**, which determines how long materials are available for pickup on the hold shelf.
-8. (Optional): Select the **Hold**, **Pick slip**, **Request delivery**, and/or **Transit** checkboxes to determine which staff slips print by default for this service point. 
-9. Click **Save & close**. A confirmation message appears and the service point is created.
+7. (Optional): Select whether the service point is a **Pickup location**. If the service point is a pickup location, it appears as a Pickup location option for patrons in the Requests and Users app. 
+8. (Required if your service point is a **Pickup location**): Enter a **Hold shelf expiration period**, which determines how long the request remains in **Open - Awaiting pickup** status. 
+9. (Required if your service point is a **Pickup location**): Specify the **Closed library date management for hold shelf expiration date calculation**. This tells FOLIO what to do with the hold shelf expiration date if it lands in a time when the service point is closed. 
+* If the hold shelf expiration period is calculated in **minutes** or **hours**, then you can choose to keep the original expiration date/time, move the expiration date/time to when the service point is closing, or move the expiration date/time to the beginning of the next open set of hours.
+* If the hold shelf expiration period is calculated in **days**, **weeks**, or **months**, you can choose to keep the original expiration date, move the expiration date to the end of the previous open day, or move the expiration date to the end of the next open day.
+    
+10. (Optional): Select the **Hold**, **Pick slip**, **Request delivery**, and/or **Transit** checkboxes to determine which staff slips print by default for this service point. 
+11. Click **Save & close**. A confirmation message appears and the service point is created.
 
 The **Assigned locations** accordion is updated when the service point is assigned to any locations in the location tree. 
 
