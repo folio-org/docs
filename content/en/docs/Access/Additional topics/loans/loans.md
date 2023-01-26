@@ -90,6 +90,18 @@ This is what FOLIO does when renewing Sofia’s items:
 
 If you change information about an item that is currently on loan, nothing happens to the loan record. The loan **may** change if the item is renewed or if the loan due date is changed, and the change in the item information means a different circulation rule applies. See [When a loan is renewed, or a loan due date is changed, what circulation rule applies and what policies are used?](#loanrenew)
 
+
+## How is in-house use tracked in FOLIO data?
+
+FOLIO does not track an explicit data attribute for in-house use of an item. Instead, FOLIO considers an item to be used "in-house" based on how the item status changes when it is checked in. If the item had a status of "Available" prior to check-in, FOLIO considers that to be in-house use.
+
+There is currently no way to generate a report of in-house use with an in-app report. One way to get at in-house use data is to use a tool like Postman to query the FOLIO API to return check-in records. Sending a GET request to your FOLIO instance like this:
+
+/check-in-storage/check-ins?query=itemStatusPriorToCheckIn=="Available"
+
+will return check-in records for in-house use.
+
+
 ## What happens if/when you delete a circulation policy?
 
 ### Loan policy
