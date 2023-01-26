@@ -56,7 +56,10 @@ If you want to eUsage data in an agreement record, you also need to have the fol
 Keyboard shortcuts allow you to perform actions in this app using the keyboard.  See [Platform essentials > Keyboard shortcuts]({{< ref "keyboardshortcuts.md" >}}) for more information.
 
 
-## Creating an agreement
+## Agreements
+
+
+### Creating an agreement
 
 
 
@@ -65,7 +68,7 @@ Keyboard shortcuts allow you to perform actions in this app using the keyboard. 
 3. Once you have included all of the information you want about the agreement, click **Save & close**. The agreement is saved and added to the Agreements pane.
 
 
-### Primary fields
+#### Primary fields
 
 
 
@@ -78,7 +81,7 @@ Keyboard shortcuts allow you to perform actions in this app using the keyboard. 
 *   **Alternative names.** Alternative names for the agreement record.
 
 
-#### Adding an alternative name
+##### Adding an alternative name
 
 Note: Adding an alternative name is optional, but if you click **Add alternative names**, you must enter an alternative name or delete the alternative name in order to save the agreement record.
 
@@ -89,7 +92,7 @@ Note: Adding an alternative name is optional, but if you click **Add alternative
 3. Repeat as needed. The Alternative name saves once you save the agreement.
 
 
-#### Deleting an alternative name
+##### Deleting an alternative name
 
 
 
@@ -97,7 +100,7 @@ Note: Adding an alternative name is optional, but if you click **Add alternative
 2. Click the **trash can icon**. The Alternative name is deleted and is removed from the record once you save the agreement.
 
 
-### Agreement periods
+#### Agreement periods
 
 Agreement periods allow you to record and manage the ranges of time for which the agreement is active.
 
@@ -115,7 +118,7 @@ When adding agreement periods, you should consider the following:
 *   You can navigate between past, present, and future periods by clicking on the **Previous**, **Current**, or **Next** buttons.
 
 
-#### Adding an agreement period
+##### Adding an agreement period
 
 
 
@@ -128,7 +131,7 @@ When adding agreement periods, you should consider the following:
 *   **Period note.** Any additional information about the agreement period that you want to include.
 
 
-#### Deleting an agreement period
+##### Deleting an agreement period
 
 
 
@@ -136,12 +139,12 @@ When adding agreement periods, you should consider the following:
 2. Click the **trash can icon**. The Agreement period is deleted and is removed from the record once you save the agreement.
 
 
-### Internal contacts
+#### Internal contacts
 
 Internal contacts are generally the people within your library that you need to contact if you have questions about the agreement. For example, you may want to add the ERM librarian responsible for renewals, the authorized signatory for an agreement, or the subject matter expert responsible for reviewing content ahead of renewals. Multiple contacts can be assigned to a record, but each contact you add must have a user record in the Users app.
 
 
-#### Adding an internal contact
+##### Adding an internal contact
 
 
 
@@ -154,7 +157,7 @@ Internal contacts are generally the people within your library that you need to 
 7. Repeat steps 1-6 as needed. The internal contacts are saved once you save the agreement.
 
 
-#### Removing an internal contact
+##### Removing an internal contact
 
 
 
@@ -162,26 +165,26 @@ Internal contacts are generally the people within your library that you need to 
 2. Click the **trash can icon**. The Internal contact is removed from the record once you save the agreement.
 
 
-### Agreement lines
+#### Agreement lines
 
 An agreement line represents the material covered by the agreement, for example, a package or title. If you want to add agreement lines, you should save your progress on the agreement record you are creating or wait until you have completed and saved all agreement information before you start the agreement line process. For instructions on adding agreement lines to a record, see [Adding an agreement line](#adding-an-agreement-line).
 
 
-### License information
+#### License information
 
 In the License information section, you can link your agreement record to a license record. There are two types of licenses you can add in this section: license records created in the Licenses app or external license records (for example, licenses maintained by a consortium).
 
 Note: You can add multiple license records to an agreement record, but only one can be the Controlling license. All other licenses must be designated as Historical or Future. For more information, see step 6 under [Adding a license created in the Licenses app to an agreement](#adding-a-license-created-in-the-licenses-app-to-an-agreement).
 
 
-#### Adding general notes about the license
+##### Adding general notes about the license
 
 
 
 *   At the top of the License information section, you can add **General notes about the agreement’s license** into the box.
 
 
-#### Adding a license created in the Licenses app to an agreement
+##### Adding a license created in the Licenses app to an agreement
 
 Note: If the license you link to the agreement has amendments present, once you link the license the amendments also display. They also need to have a status in relation to the agreement set. This is important as it is the combination of the applicable (controlling) licenses and amendments that dictate the terms that apply to the agreement.
 
@@ -197,7 +200,7 @@ Note: If the license you link to the agreement has amendments present, once you 
 8. Repeat steps 1-7 as needed. The license saves once you save the agreement.
 
 
-#### Adding an external license to an agreement
+##### Adding an external license to an agreement
 
 External licenses are any license not available through the Licenses app.
 
@@ -213,7 +216,7 @@ External licenses are any license not available through the Licenses app.
 5. Repeat steps 1-5 as needed. The external license saves once you save the agreement record.
 
 
-#### Removing a license
+##### Removing a license
 
 
 
@@ -221,7 +224,7 @@ External licenses are any license not available through the Licenses app.
 2. Click the **trash can icon**. The license is removed from the record once you save the license.
 
 
-#### Replacing a license
+##### Replacing a license
 
 
 
@@ -230,12 +233,12 @@ External licenses are any license not available through the Licenses app.
 3. Repeat steps 3-7 under [Adding a license created in the Licenses app to an agreement](#adding-a-license-created-in-the-licenses-app-to-an-agreement).
 
 
-### Organizations
+#### Organizations
 
 Organizations are any institution with which your library interacts. For example, you may want to add a vendor or consortium associated with the agreement. Multiple organizations can be added to a record, but the organizations must first be created in the [Organizations app]({{< ref "/organizations.md" >}}). To set one organization as the primary organization, check the **Set as primary organization** box.
 
 
-#### Adding an organization
+##### Adding an organization
 
 
 
@@ -249,7 +252,7 @@ Organizations are any institution with which your library interacts. For example
 8. Repeat steps 1-7 as needed. The organization saves once you save the agreement.
 
 
-#### Removing an organization
+##### Removing an organization
 
 
 
@@ -257,7 +260,7 @@ Organizations are any institution with which your library interacts. For example
 2. Click the **trash can icon**. The Organization is removed from the record once you save the agreement.
 
 
-#### Replacing an organization
+##### Replacing an organization
 
 
 
@@ -266,14 +269,14 @@ Organizations are any institution with which your library interacts. For example
 3. Repeat steps 3-7 under [Adding an organization](#adding-an-organization).
 
 
-### Supplementary properties
+#### Supplementary properties
 
 Supplementary properties are an optional way to record additional information about the agreement not captured anywhere else in the record. For example, the authentication method used to access the material covered by the agreement.
 
 Note: This section only appears if you have configured supplementary properties in the Settings app. For more information on setting up properties, see [Settings > Agreements > Supplementary properties]({{< ref "/settings_agreements.md#settings--agreements--supplementary-properties" >}}).
 
 
-#### Filling out a primary property
+##### Filling out a primary property
 
 If a property is defined as primary in the Settings app, then it always appears as an option in an agreement record. You can leave the **Value** of a primary term blank or select **Not set**, but primary terms cannot be removed from the agreement record.
 
@@ -286,7 +289,7 @@ If a property is defined as primary in the Settings app, then it always appears 
 5. Repeat steps 1-4 for as many primary properties as desired. The properties save once you save the agreement.
 
 
-#### Adding an optional property
+##### Adding an optional property
 
 A property is optional if it is not defined as primary in the Settings app. Optional properties do not automatically display in an agreement record.
 
@@ -298,7 +301,7 @@ A property is optional if it is not defined as primary in the Settings app. Opti
 4. Add as many optional properties as needed. The properties save once you save the agreement.
 
 
-#### Removing an optional property
+##### Removing an optional property
 
 
 
@@ -306,12 +309,12 @@ A property is optional if it is not defined as primary in the Settings app. Opti
 2. Click the **trash can icon**. The optional property is removed from the record once you save the agreement.
 
 
-### Supplementary documents
+#### Supplementary documents
 
 A supplementary document is any additional document relevant to the agreement record.
 
 
-#### Adding a supplementary document
+##### Adding a supplementary document
 
 
 
@@ -326,7 +329,7 @@ A supplementary document is any additional document relevant to the agreement re
 6. Repeat steps 1-5 as needed. The supplementary document saves once you save the agreement.
 
 
-#### Removing a supplementary document
+##### Removing a supplementary document
 
 
 
@@ -334,12 +337,12 @@ A supplementary document is any additional document relevant to the agreement re
 2. Click the **trash can icon**. The Supplementary document is removed from the record once you save the agreement.
 
 
-### Usage data
+#### Usage data
 
 A usage data provider is any organization that provides e-resource usage data to your library. Multiple usage data providers can be added to a record, but the usage data providers must first be created in the eUsage app.
 
 
-#### Adding a usage data provider
+##### Adding a usage data provider
 
 
 
@@ -352,7 +355,7 @@ A usage data provider is any organization that provides e-resource usage data to
 7. Repeat steps 1-6 as needed. The Usage data provider saves once you save the agreement.
 
 
-#### Removing a usage data provider
+##### Removing a usage data provider
 
 
 
@@ -360,7 +363,7 @@ A usage data provider is any organization that provides e-resource usage data to
 2. Click the **trash can icon**. The Usage data provider is removed from the record once you save the agreement.
 
 
-#### Replacing a usage data provider
+##### Replacing a usage data provider
 
 
 
@@ -369,12 +372,12 @@ A usage data provider is any organization that provides e-resource usage data to
 3. Repeat steps 3-6 under [Adding a usage data provider](#adding-a-usage-data-provider).
 
 
-### Related agreements
+#### Related agreements
 
 A related agreement is an agreement relevant to the current agreement. This section allows you to link agreements together to establish relationships among them. For example, you may want to add a post-cancellation agreement here.
 
 
-#### Adding a related agreement
+##### Adding a related agreement
 
 
 
@@ -388,7 +391,7 @@ A related agreement is an agreement relevant to the current agreement. This sect
 8. Repeat steps 1-6 as needed. The related agreement saves once you save the main agreement.
 
 
-#### Removing a related agreement
+##### Removing a related agreement
 
 
 
@@ -396,7 +399,7 @@ A related agreement is an agreement relevant to the current agreement. This sect
 2. Click the **trash can icon**. The Related agreement is removed from the record once you save the agreement.
 
 
-#### Replacing a related agreement
+##### Replacing a related agreement
 
 
 
@@ -405,7 +408,7 @@ A related agreement is an agreement relevant to the current agreement. This sect
 3. Repeat steps 3-6 under [Adding a related agreement](#adding-a-related-agreement).
 
 
-## Searching for agreements
+### Searching for agreements
 
 You can search for agreements in the **Search & filter** pane. To search for agreements, enter your search terms in the search box and click **Search**. The search box searches through the Name, Description, and Alternative names fields. In order to limit your search to specific fields, check one or more of the  **Name**,  **Alternative name** and/or **Description** check boxes below the search box, and the search will only search through the selected fields.
 
@@ -414,7 +417,7 @@ Note: When using the internal KB, click **Agreements search** in order to search
 You can also search for agreements by selecting any of the filters in the **Search & filter** pane: Status, Renewal priority, Is perpetual, Start date, End date, Organizations, Organization role, Internal contacts, Internal contacts role, Tags, and Supplementary properties. For more information on the filters, see the filter descriptions below.
 
 
-### Status
+#### Status
 
 To filter agreements by their status, select one of the following:
 
@@ -427,7 +430,7 @@ To filter agreements by their status, select one of the following:
 *   **Requested.** If your library has requested an agreement from a provider.
 
 
-### Renewal priority
+#### Renewal priority
 
 To filter agreements by their renewal priority, select one of the listed options. Possible priorities may include:
 
@@ -439,24 +442,24 @@ To filter agreements by their renewal priority, select one of the listed options
 Renewal priority values are configured in [Settings > Agreements > Pick list values]({{< ref "/settings_agreements.md#settings--agreements--pick-list-values" >}}).
 
 
-### Is perpetual
+#### Is perpetual
 
 To filter agreements by whether or not they are perpetual, select **Yes** or **No**.
 
 
-### Start date
+#### Start date
 
 To filter agreements by their start date, enter a date into the **On or after** and/or **On or before** search box, or click the **calendar icon** to select a date from the calendar.
 
 
-### End date
+#### End date
 
 To filter agreements by their end date, enter a date into the **On or after** and/or **On or before** search box, or click the **calendar icon** to select a date from the calendar.
 
 You can also check the box **Include agreements with no end date set** to locate agreements without end dates.
 
 
-### Organizations
+#### Organizations
 
 To filter agreements associated with a specific organization, follow these steps:
 
@@ -468,7 +471,7 @@ To filter agreements associated with a specific organization, follow these steps
 4. Select the organization by which you want to filter. The search results appear in the Agreements pane.
 
 
-### Organizations role
+#### Organizations role
 
 To filter agreements by their associated organizations’ roles, follow these steps:
 
@@ -480,7 +483,7 @@ To filter agreements by their associated organizations’ roles, follow these st
 4. Select the role by which you want to filter. The search results appear in the Agreements pane.
 
 
-### Internal contacts
+#### Internal contacts
 
 To filter agreements by their associated internal contacts, follow these steps:
 
@@ -492,7 +495,7 @@ To filter agreements by their associated internal contacts, follow these steps:
 4. Select the internal contact by which you want to filter. The search results appear in the Agreements pane.
 
 
-### Internal contacts role
+#### Internal contacts role
 
 To filter agreements by their associated internal contacts’ roles, follow these steps:
 
@@ -503,7 +506,7 @@ To filter agreements by their associated internal contacts’ roles, follow thes
 3. Select the internal contact role by which you want to filter. The search results appear in the Agreements pane.
 
 
-### Tags
+#### Tags
 
 To search for agreements assigned specific tags, follow these steps:
 
@@ -513,7 +516,7 @@ To search for agreements assigned specific tags, follow these steps:
 2. Select the tag(s) from the drop-down list. Your results appear in the Agreements pane.
 
 
-### Supplementary properties
+#### Supplementary properties
 
 To filter agreements by their supplementary properties, follow these steps:
 
@@ -529,7 +532,7 @@ To filter agreements by their supplementary properties, follow these steps:
 8. Click **Apply.** Your results appear in the Agreements pane.
 
 
-## Viewing an agreement
+### Viewing an agreement
 
 Once you search for an agreement, the following information appears in the Agreement pane:
 
@@ -544,7 +547,7 @@ Once you search for an agreement, the following information appears in the Agree
 In the search results, click an agreement to view it. The agreement details pane displays with additional information about the agreement. In the agreement display, any accordions not populated with data and not otherwise required are not displayed to the user.
 
 
-## Editing an agreement
+### Editing an agreement
 
 
 
@@ -554,7 +557,7 @@ In the search results, click an agreement to view it. The agreement details pane
 4. Click **Save & close**. The agreement is updated.
 
 
-## Deleting an agreement
+### Deleting an agreement
 
 Note: You cannot delete an agreement that is linked to a license, has agreement lines, or is related to another agreement.
 
@@ -565,17 +568,19 @@ Note: You cannot delete an agreement that is linked to a license, has agreement 
 3. In the **Delete agreement** dialog, click **Delete**. A confirmation message appears and the agreement is deleted.
 
 
-## Adding an agreement line
+## Agreement lines
+
+### Adding an agreement line
 
 An agreement line represents the material covered by the agreement, for example, a package or title. The steps for adding agreement lines vary depending on whether your library is using the internal KB or an external KB.
 
 
-### Adding an agreement line via the internal KB
+#### Adding an agreement line via the internal KB
 
 When using the internal KB, you first have to add e-resources to a basket in the E-resources pane. Then, you can apply those e-resources to agreement lines.
 
 
-#### Adding e-resources to the basket
+##### Adding e-resources to the basket
 
 Before you can add e-resources to agreement lines in an existing or new agreement, you must first add them to a basket. The basket is a temporary container that holds any e-resources (titles or packages) with which you need to work. E-resources are added on a one-by-one basis to an agreement line, so you can add as many e-resources to the basket as you need.
 
@@ -589,12 +594,12 @@ Before you can add e-resources to agreement lines in an existing or new agreemen
 6. Repeat steps 2-5 for all e-resources you want to add to the basket.
 
 
-#### Adding e-resources from the basket to an agreement
+##### Adding e-resources from the basket to an agreement
 
 There are three ways to add an e-resource from the basket to agreement lines:
 
 
-##### From the basket
+###### From the basket
 
 
 
@@ -604,7 +609,7 @@ There are three ways to add an e-resource from the basket to agreement lines:
 5. An agreement edit screen appears for the new or existing agreement. To complete the process, follow the instructions for adding agreement lines from the Agreement Edit screen from step 6 onwards.
 
 
-##### From the Agreement Edit screen
+###### From the Agreement Edit screen
 
 
 
@@ -622,7 +627,7 @@ There are three ways to add an e-resource from the basket to agreement lines:
 12. Click **Save & close**. A confirmation message appears and the agreement line is saved.
 
 
-##### From the Agreement Line Edit screen
+###### From the Agreement Line Edit screen
 
 
 
@@ -640,7 +645,7 @@ There are three ways to add an e-resource from the basket to agreement lines:
 12. Click **Save & close**. A confirmation message appears and the agreement line is saved.
 
 
-### Adding an agreement line via eHoldings
+#### Adding an agreement line via eHoldings
 
 Adding an agreement line by linking to the eHoldings app cannot be done in an agreement that is open for editing.
 
@@ -662,7 +667,7 @@ Adding an agreement line by linking to the eHoldings app cannot be done in an ag
 15. Click **Save & close**. A confirmation message appears and the agreement line is saved.
 
 
-### Adding a purchase order line to an agreement line
+#### Adding a purchase order line to an agreement line
 
 You have the option of adding a purchase order line (POL) to an agreement line. Linking the agreement line to a POL adds context to the agreement line. For example, it can show how you paid for, or the method by which you ordered, the material. 
 
@@ -684,7 +689,7 @@ Note: If you are already editing an agreement line, skip to step 5.
 10. Repeat steps 5-9 as needed. The POLs are saved when the agreement line is saved.
 
 
-### Replacing a purchase order line in an agreement line
+#### Replacing a purchase order line in an agreement line
 
 
 
@@ -696,7 +701,7 @@ Note: If you are already editing an agreement line, skip to step 5.
 6. Follow steps 7-9 under [Adding a purchase order line to an agreement line](#adding-a-purchase-order-line-to-an-agreement-line).
 
 
-### Deleting a purchase order line from an agreement line
+#### Deleting a purchase order line from an agreement line
 
 
 
@@ -708,7 +713,7 @@ Note: If you are already editing an agreement line, skip to step 5.
 6. Click **Save & close**. A confirmation message appears and the agreement line is updated.
 
 
-### Adding an unlinked agreement line
+#### Adding an unlinked agreement line
 
 Use this feature to add an agreement line that has no connection to a record from either the internal KB or eHoldings.
 
@@ -723,7 +728,7 @@ Use this feature to add an agreement line that has no connection to a record fro
 7. Click **Save & close.**
 
 
-## Editing an agreement line
+### Editing an agreement line
 
 
 
@@ -735,7 +740,7 @@ Use this feature to add an agreement line that has no connection to a record fro
 6. Click **Save & close**. A confirmation message appears and the agreement line is updated.
 
 
-## Deleting an agreement line
+### Deleting an agreement line
 
 Note: Agreements can also be unlinked from packages and titles in the eHoldings app.
 
@@ -748,7 +753,7 @@ Note: Agreements can also be unlinked from packages and titles in the eHoldings 
 5. In the **Delete agreement line** dialog, click **Delete**. A confirmation message appears and the agreement line is deleted.
 
 
-## Viewing agreement lines
+### Viewing agreement lines
 
 In order to view all of the agreement lines associated with a particular agreement at once, you can enter the **View in agreement lines search**. To do so, follow these steps: 
 
@@ -758,7 +763,7 @@ In order to view all of the agreement lines associated with a particular agreeme
 4. The Agreement line search pane will open. Clicking on any agreement line will display the Agreement line details record from which you can edit or delete the agreement line. 
 
 
-## Searching for agreement lines
+### Searching for agreement lines
 
 
 
@@ -769,36 +774,36 @@ Note: When using the internal KB, click **Agreements search** in order to search
 You can also search for agreement lines by selecting any of the filters in the **Search & filter** pane: Agreement, Agreement line type, Active from, Active to, PO line, and Tags. For more information on the filters, see the filter descriptions below.
 
 
-### Agreement
+#### Agreement
 
 To filter agreement lines by an agreement record, click **Select agreement**. In the **Select agreement** window, use the **Search & filter** feature to locate the desired agreement and click on it. See [Searching for agreements](#searching-for-agreements). Your agreement line search will be limited to that agreement record.
 
 
-### Agreement line type
+#### Agreement line type
 
 To filter agreement lines by type, check the **Unlinked**, **External**, and/or **Internal** checkboxes. An [unlinked agreement line](#adding-an-unlinked-agreement-line) is not linked to a resource in a knowledge base. An [external agreement line](#adding-an-agreement-line-via-eHoldings) is linked to a resource in an external knowledge base (like the eHoldings app), and an [internal agreement line](#adding-an-agreement-line-via-the-internal-KB) is linked to a resource in the internal knowledge base.
 
 
-### Active from
+#### Active from
 
 To filter agreement lines by their active from date, enter a date into the **On or after** and/or **On or before** search box, or click the **calendar icon** to select a date from the calendar. Click **Apply**.
 
 You can also check the box **Include lines with no active from date set** to locate lines without start dates.
 
 
-### Active to
+#### Active to
 
 To filter agreement lines by their active to date, enter a date into the **On or after** and/or **On or before** search box, or click the **calendar icon** to select a date from the calendar. Click **Apply**.
 
 You can also check the box **Include lines with no active to date set** to locate lines without end dates.
 
 
-### PO line
+#### PO line
 
 To filter agreement lines by PO line, click **Select PO line**. In the **Select order lines** window, use the **Search & filter** feature to locate the desired PO line and click on it.
 
 
-### Tags
+#### Tags
 
 To search for agreement lines assigned specific tags, follow these steps:
 
@@ -808,7 +813,7 @@ To search for agreement lines assigned specific tags, follow these steps:
 2. Select the tag(s) from the drop-down list. Your results appear in the Agreement lines pane.
 
 
-## Adding a tag to an agreement
+### Adding a tag to an agreement
 
 
 
@@ -818,7 +823,7 @@ To search for agreement lines assigned specific tags, follow these steps:
 4. Click the **X** on the Tags pane to close the pane and save the tag. The tag number updates to the number of tags applied to the agreement.
 
 
-## Duplicating an agreement
+### Duplicating an agreement
 
 Note: Periods are not duplicated as part of the agreement, but a single period with the current date as the start date will be added automatically (because Agreements have to have at least one period with a start date).
 
@@ -832,7 +837,7 @@ Note: Periods are not duplicated as part of the agreement, but a single period w
 6. Click **Save & close**. A confirmation message appears and the duplicated agreement appears in the Agreements pane.
 
 
-## Exporting an agreement
+### Exporting an agreement
 
 Exporting an agreement generates a JSON file. Note: Resources are only included for agreement lines that are linked to resources in the internal KB.
 
@@ -842,7 +847,9 @@ Exporting an agreement generates a JSON file. Note: Resources are only included 
 2. In the **Agreement details** pane, select **Actions > Export**. Depending on your browser and its configurations, the file automatically downloads or you are prompted to save it.
 
 
-## Exporting e-resources
+## E-Resources
+
+### Exporting e-resources
 
 Exporting e-resources covered by an agreement is only possible if using the internal KB, and if e-resources are linked to the agreement as agreement lines.
 
@@ -856,7 +863,7 @@ Note: E-resources can be filtered by Current, Future, or Dropped. These options 
 4. Click **Export as… > JSON** or **KBART**. Depending on your browser and its configurations, the file automatically downloads or you are prompted to save it.
 
 
-## Searching for e-resources
+### Searching for e-resources
 
 Searching for e-resources covered by an agreement is only possible if using the internal KB. 
 
@@ -865,7 +872,7 @@ You can search for e-resources in the **Search & filter** pane by clicking on **
 You can also search for e-resources by selecting any of the filters in the **Search & filter** pane: Tags and Is package; Type and Publication type under Title filters; and External data source, Scope, Status, and Content Type under Package filters. For more information on the filters, see the filter descriptions below.
 
 
-### Tags
+#### Tags
 
 To search for e-resources assigned specific tags, follow these steps:
 
@@ -875,22 +882,22 @@ To search for e-resources assigned specific tags, follow these steps:
 2. Select the tag(s) from the drop-down list. Your results appear in the E-resources pane.
 
 
-### Is package
+#### Is package
 
 To filter e-resources by whether or not they are a package, select **Yes** or **No**.
 
 
-### Type
+#### Type
 
 To filter e-resources by type, select **Monograph** or **Serial**.
 
 
-### Publication type
+#### Publication type
 
 To filter e-resources by publication type, select **Monograph**, **Serial**, or **journal**.
 
 
-### External data source
+#### External data source
 
 To search for e-resources by external data source, follow these steps:
 
@@ -900,22 +907,22 @@ To search for e-resources by external data source, follow these steps:
 2. Select the external data source from the drop-down list. Your results appear in the E-resources pane.
 
 
-### Scope
+#### Scope
 
 To filter e-resources by scope, select **Consortial**, **Global**, **Local**, or **Regional**.
 
 
-### Status
+#### Status
 
 To filter e-resources by status, select **Current**, **Deleted**, **Expected**, or **Retired**.
 
 
-### Content type
+#### Content type
 
 To filter e-resources by content type, select **Databases**, **Monographs**, or **Serials**.
 
 
-## Viewing an e-resource
+### Viewing an e-resource
 
 Viewing e-resources covered by agreements is only possible if using the internal KB. 
 
@@ -932,7 +939,7 @@ In the E-resources pane, click an e-resource to view it. The e-resource details 
 **Discovery settings.** For information on Discovery settings see [Editing e-resources](#editing-e-resources).
 
 
-### Viewing an e-resource package
+#### Viewing an e-resource package
 
 You can view packages in e-resources by clicking on **E-resources** in the **Search & filter** pane, then selecting **Yes** for the filter **Is package**. 
 
@@ -956,7 +963,7 @@ The following accordions also display:
 **Notes.** For information on Notes see [Adding and removing notes](#adding-and-removing-notes).
 
 
-## Editing e-resources
+### Editing e-resources
 
 
 
@@ -966,7 +973,7 @@ The following accordions also display:
 4. Click **Save & close**. The e-resource is updated.
 
 
-### Move identifier(s) between titles
+#### Move identifier(s) between titles
 
 If a title instance is related to an incorrect identifier, you can transfer identifiers between title instances by:
 
@@ -981,7 +988,7 @@ If a title instance is related to an incorrect identifier, you can transfer iden
 8. In the **Preview** window, click **Update titles & close** to complete the transaction, or **Update titles & move more identifiers** to continue moving identifiers. You can track the status of the job in the Local KB admin app.
 
 
-## Adding a tag to an e-resource
+### Adding a tag to an e-resource
 
 
 
@@ -991,14 +998,16 @@ If a title instance is related to an incorrect identifier, you can transfer iden
 4. Click the **X** on the Tags pane to close the pane and save the tag. The tag number updates to the number of tags applied to the e-resource.
 
 
-## Searching for platforms
+## Platforms
+
+### Searching for platforms
 
 Searching for platforms covered by an agreement is only possible if using the internal KB. 
 
 You can search for platforms by clicking on the tab **Local KB search** and selecting **Platforms** in the **Search & filter** pane Enter your search terms in the search box and click **Search**. The search box searches the name field.
 
 
-## Viewing a platform
+### Viewing a platform
 
 Viewing platforms covered by agreements is only possible if using the internal KB. 
 
@@ -1011,7 +1020,7 @@ In the **Platforms** pane, click a platform to view it. The platform details pan
 **Platform proxy server settings.** In Settings > Local KB admin > Proxy server settings, you can add a proxy server setting and exclude platforms one by one. Every platform that is not listed in the array of excluded platforms will contain a generated list of proxy URLs.
 
 
-## Editing platforms
+### Editing platforms
 
 
 
@@ -1021,7 +1030,7 @@ In the **Platforms** pane, click a platform to view it. The platform details pan
 4. Click **Save & close**. The platform is updated.
 
 
-### Adding URL customization
+#### Adding URL customization
 
 
 
@@ -1032,7 +1041,7 @@ In the **Platforms** pane, click a platform to view it. The platform details pan
 5. Click **Save & close**.
 
 
-### Editing URL customization
+#### Editing URL customization
 
 
 
@@ -1042,7 +1051,7 @@ In the **Platforms** pane, click a platform to view it. The platform details pan
 4. Click **Save & close**.
 
 
-### Deleting URL customization
+#### Deleting URL customization
 
 
 
@@ -1051,12 +1060,14 @@ In the **Platforms** pane, click a platform to view it. The platform details pan
 3. In the **Delete URL customization** dialog box, click **Delete**.
 
 
-## Adding and removing notes
+## Notes
+
+### Adding and removing notes
 
 You can add and assign notes to agreement records, agreement lines, and e-resources (internal KB only). Assigning a note means you are reusing a previously created note.
 
 
-### Adding a new note to an agreement
+#### Adding a new note to an agreement
 
 
 
@@ -1068,7 +1079,7 @@ You can add and assign notes to agreement records, agreement lines, and e-resour
 6. Click **Save & close**. The note is saved and appears in the Notes section in the agreement details pane.
 
 
-### Assigning an existing note to an agreement
+#### Assigning an existing note to an agreement
 
 
 
@@ -1078,7 +1089,7 @@ You can add and assign notes to agreement records, agreement lines, and e-resour
 4. Select the checkbox next to the note you want to assign to the agreement and click **Save.** The note is saved and appears in the Notes section in the agreement details pane.
 
 
-### Editing an agreement note
+#### Editing an agreement note
 
 
 
@@ -1089,7 +1100,7 @@ You can add and assign notes to agreement records, agreement lines, and e-resour
 5. Click **Save & close**. The note is saved.
 
 
-### Removing a note on an agreement
+#### Removing a note on an agreement
 
 
 
@@ -1100,7 +1111,7 @@ You can add and assign notes to agreement records, agreement lines, and e-resour
 5. In the **Delete note** dialog, click **Delete**. The note is deleted and removed from any records to which it was attached.
 
 
-### Adding a note to an agreement line
+#### Adding a note to an agreement line
 
 
 
@@ -1111,7 +1122,7 @@ You can add and assign notes to agreement records, agreement lines, and e-resour
 5. Follow steps 3-6 under Adding a new note to an agreement.
 
 
-### Assigning an existing note to an agreement
+#### Assigning an existing note to an agreement
 
 
 
@@ -1122,7 +1133,7 @@ You can add and assign notes to agreement records, agreement lines, and e-resour
 5. Follow steps 3-4 under [Assigning an existing note to an agreement](#assigning-an-existing-note-to-an-agreement).
 
 
-### Editing an agreement line note
+#### Editing an agreement line note
 
 
 
@@ -1134,7 +1145,7 @@ You can add and assign notes to agreement records, agreement lines, and e-resour
 6. Click **Save & close**. The note is saved.
 
 
-### Removing a note from an agreement line
+#### Removing a note from an agreement line
 
 
 
@@ -1146,7 +1157,7 @@ You can add and assign notes to agreement records, agreement lines, and e-resour
 6. In the **Delete note** dialog, click **Delete**. The note is deleted and removed from any records to which it was attached.
 
 
-### Dashboard widgets for the Agreements app
+## Dashboard widgets for the Agreements app
 
 The Dashboard app is designed to enable a personalized view of key information from across FOLIO apps at a glance. In its first release (included in the Juniper flower release), the Dashboard includes the ability to display information from the Agreements and Licenses applications.
 
