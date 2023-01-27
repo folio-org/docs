@@ -117,7 +117,7 @@ This setting is turned on by default with an inactivity period of 3 minutes.
 
 Audio alerts can be turned on to signal to library staff when a checkout is successful or fails. This setting is turned off by default.
 
-To enable audio alerts, select **Yes** from the drop-down list.
+To enable audio alerts, select **Yes** from the drop-down list. Select your desired audio-alerts theme from the drop-down.
 
 
 ### Perform wildcard lookup of items by barcode in circulation apps (Check in, Check out)
