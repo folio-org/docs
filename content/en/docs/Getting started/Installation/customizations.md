@@ -10,7 +10,41 @@ tags: ["subtopic"]
 
 ## Branding Stripes
 
-Stripes has some basic branding configurations that are applied during the build process.  In the file **stripes.config.js**, you can configure the logo and favicon of the tenant.  These parameters can be set under the branding key at the end of the file.  You can add the new images in the folder **tenant-assets** and link to them in the configuration file.  Take into account that these changes will take effect after you build the webpack for Stripes.
+Stripes has some basic branding configurations that are applied during the build process.  In the file **stripes.config.js**, you can configure the logo and favicon of the tenant, and the CSS style of the main navigation and the login.  These parameters can be set under the branding key at the end of the file.  You can add the new images in the folder **tenant-assets** and link to them in the configuration file.
+
+In the config key you can set the `welcomeMessage` shown after login, the `platformName` that is appended to the page title and is shown in browser tabs and browser bookmarks.  Add a header with additional information to the Settings \> Software versions page via the `aboutInstallVersion` and `aboutInstallDate` properties, the latter is automatically converted into the locale of the user opening the page, for example `10/30/2023` or `30.10.2023`.
+
+Take into account that these changes will take effect after you build the webpack for Stripes.
+
+Example **stripes.config.js** customization:
+
+```
+module.exports = {
+  config: {
+    welcomeMessage: 'Welcome, the Future Of Libraries Is OPEN!',
+    platformName: 'FOLIO',
+    aboutInstallVersion: 'Poppy Hot Fix #2',
+    aboutInstallDate: '2023-10-30',
+  },
+  branding: {
+    logo: {
+      src: './tenant-assets/my-logo.png',
+      alt: 'my alt text',
+    },
+    favicon: {
+      src: './tenant-assets/my-favicon.ico',
+    },
+    style: {
+      mainNav: {
+        backgroundColor: "#036",
+      },
+      login: {
+        backgroundColor: "#fcb",
+      },
+    },
+  },
+}
+```
 
 ## Okapi security
 
