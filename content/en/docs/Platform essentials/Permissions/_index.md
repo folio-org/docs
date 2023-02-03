@@ -17,20 +17,21 @@ A permission is an object in FOLIO that can be used to control access to FOLIO a
 
 A permission can have a number of different attributes, depending on whether you are viewing the permission in FOLIO’s code or whether you are looking at permissions for a user on a FOLIO tenant. Attributes can include:
 
-**permissionName.** This represents the unique name of the permission. 
-**displayName.** This is a human-readable name for the permission that usually corresponds to the name shown in the user interface.
+* **permissionName.** This represents the unique name of the permission. 
+* **displayName.** This is a human-readable name for the permission that usually corresponds to the name shown in the user interface.
 Note that what appears in the FOLIO user interface is a translated label for the permissionName; translations are stored for supported languages with each FOLIO module. The displayName was used in earlier versions of FOLIO but no longer serves a purpose in the FOLIO user interface.
-**id**. The **id** is a tenant-level unique identifier for the permission, created when the relevant FOLIO module is installed.
-**Description.** A description of the permission as provided by the developer. This field is optional.
-**subPermissions.** Many permissions are actually a grouping of more specific permissions - if this is the case, **subPermissions** is where those more specific permissions are listed.
-**childOf.** If a permission is a subPermission for another permission, that “parent” permission is listed.
-**grantedTo.** If the permission has been granted to any FOLIO users, their permissions user ID is listed.
-**mutable.** A permission can be either **mutable** or **immutable**; permissions are immutable by default. 
+* **id**. The **id** is a tenant-level unique identifier for the permission, created when the relevant FOLIO module is installed.
+* **Description.** A description of the permission as provided by the developer. This field is optional.
+* **subPermissions.** Many permissions are actually a grouping of more specific permissions - if this is the case, **subPermissions** is where those more specific permissions are listed.
+* **childOf.** If a permission is a subPermission for another permission, that “parent” permission is listed.
+* **grantedTo.** If the permission has been granted to any FOLIO users, their permissions user ID is listed.
+* **mutable.** A permission can be either **mutable** or **immutable**; permissions are immutable by default. 
 If a permission is defined as **“mutable” : false**, then it cannot be changed without modifying the associated module code and restarting the module. If a permission is defined as **“mutable” : true**, it can be changed in the UI without having to stop and restart the associated module. 
-**visible.** A permission can be either visible or invisible. A permission is invisible by default.
+* **visible.** A permission can be either visible or invisible. A permission is invisible by default.
 If a permission is defined as **”visible” : true**, then it is viewable in the FOLIO user interface. If a permission is defined as **”visible” : false**, then it is not viewable by default in the FOLIO user interface.
 deprecated
-**moduleName** and **moduleVersion.** These fields will only appear when looking at a FOLIO installation directly, they are not in the code. These fields tell you what module provided the permission definition, and what version of that module is running.
+* **moduleName** and **moduleVersion.** These fields will only appear when looking at a FOLIO installation directly, they are not in the code. These fields tell you what module provided the permission definition, and what version of that module is running.
+
 ## Naming Convention
 Permissions are named to indicate what a FOLIO user with the permission can do within the app. 
 
