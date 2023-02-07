@@ -1,14 +1,15 @@
 ---
 title: "Keyboard shortcuts"
 linkTitle: "Keyboard shortcuts"
-date: 2022-06-07
+date: 2023-01-29
 weight: 50
 ---
 
-Keyboard shortcuts allow you to perform actions using the keyboard.  These shortcuts are shared across several apps in FOLIO.  For the [apps listed below](#list-of-apps-displaying-shortcuts), you can [view the list of shortcuts](#viewing-the-keyboard-shortcuts-list) while using the app.  
+Keyboard shortcuts allow you to perform actions using the keyboard.  These shortcuts are shared across several apps in FOLIO.  For the [apps listed below](#list-of-apps-displaying-the-shortcut-list), you can [view the list of shortcuts](#viewing-the-keyboard-shortcuts-list) while using the app.  
 
 ## Keyboard shortcuts list
- 
+
+
 | Action                           | Shortcut keys |
 | :------------------------------- | :------------ |
 | Create a new record:             | Alt+n         |
@@ -26,18 +27,21 @@ Keyboard shortcuts allow you to perform actions using the keyboard.  These short
 | Cut                              | Ctrl+x        |
 | Paste                            | Ctrl+v        |
 | Find                             | Ctrl+f        |
- 
- 
- 
+
+
+
 
 ## Viewing the keyboard shortcuts list 
 
 To view the list of available shortcut keys, follow these steps:
- 
+
+
 Click on the name of a FOLIO app from the top menu bar.  The app opens and the app name displays at the top left of the window.
- 
+
+
 Click on the downward-facing carrot, “v”, at the end of the app name.  
- 
+
+
 Click **Keyboard shortcuts** to view the list of shortcut actions.
 
 
@@ -55,7 +59,9 @@ The following apps display the list of keyboard shortcuts which can be viewed by
 *   Invoices
 *   Licenses
 *   Local KB admin
+*   MARCAuthority
 *   Orders
 *   Organizations
 *   Receiving
+*   Requests (Note: The downward-facing carrot to view the shortcut list is planned for a future release)
 *   Users
