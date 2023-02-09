@@ -45,7 +45,7 @@ For testing FOLIO installation on a PC, it's recommended to use Vagrant to separ
 
 1. Install Vagrant.
 
-See the Vagrant [download and installation instructions](https://www.vagrantup.com/downloads).
+See the Vagrant [download and installation instructions](https://developer.hashicorp.com/vagrant/downloads).
 
 2. Install a virtualization product.
 

@@ -592,7 +592,7 @@ Note: There will be a 10,000 title limit when exporting a package detail record.
 3. From the **Package fields to export** drop-down list, you can select the following eHoldings information for export: Access Status Type, Agreements, Automatically Select titles, Custom Coverage, Holdings status, Notes, Package Content Type, Package Id, Package Name, Package Type, Provider Id, Provider Name, Proxy, Show To Patrons, and Tags.
 4. From the **Title fields to export** drop-down list, you can select the following eHoldings information for export: Access Status Type, Agreements, Alternative title(s), Contributors, Coverage statement, Custom Coverage, Custom Embargo, Custom label, Description, Edition, Holdings status, ISBN_Online, ISBN_Print, Managed coverage dates, Managed Embargo, Notes, Peer reviewed, Proxy, Publication Type, Publisher, Show To Patrons, Subjects, Tags, Title ID, Title name, Title Type, and URL.
 5. Click **Export.**
-6. The export will appear in the [Export manager app](/docs/export-manager). 
+6. The export will appear in the [Export manager app](/docs/export-manager/).
 
 
 ## Deleting a custom package
@@ -689,7 +689,7 @@ Coverage is the available years or version of a publication. For a journal this 
 4. From the **Package fields to export** drop-down list, you can select the following eHoldings information for export: Access Status Type, Agreements, Automatically Select titles, Custom Coverage, Holdings status, Notes, Package Content Type, Package Id, Package Name, Package Type, Provider Id, Provider Name, Proxy, Show To Patrons, and Tags.
 5. From the **Title fields to export** drop-down list, you can select the following eHoldings information for export: Access Status Type, Agreements, Alternative title(s), Contributors, Coverage statement, Custom Coverage, Custom Embargo, Custom label, Description, Edition, Holdings status, ISBN_Online, ISBN_Print, Managed coverage dates, Managed Embargo, Notes, Peer reviewed, Proxy, Publication Type, Publisher, Show To Patrons, Subjects, Tags, Title ID, Title name, Title Type, and URL.
 6. Click **Export.**
-7. The export will appear in the [Export manager app](/docs/export-manager). 
+7. The export will appear in the [Export manager app](/docs/export-manager/).
 
 
 ## Adding a tag to a title record

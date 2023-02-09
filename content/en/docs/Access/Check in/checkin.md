@@ -112,7 +112,7 @@ For example, if your library was closed because of an emergency, you can mark al
 
 ## Anonymizing a loan that has been checked in
 
-A library can configure FOLIO to anonymize loans after they have been checked in. Anonymizing removes the link between the loan record and the user record for the patron who borrowed the item. Your library can configure anonymization options in [**Settings > Circulation > Loans > Loan History**](../../../settings/settings_circulation/settings_circulation/#settings--circulation--loan-history).
+A library can configure FOLIO to anonymize loans after they have been checked in. Anonymizing removes the link between the loan record and the user record for the patron who borrowed the item. Your library can configure anonymization options in [**Settings > Circulation > Loan anonymization**](../../../settings/settings_circulation/settings_circulation/#settings--circulation--loan-anonymization).
 
  If you select *Anonymize closed loans immediately after loan closes*, anonymization will occur after the check in session ends. The anonymization process is scheduled by your system administrator or hosting provider.
 

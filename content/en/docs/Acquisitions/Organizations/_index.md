@@ -109,7 +109,7 @@ Categories for contact information are configured in the Settings app. If you as
 
 2. Fill in the address information.
 
-3. Repeat as needed. The address saves once you save the organization. Note: If you are adding multiple addresses, select the **Use as primary address** checkbox at the top of the organization’s primary address.  The primary address is included in the invoice voucher extract.  See [Invoices > Voucher information](../../invoices/#voucher-information) for more information. 
+3. Repeat as needed. The address saves once you save the organization. Note: If you are adding multiple addresses, select the **Use as primary address** checkbox at the top of the organization’s primary address.  The primary address is included in the invoice voucher extract.  See [Invoices > Voucher information](../invoices/#voucher-information) for more information.
 
 
 #### Deleting an address

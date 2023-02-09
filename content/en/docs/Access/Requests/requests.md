@@ -13,7 +13,7 @@ Item level requests are made on an individual item record and are the default ty
 
 Title level requests are made on the instance level. FOLIO chooses the item from the holdings on that instance to fill the request, whether the item is available immediately or becomes available when the item is returned.
 
-Libraries can turn on title-level requests in [Settings > Circulation > Title level requests]({{< ref "/settings_circulation.md#.settings--circulation--title-level-requests">}}).
+Libraries can turn on title-level requests in [Settings > Circulation > Title level requests]({{< ref "settings_circulation.md#settings--circulation--title-level-requests" >}}).
 
 Libraries that want to use title level requests should consider:
 
@@ -83,7 +83,7 @@ Requesting is controlled by circulation rules and item statuses. Some item statu
     2. Once you find the requester, select them from the **User Search Results** list. They are applied to the request and their information appears.
 7. Select the **Fulfillment preference**.
 8. Select the **Pickup service point** or **Delivery address**, depending on your selection in the previous step.
-9. Click **Save & close**. The request is saved and the Request Detail pane appears. The patron receives an email notification saying their request was received by the library, [if you have this notification configured.]({{< ref "/settings_circulation.md#patron-notice-policies" >}})
+9. Click **Save & close**. The request is saved and the Request Detail pane appears. The patron receives an email notification saying their request was received by the library, [if you have this notification configured.]({{< ref "settings_circulation.md#patron-notice-policies" >}})
 
 ### Editing an item level request
 
@@ -112,7 +112,7 @@ Any open request can be duplicated, as long as the request being created through
 
 You can move a request from one item to another on the same instance. You may want to do this if a request item goes missing or if you need to balance request queues.
 
-Note: If a recall request is moved to a loan item that wasn’t previously recalled, the loan will be recalled--the patron gets a recall notice, [if configured,]({{< ref "/settings_circulation.md#patron-notice-policies" >}}) and the loan’s due date may be truncated or extended, depending on the associated loan policy.
+Note: If a recall request is moved to a loan item that wasn’t previously recalled, the loan will be recalled--the patron gets a recall notice, [if configured,]({{< ref "settings_circulation.md#patron-notice-policies" >}}) and the loan’s due date may be truncated or extended, depending on the associated loan policy.
 
 1. [Find the request you want to move.](#searching-for-requests)
 2. In the **Request Detail** pane, select **Actions > Move request**.
@@ -142,7 +142,7 @@ Note: When cancelling a request, you should consider the following:
 2. In the **Request Detail** pane, select **Actions > Cancel request**.
 3. In the **Confirm request cancellation** dialog, select the **Reason for cancellation**.
 4. Optional: Enter any additional notes on the cancellation in the **Additional information for patron** box. If you selected **Other**, then you must supply additional information.
-5. Click **Confirm**. The dialog closes and the request is cancelled. The Request status is updated to Closed - Cancelled and the patron receives a cancellation notification email, [if you have this notification configured.]({{< ref "/settings_circulation.md#patron-notice-policies" >}})
+5. Click **Confirm**. The dialog closes and the request is cancelled. The Request status is updated to Closed - Cancelled and the patron receives a cancellation notification email, [if you have this notification configured.]({{< ref "settings_circulation.md#patron-notice-policies" >}})
 
 ## Title level requesting
 
@@ -302,7 +302,7 @@ To create a pick report, follow these steps:
 
 The pick slips report generates a single slip for every paged item that needs to be pulled from the shelf. This report automatically prints only those items whose Effective location is associated with the currently selected service point. Therefore, you must be signed in to the service point you want to generate the slips for. If there are no items matching the report’s criteria, the option appears grayed out.
 
-You can configure the information that appears on the pick slips in the [Settings app]({{< ref "/settings_circulation.md#settings--circulation--staff-slips" >}}).
+You can configure the information that appears on the pick slips in the [Settings app]({{< ref "settings_circulation.md#settings--circulation--staff-slips" >}}).
 
 To print pick slips, in the Requests pane, select **Actions > Print pick slips for [your service point]**. A print dialog appears.
 

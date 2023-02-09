@@ -1167,7 +1167,7 @@ Note: See **[Platform Essentials](../../platform-essentials/item-status/itemstat
 
 1.  [Find the instance](#searching-for-a-record) for which you want to add an order.
 2.  In the **Instance record details** pane, click **Actions \> New order**.
-3.  In the **Create order** dialog box, you can enter an existing PO number to add a new purchase order line to an existing purchase order: [Orders > Adding an order line to an order](../../#acquisitions/orders--adding-an-order-line-to-an-order), or leave the PO number field black to create a new purchase order and purchase order line: [Orders > Creating an order](../../#acquisitions/orders--creating-an-order)
+3.  In the **Create order** dialog box, you can enter an existing PO number to add a new purchase order line to an existing purchase order: [Orders > Adding an order line to an order](../../acquisitions/orders/#adding-an-order-line-to-an-order), or leave the PO number field black to create a new purchase order and purchase order line: [Orders > Creating an order](../../acquisitions/orders/#creating-an-order)
 
 ## Creating a new request
 

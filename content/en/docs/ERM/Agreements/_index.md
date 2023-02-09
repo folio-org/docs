@@ -776,7 +776,7 @@ To filter agreement lines by an agreement record, click **Select agreement**. In
 
 ### Agreement line type
 
-To filter agreement lines by type, check the **Unlinked**, **External**, and/or **Internal** checkboxes. An [unlinked agreement line](#adding-an-unlinked-agreement-line) is not linked to a resource in a knowledge base. An [external agreement line](#adding-an-agreement-line-via-eHoldings) is linked to a resource in an external knowledge base (like the eHoldings app), and an [internal agreement line](#adding-an-agreement-line-via-the-internal-KB) is linked to a resource in the internal knowledge base.
+To filter agreement lines by type, check the **Unlinked**, **External**, and/or **Internal** checkboxes. An [unlinked agreement line](#adding-an-unlinked-agreement-line) is not linked to a resource in a knowledge base. An [external agreement line](#adding-an-agreement-line-via-eholdings) is linked to a resource in an external knowledge base (like the eHoldings app), and an [internal agreement line](#adding-an-agreement-line-via-the-internal-kb) is linked to a resource in the internal knowledge base.
 
 
 ### Active from
