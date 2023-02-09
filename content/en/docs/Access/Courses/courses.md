@@ -45,7 +45,7 @@ Once you configure the above settings, you can:
 * [Create courses.](#creating-a-course)
 * [Add instructors.](#adding-an-instructor-to-a-course)
 * [Add cross-listed courses.](#adding-a-cross-listed-course)
-* [Add reserves to courses.](#adding-a-reserve-item-to-a-course)
+* [Add reserves to courses.](#adding-a-reserve-item-to-a-course-when-the-item-exists-in-inventory)
 
 
 ## Integrations

@@ -360,7 +360,7 @@ Use this setting to configure available transfer accounts. Transfer accounts are
 
 ## Settings \> Users \> Transfer criteria
 
-Use this setting to configure the criteria for transferring accounts. For more information about transfer accounts, see [Settings \> Users \> Transfer accounts](#settings–users–transfer-accounts).
+Use this setting to configure the criteria for transferring accounts. For more information about transfer accounts, see [Settings \> Users \> Transfer accounts](#settings--users--transfer-accounts).
 
 ### Creating transfer criteria
 
@@ -445,7 +445,7 @@ Patron block templates are created in **Settings \> Users \> Templates**.
 
 ## Settings \> Users \> Limits
 
-Limits determine the maximum number of materials, recalls, fee/fines, or overdues, that when reached, the conditions you configured in [Settings \> Users \> Conditions](#settings--users--conditions) are applied to a patron's account. Limits are established based on patron groups. See [Settings \> Users \> Patron Groups](#settings–users–patron-groups) for more information about setting up patron groups. 
+Limits determine the maximum number of materials, recalls, fee/fines, or overdues, that when reached, the conditions you configured in [Settings \> Users \> Conditions](#settings--users--conditions) are applied to a patron's account. Limits are established based on patron groups. See [Settings \> Users \> Patron Groups](#settings--users--patron-groups) for more information about setting up patron groups.
 
 ### Create patron block limits
 

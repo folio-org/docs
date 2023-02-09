@@ -26,7 +26,7 @@ FOLIO Reporting components Matrix
 | Iris          | 1.8.0 or later | v1.5.0 or later  | v1.1.1           |
 | Honeysuckle   | 1.8.0 or later | -                | v1.0             |
 
-\* FOLIO Analytics version is tied to a specific release. See the [Releases and branches](https://github.com/folio-org/folio-analytics#releases-and-branches) section of the folio-analytics repository for the latest.
+\* FOLIO Analytics version is tied to a specific release. See the [Releases](https://github.com/folio-org/folio-analytics#releases) section of the folio-analytics repository for the latest.
 
 For detailed information about how to set up and configure the LDP, please review any of the guides linked below that are available in the LDP repository. There you also will find the latest versions and fixes of the LDP.
 

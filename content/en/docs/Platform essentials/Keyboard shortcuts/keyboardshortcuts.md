@@ -5,7 +5,7 @@ date: 2023-01-29
 weight: 50
 ---
 
-Keyboard shortcuts allow you to perform actions using the keyboard.  These shortcuts are shared across several apps in FOLIO.  For the [apps listed below](#list-of-apps-displaying-the-shortcut-list), you can [view the list of shortcuts](#viewing-the-keyboard-shortcuts-list) while using the app.  
+Keyboard shortcuts allow you to perform actions using the keyboard.  These shortcuts are shared across several apps in FOLIO.  For the [apps listed below](#list-of-apps-displaying-the-shortcut-list), you can [view the list of shortcuts](#viewing-the-keyboard-shortcuts-list) while using the app.
 
 ## Keyboard shortcuts list
 
