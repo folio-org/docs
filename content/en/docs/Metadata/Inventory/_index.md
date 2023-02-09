@@ -1048,7 +1048,7 @@ To view an item record, follow these steps:
 
 ## Editing an instance record with underlying MARC
 
-See [Editing a MARC record using quickMARC](quickmarc/#Editing a MARC record using quickmarc).
+See [Editing a MARC record using quickMARC](quickmarc/#Editing%20a%20MARC%20record%20using%20quickmarc).
 
 ## Updating an instance record with underlying MARC using the Overlay source bibliographic record action in FOLIO
 
