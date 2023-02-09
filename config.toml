@@ -122,31 +122,31 @@ offlineSearch = false
 
 [[params.versions]]
   version = "Nolana"
-  url = "https://nolana.docs.folio.org/docs"
+  url = "https://nolana.docs.folio.org/docs/"
 
 [[params.versions]]
   version = "Morning Glory"
-  url = "https://morning-glory.docs.folio.org/docs"
+  url = "https://morning-glory.docs.folio.org/docs/"
 
 [[params.versions]]
   version = "Lotus"
-  url = "https://lotus.docs.folio.org/docs"
+  url = "https://lotus.docs.folio.org/docs/"
 
 [[params.versions]]
   version = "Kiwi"
-  url = "https://kiwi.docs.folio.org/docs"
+  url = "https://kiwi.docs.folio.org/docs/"
 
 [[params.versions]]
   version = "Juniper"
-  url = "https://juniper.docs.folio.org/docs"
+  url = "https://juniper.docs.folio.org/docs/"
 
 [[params.versions]]
   version = "Iris"
-  url = "https://iris.docs.folio.org/docs"
+  url = "https://iris.docs.folio.org/docs/"
 
 [[params.versions]]
   version = "Honeysuckle"
-  url = "https://honeysuckle.docs.folio.org/docs"
+  url = "https://honeysuckle.docs.folio.org/docs/"
 
 # User interface configuration
 [params.ui]
