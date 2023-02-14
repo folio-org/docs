@@ -346,7 +346,7 @@ Click **Export**. The file downloads to your local download location.
 
 ## Viewing receiving titles details
 
-Receiving title details can be viewed by any user with the permission [Receiving: View(#permissions). 
+Receiving title details can be viewed by any user with the permission [Receiving: View](#permissions).
 
 
 ### Search results
@@ -402,7 +402,7 @@ This section displays a table list of the pieces of the order that are still exp
 
 ### Received
 
-This section displays a table list of the pieces of the order that have been received. See [Receiving an order](#receiving-an-order) for more information.  To customize the columns that appear in the table list, follow these steps:
+This section displays a table list of the pieces of the order that have been received. See [Item details](#item-details) for more information.  To customize the columns that appear in the table list, follow these steps:
 
 1.  In the Received section of the receiving title, select the **Actions** button.  
 2. The listed columns are all selected by default under **Show columns** in the Actions list.  
@@ -479,7 +479,7 @@ Note: To add an expected piece in Receiving, the [Receiving workflow](../orders/
 *   **Select location.**  In the drop down list, select the location for this piece. You can change the location by clicking [Create new holdings for location](#create-new-holdings-for-location). 
 *   **Create item.** Select the **Create item** checkbox to connect the new piece to an instance in Inventory. This option is only available for pieces linked to an order with the purchase order line **Create inventory** value set to “Instance/holding/item.” . Note: In order to create an item in Inventory, a default instance status, instance type, and loan type must already be set up in Settings.  See [Settings > Orders]({{< ref "/settings_orders.md" >}}) for more information.
 *   **Supplement.** Select the **Supplement** checkbox to indicate that the piece is a supplementary material such as a CD or a map. 
-*   **Display on holdings.**  Select the **Display on holdings** checkbox to indicate that information about this piece should be displayed in the Inventory app in the Acquisition section of the holding record.  See [Inventory > Acquisition](../inventory/#acquisition) for more information.
+*   **Display on holdings.**  Select the **Display on holdings** checkbox to indicate that information about this piece should be displayed in the Inventory app in the Acquisition section of the holding record.  See [Inventory > Acquisition](../../metadata/inventory/#acquisition) for more information.
 
 #### Create new holdings for location
 
@@ -575,7 +575,7 @@ The Receive function can be used to receive multiple pieces at once.
 
 1. Using the **Search & filter** pane, find the receiving title you want to receive and select it.
 2. In the Expected section of the receiving title, click **Receive**.
-3. A receiving note popup window will display if the purchase order line field **[Must acknowledge receiving note]({{< ref "/orders.md#item-details.md" >}})** is checked.  Click **Continue** to close the popup window.
+3. A receiving note popup window will display if the purchase order line field **[Must acknowledge receiving note]({{< ref "/orders.md#item-details" >}})** is checked.  Click **Continue** to close the popup window.
 4. In the receiving title window, all of the expected pieces are displayed. Here, you can make changes to the pieces. See below for more information.
 5. Select the checkbox beside each piece you want to receive. Note: If you want to receive all of the pieces, click the top checkbox.
 6. Click **Receive**. The selected pieces are now displayed under the Received section.

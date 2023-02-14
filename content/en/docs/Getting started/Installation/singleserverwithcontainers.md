@@ -96,8 +96,8 @@ So, for anyone who plans to use MinIO server instead of Amazon S3:
 External storage for generated MARC records should be configured to MinIO server by changing ENV variable AWS_URL.
 
 Installation of a MinIO server is not being covered in this documentation. Refer to:
-[MinIO Deployment and Management](https://docs.min.io/minio/baremetal/installation/deployment-and-management.html#minio-installation) ,
-[Deploy MinIO Standalone](https://docs.min.io/minio/baremetal/installation/deploy-minio-standalone.html#deploy-minio-standalone-container) .
+[MinIO Deployment and Management](https://min.io/docs/minio/linux/operations/installation.html) ,
+[Deploy MinIO Standalone](https://min.io/docs/minio/container/operations/installation.html) .
 
 ### v. More preparatory steps
 There might be more preparatory steps that you need to take for your installation. If you are unsure what other steps you might need to take, study the [Kiwi Release Notes](https://wiki.folio.org/display/REL/Kiwi+%28R3+2021%29+Release+Notes).

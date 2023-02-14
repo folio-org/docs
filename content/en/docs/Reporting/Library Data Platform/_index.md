@@ -26,7 +26,7 @@ FOLIO Reporting components Matrix
 | Iris          | 1.8.0 or later | v1.5.0 or later  | v1.1.1           |
 | Honeysuckle   | 1.8.0 or later | -                | v1.0             |
 
-\* FOLIO Analytics version is tied to a specific release. See the [Releases and branches](https://github.com/folio-org/folio-analytics#releases-and-branches) section of the folio-analytics repository for the latest.
+\* FOLIO Analytics version is tied to a specific release. See the [Releases](https://github.com/folio-org/folio-analytics#releases) section of the folio-analytics repository for the latest.
 
 For detailed information about how to set up and configure the LDP, please review any of the guides linked below that are available in the LDP repository. There you also will find the latest versions and fixes of the LDP.
 
@@ -41,10 +41,6 @@ For detailed information about how to set up and configure the LDP, please revie
 * [Historical data](https://github.com/library-data-platform/ldp/blob/1.8.2/doc/Admin_Guide.md#8-historical-data): description of historical data feature and instructions for disabling
 * [User accounts](https://github.com/library-data-platform/ldp/blob/1.8.2/doc/Admin_Guide.md#9-user-accounts): how to set up user accounts and enable LDP to set permissions
 * [Reference](https://github.com/library-data-platform/ldp/blob/1.8.2/doc/Admin_Guide.md#reference): reference for the configuration file: ldpconf.json
-
-### Configuration Guide
-* [Foreign keys](https://github.com/library-data-platform/ldp/blob/1.8.2/doc/Config_Guide.md#1-foreign-keys): enabling capability to infer foreign keys
-* [Reference](https://github.com/library-data-platform/ldp/blob/1.8.2/doc/Config_Guide.md#reference): reference for the configuration file: dbconfig.general
 
 ## Setting up derived tables
 To let report users take full advantage of the community-developed [report queries](../folio-analytics/#using-queries-from-the-folio-analytics-repository) as well as having a good starting point for [ad hoc querying](../folio-analytics/#ad-hoc-querying-using-ldp-tables), it is strongly recommended to set up a nightly update on [derived tables](https://github.com/folio-org/folio-analytics/tree/release-1.5/sql/derived_tables). Note that the use of *views* and *materialized views* is not supported in LDP databases and may cause the LDP software to be unable to perform data updates.

@@ -102,7 +102,7 @@ In the **Search & filter** pane, click **Request** and select any applicable fil
 * **Created.** Include requests that were created.
 * **Pickup expired.** Include requests that were awaiting pickup and the pickup period expired.
 * **Expired.** Include requests that expired before they were filled.
-* **Moved.** Include requests that were [moved from one item to another.]({{< ref "/requests.md#moving-a-request-to-another-item-on-the-same-instance" >}})
+* **Moved.** Include requests that were [moved from one item to another.]({{< ref "requests#moving-an-item-level-request-to-another-item-on-the-same-instance" >}})
 * **Queue position reordered.** Include requests that were moved up or down in the request queue.
 
 

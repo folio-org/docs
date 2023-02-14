@@ -6,7 +6,7 @@ weight: 635
 ---
 
 
-The Dashboard app is designed to enable a personalized view of key information from across FOLIO apps at a glance. In its first release (included in the Juniper flower release), the Dashboard includes the ability to display information from the [Agreements](/docs/erm/agreements) and [Licenses](/docs/erm/licenses) applications.
+The Dashboard app is designed to enable a personalized view of key information from across FOLIO apps at a glance. In its first release (included in the Juniper flower release), the Dashboard includes the ability to display information from the [Agreements](/docs/erm/agreements/) and [Licenses](/docs/erm/licenses/) applications.
 
 Information for developers wishing to take advantage of Dashboard functionality for their own apps is available at the [Dashboard Documentation](https://wiki.folio.org/display/ERM/Dashboard%2BDocumentation) FOLIO wiki page.
 

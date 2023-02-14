@@ -103,7 +103,7 @@ There are three record statuses:
 
 ### To create a new **MARC bibliographic record**, derive a new record from an existing MARC record.
 
-1.  Start with an instance record that has an underlying MARC source record and the same [Resource type](../inventory/#resource-type) and [Format](../#format) as the record you wish to create.
+1.  Start with an instance record that has an underlying MARC source record and the same [Resource type](../#resource-type) and [Format](../#format) as the record you wish to create.
 2.  Click **Actions \> Derive new MARC bibliographic record.**
 3.  Edit the new record following the instructions in [Editing a MARC record using quickMARC](#editing-a-marc-record-using-quickmarc).
 

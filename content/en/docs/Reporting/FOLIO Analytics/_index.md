@@ -122,7 +122,7 @@ For more advanced query writing techniques, refer to the documentation on [ad ho
 
 * Check to see if the error message indicates that a derived table is missing. These derived tables are stored in a schema called **folio_reporting**, so that schema name followed by a table name might appear in the error message. If a derived table is missing, contact your LDP administrator.
 * If you edited the query, check to make sure you don’t have a comma appearing at the end of a list, like the list of the fields that occurs after the `SELECT` keyword.
-* If you can’t determine what is causing the error, consult with your local LDP administrator or either your local or the larger [FOLIO Reporting community](../support).
+* If you can’t determine what is causing the error, consult with your local LDP administrator or either your local or the larger [FOLIO Reporting community](https://wiki.folio.org/display/RPT).
 
 ## Ad hoc querying using LDP tables
 
@@ -138,7 +138,7 @@ To develop ad hoc queries, you will need to write query scripts using Structured
 |[The Data School: Learn Introductory SQL Concepts](https://dataschool.com/learn-sql/introduction/)|An interactive tutorial with an approachable style. The tutorial has built-in SQL evaluation, so you don’t need to set up a separate database tool to try the exercises.|
 |[Select Star SQL](https://selectstarsql.com/)|An interactive book that teaches SQL concepts using real-world datasets and problems. The book has built-in SQL evaluation, so you don’t need to set up a separate database tool to try the exercises.|
 |[SQL Murder Mystery](https://github.com/NUKnightLab/sql-mysteries)|The SQL Murder Mystery is designed to be both a self-directed lesson to learn SQL concepts and commands and a fun game for experienced SQL users to solve an intriguing crime. They also have a walkthrough for SQL beginners.|
-|CodeAcademy:<ul><li>[Learn SQL course](https://www.codecademy.com/learn/learn-sql)</li><li>[SQL Commands](https://www.codecademy.com/articles/sql-commands)</li></ul>|A course called Learn SQL and a list of SQL Commands. Without a Pro account, course features are limited.|
+|CodeAcademy:<ul><li>[Learn SQL course](https://www.codecademy.com/learn/learn-sql)</li><li>[SQL Commands](https://www.codecademy.com/article/sql-commands)</li></ul>|A course called Learn SQL and a list of SQL Commands. Without a Pro account, course features are limited.|
 |[Linked In Learning](https://www.linkedin.com/learning/)|Linked In Learning provides access to several courses on SQL at many levels of expertise. Requires a paid subscription.|
 
 
