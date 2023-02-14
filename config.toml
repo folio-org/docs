@@ -1,6 +1,6 @@
 # baseURL = "/"
-baseURL = "https://morning-glory.docs.folio.org/"
-title = "FOLIO Documentation - Morning Glory"
+baseURL = "https://nolana.docs.folio.org/"
+title = "FOLIO Documentation - Nolana"
 
 enableRobotsTXT = true
 
