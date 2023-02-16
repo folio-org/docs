@@ -53,6 +53,7 @@ id = "UA-00000000-0"
 # Language configuration
 
 [languages]
+
 [languages.en]
 title = "FOLIO Documentation"
 description = "FOLIO Documentation"
@@ -60,6 +61,14 @@ languageName ="English"
 # Weight used for sorting.
 # Remove the comment signs out to return to using additional languages
 #weight = 1
+
+[languages.de]
+title = "FOLIO-Dokumentation"
+description = "FOLIO-Dokumentation"
+languageName ="Deutsch"
+contentDir = "content/de"
+time_format_default = "02.01.2006"
+
 #[languages.no]
 #title = "Goldydocs"
 #description = "Docsy er operativsystem for skyen"
