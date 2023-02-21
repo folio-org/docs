@@ -1,7 +1,7 @@
 ---
 title: "Organizations"
 linkTitle: "Organizations"
-date: 2022-06-07
+date: 2023-02-20
 weight: 40
 tags: ["parenttopic"]
 ---
@@ -508,7 +508,6 @@ In the search results, click on an organization to view it. The Organization det
 *   **Agreement status.** The status of the agreement: Active, Closed, Draft, In negotiation, Requested.
 
 
-
 ## Editing an organization
 
 1. [Find the organization you want to edit](#searching-for-an-organization) and select it.
@@ -545,6 +544,7 @@ The system allows you to delete a vendor organization even if there are orders o
 
 3. In the **Delete organization** dialog, click **Delete**. The organization is deleted and a confirmation message appears.
 
+
 ## View export log
 
 To view a log of orders exported to a vendor organization that is set up for EDI integration, follow these steps:
@@ -553,7 +553,7 @@ To view a log of orders exported to a vendor organization that is set up for EDI
 
 2. In the **Organization details** pane, click **Actions > View export log**.
 
-3. The Export Manager app opens with the Search & Filter pane set to view exports related to the selected vendor organization.  See the [Export Manager documentation](../../export-manager#viewing-export-jobs) for more information about viewing export jobs.
+3. The Export Manager app opens with the Search & Filter pane set to view exports related to the selected vendor organization.  See the [Export Manager documentation]({{< ref "/export-manager.md#viewing-export-jobs" >}}) for more information about viewing export jobs.
 
 
 ## Adding a tag to an organization
@@ -584,7 +584,7 @@ To view a log of orders exported to a vendor organization that is set up for EDI
 
 ## Adding integration details to a vendor organization
 
-This section enables orders to be exported to vendors in EDIFACT format. To add information about one or more integrations for a vendor organization, follow these steps:
+This section enables orders to be exported to vendors in EDIFACT format.  To add information about one or more integrations for a vendor organization, follow these steps:
 
 1. [Find the organization to which you want to add an integration](#searching-for-an-organization) and select it.
 
@@ -606,6 +606,7 @@ This section enables orders to be exported to vendors in EDIFACT format. To add 
 *   **Default integration.** Select this checkbox if your organization doesn’t have any account numbers. This indicates that any order tagged for export that is not related to a specific account for this organization should follow this default configuration.
 
 
+
 ### EDI configuration
 
 *   **Account numbers (required).** All account numbers created in **Vendor account** section of the organization are listed.  Click on all vendor account numbers to be included in this EDI configuration.  To select multiple account numbers for this configuration, use shift+click. When you move your cursor to another field you will see the highlight persist on the selected account number(s).
@@ -613,7 +614,6 @@ This section enables orders to be exported to vendors in EDIFACT format. To add 
 *   **Vendor EDI code (required).** The vendor identifier for EDI transactions
 *   **Vendor EDI type.** Select one of the Vendor EDI types, which designates the type of identifier used as the vendor identifier: 014/EAN, 31B/US-SAN, 091/Vendor-assigned, or 092/Customer-assigned.
 *   **Library EDI code (required).** The library identifier for EDI transactions
-
 *   **Library EDI type.** Select one of the Library EDI types, which designates the type of identifier used as the library identifier: 014/EAN, 31B/US-SAN, 091/Vendor-assigned, or 092/Customer-assigned.
 *   **EDI naming convention.** The naming convention that sets the expected structure to be used for outgoing FOLIO EDI files, such as the prefix or file extension. Example: .edu  Note: When defining your naming convention you can use text or one of the following tokens. Tokens will be replace by the corresponding information from the export job. Possible tokens are organizationCode, integrationName, exportJobEndDate, jobID, numberSequence
 *   **Send account number.** If you send your account number with orders or invoices, select this checkbox. If selected, the account number is required for the PO/POL and is included in the EDI order file.
@@ -636,7 +636,6 @@ This section enables orders to be exported to vendors in EDIFACT format. To add 
 *   **Order directory.** The subdirectory where orders should be placed, if different from the main FTP directory for this vendor. Ex: /directory.
 *   **Invoice directory.** The subdirectory where invoices should be retrieved, if different from the main FTP directory for this vendor. Ex: /directory.
 *   **Notes.** Notes about the FTP details for this vendor integration.
-
 
 
 ### Scheduling
@@ -670,6 +669,9 @@ Note: If you need to create a new contact, you should save your progress on the 
 *   **Source.**   Name of the user who last updated the record.
 *   **Record created.** Date and time of record creation.
 *   **Source.**   Name of the user who last created the record.
+
+
+
 
 
 ##### Name

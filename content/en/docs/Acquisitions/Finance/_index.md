@@ -1,7 +1,7 @@
 ---
 title: "Finance"
 linkTitle: "Finance"
-date: 2022-09-22
+date: 2023-02-21
 weight: 10
 tags: ["parenttopic"]
 ---
@@ -84,6 +84,7 @@ A fiscal year is the twelve-month period your library uses for accounting and bu
 *   **Period End Date (required).** The date when the fiscal year ends.
 *   **Description.** A description of the fiscal year.
 Note about Currency:  The currency value does not display on the Fiscal year detail pane after creation, but the system does associate a currency with the Fiscal year based on the currency value from [Settings > Tenant > Language and localization]({{< ref "/settings_tenant.md#settings--tenant--language-and-localization" >}}). See [Viewing fund details > Fund information](#viewing-fund-details) for a description of expected system behavior for budget transaction when the Tenant currency value is changed.
+
 
 
 ## Creating a ledger
@@ -419,6 +420,7 @@ The Group table contains the following columns:
 
 This section displays a table of all funds associated with the ledger. The table contains the same columns as the Group table.
 
+
 #### Fiscal year rollover error log
 
 This section displays the list of rollover error logs. Click on the .csv file name to download the error log.
@@ -427,12 +429,16 @@ This section displays the list of rollover error logs. Click on the .csv file na
 
 To export a file of budget information for funds associated with a ledger in comma-separated values (.csv) format, follow these steps:
 
-1. In the **Search & filter** pane, use the search and filter options to select a ledger.  Click on the ledger in the result table list.
-2. In the ledger detail pane, click **Actions** and select,**Export budget information (CSV)**.
-3. In the **Export settings** dialog, the following message will display: “This export could take a few minutes. If you reload or close the page the export will not be completed. Once the file is ready it could take another minute for your browser to finish downloading the file. You can continue to work with finance records in a different browser tab if needed.”
-4. Select the **Fiscal year** to export from the drop-down list.
-5. Select the **Expense classes** to export from the drop-down list: All, Active, Inactive, None.
-6. Click **Export**.  The file downloads to your local download location and contains the following fields:
+In the **Search & filter** pane, use the search and filter options to select a ledger.  Click on the ledger in the result table list.
+In the ledger detail pane, click **Actions** and select,**Export budget information (CSV)**.
+
+In the **Export settings** dialog, the following message will display: “This export could take a few minutes. If you reload or close the page the export will not be completed. Once the file is ready it could take another minute for your browser to finish downloading the file. You can continue to work with finance records in a different browser tab if needed.”
+
+Select the **Fiscal year** to export from the drop-down list.
+
+Select the **Expense classes** to export from the drop-down list: All, Active, Inactive, None.
+
+Click **Export**.  The file downloads to your local download location and contains the following fields:
 
 #### Ledger fund budgets export file fields list:
 
@@ -472,6 +478,8 @@ To export a file of budget information for funds associated with a ledger in com
 *   Awaiting payment (Exp Class)
 *   Expended (Exp Class)
 *   Percentage of total expended   
+
+
 
 
 ### Viewing group details
@@ -559,6 +567,10 @@ The fund details pane contains fund information and all current, planned, and pr
 #### Fund information
 
 The Fund information section contains details about the fund.  For descriptions of each field in this section, see  [Fund information](#fund-information).  In addition to the fields that are available during fund creation, the fund detail pane displays the fund **Currency**. The fund currency value is set to the currency value from [Settings > Tenant > Language and localization]({{< ref "/settings_tenant.md#settings--tenant--language-and-localization" >}}). Note that when an order is opened, the system creates an encumbrance transaction on the current budget for the fund selected in the fund distribution section of the order.  If the currency of the PO line is different than the budget currency, the encumbrance will display on the budget as a converted amount.  The budget currency is set to the Tenant currency value at the time the [Finance > Fiscal year]({{< ref "/finance.md#Fiscal-year-information" >}}) record is created; therefore, if the Tenant currency value is updated, any budgets created prior to the update will still operate based on the Tenant currency that existed when the Fiscal year associated with the budget was created.
+
+
+
+
 
 
 #### Current budget
@@ -777,6 +789,7 @@ To filter transactions by Source, select one of the following:
 *   **User.** Transactions created by a user through the fund action menu, specifically **Allocation** and **Transfer** transaction types.
 
 
+
 #### Source POL number
 
 To filter transactions by the Source POL number, follow these steps:
@@ -794,6 +807,7 @@ To filter transactions by the Source invoice number, follow these steps:
 
 1. In the **Search & filter** pane, click **Source invoice number.**
 2. Begin typing the invoice number and select from the drop-down list. Your result appears in the Transactions pane.
+
 
 
 
@@ -946,8 +960,7 @@ When an [transfer of money](#transferring-money-between-funds) is made between t
 2. In the corresponding pane, select the record you want to edit.
 3. In the corresponding details pane, click **Actions > Edit**.
 4. Make your desired changes.
-5. Click **Save & close**. The record is saved and updated. Note: if another user edited and saved the same record while you were editing, the following message appears: "This record cannot be saved because it is not the most recent version. View latest version." Click on the hyperlink text "View latest version" to refresh the record and repeat steps 3-5 above to successfully edit.
-
+5. Click **Save & close**. The record is saved and updated. Note: if another user edited and saved the same record while you were editing, the following message appears: “This record cannot be saved because it is not the most recent version. View latest version.” Click on the hyperlink text “View latest version” to refresh the record and repeat steps 3-5 above to successfully edit.
 
 
 ## Deleting a fiscal year, ledger, group, or fund

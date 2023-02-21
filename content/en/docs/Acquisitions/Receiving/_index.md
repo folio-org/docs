@@ -1,7 +1,7 @@
 ---
 title: "Receiving"
 linkTitle: "Receiving"
-date: 2022-10-17
+date: 2023-02-20
 weight: 50
 tags: ["parenttopic"]
 ---
@@ -346,7 +346,7 @@ Click **Export**. The file downloads to your local download location.
 
 ## Viewing receiving titles details
 
-Receiving title details can be viewed by any user with the permission [Receiving: View(#permissions). 
+Receiving title details can be viewed by any user with the permission [Receiving: View](#permissions). 
 
 
 ### Search results

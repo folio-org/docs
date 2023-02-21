@@ -1,7 +1,7 @@
 ---
 title: "Settings > Finance"
 linkTitle: "Finance"
-date: 2021-09-22
+date: 2023-02-20
 weight: 120
 tags: ["subtopic"]   
 ---
@@ -42,7 +42,7 @@ For more information on adding funds and fund information, see Creating a new fu
 
 2. Edit the Name.
 
-3. Click **Save**. The fund type is updated. Note: if another user edited and saved the same fund type record while you were editing, the following message appears: "You are editing an old version of this data. To load the latest version click cancel, refresh the page and try again."
+3. Click **Save**. The fund type is updated.  Note: if another user edited and saved the same fund type record while you were editing, the following message appears: “You are editing an old version of this data. To load the latest version click cancel, refresh the page and try again.”
 
 
 ### Deleting a fund type
@@ -80,7 +80,8 @@ For more information on adding funds and fund information, see Creating a new fu
 
 2. Edit the Name, Code, or External account number extension.
 
-3. Click **Save**. The expense class is updated. Note: if another user edited and saved while you were editing the same expense class, the following message appears: "You are editing an old version of this data. To load the latest version click cancel, refresh the page and try again."
+3. Click **Save**. The expense class is updated.   Note: if another user edited and saved while you were editing the same expense class, the following message appears: “You are editing an old version of this data. To load the latest version click cancel, refresh the page and try again.”
+
 
 
 ### Deleting an expense class
@@ -88,3 +89,16 @@ For more information on adding funds and fund information, see Creating a new fu
 1. Find the expense class you want to delete. Click the **trash can icon**.
 
 2. In the **Delete Expense class** dialog, click **Delete**. A confirmation message appears and the expense class is deleted.
+
+
+## Settings > Finance > Export fund and expense class codes
+
+Use this setting to export a delimited file that includes all Fund codes and all Fund code & expense class code combinations where the expense class has a status of 'active'.  To export the file, follow these steps:
+
+1. Select a fiscal year from the **Fiscal year** drop-down menu.
+
+2. Click **Export** at the bottom of the screen.
+
+3. A file in .csv format downloads to your local download folder with the name “fund-codes-export-[fiscal year name]-YYYY-MM-DD-HH_MM.”  The file contains the following columns:
+*   **Fund code**
+*   **Fund and active expense class codes**
