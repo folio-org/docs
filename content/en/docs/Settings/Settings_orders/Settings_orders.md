@@ -1,7 +1,7 @@
 ---
 title: "Settings > Orders"
 linkTitle: "Orders"
-date: 2022-12-03
+date: 2023-02-21
 weight: 200
 tags: ["subtopic"]   
 ---
@@ -141,7 +141,9 @@ Use this setting to limit the number of order lines that you can add to an order
 
 ## Settings > Orders > Opening purchase orders
 
-If you want to allow users the option to save and open a purchase order in the same step, select **Allow save and open purchase order when creating or editing a purchase order line.**
+To allow users the option to save and open a purchase order in the same step, select **Allow save and open purchase order when creating or editing a purchase order line.**  
+
+The system checks for duplicates purchase orders based on title and product ID values. If found, the user is intercepted by a modal that displays possible duplicates. The user will be able to continue or cancel operation.  To disable this duplicate check, select **Disable duplicate check that occurs when opening orders and saving purchase order lines.**
 
 
 ## Settings > Orders > Edit

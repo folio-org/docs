@@ -1,7 +1,7 @@
 ---
 title: "Finance"
 linkTitle: "Finance"
-date: 2022-12-02
+date: 2023-02-21
 weight: 10
 tags: ["parenttopic"]
 ---
@@ -436,7 +436,7 @@ In the **Export settings** dialog, the following message will display: “This e
 
 Select the **Fiscal year** to export from the drop-down list.
 
-Select the *Expense classes** to export from the drop-down list: All, Active, Inactive, None.
+Select the **Expense classes** to export from the drop-down list: All, Active, Inactive, None.
 
 Click **Export**.  The file downloads to your local download location and contains the following fields:
 
@@ -557,7 +557,7 @@ This section lists all expense classes associated with funds assigned to the gro
 
 ### Viewing fund details
 
-The fund details pane contains fund information and all current, planned, and previous budgets as well as expense classes associated with a fund. The budget sections in the pane display total allocated, unavailable, and available by fund and expense class. To view a list of transactions for the current budget of a fund, click **Actions > View transactions for current budget**. See [Viewing budget transactions](#viewing-transactions-for-a-current-budget) for more information.
+The fund details pane contains fund information and all current, planned, and previous budgets as well as expense classes associated with a fund. The budget sections in the pane display total allocated, unavailable, and available by fund and expense class. To view a list of transactions for the current budget of a fund, click **Actions > View transactions for current budget**. See [Viewing budget transactions](#viewing-budget-transactions-for-a-current-budget) for more information.
 
 
 
@@ -566,7 +566,7 @@ The fund details pane contains fund information and all current, planned, and pr
 
 #### Fund information
 
-The Fund information section contains details about the fund.  For descriptions of each field in this section, see  [Fund information](#fund-information).  In addition to the fields that are available during fund creation, the fund detail pane displays the fund **Currency**. The fund currency value is set to the currency value from [Settings > Tenant > Language and localization]({{< ref "/settings_tenant.md#settings--tenant--language-and-localization" >}}). Note that when an order is opened, the system creates an encumbrance transaction on the current budget for the fund selected in the fund distribution section of the order.  If the currency of the PO line is different than the budget currency, the encumbrance will display on the budget as a converted amount.  The budget currency is set to the Tenant currency value at the time the [Finance > Fiscal year](#fiscal-year-information) record is created; therefore, if the Tenant currency value is updated, any budgets created prior to the update will still operate based on the Tenant currency that existed when the Fiscal year associated with the budget was created.
+The Fund information section contains details about the fund.  For descriptions of each field in this section, see  [Fund information](#fund-information).  In addition to the fields that are available during fund creation, the fund detail pane displays the fund **Currency**. The fund currency value is set to the currency value from [Settings > Tenant > Language and localization]({{< ref "/settings_tenant.md#settings--tenant--language-and-localization" >}}). Note that when an order is opened, the system creates an encumbrance transaction on the current budget for the fund selected in the fund distribution section of the order.  If the currency of the PO line is different than the budget currency, the encumbrance will display on the budget as a converted amount.  The budget currency is set to the Tenant currency value at the time the [Finance > Fiscal year]({{< ref "/finance.md#Fiscal-year-information" >}}) record is created; therefore, if the Tenant currency value is updated, any budgets created prior to the update will still operate based on the Tenant currency that existed when the Fiscal year associated with the budget was created.
 
 
 
@@ -645,7 +645,7 @@ The Budget information section contains the following fields:
 *   **Fiscal end.** Fiscal year end date.
 *   **Allowable expenditure.** Expenditure allowed, expressed as a percentage.
 *   **Allowable encumbrance.** Encumbrance allowed, expressed as a percentage.
-*   **Transactions.** Click **View transactions** to view budget transactions. See [Viewing budget transactions](#viewing-transactions-for-a-current-budget) for more information.
+*   **Transactions.** Click **View transactions** to view budget transactions. See [Viewing budget transactions](#viewing-budget-transactions-for-a-current-budget) for more information.
 
 
 ## Editing a budget

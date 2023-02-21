@@ -1,7 +1,7 @@
 ---
 title: "Orders"
 linkTitle: "Orders"
-date: 2022-12-02
+date: 2023-02-21
 weight: 30
 tags: ["parenttopic"]
 ---
@@ -24,10 +24,12 @@ Note: The below permissions only pertain to the Orders app. Within the app, orde
 
 Orders permissions:
 
+
+
 *   **Orders: Approve purchase orders.** This permission allows the user to approve purchase orders.
 *   **Orders: Assign acquisition units to new order.** This permission allows the user to assign acquisition units to orders when creating a new order.
 *   **Orders: Can create new Orders and Order lines.** This permission allows the user to create new orders and order lines.
-*   **Orders: Can delete Orders and Order lines.** This permission allows the user to delete orders and order lines. 
+ *   **Orders: Can delete Orders and Order lines.** This permission allows the user to delete orders and order lines. 
 *   **Orders: Can edit Orders and Order lines.** This permission allows the user to view and edit orders and order lines. 
 *   **Orders: Can view Orders and Order lines.** This permission allows the user to view orders and order lines.
 *   **Orders: Cancel order lines.** This permission allows the user to cancel order lines.
@@ -40,7 +42,6 @@ Orders permissions:
 *   **Orders: Update encumbrances.** This permission allows the user to update encumbrances for an open order.
 
 
-
 ## Keyboard shortcuts
 Keyboard shortcuts allow you to perform actions in this app using the keyboard.  See [Platform essentials > Keyboard shortcuts]({{< ref "keyboardshortcuts.md" >}}) for more information.
  
@@ -51,7 +52,8 @@ Orders contain a list of titles or packages (physical or electronic) being order
 
 In FOLIO, you can create either [one-time orders](#creating-a-one-time-order) or [ongoing orders](#creating-an-ongoing-order). One-time orders should be used for items fulfilled within the year, like monographs. Ongoing orders generally span multiple years, and you usually pay as you receive each item. You would want to create an ongoing order for a journal subscription, for example.
 
-Once you create an order, you need to [add at least one order line to the order](#adding-an-order-line-to-an-order) so the [order can be opened](#opening-an-order) and the acquisitions process can begin. You can also initiate order creation from the Inventory app by searching for an instance and clicking [Inventory > Actions > Create new order]({{< ref "/inventory.md#creating-a-new-order" >}}) for more information.
+Once you create an order, you need to [add at least one order line to the order](#adding-an-order-line-to-an-order) so the [order can be opened](#opening-an-order) and the acquisitions process can begin.  You can also initiate order creation from the Inventory app by searching for an instance and clicking [Inventory > Actions > Create new order]({{< ref "/inventory.md#creating-a-new-order" >}}) for more information.
+
 
 
 ### Creating a one-time order
@@ -82,9 +84,9 @@ Once you create an order, you need to [add at least one order line to the order]
 *   **Order type.** Select the type of order you are placing: One-time or Ongoing.
 *   **Acquisitions units.** If you want the order to be available to particular users within certain acquisitions units, enter or select the Acquisition units from the drop-down list. You can select multiple units. For more information on acquisition units, see [Settings > Acquisition units]({{< ref "/settings_acquisition_units.md" >}}).
 *   **Assigned to.** To assign the order to a user, click the **+**. In the **Select User** dialog, find the user using the search box and/or the filters. Click the user to select them. The user appears in the **Assigned to** box. If you need to remove the user, click the **x**. If you need to assign the order to a different user, click the **+** and repeat the above steps.
-*   **Bill to.** In the **Bill to** drop-down list, select the billing address for the order. Once you select an address, the billing address appears. Addresses are configured in the Settings app. For more information, see [Settings > Tenant > Addresses]({{< ref "settings_tenant#settings--tenant--addresses">}}).
-*   **Ship to.** In the **Ship to** drop-down list, select the address the order items will be shipped to. Once you select an address, the shipping address appears. Addresses are configured in the Settings app. For more information, see [Settings > Tenant > Addresses]({{< ref "settings_tenant#settings--tenant--addresses">}}).
-*   **Manual.** If the Manual checkbox is selected, EDI integration settings for this vendor will be ignored and nothing on this order will be exported to the vendor.. For example, select this checkbox if [EDI order integration]({{< ref "organizations#edi-configuration" >}})  is set up
+*   **Bill to.** In the **Bill to** drop-down list, select the billing address for the order. Once you select an address, the billing address appears. Addresses are configured in the Settings app. For more information, see [Settings > Tenant > Addresses](../../settings/tenant/#addresses).
+*   **Ship to.** In the **Ship to** drop-down list, select the address the order items will be shipped to. Once you select an address, the shipping address appears. Addresses are configured in the Settings app. For more information, see [Settings > Tenant > Addresses](../../settings/tenant/#addresses).
+*   **Manual.** If the Manual checkbox is selected, EDI integration settings for this vendor will be ignored and nothing on this order will be exported to the vendor.. For example, select this checkbox if [EDI order integration]({{< ref "/organizations.md#EDI-configuration" >}})  is set up for the vendor, but you submitted the order on the vendor’s website and do not want to resend. 
 *   **Re-encumber.** The Re-encumber checkbox is selected by default. If the checkbox is cleared, you are indicating that the order shouldn’t re-encumber during the fiscal year rollover even if it meets the criteria to re-encumber. However, if the checkbox is selected and the rollover settings indicate that this order doesn’t meet the criteria to re-encumber, money will not be committed to the next fiscal year for this order. The re-encumber toggle is only considered when the order meets the rollover criteria. If the checkbox is selected and the rollover settings indicate that this order meets the criteria to re-encumber, then money is committed to the next fiscal year for the order.
 *   **Tags.** Enter or select any tags from the drop-down list you would like to apply to the order.
 
@@ -440,7 +442,6 @@ To export all fields from the purchase order line, leave the **POL fields to exp
 *   PO number prefix
 *   Renewal note
 
-
 5.  Once the export fields have been chosen, click **Export** button at the bottom of the dialog.  A .csv file will be downloaded locally with the name “order-export-YYYY-MM-DD-HH_MM” containing one row for each purchase order filtered in the search pane selection list.  If the user has chosen to export POL fields and an order contains multiple purchase order lines then the file will contain a row for each purchase order line.
 
 
@@ -481,7 +482,7 @@ See [Creating an order > Purchase order](#purchase-order) for more information o
 *   **Assigned to.**  The user assigned to this order, if applicable.
 *   **Bill to.** The billing address selected for the order. 
 *   **Ship to.** The ship to address selected for the order.
-*   **Manual.** If the Manual checkbox is selected, it excludes the order from automated processing. For example, this may be selected if you have EDI set up, but you submitted the order on the vendor’s site and do not want to resend it to them.
+*   **Manual.** If the Manual checkbox is selected, it excludes the order from automated processing. For example, this may be selected if you have EDI set up, but you submitted the order on the vendor’s site and do not want to resend it to them.  
 *   **Re-encumber.**  See [Creating a purchase order](#purchase-order) for a full description of this field. 
 *   **Created by.**  Name of the user that created the purchase order.
 *   **Created on.**  The date and time at which the purchase order was created.
@@ -554,6 +555,7 @@ This section displays information about invoices related to this order through a
 *   **Status.**  The status of the invoice: Open, Reviewed, Approved, Paid, or Cancelled.
 *   **Expended amount.** The total expended amount of the invoice.
 
+
 ### Export details
 
 This section displays information about order exports to vendors related to this order.  The 
@@ -561,11 +563,9 @@ This section displays information about order exports to vendors related to this
 *   **Job ID.**   Identification number of the export.
 *   **Export date.**  Date that the export job was run.
 *   **File name.**  Name of the export file.
-*   **Export method.**  The **Integration name** on the associated Organization record’s [Integration details]({{< ref "organizations#adding-integration-details-to-a-vendor-organization" >}}).
+*   **Export method.**  The **Integration name** on the associated Organization record’s [Integration details]({{< ref "/organizations.md#adding-integration-details-to-a-vendor-organization>}}).
 
-See the [Export Manager]({{< ref "export manager#viewing-export-jobs" >}}) for more information about viewing export jobs.
-
-
+See the [Export Manager]({{< ref "/export_manager.md#viewing-export-jobs" >}}) for more information about viewing export jobs.
 
 ## Editing an order
 
@@ -605,8 +605,8 @@ After you create an order, it has the status of Pending until you open it. Once 
 
 
 *   Encumbrance transactions are created. Note: Encumbrances are only created if a fund distribution was added to an order line.
-*   Inventory records are created. If **Create inventory** on the purchase order line is set to "Instance/holdings/item", an item is created with an item status of "On order." For more information about item status see [Platform essentials > Item Status]({{< ref "itemstatus" >}}). Inventory records are not created if **Create inventory** on the order line is set to None. For more information about **Create inventory**, see the [E-resources details](#e-resources-details) and [Physical details](#physical-resource-details) sections below.
-*   Date opened is set to today’s date.
+*   Inventory records are created. If **Create inventory** on the purchase order line is set to “Instance/holdings/item”, an item is created with an item status of “On order.” For more information about item status see [Platform essentials > Item Status](< ref “/platform_essentials_items_status.md” >).Inventory records are not created if **Create inventory** on the order line is set to None. For more information about **Create inventory**, see the [E-resources details](#e-resources-details) and [Physical details](#physical-resource-details) sections below.
+*   Date openedis set to today’s date.
 *   Approval date is set to today’s date if the order hasn’t already been approved by a user.
 *   If possible duplicates are found, based on title and product ID values, a modal displays with a list of possible duplicate orders. Select continue or cancel. This duplicate check can be disabled in Settings. See [Settings > Orders > Opening purchase orders]({{< ref "/settings_orders.md#settings--orders--opening-purchase-orders" >}}).
 *   Order lines cannot be added after the order is opened unless you [unopen](#unopening-an-order) the order.
@@ -645,10 +645,9 @@ To cancel an open purchase order, follow the steps below.  Cancelling a purchase
 Upon cancellation, the order **Workflow status** changes to Closed, the **Reason for closure** is set to Cancelled, and any optionally added notes appear in the PO Summary **Notes on closure** field. All PO line fund distribution **Current encumbrance** amounts are set to $0.00.  In the PO line search results pane and on the Purchase order detail pane PO lines section, a red circle with a diagonal line icon appears beside the cancelled order line.
 
 
-
 ## Closing an order
 
-The system will automatically close one-time orders that are fully received and fully paid, or those where receipt or payment is not required, as indicated by the purchase order line **Receipt status** and **Payment status** values.  Only open orders can be closed. If you need to close an order manually, follow the steps below. Note about **Item status**: If **Create inventory** on the purchase order line is set to “Instance/holdings/item”, an item was created in Inventory when the order was opened. Closing an order when the item is not yet received will update the **Item status** of the item to “Order Closed.”  For more information about item status see [Platform essentials > Item Status]({{< ref "itemstatus" >}}).
+The system will automatically close one-time orders that are fully received and fully paid, or those where receipt or payment is not required, as indicated by the purchase order line **Receipt status** and **Payment status** values.  Only open orders can be closed. If you need to close an order manually, follow the steps below. Note about **Item status**: If **Create inventory** on the purchase order line is set to “Instance/holdings/item”, an item was created in Inventory when the order was opened. Closing an order when the item is not yet received will update the **Item status** of the item to “Order Closed.”  For more information about item status see [Platform essentials > Item Status](< ref “/platform_essentials_items_status.md” >).
 
 1. [Search for the order you want to close](#searching-for-an-order) and select it.
 
@@ -678,7 +677,7 @@ You can only receive open orders.
 
 2. In the **Purchase order** pane, select **Actions > Receive.** The order line(s) open in the Receiving app.
 
-3. Follow the steps as outlined in [Receiving > Receiving an order](../receiving/#receiving-an-order).
+3. Follow the steps as outlined in [Receiving > Receiving an order](../receiving/#receiving-an-order").
 
 
 ## Updating encumbrances for an order
@@ -690,6 +689,7 @@ You can update encumbrances for open orders. Use this action to reset encumbranc
 2. In the **Purchase order** pane, select **Actions > Update encumbrances.**
 
 3.  A confirmation message appears and the order encumbrances are updated based on the order’s current price and fund distributions.
+
 
 ## Creating a new invoice for an order
 
@@ -707,6 +707,7 @@ You can create an invoice for Open status orders from within the Orders app usin
 5. If the order contains more than one purchase order line, the **Edit sequence of invoice lines** window opens containing a table list of all purchase order lines related to the order. You can optionally drag and drop order line rows to resequence them to match the vendor invoice sequence.  When finished, click **Save and close**.
 
 6. Two green toast messages display to indicate that the invoice and invoice line(s) have been saved. The invoice line(s) are automatically created and link to the purchase order line from which you initiated the **+ New invoice** action.
+
 
 
 
@@ -734,10 +735,9 @@ To print or save a PDF file containing a snapshot of key information about an or
 4. To save the PDF file without printing, open the **Destination** drop-down list and select **Save as pdf**.
 
 
-
 ## Showing hidden fields
 
-To reveal fields that are hidden, as defined in [Settings > Orders > Creating an order template]({{< ref "settings_orders#settings--orders--order-templates" >}}), follow these steps.  Note: The user permission **Show all hidden fields** must be assigned to the user.
+To reveal fields that are hidden, as defined in [Settings > Orders > Creating an order template]({{< ref "/settings_orders.md#settings--orders--creating-an-order-template" >}}), follow these steps.  Note: The user permission **Show all hidden fields** must be assigned to the user.
 
 1. From the detail pane of the order, select **Actions > Show hidden fields.**  If any fields are hidden, they are added to the detail pane.
 
@@ -758,7 +758,7 @@ To reveal fields that are hidden, as defined in [Settings > Orders > Creating an
 
 ## Adding an order line to an order
 
-Follow these steps to add an order line to an order.  You can also add an order line from the Inventory app by searching for an instance and clicking [Inventory > Actions > Create new order]({{< ref "inventory#creating-a-new-order" >}}).
+Follow these steps to add an order line to an order.  You can also add an order line from the Inventory app by searching for an instance and clicking [Inventory > Actions > Create new order]({{< ref "/inventory.md#inventory--creating-a-new-order" >}}).
 
 1. [Search for the order to which you want to add the PO line](#searching-for-an-order) and select it.
 
@@ -766,7 +766,7 @@ Follow these steps to add an order line to an order.  You can also add an order 
 
 3. In the **Add PO line** window, fill in the fields in the [Item details](#item-details), [PO line details](#po-line-details), [Vendor](#vendor), [Cost details](#cost-details), and [Fund distribution](#fund-distribution) sections. For more information on the fields and actions available in these sections, see the section descriptions below.
 
-4. **Create another** checkbox: If the [Settings > Orders > Purchase orders line limit]({{< ref "settings_orders#settings--orders--purchase-order-lines-limit" >}}) value is greater than one, click this checkbox at the bottom of the window to keep the **Add PO line** window open after saving the current order line.
+4. **Create another** checkbox: If the [Settings > Orders > Purchase orders line limit]({{< ref "/settings_orders.md#settings--orders-purchase-orders-line-limit" >}}) value is greater than one, click this checkbox at the bottom of the window to keep the **Add PO line** window open after saving the current order line.
 
 5. Click **Save**, **Save & close** or **Save & open order**, if applicable.  If possible duplicates are found, based on title and product ID values, a modal displays with a list of possible duplicate orders. Select continue or cancel. This duplicate check can be disabled in Settings. For more information on checking for duplicates and enabling saving and opening orders simultaneously, see [Settings > Orders > Opening purchase orders]({{< ref "/settings_orders.md#settings--orders--opening-purchase-orders" >}}).
 
@@ -778,7 +778,7 @@ Follow these steps to add an order line to an order.  You can also add an order 
 *   **Package.** If you are adding a package, select the **Package** checkbox. If selected, Title becomes Package name. The **Receiving workflow** field will be automatically set to “Independent order and receipt quantity” once you select the **Package** checkbox.  See the [PO line details](#po-line-details) section below for more information about Receiving workflow.
 *   **Title/Package name.** Title of the item. If you already have the item in your Inventory app, you can use Title look-up to link the item to the Inventory record. This will automatically populate any applicable fields. To link to an inventory record, click **Title look-up**. In the **Select instance** dialog, find the title using the search box and/or the filters. Click the title to select it. The title appears in the Title box and relevant item fields are populated.
 *   **Receiving note.** Enter any notes about receiving the item. The notes display in the Receiving app for this order line.
-*   **Must acknowledge receiving note.**  Check this box to enable the receiving note to popup in the Receving app when the user clicks to receive the title.  See [Receiving > Receive]({{< ref "receiving#receive" >}})
+*   **Must acknowledge receiving note.**  Check this box to enable the receiving note to popup in the Receving app when the user clicks to receive the title.  See [Receiving > Receive]({{< ref "/receiving.md#receive." >}})
 *   **Subscription from.** If the item is a subscription, select when the subscription starts.  The date displays in the Invoices app when this order line is added to an invoice.
 *   **Subscription to.** If the item is a subscription, select when the subscription ends. The date displays in the Invoices app when this order line is added to an invoice.
 *   **Subscription interval.** If the item is a subscription, enter or select how many days the subscription lasts.
@@ -830,7 +830,7 @@ Follow these steps to add an order line to an order.  You can also add an order 
 
 
 *   **Acquisition method.** Select the method you are using to purchase the item: Approval plan, Demand driven acquisitions (DDA), Depository, Evidence based acquisitions (EBA), Exchange, Free, Gift, Internal transfer, Membership, Other, Purchase, Purchase at vendor system,  Technical.
-*   **Automatic export.** Select this checkbox to include the order in automated EDI order export which is triggered when an order is opened if EDI is set up for the associated vendor. The account number selected in the [Vendor](#vendor) section of the order will determine which EDI configuration is applied for the export.  Leave the checkbox blank to prevent automatic export of the purchase order line when opened.  See [Organizations > Adding integration details to a vendor organization]({{< ref "organizations#adding-integration-details-to-a-vendor-organization" >}}) for more information about vendor organization integrations.
+*   **Automatic export.** Select this checkbox to include the order in automated EDI order export which is triggered when an order is opened if EDI is set up for the associated vendor. The account number selected in the [Vendor](#vendor) section of the order will determine which EDI configuration is applied for the export.  Leave the checkbox blank to prevent automatic export of the purchase order line when opened.  See [Organizations > Adding integration details to a vendor organization]({{< ref "/organizations.md#organizations--adding-integration-details-to-a-vendor-organization" >}}) for more information about vendor organization integrations.
 *   **Order format.** Select the format of the item you are ordering: Electronic resource, Physical resource, P/E mix, or Other. The Order format determines which fields are required in the [Cost details](#cost-details) section and whether the [Physical resource details](#physical-resource-details) or [E-resources details](#e-resources-details) sections are displayed.
 *   **Receipt date.** The receipt date of the item.
 *   **Receipt status.** Select the receipt status of the item: Pending or Receipt not required.  For orders with type **Ongoing**, the receipt status is automatically set to **Ongoing** when the order is saved. If no selection is made, the order is created with a receipt status of **Pending**. Upon opening the order, the receipt status is automatically set to **Awaiting receipt**. Once an order is open, you can edit the Receipt status to **Cancelled**, **Fully received**, **Partially received**, or **Receipt not required**. The system will automatically close orders that have resolved both payment and receipt statuses either as “Payment not required” or “Receipt not required” or by reaching “Fully paid” and “Fully received” through actions taken in the Receiving app and the Invoices app.  It is advisable to consider your library’s needs when defining how to set this field.  For example, you may want to select “Receipt not required” for one-time e-resource orders so that the order will automatically close once invoice payment is complete. Otherwise, if your library doesn’t receive e-resources, a one-time e-resource order may be left open even after payment is complete which could impact your expected results during Fiscal Year rollover.
@@ -841,7 +841,7 @@ Follow these steps to add an order line to an order.  You can also add an order 
 *   **Cancellation restriction.** If there is a cancellation restriction on the item, select the **Cancellation restriction** checkbox.
 *   **Rush.** If the item needs rush processing, select the **Rush** checkbox.
 *   **Collection.** If the item is part of a collection, select the **Collection** checkbox.
-*   **Receiving workflow.** Select a value from the drop down list to manage behavior in the Receiving app.  Select **Synchronized order and receipt quantity** to keep the order quantity and the number of pieces to be received in sync. When the order is opened, the system will generate Receiving app pieces based on the quantity value on the purchase order line. Updating the quantity on the order will update the number of pieces to be received and updates in the Receiving app will update the order.  Select **Independent order and receipt quantity** if you need to create an unpredictable quantity of Receiving pieces, such as for an ongoing order.  Note: In prior system releases, this field was a checkbox named "Manually add pieces for receiving."
+*   **Receiving workflow.** Select a value from the drop down list to manage behavior in the Receiving app.  Select **Synchronized order and receipt quantity** to keep the order quantity and the number of pieces to be received in sync. When the order is opened, the system will generate Receiving app pieces based on the quantity value on the purchase order line. Updating the quantity on the order will update the number of pieces to be received and updates in the Receiving app will update the order.  Select **Independent order and receipt quantity** if you need to create an unpredictable quantity of Receiving pieces, such as for an ongoing order.  Note: In prior system releases, this field was a checkbox named “Manually add pieces for receiving.”
 *   **Cancellation description.** A note about the cancellation.
 *   **Line description.** A description of the purchase order line.
 *   **Tags.** Select or enter any tags you want to assign to the order line in the box.
@@ -865,7 +865,7 @@ Note: If the [Package checkbox](#item-details) is selected for the purchase orde
 *   **Physical unit price.** The price of the physical unit. Required if the [Order format](#order-format) is Physical, P/E mix, or Other.
 *   **Quantity physical.** The number of items you are ordering. Required if the [Order format](#order-format) is Physical, P/E mix, or Other.
 *   **Additional cost.** Any additional costs for the item.
-*   **Currency.** Select the **Currency** of the item from the drop-down list. The default value is stored in Tenant settings as the primary currency. For more information, see [Settings > Tenant > Language and localization]({{< ref "/settings_tenant.md#settings--tenant--language-and-localization" >}}). Note: When an order is opened, the system creates an encumbrance transaction on the current budget for the fund selected in the fund distribution section of the order.  If the currency of the PO line is different than the budget currency, the encumbrance will display on the budget as a converted amount.  The budget currency is set to the Tenant currency value at the time the [Finance > Fiscal year]({{< ref "finance#fiscal-year-information" >}}) record is created; therefore, if the Tenant currency value is updated, any budgets created prior to the update will still operate based on the Tenant currency that existed when the Fiscal year associated with the budget was created.
+*   **Currency.** Select the **Currency** of the item from the drop-down list. The default value is stored in Tenant settings as the primary currency. For more information, see [Settings > Tenant > Language and localization]({{< ref "/settings_tenant.md#settings--tenant--language-and-localization" >}}). Note: When an order is opened, the system creates an encumbrance transaction on the current budget for the fund selected in the fund distribution section of the order.  If the currency of the PO line is different than the budget currency, the encumbrance will display on the budget as a converted amount.  The budget currency is set to the Tenant currency value at the time the [Finance > Fiscal year]({{< ref "/finance.md#Fiscal-year-information" >}}) record is created; therefore, if the Tenant currency value is updated, any budgets created prior to the update will still operate based on the Tenant currency that existed when the Fiscal year associated with the budget was created.
 *   **Current exchange rate.**  This value will display after the POL is saved. The system automatically retrieves the current currency exchange rate using the Java Money API that retrieves and convert currencies using the European Central Bank (ECB) as the source.
 *    **Use set exchange rate.**  Check this box if you want to input an exchange rate value to be used for order instead of current rate.
 *   **Set exchange rate.**  The exchange rate value to be used for this order instead of the current rate.  This field is locked, as indicated by the lock icon beside the field label, unless the **Use set exchange rate** checkbox is selected.
@@ -1076,7 +1076,7 @@ In the **Search & filter** pane, click **Payment status** and select any applica
 *   **Cancelled.** Order lines with cancelled payment.
 *   **Fully paid.** Order lines that are fully paid.
 *   **Ongoing.** Order lines for an ongoing order.
-*   **Partially paid.** Order lines that are partially paid.  Note: Once or more invoices connected to a purchase order line have been “Approved,” the Payment status on the purchase order is changed to “Partially paid.”  See [Invoices > Approving an invoice]({{< ref "/invoices#approving-an-invoice" >}}).
+*   **Partially paid.** Order lines that are partially paid.  Note: Once or more invoices connected to a purchase order line have been “Approved,” the Payment status on the purchase order is changed to “Partially paid.”  See [Invoices > Approving an invoice](../../invoices/#approving-an-invoice).
 *   **Payment not required.** Order lines that do not require payment.
 *   **Pending.** Order lines with pending payment.
 
@@ -1129,6 +1129,7 @@ Free
 *   **Other.** Order lines acquired by some other method not listed.
 *   **Purchase.** Order lines purchased by methods such as email or EDI.
 *   **Purchase at vendor system.** Order lines purchased through an external vendor system, such as a website.
+
 *   **Technical.** Order lines to track payments for technical expenses such as service orders or vendor processing fees. This value could also be used for items that have migrated from an external system.
 
 
@@ -1425,8 +1426,8 @@ See [Adding an order line to an order > Cost details](#cost-details) for more in
 *   **Expense class.** The expense class within the fund, to which you are distributing the amount. This field will only display information if the selected Fund ID has any associated Expense classes.
 *   **Value.** The monetary value to apply to the fund, expressed as a percentage or currency value.
 *   **Amount.** The amount of money committed to the fund.
-*  **Initial encumbrance.**  The initial amount committed to the fund.
-*   **Current encumbrance.** The current amount committed to the fund.  When an invoice transitions to **Approved** status and the **Release encumbrances** checkbox on an invoice line is checked, the **Current encumbrance** value becomes $0. Click on the value to hyperlink to the fund budget transaction detail view for the encumbrance.
+*   **Initial encumbrance.**  The initial amount committed to the fund.
+*   **Current encumbrance.** The current amount committed to the fund.  When an invoice transitions to **Approved** status and the **Release encumbrances** checkbox on an invoice line is checked, the **Current encumbrance** value becomes $0.   Click on the value to hyperlink to the fund budget transaction detail view for the encumbrance. 
 
 ### Location
 
@@ -1481,6 +1482,7 @@ This section displays information about invoices and invoice lines that link to 
 
 
 
+
 ### Related agreements
 
 If the PO Line has been linked to an Agreement line in the Agreements app, a Linked Agreement Lines section will display in the PO Line details pane containing information about the linked Agreement Line.  See [Agreements > Adding a PO line to an agreement line](../../erm/agreements/#adding-a-purchase-order-line-to-an-agreement-line) for more information.
@@ -1505,14 +1507,11 @@ To change the Inventory instance connection for a purchase order line, follow th
 
 2. In the **PO Line details** pane, click **Actions > Change instance connection.** The Select instance search window opens.
 
-3. Find the title using the search box and/or the filters. Click the title to select it. The Change title window opens, “You have changed the title information of this purchase order line from (old title name) to (new title name). All related item records will be moved to the new instance.  How would you like to address the related Holdings? 
-
+3. Find the title using the search box and/or the filters. Click the title to select it. The Change title window opens, “You have changed the title information of this purchase order line from 
+(old title name) to (new title name). All related item records will be moved to the new instance.  How would you like to address the related Holdings? 
 4. Click the **How to update holdings** drop-down list and select **Move**, **Find or create new**, or **Create new.**  
-
 5. If you choose to create new holdings or find matching holdings based on the current location of items, FOLIO will ask you if you want to delete the abandoned Holdings where possible. A popup window will display, “This piece is connected to records in inventory.  After this edit, there will be no other pieces OR items connected to the related Holdings record. After making this change, would you like FOLIO to delete the holdings?” Select **Submit** to complete the instance connection change. Select either **Keep holdings** or **Delete holdings** to continue.
-
 6. The confirmation message, “Order instance connection has been successfully updated.” displays.
-
 
 
 ## Receiving an order line
@@ -1526,7 +1525,7 @@ To change the Inventory instance connection for a purchase order line, follow th
 
 ## Cancelling an order line
 
-To cancel a purchase order, follow the steps below.  Cancelling an order line removes all encumbrances and item records associated with the order line.  Note: Only order lines with an order status of Open will display the cancel option in the Action menu.To cancel an entire purchase order, see [Cancelling an order](#cancelling-an-order). You can [reopen an order](#reopening-an-order) after performing the cancel action.
+To cancel a purchase order, follow the steps below.  Cancelling an order line removes all encumbrances and item records associated with the order line.  Note: Only order lines with an order status of Open will display the cancel option in the Action menu.To cancel an entire purchase order, see [Cancelling an order](#cancelling-an-order). You can [reopen an order[(#reopening-an-order) after performing the cancel action.
 
 
 1. [Search for the order line you want to cancel](#searching-for-order-lines) and select it.
