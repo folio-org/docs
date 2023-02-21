@@ -19,10 +19,10 @@ Check out these videos to learn about FOLIO:
 
 Access one of our demo sites and explore FOLIO features and functionality.
 
-Login: diku_admin / admin
+Login: diku\_admin / admin
 
-* [Current release](https://folio-kiwi.dev.folio.org)
-* [Previous release](https://folio-juniper.dev.folio.org)
+* Current release: https://folio-nolana.dev.folio.org
+* Previous release: https://folio-morning-glory.dev.folio.org
 
 ### Work with a demo site
 
