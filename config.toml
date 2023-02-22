@@ -76,8 +76,8 @@ languageName ="English"
 # Everything below this are Site Params
 
 [params]
-copyright = "FOLIO SMLLC"
-privacy_policy = "https://www.folio.org/privacy-policy/"
+copyright = "Open Library Foundation"
+privacy_policy = "https://openlibraryfoundation.org/privacy-policy/"
 
 #From Arnon
 custom_css = ["css/toc.css"]
