@@ -24,7 +24,7 @@ In practice, most libraries represent physical locations in their location tree,
 ## Permanent, temporary and effective locations
 In Inventory, you can set permanent and temporary location values on a holdings and/or item record. A holding must have a value set for permanent location.
 
-Using the values in the permanent and temporary location fields, FOLIO computes two **effective locations** - one on the holdings record, and one on the item record. Effective locations support workflows such as OAI-PMH extracts, putting items on hold, and checking items out to patrons. 
+Using the values in the permanent and temporary location fields, FOLIO computes two **effective locations** - one on the holdings record, and one on the item record. Libraries do not set the effective location value - FOLIO computes it for them.
 
 ### Examples
 Temporary locations can be used to support various library workflows. 
@@ -44,7 +44,7 @@ Pacific College is renovating their Arts Library. Staff need to move 5,000 items
 * When the renovation is over and the items are returned to the Arts Library, library staff use Data Import workflows to remove the **holdings temporary location** from all 5,000 items, and that changes their effective locations back to “Arts Library.” FOLIO uses that location to circulate the items going forward.
 
 ## Configuring Locations
-To create the location tree, follow the steps outlined in [Settings \> Tenant.]({{ ref "Settings_tenant.md"}})
+To create the location tree, follow the steps outlined in [Settings \> Tenant.]({{ ref "\Settings_tenant.md"}})
 
 ## Holdings and Item effective locations
 FOLIO supports a **holdings effective location** and **item effective location**. Both fields are calculated automatically by FOLIO. 
@@ -63,6 +63,8 @@ FOLIO sets the holdings effective location to the first value it finds in the fo
 2. Holdings permanent location
 
 Note that if your library is using SRS for MARC Holdings, you will not be able to edit the permanent holdings location field on the inventory record - that will only be editable in quickMARC. You will be able to set a holdings temporary location. 
+
+The **Holdings effective location** is always computed, but it will only display on the holdings detail record if there are no items attached to the holdings.
 
 ### Item effective location
 The item effective location is used by FOLIO to know the current home location for an item, and for staff and patrons to understand where to find an item in the library. 
