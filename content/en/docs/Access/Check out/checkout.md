@@ -66,7 +66,7 @@ Make sure you have [looked up the user record prior to scanning items.](#locatin
 
 To select the item for check out, scan or enter the barcode of the item and click **Enter**. The item is displayed in the Scan Items area with the **Due date** and **Time** and the total number of items scanned is incremented.
 
-The item due date/time may be sooner or later than expected if a service point is going to be closed when the item would normally be due. The item due date/time may also be sooner than expected if the patron's account is set to expire prior to the expected due date/time.
+If the item is going to be due sooner than expected, a flag icon will appear next to the item due date after checkout. This can happen if a service point is going to be closed when the item would normally be due, or if the patron's account is set to expire sooner than the expected due date/time.
 
 ### Pop-ups that can occur when checking out an item
 
