@@ -40,8 +40,6 @@ Libraries can use circulation rules to determine how their items circulate. Circ
 
 You can write circulation rules to determine the following:
 
-
-
 * The groups of patrons that can borrow items.
 * The rules for items in different locations, libraries, campuses, or institutions.
 * The types of items (material types or loan types) that can be borrowed.
@@ -136,16 +134,28 @@ Staff slips allow you to configure the information that appears on your staff sl
 * **Request delivery.** This slip is available in the Check in app, when you check in an item with a delivery request.
 * **Transit.** This slip is available in the Check in app, when you check in an item that is in transit to another location.
 
+### Using tokens with staff slips
+
+There are six categories of available tokens for use with staff slips, listed in the table below. All of the categories appear as options in the staff slip editor, but some categories will only populate with information for some types of staff slips. 
+
+|Token category|Populates with these staff slips|Does not populate with these staff slips|
+|---|---|---|
+|Item|Hold slip, Pick slip, Request delivery, Transit||
+|Effective location|Hold slip, Pick slip, Request delivery, Transit||
+|Staff slip|Hold slip, Pick slip, Request delivery, Transit||
+|Request|Hold slip|Pick slip, Request delivery, Transit| 
+|Request delivery address|Request delivery|Hold slip, Pick slip, Transit|
+|Requester|Hold slip, Pick slip, Request delivery|Transit|
+
 
 ### Configuring a staff slip
 
 1. In the **Staff slips** pane, select the staff slip you want to configure.
 2. In the **staff slip details** pane, click **Edit**.
 3. Optional: In the **staff slip** window, enter a **Description** in the box.
-4. Use the Display box to edit the slip. Click **{ }** to add tokens to the slip. Tokens fill in item or user information based on the selected variables related to the slip event.
+4. Use the Display box to edit the slip. Click **{ }** to add tokens to the slip.
 5. Optional: Click **Preview** to view a preview of the slip.
 6. Click **Save & close**. The slip is saved and updated.
-
 
 ### Previewing a staff slip
 
