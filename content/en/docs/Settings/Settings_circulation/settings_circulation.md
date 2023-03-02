@@ -136,6 +136,18 @@ Staff slips allow you to configure the information that appears on your staff sl
 * **Request delivery.** This slip is available in the Check in app, when you check in an item with a delivery request.
 * **Transit.** This slip is available in the Check in app, when you check in an item that is in transit to another location.
 
+### Using tokens with staff slips
+
+There are six categories of available tokens for use with staff slips, listed in the table below. All of the categories appear as options in the staff slip editor, but some categories will only populate with information for some types of staff slips. 
+
+|Token category|Populates with these staff slips|Does not populate with these staff slips|
+|---|---|---|
+|Item|Hold slip, Pick slip, Request delivery, Transit||
+|Effective location|Hold slip, Pick slip, Request delivery, Transit||
+|Staff slip|Hold slip, Pick slip, Request delivery, Transit||
+|Request|Hold slip|Pick slip, Request delivery, Transit| 
+|Request delivery address|Request delivery|Hold slip, Pick slip, Transit|
+|Requester|Hold slip, Pick slip, Request delivery|Transit|
 
 ### Configuring a staff slip
 
