@@ -249,3 +249,7 @@ If the patron doesn’t return the charger, it would be eligible to be aged to l
 * 9:35 PM - the **Aged to lost** fee charging process begins, takes in the aged to lost loan information, and applies the $75 charge.
 
 So functionally that means that there is a time period between 9:05 PM and 9:35 PM (at the earliest) where an item may be past the expected time frame but still look like it is only overdue, or look like it has aged to lost but without the expected lost item fee.
+
+## Using Actual Cost to age something to lost without a charge
+
+text text text
