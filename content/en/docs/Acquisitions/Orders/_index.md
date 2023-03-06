@@ -565,7 +565,7 @@ This section displays information about order exports to vendors related to this
 *   **File name.**  Name of the export file.
 *   **Export method.**  The **Integration name** on the associated Organization record’s [Integration details]({{< ref "/organizations.md#adding-integration-details-to-a-vendor-organization" >}}).
 
-See the [Export Manager]({{< ref "/export_manager.md#viewing-export-jobs" >}}) for more information about viewing export jobs.
+See the [Export Manager](/export-manager.md#viewing-export-jobs) for more information about viewing export jobs.
 
 ## Editing an order
 
