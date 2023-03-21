@@ -294,7 +294,7 @@ Optional: Select to whom notifications from the library are sent in the **Notifi
 
 ## Assigning permissions to a user record
 
-Library staff need to have permissions assigned to their user record in order to interact with the FOLIO staff interface. Permissions do not need to be assigned to patrons for standard patron services like borrowing books, requesting items, etc. For a list of permissions and their definitions, see the respective app's Permissions section in the documentation.  
+Library staff need to have permissions assigned to their user record in order to interact with the FOLIO staff interface. Permissions do not need to be assigned to patrons for standard patron services like borrowing books, requesting items, etc. For a list of permissions and their definitions, see the respective app's Permissions section in the documentation.
 
 1.  [Find the user record](#searching-for-user-records) to which you want to add permissions and select it.
 2.  In the **User record** pane, click **Edit**.
