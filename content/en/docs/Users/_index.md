@@ -305,6 +305,7 @@ Optional: Filter by **Permission type** or **Permission assignment status** in t
 7.  Select the checkbox(es) next to the permission(s) you want to assign to the user.
 8.  Click **Save & close**. The permissions are assigned to the user record.
 9.  Click **Save & close**. The user record is saved.
+10.  The added permission(s) will take effect the next time the target user logs in.
 
 ## Removing permissions from a user’s record
 
@@ -314,6 +315,7 @@ Optional: Filter by **Permission type** or **Permission assignment status** in t
 3.  In the **Edit** window, expand the **User permissions** accordion if needed. 
 4.  Click the “x” next to the individual permission(s) you want to remove. The permission(s) are removed from the user record.
 5.  Click **Save & close**. The user record is saved.
+6.  The removed permission(s) will take effect the next time the target user logs in.
 
 Permissions can also be removed by following a modified version of the process for adding them:
 
@@ -326,6 +328,7 @@ Optional: Filter by **Permission type** or **Permission assignment status** in t
 7.  Deselect the **checkbox** next to the permission(s) you want to remove from the user.
 8.  Click **Save & close**. The permission(s) are removed from the user record.
 9.  Click **Save & close**. The user record is saved.
+10.  The removed permission(s) will take effect the next time the target user logs in.
 
 ### Remove all assigned permissions
 All assigned permissions can be removed from a user record in one click. 
@@ -334,6 +337,7 @@ All assigned permissions can be removed from a user record in one click.
 3.  In the **Edit** window, expand the **User permissions** accordion if needed. 
 4.  Click the **Unassign all permissions** button.
 5.  In the **Unassign all permissions** pop-up window, click **Yes** to confirm that you want to unassign all permissions. All assigned permissions will be removed from the user’s record.  
+6.  The removed permissions will take effect the next time the target user logs in.
 
 ## Adding a service point to a user record
 
