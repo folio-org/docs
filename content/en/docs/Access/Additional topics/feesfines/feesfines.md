@@ -197,19 +197,15 @@ GET /accounts?query=itemId=="\[Insert item UUID\]"&limit=1000
 
 ## Lost items - charging set cost versus actual cost
 
-FOLIO defines two types of automated fine charging: **Set cost** and **Actual cost**. 
-
-Although settings for both **Set cost** and **Actual cost** are visible in the lost item policy screen, only **Set cost** is implemented in the Kiwi version of FOLIO.
+FOLIO defines two types of automated fine charging: **Set cost** and **Actual cost**.
 
 For **Set cost** charges, libraries specify a standard charge for a lost item in the associated lost item policy, and FOLIO charges the patron that amount  when the item is declared lost or ages to lost.
 
-For **Actual cost** charges, the FOLIO project plans to implement a screen where libraries can review and specify the amount for individual items that have aged to lost. 
-
-Libraries that need **Actual cost** functionality prior to implementation in FOLIO can apply a set cost and then manually review charged fee/fines to adjust them to an actual cost. This requires manual intervention with each fee/fine charge.
+For **Actual cost** charges, the item ages to lost automatically, but the library must specify the amount to charge the patron manually. In the Users app, there is a reporting view that lists items that have aged to lost and need to have a charge applied. Libraries can also choose to not charge the patron for the lost item.
 
 ## Timing considerations for when an item ages to lost
 
-FOLIO uses a system-managed process to age an item to a lost status and apply any associated charges. The process has two pieces to it. The first is a process that moves the item status from **Checked out** to **Aged to lost**. The second process applies any associated fees/fines. 
+FOLIO uses a system-managed process to age an item to a lost status and apply any associated charges. The process has two pieces to it. The first is a process that moves the item status from **Checked out** to **Aged to lost**. The second process applies any associated fees/fines 
 
 By default, FOLIO runs the **Aged to lost** process every thirty minutes, and the fines process five minutes later. Hosting providers may choose to change this schedule to meet a specific library’s needs. 
 
