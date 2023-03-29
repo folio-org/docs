@@ -86,7 +86,7 @@ The book’s location information looks like this:
 * **Holdings permanent location**: “Science Library Stacks”
 * **Item effective location**: “Science Library Stacks”
 
-Julie borrows the book  from the Law Library service point and doesn’t return it.  The item ages to lost, with a $100 lost item fee and a $25 lost item processing fee.
+Julie borrows the book  from the Law Library service point and doesn’t return it.  The item ages to lost, with a $100 set cost lost item fee and a $25 lost item processing fee.
 
 When the item is aged to lost:
 
@@ -128,9 +128,15 @@ Libraries that do not want to have the emails sent as individual notices can use
 
 FOLIO’s fee/fine system is very dynamic and allows for many different configuration options of loan length and fee/fine settings. It can be helpful to know how the underlying logic works when FOLIO computes an overdue or overdue recall fine amount. 
 
-Because you can define fine rates and loan lengths in different intervals - minutes, hours, days, weeks or months - FOLIO’s approach is to take the length of time an item was overdue, convert it to minutes, and then compare that date/time to the fine interval - also in minutes - to determine how to charge. This is fairly simple when a library charges fines for all hours, but can become much more complicated when charging fines only when an associated service point is open. .
+The factors that are used when calculating overdue fines are
+* The loaning service point calendar
+* Whether there is a grace period for a late returned, as defined in the loan policy
+* The stated overdue charge, as defined in the overdue policy
+* Whether overdue fines should be charged when the service desk is closed, as defined in the overdue policy
 
-Also note that FOLIO does not do these calculations until the overdue or overdue recalled item is returned. Some library systems offer a “running total” calculation for overdue fines, but FOLIO does not offer that feature.
+Because you can define fine rates and loan lengths in different intervals - minutes, hours, days, weeks or months - FOLIO’s approach is to take the length of time an item was overdue, convert it to minutes, and then compare that date/time to the fine interval - also in minutes - to determine how to charge. This is fairly simple when a library charges fines for all hours, but can become much more complicated when charging fines only when an associated service point is open.
+
+Note that FOLIO does not do these calculations until the overdue or overdue recalled item is returned. FOLIO does not yet offer a “running total” calculation for overdue fines.
 
 ### Example: A patron returns an overdue item at a 24/7 service point
 
@@ -177,11 +183,11 @@ There is development planned to better handle calculating fines for closed perio
 
 ## What happens to a loan when the fine is resolved?
 
-When an item is declared lost, or an item ages to lost, the associated loan remains open.
+When an item is declared lost, or an item ages to lost, the associated loan remains open, whether it is a set cost or actual cost fee/fine.
 
 If the item is returned, and all associated fees/fines are removed, the loan is closed and the item’s status changes to either “Available” or “In Transit”, depending on where it was returned.
 
-If the library resolves all fees/fines via payment, cancellation, or waiving, FOLIO automatically closes the fee/fine, closes the loan,, and changes the item’s status to **Lost and paid**.
+If the library resolves all fees/fines via payment, cancellation, or waiving, FOLIO automatically closes the fee/fine, closes the loan, and changes the item’s status to **Lost and paid**.
 
 ## What happens to a fine if the item record is deleted?
 
@@ -203,13 +209,15 @@ For **Set cost** charges, libraries specify a standard charge for a lost item in
 
 For **Actual cost** charges, the item ages to lost automatically, but the library must specify the amount to charge the patron manually. In the Users app, there is a reporting view that lists items that have aged to lost and need to have a charge applied. Libraries can also choose to not charge the patron for the lost item.
 
+Note that if the lost policy has an associated processing fee, the processing fee will be charged when the item ages to lost, regardless of whether 
+
 ## Timing considerations for when an item ages to lost
 
 FOLIO uses a system-managed process to age an item to a lost status and apply any associated charges. The process has two pieces to it. The first is a process that moves the item status from **Checked out** to **Aged to lost**. The second process applies any associated fees/fines 
 
 By default, FOLIO runs the **Aged to lost** process every thirty minutes, and the fines process five minutes later. Hosting providers may choose to change this schedule to meet a specific library’s needs. 
 
-Here is how aging an item to lost might look in practice.
+Here is how aging an item to lost might look in practice. Note that this example also works for actual cost, but if the lost item policy is set to actual cost, the only charge that is automatically applied is the processing fee.
 
 ### Example: A long-term loan ages to lost
 
