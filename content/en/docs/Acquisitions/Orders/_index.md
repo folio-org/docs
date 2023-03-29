@@ -756,6 +756,26 @@ To reveal fields that are hidden, as defined in [Settings > Orders > Creating an
 4. Click the **X** on the Tags pane to close the pane and save the tag. The tag number updates to the number of tags applied to the order.
 
 
+
+## Viewing order version history
+
+1. [Search for the order you want to view](#searching-for-an-order) and select it.
+
+2. In the **Purchase order details** pane, click the **clock icon** which is to the right of the tag icon.
+
+3. A fourth pane titled **Version history** opens.  Versions are displayed in a card list sorted by date.  The following information is displayed for each version:  
+*   **Source.**  The user who saved this version of the order line.
+*   ***Current Version, Original Version,* or blank.**  Displays only for the current and original versions of the order line.
+*   **Changes.**  Displays the list of fields that were edited in this version.
+
+4. To view the order detail pane for a version, either click on the underlined version date mm/dd/yyyy, hh:mm or the clock icon for the version you want to open.
+
+5. The order detail pane displays the order data for that version.  Changes from the prior version are highlighted in yellow.
+
+6. To close the version history view, click on the X in the top right of the Version history pane.  The fourth pane closes and the order detail pane displays the current order version.
+
+
+
 ## Adding an order line to an order
 
 Follow these steps to add an order line to an order.  You can also add an order line from the Inventory app by searching for an instance and clicking [Inventory > Actions > Create new order]({{< ref "inventory#creating-a-new-order" >}}).
@@ -1543,3 +1563,21 @@ Upon cancellation, the PO line **Receipt status** and **Payment status** values 
 2. In the **PO Line details** pane, click **Actions > Delete**.
 
 3. In the Delete order line dialog, click **Delete**. A confirmation message appears and the order line is deleted.
+
+
+## Viewing order line version history
+
+1. [Search for the order line you want to view](#searching-for-an-order) and select it.
+
+2. In the **PO Line details** pane, click the **clock icon** which is to the right of the tag icon.
+
+3. A fourth pane titled **Version history** opens.  Versions are displayed in a card list sorted by date.  The following information is displayed for each version:  
+*   **Source.**  The user who saved this version of the order line.
+*   ***Current Version, Original Version,* or blank.**  This information displays only for the current and original versions of the order line.
+*   **Changes.**  Displays the list of fields that were edited in this version.
+
+4. To view the PO Line details pane for a version, either click on the underlined version date mm/dd/yyyy, hh:mm or the clock icon for the version you want to open.
+
+5. The PO Line details pane displays the PO line data for that version.  Changes from the prior version are highlighted in yellow.
+
+6. To close the version history view, click on the X in the top right of the **Version history** pane.  The fourth pane closes and the PO Line details pane displays the current order version.
