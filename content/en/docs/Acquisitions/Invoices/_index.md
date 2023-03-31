@@ -524,7 +524,7 @@ Click **Export**.  The file downloads to your local download location.
 *   Invoice line adjustments
 *   Total
 *   Invoice line fund distributions
-*   External account number
+*   External account number (includes external account number from fund and expense class external account number extension, if applicable)
 *   Vendor reference number, reference type
 *   Invoice line tags
 *   Voucher number
