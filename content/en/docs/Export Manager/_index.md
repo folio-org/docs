@@ -5,7 +5,7 @@ date: 2022-12-05
 weight: 625
 ---
 
-The Export manager app allows users to view manual or automated file exports for specific export operations. The Export manager app supports the following types of exports: Bursar, Circulation log, eHoldings, Bulk edit, and EDIFACT orders. While these exports are initiated from other apps and areas of FOLIO, the Export manager app allows administrative staff to check on the status of scheduled exports, view error details, and download files for review.
+The Export manager app allows users to view manual or automated file exports for specific export operations. The Export manager app supports the following types of exports: Authority control, Bursar, Circulation log, eHoldings, Bulk edit, and EDIFACT orders. While these exports are initiated from other apps and areas of FOLIO, the Export manager app allows administrative staff to check on the status of scheduled exports, view error details, and download files for review.
 
 ## Permissions
 
@@ -22,13 +22,14 @@ Since exports begin in other FOLIO apps, not in the Export Manager app, a user n
 
 ## Viewing export jobs
 
-The Export manager app allows users to view export logs initiated from the following apps or functions:
+The Export manager app allows users to view export logs and reports initiated from the following apps or functions:
 
 *   Bulk edit
 *   Bursar
 *   Circulation log
 *   EDIFACT orders
-*   eHoldings 
+*   eHoldings
+*   MARC authority 
 
 Once an export is initiated in any of these areas, a log of the export appears in the Export manager app. The app’s **Search & filter** pane displays two tabs: **All** and **Organizations**. The **Organizations** tab supports EDIFACT order export, while all other supported exports are accessible using the **All** tab.
 
@@ -38,8 +39,8 @@ The **All** tab results pane  displays the following columns:
 
 *   **Job ID.** Identification number of the export.
 *   **Status.** Status of the export:: Scheduled, In progress, Successful, Failed.
-*   **Job type.** The type of export that resulted in the corresponding job. Job types include: Bursar, Circulation log, eHoldings, BULK_EDIT_IDENTIFIERS, and BULK_EDIT_UPDATE.
-*   **Description.** Appears on Bursar exports with a summary count of charges and refunds  included in the job.
+*   **Job type.** The type of export that resulted in the corresponding job. Job types include: Bursar, Circulation log, eHoldings, MARC authority headings update, EDIFACT orders export, BULK_EDIT_IDENTIFIERS, and BULK_EDIT_UPDATE.
+*   **Description.** A description of the file, if applicable.
 *   **Source.** The user who initiated the export. Entries may include ‘System’ for automated exports or ‘folio’ for jobs resulting from bulk edit or a re-run EDIFACT export.
 *   **Start time.** Date and time the export began.
 *   **End time.** Date and time the export finished.
@@ -50,7 +51,7 @@ The **Organizations** tab results pane displays the following columns:
 
 *   **Job ID.** Identification number of the export.
 *   **Status.** Status of the export:: Scheduled, In progress, Successful, Failed.
-*   **Description.** Appears on Bursar exports with a summary count of charges and refunds included in the job.
+*   **Description.** A description of the file, if applicable.
 *   **Source.** The user who initiated the export. Entries may include ‘System’ for automated exports or ‘folio’ for jobs resulting from bulk edit or a re-run EDIFACT export.
 *   **Start time.** Date and time the export began.
 *   **End time.** Date and time the export finished.
@@ -79,6 +80,7 @@ To filter by **Status**, select a filter  filter:
 ### Job type
 
 To filter by **Job type**, select a filter:
+* **Authority control.** This export contains reports exported from the MARC authority app. Output format is .csv.
 * **Bursar.** This export contains charges and/or refunds transferred to the bursar. Output format is .dat.
 * **Circulation log.** This export contains search results from the Circulation log. Output format is .csv.
 * **eHoldings.** This export contains package and title details from eHoldings. Output format is .csv.
