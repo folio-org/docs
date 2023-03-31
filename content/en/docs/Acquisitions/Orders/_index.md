@@ -342,6 +342,23 @@ To search for orders within a review period, in days, follow these steps:
 2. Enter or select the review period, in days. The search results appear in the Orders pane.
 
 
+### Bill to
+
+To search for orders based on their bill to address, follow these steps. Addresses are created in Settings > Tenant > Addresses. 
+
+1. In the **Search & filter** pane, click **Bill to**.
+
+2. Select the address name from the drop-down list. The search results appear in the Orders pane.
+
+
+### Ship to
+
+To search for orders based on their ship to address, follow these steps. Addresses are created in Settings > Tenant > Addresses. 
+
+1. In the **Search & filter** pane, click **Ship to**.
+
+2. Select the address name from the drop-down list. The search results appear in the Orders pane.
+
 ## Exporting search results
 
 To export a file of order information in comma-separated values (.csv) format, follow these steps:
@@ -1360,7 +1377,7 @@ To search for order lines based on their actual receipt date (when the order lin
 
 To search for order lines based on their expected receipt date, follow these steps:
 
-1. In the **Search & filter** pane, click **Subscription to**.
+1. In the **Search & filter** pane, click **Expected receipt date**.
 
 2. Enter a start date in the **From** box and an end date in the **To** box.
 
@@ -1371,31 +1388,22 @@ To search for order lines based on their expected receipt date, follow these ste
 
 To search for order lines based on their receipt due date, follow these steps:
 
-1. In the **Search & filter** pane, click **Subscription to**.
+1. In the **Search & filter** pane, click **Receipt due**.
 
 2. Enter a start date in the **From** box and an end date in the **To** box.
 
 3. Click **Apply**. The search results appear in the Order lines pane.
 
 
-### Bill to
+### Export date
 
-To search for orders based on their bill to address, follow these steps. Addresses are created in Settings > Tenant > Addresses. 
+To search for order lines based on their export date, follow these steps:
 
-1. In the **Search & filter** pane, click **Bill to**.
+1. In the **Search & filter** pane, click **Export date**.
 
-2. Select the address name from the drop-down list. The search results appear in the Orders pane.
+2. Enter a start date in the **From** box and an end date in the **To** box.
 
-
-### Ship to
-
-To search for orders based on their ship to address, follow these steps. Addresses are created in Settings > Tenant > Addresses. 
-
-1. In the **Search & filter** pane, click **Ship to**.
-
-2. Select the address name from the drop-down list. The search results appear in the Orders pane.
-
-
+3. Click **Apply**. The search results appear in the Order lines pane.
 
 
 ## Viewing order line details
@@ -1459,8 +1467,6 @@ This section displays information if the order line **Create inventory** setting
 *   **Quantity electronic.** Quantity ordered for this location for this POL.
 
 
-
-
 ### Electronic resource details
 
 This section displays information if the order includes a POL with an order format of **Electronic** or **P/E mix.** See [Adding an order line to an order > E-resources details](#e-resources-details) for more information on the fields displayed in this section of the purchase order line.
@@ -1504,6 +1510,19 @@ This section displays information about invoices and invoice lines that link to 
 ### Related agreements
 
 If the PO Line has been linked to an Agreement line in the Agreements app, a Linked Agreement Lines section will display in the PO Line details pane containing information about the linked Agreement Line.  See [Agreements > Adding a PO line to an agreement line](../../erm/agreements/#adding-a-purchase-order-line-to-an-agreement-line) for more information.
+
+
+
+### Linked instance
+
+This section displays information about inventory instances that link to this POL. The linked instance table list displays the following columns:
+
+
+*   **Title.**  Title of the instance.
+*   **Contributors.** Contributors of the instance.
+*   **Publishers.** Publishers of the instance.
+*   **Relation.** 
+
 
 
 ## Editing an order line
@@ -1563,6 +1582,19 @@ Upon cancellation, the PO line **Receipt status** and **Payment status** values 
 2. In the **PO Line details** pane, click **Actions > Delete**.
 
 3. In the Delete order line dialog, click **Delete**. A confirmation message appears and the order line is deleted.
+
+
+## Printing an order line
+
+To print or save a PDF file containing a snapshot of key information about an order line, follow these steps:
+
+1. [Search for the order line you want to print](#searching-for-order-lines) and select it.
+
+2. In the **PO Line details** pane, click **Actions > Print order line**.  A print preview window will open.
+
+3. To print the order line, adjust the printer settings as needed and select **Print**.
+
+4. To save the PDF file without printing, open the **Destination** drop-down list and select **Save as pdf**.
 
 
 ## Viewing order line version history
