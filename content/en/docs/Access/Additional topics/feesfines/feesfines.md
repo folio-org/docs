@@ -189,6 +189,16 @@ If the item is returned, and all associated fees/fines are removed, the loan is 
 
 If the library resolves all fees/fines via payment, cancellation, or waiving, FOLIO automatically closes the fee/fine, closes the loan, and changes the item’s status to **Lost and paid**.
 
+## How should I configure our lost item rules if I want an item to age to lost but I want to be able to decide whether the patron should be charged?
+
+Some libraries have guidelines where they want items to age to lost, but they don't want to assess a monetary penalty - for example, if they are not able to charge faculty, but they still want faculty borrowing to be blocked because lost items were not returned.
+
+If you want FOLIO to age items to lost but not charge a fine, the recommendation is to use a lost item policy that charges **Actual cost** and does not charge a lost item processing fee.
+
+When the item ages to lost, the loan remains open, the item has a status of **Aged to lost**, and no fines are charged. The loan can remain in this state for as long as your library defines it in the setting **For lost items not charged a fee/fine, close the loan after** in the lost item policy.
+
+If you wish to resolve the loan without charging the patron a fine, go to the **Lost items requiring actual cost** pane in the Users app. Locate the fine transaction, and choose **Do not bill** in the actions menu. That will close the loan and move the item to a status of **Lost and paid** without charging the patron.
+
 ## What happens to a fine if the item record is deleted?
 
 An item can be deleted even if an unpaid fee/fine is attached to the item record. This is a known issue, but development to address this has not yet been scheduled.
@@ -209,7 +219,7 @@ For **Set cost** charges, libraries specify a standard charge for a lost item in
 
 For **Actual cost** charges, the item ages to lost automatically, but the library must specify the amount to charge the patron manually. In the Users app, there is a reporting view that lists items that have aged to lost and need to have a charge applied. Libraries can also choose to not charge the patron for the lost item.
 
-Note that if the lost policy has an associated processing fee, the processing fee will be charged when the item ages to lost, regardless of whether 
+Note that if the lost policy has an associated processing fee, the processing fee will be charged when the item ages to lost, regardless of whether the policy uses set cost or actual cost.
 
 ## Timing considerations for when an item ages to lost
 
