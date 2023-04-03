@@ -17,7 +17,7 @@ The following are all the Circulation Settings permissions:
 
 * **Settings (Circ): Can create, edit and remove circulation rules.** This permission allows the user to create, read, update, and delete circulation rules.
 * **Settings (Circ): Can create, edit and remove other settings.** This permission allows the user to create, read, update, and delete other settings.
-* **Settings (Circ): Can create, edit and remove staff slips.** This permission allows the user to create, read, update, and delete staff slips.
+* **Settings (Circ): Can create, edit and remove staff slips.** This permission allows the user to create, read, and update staff slips. Note that the content of staff slips can be erased in the editor, but the staff slip itself cannot be deleted.
 * **Settings (Circ): Can create, edit and remove fixed due date schedules.** This permission allows the user to create, read, update, and delete fixed due date schedules.
 * **Settings (Circ): Can create, edit and remove loan policies.** This permission allows the user to create, read, update, and delete loan policies.
 * **Settings (Circ): Can create, edit and remove overdue fine policies.** This permission allows the user to create, read, update, and delete overdue fine policies.
@@ -136,6 +136,18 @@ Staff slips allow you to configure the information that appears on your staff sl
 * **Request delivery.** This slip is available in the Check in app, when you check in an item with a delivery request.
 * **Transit.** This slip is available in the Check in app, when you check in an item that is in transit to another location.
 
+### Using tokens with staff slips
+
+There are six categories of available tokens for use with staff slips, listed in the table below. All of the categories appear as options in the staff slip editor, but some categories will only populate with information for some types of staff slips. 
+
+|Token category|Populates with these staff slips|Does not populate with these staff slips|
+|---|---|---|
+|Item|Hold slip, Pick slip, Request delivery, Transit||
+|Effective location|Hold slip, Pick slip, Request delivery, Transit||
+|Staff slip|Hold slip, Pick slip, Request delivery, Transit||
+|Request|Hold slip|Pick slip, Request delivery, Transit| 
+|Request delivery address|Request delivery|Hold slip, Pick slip, Transit|
+|Requester|Hold slip, Pick slip, Request delivery|Transit|
 
 ### Configuring a staff slip
 
@@ -314,7 +326,7 @@ If you selected **Rolling**, you will see the following fields:
 
 Determine whether you want to allow recalls and/or holds.
 
-All of the fields in this section are optional. Note: If you leave them blank, the policy does not allow recalls or holds.
+All of the fields in this section are optional. If you leave them blank, the recall return interval and minimum guaranteed loan period default to zero.
 
 
 ##### Recalls
