@@ -61,39 +61,6 @@ Use this setting to configure the reasons for an order closure. FOLIO provides d
 2. In the **Delete Reason** dialog, click **Delete**. A confirmation message appears and the Reason is deleted.
 
 
-## Settings > Orders > General > Inventory interactions
-
-Use this setting to determine how materials you are ordering interact with the Inventory app. The settings you select here determine the default interaction based on the Order format (Electronic, Physical, P/E Mix, or Other) you select for the order line item. The interactions you select can be changed when you add or edit an order line, in the Create inventory field of the Physical resource or E-resource details section of the order line, if needed.
-
-There are four default interactions you can select:
-
-
-
-*   **Instance, holdings, item.** Once the order is opened, an instance, holdings, and item are found or created in the Inventory app.
-*   **Instance.** Once the order is opened, an instance is found or created in the Inventory app.
-*   **Instance, holdings.** Once the order is opened, an instance and holdings are found or created in the Inventory app.
-*   **None.** Nothing is found or created in the Inventory app.
-
-
-## Settings > Orders > General > Instance status
-
-Use this setting to determine the instance status that is assigned to the instances that are created through opening an order. Note: If you have not selected a default, then you may encounter problems when trying to receive an item or when you close an order.
-
-For information on managing instance status values, see Settings > Inventory > Instances > Instance status types.
-
-
-## Settings > Orders > General > Instance type
-
-Use this setting to determine the instance resource type that is assigned to the instances that are created through opening an order. Note: If you have not selected a default, then you may encounter problems when trying to receive an item or when you close an order.
-
-For information on managing instance type values, see Settings > Inventory > Instances > Resource types.
-
-
-## Settings > Orders > General > Loan type
-
-Use this setting to determine the loan type that is assigned to the items that are created through opening an order. Note: If you have not selected a default, then you may encounter problems when trying to receive an item or when you close an order. For information on managing loan type values, see Settings > Inventory > Loan types.
-
-
 ## Settings > Orders > General > Order templates
 
 Use this setting to configure your order templates. Order templates can be used to populate consistent information that you may always fill out when ordering from a specific vendor, for example. Note: Any order templates you create are shared among all users who have permission to create orders.
@@ -218,21 +185,38 @@ Use this setting to configure suffixes, which are used in orders. You can add su
 2. In the **Delete Suffix** dialog, click **Delete**. A confirmation message appears and the Suffix is deleted.
 
 
-## Settings > Orders > Inventory interactions > Instance matching
+## Settings > Orders > Inventory interaction > Instance matching
 
-This setting enables you to disable the default matching on instances. If you prefer to disable  instance matching and therefore always create a new instance for a POL, select the checkbox, **Disable instance matching**.
+Use this setting to disable the default matching on instances. When orders are opened they are potentially connected to instances by an automated system search on existing intentory instances by product id. If you want to disable instance matching and therefore always create a new instance when opening an order, select the checkbox, **Disable instance matching.** 
 
-## Settings > Orders > Inventory interactions > Inventory interaction defaults
 
-Use this setting to define the default values that will appear in the purchase order line **Create inventory** field depending on the order format: Electronic, Physical, and Other.  Use the drop down list to select the appropriate default value which will determine the order and inventory interaction when an order is opened:
+## Settings > Orders > Inventory interaction > Inventory interactions defaults
 
-*   **Instance, holdings, item.**  Create an instance, holding, and item.  A location value will also be required on the purchase order line.
-*   **Instance.**  Create an instance only.
-*   **Instance, holdings.** Create an instance and holding.  A location value will also be required on the purchase order line.
-*   **None.**  No interaction with inventory occurs, nothing is created in Inventory.
+Use this setting to determine how materials you are ordering interact with the Inventory app. The settings you select here determine the default interaction based on the Order format (Electronic, Physical, P/E Mix, or Other) you select for the order line item. The interactions you select can be changed when you add or edit an order line, in the Create inventory field of the Physical resource or E-resource details section of the order line, if needed.
 
-## Settings > Orders > Inventory interactions > Instance status
+There are four default interactions you can select:
 
-## Settings > Orders > Inventory interactions > Instance type
 
-## Settings > Orders > Inventory interactions > Loan type
+*   **Instance, holdings, item.** Once the order is opened, an instance, holdings, and item are found or created in the Inventory app.
+*   **Instance.** Once the order is opened, an instance is found or created in the Inventory app.
+*   **Instance, holdings.** Once the order is opened, an instance and holdings are found or created in the Inventory app.
+*   **None.** Nothing is found or created in the Inventory app.
+
+
+## Settings > Orders > Inventory interaction > Instance status
+
+Use this setting to determine the instance status that is assigned to the instances that are created through opening an order. Note: If you have not selected a default, then you may encounter problems when trying to receive an item or when you close an order.
+
+For information on managing instance status values, see Settings > Inventory > Instances > Instance status types.
+
+
+## Settings > Orders > Inventory interaction > Instance type
+
+Use this setting to determine the instance resource type that is assigned to the instances that are created through opening an order. Note: If you have not selected a default, then you may encounter problems when trying to receive an item or when you close an order.
+
+For information on managing instance type values, see Settings > Inventory > Instances > Resource types.
+
+
+## Settings > Orders > Inventory interaction > Loan type
+
+Use this setting to determine the loan type that is assigned to the items that are created through opening an order. Note: If you have not selected a default, then you may encounter problems when trying to receive an item or when you close an order. For information on managing loan type values, see Settings > Inventory > Loan types.
