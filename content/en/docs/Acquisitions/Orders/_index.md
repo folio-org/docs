@@ -78,7 +78,7 @@ Once you create an order, you need to [add at least one order line to the order]
 *   **Prefix.** If applicable, select a **Prefix** for the purchase order number from the drop-down list. Prefixes are configured by your library in the Settings app. See [Settings > Orders > Prefixes]({{< ref "/settings_orders.md#settings--orders--prefixes" >}}) for more information.
 *   **PO number.** Purchase order number for the order. Whether you can edit the PO number depends on your library’s settings in the PO number Edit setting. See [Settings > Orders > Edit]({{< ref "/settings_orders.md#settings--orders--edit" >}}) for more information.
 *   **Suffix.** If applicable, select a **Suffix** for the purchase order number from the drop-down list. Suffixes are configured by your library in the Settings app. See [Settings > Orders > Suffixes]({{< ref "/settings_orders.md#settings--orders--suffixes" >}}) for more information.
-*   **Vendor.** The vendor associated with this purchase order. r. Click **Organization look-up** to select a vendor. In the **Select Organization** dialog, find the organization using the search box and/or filters. Click the organization to select it. The organization is added to the Vendor field.
+*   **Vendor.** The vendor associated with this purchase order. Click **Organization look-up** to select a vendor. In the **Select Organization** dialog, find the organization using the search box and/or filters. Click the organization to select it. The organization is added to the Vendor field.
 *   **Order type.** Select the type of order you are placing: One-time or Ongoing.
 *   **Acquisitions units.** If you want the order to be available to particular users within certain acquisitions units, enter or select the Acquisition units from the drop-down list. You can select multiple units. For more information on acquisition units, see [Settings > Acquisition units]({{< ref "/settings_acquisition_units.md" >}}).
 *   **Assigned to.** To assign the order to a user, click the **+**. In the **Select User** dialog, find the user using the search box and/or the filters. Click the user to select them. The user appears in the **Assigned to** box. If you need to remove the user, click the **x**. If you need to assign the order to a different user, click the **+** and repeat the above steps.
@@ -341,6 +341,23 @@ To search for orders within a review period, in days, follow these steps:
 
 2. Enter or select the review period, in days. The search results appear in the Orders pane.
 
+
+### Bill to
+
+To search for orders based on their bill to address, follow these steps. Addresses are created in Settings > Tenant > Addresses. 
+
+1. In the **Search & filter** pane, click **Bill to**.
+
+2. Select the address name from the drop-down list. The search results appear in the Orders pane.
+
+
+### Ship to
+
+To search for orders based on their ship to address, follow these steps. Addresses are created in Settings > Tenant > Addresses. 
+
+1. In the **Search & filter** pane, click **Ship to**.
+
+2. Select the address name from the drop-down list. The search results appear in the Orders pane.
 
 ## Exporting search results
 
@@ -754,6 +771,26 @@ To reveal fields that are hidden, as defined in [Settings > Orders > Creating an
 3. In the **Tags** pane, either select a tag from the box or enter a tag.
 
 4. Click the **X** on the Tags pane to close the pane and save the tag. The tag number updates to the number of tags applied to the order.
+
+
+
+## Viewing order version history
+
+1. [Search for the order you want to view](#searching-for-an-order) and select it.
+
+2. In the **Purchase order details** pane, click the **clock icon** which is to the right of the tag icon.
+
+3. A fourth pane titled **Version history** opens.  Versions are displayed in a card list sorted by date.  The following information is displayed for each version:  
+*   **Source.**  The user who saved this version of the order line.
+*   ***Current Version, Original Version,* or blank.**  Displays only for the current and original versions of the order line.
+*   **Changes.**  Displays the list of fields that were edited in this version.
+
+4. To view the order detail pane for a version, either click on the underlined version date mm/dd/yyyy, hh:mm or the clock icon for the version you want to open.
+
+5. The order detail pane displays the order data for that version.  Changes from the prior version are highlighted in yellow.
+
+6. To close the version history view, click on the X in the top right of the Version history pane.  The fourth pane closes and the order detail pane displays the current order version.
+
 
 
 ## Adding an order line to an order
@@ -1340,7 +1377,7 @@ To search for order lines based on their actual receipt date (when the order lin
 
 To search for order lines based on their expected receipt date, follow these steps:
 
-1. In the **Search & filter** pane, click **Subscription to**.
+1. In the **Search & filter** pane, click **Expected receipt date**.
 
 2. Enter a start date in the **From** box and an end date in the **To** box.
 
@@ -1351,31 +1388,22 @@ To search for order lines based on their expected receipt date, follow these ste
 
 To search for order lines based on their receipt due date, follow these steps:
 
-1. In the **Search & filter** pane, click **Subscription to**.
+1. In the **Search & filter** pane, click **Receipt due**.
 
 2. Enter a start date in the **From** box and an end date in the **To** box.
 
 3. Click **Apply**. The search results appear in the Order lines pane.
 
 
-### Bill to
+### Export date
 
-To search for orders based on their bill to address, follow these steps. Addresses are created in Settings > Tenant > Addresses. 
+To search for order lines based on their export date, follow these steps:
 
-1. In the **Search & filter** pane, click **Bill to**.
+1. In the **Search & filter** pane, click **Export date**.
 
-2. Select the address name from the drop-down list. The search results appear in the Orders pane.
+2. Enter a start date in the **From** box and an end date in the **To** box.
 
-
-### Ship to
-
-To search for orders based on their ship to address, follow these steps. Addresses are created in Settings > Tenant > Addresses. 
-
-1. In the **Search & filter** pane, click **Ship to**.
-
-2. Select the address name from the drop-down list. The search results appear in the Orders pane.
-
-
+3. Click **Apply**. The search results appear in the Order lines pane.
 
 
 ## Viewing order line details
@@ -1439,8 +1467,6 @@ This section displays information if the order line **Create inventory** setting
 *   **Quantity electronic.** Quantity ordered for this location for this POL.
 
 
-
-
 ### Electronic resource details
 
 This section displays information if the order includes a POL with an order format of **Electronic** or **P/E mix.** See [Adding an order line to an order > E-resources details](#e-resources-details) for more information on the fields displayed in this section of the purchase order line.
@@ -1484,6 +1510,19 @@ This section displays information about invoices and invoice lines that link to 
 ### Related agreements
 
 If the PO Line has been linked to an Agreement line in the Agreements app, a Linked Agreement Lines section will display in the PO Line details pane containing information about the linked Agreement Line.  See [Agreements > Adding a PO line to an agreement line](../../erm/agreements/#adding-a-purchase-order-line-to-an-agreement-line) for more information.
+
+
+
+### Linked instance
+
+This section displays information about inventory instances that link to this POL. The linked instance table list displays the following columns:
+
+
+*   **Title.**  Title of the instance.
+*   **Contributors.** Contributors of the instance.
+*   **Publishers.** Publishers of the instance.
+*   **Relation.** 
+
 
 
 ## Editing an order line
@@ -1543,3 +1582,34 @@ Upon cancellation, the PO line **Receipt status** and **Payment status** values 
 2. In the **PO Line details** pane, click **Actions > Delete**.
 
 3. In the Delete order line dialog, click **Delete**. A confirmation message appears and the order line is deleted.
+
+
+## Printing an order line
+
+To print or save a PDF file containing a snapshot of key information about an order line, follow these steps:
+
+1. [Search for the order line you want to print](#searching-for-order-lines) and select it.
+
+2. In the **PO Line details** pane, click **Actions > Print order line**.  A print preview window will open.
+
+3. To print the order line, adjust the printer settings as needed and select **Print**.
+
+4. To save the PDF file without printing, open the **Destination** drop-down list and select **Save as pdf**.
+
+
+## Viewing order line version history
+
+1. [Search for the order line you want to view](#searching-for-an-order) and select it.
+
+2. In the **PO Line details** pane, click the **clock icon** which is to the right of the tag icon.
+
+3. A fourth pane titled **Version history** opens.  Versions are displayed in a card list sorted by date.  The following information is displayed for each version:  
+*   **Source.**  The user who saved this version of the order line.
+*   ***Current Version, Original Version,* or blank.**  This information displays only for the current and original versions of the order line.
+*   **Changes.**  Displays the list of fields that were edited in this version.
+
+4. To view the PO Line details pane for a version, either click on the underlined version date mm/dd/yyyy, hh:mm or the clock icon for the version you want to open.
+
+5. The PO Line details pane displays the PO line data for that version.  Changes from the prior version are highlighted in yellow.
+
+6. To close the version history view, click on the X in the top right of the **Version history** pane.  The fourth pane closes and the PO Line details pane displays the current order version.
