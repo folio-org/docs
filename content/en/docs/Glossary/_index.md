@@ -480,6 +480,10 @@ weight: 800
    </td>
   </tr>
   <tr>
+    <td>RTAC</td>
+    <td>RTAC stands for <b>Real Time Availability Checker</b>. It is a FOLIO module that libraries can use to provide holdings and item availability in a discovery layer. RTAC is configured by your FOLIO systems administrator and does not appear in the FOLIO user interface.</td>
+  </tr>
+  <tr>
    <td>Service point
    </td>
    <td>A service point in FOLIO is a setting that libraries configure to support circulation functions. Every FOLIO item must have a location, and every location must have an attached service point. You must set up at least one service point to be able to check items in and out; allow patrons to request items; charge and collect fines; and put items in transit between locations at your library.
