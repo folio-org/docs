@@ -1,7 +1,7 @@
 ---
 title: "Settings > Finance"
 linkTitle: "Finance"
-date: 2023-04-23
+date: 2023-04-03
 weight: 120
 tags: ["subtopic"]   
 ---
