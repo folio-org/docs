@@ -1,7 +1,7 @@
 ---
 title: "Invoices"
 linkTitle: "Invoices"
-date: 2022-12-02
+date: 2023-04-03
 weight: 20
 tags: ["parenttopic"]
 ---
@@ -169,7 +169,6 @@ You must **add or create new invoice lines** before the invoice can be approved 
 ## Adding an invoice line to an invoice
 
 
-
 1. Click **Add.**
 2. In the **Select order lines** window, in the **Search & filter** box, enter keywords to search for the purchase order line (POL).
 3. Optional: Filter results.
@@ -184,8 +183,7 @@ If the selected purchase order line has a payment status of **Fully paid**, a re
 
 ## Creating a new invoice line
 
-To create an invoice line that is not associated with an existing purchase order line, follow these steps:
-
+To create an invoice line that is not associated with an existing purchase order line, follow the steps below. To process a credit invoice, follow the same steps using a negative value amount.  Once the invoice is set to Pay, a new transaction appears on the budget with a type of **Credit.**  See [Finance > Viewing transactions for a current budget](../finance/#viewing-transactions-for-a-current-budget) for more information on viewing budget transactions.
 
 
 1. Click **New.**
@@ -223,7 +221,7 @@ When vendor EDIFACT format invoices are loaded to the system through data import
 *   **Accounting code.** The accounting code for the invoice line. If you select an account number from the drop-down list, the associated accounting code will display here. Note: If the **Export to accounting** checkbox is active, the **Accounting code** is required.
 *   **Account number.** The account number for the invoice line. This drop-down list contains vendor account numbers for the vendor selected on the invoice if any exist on the vendor’s Organization record. If one or more vendor accounts exist in the Organization record for the vendor, the first account appears in this field as the default value.
 *   **Quantity.** The number of items in the invoice line.
-*   **Sub-total.** The amount of this invoice line. Note: The subtotal amount must be distributed to one or more funds and is expressed in the currency defined in [Settings > Tenant > Language and localization]({{< ref "settings_tenant#settings--tenant--language-and-localization" >}}).
+*   **Sub-total.** The amount of this invoice line. Note: The subtotal amount must be distributed to one or more funds and is expressed in the currency defined in [Settings > Tenant > Language and localization]({{< ref "settings_tenant#settings--tenant--language-and-localization" >}}).  Negative values are accepted and handled as a credit transaction
 *   **Release encumbrance.** Check this box to release the remaining value of the related encumbrance(s) from the fund to which it was assigned when the invoice transitions to **Approved** status. If this box is unchecked, any related encumbrance value that remains will persist after the invoice is **Approved** and the order payment status of any related Purchase Order Lines (POL) will not transition to **Fully Paid** until the encumbrances are released.  For example, if the POL cost was $50, but the invoice amount is $40 and **Release encumbrance** is unchecked, the $10 difference will persist as an encumbrance on the fund indicated in the fund distribution.
 
 
@@ -239,7 +237,7 @@ The **Remaining amount to be distributed** is calculated based on the **Sub-tota
 *   **Adjustment.** The adjustments that apply to the funds for the invoice.
 *   **Fund ID.** The fund to which you are distributing the amount.  Note: The use of acquisitions units may restrict which funds appear in this list. If an acquisition unit is set up to restrict view permissions, then only funds that are assigned to the same acquisition unit as the user will display in the drop-down list.  For more information, see [Settings > Acquisition units](../../settings/settings_acquisition_units/settings_acquisition_units/).
 *   **Expense class.** The expense class within the fund, to which you are distributing the amount. This field will only display if the selected Fund ID has any associated Expense classes.
-*   **Value.** The monetary value to apply to the fund, expressed as a percentage or currency value.
+*   **Value.** The monetary value to apply to the fund, expressed as a percentage or currency value. Negative values are accepted and handled as a credit transaction.
 *   **Type.**  Select whether the **Value** should be expressed as a percentage or currency value.
 *   **Amount.** The amount of money committed to the fund.
 
