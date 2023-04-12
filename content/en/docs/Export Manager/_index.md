@@ -15,7 +15,7 @@ Note: For information on assigning permissions to users, see [Assigning permissi
 
 The following are all the Export manager app permissions:
 
-*   **Export manager: All.** This permission enables the Export manager app for the user and allows the user to view and access logs, download files from the Export manager app, and download and re-send EDIFACT export jobs. 
+*  **Export manager: All.** This permission enables the Export manager app for the user and allows the user to view and access logs, download files from the Export manager app, and download and re-send EDIFACT export jobs. 
 *  **Export manager: Download and re-send files.** This permission allows the user to download and re-send EDIFACT export jobs.
 
 Since exports begin in other FOLIO apps, not in the Export Manager app, a user needs additional permissions to begin an export, but may download files given the **Export manager: All** permission.
@@ -42,7 +42,7 @@ The **All** tab results pane  displays the following columns:
 *   **Description.** Appears on Bursar exports with a summary count of charges and refunds  included in the job.
 *   **Source.** The user who initiated the export. Entries may include ‘System’ for automated exports or ‘folio’ for jobs resulting from bulk edit or a re-run EDIFACT export.
 *   **Start time.** Date and time the export began.
-(*   **End time.** Date and time the export finished.
+*   **End time.** Date and time the export finished.
 
 Click on any column name, except **Description** and **Source**, to sort by that column.
 
@@ -62,21 +62,21 @@ For jobs with a status of **Successful**, click on the hyperlinked job ID to dow
 
 To view additional details about the job, including **Error details**, click on the job row.
 
-### Searching and filtering jobs
+##  Searching and filtering jobs
 
 You can search for jobs in the Search & filter pane. To search for a job by **Job ID**, enter your search terms into the box.
 
 Search for logs by selecting any of the filters in the Search & filter pane. Additionally, you can apply the filters after you perform a search to limit your results. See the sections below for more information.
 
-####Status####
+### Status
 
 To filter by **Status**, select a filter  filter:
 *   **Scheduled.** This export has been scheduled, but not yet run.
-*     **In progress.** This export is currently running.
-* **Successful.** This export has run to completion.
+*   **In progress.** This export is currently running.
+*   **Successful.** This export has run to completion.
 *   **Failed.** This export could not be performed. Error details are available by clicking on rows with this status.
 
-####Job type####
+### Job type
 
 To filter by **Job type**, select a filter:
 * **Bursar.** This export contains charges and/or refunds transferred to the bursar. Output format is .dat.
@@ -84,13 +84,13 @@ To filter by **Job type**, select a filter:
 * **eHoldings.** This export contains package and title details from eHoldings. Output format is .csv.
 * **Bulk edit** This export contains downloaded information from Bulk edit. Output format is .csv.
 
-####System####
+### System
 
 To filter by whether or not the job was system-generated, select one of the following:
-***Yes.** The export was initiated automatically.
+* **Yes.** The export was initiated automatically.
 * **No.** A user manually initiated the export.
 
-####Source####
+### Source
 
 To search for logs based on the user who initiated the export:
 In the **Search & filter** pane, click **Source**.
@@ -98,7 +98,7 @@ Click **Find user**.
 In the **Select User** dialog, search for the user.
 Select the user you want to filter by. 
 
-####Start time####
+### Start time
 
 To search for logs based on the date they started running:
 
@@ -106,7 +106,7 @@ In the **Search & filter pane**, click **Start time**.
 Enter a start date in the **From** box and an end date in the **To** box.
 Click **Apply**. The search results appear in the **Export jobs** pane.
 
-####End time####
+### End time
 
 To search for logs based on the date they ended running:
 
@@ -114,7 +114,7 @@ In the **Search & filter pane**, click **End time**.
 Enter a start date in the **From** box and an end date in the **To** box.
 Click **Apply**. The search results appear in the **Export jobs** pane.
 
-####Export method####
+### Export method
 
 This filter is available only on the **Organizations** pane . To search for exports by export method:
 
@@ -123,7 +123,7 @@ Select the export method from the drop-down list.
 
 The search results appear in the **Export jobs** pane.
 
-####Organizations####
+### Organizations
 
 This filter is available only on the **Organizations** pane. 
 
@@ -135,7 +135,7 @@ In the **Select Organization** dialog, search for the organization.
 Select the organization you want to filter by. The search results appear in the **Export jobs** pane.
 
 
-### Errors in jobs
+## Errors in jobs
 
 If a job has a status of **Failed**, click on the row to view additional information, including **Error details**.
 
