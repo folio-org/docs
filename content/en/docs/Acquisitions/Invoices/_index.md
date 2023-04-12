@@ -116,7 +116,7 @@ If creating a new adjustment that doesn’t exist as a preset adjustment, click 
 The vendor information section is required.
 
 1. Enter the **Vendor invoice number** provided to you by the vendor.
-2. To select the vendor, click **Organization look-up**. In the **Select Organization** dialog, find the organization record for the vendor using the search box and/or filters. Click the organization to select it.  Note: The organization selected for payment on an invoice must be a vendor.  The system will allow you to select a non-vendor organization, but you will be prevented from Approving an invoice associated with a non-vendor organization.  See [Acquisitions > Organizations > Creating a vendor]({{< ref "organizations#creating-a-vendor" >}}) for more information.
+2. To select the vendor, click **Organization look-up**. In the **Select Organization** dialog, find the organization record for the vendor using the search box and/or filters. Click the organization to select it.  Note: The organization selected for payment on an invoice must be a vendor.  The system will allow you to select a non-vendor organization, but you will be prevented from Approving an invoice associated with a non-vendor organization.  See [Organizations > Creating a vendor]({{< ref "organizations#creating-a-vendor" >}}) for more information.
 3. The vendor’s Accounting code from their Organization record summary section will display automatically once you select the vendor and save the invoice. If the vendor has multiple accounts with different accounting codes, select the appropriate accounting code  from the drop-down list. For more information about Organization accounting codes, see [Organizations > Creating an Organization](../organizations/#creating-an-organization).
 
 
@@ -265,7 +265,8 @@ You can search for invoices in the **Search & filter** pane. To search for invoi
 
 *   **All.** Searches through all fields in the drop-down list. This is the default search.
 *   **Voucher number.** The voucher number for the invoice.
-*   **Vendor Invoice Number.** The vendor invoice number for the invoice. Click on the clipboard icon beside the vendor invoice number to copy the value to your clipboard.
+*   **Vendor Invoice Number.** The vendor invoice number for the invoice. 
+*   **PO number.** The purchase order number associated with the invoice.
 *   **Accounting Code.** The accounting code for the invoice.
 
 You can also search for invoices by selecting any of the filters in the **Search & filter** pane. Additionally, you can apply the filters after you perform a search to limit your results. See the sections below for more information on the filters.
@@ -524,7 +525,7 @@ Click **Export**.  The file downloads to your local download location.
 *   Invoice line adjustments
 *   Total
 *   Invoice line fund distributions
-*   External account number
+*   External account number (includes external account number from fund and expense class external account number extension, if applicable)
 *   Vendor reference number, reference type
 *   Invoice line tags
 *   Voucher number
