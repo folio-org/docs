@@ -1,7 +1,7 @@
 ---
 title: "Receiving"
 linkTitle: "Receiving"
-date: 2022-10-17
+date: 2023-04-23
 weight: 50
 tags: ["parenttopic"]
 ---
@@ -574,7 +574,7 @@ The Receive function can be used to receive multiple pieces at once.
 
 
 1. Using the **Search & filter** pane, find the receiving title you want to receive and select it.
-2. In the Expected section of the receiving title, click **Receive**.
+2. In the Expected section of the receiving title, click the **Action** button and select **Receive**.
 3. A receiving note popup window will display if the purchase order line field **[Must acknowledge receiving note]({{< ref "/orders.md#item-details" >}})** is checked.  Click **Continue** to close the popup window.
 4. In the receiving title window, all of the expected pieces are displayed. Here, you can make changes to the pieces. See below for more information.
 5. Select the checkbox beside each piece you want to receive. Note: If you want to receive all of the pieces, click the top checkbox.
