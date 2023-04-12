@@ -267,6 +267,18 @@ Editing a reserve item allows you to change or add information to the following 
 3. In the **Item title** window, make your changes.
 4. Click **Save & close**. The item is updated.
 
+## Managing copyright information on a reserve record
+
+Each reserve item contains an optional section to track copyright information. This allows libraries that need to track this information to keep it as part of the reserve for later reporting and payment purposes. 
+
+The most common use case for these fields is when an electronic item is put on reserve, but there is no built-in restriction on using it for other items. There are no automated workflows that use these fields. They are all optional.
+
+* **Copyright status**. This is a drop-down. Your library can configure the drop-down values in **Settings\> Courses**.
+* **Total number of pages in item**. Since most copyright tracking is on scans of physical items, you can track the pages for the entire item here.
+* **Total number of pages used**. With this field, you can track the number of scanned pages as part of the reserve.
+* **Total % of pages used**. This number must be calculated by the library staff member. Libraries that owe copyright payment can in some cases determine what they owe based off of the percentage of the work used.
+* **Payment based on**. This is a free-text field. Most libraries will put one of two values - **Usage** or **Enrollment**.
+* **Additional sections of this item used**. For some items, libraries will put multiple scans from the same book on reserve - for example, a book with ten scholarly articles, and three articles are each scanned and put on reserve as distinct items. In those cases, libraries can check this box to indicate that the items should be linked together in order to facilitate proper copyright payment calculation.
 
 ## Removing a reserve item from a course
 
