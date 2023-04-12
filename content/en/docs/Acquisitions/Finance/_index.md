@@ -1,7 +1,7 @@
 ---
 title: "Finance"
 linkTitle: "Finance"
-date: 2022-12-02
+date: 2022-04-03
 weight: 10
 tags: ["parenttopic"]
 ---
@@ -400,6 +400,8 @@ The Ledger information section contains the following fields:
 *   **Awaiting Payment.** The sum of all pending payment transaction amounts against all fund budgets for the ledger during the current fiscal year.  
 *   **Expended.** The sum of all payment transaction amounts minus credit transaction amounts against all fund budgets for the ledger during the current fiscal year.
 *   **Unavailable.** The total amount unavailable across all fund budgets for the ledger during the current fiscal year, calculated as the sum of the encumbered, awaiting payment, and expended amounts.
+*   **Over encumbrance.** The total amount encumbered minus the total funding amount for all fund budgets for the ledger during the current fiscal year.
+*   **Over expended.**  The total amount expended minus the total funding amount for all fund budgets for the ledger during the current fiscal year.
 *   **Available balance.** Total amount available across all fund budgets for the ledger during the current fiscal year, calculated as **Total funding** amount minus the **Unavailable** amount.  Note: In this version of FOLIO, negative available balances display as $0.  For example, if the allowed expenditure field for the budget is blank, then there are no restrictions on how much can be expended against the budget.  If transactions have processed that exceed the total funding amount by $100, then the amount in the Available balance will display as $0 rather than negative ($100).  Negative balance amounts will display in a future version of the system.
 
 
@@ -521,6 +523,8 @@ The group details pane contains group financial summary information and lists al
 *   **Awaiting Payment.** The sum of pending payment transaction amounts against all fund budgets for the group during the fiscal year selected.  
 *   **Expended.** The sum of payment transaction amounts minus credit transaction amounts against all fund budgets for the group during the fiscal year selected.
 *   **Unavailable** Total amount unavailable across all fund budgets for the group during the fiscal year selected, calculated as the sum of the encumbered, awaiting payment, and expended amounts.
+*   **Over encumbrance.** The total amount encumbered minus the total funding amount for all fund budgets for the group during the current fiscal year.
+*   **Over expended.**  The total amount expended minus the total funding amount for all fund budgets for the group during the current fiscal year.
 *   **Available balance.** Total amount available across all fund budgets for the group during the fiscal year selected, calculated as **Total funding** amount minus the **Unavailable** amount.  Note: In this version of FOLIO, negative available balances display as zero.  For example, if the allowed expenditure field for the budget is blank, then there are no restrictions on how much can be expended against the budget.  If transactions exceed the total funding amount by $100, then the amount in the Available balance will display as zero rather than negative ($100).  Negative balance amounts will display in a future version of the system.
 
 
