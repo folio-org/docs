@@ -198,11 +198,6 @@ enable = false
 	url = "https://slack-invitation.folio.org/"
 	icon = "fab fa-slack"
         desc = "Chat with other project developers"
-[[params.links.developer]]
-	name = "Discuss"
-	url = "https://discuss.folio.org/"
-	icon = "fa fa-comment-alt"
-        desc = "Discuss development issues around the project"
 
 #From Arnon
 [[menu.main]]
@@ -217,8 +212,3 @@ enable = false
     url = "https://wiki.folio.org"
     weight = 20
 
-[[menu.main]]
-    identifier = "discussion"
-    name = "Discussion Boards"
-    url = "https://discuss.folio.org"
-    weight = 30
