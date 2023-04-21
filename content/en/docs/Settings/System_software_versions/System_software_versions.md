@@ -1,7 +1,7 @@
 ---
 title: "Settings > Software versions"
 linkTitle: "Software versions"
-date: 2022-04-14
+date: 2023-04-21
 weight: 500
 tags: ["subtopic"]
 ---
@@ -39,6 +39,8 @@ Look for these modules to find out which FOLIO flower release the system runs. T
 
 | mod-configuration | mod-inventory-storage | mod-login-saml | release |
 | ----- | ------- | ----- | - |
+| 5.9.1 | 26.0.0  | 2.6.1 | [Orchid R1-2023-GA](https://github.com/folio-org/platform-complete/blob/R1-2023-GA/install.json) |
+| 5.9.1 | 25.0.4  | 2.5.1 | [Nolana R3-2022-hotfix-1](https://github.com/folio-org/platform-complete/blob/R3-2022-hotfix-1/install.json) |
 | 5.9.0 | 25.0.3  | 2.5.0 | [Nolana R3-2022-GA](https://github.com/folio-org/platform-complete/blob/R3-2022-GA/install.json) |
 | 5.8.0 | 24.1.0  | 2.4.9 | [Morning Glory R2-2022-hotfix-1](https://github.com/folio-org/platform-complete/blob/R2-2022-hotfix-1/install.json) |
 | 5.8.0 | 24.1.0  | 2.4.9 | [Morning Glory R2-2022-GA](https://github.com/folio-org/platform-complete/blob/R2-2022-GA/install.json) |
