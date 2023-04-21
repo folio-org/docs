@@ -1,7 +1,7 @@
 ---
 title: "Finance"
 linkTitle: "Finance"
-date: 2022-04-03
+date: 2022-04-18
 weight: 10
 tags: ["parenttopic"]
 ---
@@ -1039,11 +1039,11 @@ The information in this section defines rollover behavior for budgets by fund ty
 
 
 *   **Rollover allocation.**  Check this box if you want the upcoming fiscal year budget initial allocation amount to equal the current fiscal year budget total allocation amount.
-*   **Adjust allocation, %.**  Check this box if you want the upcoming fiscal year budget initial allocation amount to equal the current fiscal year budget total allocation amount adjusted by this percentage.  For example, if the current budget total allocation is $1000 and you enter two percent, the upcoming budget initial allocation value is set to $1020.
-*   **Rollover available.**  Check this box if you want the available amount of the current fiscal year budget to rollover to the upcoming fiscal year budget.
-*   **Add available as.**  Indicates whether any available amounts that are rolled over should be categorized as a **Transfer** or an **Allocation.**
+*   **Adjust allocation, %.**  The percentage amount to be applied to the current fiscal year budget total allocation amount to set the upcoming fiscal year's budget initial allocation amount. For example, if the current budget total allocation is $1000 and you enter two percent, the upcoming budget initial allocation value is set to $1020.
+*   **Rollover budget value.**  Select which value from the current fiscal year budget to consider as the upcoming budget inital allocation value: Select **None** to ignore the current fiscal year budget values, **Available** to use the available amount, and **Cash balance** to use the remaining cash balance which is the total funding amount minus the total expended amount.  See [Viewing budget details](#viewing-budget-details) for a full description of the Available and Cash balance values.
+*   **Rollover value as.**  Indicates whether any available amounts that are rolled over should be categorized as a **Transfer** or an **Allocation.**
 *   **Set allowances.** Check this box to activate the  **Allowed encumbrance, %.** and **Allowed expenditure, %.** fields. 
-*   **Allowed encumbrance, %.**  The percentage amount to be applied to the upcoming budget’s allocated amount to calculate allowed encumbrances against funds of this fund type.  To allow all encumbrances with no limit, leave this field blank.  For example, if the budget’s total allocated amount is $1000 and you set an **Allowed encumbrance, %** of 110 percent, the system will allow payment of invoices up to $1100.  Similarly, a value of 90 percent will limit expenditures to $900.   Note: You can only enter a value in this field if the **Set allowances** checkbox is checked.
+*   **Allowed encumbrance, %.**  The percentage amount to be applied to the upcoming fiscal year's budget allocated amount to calculate allowed encumbrances against funds of this fund type.  To allow all encumbrances with no limit, leave this field blank.  For example, if the budget’s total allocated amount is $1000 and you set an **Allowed encumbrance, %** of 110 percent, the system will allow payment of invoices up to $1100.  Similarly, a value of 90 percent will limit expenditures to $900.   Note: You can only enter a value in this field if the **Set allowances** checkbox is checked.
 *   **Allowed expenditure, %.**  The percentage amount to be applied to the upcoming budget’s allocated amount to calculate allowed expenditures against funds of this fund type.  To allow all expenditures with no limit, leave this field blank.  For example, if the budget’s total allocated amount is $1000 and you set an **Allowed expenditure, %** of 110 percent, the system will allow payment of invoices up to $1100.  Similarly, a value of 90 percent will limit expenditures to $900.   Note: You can only enter a value in this field if the **Set allowances** checkbox is checked.
 
 
