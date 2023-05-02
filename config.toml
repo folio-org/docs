@@ -121,6 +121,10 @@ algolia_docsearch = true
 offlineSearch = false
 
 [[params.versions]]
+  version = "Orchid"
+  url = "https://orchid.docs.folio.org/docs/"
+
+[[params.versions]]
   version = "Nolana"
   url = "https://nolana.docs.folio.org/docs"
 
