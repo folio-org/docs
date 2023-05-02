@@ -1,7 +1,7 @@
 ---
 title: "Settings > Inventory"
 linkTitle: "Inventory"
-date: 2022-05-04
+date: 2021-10-27
 weight: 130
 tags: ["subtopic"]   
 ---
@@ -37,7 +37,7 @@ The following are all the Inventory Settings permissions presented in the order 
 -   **Settings (Inventory): Create, edit, delete statistical codes.** This permission allows the user to create, read, update, and delete statistical codes.
 -   **Settings (Inventory): Create, edit, delete URL relationships.** This permission allows the user to create, read, update, and delete URL relationships.
 -   **Settings (Inventory): Create, edit, delete call number types.** This permission allows the user to create, read, update, and delete call number types.
--   **Settings (Inventory): Display list of settings pages.** This permission allows the user to 
+-   **Settings (Inventory): Display list of settings pages.** This permission allows the user to view the list of settings for the Inventory app.
 
 ## Settings \> Inventory \> Alternative title types
 

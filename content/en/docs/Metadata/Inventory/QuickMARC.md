@@ -1,6 +1,6 @@
 ---
 title: "quickMARC"
-linkTitle: "quickMARC"
+linkTitle: "QuickMARC"
 weight: 4
 tags: ["subtopic"]   
 ---
@@ -62,7 +62,27 @@ In the Edit MARC record window, you can perform the following actions:
 -   **Move a field up.** To move a field up, click the **up arrow** in the row of the field you want to move. The field is moved one row up.
 -   **Move a field down.** To move a field down, click the **down arrow** in the row of the field you want to move. The field is moved one row down.
 -   **Edit text within a field.** Click into a field to make changes to the text.
-Once you have made your desired changes, click **Save & close**. A confirmation record appears and the record is updated.
+Once you have made your desired changes, click **Save & close**. A confirmation record appears and the record is updated. Alternatively, click **Save & keep editing** to save the current changes and stay in edit mode.
+
+### Linking a field to an authority record
+
+Link icons display to the right of the following MARC tags:
+100, 110, 111, 600, 610, 611, 650, 651, 700, 710, 711
+
+To link a field to an authority record:
+Click on the link to the right of the selected field.
+In the MARC authority Search & filter modal, verify that the desired type of entity and authority source are selected.
+Search by text string or by identifier.
+Select and open the appropriate authority record from the results list.
+Click the **Link** button in the upper right.
+The access point in the bibliographic record will exactly match the authorized access point in the authority record and the $0 will be populated.
+The link icon to the right of the field is replaced with **Unlink from MARC Authority record** and **View MARC authority record** icons.
+When a field is linked, all subfields that are part of the access point, as well as the $0 (identifier) cannot be edited.
+
+To unlink a field from an authority record:
+Click on the **Unlink from MARC Authority record** icon to the right of the selected field.
+Click again on **Unlink** in the verification modal.
+The field is no longer linked and all subfields can be edited.
 
 ### Validations and restrictions
 
@@ -100,15 +120,16 @@ There are three record statuses:
 -   **Error.** Something is preventing an update from moving to the Inventory record or SRS.
 
 ## Creating a new MARC record using quickMARC
+ 
+To create a new **MARC bibliographic record**, derive a new record from an existing MARC record.
 
-### To create a new **MARC bibliographic record**, derive a new record from an existing MARC record.
-
-1.  Start with an instance record that has an underlying MARC source record and the same [Resource type](../#resource-type) and [Format](../#format) as the record you wish to create.
+1.  Start with an instance record that has an underlying MARC source record and the same [Resource type](../inventory/#resource-type) and [Format](../#format) as the record you wish to create.
 2.  Click **Actions \> Derive new MARC bibliographic record.**
 3.  Edit the new record following the instructions in [Editing a MARC record using quickMARC](#editing-a-marc-record-using-quickmarc).
 
-### To create a new **MARC holdings record**
+To create a new **MARC holdings record**
 
 1.   [Find the instance record](../#searching-for-a-record) to which you want to add holdings and select it. The instance source must be MARC.
 2.  Click **Actions \> Add  MARC holdings record.** 
 3.  Edit the new record following the instructions in [Editing a MARC record using quickMARC](#editing-a-marc-record-using-quickmarc).
+

@@ -1,7 +1,7 @@
 ---
 title: "Inventory"
 linkTitle: "Inventory"
-date: 2022-11-21
+date: 2022-04-21
 weight: 30
 tags: ["parenttopic"]
 ---
@@ -337,7 +337,7 @@ Note: Adding a classification is optional, but if you click **Add classification
 
 ### Instance relationship (analytics and bound-with)
 
-In the Instance relationship section, you can add any relationships between the instance and other instances.
+In the Instance relationship section, you can add any relationships between the instance and other instances. This is not the same as the Bound-with data in the Holdings record.
 
 -   **Parent instances.** The parent instance is the record chosen as the primary record and to which all other child records are linked. Information about parent instances (Title, Instance HRID, Publisher, Publication date, ISBN, ISSN) including a link to the corresponding parent instance record displays on the child instance record(s).
 -   **Child instances.** A child instance record is any record that has been associated with a parent record. Information about child instances (Title, Instance HRID, Publisher, Publication date, ISBN, ISSN) including a link to each corresponding child instance record displays on the parent instance record.
@@ -460,7 +460,8 @@ A check in or check out note is required by default.
 Note: Import options are configured in [Settings \> Inventory \> Integrations]((../../settings/settings_inventory/settings_inventory/#settings--inventory--integrations). 
 
 1.  In the default or middle pane, click **Actions > Import**.
-2.  In the **Single Record Import** dialog box, select the source of the record to be imported (e.g., Library of Congress, OCLC WorldCat, BnF).
+2.  In the **Single Record Import** dialog box, verify or select the External target (source) of the record to be imported.
+3.  Verify or select the profile to be used.
 3.  Enter the record number, without any prefixes, in the **Enter [source] identifier** box.
 4.  Click **Import**.
 
@@ -830,6 +831,7 @@ To search, first select the record type (instance, holdings, or item); enter you
 -   **Effective call number (item), shelving order.** Retrieves Instance records based on the shelving order element in the item record.
 -   **Instance HRID.** Human readable identifier for the instance record.
 -   **Instance UUID.** Universally unique identifier for the instance record.
+-   **Authority UUID.** Universally unique identifier for an authority record stored in FOLIO. This searches for UUIDs in bibliographic data where a field is linked to and controlled by an authority record. This value is stored in a $9 the bibliographic record (visible via “View source”).
 -   **All.** Searches across all fields in all record types. May impact performance.
 -   **Query search.** A search for advanced users to query by property names using CQL.
 -   **Browse call numbers.** The call number browse is based on the shelving order element in the item record; only Instances with item records will be retrieved. It includes LC, Dewey Decimal, NLM, SuDoc and Local call numbers.
@@ -1048,13 +1050,14 @@ To view an item record, follow these steps:
 
 ## Editing an instance record with underlying MARC
 
-See [Editing a MARC record using quickMARC](quickmarc/#editing-a-marc-record-using-quickmarc).
+See [Editing a MARC record using quickMARC](quickmarc/#Editing a MARC record using quickmarc).
 
 ## Updating an instance record with underlying MARC using the Overlay source bibliographic record action in FOLIO
 
 1.  [Find the instance](#searching-for-a-record) you want to edit and select it.
 2.  In the **Instance record details** pane, click **Actions \> Overlay source bibliographic record**.
-3. In the **Single Record Import** dialog box, select the source of the record to be imported (e.g., Library of Congress, OCLC WorldCat, BnF).
+3. In the **Re-import** dialog box, verify or select the External target (source) of the record to be imported.
+3.  Verify or select the profile to be used to overlay the current data.
 4.  Enter the record number, without any prefixes, in the **Enter [source] identifier** box.
 5.  Click **Import**.
 
@@ -1167,7 +1170,7 @@ Note: See **[Platform Essentials](../../platform-essentials/item-status/itemstat
 
 1.  [Find the instance](#searching-for-a-record) for which you want to add an order.
 2.  In the **Instance record details** pane, click **Actions \> New order**.
-3.  In the **Create order** dialog box, you can enter an existing PO number to add a new purchase order line to an existing purchase order: [Orders > Adding an order line to an order](../../acquisitions/orders/#adding-an-order-line-to-an-order), or leave the PO number field black to create a new purchase order and purchase order line: [Orders > Creating an order](../../acquisitions/orders/#creating-an-order)
+3.  In the **Create order** dialog box, you can enter an existing PO number to add a new purchase order line to an existing purchase order: [Orders > Adding an order line to an order](../../#acquisitions/orders--adding-an-order-line-to-an-order), or leave the PO number field black to create a new purchase order and purchase order line: [Orders > Creating an order](../../#acquisitions/orders--creating-an-order)
 
 ## Creating a new request
 
