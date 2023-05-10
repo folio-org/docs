@@ -62,13 +62,13 @@ For jobs with a status of **Successful**, click on the hyperlinked job ID to dow
 
 To view additional details about the job, including **Error details**, click on the job row.
 
-### Searching and filtering jobs
+## Searching and filtering jobs
 
 You can search for jobs in the Search & filter pane. To search for a job by **Job ID**, enter your search terms into the box.
 
 Search for logs by selecting any of the filters in the Search & filter pane. Additionally, you can apply the filters after you perform a search to limit your results. See the sections below for more information.
 
-####Status
+### Status
 
 To filter by **Status**, select a filter  filter:
 * **Scheduled.** This export has been scheduled, but not yet run.
@@ -76,7 +76,7 @@ To filter by **Status**, select a filter  filter:
 * **Successful.** This export has run to completion.
 * **Failed.** This export could not be performed. Error details are available by clicking on rows with this status.
 
-####Job type
+### Job type
 
 To filter by **Job type**, select a filter:
 * **Bursar.** This export contains charges and/or refunds transferred to the bursar. Output format is .dat.
@@ -84,13 +84,13 @@ To filter by **Job type**, select a filter:
 * **eHoldings.** This export contains package and title details from eHoldings. Output format is .csv.
 * **Bulk edit** This export contains downloaded information from Bulk edit. Output format is .csv.
 
-####System
+### System
 
 To filter by whether or not the job was system-generated, select one of the following:
 * **Yes.** The export was initiated automatically.
 * **No.** A user manually initiated the export.
 
-####Source
+### Source
 
 To search for logs based on the user who initiated the export:
 In the **Search & filter** pane, click **Source**.
@@ -98,7 +98,7 @@ Click **Find user**.
 In the **Select User** dialog, search for the user.
 Select the user you want to filter by. 
 
-####Start time
+### Start time
 
 To search for logs based on the date they started running:
 
@@ -106,7 +106,7 @@ In the **Search & filter pane**, click **Start time**.
 Enter a start date in the **From** box and an end date in the **To** box.
 Click **Apply**. The search results appear in the **Export jobs** pane.
 
-####End time
+### End time
 
 To search for logs based on the date they ended running:
 
@@ -114,7 +114,7 @@ In the **Search & filter pane**, click **End time**.
 Enter a start date in the **From** box and an end date in the **To** box.
 Click **Apply**. The search results appear in the **Export jobs** pane.
 
-####Export method
+### Export method
 
 This filter is available only on the **Organizations** pane . To search for exports by export method:
 
@@ -123,7 +123,7 @@ Select the export method from the drop-down list.
 
 The search results appear in the **Export jobs** pane.
 
-####Organizations
+### Organizations
 
 This filter is available only on the **Organizations** pane. 
 
@@ -135,7 +135,7 @@ In the **Select Organization** dialog, search for the organization.
 Select the organization you want to filter by. The search results appear in the **Export jobs** pane.
 
 
-### Errors in jobs
+## Errors in jobs
 
 If a job has a status of **Failed**, click on the row to view additional information, including **Error details**.
 
