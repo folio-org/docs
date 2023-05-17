@@ -65,4 +65,4 @@ For Postgres there are two common approaches:
 * [COPY](https://www.postgresql.org/docs/13/sql-copy.html): SQL command for moving table data via csv files
 * [pg_dump](https://www.postgresql.org/docs/13/app-pgdump.html) / [pg_restore](https://www.postgresql.org/docs/13/app-pgrestore.html): Postgres command line tools for importing and exporting data
 
-\* For installing and configuring Metadb follow the *Metadb Documentation* at the [Library Data Platform - Resources site](https://librarydataplatform.org/resources/).
+\* For installing and configuring Metadb follow the [Metadb documentation](https://metadb.dev/doc/).
