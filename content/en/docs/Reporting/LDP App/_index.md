@@ -1,8 +1,8 @@
 ---
 title: "LDP App"
 linkTitle: "LDP App"
-date: 2022-04-29
-weight: 40
+date: 2023-05-04
+weight: 20
 tags: ["parenttopic"]
 ---
 
@@ -83,4 +83,4 @@ Currently the app does not support indexing of certain columns. Keeping them ena
 The **Configure database connection URL & credentials** setting is used to set the connection from the FOLIO application instance to the LDP reporting database instance. This is also used to set the username and password to be used by the LDP app to query the LDP reporting database.
 
 ### Saved queries configuration (experimental feature)
-The **Saved queries configuration** setting allows you to configure a GitHub repository location for the queries that users save when they use the Save icon to save queries they have built using the Query builder. The GitHub repository owner, name, branch and OAuth token for access to the repository must be specified here.
+The **Saved queries configuration** setting allows you to configure a GitHub repository location for the queries that users save when they use the Save icon to save queries they have built using the Query builder. The GitHub repository owner, name, branch and OAuth token for access to the repository must be specified here. 
