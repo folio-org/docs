@@ -18,7 +18,7 @@ You can read an introduction to the repository at its [overarching README file](
 * Examples of the software queries can be run in.
 * How the queries are organized in the repository.
 
-The first section below outlines how to make use of the report queries in the FOLIO Analytics repository to generate reports on FOLIO data. Other sections of the documentation cover [administration of derived tables](../library-data-platform/#setting-up-derived-tables) and [use of derived tables for ad hoc querying](#ldp-specific-query-guidance).
+The first section below outlines how to make use of the report queries in the FOLIO Analytics repository to generate reports on FOLIO data. Other sections of the documentation cover [administration of derived tables](../ldp1-metadb/#setting-up-derived-tables) and [use of derived tables for ad hoc querying](#ldp-specific-query-guidance).
 
 ## Using queries from the FOLIO Analytics repository
 
