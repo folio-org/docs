@@ -17,6 +17,7 @@ The following are all the Circulation Settings permissions presented in the orde
 
 
 * **Settings (Circ): Can create, edit and remove circulation rules.** This permission allows the user to create, read, update, and delete circulation rules.
+* **Settings (Circ): View circulation rules.** This permission allows the user to view circulation rules only.
 * **Settings (Circ): Can create, edit and remove other settings.** This permission allows the user to create, read, update, and delete other settings.
 * **Settings (Circ): Can create, edit and remove staff slips.** This permission allows the user to create, read, update, and delete staff slips.
 * **Settings (Circ): Can create, edit and remove fixed due date schedules.** This permission allows the user to create, read, update, and delete fixed due date schedules.
