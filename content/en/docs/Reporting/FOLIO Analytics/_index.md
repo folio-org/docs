@@ -1,8 +1,8 @@
 ---
 title: "FOLIO Analytics"
 linkTitle: "FOLIO Analytics"
-date: 2021-06-24
-weight: 30
+date: 2023-05-04
+weight: 50
 tags: ["parenttopic"]
 ---
 
@@ -12,18 +12,18 @@ The FOLIO Analytics repository contains reports and other analytics developed fo
 You can read an introduction to the repository at its [overarching README file](https://github.com/folio-org/folio-analytics/blob/release-1.5/README.md) on GitHub.  The file describes the following:
 
 * The two types of SQL queries to be found in the repository:
-    * **Report queries**, which you can copy and paste to run on your LDP.
-    * **Derived table queries**, which simplify and speed up report queries. A *derived table* is simply a table created using data from one or more other tables. These queries are managed behind the scenes through LDP administration so that they run automatically and generate the derived tables in the database.
+   * **Report queries**, which you can copy and paste to run on your LDP.
+   * **Derived table queries**, which simplify and speed up report queries. A *derived table* is simply a table created using data from one or more other tables. These queries are managed behind the scenes through LDP administration so that they run automatically and generate the derived tables in the database.
 * Documentation for the queries.
 * Examples of the software queries can be run in.
 * How the queries are organized in the repository.
 
-The first section below outlines how to make use of the report queries in the FOLIO Analytics repository to generate reports on FOLIO data. Other sections of the documentation cover [administration of derived tables](../library-data-platform/#setting-up-derived-tables) and [use of derived tables for ad hoc querying](#ldp-specific-query-guidance).
+The first section below outlines how to make use of the report queries in the FOLIO Analytics repository to generate reports on FOLIO data. Other sections of the documentation cover [administration of derived tables](../ldp1-metadb/#setting-up-derived-tables) and [use of derived tables for ad hoc querying](#ldp-specific-query-guidance).
 
 ## Using queries from the FOLIO Analytics repository
 
 {{% alert color="info"%}}
-Releases of FOLIO Analytics are tied to a specific flower release. Please refere to the version [matrix](../library-data-platform/#installing-and-configuring-the-ldp) for compatibility.
+FOLIO Analytics has switched from releases aligned with FOLIO Flower releases to monthly rolling releases.
 {{% /alert %}}
 
 Report queries in the FOLIO Analytics repository are laid out in a particular structure that will make it easy for you to find the various areas you need as you build your knowledge of SQL.
@@ -67,13 +67,13 @@ The following section demonstrates this workflow using [DBeaver](https://dbeaver
 1. To add your LDP connection, click on the **New Database Connection** button toward the top of the Database Navigator tab. It should look like an electrical plug with a plus sign.
 1. In the **Select your database** window that pops up, click on the **PostgreSQL** symbol and then click **Next**.
 1. Fill out the **connection dialog**:
-    * You will need to get the following information from your local LDP administrator:
-        * Host (typically looks like a URL, like ldp.institution.edu)
-        * Port (typically 5432)
-        * Database name
-        * User name and password
-        * SSL mode (will likely be “require”)
-    * Note that a hosted LDP reporting database is currently available for the FOLIO community.  It provides access to data from the FOLIO reference environment folio-snapshot and is updated hourly. For login info, please review the [Reporting SIG wiki documentation](https://wiki.folio.org/display/RPT/FOLIO+Reporting+Reference+Environment).
+   * You will need to get the following information from your local LDP administrator:
+   * Host (typically looks like a URL, like ldp.institution.edu)
+   * Port (typically 5432)
+   * Database name
+   * User name and password
+   * SSL mode (will likely be “require”)
+   * Note that a hosted LDP reporting database is currently available for the FOLIO community.  It provides access to data from the FOLIO reference environment folio-snapshot and is updated hourly. For login info, please review the [Reporting SIG wiki documentation](https://wiki.folio.org/display/RPT/FOLIO+Reporting+Reference+Environment).
 1. In addition to the first page of connection details, you must click on the SSL tab to select “require” under **SSL mode**.
 1. Finally, expand **Connection Settings** in the sidebar on the left and select the **Initialization** subheading. In the settings on the right, make sure the **Auto-commit** check box is selected.
 1. When you are done setting up the connection, you can double click on the connection name in the **Database Navigator** tab to connect to the database.
@@ -95,10 +95,10 @@ The following section demonstrates this workflow using [DBeaver](https://dbeaver
 
 1. To export the results, right-click inside the results table and select **Export data…**.
 1. Complete the data export wizard:
-    1. Select “CSV” as the data transfer target type and click **Next >**.
-    1. Adjust any data transfer settings and click **Next >**.
-    1. Adjust any output settings (e.g., output directory, file name pattern) and click **Next >**.
-    1. Confirm settings and click **Start** to export the file.
+   1. Select “CSV” as the data transfer target type and click **Next >**.
+   1. Adjust any data transfer settings and click **Next >**.
+   1. Adjust any output settings (e.g., output directory, file name pattern) and click **Next >**.
+   1. Confirm settings and click **Start** to export the file.
 
 ### Tailoring queries
 
@@ -138,7 +138,7 @@ To develop ad hoc queries, you will need to write query scripts using Structured
 |[The Data School: Learn Introductory SQL Concepts](https://dataschool.com/learn-sql/introduction/)|An interactive tutorial with an approachable style. The tutorial has built-in SQL evaluation, so you don’t need to set up a separate database tool to try the exercises.|
 |[Select Star SQL](https://selectstarsql.com/)|An interactive book that teaches SQL concepts using real-world datasets and problems. The book has built-in SQL evaluation, so you don’t need to set up a separate database tool to try the exercises.|
 |[SQL Murder Mystery](https://github.com/NUKnightLab/sql-mysteries)|The SQL Murder Mystery is designed to be both a self-directed lesson to learn SQL concepts and commands and a fun game for experienced SQL users to solve an intriguing crime. They also have a walkthrough for SQL beginners.|
-|CodeAcademy:<ul><li>[Learn SQL course](https://www.codecademy.com/learn/learn-sql)</li><li>[SQL Commands](https://www.codecademy.com/article/sql-commands)</li></ul>|A course called Learn SQL and a list of SQL Commands. Without a Pro account, course features are limited.|
+|CodeAcademy:<ul><li>[Learn SQL course](https://www.codecademy.com/learn/learn-sql)</li><li>[SQL Commands](https://www.codecademy.com/articles/sql-commands)</li></ul>|A course called Learn SQL and a list of SQL Commands. Without a Pro account, course features are limited.|
 |[Linked In Learning](https://www.linkedin.com/learning/)|Linked In Learning provides access to several courses on SQL at many levels of expertise. Requires a paid subscription.|
 
 
@@ -147,7 +147,7 @@ To develop ad hoc queries, you will need to write query scripts using Structured
 After learning how to use SQL, there are a few resources that outline specifics of how the LDP organizes FOLIO data.
 
 * **[The LDP User Guide](https://github.com/library-data-platform/ldp/blob/1.8.2/doc/User_Guide.md).** This guide includes details about writing SQL that works for the LDP data model; note especially the sections describing the data model, JSON queries, and the differences between the relational attributes and JSON fields. The guide also includes a section that describes the [historical data functionality within the LDP](https://github.com/library-data-platform/ldp/blob/1.8.2/doc/User_Guide.md#5-historical-data), which allows users to compose queries that explore how FOLIO data records change over time.
-* **[SchemaSpy](https://d1f3dtrg62pav.cloudfront.net/ldp/schema/public/index.html).** This SchemaSpy installation is attached to the LDP reference environment, which pulls data from the FOLIO snapshot reference environment. SchemaSpy gives a concise list of LDP tables and fields and can be helpful when developing queries, if your local LDP uses the same software version as the LDP reference environment.
+* **[SchemaSpy (LDP1)](https://metadb.dev/ldp1/schema/public/) / [SchemaSpy (Metadb)](https://metadb.dev/schema/folio/).** This SchemaSpy installation is attached to the LDP reference environment, which pulls data from the FOLIO snapshot reference environment. SchemaSpy gives a concise list of LDP tables and fields and can be helpful when developing queries, if your local LDP uses the same software version as the LDP reference environment.
 * **[FOLIO Schema Parser](https://docs.google.com/spreadsheets/d/1m_Cq_GmZX37gJPEjVWt9eOLXskUjSLUb-8KapWj0SIw/edit#gid=1511890017).** This lightweight FOLIO Schema Parser automatically populates a spreadsheet using FOLIO's data schema documentation, connecting FOLIO fields to LDP tables and fields. It can be helpful as a tool for quickly looking up what fields are available from FOLIO apps and what LDP tables include those fields.
 * **[FOLIO Analytics shared derived tables](https://github.com/folio-org/folio-analytics/tree/release-1.5/sql/derived_tables).** The derived tables developed for the LDP (found in the **folio_reporting** schema of the LDP) often serve as a better starting point for ad hoc queries than the FOLIO tables in the **public** schema. The derived tables combine and simplify the original FOLIO tables in ways that make query development much easier. You should work with your local LDP administrator to determine how your local LDP is using derived tables (e.g., what FOLIO Analytics release you are using, how frequently the derived tables are updated).
 
@@ -163,12 +163,12 @@ An example of a simple ad hoc query might be:
 
 ```
 SELECT
-    group_name,
-    COUNT(user_id) AS num_users
+	group_name,
+	COUNT(user_id) AS num_users
 FROM
-    folio_reporting.users_groups
+	folio_reporting.users_groups
 GROUP BY
-    group_name
+	group_name
 ;
 ```
 

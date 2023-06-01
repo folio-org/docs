@@ -1,8 +1,8 @@
 ---
 title: "ldpmarc"
 linkTitle: "ldpmarc"
-date: 2022-04-29
-weight: 20
+date: 2023-05-04
+weight: 40
 tags: ["parenttopic"]
 ---
 
@@ -14,11 +14,11 @@ Once the MARC data is transformed, the public.srs_marctab table is ready to be u
 
 ```
 SELECT
-    sm.instance_hrid,
-    sm.field,
-    sm.content
+	sm.instance_hrid,
+	sm.field,
+	sm.content
 FROM srs_marctab AS sm
-WHERE (sm.field = '008')     
+WHERE (sm.field = '008')	 
 LIMIT 10
 ;
 ```
@@ -27,8 +27,8 @@ LIMIT 10
 
 For detailed information about how to set up and configure the ldpmarc tool, please review any of the guides linked below that are available in the [ldpmarc repository](https://github.com/library-data-platform/ldpmarc). There you also will find the latest versions and fixes for the ldpmarc tool.
 
-* [System requirements](https://github.com/library-data-platform/ldpmarc/tree/v1.5.3#system-requirements): software and hardware requirements
-* [Building](https://github.com/library-data-platform/ldpmarc/tree/v1.5.3#building-ldpmarc): installing / building ldpmarc tool
-* [Running ldpmarc](https://github.com/library-data-platform/ldpmarc/tree/v1.5.3#running-ldpmarc): start and run ldpmarc tool
-* [Full vs. incremental update](https://github.com/library-data-platform/ldpmarc/tree/v1.5.3#full-vs-incremental-update): explains how ldpmarc updates works and how to force a full update
-* [Resetting ldpmarc](https://github.com/library-data-platform/ldpmarc/tree/v1.5.3#resetting-ldpmarc): how to reset ldpmarc database
+* [System requirements](https://github.com/library-data-platform/ldpmarc/tree/v1.6.3#system-requirements): software and hardware requirements
+* [Building](https://github.com/library-data-platform/ldpmarc/tree/v1.6.3#building-ldpmarc): installing / building ldpmarc tool
+* [Running ldpmarc](https://github.com/library-data-platform/ldpmarc/tree/v1.6.3#running-ldpmarc-with-ldp1): start and run ldpmarc tool
+* [Full vs. incremental update](https://github.com/library-data-platform/ldpmarc/tree/v1.6.3#full-vs-incremental-update): explains how ldpmarc updates works and how to force a full update
+* [Resetting ldpmarc](https://github.com/library-data-platform/ldpmarc/tree/v1.6.3#resetting-ldpmarc): how to reset ldpmarc database
