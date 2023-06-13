@@ -15,6 +15,7 @@ Each setting within Circulation has its own permission associated with it. If a 
 
 The following are all the Circulation Settings permissions:
 
+* **Settings (Circ): View circulation rules.** This permission allows a user to view circulation rules but does not allow them to edit rules.
 * **Settings (Circ): Can create, edit and remove circulation rules.** This permission allows the user to create, read, update, and delete circulation rules.
 * **Settings (Circ): Can create, edit and remove other settings.** This permission allows the user to create, read, update, and delete other settings.
 * **Settings (Circ): Can create, edit and remove staff slips.** This permission allows the user to create, read, and update staff slips. Note that the content of staff slips can be erased in the editor, but the staff slip itself cannot be deleted.
