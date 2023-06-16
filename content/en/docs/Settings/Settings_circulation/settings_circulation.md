@@ -317,8 +317,7 @@ If you selected **Rolling**, you will see the following fields:
 
 Determine whether you want to allow recalls and/or holds.
 
-All of the fields in this section are optional. Note: If you leave them blank, the policy does not allow recalls or holds.
-
+All of the fields in this section are optional. If you leave them blank, the recall return interval and minimum guaranteed loan period default to zero.
 
 ##### Recalls
 

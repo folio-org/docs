@@ -21,7 +21,7 @@ Notes are a way for your library to add extra information to a record. The Notes
 
 In order to interact with Notes settings, a user needs to be assigned the following permission:
 
-* **Settings (notes): display list of settings pages.** This permission allows the user to create, edit and delete note types.
+* **Settings (Notes): Edit and View General settings** This permission allows the user to create, edit and delete note types.
 
 In order to manage notes attached to FOLIO records, the following permissions are required:
 

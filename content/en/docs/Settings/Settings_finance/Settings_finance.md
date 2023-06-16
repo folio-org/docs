@@ -88,3 +88,15 @@ For more information on adding funds and fund information, see Creating a new fu
 1. Find the expense class you want to delete. Click the **trash can icon**.
 
 2. In the **Delete Expense class** dialog, click **Delete**. A confirmation message appears and the expense class is deleted.
+
+## Settings > Finance > Export fund and expense class codes
+
+Use this setting to export a delimited file that includes all Fund codes and all Fund code & expense class code combinations where the expense class has a status of 'active'.  To export the file, follow these steps:
+
+1. Select a fiscal year from the **Fiscal year** drop-down menu.
+
+2. Click **Export** at the bottom of the screen.
+
+3. A file in .csv format downloads to your local download folder with the name “fund-codes-export-[fiscal year name]-YYYY-MM-DD-HH_MM.”  The file contains the following columns:
+*   **Fund code**
+*   **Fund and active expense class codes**

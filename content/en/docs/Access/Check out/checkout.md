@@ -14,9 +14,6 @@ The permissions listed below allow you to interact with the Check out app and de
 
 * **Check out: All permissions.** This permission allows the user to check out items to patrons (create new loans) and view open loans and loan details. However, this permission does not include seeing the entirety of the user record.
 * **Check out: Check out circulating items.** This permission allows the user to check out items, but they cannot override non-circulating loan policies.
-
-Three new permissions were added in Iris and are in development. These permissions are expected to allow for more granular control of the links in the Check out app to view a patron’s fee/fines, loans, and requests. These three permissions must be granted to a user in order for the associated link in the **Scan patron card** pane to work.
-
 * **Check out: View fees/fines**. This permission is in development. When finished, it will allow users to be able to click the link in the **Scan patron card** pane to view the patron’s fees/fines in the Users app. The user must have permission to view the Users app in order for the link to work.
 * **Check out: View loans**. This permission is in development. When finished, it allows users to be able to click the link in the **Scan patron card** pane to view the patron’s current loans in the Users app. The user must have permission to view the Users app in order for the link to work.
 * **Check out: View requests**. This permission is in development. This permission allows users to be able to click the link in the **Scan patron card** pane to view the patron’s current requests in the Requests app.  The user must have permissions to view the Requests app in order for the link to work.
