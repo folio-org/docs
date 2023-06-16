@@ -213,7 +213,6 @@ If a term is defined as primary in the Settings app, then it always appears as a
 A term is optional if it is not defined as primary in the Settings app. Optional terms do not automatically display in a license record.
 
 
-
 1. Click **Add term.**
 2. Select the term **Name** from the drop-down list.
 3. Follow steps 1-4 under Filling out a primary term.
@@ -221,7 +220,6 @@ A term is optional if it is not defined as primary in the Settings app. Optional
 
 
 #### Removing an optional term
-
 
 
 1. Identify the Optional term you want to remove.
@@ -251,7 +249,6 @@ A supplementary document is any additional document relevant to the license reco
 #### Removing a supplementary document
 
 
-
 1. Identify the supplementary document you want to remove.
 2. Click the **trash can icon**. The supplementary document is removed from the record once you save the license.
 
@@ -266,7 +263,6 @@ You can also search for licenses by selecting any of the filters in the **Search
 ### Status
 
 To filter licenses by their status, in the **Search & filter** pane, click **Status**, and select one of the listed options. Possible statuses may include:
-
 
 
 *   **Active.** Licenses currently in use by your library.

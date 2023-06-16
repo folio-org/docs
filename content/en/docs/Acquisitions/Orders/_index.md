@@ -735,6 +735,7 @@ To print or save a PDF file containing a snapshot of key information about an or
 4. To save the PDF file without printing, open the **Destination** drop-down list and select **Save as pdf**.
 
 
+
 ## Showing hidden fields
 
 To reveal fields that are hidden, as defined in [Settings > Orders > Creating an order template]({{< ref "/settings_orders.md#settings--orders--creating-an-order-template" >}}), follow these steps.  Note: The user permission **Show all hidden fields** must be assigned to the user.

@@ -411,6 +411,8 @@ You can search for agreements in the **Search & filter** pane. To search for agr
 
 Note: When using the internal KB, click **Agreements search** in order to search for agreements. 
 
+Note: When using the internal KB, click **Agreements search** in order to search for agreements. 
+
 You can also search for agreements by selecting any of the filters in the **Search & filter** pane: Status, Renewal priority, Is perpetual, Start date, End date, Organizations, Organization role, Internal contacts, Internal contacts role, Tags, and Supplementary properties. For more information on the filters, see the filter descriptions below.
 
 
