@@ -65,7 +65,7 @@ Permission ui-tenant-settings.settings.enabled - display name "Settings (Tenant)
   Update to the default MARC Bib-to-Inventory Instance MAP:
   Existing mapping for 590 (Local note) updated so that 1st indicator = 0 triggers "Staff only" indication. Any other 1st indicator does not.
   If you would like to review the mapping change first, go to https://github.com/folio-org/mod-source-record-manager/blob/master/mod-source-record-manager-server/src/main/resources/rules/marc_bib_rules.json and search for 590. Review that section of the rules, and then if that handling is wanted for a particular library tenant, add that section to their equivalent map.
-  Follow the [instruction](https://wiki.folio.org/display/FOLIJET/Updates+of+default+mapping+rules+for+R3+2022+Nolana+release) to update the rules.
+  Follow the [instruction](https://wiki.folio.org/display/FOLIJET/Nolana+R3+2022+Release%3A+Updates+of+default+mapping+rules) to update the rules.
 
 ### More preparatory steps
 There might be more preparatory steps that you need to take for your installation. If you are unsure what other steps you might need to take, study carefully the Release Notes.  Do all actions in the column "Action required", as appropriate for your installation.
@@ -125,8 +125,9 @@ Now Okapi will re-start your modules. Follow the okapi.log. It will run for 5 mi
 
 ```
 docker ps --all | grep "mod-" | wc
-  64
+  65
 ```
+The above number applies if you had installed a complete platform of Morning Glory.
 
 Retrieve the list of modules which are now being enabled for your tenant (just for your information):
 
@@ -138,7 +139,7 @@ curl -w '\n' -XGET http://localhost:9130/_/proxy/tenants/diku/modules
 } ]
 ```
 
-You should see 10 Edge modules, 48 Frontend modules (folio_\*), 64 Backend modules (mod-\*), if you are starting from Morning Glory, platform-complete + the Nolana version of Okapi (4.14.12).
+If you are starting with a complete platform of Morning Glory, you will see 9 Edge modules, 57 Frontend modules (folio_\*), 65 Backend modules (mod-\*) and the Nolana version of Okapi (4.14.12).
 
 ### II.iii) Pull module descriptors from the central registry
 
@@ -146,21 +147,21 @@ A module descriptor declares the basic module metadata (id, name, etc.), specifi
 
 ```
 curl -w '\n' -D - -X POST -H "Content-type: application/json" \
-  -d { "urls": [ "https://folio-registry.dev.folio.org" ]  http://localhost:9130/_/proxy/pull/modules
+  -d '{ "urls": [ "https://folio-registry.dev.folio.org" ]  }' http://localhost:9130/_/proxy/pull/modules
 ```
 Okapi log should show something like
 
 ```
- INFO  ProxyContext         283828/proxy REQ 127.0.0.1:51424 supertenant POST /_/proxy/pull/modules  okapi-4.14.12
+ INFO  ProxyContext         510602/proxy REQ 127.0.0.1:49950 supertenant POST /_/proxy/pull/modules  okapi-4.14.12
  INFO  PullManager          Remote registry at https://folio-registry.dev.folio.org is version 4.14.12
  INFO  PullManager          pull smart
   ...
- INFO  PullManager          pull: 3466 MDs to insert
- INFO  ProxyContext         283828/proxy RES 200 93096323us okapi-4.14.12 /_/proxy/pull/modules
+ INFO  PullManager          pull: 3653 MDs to insert
+ INFO  ProxyContent         510602/proxy RES 200 38836856us okapi-4.14.12 /_/proxy/pull/modules
 ```
 
-### II.iv) Deploy a compatible FOLIO backend
 
+### II.iv) Pre-Upgrade
 
 Check your Okapi environment:
 
@@ -172,7 +173,7 @@ At this point, (re-)configure the environment variables of your modules, as need
 Study the release notes for any changes in module configurations.
 Follow these instructions to change the environment variables for a module: [Change Environment Variables of a Module](https://wiki.folio.org/display/SYSOPS/Change+Environment+Variables+of+a+Module).
 
-From Nolana release notes:
+From Nolana release notes, do these steps:
 ### i. Inventory single record import/quickMarc derive
   DB Read/Write split should be disabled for mod-source-record-manager. When mod-source-record-manager is deployed do not pass the environment variables for DB_HOST_READER and DB_PORT_READER (it won't be enabled by default).
  
@@ -183,178 +184,154 @@ From Nolana release notes:
   Provided script to clean up Job profiles in case linked Mapping or Action profiles were edited.
   Follow the instructions [instructions](https://wiki.folio.org/display/FOLIOtips/Scripts+for+Inventory%2C+Source+Record+Storage%2C+and+Data+Import+Cleanup) provided at point 11.
 
+  Set ENV for mod-search and in all other modules that use Kafka (mod-inv/inv-storage/mod-srs/srm, mod-data-import etc…)
+    ENV = folio (or folio-prod)
+  Set KAFKA_EVENTS_CONSUMER_PATTERN for mod-search, using the value of ENV as a part of its value:
+    KAFKA_EVENTS_CONSUMER_PATTERN = (folio\.)(.*\.)inventory\.(instance|holdings-record|item|bound-with)
+
+### II.v) Deploy a new FOLIO backend and enable all modules of the new platform (backend & frontend)
+
 Deploy all backend modules of the new release with a single post to okapi's install endpoint. 
-This will deploy and enable all new modules and undeploy the modules of the old version which are not needed anymore. Start with a simulation run:
+This will deploy and enable all new modules. Start with a simulation run:
 ```
-  curl -w '\n' -D - -X POST -H "Content-type: application/json" -d @/usr/folio/platform-complete/okapi-install.json http://localhost:9130/_/proxy/tenants/diku/install?simulate=true\&preRelease=false
-  curl -w '\n' -D - -X POST -H "Content-type: application/json" -d @/usr/folio/platform-complete/okapi-install.json http://localhost:9130/_/proxy/tenants/diku/install?deploy=true\&preRelease=false\&tenantParameters=loadReference%3Dfalse
+  curl -w '\n' -D - -X POST -H "Content-type: application/json" -d @/usr/folio/platform-complete/install.json http://localhost:9130/_/proxy/tenants/diku/install?simulate=true\&preRelease=false
+```
+Then try to run with "deploy=true" like this:
+```
+  curl -w '\n' -D - -X POST -H "Content-type: application/json" -d @/usr/folio/platform-complete/install.json http://localhost:9130/_/proxy/tenants/diku/install?deploy=true\&preRelease=false\&tenantParameters=loadReference%3Dfalse
+```
+This call fails because frontend modules can not be deployed. 
+You will get a message "HTTP 400 - Module folio_developer-6.3.0 has no launchDescriptor".
+But this call deploys the backend modules. 
+
+You can follow the progress in deployment on the terminal screen and/or in /var/log/folio/okapi/okapi.log .
+
+We finish up by enabeling all modules (backend & frontend) with a single call without deploying any. We don't load reference data because we are doing a system upgrade (reference data have been loaded before):
+```
+  curl -w '\n' -D - -X POST -H "Content-type: application/json" -d @/usr/folio/platform-complete/install.json http://localhost:9130/_/proxy/tenants/diku/install?deploy=false\&preRelease=false\&tenantParameters=loadReference%3Dfalse
 ```
 
-You can follow the progress on the terminal screen and/or in /var/lib/folio/okapi/okapi.log .
+If that fails, remedy the error cause and try again until the post succeeds. 
+We will take care of old modules that are not needed anymore but are still running (deployed) in the "Clean up" section.
 
-If that fails, remedy the error cause and try again until the post succeeds. In case of previous failures, old modules might not have been undeployed and will still be running. We will account for this later in the "clean up" section.
-
-
-### II.iv.1) Post Upgrade
-From Nolana release notes:
-### i. Search
-  Routing was changed to default. All indexes should be recreated.	
-  During the upgrade process mod-search indices will need to recreate for both instance and authority as described [here](https://github.com/folio-org/mod-search#recreating-elasticsearch-index).
-
-### ii. Permissions, Circulation
-  With the permission "Settings (Circ): Can view loan history", the Save button on the Loan anonymization page is no longer visible (UICIRC-767).
-  In addition, a new permission has been created, "Settings (Circ): Can edit loan history", for which the Save button on the Loan anonymization page is visible and can be selected (UICIRC-766).
-  Update your users' permissions and/or permission sets, as required.
-
-### iii. SMTP configuration
-  SMTP configuration was moved from mod-configuration to mod-email.
-  Read [Interesting Information for FOLIO SysAdmins](https://wiki.folio.org/display/FOLIOtips/Interesting+information+for+FOLIO+SysAdmins).
-
-
-### II.v) Enable the frontend modules for your tenant
-
-Use the parameter *deploy=false* for the frontend modules and post the complete list of modules install.json to the okapi install endpoint. This will enable all modules of the release version for your tenant. Don't load reference data if you are doing a system upgrade.
-
+There should now be 125 modules deployed on your single server, try
 ```
-curl -w '\n' -D - -X POST -H "Content-type: application/json" -d @/usr/folio/platform-complete/install.json http://localhost:9130/_/proxy/tenants/diku/install?simulate=true\&preRelease=false
-curl -w '\n' -D - -X POST -H "Content-type: application/json" -d @/usr/folio/platform-complete/install.json http://localhost:9130/_/proxy/tenants/diku/install?deploy=false\&preRelease=false\&tenantParameters=loadReference%3Dfalse
+  docker ps --all | grep "mod-" | wc
 ```
+65 of those modules belong to the Morning Glory release, 62 belong to the Nolana release.
+2 modules appear with the same version number in both releases, they have not been deployed twice ( mod-graphql:1.10.2 and mod-licenses:4.2.1 ).
+
+Disable modules which have been removed from the platform (and have not been disabled automatically):
+```
+  curl -w '\n' -D - -X POST -H "Content-type: application/json" -d '[{ "id" : "folio_search-5.1.0", "action" : "disable" }]' http://localhost:9130/_/proxy/tenants/diku/install
+
+  curl -w '\n' -D - -X POST -H "Content-type: application/json" -d '[{ "id" : "mod-codex-ekb-1.10.0", "action" : "disable" }]' http://localhost:9130/_/proxy/tenants/diku/install
+
+  curl -w '\n' -D - -X POST -H "Content-type: application/json" -d '[{ "id" : "mod-codex-mux-2.12.0", "action" : "disable" }]' http://localhost:9130/_/proxy/tenants/diku/install
+```
+
+Modules enabled for your tenant are now those of the Nolana release:
+```
+curl -w '\n' -XGET http://localhost:9130/_/proxy/tenants/diku/modules | grep id | wc
+  131
+```
+
+This number is the sum of the following:
+
+ Nolana release:
+ - 59 Frontend modules
+ -  9 Edge modules
+ - 62 Backend modules
+ -  1 Okapi module (4.14.12)
+
+These are all R3-2022 (Nolana) modules.
+
+
+Repeat the steps in II.v) for other tenants that you might host on your system and want to migrate now.
 
 ### II.vi) Cleanup
   
 Clean up. Undeploy all unused containers.
-Go through the list install.json, check if all modules mentioned there have actually been deployed for your tenant (compare the two lists):
+
+Undeploy 63 modules of the Morning Glory release -- all but mod-graphql:1.10.2 and mod-licenses:4.2.1 (these 2 are still in use in Nolana).
+
+Undeploy old module versions like this:
 ```
-curl -w '\n' -XGET http://localhost:9130/_/proxy/tenants/diku/modules
-```
-Also, look up in the list of deployed containers for backend modules if containers for old module versions are still deployed or if they have been deployed twice for the same module version:
-```
-docker ps --all | grep mod-
+curl -w '\n' -D - -X DELETE http://localhost:9130/_/discovery/modules/mod-agreements-5.2.2
+curl -w '\n' -D - -X DELETE http://localhost:9130/_/discovery/modules/mod-audit-2.5.0
+...
+curl -w '\n' -D - -X DELETE http://localhost:9130/_/discovery/modules/mod-z3950-2.4.0
 ```
 
-Required Actions:
- - undeploy old module versions, e.g. like this:
+Remove unused (old) edge modules from Okapi discovery:
 ```
-curl -w '\n' -D - -X DELETE http://localhost:9130/_/discovery/modules/mod-agreements-5.1.1
-curl -w '\n' -D - -X DELETE http://localhost:9130/_/discovery/modules/mod-audit-2.4.2
+curl -w '\n' -D - -X DELETE http://localhost:9130/_/discovery/modules/edge-ncip-1.8.0
+curl -w '\n' -D - -X DELETE http://localhost:9130/_/discovery/modules/edge-orders-2.6.3
+curl -w '\n' -D - -X DELETE http://localhost:9130/_/discovery/modules/edge-patron-4.9.3
+curl -w '\n' -D - -X DELETE http://localhost:9130/_/discovery/modules/edge-rtac-2.5.2
 ```
 
 ### Result
   for Nolana HF#1
-  65 backend modules, "mod-\*" are contained in the list install.json. 
-  Those 65 backend modules are now being enabled for your tenant. 
-  65 containers for those backend modules are running in docker on your system.
+  62 backend modules, "mod-\*" are contained in the list install.json. 
+  Those 62 backend modules are now being enabled for your tenant(s). 
+  62 containers for those backend modules are running in docker on your system.
 
 Now, finally once again get a list of the deployed backend modules:
   
   ```
   curl -w '\n' -D - http://localhost:9130/_/discovery/modules | grep srvcId | wc
- 65
+ 62
   ```
   
 Compare this with the number of your running docker containers:
   
   ```
   docker ps --all | grep "mod-" | wc
-    65
- docker ps --all | wc
-    72
+    62
   ```
-  
-  The following containers are running on your system, but do not contain backend modules:
-  
-Stripes
-  
-3x Elasticsearch
-  
-Kafka
-  
-Zookeper
-  
-In sum, these are 6 containers without backend modules.
-Also subtract the header line (of "docker ps"), and you will arrive at 72 - 7 = 65 containers with backend modules (the figure of the first "wc").
 
-Modules enabled for your tenant:
-```
-curl -w '\n' -XGET http://localhost:9130/_/proxy/tenants/diku/modules | grep id | wc
-  132
-```
-
-This number is the sum of the following:
-
- - 57 Frontend modules
- -  9 Edge modules
- - 65 Backend modules (R3-2022)
- -  1 Okapi module (4.14.12)
-
-These are all R3-2022 (Nolana) modules.
-
+Perform a health check
+  ```
+  curl -w '\n' -XGET http://localhost:9130/_/discovery/health
+  ```
+Is everything OK ?
+  
 The backend of the new tenant is ready.  Now, you have to set up a new Stripes instance for the frontend of the tenant.
 
 
 ## III. Frontend installation : Stripes
 
-Install Stripes and nginx in a Docker container. Use the docker file of platform-complete.
-Check if everything looks o.k. in platform-complete/docker. If you have successfully installed last time, you should not need to change anything. Just do a "git diff".
+Install Stripes and nginx in a Docker container. Use the docker file in platform-complete/docker.
+Check if everything looks o.k. in platform-complete/docker. 
+If you have successfully installed last time, you should not need to change anything. Just do a "git diff".
 
 ```
-cd ~/platform-core
-edit docker/Dockerfile
-    ARG OKAPI_URL=http(s)://<YOUR_DOMAIN_NAME>/okapi
-    ARG TENANT_ID=diku # Or change to your tenant's name
-```
-   
-```
-  edit docker/nginx.conf
-server {
-  listen 80;
-  server_name <YOUR_SERVER_NAME>;
-  charset utf-8;
-  access_log  /var/log/nginx/host.access.log  combined;
-
-  # front-end requests:
-  # Serve index.html for any request not found
-  location / {
-    # Set path
-    root        /usr/share/nginx/html;
-    index       index.html index.htm;
-    include mime.types;
-    types {
-      text/plain lock;
-    }
-    try_files $uri /index.html;
-  }
-
-  # back-end requests:
-  location /okapi {
-    rewrite ^/okapi/(.*) /$1 break;
-    proxy_pass http://<YOUR_IP_ADDRESS>:9130/;
-  }
-}
+cd ~/platform-complete
+git diff
 ```
 
-<YOUR_SERVER_NAME> should be the real name of your server in your network. <YOUR_SERVER_NAME> should consist of host name plus domain name, e.g. myserv.mydomain.edu. 
+Check if docker/Dockerfile, docker/nginx.conf and stripes.conifg.js look o.k.
 
-
-```
-  edit stripes.config.js
-      okapi: { 'url':'http(s)://<YOUR_DOMAIN_NAME>/okapi', 'tenant':'diku' },
-```
-
-
-Finally, build the docker container which will contain Stripes and nginx :
-  
+Clean up your docker environment:
 ```
   sudo su
+  docker system prune -a
+```
+This will remove stopped containers, unused networks, volumes and images and clear cache.
+
+Build the docker container which will contain Stripes and nginx :
+  
+```
   docker build -f docker/Dockerfile --build-arg OKAPI_URL=http(s)://<YOUR_DOMAIN_NAME>/okapi --build-arg TENANT_ID=diku -t stripes .
 Sending build context to Docker daemon  1.138GB
-Step 1/19 : FROM node:15-alpine as stripes_build
+Step 1/19 : FROM node:16-alpine as stripes_build
 ...
-Step 19/19 : ENTRYPOINT ["/usr/bin/entrypoint.sh"]
- ---> Running in a47dce4e3b3e
-Removing intermediate container a47dce4e3b3e
- ---> 48a532266f21
-Successfully built 48a532266f21
+Step 21/21 : ENTRYPOINT ["/usr/bin/entrypoint.sh"]
+ ---> Running in af1e52b96681
+Removing intermediate container af1e52b96681
+ ---> 87cc6173a64f
+Successfully built 87cc6173a64f
 Successfully tagged stripes:latest
 ```
 
@@ -362,15 +339,7 @@ This will run for approximately 10 minutes.
 
 Stop the old Stripes container: docker stop <container id of your old stripes container which is still running>
 
-Completely free your port 80. Look if something is still running there: e.g., do
-  
-```
-netstat -taupn | grep 80
-```
-
-If there should be something still running on port 80, kill these processes.
-
-Start the stripes container:
+Start the new stripes container:
  
   Redirect port 80 from the outside to port 80 of the docker container:
   
@@ -387,5 +356,21 @@ Log in to your frontend: E.g., go to http://<YOUR_HOST_NAME>/ in your browser.
   - Does everything look good ?
 
 If so, remove the old stripes container: docker rm \<container id of your old stripes container\> .
-  
+
+## IV. Post Upgrade
+From Nolana release notes:
+### i. Search
+  Routing was changed to default. All indexes should be recreated.	
+  During the upgrade process mod-search indices will need to recreate for both instance and authority as described [here](https://github.com/folio-org/mod-search#recreating-elasticsearch-index).
+
+### ii. Permissions, Circulation
+  With the permission "Settings (Circ): Can view loan history", the Save button on the Loan anonymization page is no longer visible (UICIRC-767).
+  In addition, a new permission has been created, "Settings (Circ): Can edit loan history", for which the Save button on the Loan anonymization page is visible and can be selected (UICIRC-766).
+  Update your users' permissions and/or permission sets, as required.
+
+### iii. SMTP configuration
+  SMTP configuration was moved from mod-configuration to mod-email.
+  Read [Interesting Information for FOLIO SysAdmins](https://wiki.folio.org/display/FOLIOtips/Interesting+information+for+FOLIO+SysAdmins).
+
+
 Congratulation, your system is ready!
