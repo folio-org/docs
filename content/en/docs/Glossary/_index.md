@@ -210,6 +210,12 @@ weight: 800
    </td>
   </tr>
   <tr>
+   <td>Human-Readable Identifier (HRID)
+   </td>
+   <td>A record identifier that can be naturally read by users. Usually an HRID is alphanumeric and shorter than the lengthier universal identifier (UUID). Not all records have human-readable identifiers.
+   </td>
+  </tr>
+  <tr>
    <td>Identifier
    </td>
    <td>A unique label of a record, such as an ISBN, ASIN, or OCLC number.

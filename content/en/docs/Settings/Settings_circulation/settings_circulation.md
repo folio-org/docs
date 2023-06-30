@@ -689,9 +689,7 @@ Note that once you check the box to allow title level requests, if a title-level
 
 ### Notice templates
 
-Notices that are triggered by title-level requests are not yet included in FOLIO’s circulation rules system, so if your library wants to send a notice for title-level request confirmation, cancellation, and/or expiration, you will need to choose a notice template.
-
-FOLIO will send patrons notices for **Awaiting pickup** and **Hold shelf expiration** if they are configured in the associated circulation rule.
+Notices that are triggered by title-level requests are not yet included in FOLIO’s circulation rules system. If a title-level request is placed by a patron and immediately associated to an item, the item-level notices in the circulation rules will be sent. If a title-level request is placed and it is a hold - e.g., not immediately associated to an item - the title-level request templates selected here are used instead.
 
 * **Confirmation notice**: Choose a notice template from the drop-down if you want to send a patron notice when a title-level request is created.
 * **Cancellation notice**: Choose a notice template from the drop-down if you want to send a patron notice when a title-level request is canceled.
