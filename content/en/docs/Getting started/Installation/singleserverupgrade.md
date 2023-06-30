@@ -184,10 +184,13 @@ From Nolana release notes, do these steps:
   Provided script to clean up Job profiles in case linked Mapping or Action profiles were edited.
   Follow the instructions [instructions](https://wiki.folio.org/display/FOLIOtips/Scripts+for+Inventory%2C+Source+Record+Storage%2C+and+Data+Import+Cleanup) provided at point 11.
 
-  Set ENV for mod-search and in all other modules that use Kafka (mod-inv/inv-storage/mod-srs/srm, mod-data-import etc…)
-    ENV = folio (or folio-prod)
-  Set KAFKA_EVENTS_CONSUMER_PATTERN for mod-search, using the value of ENV as a part of its value:
-    KAFKA_EVENTS_CONSUMER_PATTERN = (folio\.)(.*\.)inventory\.(instance|holdings-record|item|bound-with)
+If you are in a multi-tenant environment, set ENV for mod-search and in all other modules that use Kafka (mod-inv/inv-storage/mod-srs/srm, mod-data-import etc…)
+    ENV = nolana . In a single tenant environment, you don't need to set it . It has the default value ENV = folio.
+  
+If you have set ENV = nolana, set KAFKA_EVENTS_CONSUMER_PATTERN for mod-search, using the value of ENV as a part of its value:
+    KAFKA_EVENTS_CONSUMER_PATTERN = (nolana\.)(.*\.)inventory\.(instance|holdings-record|item|bound-with)
+    
+If you have set ENV = folio, set  KAFKA_EVENTS_CONSUMER_PATTERN = (folio\.)(.*\.)inventory\.(instance|holdings-record|item|bound-with)
 
 ### II.v) Deploy a new FOLIO backend and enable all modules of the new platform (backend & frontend)
 
@@ -196,7 +199,11 @@ This will deploy and enable all new modules. Start with a simulation run:
 ```
   curl -w '\n' -D - -X POST -H "Content-type: application/json" -d @/usr/folio/platform-complete/install.json http://localhost:9130/_/proxy/tenants/diku/install?simulate=true\&preRelease=false
 ```
-Then try to run with "deploy=true" like this:
+Then try to run with "deploy=true" like this.
+Use loadReference%3Dfalse if you have changed reference data to local values in your installation.
+Use loadReference%3Dtrue if your reference data is in the initial state.
+If you do loadReference%3Dfalse, new reference data will not be loaded and you will need to load them manually after the upgrade process.
+If you do loadReference%3Dtrue, your local changes to reference data might become overwritten and you will need to correct them later.
 ```
   curl -w '\n' -D - -X POST -H "Content-type: application/json" -d @/usr/folio/platform-complete/install.json http://localhost:9130/_/proxy/tenants/diku/install?deploy=true\&preRelease=false\&tenantParameters=loadReference%3Dfalse
 ```
