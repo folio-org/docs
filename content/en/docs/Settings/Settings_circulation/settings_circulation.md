@@ -40,8 +40,6 @@ Libraries can use circulation rules to determine how their items circulate. Circ
 
 You can write circulation rules to determine the following:
 
-
-
 * The groups of patrons that can borrow items.
 * The rules for items in different locations, libraries, campuses, or institutions.
 * The types of items (material types or loan types) that can be borrowed.
