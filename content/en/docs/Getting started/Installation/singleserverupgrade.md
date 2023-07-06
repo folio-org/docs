@@ -71,7 +71,7 @@ Permission ui-tenant-settings.settings.enabled - display name "Settings (Tenant)
 There might be more preparatory steps that you need to take for your installation. If you are unsure what other steps you might need to take, study carefully the Release Notes.  Do all actions in the column "Action required", as appropriate for your installation.
 
 
-## II. Reinstall the Backend, Migrate from Morning Glory to Lotus
+## II. Reinstall the Backend, Migrate from Morning Glory to Nolana
 ### II.i) Fetch a new version of platform-complete
 Fetch the new release version of platform-complete, change into that directory: 
 ```
