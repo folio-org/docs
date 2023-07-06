@@ -1,8 +1,8 @@
 ---
 title: "LDP App"
 linkTitle: "LDP App"
-date: 2022-04-29
-weight: 40
+date: 2023-05-04
+weight: 20
 tags: ["parenttopic"]
 ---
 
@@ -22,7 +22,7 @@ The following are all the LDP app permissions:
 * **Settings (LDP): Can select which tables are available to search**
 
 ### Schema
-Think of schema as the “buckets” in which data tables live. The schema drop-down menu allows you to select one schema at a time to use in your query. Three schemas are available: public, folio_reporting, and local. For a fuller explanation of schemas and examples of some defaults included see [Library Data Platform - Using schemas](../library-data-platform/#using-schemas).
+Think of schema as the “buckets” in which data tables live. The schema drop-down menu allows you to select one schema at a time to use in your query. Three schemas are available: public, folio_reporting, and local. For a fuller explanation of schemas and examples of some defaults included see [Library Data Platform - Using schemas](../ldp1-metadb/#using-schemas).
 
 ### Table
 The **Table** drop-down menu allows you to select a data table from the schema you have selected to use in your query. Tables are where related data lives. Tables belong to a specific schema. With the schema and table selected, the other fields will unlock and update based on the selection.
@@ -83,4 +83,4 @@ Currently the app does not support indexing of certain columns. Keeping them ena
 The **Configure database connection URL & credentials** setting is used to set the connection from the FOLIO application instance to the LDP reporting database instance. This is also used to set the username and password to be used by the LDP app to query the LDP reporting database.
 
 ### Saved queries configuration (experimental feature)
-The **Saved queries configuration** setting allows you to configure a GitHub repository location for the queries that users save when they use the Save icon to save queries they have built using the Query builder. The GitHub repository owner, name, branch and OAuth token for access to the repository must be specified here.
+The **Saved queries configuration** setting allows you to configure a GitHub repository location for the queries that users save when they use the Save icon to save queries they have built using the Query builder. The GitHub repository owner, name, branch and OAuth token for access to the repository must be specified here. 
