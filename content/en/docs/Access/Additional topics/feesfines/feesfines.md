@@ -187,7 +187,7 @@ When an item is declared lost, or an item ages to lost, the associated loan rema
 
 If the item is returned, and all associated fees/fines are removed, the loan is closed and the item’s status changes to either “Available” or “In Transit”, depending on where it was returned.
 
-If the library resolves all fees/fines via payment, cancellation, or waiving, FOLIO automatically closes the fee/fine, closes the loan, and changes the item’s status to **Lost and paid**.
+If the library resolves all fees/fines via payment, cancellation, or waiving, FOLIO automatically closes the fee/fine, closes the loan, and changes the item’s status to **Lost and paid**, even if no money was actually accepted by the library.
 
 ## How should I configure our lost item rules if I want an item to age to lost but I want to be able to decide whether the patron should be charged?
 
