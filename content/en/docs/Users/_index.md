@@ -554,17 +554,17 @@ If you choose to declare the item lost, FOLIO will check the associated lost ite
 
 ### Mark an item declared lost
 
-FOLIO has two options to show that an item has been borrowed and not returned - “aged to lost” and “declared lost.” Aged to lost is an automated status that FOLIO gives to an item when the item is not returned by the date specified in the lost item policy. Declared lost is a manual status that library staff can use when a patron tells the library that they cannot return the item because they can no longer find it or because it had been inadvertently damaged.
+FOLIO has two options to show that an item has been borrowed and not returned - “aged to lost” and “declared lost.” Aged to lost is an automated status that FOLIO gives to an item when the item is not returned by the date specified in the lost item policy. Declared lost is a manual status that library staff can use when a patron tells the library that they cannot return the item because it is lost or damaged.
 
 Library staff can only mark one loan declared lost at a time.
 
 To mark a loan declared lost:
-1. Click the appropriate loan to open the *Loan details* window.
-2. Click *Declare lost* at the top of the window.
+1. Click the appropriate loan to open the **Loan details** window.
+2. Click **Declare lost** at the top of the window.
 3. In the pop-up window that appears, enter additional information about the circumstances of the loan (required)
 4. Click **Confirm**.
 
-When an item is declared lost, FOLIO will check the associated lost item fee policy for the loan and charge fees/fines as configured in that policy.
+When an item is declared lost, FOLIO will check the associated lost item fee policy for the loan and charge fees/fines as configured in that policy. Resolving the fines will close the loan and change the item status to **Lost and paid**, even if the fines were waived. 
 
 ### Creating a manual fee/fine
 
