@@ -41,15 +41,14 @@ Use this option to view a service point's calendar for a particular month. Each 
 
 To view a calendar, click on the calendar from **All calendars** or **Current calendar assignments**. The calendar will open in the fourth pane.
 
-A calendar has ____ sections:
-* **Calendar information**. This shows the calendar name, start date, and end date.
+A calendar has five sections:
+* **Calendar information**. This shows the calendar name, start date, end date, and record metadata.
 * **Service point assignments**. This shows if the calendar is assigned to any service points.
 * **Hours of operation**. This shows a table with open times and close times by weekday. 
 ** If a weekday closing time extends into the next day between 12 AM and 4 AM, the open and closing time will both show on the opening weekday. These times are denoted with a `*`.
 ** If a library is open for 24 hours over multiple days, the opening and closing times on those days will have dashes.
 * **Exceptions --- openings**. If a library has exceptions that change a service point's open hours, the exception name will be shown alongside all start and end times.
 * **Exceptions --- closures**. If a library has exceptions that close a service point for one or more days, the exception name will be shown, along with the start and end dates.
-* **Record metadata
 
 ## Create a new calendar
 
