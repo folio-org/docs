@@ -87,13 +87,19 @@ The system comes with a default field mapping profile that is associated with th
 3.  Select an **Output format** from the drop-down list. MARC is the only option.
 4.  Select as many **FOLIO record types** that apply by selecting the checkbox next to the option: Source record storage (entire record), Inventory instance (selected fields), Holdings, and/or Item. You must select at least one option.
 5.  Optional: Enter a **Description** for the field mapping profile.
-6.  Optional: To add a transformation, click **Add transformations** and follow these steps:
-    <ol type="a">
-      <li>In the <strong>Select transformations</strong> dialog, use the search box and filters to find the transformations you want to add to the field mapping profile.</li>
-      <li>For every transformation you want to add, select the <strong>checkbox</strong> next to it and fill out the field number, indicators, and subfield boxes. Subfields must begin with a $.</li>
-      <li>Once you have added all transformations, click <strong>Save & close<strong>. A confirmation message appears and the transformations are added to the field mapping profile.</li>
-    </ol>
-7.  Click **Save & close**. A confirmation message appears and the field mapping profile is created.
+
+Transformations can be added to change the data as it is exported; they are optional.
+
+To add a tranformation:
+
+1.  Click **Add transformations**. This will open a dialog window.
+2.  In the **Select transformations**, use the search box and filters to find the fields you wish to use.
+3.  For every transformation you wish to add, select the **checkbox** next to it, and fill out the field number, indicators, and subfield boxes. Note that **subfields must begin with a $.**
+
+After you have added all of the transformations you wish to use, click **Save & close** to return to the field mapping profile, where your transformations should be listed.
+
+Click **Save & close** from the **New field mapping profile** window to create the profile.
+
 
 ### Searching for an export field mapping profile
 
