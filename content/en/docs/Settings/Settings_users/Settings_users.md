@@ -364,16 +364,21 @@ Use this setting to configure the criteria for transferring accounts. For more i
 
 ### Creating transfer criteria
 
+
+Note: The **Header format**, **Account data format** and **Footer format** sections follow a column based format. 
+To add a column, click **Add** and enter the type (e.g. space, newline, date) and add any additional metadata.
+
 To create **Transfer criteria**, follow these steps:
 
-In the **Transfer criteria** pane, select the **Schedule period**.
-Add a number to the **Fee/Fines older than (days)** field.
-Click the + sign to add patron group(s) in the **Patron groups** list.
-Select the transfer owner from the **Transfer owner** drop-down list.
-Select a transfer account from the **Transfer account** drop-down list.
-Select the **Fee/fine owner**.
-Add **Transfer type**, **Transfer description**, and **Transfer code** to each **Fee/fine type**.
-Click **Save** to save the transfer criteria or click **Run manually** to run a report. 
+1. In the **Transfer criteria** pane, go to the **Scheduling** dropdown and select the desired scheduling period.
+2. In the **Criteria** dropdown, select the criteria for the transfer and fill in the metadata.
+3. In the **Aggregate by patron** dropdown, check the box if you want to aggregate by patron.
+4. In the **Header format** dropdown, configure your header format.
+5. In the **Account data format** dropdown, configure the body of the file.
+6. In the **Footer format** dropdown, configure your footer format.
+
+7. In the **Preview** dropdown, you can see a preview of the file.
+8. Click **Save** to save the transfer criteria or click **Run manually** to run a report. 
 
 ## Settings \> Users \> Conditions
 
