@@ -15,7 +15,7 @@ A FOLIO instance is divided into two main components.  The first component is Ok
 
 This is a documentation for an **upgrade** of your FOLIO system. 
 
-* It assumes that you have already successfully installed a FOLIO system and now want to upgrade your system to Lotus. 
+* It assumes that you have already successfully installed a FOLIO system and now want to upgrade your system to Nolana. 
 
 * If you are deploying FOLIO for the first time, or if you want to start with a fresh installation for whatever reasons, see [how to do a **fresh installation**]({{< ref "singleserverfreshinstall.md" >}}) of a single server deployment.
 
@@ -71,7 +71,7 @@ Permission ui-tenant-settings.settings.enabled - display name "Settings (Tenant)
 There might be more preparatory steps that you need to take for your installation. If you are unsure what other steps you might need to take, study carefully the Release Notes.  Do all actions in the column "Action required", as appropriate for your installation.
 
 
-## II. Reinstall the Backend, Migrate from Morning Glory to Lotus
+## II. Reinstall the Backend, Migrate from Morning Glory to Nolana
 ### II.i) Fetch a new version of platform-complete
 Fetch the new release version of platform-complete, change into that directory: 
 ```
