@@ -367,13 +367,13 @@ Use this setting to configure available transfer accounts. Transfer accounts are
 
 ## Settings \> Users \> Transfer criteria
 
-Use this information to configure the criteria for transferring accounts. For more information about transfer accounts, see [Settings \> Users \> Transfer accounts](#settings--users--transfer-accounts).
+The **Transfer Criteria** section contains many sections to allow for a wide variety of criteria to be configured. Use this information to configure the criteria for transferring accounts. For more information about transfer accounts, see [Settings \> Users \> Transfer accounts](#settings--users--transfer-accounts).
 
 ### Scheduling
 
 The **Scheduling** dropdown allows you to configure the frequency of the transfer process. If you want to run the transfer manually, you can skip this section.
 
-The following options are available:
+The following options and suboptions are available:
 - Never(run manually)
 - Hours
      - Hours between runs
@@ -398,16 +398,34 @@ To set the schedule to occur twice a week on Monday and Thursay at 12:00am CDT, 
 
 The **Criteria** section allows you to configure the criteria for the transfer process.
 
-The following options are available:
-- "No criteria(always run)" 
+The following options are available to configure the criteria:
+- No criteria(always run) 
      - This option will always run the transfer process when the schedule is met.
-- etc IN PROGRESS
+- All of
+- Any of
+
+The following are options for the criteria:
+- Age
+- Amount
+- Fee/fine owner
+- Fee/fine type
+- Item location
+- Item service point
+- Patron group
+
+Example:
+
+To set the criteria to run the transfer process for all fees/fines that are older than 30 days, you would configure the following options:
+
+1.   Set the "Criteria" option to "All of".
+2.   Set the "Age".
+3.   Set the "Older than(days)" option to "30".
 
 ### Aggregate by patron
 
-Note: This can also be called **Aggregate data format**.
+The **Aggregate by patron** section is used to configure criteria for aggregating data by patron. This is useful if you want to generate a single file for each patron that contains all of their transactions. If you do not want to aggregate by patron, make sure the **Group by patron** box is unchecked.
 
-The **Aggregate by patron** section is used to configure criteria for aggregating data by patron. This is useful if you want to generate a single file for each patron that contains all of their transactions. If you do not want to aggregate by patron, make sure the "Group by patron" box is unchecked.
+Note: If **Group by patron** box is unchecked, then the body format, in between the **Header format** and **Footer format**, will be called **Account data format**. If **Group by patron** box is checked, then the body format will be called **Patron data format**.
 
 If you want to aggregate by patron, check the box and you can configure the following options:
 - None (include all patrons)
@@ -420,6 +438,15 @@ For both number of accounts and total amount, you need to a comparison operator 
 - Less than or equal to
 - Greater than but not equal to
 - Greater than or equal to
+
+Example:
+
+To set the criteria to run the transfer process for all patrons that have a total amount greater than or equal to $100, you would configure the following options:
+
+1.   Check the "Group by patron" box.
+2.   Select the "Filter type" to be "Total amount".
+3.   Select the "Comparison operator" to be "Greater than or equal to".
+4.   Enter "100" in the "Total amount" box.
 
 ### Formats
 
@@ -519,11 +546,19 @@ There are two checkboxes in the preview pane to configure how the preview is dis
 
 Here, you can specify where the transfer accounts will be sent. In addition, you can configure any conditional statements regarding the transfer accounts.
 
+To configure the **Transfer to** section, you will need to select options for the two dropdowns:
+- Fee/fine owner
+     - The fee/fine owner that the transfer accounts will be sent to.
+- Transfer account
+     - The transfer account that the transfer accounts will be sent to.
+
+Optionally, you can configure multiple conditional statements for the transfer accounts. To configure a conditional statement, you have to click **Add condition**, then in the same way as the [**Criteria**](#criteria) section, you will configure your critera. After that, you can configure the **Transfer to** section for the conditional statement.
+
 ### Running the transfer
 
 To run the transfer now, click the "Run manually" button.
 
-To run the transfer on the configured schedule, click the "Save" button.
+To save the criteria and run the transfer on the desired schedule, click the "Save" button.
 
 ## Settings \> Users \> Conditions
 
