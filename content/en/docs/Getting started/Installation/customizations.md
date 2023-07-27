@@ -56,36 +56,9 @@ Additionally, it is recommended that you configure SSL certificates for Okapi in
 
 The module mod-email provides the role of delivering messages using SMTP server to send emails in FOLIO.  It is used for sending notifications and restarting user passwords.
 
-The mod-email module uses mod-configuration to get connection parameters.  A detailed list of parameters can be found in the documentation of the [module](https://github.com/folio-org/mod-email#introduction).  The required configuration options are the following:
+As of the Nolana release, the mod-email module stores connection parameters for sending email in its own database. A detailed list of parameters, as well as an example of how to configure email, can be found in the documentation of the [module](https://github.com/folio-org/mod-email#configuration). 
 
-* EMAIL_SMTP_HOST
-* EMAIL_SMTP_PORT
-* EMAIL_USERNAME
-* EMAIL_PASSWORD
-* EMAIL_FROM
-* EMAIL_SMTP_SSL
-
-These parameters should be set in Okapi through POST requests using the name of the module: **SMTP_SERVER**.  For example, the host configuration would look like this. 
-
-```
-curl -X POST \
- http://localhost:9130/configurations/entries \
- -H 'Content-Type: application/json' \
- -H 'X-Okapi-Tenant: <tenant>' \
- -H 'x-okapi-token: <token>' \
- -d
-   '{
-     "module": "SMTP_SERVER",
-     "configName": "smtp",
-     "code": "EMAIL_SMTP_HOST",
-     "description": "server smtp host",
-     "default": true,
-     "enabled": true,
-     "value": "smtp.googlemail.com"
-   }'
-```
-
-Take into account that this configuration is performed on a per tenant basis and the tenant ID is defined in the **X-Okapi-Tenant** header.  Also, you have to be logged in as the superuser of the tenant and provide the access token in the header **x-okapi-token**.   You can find an example of a login request [here](https://github.com/folio-org/folio-install/tree/master/runbooks/single-server#load-mods-records).
+Required configuration parameters are host; port; username; and password.
 
 Once you have configured the mod-email module, you should configure other modules related to the email configuration.  You should configure the users module and edge-sip2.  You can find a Bash script that could be used to automate this process [here](https://github.com/folio-org/folio-install/blob/kube-rancher/alternative-install/kubernetes-rancher/TAMU/deploy-jobs/create-email/create-email-config.sh).  Make sure that you replace all of the environment variables required for the script.
 
