@@ -1,7 +1,7 @@
 ---
 title: "Agreements"
 linkTitle: "Agreements"
-date: 2022-11-15
+date: 2023-07-21
 weight: 10
 tags: ["parenttopic"]
 ---
@@ -325,13 +325,15 @@ A supplementary document is any additional document relevant to the agreement re
     * Enter the **URL** of the document in the box.
 6. Repeat steps 1-5 as needed. The supplementary document saves once you save the agreement.
 
+If a supplementary document is present in an agreement record, then a **copy icon** will appear in the supplementary document accordion multi-column list under Reference. Clicking the **copy icon** will copy the text content of the Reference column to your clipboard. 
+
 
 #### Removing a supplementary document
 
 
 
-1. Find the Supplementary document you want to remove.
-2. Click the **trash can icon**. The Supplementary document is removed from the record once you save the agreement.
+1. Find the supplementary document you want to remove.
+2. Click the **trash can icon**. The supplementary document is removed from the record once you save the agreement.
 
 
 ### Usage data
@@ -427,6 +429,20 @@ To filter agreements by their status, select one of the following:
 *   **Requested.** If your library has requested an agreement from a provider.
 
 
+### Reason for closure
+
+To filter agreements by their reason for closure, select one of the listed options. Possible priorities may include:
+
+
+
+*   **Canceled.** Agreements you have canceled.
+*   **Ceased.** Agreements that have ended.
+*   **Rejected.** Agreements you have rejected.
+*   **Superseded.** Agreements that have been superseded by another agreement.
+
+Renewal priority values are configured in [Settings > Agreements > Pick list values]({{< ref "/settings_agreements.md#settings--agreements--pick-list-values" >}}).
+
+
 ### Renewal priority
 
 To filter agreements by their renewal priority, select one of the listed options. Possible priorities may include:
@@ -454,6 +470,15 @@ To filter agreements by their start date, enter a date into the **On or after** 
 To filter agreements by their end date, enter a date into the **On or after** and/or **On or before** search box, or click the **calendar icon** to select a date from the calendar.
 
 You can also check the box **Include agreements with no end date set** to locate agreements without end dates.
+
+
+
+
+### Cancellation deadline
+
+To filter agreements by their cancellation deadline, enter a date into the **On or after** and/or **On or before** search box, or click the **calendar icon** to select a date from the calendar.
+
+You can also check the box **Include agreements with no cancellation deadline set** to locate agreements without cancellation deadlines.
 
 
 ### Organizations
@@ -630,7 +655,7 @@ There are three ways to add an e-resource from the basket to agreement lines:
 2. In the **Agreement details** pane, click **Agreement lines**.
 3. In the **Agreement lines** section, click **Actions** and select **New agreement line**.
 4. In the **New agreement line** window, if not already selected, click **Basket**.
-5. In the E-resource dropdown select the resource from the Basket for which you want to create an agreement line.
+5. In the E-resource drop-down select the resource from the Basket for which you want to create an agreement line.
 6. (Optional) Enter a **Description** of the agreement line in the box.
 7. (Optional) Enter a **Note** about the agreement line in the box.
 8. (Optional) Enter **Active from** and **Active to** dates to indicate when the material covered by this agreement line was or is active in your collection.
@@ -776,7 +801,7 @@ To filter agreement lines by an agreement record, click **Select agreement**. In
 
 ### Agreement line type
 
-To filter agreement lines by type, check the **Unlinked**, **External**, and/or **Internal** checkboxes. An [unlinked agreement line](#adding-an-unlinked-agreement-line) is not linked to a resource in a knowledge base. An [external agreement line](#adding-an-agreement-line-via-eholdings) is linked to a resource in an external knowledge base (like the eHoldings app), and an [internal agreement line](#adding-an-agreement-line-via-the-internal-kb) is linked to a resource in the internal knowledge base.
+To filter agreement lines by type, check the **Unlinked**, **External**, and/or **Internal** checkboxes. An [unlinked agreement line](#adding-an-unlinked-agreement-line) is not linked to a resource in a knowledge base. An [external agreement line](#adding-an-agreement-line-via-eHoldings) is linked to a resource in an external knowledge base (like the eHoldings app), and an [internal agreement line](#adding-an-agreement-line-via-the-internal-KB) is linked to a resource in the internal knowledge base.
 
 
 ### Active from
@@ -856,72 +881,13 @@ Note: E-resources can be filtered by Current, Future, or Dropped. These options 
 4. Click **Export as… > JSON** or **KBART**. Depending on your browser and its configurations, the file automatically downloads or you are prompted to save it.
 
 
-## Searching for e-resources
-
-Searching for e-resources covered by an agreement is only possible if using the internal KB. 
-
-You can search for e-resources in the **Search & filter** pane by clicking on **E-resources**. Enter your search terms in the search box and click **Search**. The search box searches through the Name, Description, and Alternative names fields.
-
-You can also search for e-resources by selecting any of the filters in the **Search & filter** pane: Tags and Is package; Type and Publication type under Title filters; and External data source, Scope, Status, and Content Type under Package filters. For more information on the filters, see the filter descriptions below.
-
-
-### Tags
-
-To search for e-resources assigned specific tags, follow these steps:
-
-
-
-1. In the **Search & filter** pane, click **Tags**.
-2. Select the tag(s) from the drop-down list. Your results appear in the E-resources pane.
-
-
-### Is package
-
-To filter e-resources by whether or not they are a package, select **Yes** or **No**.
-
-
-### Type
-
-To filter e-resources by type, select **Monograph** or **Serial**.
-
-
-### Publication type
-
-To filter e-resources by publication type, select **Monograph**, **Serial**, or **journal**.
-
-
-### External data source
-
-To search for e-resources by external data source, follow these steps:
-
-
-
-1. In the **Search & filter** pane, click **External data source**.
-2. Select the external data source from the drop-down list. Your results appear in the E-resources pane.
-
-
-### Scope
-
-To filter e-resources by scope, select **Consortial**, **Global**, **Local**, or **Regional**.
-
-
-### Status
-
-To filter e-resources by status, select **Current**, **Deleted**, **Expected**, or **Retired**.
-
-
-### Content type
-
-To filter e-resources by content type, select **Databases**, **Monographs**, or **Serials**.
-
-
 ## Viewing an e-resource
 
 Viewing e-resources covered by agreements is only possible if using the internal KB. 
 
-You can view e-resources by clicking on **E-resources** in the **Search & filter** pane. 
+You can view e-resources by clicking on **Packages** or **Titles** in the **Search & filter** pane. 
 
-In the E-resources pane, click an e-resource to view it. The e-resource details pane displays with additional information about the e-resource. Publication type, Material type, First author, First editor, Publication date, Edition, Volume, ISBN, and Related title fields are populated from the internal KB. The following accordions also display:
+In the Packages or Titles pane, click an e-resource to view it. The e-resource details pane displays with additional information about the e-resource. Publication type, Material type, First author, First editor, Publication date, Edition, Volume, ISBN, and Related title fields are populated from the internal KB. The following accordions also display:
 
 **Agreements for this e-resource.** This accordion displays agreements that cover this e-resource. To add an e-resource from the internal KB to an agreement see [Adding an agreement line via the internal KB](#adding-an-agreement-line-via-the-internal-kb).
 
@@ -934,9 +900,9 @@ In the E-resources pane, click an e-resource to view it. The e-resource details 
 
 ### Viewing an e-resource package
 
-You can view packages in e-resources by clicking on **E-resources** in the **Search & filter** pane, then selecting **Yes** for the filter **Is package**. 
+You can view packages in e-resources by clicking on **Packages** in the **Search & filter** pane. 
 
-In the E-resources pane, click an e-resource package to view it. The e-resource package details pane displays with additional information about the e-resource package, depending on the data that has been added to the internal KB. All packages will have a Provider, Source and Reference. In addition packages may have:
+In the Packages pane, click an e-resource package to view it. The e-resource package details pane displays with additional information about the e-resource package, depending on the data that has been added to the internal KB. All packages will have a Provider, Source and Reference. In addition packages may have:
 
 * A Status: For example, Current or Deleted.
 * Content type: A list of content types in the package, for example, Serial, Monograph, or Video.
@@ -954,6 +920,23 @@ The following accordions also display:
 **E-resources in package.** This accordion displays all e-resources associated with the package. E-resources can be filtered by Current, Future, Dropped, and All.
 
 **Notes.** For information on Notes see [Adding and removing notes](#adding-and-removing-notes).
+
+
+### Viewing an e-resource title
+
+You can view packages in e-resources by clicking on **Titles** in the **Search & filter** pane. 
+
+In the Titles pane, click an e-resource title to view it. The e-resource title details pane displays with additional information about the e-resource title, depending on the data that has been added to the internal KB. 
+
+The following accordions also display:
+
+**Agreements for this e-resource.** This accordion displays agreements that cover this e-resource title. To add an e-resource from the internal KB to an agreement see [Adding an agreement line via the internal KB](#adding-an-agreement-line-via-the-internal-kb).
+
+**Options for acquiring e-resource.** From here you can add a package or title to your basket.
+
+**Notes.** For information on Notes see [Adding and removing notes](#adding-and-removing-notes).
+
+**Discovery settings.** Displays whether the title is suppressed from discovery.
 
 
 ## Editing e-resources
@@ -991,11 +974,48 @@ If a title instance is related to an incorrect identifier, you can transfer iden
 4. Click the **X** on the Tags pane to close the pane and save the tag. The tag number updates to the number of tags applied to the e-resource.
 
 
+## Local KB search
+
+You can search for packages, titles, and platforms in the local KB by clicking on the **Local KB search** tab. 
+
+
+### Searching for packages
+
+Searching for packages covered by an agreement is only possible if using the internal KB. 
+
+You can search for packages by clicking on the tab **Local KB search** and selecting **Packages** in the **Search & filter** pane. Enter your search terms in the search box and click **Search**. The search box searches the name field.
+
+Packages can be further filtered by: 
+
+* External data source: Select an external data source from the drop-down list. 
+* Status
+* Scope
+* Availability
+* Content type
+* Tags: Select a tag(s) from the drop-down list, or search for one by typing the tag’s name. 
+
+The values for Status, Scope, Availability, and Content type can be configured in Settings > Agreements > Pick list values. 
+
+
+### Searching for titles
+
+Searching for titles covered by an agreement is only possible if using the internal KB. 
+
+You can search for titles by clicking on the tab **Local KB search** and selecting **Titles** in the **Search & filter** pane. Enter your search terms in the search box and click **Search**. The search box searches the name field.
+
+Titles can be further filtered by: 
+
+* Type
+* Publication type
+
+The values for Type and Publication Type can be configured in Settings > Agreements > Pick list values. 
+
+
 ## Searching for platforms
 
 Searching for platforms covered by an agreement is only possible if using the internal KB. 
 
-You can search for platforms by clicking on the tab **Local KB search** and selecting **Platforms** in the **Search & filter** pane Enter your search terms in the search box and click **Search**. The search box searches the name field.
+You can search for platforms by clicking on the tab **Local KB search** and selecting **Platforms** in the **Search & filter** pane. Enter your search terms in the search box and click **Search**. The search box searches the name field.
 
 
 ## Viewing a platform

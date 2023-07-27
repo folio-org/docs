@@ -1,7 +1,7 @@
 ---
 title: "Licenses"
 linkTitle: "Licenses"
-date: 2022-11-15
+date: 2023-07-21
 weight: 50
 tags: ["parenttopic"]
 ---
@@ -41,8 +41,8 @@ If you want to link or view organizations and/or internal contacts in a license 
 *   **Users: Can view user profile.**
 
 
-##Keyboard shortcuts
-Keyboard shortcuts allow you to perform actions in this app using the keyboard.  See [Platform essentials > Keyboard shortcuts](../../platform-essentials/keyboard-shortcuts/keyboardshortcuts/) for more information.
+## Keyboard shortcuts
+Keyboard shortcuts allow you to perform actions in this app using the keyboard.  See [Platform essentials > Keyboard shortcuts]({{< ref "keyboardshortcuts.md" >}}) for more information.
 
 
 ## Creating a license
@@ -178,6 +178,8 @@ A core document is any central document relevant to the license record, for exam
     *   Enter the **URL** of the document in the box.
 5. Repeat steps 1-4 as needed. The core document saves once you save the license.
 
+If a core document is present in a license record, then a **copy icon** will appear in the core document accordion multi-column list under Reference. Clicking the **copy icon** will copy the text content of the Reference column to your clipboard. 
+
 
 #### Removing a core document
 
@@ -192,8 +194,7 @@ A core document is any central document relevant to the license record, for exam
 Terms are the terms of use that define what you can or cannot do with the licensed content. In FOLIO, you can define the Terms that appear in license records through configurations in the Settings app. The Settings app is where you establish the term label, the type of term, default visibility of the term, and term status (primary or optional). For more information, see [Settings > Licenses > Terms]({{< ref "/settings_licenses.md#settings--licenses--terms" >}})
 
 
-Primary terms appear on every license record by default. Optional terms can be added on a license-by-license basis.
-
+Primary terms appear on every license record by default. Optional terms can be added on a license-by-license basis. 
 
 #### Filling out a primary term
 
@@ -246,6 +247,8 @@ A supplementary document is any additional document relevant to the license reco
     *   Enter the **Physical location** of the document in the box.
     *   Enter the **URL** of the document in the box.
 6. Repeat steps 1-5 as needed. The supplementary document saves once you save the license.
+
+If a supplementary document is present in a license record, then a **copy icon** will appear in the supplementary document accordion multi-column list under Reference. Clicking the **copy icon** will copy the text content of the Reference column to your clipboard. 
 
 
 #### Removing a supplementary document
