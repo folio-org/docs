@@ -19,8 +19,9 @@ This list can be viewed by using the [**ListMetadataFormats** verb](http://www.o
 
 To interact with OAI-PMH settings, a user needs to be assigned the following permission:
 
-* **Settings (OAI-PMH): Display list of settings pages**  This permission allows the user to view all the OAI-PMH settings, but "Save" button is disabled. User can see the message "You lack necessary permissions to edit OAI-PMH settings. Please, contact the system administrator."
+* **Settings (OAI-PMH): Can view**  This permission allows the user to view all the OAI-PMH settings, but "Save" button is disabled. 
 * **Settings (OAI-PMH): Can view and edit settings** This permission allows the user to view and edit the OAI-PMH settings.
+* **Settings (OAI-PMH): Can view logs** This permission allows the user to view Settings > OAI-PMH > Logs.
 
 
 ## Settings > OAI-PMH > General
@@ -73,7 +74,7 @@ See <https://issues.folio.org/browse/MODOAIPMH-108> for more details of the impl
 
 Setting value appears in `deletedRecord` XML element of Identify response.
 
-### Suppress records processing
+### Suppressed records processing
 One of:
 * **Transfer suppressed records with discovery flag value** - Adds a MARC subfield $t = 1 to FOLIO's 999 field (for Instances), 852 field (for Holdings) or 952 field (for Items).
 * **Skip suppressed from discovery records** - Instances marked 'Suppress from Discovery' are to included in the OAI-PMH response.
@@ -82,6 +83,14 @@ One of:
 One of:
 * **Associate with HTTP status 200** - Error messages are returned with an HTTP 200 response code.
 * **Associate with HTTP error statuses** - Error messages are returned with an appropriate HTTP error code.
+
+### Record source
+One of:
+* **Source records storage** - MARC instance records are harvested from SRS.
+* **Inventory** - Instance records are harvested from inventory only, and all OAI-PMH records are generated on-the-fly as part of the harvesting. 
+* **Source records storage and inventory** - All instance records with a metadata source of MARC are retrieved from source record storage. Instance records with a metadata source are retrieved from inventory and OAI-PMH records are generated on-the-fly for those inventory-only records as part of the harvest.
+
+
 
 ## Settings > OAI-PMH > Sets
 
