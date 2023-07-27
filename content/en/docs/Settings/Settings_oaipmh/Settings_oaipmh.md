@@ -124,3 +124,36 @@ OAI-PMH Sets are not currently implemented in this version of FOLIO.  While the 
 1. Find the set you want to delete. Click the **Actions** button, and select the **Delete** option.
 
 2. In the **Confirm deletion of set** dialog, click **Delete**. A confirmation message appears and the set is deleted.
+
+## Field mappings for ListRecords response
+
+In order for Discovery services and OPACs to allow for filtering, aggregating and searching based on location and call number information, the OAI-PMH server in FOLIO needs to be able to supply this information as part of the feed.
+
+Mapping from Inventory records to MARC fields as part of the feed is as follows:
+
+| Inventory field | MARC | Additional rules |
+| --- | ----------- | --- |
+| Effective location: Institution |	952$a	 ||
+| Effective location: Campus | 952$b	||
+| Effective location: Library	| 952$c	 ||
+| Effective location: Name|	952$d	||
+| Effective call number components: call number	| 952$e	||
+| Effective call number components: prefix |	952$f	 ||
+| Effective call number components: suffix| 952$g	||
+| Effective call number components: type | 952$h	||
+| Material type	| 952$i	 ||
+| Volume |	952$j	 ||
+| Enumeration |	952$k	 ||
+| Chronology |	952$l	 ||
+| Barcode	| 952$m	 ||
+| Copy number	| 952$n	 ||
+| Electronic access: URI | 856$u | Creates separate datafield for each URL. Uses URLs from each record level (holding and item) |
+| Electronic access: Link text | 856$y| Creates separate datafield for each URL. Uses URLs from each record level (holding and item) |
+| Electronic access: Materials specified |	856$3	| Creates separate datafield for each URL. Uses URLs from each record level (holding and item) |
+| Electronic access: Public note | 856$z | Creates separate datafield for each URL. Uses URLs from each record level (holding and item) |
+| Electronic access: Relationship: No display constant generated |	856 2nd indicator 8 1st indicator 4	 ||
+| Electronic access: Relationship: No information provided |	856 2nd indicator blank 1st indicator 4	| Such indicator filling in works also for empty "Relationship" value |
+| Electronic access: Relationship: Related resource |	856 2nd indicator 2 1st indicator 4 ||
+| Electronic access: Relationship: Resource	| 856 2nd indicator 0 1st indicator 4	 ||
+| Electronic access: Relationship: Version of resource |	856 2nd indicator 1 1st indicator 4	 ||
+| Electronic access: Relationship: empty value |	856 2nd indicator empty 1st indicator 4	||
