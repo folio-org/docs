@@ -217,7 +217,7 @@ FOLIO defines two types of automated fine charging: **Set cost** and **Actual co
 
 For **Set cost** charges, libraries specify a standard charge for a lost item in the associated lost item policy, and FOLIO charges the patron that amount  when the item is declared lost or ages to lost.
 
-For **Actual cost** charges, the item ages to lost automatically, but the library must specify the amount to charge the patron manually. In the Users app, there is a reporting view that lists items that have aged to lost and need to have a charge applied. Libraries can also choose to not charge the patron for the lost item.
+For **Actual cost** charges, the item ages to lost automatically, but the library must specify the amount to charge the patron manually. In the Users app, there is a reporting view that lists items that have aged to lost and need to have a charge applied. Libraries can also choose to not charge the patron for the lost item by choosing "Do not bill" when processing the actual cost charge.
 
 Note that if the lost policy has an associated processing fee, the processing fee will be charged when the item ages to lost, regardless of whether the policy uses set cost or actual cost.
 
