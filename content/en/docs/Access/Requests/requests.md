@@ -64,6 +64,21 @@ Closed requests have one of the following statuses:
 * **Closed - Pickup expired**: The request was associated with an item, the item was placed on hold for the patron, but the patron did not pick up the item before the Hold shelf expiration date passed.
 * **Closed - Unfilled**: The request was not associated with an item before the Request expiration date passed. If the Request expiration date field is empty, the request will never be moved to this status.
 
+## Searching for requests
+
+To search for requests, enter your search terms into the box on the **Search & filter** pane. You can search by title, item barcode, requester barcode, or item call number ("starts with" searching only.)
+
+You can also use the Request type, Request status, Request level, Tags, and Pickup service point filters to find requests or further limit your search.
+
+You can choose which columns appear in your search results by clicking on the Action menu. Under Show columns, check or uncheck columns to change what you see in the results pane.
+
+### Exporting your search results to CSV
+
+After you perform a search for requests, you can save your results to a comma-separated values (CSV) file. The fields visible in the Requests results list appear in the CSV file, along with additional request and item information.
+
+1. [Search for requests.](#searching-for-requests) 
+2. In the **Requests** pane, select **Actions > Export search results to CSV**. Depending on your browser and its configurations, the file automatically downloads or you are prompted to save it.
+
 ## Item level requesting
 
 ### Creating a request
@@ -254,18 +269,6 @@ Before you cancel a request, consider:
 4. Optional: Enter any additional notes on the cancellation in the **Additional information for patron** box. If you selected **Other**, then you must supply additional information.
 5. Click **Confirm**. The dialog closes and the request is canceled. The Request status is updated to Closed - Canceled and the patron receives a cancellation notification email, if that option is configured.
 
-## Searching for requests
-
-To search for requests by title, item barcode, or requester barcode, enter your search terms into the box on the **Search & filter** pane. You can also use the Request type, Request status, Request level, Tags, and Pickup service point filters to find requests or further limit your search.
-
-To search for requests placed by a specific patron when you do not have their barcode available, you must look up the patron in the Users app.
-
-## Exporting your search results to CSV
-
-After you perform a search for requests, you can save your results to a comma-separated values (CSV) file. The fields visible in the Requests results list appear in the CSV file, along with additional request and item information.
-
-1. [Search for requests.](#searching-for-requests) 
-2. In the **Requests** pane, select **Actions > Export search results to CSV**. Depending on your browser and its configurations, the file automatically downloads or you are prompted to save it.
 
 ## Exporting a hold shelf clearance report
 
