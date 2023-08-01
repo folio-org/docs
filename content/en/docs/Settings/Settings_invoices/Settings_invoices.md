@@ -15,7 +15,7 @@ To interact with invoice settings, users need the following permission:
 
 
 
-*   **Settings (Invoice): Can view and edit settings.** This permission lets you view and edit all of the Invoice settings. 
+*   **Settings (Invoices): Can view and edit settings.** This permission lets you view and edit all of the Invoice settings. 
 
 Note: This is the only permission for invoice settings. You can assign permissions to users in the Users app. 
 
