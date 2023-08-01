@@ -19,8 +19,9 @@ This list can be viewed by using the [**ListMetadataFormats** verb](http://www.o
 
 To interact with OAI-PMH settings, a user needs to be assigned the following permission:
 
-* **Settings (OAI-PMH): Display list of settings pages**  This permission allows the user to view all the OAI-PMH settings, but "Save" button is disabled. User can see the message "You lack necessary permissions to edit OAI-PMH settings. Please, contact the system administrator."
+* **Settings (OAI-PMH): Can view**  This permission allows the user to view all the OAI-PMH settings, but "Save" button is disabled. 
 * **Settings (OAI-PMH): Can view and edit settings** This permission allows the user to view and edit the OAI-PMH settings.
+* **Settings (OAI-PMH): Can view logs** This permission allows the user to view Settings > OAI-PMH > Logs.
 
 
 ## Settings > OAI-PMH > General
@@ -73,7 +74,7 @@ See <https://issues.folio.org/browse/MODOAIPMH-108> for more details of the impl
 
 Setting value appears in `deletedRecord` XML element of Identify response.
 
-### Suppress records processing
+### Suppressed records processing
 One of:
 * **Transfer suppressed records with discovery flag value** - Adds a MARC subfield $t = 1 to FOLIO's 999 field (for Instances), 852 field (for Holdings) or 952 field (for Items).
 * **Skip suppressed from discovery records** - Instances marked 'Suppress from Discovery' are to included in the OAI-PMH response.
@@ -82,6 +83,14 @@ One of:
 One of:
 * **Associate with HTTP status 200** - Error messages are returned with an HTTP 200 response code.
 * **Associate with HTTP error statuses** - Error messages are returned with an appropriate HTTP error code.
+
+### Record source
+One of:
+* **Source records storage** - MARC instance records are harvested from SRS.
+* **Inventory** - Instance records are harvested from inventory only, and all OAI-PMH records are generated on-the-fly as part of the harvesting. 
+* **Source records storage and inventory** - All instance records with a metadata source of MARC are retrieved from source record storage. Instance records with a metadata source are retrieved from inventory and OAI-PMH records are generated on-the-fly for those inventory-only records as part of the harvest.
+
+
 
 ## Settings > OAI-PMH > Sets
 
@@ -124,3 +133,36 @@ OAI-PMH Sets are not currently implemented in this version of FOLIO.  While the 
 1. Find the set you want to delete. Click the **Actions** button, and select the **Delete** option.
 
 2. In the **Confirm deletion of set** dialog, click **Delete**. A confirmation message appears and the set is deleted.
+
+## Field mappings for ListRecords response
+
+In order for Discovery services and OPACs to allow for filtering, aggregating and searching based on location and call number information, the OAI-PMH server in FOLIO needs to be able to supply this information as part of the feed.
+
+Mapping from Inventory records to MARC fields as part of the feed is as follows:
+
+| Inventory field | MARC | Additional rules |
+| --- | ----------- | --- |
+| Effective location: Institution |	952$a	 ||
+| Effective location: Campus | 952$b	||
+| Effective location: Library	| 952$c	 ||
+| Effective location: Name|	952$d	||
+| Effective call number components: call number	| 952$e	||
+| Effective call number components: prefix |	952$f	 ||
+| Effective call number components: suffix| 952$g	||
+| Effective call number components: type | 952$h	||
+| Material type	| 952$i	 ||
+| Volume |	952$j	 ||
+| Enumeration |	952$k	 ||
+| Chronology |	952$l	 ||
+| Barcode	| 952$m	 ||
+| Copy number	| 952$n	 ||
+| Electronic access: URI | 856$u | Creates separate datafield for each URL. Uses URLs from each record level (holding and item) |
+| Electronic access: Link text | 856$y| Creates separate datafield for each URL. Uses URLs from each record level (holding and item) |
+| Electronic access: Materials specified |	856$3	| Creates separate datafield for each URL. Uses URLs from each record level (holding and item) |
+| Electronic access: Public note | 856$z | Creates separate datafield for each URL. Uses URLs from each record level (holding and item) |
+| Electronic access: Relationship: No display constant generated |	856 2nd indicator 8 1st indicator 4	 ||
+| Electronic access: Relationship: No information provided |	856 2nd indicator blank 1st indicator 4	| Such indicator filling in works also for empty "Relationship" value |
+| Electronic access: Relationship: Related resource |	856 2nd indicator 2 1st indicator 4 ||
+| Electronic access: Relationship: Resource	| 856 2nd indicator 0 1st indicator 4	 ||
+| Electronic access: Relationship: Version of resource |	856 2nd indicator 1 1st indicator 4	 ||
+| Electronic access: Relationship: empty value |	856 2nd indicator empty 1st indicator 4	||
