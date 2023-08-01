@@ -6,6 +6,12 @@ weight: 50
 tags: ["subtopic"]   
 ---
 
+## Settings > Courses > Display settings
+
+This setting controls FOLIO's behavior when duplicating a course in the Courses app via Actions > Duplicate.
+
+If this setting is checked, when duplicating a course the "Duplicate cross-listed courses" checkbox in the Duplicate modal will be checked by default.
+
 ## Settings > Courses > Terms
 
 Use this setting to create and manage Terms. Terms define the start and end date of a course. For example, when adding items to a course, any new item added to the course is automatically assigned the Start Date and End Date as specified in the Term. If needed, you can edit the dates by editing the reserve item.
