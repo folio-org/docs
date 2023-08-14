@@ -367,7 +367,7 @@ The **Transfer Criteria** section contains many sections to allow for a wide var
 The **Scheduling** dropdown allows you to configure the frequency of the transfer process. If you want to run the transfer manually, you can skip this section.
 
 The following options and suboptions are available:
-- Never(run manually)
+- Never (run manually)
 - Hours
      - Hours between runs
 - Days
@@ -417,7 +417,8 @@ To set the criteria to run the transfer process for all fees/fines that are olde
 1.   Set the "Criteria" option to "All of".
 2.   Click on the "+" button on the top right corner to add a criteria.
 3.   Set the criteria to "Age".
-4.   Set the "Older than(days)" option to "30".
+4.   Set the "Comparison operator" to "Greater than but not equal to"
+5.   Set the "Number of days old" option to "30".
 
 ### Aggregate by patron
 
@@ -430,7 +431,7 @@ If you want to aggregate by patron, check the box and you can configure the aggr
 - Number of accounts
 - Total amount
 
-For both number of accounts and total amount, you need to a comparison operator and a number of acounts or total amount. The following comparison operators are available:
+For both number of accounts and total amount, you need to set a comparison operator and a number of accounts or total amount. The following comparison operators are available:
 
 - Less than but not equal to
 - Less than or equal to
