@@ -29,7 +29,7 @@ This is a documentation for an **upgrade** of your FOLIO system.
 
 | **System Type**                     | **Version referred to in this manual**     |
 |-------------------------------------|--------------------------------------------|
-| Operating system                    | Ubuntu 20.04.06 LTS (Focal Fossa) 64-bits  |
+| Operating system                    | Ubuntu 22.04.2 LTS 64-bits                 |
 | FOLIO system to migrate from        | Nolana HF#1 (R3-2022-hotfix-1)             |
 
 **Hardware requirements**
@@ -57,14 +57,6 @@ Read carefully the [Orchid Release Notes](https://wiki.folio.org/display/REL/Orc
 Do these actions before the upgrade:
 
 From Orchid Release Notes:
-### i. Additional cluster-level permissions are required in Opensearch 
-Before initializing mod-search 2.0.x for a tenant,  add the following cluster-level permissions to the Opensearch role used by mod-search:   
-```
-cluster:admin/script/get
-cluster:admin/script/put
-cluster:admin/script/delete
-```
-This change may also impact Elasticsearch as well (this is unveryfied, however).
 
 ### More preparatory steps
 There might be more preparatory steps that you need to take into account for your installation. If you are unsure what other steps you might need to take, study carefully the Release Notes.  Do all actions in the column "Action required", as appropriate for your installation.
@@ -77,7 +69,7 @@ Fetch the new release version of platform-complete, change into that directory:
 cd platform-complete
 git fetch
 ```
-There is a branch R1-2023-csp-2 (released on June 26, 2023). We will deploy this version.
+There is a branch R1-2023-csp-5 (released on August 17, 2023). We will deploy this version.
 Check out this Branch.
 Stash local changes. This should only pertain to stripes.config.js .
 Discard any changes which you might have made on the install-jsons:
@@ -91,7 +83,7 @@ git restore package.json
 git stash save
 git checkout master
 git pull
-git checkout R1-2023-csp-2
+git checkout R1-2023-csp-5
 git stash pop
 ```
 
@@ -391,11 +383,20 @@ If so, remove the old stripes container: docker rm \<container id of your old st
 
 ## IV. Post Upgrade
 From Orchid release notes:
-### i. New database indexes for MARC fields
+### i. Additional cluster-level permissions are required in Opensearch 
+Before initializing mod-search 2.0.x for a tenant,  add the following cluster-level permissions to the Opensearch role used by mod-search:   
+```
+cluster:admin/script/get
+cluster:admin/script/put
+cluster:admin/script/delete
+```
+This change may also impact Elasticsearch as well (this is unveryfied, however).
+
+### ii. New database indexes for MARC fields
 New indexes to the DB were added for the "010" and "035" MARC fields, to improve stability and decrease timeouts.
 Indexes are added automatically during the upgrade process. Default DB configuration implies automatic analyzing of tables. In case you should have disabled automatic analyzing, execute the ANALYZE command on mod-source-record-storage schemas.
 
-### ii. Instance data in mod-inventory-storage have to be migrated. 
+### iii. Instance data in mod-inventory-storage have to be migrated. 
 
 To initialize migration use the endpoint POST /inventory-storage/migrations/jobs with body:
 ```
@@ -408,16 +409,16 @@ To check the status of migration use the endpoint GET /inventory-storage/migrati
 Migration could be done after the upgrade.
 Migration could be sped up with scaling up mod-inventory-storage's replicas.
 
-### iii. Default MARC-Instance mapping updated to change how the Relator term is populated on an instance record
+### iv. Default MARC-Instance mapping updated to change how the Relator term is populated on an instance record
 See [Update of mapping to change how Relator term is populated on instance record R1 2023 Orchid release](https://wiki.folio.org/display/FOLIJET/Update+of+mapping+to+change+how+Relator+term+is+populated+on+instance+record+R1+2023+Orchid+release) for additional details.
 Update: 21 April: an [update script](https://wiki.folio.org/display/FOLIJET/Orchid+MARC-to-Instance+mapping+rules+update+instructions) has been provided. 
 **Mandatory change.**
 Note that any revised mappings will only apply to Instances created or updated via MARC Bibs **after** the map is updated. To refresh existing Instances against the current SRS MARC Bibs and current map, the library may consider running [Script 3 described here: Scripts for Inventory, Source Record Storage, and Data Import Cleanup](https://wiki.folio.org/display/FOLIOtips/Scripts+for+Inventory%2C+Source+Record+Storage%2C+and+Data+Import+Cleanup).
 
-### iv. Default MARC-Instance mapping rule added for MARC 720 field
+### v. Default MARC-Instance mapping rule added for MARC 720 field
 Follow the description in the [Release Notes](https://wiki.folio.org/display/REL/Orchid+%28R1+2023%29+Release+Notes).
 
-### v. "marc_indexers" table data in mod-source-record-storage have to be migrated.
+### vi. "marc_indexers" table data in mod-source-record-storage have to be migrated.
 Follow the description in the [Release Notes](https://wiki.folio.org/display/REL/Orchid+%28R1+2023%29+Release+Notes).
 
 Add new permissions as described in the [Release Notes](https://wiki.folio.org/display/REL/Orchid+%28R1+2023%29+Release+Notes) **Permission Updates**.
