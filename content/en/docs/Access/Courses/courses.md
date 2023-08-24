@@ -12,11 +12,12 @@ Note: In order for the courses you create in the Courses app to be discoverable 
 
 ## Permissions
 
-The permissions listed below allow you to interact with the Courses app and determine what you can or cannot do within the app. You can assign permissions to users in the Users app. If none of these permissions are assigned to a user, they are unable to see the Courses app or any related information.
+The permissions listed below allow you to interact with the Courses app and determine what you can or cannot do within the app. You can assign permissions to users in the Users app. If none of these permissions are assigned to a user, then they will be unable to see the Courses app or any related information.
 
-The following are all the Courses permissions, listed from least to most restrictive:
+The following are all the Courses permissions:
 
-* **Courses: All permissions.** This permission allows the user to maintain (view, add, edit, and delete) courses, items, instructors, and cross-listed courses.
+* **Courses: All permissions.** This permission allows the user to maintain (view, add, edit, and delete) courses, items, instructors, cross-listed courses and all course settings.
+* **Courses: Read, add, edit, and delete courses.** This permission allows the user to view, add, edit and delete a course.
 * **Courses: Read, add, and edit courses.** This permission allows the user to view, add, and edit a course. However, they are unable to delete a course.
 * **Courses: Add and edit courses’ reserved items.** This permission allows the user to add and edit items associated with a course. It does not grant the ability to remove items from a course.
 * **Courses: Add, edit, and remove courses’ reserved items.** This permission allows the user to view, add, edit, and remove items associated with a course.
