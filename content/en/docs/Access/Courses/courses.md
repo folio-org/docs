@@ -24,6 +24,8 @@ The following are all the Courses permissions:
 * **Courses: Read All.** This permission allows the user to see all courses and item information.
 * **Settings (Courses): Can create, edit and delete Course Settings.** This permission allows the user to maintain (view, add, edit, and delete) all course settings.
 
+## Keyboard shortcuts
+Keyboard shortcuts allow you to perform actions in this app using the keyboard.  See [Platform essentials > Keyboard shortcuts]({{< ref "keyboardshortcuts.md" >}}) for more information.
 
 ## Implementation considerations
 
@@ -65,9 +67,9 @@ Each of these integrations have their own features to consider in regards to the
 
 You can search for courses in the **Search & filter** pane. All courses are shown and selected by default. To search for courses, enter your search terms into the box. Select the **All fields** drop-down list to search through one of the following fields: Course name, Course code, Section, Instructor, Registrar ID, and External ID. All fields is the default search.
 
-You can also search for courses by selecting any of the filters in the **Courses Search & filter** pane: Department, Course type, Term, and Location. Additionally, you can apply the filters after you perform a search to limit your results.
+You can also search for courses by selecting any of the filters in the **Search & filter** pane: Department, Course type, Term, and Location. Additionally, you can apply the filters after you perform a search to limit your results.
 
-You can choose which columns appear in your search results by clicking on the **Action** menu. Under **Show columns**, check or uncheck columns to change what you see in the results pane.
+You can choose which columns appear in your search results by clicking on the **Actions** menu. Under **Show columns**, check or uncheck columns to change what you see in the results pane.
 
 ## Searching for reserves
 
@@ -75,7 +77,7 @@ You can search for items on reserve in the **Search & filter** pane. Click **Res
 
 You can also search for reserves by selecting any of the filters in the **Search & filter** pane: Processing status, Copyright status, Permanent location, Temporary location, and Term. Additionally, you can apply the filters after you perform a search to limit your results.
 
-You can choose which columns appear in your search results by clicking on the **Action** menu. Under **Show columns**, check or uncheck columns to change what you see in the results pane.
+You can choose which columns appear in your search results by clicking on the **Actions** menu. Under **Show columns**, check or uncheck columns to change what you see in the results pane.
 
 To find items on a reserve for a specific course, first search for the course from the **Search & filter** pane. Click on the course you wish to view reserves for. Scroll down to the Items section to see all the items on reserve for that course.
 
@@ -91,7 +93,7 @@ When creating a course, you should keep the following in mind:
 * Any item assigned to a Course automatically has its temporary location set to the value specified in the Location field. If needed, you can change the temporary location by [editing the reserve item.](#editing-a-reserve-item)
 * When completing the course information, make sure you understand how the fields correspond to your discovery interface.
 
-1. Click **New**.
+1. Click **Actions > New**.
 2. In the **Create course** window, enter a **Course Name** and select a **Term**. All other fields are optional.
 3. Click **Save & close**.
 
@@ -99,7 +101,7 @@ When creating a course, you should keep the following in mind:
 ## Editing a course
 
 1. [Find the course](#searching-for-courses) you want to edit and click on it in the **Courses** list.
-2. In the **course details** window, click **Edit**.
+2. In the **course details** window, click **Actions > Edit**.
 3. Make your desired changes to the course and click **Save & close**.
 
 
@@ -108,7 +110,7 @@ When creating a course, you should keep the following in mind:
 Courses can only be deleted once all items are removed from the course.
 
 1. [Find the course](#searching-for-courses) you want to delete and click on it in the **Courses** list.
-2. In the **course details** window, click **Edit**.
+2. In the **course details** window, click **Actions > Edit**.
 3. Click **Delete**.
 4. Click **Really delete** to delete the course. The course is deleted and removed from the Courses list.
 
@@ -118,7 +120,7 @@ Courses can only be deleted once all items are removed from the course.
 Cross-listed courses share instructors, course listing information, and reserve items. Once a course is created, cross-listed courses can be added to it. When you cross-list a course, the information you have in the original course’s Course listing information section also applies to the cross-listed course.
 
 1. [Find the course](#searching-for-courses) you want to add a cross-listed course to and click on it in the **Courses** list.
-2. In the **course details** window, click **Crosslist**.
+2. In the **course details** window, click **Actions > Crosslist**.
 3. In the **New course within listing** window, enter a **Course name** and optionally fill in the other boxes under **Basic course information**. The **Cross listing information** section is populated with information from the original course.
 4. Click **Save & close**. The course is saved and appears in the Cross-listed courses section of the original course. It also appears in the main course list.
 
@@ -131,7 +133,7 @@ See [Editing a course.](#editing-a-course)
 You are able to delete a cross-listed course with items as long as one course remains.
 
 1. [Find the cross-listed course](#searching-for-courses) you want to delete and click on it in the **Courses** list.
-2. In the **course details** window, click **Edit**.
+2. In the **course details** window, click **Actions > Edit**.
 3. Click **Delete**.
 4. Click **Really delete** to delete the course. The course is deleted and removed from the Courses list.
 
@@ -143,13 +145,13 @@ You are able to delete a cross-listed course with items as long as one course re
 4. If the course has cross-listings, and you want the cross-listed courses to also be duplicated, check **Duplicate all cross-listed courses**.
 5. Click **Create duplicate course(s)**.
 
-The new duplicated course will appear, with "- Duplicate" added to the end of the course name. Click **Action > Edit** to edit the course to update the name and other information.
+The new duplicated course will appear, with "- Duplicate" added to the end of the course name. Click **Actions > Edit** to edit the course to update the name and other information.
 
 ## Adding an instructor to a course
 
 Instructors can only be added once a course is created. The instructor does not need a user record in FOLIO, but adding an instructor with a user record facilitates reports.
 
-Add an instructor with a FOLIO user record:
+Add an instructor that has a FOLIO user record:
 
 1. [Find the course](#searching-for-courses) and click on it in the **Courses** list.
 2. Under **Instructors**, click **Add instructor**.
@@ -181,7 +183,7 @@ Add an instructor that does not have a FOLIO user record:
 
 ## Adding and removing notes
 
-You can add and assign notes to courses. Assigning a note means you are reusing a previously created note.
+You can add and assign notes to courses. Assigning a note means you are reusing a previously created note. To be able to add or assign notes, you need the appropriate [Notes permissions]({{< ref "/settings_notes.md#permissions" >}}).
 
 ### Adding a new note to a course.
 
@@ -194,7 +196,7 @@ You can add and assign notes to courses. Assigning a note means you are reusing 
 
 ### Assigning an existing note to a course
 
-1. [Find the course](#searching-for-courses) to which you want to add a note and click on it in the **Courses** list.
+1. [Find the course](#searching-for-courses) and click on it in the **Courses** list.
 2. In the **Notes** pane, click **Assign/Unassign**.
 3. In the **Assign / Unassign note** dialog, search for the note(s) you wish to assign to the course.
 4. Select the checkbox for the note(s) you wish to assign to the course and click **Save**.
@@ -230,7 +232,7 @@ If the note is assigned to multiple courses, any edits will apply to the note fo
 
 Note that when you put an item on reserve for a course, FOLIO copies information from Inventory into the reserve record in order to support searching within the Courses app.
 
-This means that if any information about that reserve changes in Inventory after it was put on Reserve, you may need to remove and re-add the item record to bring over the information into the Courses app.
+This means that if any information about that reserve item changes in Inventory after it was put on Reserve, you may need to remove and re-add the item record to bring over the information into the Courses app.
 
 Information that is copied to support searching includes:
 * Title and contributor from the instance record;
@@ -240,7 +242,7 @@ A reserve item's start date and end date are maintained in the Reserve app. FOLI
 
 ## Adding a reserve item to a course using Fast Add
 
-You can use Fast Add to create an item in the Courses app and put it on reserve. The Fast Add option prompts you to create an instance, holding, and item in one pane with fewer fields. When you create the item, the Courses app creates the instance, holding, and item in Inventory for you, and then adds the item to the course.
+If you have the **Fast add: Create** permission, you can use Fast Add to create an item in the Courses app and put it on reserve. The Fast Add option prompts you to create an instance, holding, and item in one pane with fewer fields. When you create the item, the Courses app creates the instance, holding, and item in Inventory for you, and then adds the item to the course.
 
 The Fast Add workflow is meant to support putting personal copies, scanned articles, or other items on reserve that are not part of the library’s general circulating collection.
 
@@ -279,7 +281,7 @@ The most common use case for these fields is when an electronic item is put on r
 * **Total number of pages used**. With this field, you can track the number of scanned pages as part of the reserve.
 * **Total % of pages used**. This number must be calculated by the library staff member. Libraries that owe copyright payment can in some cases determine what they owe based off of the percentage of the work used.
 * **Payment based on**. This is a free-text field. Most libraries will put one of two values - **Usage** or **Enrollment**. 
-* **Additional sections of this item used**. For some items, libraries will put multiple scans from the same book on reserve - for example, a book with ten scholarly articles, and three articles are each scanned and put on reserve as distinct items. In those cases, libraries can check this box to indicate that the items should be linked together in order to facilitate proper copyright payment calculation.
+* **Additional sections of this item used**. For some items, libraries will put multiple scans from the same book on reserve - for example, a book with ten scholarly articles, of which three articles are scanned and put on reserve as distinct items. In those cases, libraries can check this box to indicate that the items should be linked together in order to facilitate proper copyright payment calculation.
 
 
 ## Removing a reserve item from a course
