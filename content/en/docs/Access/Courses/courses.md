@@ -168,9 +168,10 @@ Add an instructor that does not have a FOLIO user record:
 
 ## Editing an instructor
 
+Note: If an instructor has a FOLIO user record, then the instructor cannot be edited.
 1. [Find the course](#searching-for-courses) and click on it in the **Courses** list.
 2. Under **Instructors**, find the instructor you want to edit.
-3. Click **Edit instructor**.
+3. Click the **edit icon**.
 4. In the **Add instructor for [course]** window, edit the **Name** or **Barcode** of the instructor.
 5. Click **Save & close**.
 
@@ -179,7 +180,7 @@ Add an instructor that does not have a FOLIO user record:
 
 1. [Find the course](#searching-for-courses) and click on it in the **Courses** list.
 2. Under **Instructors**, find the instructor you want to delete.
-3. Click **Remove**. The instructor is removed from the course.
+3. Click the **trash icon**. The instructor is removed from the course.
 
 ## Adding and removing notes
 
