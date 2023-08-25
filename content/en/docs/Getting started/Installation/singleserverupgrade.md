@@ -168,19 +168,19 @@ From Orchid release notes, do these steps:
 ### i. Incompatible Hazelcast version in mod-remote-storage
 When running Nolana and Orchid version of mod-remote-storage in parallel they need distinct Hazelcast configurations. One possibility is to use different Hazelcast cluster name environment variables:
 ```
-HZ_CLUSTERNAME=nolana
-HZ_CLUSTERNAME=orchid
+HZ_CLUSTERNAME=nolana (mod-remote-storage-1.7.2)
+HZ_CLUSTERNAME=orchid (mod-remote-storage-2.0.3)
 ```
 
 ### ii. Data Import jobs for update of >5000 MARC records
-If you expect to have these kind of data import jobs, increase database connection pool size for mod-source-record-manager and mod-source-record-storage to 30 (default value is 15). Set the environment variable:
+If you expect to have these kind of data import jobs, increase database connection pool size for mod-source-record-manager-3.6.4 and mod-source-record-storage to 30 (default value is 15). Set the environment variable:
 ```
 {
           "name": "DB_MAXPOOLSIZE",
           "value": "30"
 }
 ```
-Set the newly provided "DB_CONNECTION_TIMEOUT" environment variable to 40 for mod-source-record-storage:
+Set the newly provided "DB_CONNECTION_TIMEOUT" environment variable to 40 for mod-source-record-storage-5.6.10:
 ```
 {
            "name":"DB_CONNECTION_TIMEOUT",
@@ -198,6 +198,12 @@ edge-oai-pmh memory settings remain the same as in previous releases:
 ```
 Java: -XX:MetaspaceSize=384m -XX:MaxMetaspaceSize=512m -Xmx1440m
 Amazon Container: cpu - 1024, memory - 1512, memoryReservation - 1360
+
+### iv. Set jwt.signing.key for mod-authtoken
+In the Launch Descriptor of mod-authtoken-2.13.0, set jwt.signing.key in the JAVA_OPTION to the same value as you have set it in the Nolana version of mod-authtoken(-2.12.0) :
+```
+      "name" : "JAVA_OPTIONS",
+      "value" : "-XX:MaxRAMPercentage=66.0 -Dcache.permissions=true -Djwt.signing.key=folio-demo"
 ```
 
 
@@ -225,7 +231,7 @@ If you do loadReference%3Dtrue, your local changes to reference data might becom
   curl -w '\n' -D - -X POST -H "Content-type: application/json" -d @/usr/folio/platform-complete/install.json http://localhost:9130/_/proxy/tenants/diku/install?deploy=true\&preRelease=false\&tenantParameters=loadReference%3Dfalse
 ```
 This call fails because frontend modules can not be deployed (we do this call anyway). 
-You will get a message "HTTP 400 - Module folio_developer-6.3.0 has no launchDescriptor".
+You will get a message "HTTP 400 - Module folio_developer-7.0.0 has no launchDescriptor".
 But this call deploys all backend modules. 
 
 You can follow the progress in deployment on the terminal screen and/or in /var/log/folio/okapi/okapi.log .
@@ -236,6 +242,7 @@ We finish up by enabeling all modules (backend & frontend) with a single call wi
 ```
 
 If that fails, remedy the error cause and try again until the post succeeds. 
+   *** Hier weiter
 We will take care of old modules that are not needed anymore but are still running (deployed) in the "Clean up" section.
 
 There should now be 125 modules deployed on your single server, try
