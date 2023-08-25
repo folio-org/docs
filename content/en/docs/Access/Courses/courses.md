@@ -7,25 +7,28 @@ weight: 40
 
 The Courses app allows you to create and manage course reserves.
 
-Note: In order for the courses you create in the Courses app to be discoverable by your patrons, you need to have an external interface or discovery layer set up and capable of interacting with FOLIO.
+Note: To enable library patrons to discover the courses you create in the Courses app you need an external interface or discovery layer set up and capable of interacting with FOLIO.
 
 
 ## Permissions
 
-The permissions listed below allow you to interact with the Courses app and determine what you can or cannot do within the app. You can assign permissions to users in the Users app. If none of these permissions are assigned to a user, then they will be unable to see the Courses app or any related information.
+You can assign permissions to users in the Users app. The permissions described below allow you to interact with the Courses app and determine what you can or cannot do within the app.  If you don’t assign any of these permissions to a user, then they will be unable to see the Courses app or any related information.
 
 The following are all the Courses permissions:
 
 * **Courses: All permissions.** This permission allows the user to maintain (view, add, edit, and delete) courses, items, instructors, cross-listed courses and all course settings.
 * **Courses: Read, add, edit, and delete courses.** This permission allows the user to view, add, edit and delete a course.
-* **Courses: Read, add, and edit courses.** This permission allows the user to view, add, and edit a course. However, they are unable to delete a course.
-* **Courses: Add and edit courses’ reserved items.** This permission allows the user to add and edit items associated with a course. It does not grant the ability to remove items from a course.
+* **Courses: Read, add, and edit courses.** This permission allows the user to view, add, and edit a course. They cannot delete a course.
+* **Courses: Add and edit courses’ reserved items.** This permission allows the user to add and edit items associated with a course. They cannot remove items from a course.
 * **Courses: Add, edit, and remove courses’ reserved items.** This permission allows the user to view, add, edit, and remove items associated with a course.
 * **Courses: Read All.** This permission allows the user to see all courses and item information.
 * **Settings (Courses): Can create, edit and delete Course Settings.** This permission allows the user to maintain (view, add, edit, and delete) all course settings.
 
+
 ## Keyboard shortcuts
+
 Keyboard shortcuts allow you to perform actions in this app using the keyboard.  See [Platform essentials > Keyboard shortcuts]({{< ref "keyboardshortcuts.md" >}}) for more information.
+
 
 ## Implementation considerations
 
@@ -35,7 +38,7 @@ Before you implement the Courses app, make sure you have completed the following
 * [Configured your circulation rules.]({{< ref "/settings_circulation.md" >}})
 * Loaded or created users.
 
-If you are configuring the Courses app for the first time, you need to first set up the following features in the Settings app, if applicable:
+If you are configuring the Courses app for the first time, you need first to set up the following features in the Settings app, if applicable:
 
 * [Terms]({{< ref "/settings_courses.md#settings--courses--terms" >}})
 * [Course Types]({{< ref "/settings_courses.md#settings--courses--course-types" >}})
@@ -53,14 +56,14 @@ Once you configure the above settings, you can:
 
 ## Integrations
 
-The Courses app can be optionally integrated with these applications:
+You can choose to integrate the Courses app with these applications:
 
 * EBSCO Discovery Service (EDS)
 * VuFind
 
 In addition, you can connect the Courses app to your learning management system using the Learning Tools Interoperability (LTI) protocol. There is a separate module to install for LTI support. For more information, see [Course Reserves - LTI connectivity](https://wiki.folio.org/display/FOLIOtips/Course+Reserves+-+LTI+connectivity).
 
-Each of these integrations have their own features to consider in regards to the migration of courses, sections, cross-listings, and separate courses and how they interact with FOLIO.
+Each of these integrations has specific features to consider in regards to the migration of courses, sections, cross-listings, and separate courses and how they interact with FOLIO.
 
 
 ## Searching for courses
@@ -71,6 +74,7 @@ You can also search for courses by selecting any of the filters in the **Search 
 
 You can choose which columns appear in your search results by clicking on the **Actions** menu. Under **Show columns**, check or uncheck columns to change what you see in the results pane.
 
+
 ## Searching for reserves
 
 You can search for items on reserve in the **Search & filter** pane. Click **Reserves** to start your search. Reserves are shown and selected by default. To search for reserves, enter your search terms into the box. Select the **All fields** drop-down list to search through one of the following fields: Title, Barcode, or Call Number. All fields is the default search.
@@ -79,23 +83,25 @@ You can also search for reserves by selecting any of the filters in the **Search
 
 You can choose which columns appear in your search results by clicking on the **Actions** menu. Under **Show columns**, check or uncheck columns to change what you see in the results pane.
 
-To find items on a reserve for a specific course, first search for the course from the **Search & filter** pane. Click on the course you wish to view reserves for. Scroll down to the Items section to see all the items on reserve for that course.
+Use the **Search & filter** pane to find items on reserve for a specific course. Click on the course you wish to view reserves for. Then scroll down to the Items section to see all the items on reserve for that course.
+
 
 ## Creating a course
 
-When creating a course, you should keep the following in mind:
+To create a course, you must have the Courses window open. Then:
 
-* You must have the Courses window open in order to create a course.
+1. Click **Actions > New**.
+2. In the **Create course** window, enter a **Course Name** and select a **Term**. All other fields are optional.
+3. Click **Save & close**.
+
+### Creating a course - reminders
+     
 * Once a course is created, it can only be deleted if all reserve items are removed.
 * Department, Course Type, and Term are configured in Settings. See [Settings > Courses]({{< ref "/settings_courses.md" >}}) for more information.
 * If you are adding one or more cross-listed courses to a course, the information you enter into Course listing information also applies to each cross-listed course.
 * Reserve items added to the course are automatically assigned with the Start Date and End Date of the Term you selected, as specified in the [Term settings.]({{< ref "/settings_courses.md#settings--courses--terms" >}}) If needed, you can edit the dates by [editing the reserve item.](#editing-a-reserve-item)
 * Any item assigned to a Course automatically has its temporary location set to the value specified in the Location field. If needed, you can change the temporary location by [editing the reserve item.](#editing-a-reserve-item)
 * When completing the course information, make sure you understand how the fields correspond to your discovery interface.
-
-1. Click **Actions > New**.
-2. In the **Create course** window, enter a **Course Name** and select a **Term**. All other fields are optional.
-3. Click **Save & close**.
 
 
 ## Editing a course
@@ -124,9 +130,11 @@ Cross-listed courses share instructors, course listing information, and reserve 
 3. In the **New course within listing** window, enter a **Course name** and optionally fill in the other boxes under **Basic course information**. The **Cross listing information** section is populated with information from the original course.
 4. Click **Save & close**. The course is saved and appears in the Cross-listed courses section of the original course. It also appears in the main course list.
 
+
 ## Editing a cross-listed course
 
 See [Editing a course.](#editing-a-course)
+
 
 ## Deleting a cross-listed course
 
@@ -137,6 +145,7 @@ You are able to delete a cross-listed course with items as long as one course re
 3. Click **Delete**.
 4. Click **Really delete** to delete the course. The course is deleted and removed from the Courses list.
 
+
 ## Duplicating a course
 
 1. Find the course you want to duplicate and click on it in the Courses list.
@@ -146,6 +155,7 @@ You are able to delete a cross-listed course with items as long as one course re
 5. Click **Create duplicate course(s)**.
 
 The new duplicated course will appear, with "- Duplicate" added to the end of the course name. Click **Actions > Edit** to edit the course to update the name and other information.
+
 
 ## Adding an instructor to a course
 
@@ -166,6 +176,7 @@ Add an instructor that does not have a FOLIO user record:
 3. In the **Name** box, enter the instructor’s name.
 4. Click **Save & close**. The instructor appears in the Instructors section.
 
+
 ## Editing an instructor
 
 Note: If an instructor has a FOLIO user record, then the instructor cannot be edited.
@@ -181,6 +192,7 @@ Note: If an instructor has a FOLIO user record, then the instructor cannot be ed
 1. [Find the course](#searching-for-courses) and click on it in the **Courses** list.
 2. Under **Instructors**, find the instructor you want to delete.
 3. Click the **trash icon**. The instructor is removed from the course.
+
 
 ## Adding and removing notes
 
@@ -226,6 +238,7 @@ If the note is assigned to multiple courses, any edits will apply to the note fo
 3. In the Note window, click Actions > Delete.
 4. In the Delete note dialog, click Delete. The note is deleted and removed from any records to which it was attached
 
+
 ## Adding a reserve item to a course when the item exists in Inventory
 
 1. [Find the course](#searching-for-courses) and click on it in the **Courses** list.
@@ -240,6 +253,7 @@ Information that is copied to support searching includes:
 * Barcode, permanent location, call number, volume, copy, enumeration, and electronic access link from the item record
 
 A reserve item's start date and end date are maintained in the Reserve app. FOLIO will update the item's temporary location in inventory when you first add it on reserve, based on the location listed on the course record.
+
 
 ## Adding a reserve item to a course using Fast Add
 
@@ -256,7 +270,7 @@ Note that Fast Add is not usually appropriate for re-adding an item to a course 
 
 ## Editing a reserve item
 
-Note: If you add an item to a course and later make a change to the item via the item record (in the Inventory app) after that item is added to the course, then the change will not be reflected in the reserve record. To update the course reserve record, you need to delete the item and then re-add the item to the course.
+Note: If you add an item to a course and later make a change to that item via the item record (in the Inventory app) the change will not be reflected in the reserve record. To update the course reserve record, you need to delete the item and then re-add the item to the course.
 
 Editing a reserve item allows you to change or add information to the following fields:
 
