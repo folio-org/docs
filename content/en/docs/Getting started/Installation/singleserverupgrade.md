@@ -252,16 +252,16 @@ We finish up by enabeling all modules (backend & frontend) with a single call wi
 ```
 
 If that fails, remedy the error cause and try again until the post succeeds. 
-   *** Hier weiter
 We will take care of old modules that are not needed anymore but are still running (deployed) in the "Clean up" section.
 
-There should now be 125 modules deployed on your single server, try
+There should now be 126 modules deployed on your single server, try
 ```
   docker ps --all | grep "mod-" | wc
 ```
-65 of those modules belong to the Morning Glory release, 62 belong to the Nolana release.
-2 modules appear with the same version number in both releases, they have not been deployed twice ( mod-graphql:1.10.2 and mod-licenses:4.2.1 ).
+62 of those modules belong to the Nolana release, 65 belong to the Orchid release.
+1 module appears with the same version number in both releases, it has not been deployed twice ( mod-template-engine:1.18.0 ).
 
+ *** Hier weiter ***
 Disable modules which have been removed from the platform (and have not been disabled automatically):
 ```
   curl -w '\n' -D - -X POST -H "Content-type: application/json" -d '[{ "id" : "folio_search-5.1.0", "action" : "disable" }]' http://localhost:9130/_/proxy/tenants/diku/install
