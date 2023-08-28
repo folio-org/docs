@@ -12,17 +12,17 @@ Note: To enable library patrons to discover the courses you create in the Course
 
 ## Permissions
 
-You can assign permissions to users in the Users app. The permissions described below allow you to interact with the Courses app and determine what you can or cannot do within the app.  If you don’t assign any of these permissions to a user, then they will be unable to see the Courses app or any related information.
+You can assign permissions to users in the Users app. The permissions described below allow you to interact with the Courses app and determine what you can and cannot do within the app.  If you don’t assign any of these permissions to a user, the user will be unable to see the Courses app or any related information.
 
 The following are all the Courses permissions:
 
-* **Courses: All permissions.** This permission allows the user to maintain (view, add, edit, and delete) courses, items, instructors, cross-listed courses and all course settings.
-* **Courses: Read, add, edit, and delete courses.** This permission allows the user to view, add, edit and delete a course.
-* **Courses: Read, add, and edit courses.** This permission allows the user to view, add, and edit a course. They cannot delete a course.
-* **Courses: Add and edit courses’ reserved items.** This permission allows the user to add and edit items associated with a course. They cannot remove items from a course.
-* **Courses: Add, edit, and remove courses’ reserved items.** This permission allows the user to view, add, edit, and remove items associated with a course.
-* **Courses: Read All.** This permission allows the user to see all courses and item information.
-* **Settings (Courses): Can create, edit and delete Course Settings.** This permission allows the user to maintain (view, add, edit, and delete) all course settings.
+* **Courses: All permissions.** This permission allows users to maintain (view, add, edit, and delete) courses, items, instructors, cross-listed courses and all course settings.
+* **Courses: Read, add, edit, and delete courses.** This permission allows users to view, add, edit and delete a course.
+* **Courses: Read, add, and edit courses.** This permission allows users to view, add, and edit a course. They cannot delete a course.
+* **Courses: Add and edit courses’ reserved items.** This permission allows users to add and edit items associated with a course. They cannot remove items from a course.
+* **Courses: Add, edit, and remove courses’ reserved items.** This permission allows users to view, add, edit, and remove items associated with a course.
+* **Courses: Read All.** This permission allows users to see all courses and item information.
+* **Settings (Courses): Can create, edit and delete Course Settings.** This permission allows users to maintain (view, add, edit, and delete) all course settings.
 
 
 ## Keyboard shortcuts
@@ -77,7 +77,7 @@ You can choose which columns appear in your search results by clicking on the **
 
 ## Searching for reserves
 
-You can search for items on reserve in the **Search & filter** pane. Click **Reserves** to start your search. Reserves are shown and selected by default. To search for reserves, enter your search terms into the box. Select the **All fields** drop-down list to search through one of the following fields: Title, Barcode, or Call Number. All fields is the default search.
+You can search for items on reserve in the **Search & filter** pane. Click **Reserves** to start your search. All reserves are shown and selected by default. To search for reserves, enter your search terms into the box. Select the **All fields** drop-down list to search through one of the following fields: Title, Barcode, or Call Number. All fields is the default search.
 
 You can also search for reserves by selecting any of the filters in the **Search & filter** pane: Processing status, Copyright status, Permanent location, Temporary location, and Term. Additionally, you can apply the filters after you perform a search to limit your results.
 
@@ -113,7 +113,7 @@ To create a course, you must have the Courses window open. Then:
 
 ## Deleting a course
 
-Courses can only be deleted once all items are removed from the course.
+To delete a course, you must first remove all items from the course.
 
 1. [Find the course](#searching-for-courses) you want to delete and click on it in the **Courses** list.
 2. In the **course details** window, click **Actions > Edit**.
@@ -123,7 +123,7 @@ Courses can only be deleted once all items are removed from the course.
 
 ## Adding a cross-listed course
 
-Cross-listed courses share instructors, course listing information, and reserve items. Once a course is created, cross-listed courses can be added to it. When you cross-list a course, the information you have in the original course’s Course listing information section also applies to the cross-listed course.
+Cross-listed courses share instructors, course listing information, and reserve items. Once a course is created, you can add cross-listed courses to it. When you cross-list a course, the information you have in the original course’s Course listing information section also applies to the cross-listed course.
 
 1. [Find the course](#searching-for-courses) you want to add a cross-listed course to and click on it in the **Courses** list.
 2. In the **course details** window, click **Actions > Crosslist**.
@@ -149,9 +149,9 @@ You are able to delete a cross-listed course with items as long as one course re
 ## Duplicating a course
 
 1. Find the course you want to duplicate and click on it in the Courses list.
-2. In the Course details window, click **Action > Duplicate**. A pop-up window will appear.
+2. In the **course details** window, click **Action > Duplicate**. A pop-up window will appear.
 3. In the pop-up window, select the term for the duplicate course.
-4. If the course has cross-listings, and you want the cross-listed courses to also be duplicated, check **Duplicate all cross-listed courses**.
+4. If the course has cross-listings, and you want the cross-listed courses to be duplicated also, check **Duplicate all cross-listed courses**.
 5. Click **Create duplicate course(s)**.
 
 The new duplicated course will appear, with "- Duplicate" added to the end of the course name. Click **Actions > Edit** to edit the course to update the name and other information.
@@ -179,7 +179,7 @@ Add an instructor that does not have a FOLIO user record:
 
 ## Editing an instructor
 
-Note: If an instructor has a FOLIO user record, then the instructor cannot be edited.
+Note: If an instructor has a FOLIO user record, you cannot edit that instructor's information.
 1. [Find the course](#searching-for-courses) and click on it in the **Courses** list.
 2. Under **Instructors**, find the instructor you want to edit.
 3. Click the **edit icon**.
@@ -235,8 +235,8 @@ If the note is assigned to multiple courses, any edits will apply to the note fo
 
 1. [Find the course](#searching-for-courses) and click on it in the **Courses** list.
 2. Under **Notes**, click the note you wish to delete.
-3. In the Note window, click Actions > Delete.
-4. In the Delete note dialog, click Delete. The note is deleted and removed from any records to which it was attached
+3. In the Note window, click **Actions > Delete**.
+4. In the Delete note dialog, click **Delete**. The note is deleted and removed from any records to which it was attached
 
 
 ## Adding a reserve item to a course when the item exists in Inventory
@@ -270,18 +270,18 @@ Note that Fast Add is not usually appropriate for re-adding an item to a course 
 
 ## Editing a reserve item
 
-Note: If you add an item to a course and later make a change to that item via the item record (in the Inventory app) the change will not be reflected in the reserve record. To update the course reserve record, you need to delete the item and then re-add the item to the course.
+Note: If you add an item to a course and later make a change to that item via the item record (in the Inventory app), the change will not be reflected in the reserve record. To update the course reserve record, you need to delete the item and then re-add the item to the course.
 
 Editing a reserve item allows you to change or add information to the following fields:
 
 * **Temporary location.** If you change the reserve item’s temporary location, once you save the changes, the selected Temporary location is added to the Item record in the Inventory app.
 * **Temporary loan type.** If you change the reserve item’s temporary loan type, once you save the changes, the selected Temporary loan type is added to the Item record in the Inventory app.
 * **Processing status.** This field only applies to the Courses app and is available as a Reserves search filter.
-* **Start Date and End Date.** When an item is placed on reserve, the start and end date are inherited from the selected Term.
+* **Start Date and End Date.** When an item is placed on reserve, the start and end dates are inherited from the selected Term.
 * **Copyright information.** This section facilitates copyright tracking.
 
 1. [Find the course](#searching-for-courses) with the item you want to edit and click on it in the **Courses** list.
-2. In the **Items** section, find the reserve item and click **Edit reserve**.
+2. In the **Items** section, find the reserve item and click the **edit icon**.
 3. In the **Item title** window, make your changes.
 4. Click **Save & close**. The item is updated.
 
@@ -304,4 +304,4 @@ The most common use case for these fields is when an electronic item is put on r
 Note: Removing an item from a course does not remove it from the Inventory app. If the item on reserve had a temporary location inherited from the course, removing the item from reserve will remove the temporary location from the item in inventory.
 
 1. [Find the course](#searching-for-courses) with the item you want to remove and click on it in the **Courses** list.
-2. In the **Items** section, find the reserve item and click **Remove**. The item is removed.
+2. In the **Items** section, find the reserve item and click the **trash icon**. The item is removed.
