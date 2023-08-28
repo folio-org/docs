@@ -97,6 +97,16 @@ sudo add-apt-repository "deb https://repository.folio.org/packages/ubuntu focal/
 sudo apt-get update
 sudo apt-get -y --allow-change-held-packages install okapi=5.0.1-1
 ```
+
+Make sure Okapi's port range doesn't collide with Elasticsearch's standard port 9200, if you are using that port for ES.
+Change Okapi's port range, edit okapi.conf:
+```
+cd /etc/folio/okapi
+edit okapi.conf
+   port_start="19000"
+   port_end="20000"
+```
+
 Check Okapi logging properties in /etc/folio/okapi. Check that this line is in okapi.conf:
 ```
 log4j_config="/etc/folio/okapi/log4j2.properties"
