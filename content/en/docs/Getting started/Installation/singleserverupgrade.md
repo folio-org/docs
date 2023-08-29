@@ -381,7 +381,6 @@ Log in to your frontend: E.g., go to http://<YOUR_HOST_NAME>/ in your browser.
 
 If so, remove the old stripes container: docker rm \<container id of your old stripes container\> .
 
- *** Hier weiter ***
 ## IV. Post Upgrade
 From Orchid release notes:
 ### i. Additional cluster-level permissions are required in Opensearch 
