@@ -83,7 +83,7 @@ You can also search for reserves by selecting any of the filters in the **Search
 
 You can choose which columns appear in your search results by clicking on the **Actions** menu. Under **Show columns**, check or uncheck columns to change what you see in the results pane.
 
-Use the **Search & filter** pane to find items on reserve for a specific course. Click on the course you wish to view reserves for. Then scroll down to the Items section to see all the items on reserve for that course.
+Use the **Search & filter** pane to find items on reserve for a specific course. [Find the course](#searching-for-courses) you wish to view reserves for. Then scroll down to the Items section to see all the items on reserve for that course.
 
 
 ## Creating a course
@@ -230,13 +230,15 @@ If the note is assigned to multiple courses, any edits will apply to the note fo
 3. In the **Assign / Unassign note** modal, search for the note you wish to remove.
 4. Uncheck the box(es) for the note(s) you wish to unassign.
 5. Click **Save**.
+   
+You cannot unassign a note that assigned to only one course - delete the note instead.
 
 ### Deleting a note
 
 1. [Find the course](#searching-for-courses) and click on it in the **Courses** list.
 2. Under **Notes**, click the note you wish to delete.
 3. In the Note window, click **Actions > Delete**.
-4. In the Delete note dialog, click **Delete**. The note is deleted and removed from any records to which it was attached
+4. In the Delete note dialog, click **Delete**. The note is deleted and removed from any records to which it was attached.
 
 
 ## Adding a reserve item to a course when the item exists in Inventory
@@ -249,7 +251,7 @@ Note that when you put an item on reserve for a course, FOLIO copies information
 This means that if any information about that reserve item changes in Inventory after it was put on Reserve, you may need to remove and re-add the item record to bring over the information into the Courses app.
 
 Information that is copied to support searching includes:
-* Title and contributor from the instance record;
+* Title and contributor from the instance record
 * Barcode, permanent location, call number, volume, copy, enumeration, and electronic access link from the item record
 
 A reserve item's start date and end date are maintained in the Reserve app. FOLIO will update the item's temporary location in inventory when you first add it on reserve, based on the location listed on the course record.
@@ -265,7 +267,7 @@ The Fast Add workflow is meant to support putting personal copies, scanned artic
 2. From the New fast add record, fill in the Instance, Holdings, and Item sections with the appropriate values.
 3. Once you have included all of the information needed for the item, click **Save and close** to create your inventory records and add the item on reserve for the course.
 
-Note that Fast Add is not usually appropriate for re-adding an item to a course since it will create additional duplication of records in Inventory. If you need to re-add an item, you should use the function to add an item by barcode.
+Note that Fast Add is not usually appropriate for re-adding an item to a course since it will create duplication of records in Inventory. If you need to re-add an item, you should use the function to add an item by barcode.
 
 
 ## Editing a reserve item
@@ -291,7 +293,7 @@ Each reserve item contains a section to track copyright information. This allows
 
 The most common use case for these fields is when an electronic item is put on reserve, but there is no built-in restriction on using it for other items. There are no automated workflows that use these fields. They are all optional.
 
-* **Copyright status**. This is a drop-down. Your library can configure the drop-down values in **Settings\> Courses**. 
+* **Copyright status**. This is a drop-down. Your library can configure the drop-down values in **Settings \> Courses**. 
 * **Total number of pages in item**. Since most copyright tracking is on scans of physical items, you can track the pages for the entire item here.
 * **Total number of pages used**. With this field, you can track the number of scanned pages as part of the reserve.
 * **Total % of pages used**. This number must be calculated by the library staff member. Libraries that owe copyright payment can in some cases determine what they owe based off of the percentage of the work used.
