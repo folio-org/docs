@@ -149,7 +149,7 @@ You are able to delete a cross-listed course with items as long as one course re
 ## Duplicating a course
 
 1. Find the course you want to duplicate and click on it in the Courses list.
-2. In the **course details** window, click **Action > Duplicate**. A pop-up window will appear.
+2. In the **course details** window, click **Actions > Duplicate**. A pop-up window will appear.
 3. In the pop-up window, select the term for the duplicate course.
 4. If the course has cross-listings, and you want the cross-listed courses to be duplicated also, check **Duplicate all cross-listed courses**.
 5. Click **Create duplicate course(s)**.
@@ -212,7 +212,10 @@ You can add and assign notes to courses. Assigning a note means you are reusing 
 1. [Find the course](#searching-for-courses) and click on it in the **Courses** list.
 2. In the **Notes** pane, click **Assign/Unassign**.
 3. In the **Assign / Unassign note** dialog, search for the note(s) you wish to assign to the course.
-4. Select the checkbox for the note(s) you wish to assign to the course and click **Save**.
+     1. You can search by title or description in the box.
+     2. You can filter by **Note type**.
+     3. The **Note assignment status** refers to whether the note is assigned or unassigned to the course you have open.
+5. Select the checkbox for the note(s) you wish to assign to the course and click **Save**.
 
 ### Editing an existing note on a course.
 
@@ -227,7 +230,7 @@ If the note is assigned to multiple courses, any edits will apply to the note fo
 
 1. [Find the course](#searching-for-courses) and click on it in the **Courses** list.
 2. Under **Notes**, click **Assign / Unassign**.
-3. In the **Assign / Unassign note** modal, search for the note you wish to remove.
+3. In the **Assign / Unassign note** modal, select assigned in the **Note assignment status** filter.
 4. Uncheck the box(es) for the note(s) you wish to unassign.
 5. Click **Save**.
    
