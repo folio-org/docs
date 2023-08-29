@@ -208,6 +208,7 @@ edge-oai-pmh memory settings remain the same as in previous releases:
 ```
 Java: -XX:MetaspaceSize=384m -XX:MaxMetaspaceSize=512m -Xmx1440m
 Amazon Container: cpu - 1024, memory - 1512, memoryReservation - 1360
+```
 
 ### iv. Set jwt.signing.key for mod-authtoken
 In the Launch Descriptor of mod-authtoken-2.13.0, set jwt.signing.key in the JAVA_OPTION to the same value as you have set it in the Nolana version of mod-authtoken(-2.12.0) :
