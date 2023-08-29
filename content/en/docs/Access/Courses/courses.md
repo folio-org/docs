@@ -83,7 +83,7 @@ You can also search for reserves by selecting any of the filters in the **Search
 
 You can choose which columns appear in your search results by clicking on the **Actions** menu. Under **Show columns**, check or uncheck columns to change what you see in the results pane.
 
-Use the **Search & filter** pane to find items on reserve for a specific course. [Find the course](#searching-for-courses) you wish to view reserves for. Then scroll down to the Items section to see all the items on reserve for that course.
+Use the **Search & filter** pane to find items on reserve for a specific course. [Find the course](#searching-for-courses) you wish to view reserves for and click on it in the **Courses** list. Then scroll down to the Items section to see all the items on reserve for that course.
 
 
 ## Creating a course
