@@ -261,20 +261,10 @@ There should now be 126 modules deployed on your single server, try
 62 of those modules belong to the Nolana release, 65 belong to the Orchid release.
 1 module appears with the same version number in both releases, it has not been deployed twice ( mod-template-engine:1.18.0 ).
 
- *** Hier weiter ***
-Disable modules which have been removed from the platform (and have not been disabled automatically):
-```
-  curl -w '\n' -D - -X POST -H "Content-type: application/json" -d '[{ "id" : "folio_search-5.1.0", "action" : "disable" }]' http://localhost:9130/_/proxy/tenants/diku/install
-
-  curl -w '\n' -D - -X POST -H "Content-type: application/json" -d '[{ "id" : "mod-codex-ekb-1.10.0", "action" : "disable" }]' http://localhost:9130/_/proxy/tenants/diku/install
-
-  curl -w '\n' -D - -X POST -H "Content-type: application/json" -d '[{ "id" : "mod-codex-mux-2.12.0", "action" : "disable" }]' http://localhost:9130/_/proxy/tenants/diku/install
-```
-
-Modules enabled for your tenant are now those of the Nolana release:
+Modules enabled for your tenant are now those of the Orchid release:
 ```
 curl -w '\n' -XGET http://localhost:9130/_/proxy/tenants/diku/modules | grep id | wc
-  131
+  134
 ```
 
 This number is the sum of the following:
@@ -282,10 +272,10 @@ This number is the sum of the following:
  Nolana release:
  - 59 Frontend modules
  -  9 Edge modules
- - 62 Backend modules
- -  1 Okapi module (4.14.12)
+ - 65 Backend modules
+ -  1 Okapi module (5.0.1)
 
-These are all R3-2022 (Nolana) modules.
+These are all R1-2023 (Orchid) modules.
 
 
 Repeat the steps in II.v) for other tenants that you might host on your system and want to migrate now.
@@ -294,42 +284,34 @@ Repeat the steps in II.v) for other tenants that you might host on your system a
   
 Clean up. Undeploy all unused containers.
 
-Undeploy 63 modules of the Morning Glory release -- all but mod-graphql:1.10.2 and mod-licenses:4.2.1 (these 2 are still in use in Nolana).
+Undeploy 61 modules of the Nolana release -- all but mod-template-engine:1.18.0 (this one is also part of Orchid).
 
 Undeploy old module versions like this:
 ```
-curl -w '\n' -D - -X DELETE http://localhost:9130/_/discovery/modules/mod-agreements-5.2.2
-curl -w '\n' -D - -X DELETE http://localhost:9130/_/discovery/modules/mod-audit-2.5.0
+curl -w '\n' -D - -X DELETE http://localhost:9130/_/discovery/modules/mod-agreements-5.4.4
+curl -w '\n' -D - -X DELETE http://localhost:9130/_/discovery/modules/mod-audit-2.6.2
 ...
-curl -w '\n' -D - -X DELETE http://localhost:9130/_/discovery/modules/mod-z3950-2.4.0
-```
-
-Remove unused (old) edge modules from Okapi discovery:
-```
-curl -w '\n' -D - -X DELETE http://localhost:9130/_/discovery/modules/edge-ncip-1.8.0
-curl -w '\n' -D - -X DELETE http://localhost:9130/_/discovery/modules/edge-orders-2.6.3
-curl -w '\n' -D - -X DELETE http://localhost:9130/_/discovery/modules/edge-patron-4.9.3
-curl -w '\n' -D - -X DELETE http://localhost:9130/_/discovery/modules/edge-rtac-2.5.2
+curl -w '\n' -D - -X DELETE http://localhost:9130/_/discovery/modules/mod-z3950-3.1.0
 ```
 
 ### Result
-  for Nolana HF#1
-  62 backend modules, "mod-\*" are contained in the list install.json. 
-  Those 62 backend modules are now being enabled for your tenant(s). 
-  62 containers for those backend modules are running in docker on your system.
+  for Orchid CSP#5
+  65 backend modules, "mod-\*" are contained in the list install.json. 
+  Those 65 backend modules are now being enabled for your tenant(s). 
+  65 containers for those backend modules are running in docker on your system.
 
 Now, finally once again get a list of the deployed backend modules:
   
   ```
   curl -w '\n' -D - http://localhost:9130/_/discovery/modules | grep srvcId | wc
- 62
+ 65
   ```
   
 Compare this with the number of your running docker containers:
   
   ```
   docker ps --all | grep "mod-" | wc
-    62
+    65
   ```
 
 Perform a health check
@@ -338,7 +320,7 @@ Perform a health check
   ```
 Is everything OK ?
   
-The backend of the new tenant is ready.  Now, you have to set up a new Stripes instance for the frontend of the tenant.
+Congratulations, your Orchid backend is complete and cleaned-up now ! Now, you have to set up a new Stripes instance for the frontend of the tenant.
 
 
 ## III. Frontend installation : Stripes
@@ -365,14 +347,14 @@ Build the docker container which will contain Stripes and nginx :
   
 ```
   docker build -f docker/Dockerfile --build-arg OKAPI_URL=http(s)://<YOUR_DOMAIN_NAME>/okapi --build-arg TENANT_ID=diku -t stripes .
-Sending build context to Docker daemon  1.138GB
-Step 1/19 : FROM node:16-alpine as stripes_build
+Sending build context to Docker daemon  61.96MB
+Step 1/21 : FROM node:18-alpine as stripes_build
 ...
 Step 21/21 : ENTRYPOINT ["/usr/bin/entrypoint.sh"]
- ---> Running in af1e52b96681
-Removing intermediate container af1e52b96681
- ---> 87cc6173a64f
-Successfully built 87cc6173a64f
+ ---> Running in 71e5acf59c42
+Removing intermediate container 71e5acf59c42
+ ---> 9c2c6b792eec
+Successfully built 9c2c6b792eec
 Successfully tagged stripes:latest
 ```
 
@@ -398,6 +380,7 @@ Log in to your frontend: E.g., go to http://<YOUR_HOST_NAME>/ in your browser.
 
 If so, remove the old stripes container: docker rm \<container id of your old stripes container\> .
 
+ *** Hier weiter ***
 ## IV. Post Upgrade
 From Orchid release notes:
 ### i. Additional cluster-level permissions are required in Opensearch 
