@@ -198,7 +198,7 @@ Note: If an instructor has a FOLIO user record, you cannot edit that instructor'
 
 You can add and assign notes to courses. Assigning a note means you are reusing a previously created note. To be able to add or assign notes, you need the appropriate [Notes permissions]({{< ref "/settings_notes.md#permissions" >}}).
 
-### Adding a new note to a course.
+### Adding a new note to a course
 
 1. [Find the course](#searching-for-courses) and click on it in the **Courses** list.
 2. In the **Notes** pane, click **New**.
@@ -234,7 +234,7 @@ If the note is assigned to multiple courses, any edits will apply to the note fo
 4. Uncheck the box(es) for the note(s) you wish to unassign.
 5. Click **Save**.
    
-You cannot unassign a note that assigned to only one course - delete the note instead.
+You cannot unassign a note that is assigned to only one course - delete the note instead.
 
 ### Deleting a note
 
