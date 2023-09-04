@@ -112,17 +112,20 @@ When you create a manual charge on a patron’s account, or apply an action to a
 
 ### Automatic fee/fine notices
 
-Notices for automatic fee/fines are determined by the associated circulation rule. 
+Notices for automatic fees/fines are determined by the associated circulation rule. 
 
-When the item is loaned, it has an associated notice policy, and within the notice policy, you can choose to send fee/fine notices when overdue fines or lost item fines are charged.
+The notice policy of an item determines whether patrons will be sent fee/fine notices for overdue or lost item charges..
 
-**Aged to lost** notices for long-term loans (loans with a time interval of days, weeks, or months) are sent on a per-charge basis and are not bunched into one single email. This can result in more notices being sent to a patron than desired.
+**Overdue fine, returned** and **Overdue fine, renewed** notices always bundle multiple fees/fines. In both cases, the associated template must include the {{#feeCharges}} {{/feeCharges}} token for multiple loans. 
+* **Overdue fine, returned:**  if you choose the *Send after* option, every patron notice will include all open overdue fines.
+* **Overdue fine, renewed:** if you choose the *Send after* option, each renew action will send separate patron notices.
 
-For example, suppose a library has a policy where faculty can borrow books until the end of the academic year (defined with a fixed due date.) If the items age to lost, faculty are charged $100 to replace the book, plus a $25 processing fee. A faculty member borrows ten books that are all due at the end of the academic year and doesn’t return them. If the library uses the **Aged to lost** notice for those lost books, that faculty member would receive twenty separate emails - one for the replacement cost and one for the processing fee for each item.
+You can send **Lost item fee(s) charged** notices throughout the day (typically processed every five minutes, with a separate notice for each fee/fine charged).  You can also choose to bunch and send them overnight in one email (processed at 11:59pm). See [Settings \> Circulation \> Fee/ fine notices triggering events](../../../../ settings/settings_circulation/settings_circulation/#feefine-notices-triggering-events). 
 
-While there are plans to change this so that lost item fine notices are sent in bulk, that development is not yet scheduled. 
+*Send overnight* is good for long-term loans, while *Send throughout the day* is a good option for short-term loans. If you choose *Send overnight* then the associated template **must** include the {{#feeCharges}} {{/feeCharges}} token for multiple loans. If you choose *Send throughout the day* then the associated template **must not** include the {{#feeCharges}} {{/feeCharges}} token for multiple loans. **Lost item fee(s) charged** notices will be sent for both set cost and actual cost fees/fines and any applicable processing fees.
 
-Libraries that do not want to have the emails sent as individual notices can use the loan due date notice trigger as an alternative; loan due date notices can be triggered after the item was due. For example,  if an item is declared lost after 28 days, you could send a loan due date notice 27 days after the item was due, letting the patron know that the items are about to be declared lost, or send the notice at 29 days, letting them know the items have been declared lost. 
+**Lost item returned - fee(s) adjusted** notices are always sent when the event is triggered, i.e. when the lost item is checked in. **Lost item returned - fee(s) adjusted** notices will be sent for both set cost and actual cost fees/fines, and any applicable processing fees.
+
 
 ## How are overdue and overdue recall fee/fines calculated?
 
