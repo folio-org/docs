@@ -116,11 +116,11 @@ Notices for automatic fees/fines are determined by the associated circulation ru
 
 The notice policy of an item determines whether patrons will be sent fee/fine notices for overdue or lost item charges..
 
-**Overdue fine, returned** and **Overdue fine, renewed** notices always bundle multiple fees/fines. In both cases, the associated template must include the {{#feeCharges}} {{/feeCharges}} token for multiple loans. 
+**Overdue fine, returned** and **Overdue fine, renewed** notices always bundle multiple fees/fines. In both cases, the associated template **must** include the {{#feeCharges}} {{/feeCharges}} token for multiple loans. 
 * **Overdue fine, returned:**  if you choose the *Send after* option, every patron notice will include all open overdue fines.
 * **Overdue fine, renewed:** if you choose the *Send after* option, each renew action will send separate patron notices.
 
-You can send **Lost item fee(s) charged** notices throughout the day (typically processed every five minutes, with a separate notice for each fee/fine charged).  You can also choose to bunch and send them overnight in one email (processed at 11:59pm). See [Settings \> Circulation \> Fee/ fine notices triggering events](../../../../ settings/settings_circulation/settings_circulation/#feefine-notices-triggering-events). 
+You can send **Lost item fee(s) charged** notices throughout the day (typically processed every five minutes, with a separate notice for each fee/fine charged).  You can also choose to bunch and send them overnight in one email (processed at 11:59pm). See [Settings \> Circulation \> Fee/ fine notices triggering events](../../../../settings/settings_circulation/settings_circulation/#feefine-notices-triggering-events). 
 
 *Send overnight* is good for long-term loans, while *Send throughout the day* is a good option for short-term loans. If you choose *Send overnight* then the associated template **must** include the {{#feeCharges}} {{/feeCharges}} token for multiple loans. If you choose *Send throughout the day* then the associated template **must not** include the {{#feeCharges}} {{/feeCharges}} token for multiple loans. **Lost item fee(s) charged** notices will be sent for both set cost and actual cost fees/fines and any applicable processing fees.
 
