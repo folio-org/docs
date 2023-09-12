@@ -174,6 +174,19 @@ At this point, (re-)configure the environment variables of your modules, as need
 Study the release notes for any changes in module configurations.
 Follow these instructions to change the environment variables for a module: [Change Environment Variables of a Module](https://wiki.folio.org/display/SYSOPS/Change+Environment+Variables+of+a+Module).
 
+Make sure SYSTEM_USER_PASSWORD in /\_/env is the actual password for these system users:
+  - system-user
+  - pub-sub
+  - mod-search
+  - data-export-system-user
+Log in as these users with this password. If that doesn't work, change the password of these system users to the value of the system variable SYSTEM_USER_PASSWORD.
+
+If you are in a multi-tenant environment, set environment variable ENV to ENV = orchid . In a single tenant environment, you don't need to set it . It has the default value ENV = folio.
+```
+curl -w '\n' -D - -X POST -H "Content-Type: application/json" -d "{\"name\":\"ENV\",\"value\":\"orchid\"}" http://localhost:9130/_/env
+```
+  
+  # hier weiter
 From Orchid release notes, do these steps:
 ### i. Incompatible Hazelcast version in mod-remote-storage
 When running Nolana and Orchid version of mod-remote-storage in parallel they need distinct Hazelcast configurations. One possibility is to use different Hazelcast cluster name environment variables:
@@ -218,9 +231,6 @@ In the Launch Descriptor of mod-authtoken-2.13.0, set jwt.signing.key in the JAV
 ```
 
 
-If you are in a multi-tenant environment, set ENV for mod-search and in all other modules that use Kafka (mod-inv/inv-storage/mod-srs/srm, mod-data-import etc…)
-    ENV = orchid . In a single tenant environment, you don't need to set it . It has the default value ENV = folio.
-  
 If you have set ENV = orchid, set KAFKA_EVENTS_CONSUMER_PATTERN for mod-search, using the value of ENV as a part of its value:
     KAFKA_EVENTS_CONSUMER_PATTERN = (orchid\.)(.*\.)inventory\.(instance|holdings-record|item|bound-with)
     
