@@ -398,11 +398,7 @@ cluster:admin/script/delete
 ```
 This change may also impact Elasticsearch as well (this is unveryfied, however).
 
-### ii. New database indexes for MARC fields
-New indexes to the DB were added for the "010" and "035" MARC fields, to improve stability and decrease timeouts.
-Indexes are added automatically during the upgrade process. Default DB configuration implies automatic analyzing of tables. In case you should have disabled automatic analyzing, execute the ANALYZE command on mod-source-record-storage schemas.
-
-### iii. **Breaking Change** Instance data in mod-inventory-storage have to be migrated. 
+### ii. **Breaking Change** Instance data in mod-inventory-storage have to be migrated. 
 
 To initialize migration use the endpoint POST /inventory-storage/migrations/jobs with body.
 First get a new Token:
@@ -416,16 +412,39 @@ Migration could be done after the upgrade.
 Migration could be sped up with scaling up mod-inventory-storage's replicas.
 On a single server with a single instance of mod-inventory-storage, migration takes approx. 15 minutes for 100,000 instances.
 
-### iv. Default MARC-Instance mapping updated to change how the Relator term is populated on an instance record
+### iii. Recreate OpenSearch or Elasticsearch index
+Sometimes we need to recreate OpenSearch or Elasticsearch index, for example when a breaking change has been introduced to index structure (mapping). We must re-index after migrating to Orchid. It can be fixed by running reindex request:
+
+  Assure the following permission has been assigned to user diku_admin:
+    search.index.inventory.reindex.post (Search - starts inventory reindex operation)
+
+  Get a new Token and re-index:
+```
+   export TOKEN=$( curl -s -S -D - -H "X-Okapi-Tenant: diku" -H "Content-type: application/json" -H "Accept: application/json" -d '{ "tenant" : "diku", "username" : "diku_admin", "password" : "admin" }' http://localhost:9130/authn/login | grep -i "^x-okapi-token: " )
+  curl -w '\n' -D - -X POST -H "$TOKEN" -H "X-Okapi-Tenant: diku" -H "Content-type: application/json" -d '{ "recreateIndex": true, "resourceName": "instance" }' http://localhost:9130/search/index/inventory/reindex
+```
+ # Monitoring reindex process ( https://github.com/folio-org/mod-search#monitoring-reindex-process )
+
+There is no end-to-end monitoring implemented yet, however it is possible to monitor it partially. In order to check how many records published to Kafka topic use inventory API:
+```
+    curl -w '\n' -D - -X GET -H "$TOKEN" -H "X-Okapi-Tenant: diku" -H "Content-type: application/json" http://localhost:9130/instance-storage/reindex/{id}
+```
+Repeat the re-indexing process for other tenants that you might host on your server and have also migrated to Orchid.
+
+### iv. New database indexes for MARC fields
+New indexes to the DB were added for the "010" and "035" MARC fields, to improve stability and decrease timeouts.
+Indexes are added automatically during the upgrade process. Default DB configuration implies automatic analyzing of tables. In case you should have disabled automatic analyzing, execute the ANALYZE command on mod-source-record-storage schemas.
+
+### v. Default MARC-Instance mapping updated to change how the Relator term is populated on an instance record
 See [Update of mapping to change how Relator term is populated on instance record R1 2023 Orchid release](https://wiki.folio.org/display/FOLIJET/Update+of+mapping+to+change+how+Relator+term+is+populated+on+instance+record+R1+2023+Orchid+release) for additional details.
 Update: 21 April: an [update script](https://wiki.folio.org/display/FOLIJET/Orchid+MARC-to-Instance+mapping+rules+update+instructions) has been provided. 
 **Mandatory change.**
 Note that any revised mappings will only apply to Instances created or updated via MARC Bibs **after** the map is updated. To refresh existing Instances against the current SRS MARC Bibs and current map, the library may consider running [Script 3 described here: Scripts for Inventory, Source Record Storage, and Data Import Cleanup](https://wiki.folio.org/display/FOLIOtips/Scripts+for+Inventory%2C+Source+Record+Storage%2C+and+Data+Import+Cleanup).
 
-### v. Default MARC-Instance mapping rule added for MARC 720 field
+### vi. Default MARC-Instance mapping rule added for MARC 720 field
 Follow the description in the [Release Notes](https://wiki.folio.org/display/REL/Orchid+%28R1+2023%29+Release+Notes).
 
-### vi. "marc_indexers" table data in mod-source-record-storage have to be migrated.
+### vii. "marc_indexers" table data in mod-source-record-storage have to be migrated.
 Follow the description in the [Release Notes](https://wiki.folio.org/display/REL/Orchid+%28R1+2023%29+Release+Notes).
 
 Add new permissions as described in the [Release Notes](https://wiki.folio.org/display/REL/Orchid+%28R1+2023%29+Release+Notes) **Permission Updates**.
