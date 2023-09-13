@@ -125,7 +125,7 @@ Follow /var/log/folio/okapi/okapi.log .
 Now Okapi will re-start your modules. Follow the okapi.log. It will run for 5 minutes or so until all modules are up again. Check if all modules are running:
 
 ```
-docker ps --all | grep "mod-" | wc
+docker ps | grep "mod-" | wc
   62
 ```
 The above number applies if you had installed a complete platform of Nolana.
@@ -186,7 +186,6 @@ If you are in a multi-tenant environment, set environment variable ENV to ENV = 
 curl -w '\n' -D - -X POST -H "Content-Type: application/json" -d "{\"name\":\"ENV\",\"value\":\"orchid\"}" http://localhost:9130/_/env
 ```
   
-  # hier weiter
 From Orchid release notes, do these steps:
 ### i. Incompatible Hazelcast version in mod-remote-storage
 When running Nolana and Orchid version of mod-remote-storage in parallel they need distinct Hazelcast configurations. One possibility is to use different Hazelcast cluster name environment variables:
@@ -230,7 +229,7 @@ In the Launch Descriptor of mod-authtoken-2.13.0, set jwt.signing.key in the JAV
       "value" : "-XX:MaxRAMPercentage=66.0 -Dcache.permissions=true -Djwt.signing.key=folio-demo"
 ```
 
-
+### v. Set KAFKA_EVENTS_CONSUMER_PATTERN for mod-search
 If you have set ENV = orchid, set KAFKA_EVENTS_CONSUMER_PATTERN for mod-search, using the value of ENV as a part of its value:
     KAFKA_EVENTS_CONSUMER_PATTERN = (orchid\.)(.*\.)inventory\.(instance|holdings-record|item|bound-with)
     
@@ -261,13 +260,14 @@ We finish up by enabeling all modules (backend & frontend) with a single call wi
 ```
   curl -w '\n' -D - -X POST -H "Content-type: application/json" -d @/usr/folio/platform-complete/install.json http://localhost:9130/_/proxy/tenants/diku/install?deploy=false\&preRelease=false\&tenantParameters=loadReference%3Dfalse
 ```
+Repeat this step for any other tenants (who have enabled platform-complete) on your system.
 
 If that fails, remedy the error cause and try again until the post succeeds. 
 We will take care of old modules that are not needed anymore but are still running (deployed) in the "Clean up" section.
 
 There should now be 126 modules deployed on your single server, try
 ```
-  docker ps --all | grep "mod-" | wc
+  docker ps | grep "mod-" | wc
 ```
 62 of those modules belong to the Nolana release, 65 belong to the Orchid release.
 1 module appears with the same version number in both releases, it has not been deployed twice ( mod-template-engine:1.18.0 ).
@@ -289,13 +289,16 @@ This number is the sum of the following:
 These are all R1-2023 (Orchid) modules.
 
 
-Repeat the steps in II.v) for other tenants that you might host on your system and want to migrate now.
-
 ### II.vi) Cleanup
   
-Clean up. Undeploy all unused containers.
+Clean up. 
+Clean up your docker environment: Remove all stopped containers, all networks not used by at least one container, all dangling images and all dangling build cash:
+```
+  docker system prune -a
+```
+This command might run for some minutes.
 
-Undeploy 61 modules of the Nolana release -- all but mod-template-engine:1.18.0 (this one is also part of Orchid).
+Undeploy all unused containers: Undeploy 61 modules of the Nolana release -- all but mod-template-engine:1.18.0 (this one is also part of Orchid).
 
 Undeploy old module versions like this:
 ```
@@ -314,14 +317,14 @@ curl -w '\n' -D - -X DELETE http://localhost:9130/_/discovery/modules/mod-z3950-
 Now, finally once again get a list of the deployed backend modules:
   
   ```
-  curl -w '\n' -D - http://localhost:9130/_/discovery/modules | grep srvcId | wc
+  curl -w '\n' -D - http://localhost:9130/_/discovery/modules | grep srvcId | grep mod- | wc
  65
   ```
   
 Compare this with the number of your running docker containers:
   
   ```
-  docker ps --all | grep "mod-" | wc
+  docker ps | grep "mod-" | wc
     65
   ```
 
@@ -346,13 +349,6 @@ git diff
 ```
 
 Check if docker/Dockerfile, docker/nginx.conf and stripes.conifg.js look o.k.
-
-Clean up your docker environment:
-```
-  sudo su
-  docker system prune -a
-```
-This will remove stopped containers, unused networks, volumes and images and clear cache.
 
 Build the docker container which will contain Stripes and nginx :
   
@@ -406,18 +402,19 @@ This change may also impact Elasticsearch as well (this is unveryfied, however).
 New indexes to the DB were added for the "010" and "035" MARC fields, to improve stability and decrease timeouts.
 Indexes are added automatically during the upgrade process. Default DB configuration implies automatic analyzing of tables. In case you should have disabled automatic analyzing, execute the ANALYZE command on mod-source-record-storage schemas.
 
-### iii. Instance data in mod-inventory-storage have to be migrated. 
+### iii. **Breaking Change** Instance data in mod-inventory-storage have to be migrated. 
 
-To initialize migration use the endpoint POST /inventory-storage/migrations/jobs with body:
+To initialize migration use the endpoint POST /inventory-storage/migrations/jobs with body.
+First get a new Token:
 ```
-{
-        "migrations": [ "subjectSeriesMigration" ],
-        "affectedEntities": [ "INSTANCE" ]
-}
+  export TOKEN=$( curl -s -S -D - -H "X-Okapi-Tenant: diku" -H "Content-type: application/json" -H "Accept: application/json" -d '{ "tenant" : "diku", "username" : "diku_admin", "password" : "admin" }' http://localhost:9130/authn/login | grep -i "^x-okapi-token: " )
+  curl -w '\n' -D - -X POST -H "$TOKEN" -H "X-Okapi-Tenant: diku" -H "Content-type: application/json" -d '{ "migrations" : [ "subjectSeriesMigration" ], "affectedEntities": [ "INSTANCE" ] }' http://localhost:9130/inventory-storage/migrations/jobs
 ```
+Migrate any other tenants in the same way.
 To check the status of migration use the endpoint GET /inventory-storage/migrations/jobs/<id> where id - is the id from the POST response.
 Migration could be done after the upgrade.
 Migration could be sped up with scaling up mod-inventory-storage's replicas.
+On a single server with a single instance of mod-inventory-storage, migration takes approx. 15 minutes for 100,000 instances.
 
 ### iv. Default MARC-Instance mapping updated to change how the Relator term is populated on an instance record
 See [Update of mapping to change how Relator term is populated on instance record R1 2023 Orchid release](https://wiki.folio.org/display/FOLIJET/Update+of+mapping+to+change+how+Relator+term+is+populated+on+instance+record+R1+2023+Orchid+release) for additional details.
