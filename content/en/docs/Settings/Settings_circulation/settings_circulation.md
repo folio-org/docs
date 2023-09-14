@@ -179,13 +179,13 @@ Fixed due date schedules are used in Loan policies when you want to have a loan 
 4. In the **Schedule** section, enter a date range for the fixed due date by selecting dates in the **Date from** and **Date to** boxes. This is the time range during which the fixed due date is applied.
 5. Enter the **Due date** that applies to all materials checked out during the time range you selected above.
 6. Optional: To create additional date ranges, click **New** and repeat steps 4 and 5. If you need to delete a date range, click the **trash can icon**.
-7. Once you are finished creating your schedule, click **Save & close**. The fixed due date schedule is saved and appears in the Fixed due date schedule pane.
+7. Once you are finished creating your schedule, click **Save & close**. The fixed due date schedule is saved and appears in the Fixed due date schedules pane.
 
 
 ### Edit a fixed due date schedule
 
 1. In the **Fixed due date schedules** pane, select the fixed due date schedule you want to edit.
-2. In the **fixed due date schedule details** pane, click **Edit**.
+2. In the **fixed due date schedule details** pane, click **Actions > Edit**.
 3. Edit the fixed due date schedule.
 4. Click **Save & close**. The fixed due date schedule is updated.
 
@@ -193,8 +193,7 @@ Fixed due date schedules are used in Loan policies when you want to have a loan 
 ### Delete a fixed due date schedule
 
 1. In the **Fixed due date schedules** pane, select the fixed due date schedule you want to delete.
-2. In the **Fixed due date schedule details** pane, click **Edit**.
-3. In the **Edit** window, click **Delete**.
+2. In the **Fixed due date schedule details** pane, click **Actions > Delete**.
 4. In the **Delete fixed due date schedule** dialog, click **Delete**. The fixed due date schedule is deleted and a confirmation message appears.
 
 
@@ -213,9 +212,9 @@ Select one of the following options to determine if closed loans are anonymized:
 * Never.
 
 
-#### Treat closed loans with associated fee/fines differently
+#### Treat closed loans with associated fees/fines differently
 
-If you want to treat loans with fee/fines differently, select **Treat closed loans with associated fee/fines differently**. The Closed loans with associated fees/fines section appears once the checkbox is selected. If the checkbox is cleared, then closed loans with associated fees/fines are treated according to the option you selected in Closed loans.
+If you want to treat loans with fees/fines differently, select **Treat closed loans with associated fee/fines differently**. The Closed loans with associated fees/fines section appears once the checkbox is selected. If the checkbox is cleared, then closed loans with associated fees/fines are treated according to the option you selected in Closed loans.
 
 
 ### Closed loans with associated fees/fines
@@ -232,7 +231,7 @@ Select one of the following options to determine if closed loans with associated
 
 #### Exception for payment method
 
-If you want to create exceptions for closed loans with associated fee/fines paid off using a certain payment method, follow these steps:
+If you want to create exceptions for closed loans with associated fees/fines paid off using a certain payment method, follow these steps:
 
 1. Click **Add exception** to add an exception for a payment method.
 2. Select the **Payment method**.
@@ -251,7 +250,7 @@ Loan policy behavior differs depending on the unit of time used for the loan per
 
 You may find it beneficial to consider your current loan policies and lending rules and write policies to reflect your library’s typical loan behaviors. Loan policies are reusable in circulation rules, so you do not need to create multiples of the same type of policies to be applied to different patron groups, for example.
 
-Before you begin configuring your loan policies, make sure you have set up your Fixed due date schedules, if you will be using schedules in your policies.
+Before you begin configuring your loan policies, make sure you have [set up your Fixed due date schedules](#creating-a-fixed-due-date-schedule), if you will be using schedules in your policies.
 
 After you create your loan policies, you should test them to make sure they function as expected.
 
@@ -271,14 +270,14 @@ After you create your loan policies, you should test them to make sure they func
 
 **Loan profile.** Select the type of loan profile. Depending on your selection, you will see different fields.
 
-* Select **Fixed** if items loaned out during a certain period of time are to have a fixed end date. For example, use this for items loaned until the end of the semester.
+* Select **Fixed** if items loaned out during a certain period of time are to have a fixed due date. For example, use this for items loaned until the end of the semester.
 * Select **Rolling** if loans are for a defined period of time, including short term loans. For example, use this for items loaned for 28 days.
 
 Depending on your selection for Loan Profile, you see different fields.
 
 If you selected **Fixed**, you will see the following fields:
 
-**Fixed due date schedule.** Select a fixed due date schedule, as configured in Settings > Circulation > Fixed due date schedules. The selected schedule determines the due date for the item. Note: Fixed due dates are only applicable for loans longer than 24 hours, and the due date/time is automatically set to 11:59 pm on the due date.
+**Fixed due date schedule.** Select a fixed due date schedule, as configured in [Settings \> Circulation \> Fixed due date schedules](#settings--circulation--fixed-due-date-schedules). The selected schedule determines the due date for the item. Note: Fixed due dates are only applicable for loans longer than 24 hours, and the due date/time is automatically set to 11:59 pm on the due date.
 
 **Closed library due date management.** Select when the item is due if an item’s calculated due date lands in closed hours for the service point.
 * If an item’s loaned interval is in **minutes** or **hours**, the due date will follow the choice given in the loan policy.
@@ -293,7 +292,7 @@ If you selected **Rolling**, you will see the following fields:
 
 **Loan period.** Select an amount of time for the loan period.
 
-**Fixed due date schedule (due date limit).** Select a fixed due date schedule, as configured in Settings > Circulation > Fixed due date schedules. The schedule is used to enforce a stop point on continuing renewals. For example, you may allow students to renew items every four weeks, but want renewals to stop at the end of the semester.
+**Fixed due date schedule (due date limit).** Select a fixed due date schedule, as configured in [Settings \> Circulation \> Fixed due date schedules](#settings--circulation--fixed-due-date-schedules). The schedule is used to enforce a stop point on continuing renewals. For example, you may allow students to renew items every four weeks, but want renewals to stop at the end of the semester.
 
 **Closed library due date management.** Select when the item is due if an item’s calculated due date lands in closed hours for the service point.
 * If an item’s loaned interval is in **minutes** or **hours**, the due date will follow the choice given in the loan policy.
@@ -312,13 +311,13 @@ If you selected **Rolling**, you will see the following fields:
 
 **Number of renewals allowed.** If you have not selected **Unlimited renewals**, enter the number of renewals allowed.
 
-**Renew from.** Select whether a renewed item is renewed from the **Current due date** or **System date,** the date the item is renewed on.
+**Renew from.** Select whether a renewed item is renewed from the **Current due date** or **System date,** the date on which the item is renewed.
 
 **Renewal period different from original loan.** Select the checkbox if you want renewed items to have a different loan period than the original loan period. If selected, the next two options appear.
 
 **Alternate loan period for renewals.** Enter the alternate loan period for renewals.
 
-**Alternate fixed due date schedule (due date limit) for renewals.** Select a fixed due date schedule, as configured in Settings > Circulation > Fixed due date schedules. The schedule is used to enforce a stop point on continuing renewals.
+**Alternate fixed due date schedule (due date limit) for renewals.** Select a fixed due date schedule, as configured in [Settings \> Circulation \> Fixed due date schedules](#settings--circulation--fixed-due-date-schedules). The schedule is used to enforce a stop point on continuing renewals.
 
 
 #### Request management
@@ -408,7 +407,7 @@ Overdue fine policies determine the amount of fines that accrue when a patron ha
 ### Deleting an overdue fine policy
 
 1. In the **Overdue fine policies** pane, select the overdue fine policy you want to delete.
-2. In the **Overdue fine policy details** pane, click **Actions > Delete**.
+2. In the **overdue fine policy details** pane, click **Actions > Delete**.
 3. In the **Delete Overdue fine policy** dialog, click **Delete**. The policy is deleted and a confirmation message appears.
 
 
@@ -420,7 +419,7 @@ Lost item fee policies determine when overdue items automatically age to lost (t
 ### Creating a lost item fee policy
 
 1. In the **Lost item fee policies** pane, click **New**.
-2. In the **Lost item fee policies **window, enter a **Lost item fee policy name** in the box**.**
+2. In the **New lost item fee policy** window, enter a **Lost item fee policy name** in the box.
 3. Optional: Enter a **Description** in the box.
 4. In the Lost item fee section, enter the amount of time in which **Items aged to lost after overdue**.
 5. Enter the amount of time in which **Patron billed after aged to lost**.
@@ -442,7 +441,7 @@ Lost item fee policies determine when overdue items automatically age to lost (t
 
 ### Duplicating a lost item fee policy
 
-1. In the **Lost item fee policies **pane, select the lost item fee policy you want to duplicate.
+1. In the **Lost item fee policies** pane, select the lost item fee policy you want to duplicate.
 2. In the **lost item fee policy details** pane, click **Actions > Duplicate**. A Lost item fee policies window appears with the same lost item fee policy information as the policy you chose to duplicate.
 3. Edit any of the lost item fee policy information before saving the policy.
 4. Click **Save & close**. The duplicate policy is saved and appears in the Lost item fee policy pane.
@@ -451,7 +450,7 @@ Lost item fee policies determine when overdue items automatically age to lost (t
 ### Editing a lost item fee policy
 
 1. In the **Lost item fee policies** pane, select the Lost item fee policy you want to edit.
-2. In the **Lost item fee policy** details pane, click **Actions > Edit**.
+2. In the **lost item fee policy details** pane, click **Actions > Edit**.
 3. Edit the lost item fee policy.
 4. Click **Save & close**. The policy is updated.
 
@@ -527,7 +526,7 @@ For all request notices, the system is scanned every five minutes for triggering
 **Hold shelf expiration.** The notice is sent before or when the item is no longer available for pickup on the hold shelf. Select when the notice is sent from the **Send** drop-down list:
 
 * To send the notice when the item’s time on the hold shelf expires, select **Upon/At**.
-* To send the notice before the item’s time on the hold shelf expires, select **Before**. Then, determine the **Frequency** of the notice. To send the notice once, before its time on the hold shelf expires, select **One-Time**. To send the notice multiple times before the item’s time on the hold shelf expire, select **Recurring** and enter how often the notice sends until the hold shelf expiration is reached.
+* To send the notice before the item’s time on the hold shelf expires, select **Before**. Then, determine the **Frequency** of the notice. To send the notice once, before its time on the hold shelf expires, select **One-Time**. To send the notice multiple times before the item’s time on the hold shelf expires, select **Recurring** and enter how often the notice sends until the hold shelf expiration is reached.
 
 **Request expiration.** The notice is sent before or when the request expires. Select when the notice is sent from the **Send** drop-down list:
 
@@ -539,17 +538,31 @@ For all request notices, the system is scanned every five minutes for triggering
 
 #### Fee/fine notices triggering events
 
-For all fee/fine notices, the system is scanned every five minutes for triggering events and sent when a triggering event is detected.
+The system is scanned every five minutes for triggering events and fee/fine notices are sent when a triggering event is detected.
 
-**Overdue fine, returned.** The notice is sent after or when an overdue fine is charged to a patron. The fine would be charged when the item is returned. Select when the notice is sent from the **Send** drop-down list:
+**Overdue fine, returned.** The notice is sent after or when an overdue fine is charged to a patron. The fine would be charged when the item is returned. **Overdue fine, returned** notices always bundle fees/fines. Select when the notice is sent from the **Send** drop-down list:
 
 * To send the notice when the overdue fine is charged, select **Upon/At**.
 * To send the notice after the overdue fine is charged, select **After**. Then, determine the **Frequency** of the notice. To send the notice once, before the request expires, select **One-Time**. To send the notice multiple times before the request expires, select **Recurring** and enter how often the notice sends until the fee/fine is closed.
 
-**Overdue fine, renewed.** The notice is sent after or when an overdue fine is charged to a patron. The fine would be charged when the item is renewed. Select when the notice is sent from the **Send** drop-down list:
+**Overdue fine, renewed.** The notice is sent after or when an overdue fine is charged to a patron. The fine would be charged when the item is renewed. **Overdue fine, renewed** notices always bundle fees/fines. Select when the notice is sent from the **Send** drop-down list:
 
 * To send the notice when the overdue fine is charged, select **Upon/At**.
 * To send the notice after the overdue fine is charged, select **After**. Then, determine the  **Frequency** of the notice. To send the notice once, before the request expires, select  **One-Time**. To send the notice multiple times before the request expires, select  **Recurring** and enter how often the notice sends until the fee/fine is closed.
+
+**Lost item fee(s) charged.** The notice is sent after or when a lost item fine is charged to a patron.
+
+Select when the notice is sent from the **Send** drop-down list:
+
+* To send the notice when the lost item fine is charged, select **Upon/At**.
+* To send the notice after the lost item fine is charged, select **After**. Then, determine the **Frequency** of the notice. To send the notice once, before the request expires, select **One-Time**. To send the notice multiple times before the request expires, select **Recurring** and enter how often the notice sends until the fee/fine is closed.
+  
+Select whether multiple lost item fee notices are bundled together from the radio buttons:
+
+* To bunch all a patron’s open lost item fees together in one email (processed at 11:59pm) choose **Send overnight with multiple lost item fee charges by patron.**
+* To send notices throughout the day (typically processed every five minutes, with a separate notice for each fee/fine charged) choose **Send throughout the day with one lost item fee charge per notice.**
+  
+**Lost item returned - fee(s) adjusted.** The notice is sent when the event is triggered, i.e. when the lost item is checked in.
 
 
 ### Duplicating a patron notice policy
