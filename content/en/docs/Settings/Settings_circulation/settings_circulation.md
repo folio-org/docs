@@ -11,7 +11,7 @@ The Circulation section of the Settings app is where you establish your loan pol
 
 ## Permissions
 
-Each setting within Circulation has its own permission associated with it. If a user has one of the below permissions assigned to their user record, they will be able to view and interact with that particular setting. You can assign permissions to users in the Users app.
+Each setting within Circulation has its own permission associated with it. If a user has one of the below permissions, they will be able to view and interact with that particular setting. You can assign permissions to users in the Users app.
 
 The following are all the Circulation Settings permissions:
 
@@ -44,7 +44,7 @@ You can write circulation rules to determine the following:
 * The groups of patrons that can borrow items.
 * The rules for items in different locations, libraries, campuses, or institutions.
 * The types of items (material types or loan types) that can be borrowed.
-* How many of a particular type of item that can be borrowed.
+* The number of items a particular type that a user can borrow.
 * The notices that are sent to patrons.
 * The fines and fees that are charged.
 
@@ -64,7 +64,7 @@ Before you implement Circulation rules, you need to configure these settings in 
 * Patron notice policies
 * Request policies
 
-Before you begin to write your circulation rules, you should complete the following:
+Before you begin to write your circulation rules, you should:
 
 * Read the [FOLIO GitHub Circulation rules documentation](https://github.com/folio-org/mod-circulation/blob/master/doc/circulationrules.md).
 * Determine if you want to use automated item blocks. If so, follow the [Automated Item Block guidelines](https://wiki.folio.org/display/FOLIOtips/Implementing+Automated+Item+Blocks).
@@ -114,7 +114,7 @@ This setting is turned on by default with an inactivity period of 3 minutes.
 
 ### Enable audio alerts
 
-Audio alerts can be turned on to signal to library staff when a checkout is successful or fails. This setting is turned off by default.
+Audio alerts can be turned on to signal to library staff when a checkout succeeds or fails. This setting is turned off by default.
 
 To enable audio alerts, select **Yes** from the drop-down list. Select your desired audio-alerts theme from the drop-down.
 
@@ -122,7 +122,7 @@ To enable audio alerts, select **Yes** from the drop-down list. Select your desi
 
 Some libraries may want to use FOLIO and support circulating items that have the same barcode. They may be migrating to FOLIO from a prior system that allowed duplicate barcodes, or they may need to support consortial lending.
 
-The inventory app requires barcodes to be unique, so libraries who have this scenario need to append a string to the barcode to make it unique without changing the physical barcode on the item. The library then needs the Check in and Check out app to be able to understand what to do if they search for the physical barcode on the item and it's possible to retrieve more than one record.
+The inventory app requires barcodes to be unique, so libraries who have this scenario need to append a string to the barcode to make it unique without changing the physical barcode on the item. The library then needs the Check in and Check out apps to know what to do if they search for the physical barcode on the item and it's possible to retrieve more than one record.
 
 If your library could potentially encounter duplicate barcodes as described, you can check this box to enable the Check in and Check out apps to use a wildcard search for item barcodes and present a modal if duplicate barcodes are found, so library staff can select the correct item.
 
@@ -176,8 +176,8 @@ Fixed due date schedules are used in Loan policies when you want to have a loan 
 1. In the **Fixed due date schedules** pane, click **New**.
 2. In the **Create fixed due date schedule** window, enter a **Fixed due date schedule name**.
 3. Optional: Enter a **Description** in the box.
-4. In the **Schedule** section, enter a date range for the fixed due date by selecting dates in the **Date from** and **Date to** boxes. This is the time range during which the fixed due date is applied.
-5. Enter the **Due date** that applies to all materials checked out during the time range you selected above.
+4. In the **Schedule** section, enter a date range for the fixed due date by selecting dates in the **Date from** and **Date to** boxes. Items checked out during this date range will be due on the Due date selected in step 5.
+5. Enter the **Due date** that applies to all items checked out during the time range you selected above.
 6. Optional: To create additional date ranges, click **New** and repeat steps 4 and 5. If you need to delete a date range, click the **trash can icon**.
 7. Once you are finished creating your schedule, click **Save & close**. The fixed due date schedule is saved and appears in the Fixed due date schedules pane.
 
@@ -193,7 +193,7 @@ Fixed due date schedules are used in Loan policies when you want to have a loan 
 ### Delete a fixed due date schedule
 
 1. In the **Fixed due date schedules** pane, select the fixed due date schedule you want to delete.
-2. In the **Fixed due date schedule details** pane, click **Actions > Delete**.
+2. In the **fixed due date schedule details** pane, click **Actions > Delete**.
 4. In the **Delete fixed due date schedule** dialog, click **Delete**. The fixed due date schedule is deleted and a confirmation message appears.
 
 
@@ -258,7 +258,7 @@ After you create your loan policies, you should test them to make sure they func
 ### Creating a new loan policy
 
 1. In the **Loan policies** pane, click **New**.
-2. In the **Create loan policy** window, enter a **Policy name **in the box.
+2. In the **Create loan policy** window, enter a **Loan policy name** in the box.
 3. Optional: Enter a **Policy description** in the box.
 4. Use the information in the following sections to help guide you in creating loan policies. Different fields are available depending on the options you select in the policy.
 5. Click **Save & close**. The policy is saved and added to the Loan policies list.
@@ -295,7 +295,7 @@ If you selected **Rolling**, you will see the following fields:
 **Fixed due date schedule (due date limit).** Select a fixed due date schedule, as configured in [Settings \> Circulation \> Fixed due date schedules](#settings--circulation--fixed-due-date-schedules). The schedule is used to enforce a stop point on continuing renewals. For example, you may allow students to renew items every four weeks, but want renewals to stop at the end of the semester.
 
 **Closed library due date management.** Select when the item is due if an item’s calculated due date lands in closed hours for the service point.
-* If an item’s loaned interval is in **minutes** or **hours**, the due date will follow the choice given in the loan policy.
+* If an item’s loaned interval is in **minutes** or **hours**, the due date will be determined by the loan policy.
 * If an item’s loaned interval is in **days**, **weeks**, or **months**, the due date will follow the choice given in the loan policy *only* in the case that the service point is completely closed on the day that the item would be due. When the loan is created, FOLIO will check the service point calendar; if the service point is open for any time on the day that the item is due, FOLIO will set the due time to 11:59 PM on that day.
 
 
@@ -338,7 +338,7 @@ All of the fields in this section are optional. If you leave them blank, the rec
 
 ##### Holds
 
-**Alternate loan period at checkout for items with an active, pending hold request** To shorten a loan period for an item that has a request queue, enter an amount of time. If an item is checked out and has no queue, the regular loan period is applied.
+**Alternate loan period at checkout for items with an active, pending hold request.** To shorten a loan period for an item that has a request queue, enter an amount of time. If an item is checked out and has no queue, the regular loan period is applied.
 
 **Allow renewal of items with an active, pending hold request.** If you want to allow renewals on a checked out item that has hold requests, select the check box. When renewals are allowed, patrons can continue to renew the item based on the settings in the Renewals section.
 
@@ -458,7 +458,7 @@ Lost item fee policies determine when overdue items automatically age to lost (t
 ### Deleting a lost item fee policy
 
 1. In the **Lost item fee policies** pane, select the lost item fee policy you want to delete.
-2. In the **Lost item fee policy details** pane, click **Actions > Delete**.
+2. In the **lost item fee policy details** pane, click **Actions > Delete**.
 3. In the **Delete Lost item fee policy** dialog, click **Delete**. The policy is deleted and a confirmation message appears.
 
 
@@ -502,7 +502,7 @@ Multiple notices can be set up in one policy. Whether it makes more sense to set
 * To send the notice when the item is due, select **Upon/At**.
 * To send the notice before the item is due, select **Before**. Then, determine the **Frequency** of the notice. To send the notice once, before it is due, select **One-Time**. To send the notice multiple times before the item is due, select **Recurring** and enter how often the notice sends until the due date is reached.
 * To send the notice after the item is due, select **After**. Then, determine the **Frequency** of the notice. To send the notice once, after the item is due, select **One-Time**. To send the notice multiple times after the item is due, select **Recurring** and enter how often the notice sends until the item is returned or renewed.
-* Additionally, select whether you want to **Send overnight with multiple loans/items by patron. Useful for long-term loans** or **Send throughout the day without multiple loans/items. Useful for short-term loans.**
+* Additionally, select whether you want to **Send overnight with multiple loans/items by patron. Useful for long-term loans.** or **Send throughout the day without multiple loans/items. Useful for short-term loans.**
 
 **Loan due date changed.** The notice is sent when an item’s due date/time is manually changed.
 
@@ -607,7 +607,7 @@ Patron notice templates are the templates used in your Patron notice policies. C
 
 ### Duplicating a patron notice template
 
-1. In the **Patron notice templates** pane, select the patron notice template, you want to duplicate.
+1. In the **Patron notice templates** pane, select the patron notice template you want to duplicate.
 2. In the **patron notice template details** pane, click **Actions > Duplicate**. A New patron notice window appears with the same patron notice information as the notice you chose to duplicate.
 3. Edit the notice name and any other details. You cannot have two notices with the same name.
 4. Click **Save & close**. The duplicate notice is saved and appears in the Patron notice templates pane.
@@ -650,7 +650,7 @@ When  you cancel a request, you must select a cancellation reason. Use this sett
 ### Deleting a request cancellation reason
 
 1. Find the request cancellation reason you want to delete and click the **Delete icon**.
-2. In the **Delete Request cancellation reason** dialog, click **Delete**. The reason is deleted and a confirmation message appears.
+2. In the **Delete cancel reason** dialog, click **Delete**. The reason is deleted and a confirmation message appears.
 
 
 ## Settings > Circulation > Request policies
@@ -694,7 +694,7 @@ Request policies determine the types of requests (pages, holds, and recalls) all
 FOLIO provides functionality for both item-level and title-level requesting. Title-level requesting is off by default; if your library wants to use it, you would enable and configure related settings in this section.
 
 * **Allow title level requests**. If your library wants to use title-level requesting, check this box.
-* **”Create title level request” selected by default.”** If you are using title-level requesting, there will be a box on the request form in the Requests app to toggle whether a request is title-level or item-level. If you’d like title-level request to be the default choice, check this box.
+* **”Create title level request” selected by default.** If you are using title-level requesting, there will be a box on the request form in the Requests app to toggle whether a request is title-level or item-level. If you’d like title-level request to be the default choice, check this box.
 
 Make sure to click **Save** at the bottom of the screen to save any changes.
 
@@ -704,9 +704,9 @@ Note that once you check the box to allow title level requests, if a title-level
 
 Notices that are triggered by title-level requests are not yet included in FOLIO’s circulation rules system. If a title-level request is placed by a patron and immediately associated to an item, the item-level notices in the circulation rules will be sent. If a title-level request is placed and it is a hold - e.g., not immediately associated to an item - the title-level request templates selected here are used instead.
 
-* **Confirmation notice**: Choose a notice template from the drop-down if you want to send a patron notice when a title-level request is created.
-* **Cancellation notice**: Choose a notice template from the drop-down if you want to send a patron notice when a title-level request is canceled.
-* **Expiration notice**: Choose a notice template from the drop-down if you want to send a patron notice when a title-level request expires without having been fulfilled.
+* **Confirmation notice**. Choose a notice template from the drop-down if you want to send a patron notice when a title-level request is created.
+* **Cancellation notice**. Choose a notice template from the drop-down if you want to send a patron notice when a title-level request is canceled.
+* **Expiration notice**. Choose a notice template from the drop-down if you want to send a patron notice when a title-level request expires without having been fulfilled.
 
 Make sure to click **Save** at the bottom of the screen to save any changes.
 
