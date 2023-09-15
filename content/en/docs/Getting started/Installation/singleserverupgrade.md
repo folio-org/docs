@@ -179,6 +179,7 @@ Make sure SYSTEM_USER_PASSWORD in /\_/env is the actual password for these syste
   - pub-sub
   - mod-search
   - data-export-system-user
+
 Log in as these users with this password. If that doesn't work, change the password of these system users to the value of the system variable SYSTEM_USER_PASSWORD.
 
 If you are in a multi-tenant environment, set environment variable ENV to ENV = orchid . In a single tenant environment, you don't need to set it . It has the default value ENV = folio.
@@ -255,6 +256,11 @@ You will get a message "HTTP 400 - Module folio_developer-7.0.0 has no launchDes
 But this call deploys all backend modules. 
 
 You can follow the progress in deployment on the terminal screen and/or in /var/log/folio/okapi/okapi.log .
+Don't continue before all new modules have been deployed. Check by executing
+```
+docker ps | grep mod- | wc
+```
+This number should go up to 126 before you continue.
 
 We finish up by enabeling all modules (backend & frontend) with a single call without deploying any. We don't load reference data because we are doing a system upgrade (reference data have been loaded before):
 ```
@@ -298,7 +304,8 @@ Clean up your docker environment: Remove all stopped containers, all networks no
 ```
 This command might run for some minutes.
 
-Undeploy all unused containers: Undeploy 61 modules of the Nolana release -- all but mod-template-engine:1.18.0 (this one is also part of Orchid).
+Undeploy all unused containers: Delete all modules from Okapi's discovery which are not part of the Orchid release.
+These are 61 modules of the Nolana release -- all but mod-template-engine:1.18.0 (this one is also part of Orchid).
 
 Undeploy old module versions like this:
 ```
@@ -397,8 +404,9 @@ cluster:admin/script/put
 cluster:admin/script/delete
 ```
 This change may also impact Elasticsearch as well (this is unveryfied, however).
+For an unsecured Elasticsearch installation, no action is required.
 
-### ii. **Breaking Change** Instance data in mod-inventory-storage have to be migrated. 
+### ii. **Breaking Change** : Instance data in mod-inventory-storage have to be migrated. 
 
 To initialize migration use the endpoint POST /inventory-storage/migrations/jobs with body.
 First get a new Token:
@@ -410,6 +418,7 @@ Migrate any other tenants in the same way.
 To check the status of migration use the endpoint GET /inventory-storage/migrations/jobs/<id> where id - is the id from the POST response.
 Migration could be done after the upgrade.
 Migration could be sped up with scaling up mod-inventory-storage's replicas.
+
 On a single server with a single instance of mod-inventory-storage, migration takes approx. 15 minutes for 100,000 instances.
 
 ### iii. Recreate OpenSearch or Elasticsearch index
@@ -423,7 +432,7 @@ Sometimes we need to recreate OpenSearch or Elasticsearch index, for example whe
    export TOKEN=$( curl -s -S -D - -H "X-Okapi-Tenant: diku" -H "Content-type: application/json" -H "Accept: application/json" -d '{ "tenant" : "diku", "username" : "diku_admin", "password" : "admin" }' http://localhost:9130/authn/login | grep -i "^x-okapi-token: " )
   curl -w '\n' -D - -X POST -H "$TOKEN" -H "X-Okapi-Tenant: diku" -H "Content-type: application/json" -d '{ "recreateIndex": true, "resourceName": "instance" }' http://localhost:9130/search/index/inventory/reindex
 ```
- # Monitoring reindex process ( https://github.com/folio-org/mod-search#monitoring-reindex-process )
+ ### Monitoring reindex process ( https://github.com/folio-org/mod-search#monitoring-reindex-process )
 
 There is no end-to-end monitoring implemented yet, however it is possible to monitor it partially. In order to check how many records published to Kafka topic use inventory API:
 ```
