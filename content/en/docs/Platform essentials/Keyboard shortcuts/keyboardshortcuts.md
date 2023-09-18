@@ -46,6 +46,7 @@ Click **Keyboard shortcuts** to view the list of shortcut actions.
 The following apps display the list of keyboard shortcuts which can be viewed by following the steps described above.  
 
 *   Agreements
+*   Courses
 *   Dashboard
 *   eHoldings
 *   eUsage
@@ -58,4 +59,5 @@ The following apps display the list of keyboard shortcuts which can be viewed by
 *   Orders
 *   Organizations
 *   Receiving
+*   Requests
 *   Users
