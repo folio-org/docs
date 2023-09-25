@@ -32,7 +32,7 @@ The following are all the Circulation Settings permissions:
 * **Settings (Circ): Can view loan policies.** This permission allows the user to view loan policies but does not allow create, edit or delete.
 * **Settings (Circ): Can view lost item fee policies.** This permission allows the user to view lost item fee policies but does not allow create, edit or delete.
 * **Settings (Circ): Can view overdue fine policies.** This permission allows the user to view overdue fine policies but does not allow create, edit or delete. 
-* **Settings (Circulation): Title level request edit.** This permission allows users to enable and configure title-level requesting. Note that if title level requesting is enabled, and a title-level request is created, it can no longer be turned off via Settings.
+* **Settings (Circulation): Title level request edit.** This permission allows users to enable, disable and configure title-level requesting. Note that title level requesting cannot be disabled via settings if there are any open title level requests.
 
 
 ## Settings > Circulation > Circulation rules
@@ -83,7 +83,7 @@ When writing your circulation rules, keep the following in mind:
 * When adding a criteria in the location tree, the Editor will provide a tool to allow you to pick from the location hierarchy, and then pull in the code value for you.
 * Rules can be written in a nested format to make them easier to read.
 * You can use keywords to match on all or none for a particular criteria.
-* You can specify priority order for criteria if more than one rule matches.
+* You can specify the priority order for criteria for cases where more than one rule matches.
 
 
 ## Settings > Circulation > Other settings
@@ -101,7 +101,7 @@ At least one of the options must be selected:
 * **Username.**
 * **User custom fields.**
 
-If you choose **User custom fields**, you can then select one or more custom fields that the Check out app would include when searching for patron records. Custom fields must be configured in Settings > Users before they can be selected here.
+If you choose **User custom fields**, you can then select one or more custom fields that the Check out app would include when searching for patron records. Custom fields must be configured in [Settings > Users]({{< ref "settings--users--custom-fields" >}}) before they can be selected here.
 
 ###  Automatically end check in and check out session after period of inactivity
 
@@ -116,7 +116,7 @@ This setting is turned on by default with an inactivity period of 3 minutes.
 
 Audio alerts can be turned on to signal to library staff when a checkout succeeds or fails. This setting is turned off by default.
 
-To enable audio alerts, select **Yes** from the drop-down list. Select your desired audio-alerts theme from the drop-down.
+Select **Enable audio alerts** to enable audio alerts. Select your desired audio-alerts theme from the drop-down.
 
 ### Perform wildcard lookup of items by barcode in circulation apps (Check in, Check out)
 
@@ -155,13 +155,13 @@ There are six categories of available tokens for use with staff slips, listed in
 2. In the **staff slip details** pane, click **Edit**.
 3. Optional: In the **staff slip** window, enter a **Description** in the box.
 4. Use the Display box to edit the slip. Click **{ }** to add tokens to the slip.
-5. Optional: Click **Preview** to view a preview of the slip.
+5. Optional: Click **Preview** to view a preview of the slip. Be aware that Preview will populate non-populating tokens.
 6. Click **Save & close**. The slip is saved and updated.
 
 ### Previewing a staff slip
 
 1. In the **Staff slips** pane, select the staff slip you want to preview.
-2. In the **staff slip details** pane, click **Preview**. A Preview of staff slip - [slip type] window appears and the preview is shown.
+2. In the **staff slip details** pane, click **Preview**. A Preview of staff slip - [slip type] window appears and the preview is shown. Be aware that Preview will populate non-populating tokens.
 3. Optional: To print the preview, click **Print**.
 4. To close the window, click **Close**.
 
@@ -181,6 +181,12 @@ Fixed due date schedules are used in Loan policies when you want to have a loan 
 6. Optional: To create additional date ranges, click **New** and repeat steps 4 and 5. If you need to delete a date range, click the **trash can icon**.
 7. Once you are finished creating your schedule, click **Save & close**. The fixed due date schedule is saved and appears in the Fixed due date schedules pane.
 
+### Duplicating a fixed due date schedule
+
+1. In the **Fixed due date schedules** pane, select the fixed due date schedule you want to duplicate.
+2. In the **fixed due date schedule details** pane, click **Actions > Duplicate**. A Create fixed due date schedule window appears with the same fixed due date schedule information.
+3. Edit the fixed due date schedule. Note that you must change the **Fixed due date schedule name** to a unique name.
+4. Click **Save & close**. The fixed due date schedule is saved and appears in the Fixed due date schedules pane.
 
 ### Edit a fixed due date schedule
 
@@ -194,7 +200,7 @@ Fixed due date schedules are used in Loan policies when you want to have a loan 
 
 1. In the **Fixed due date schedules** pane, select the fixed due date schedule you want to delete.
 2. In the **fixed due date schedule details** pane, click **Actions > Delete**.
-4. In the **Delete fixed due date schedule** dialog, click **Delete**. The fixed due date schedule is deleted and a confirmation message appears.
+4. In the **Delete fixed due date schedule** dialog, click **Delete**. The fixed due date schedule is deleted and a confirmation message appears. Note that you will be unable to delete a fixed due date schedule that is being used in a loan policy.
 
 
 ## Settings > Circulation > Loan anonymization
@@ -207,9 +213,9 @@ When closed loans are anonymized, all related patron information is removed from
 
 Select one of the following options to determine if closed loans are anonymized:
 
-* Immediately after loan closes. The anonymization process begins after the session is closed. Immediate anonymizing of loans runs on a schedule that can be determined by your system administrator or hosting provider.
-* In a certain amount of time after the loan closes. Use the boxes to select the interval of time.
-* Never.
+* **Immediately after loan closes**. The anonymization process begins after the session is closed. Immediate anonymizing of loans runs on a schedule that can be determined by your system administrator or hosting provider.
+* **[Interval of time] after the loan closes**. Use the boxes to select the interval of time.
+* **Never**.
 
 
 #### Treat closed loans with associated fees/fines differently
@@ -224,9 +230,9 @@ If you want to treat loans with fees/fines differently, select **Treat closed lo
 
 Select one of the following options to determine if closed loans with associated fees/fines are anonymized:
 
-* Immediately after loan closes.
-* In a certain amount of time after fee/fine closes. Use the boxes to select the interval of time.
-* Never.
+* **Immediately after fee/fone closes**.
+* **[Interval of time] after fee/fine closes**. Use the boxes to select the interval of time.
+* **Never**.
 
 
 #### Exception for payment method
@@ -258,8 +264,8 @@ After you create your loan policies, you should test them to make sure they func
 ### Creating a new loan policy
 
 1. In the **Loan policies** pane, click **New**.
-2. In the **Create loan policy** window, enter a **Loan policy name** in the box.
-3. Optional: Enter a **Policy description** in the box.
+2. In the **New loan policy** window, enter a **Loan policy name** in the box.
+3. Optional: Enter a **Description** in the box.
 4. Use the information in the following sections to help guide you in creating loan policies. Different fields are available depending on the options you select in the policy.
 5. Click **Save & close**. The policy is saved and added to the Loan policies list.
 
@@ -277,16 +283,16 @@ Depending on your selection for Loan Profile, you see different fields.
 
 If you selected **Fixed**, you will see the following fields:
 
-**Fixed due date schedule.** Select a fixed due date schedule, as configured in [Settings \> Circulation \> Fixed due date schedules](#settings--circulation--fixed-due-date-schedules). The selected schedule determines the due date for the item. Note: Fixed due dates are only applicable for loans longer than 24 hours, and the due date/time is automatically set to 11:59 pm on the due date.
+**Fixed due date schedule.** Select a fixed due date schedule, as configured in [Settings \> Circulation \> Fixed due date schedules](#settings--circulation--fixed-due-date-schedules). The selected schedule determines the due date for the item. Note: Fixed due dates are only applicable for loans longer than 24 hours, and the due date/time is automatically set to 11:59 PM on the due date.
 
 **Closed library due date management.** Select when the item is due if an item’s calculated due date lands in closed hours for the service point.
 * If an item’s loaned interval is in **minutes** or **hours**, the due date will follow the choice given in the loan policy.
 * If an item’s loaned interval is in **days**, **weeks**, or **months**, the due date will follow the choice given in the loan policy *only* in the case that the service point is completely closed on the day that the item would be due. When the loan is created, FOLIO will check the service point calendar; if the service point is open for any time on the day that the item is due, FOLIO will set the due time to 11:59 PM on that day.
 
 
-**Grace period.** Enter a grace period for overdue items. If you select a grace period, the item is not overdue until after the loan due date/time plus the grace period interval. If the grace period expires and the item has not been returned, the grace period will count towards calculating an overdue or lost fee/fine. Adding a grace period to a due date follows the same logic that you chose for closed library due date management, if the grace period lands in a closed time for the service point.
+**Grace period.** Enter a grace period for overdue items. If you select a grace period, there will be no overdue fine until after the loan due date/time plus the grace period interval. If the grace period expires and the item has not been returned, the grace period will count towards calculating an overdue or lost fee/fine. Adding a grace period to a due date follows the same logic that you chose for closed library due date management, if the grace period lands in a closed time for the service point.
 
-**Item limit.** Enter an item limit for items borrowed under this policy.
+**Item limit.** Enter the maximum number of items that can be borrowed by one patron under this policy. Leave blank to have no item limit.
 
 If you selected **Rolling**, you will see the following fields:
 
@@ -299,7 +305,7 @@ If you selected **Rolling**, you will see the following fields:
 * If an item’s loaned interval is in **days**, **weeks**, or **months**, the due date will follow the choice given in the loan policy *only* in the case that the service point is completely closed on the day that the item would be due. When the loan is created, FOLIO will check the service point calendar; if the service point is open for any time on the day that the item is due, FOLIO will set the due time to 11:59 PM on that day.
 
 
-**Grace period.** Enter a grace period for overdue items. If you choose to have a grace period, the item is not overdue until after the loan due date/time plus the grace period interval.  If the grace period expires and the item has not been returned, the grace period will count towards calculating an overdue or lost fee/fine. Adding a grace period to a due date follows the same logic that you chose for closed library due date management if the grace period lands in a closed time for the service point.
+**Grace period.** Enter a grace period for overdue items. If you choose to have a grace period, there will be no overdue fine until after the loan due date/time plus the grace period interval.  If the grace period expires and the item has not been returned, the grace period will count towards calculating an overdue or lost fee/fine. Adding a grace period to a due date follows the same logic that you chose for closed library due date management if the grace period lands in a closed time for the service point.
 
 **Item limit.** Enter an item limit for items borrowed under this policy.
 
@@ -321,8 +327,6 @@ If you selected **Rolling**, you will see the following fields:
 
 
 #### Request management
-
-Determine whether you want to allow recalls and/or holds.
 
 All of the fields in this section are optional. If you leave them blank, the recall return interval and minimum guaranteed loan period default to zero.
 
@@ -348,15 +352,15 @@ All of the fields in this section are optional. If you leave them blank, the rec
 ### Duplicating a loan policy
 
 1. In the **Loan policies** pane, select the loan policy you want to duplicate.
-2. In the **loan policy details** pane, click **Actions > Duplicate**. A Create loan policy window appears with the same loan information as the policy you chose to duplicate.
-3. Edit any of the loan information before saving the policy.
+2. In the **loan policy details** pane, click **Actions > Duplicate**. A New loan policy window appears with the same loan information as the policy you chose to duplicate.
+3. Edit any of the loan information before saving the policy. Be aware that the system does not warn you or prevent you from having two loan policies with the same Loan policy name.
 4. Click **Save & close**. The duplicate policy is saved and appears in the Loan policy pane.
 
 
 ### Editing a loan policy
 
 1. In the **Loan policies** pane, select the loan policy you want to edit.
-2. In the **Loan policy details** pane, click **Actions > Edit**.
+2. In the **loan policy details** pane, click **Actions > Edit**.
 3. Edit the loan policy.
 4. Click **Save & close**. The policy is updated.
 
@@ -383,7 +387,7 @@ Overdue fine policies determine the amount of fines that accrue when a patron ha
 6. Enter a **Maximum overdue fine** amount in the box. The overdue fine will stop accruing once this amount is reached.
 7. Select whether you want to **Forgive overdue fine if item renewed**. If you select **Yes**, overdue fines on an item will be forgiven once a patron renews the item.
 8. Enter the **Overdue recall fine** amount in the box and **Select interval** at which the fine accrues. This fine applies when an overdue item is recalled and the patron does not return the item on time according to the recall.
-9. Select whether to **Ignore grace periods for recalls**. If selected, the grace period is not applied in the case of an overdue recall.
+9. Select whether to **Ignore grace periods for recalls**. If you select **Yes**, the grace period is not applied in the case of an overdue recall.
 10. Enter a **Maximum recall overdue fine** amount in the box. The recall overdue fine will stop accruing once this amount is reached.
 11. Click **Save & close**. The overdue fine policy is saved and appears in the Overdue fine policies pane.
 
