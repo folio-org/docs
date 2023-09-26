@@ -101,7 +101,7 @@ At least one of the options must be selected:
 * **Username.**
 * **User custom fields.**
 
-If you choose **User custom fields**, you can then select one or more custom fields that the Check out app would include when searching for patron records. Custom fields must be configured in [Settings > Users]({{< ref "settings--users--custom-fields" >}}) before they can be selected here.
+If you choose **User custom fields**, you can then select one or more custom fields that the Check out app would include when searching for patron records. Custom fields must be configured in [Settings > Users]({{< ref "settings--users--custom-fields.md" >}}) before they can be selected here.
 
 ###  Automatically end check in and check out session after period of inactivity
 
@@ -389,14 +389,29 @@ Overdue fine policies determine the amount of fines that accrue when a patron ha
 8. Enter the **Overdue recall fine** amount in the box and **Select interval** at which the fine accrues. This fine applies when an overdue item is recalled and the patron does not return the item on time according to the recall.
 9. Select whether to **Ignore grace periods for recalls**. If you select **Yes**, the grace period is not applied in the case of an overdue recall.
 10. Enter a **Maximum recall overdue fine** amount in the box. The recall overdue fine will stop accruing once this amount is reached.
-11. Click **Save & close**. The overdue fine policy is saved and appears in the Overdue fine policies pane.
+11. Click **Add reminder fee** to add a reminder fee. Reminder fees differ from overdue fines in that reminder fees are billed when an item becomes overdue, whereas overdue fines are billed when the item is returned.
+12. Click **Save & close**. The overdue fine policy is saved and appears in the Overdue fine policies pane.
+
+#### Reminder fees
+
+1.	Select whether overdue fines should **Count closed days/hours/minutes**. If you select **Yes**, overdue fines continue to accrue on days the library is closed.
+2.	Select whether to **Ignore grace periods for recalls**. If you select **Yes**, the grace period is not applied in the case of an overdue recall.
+3.	Select whether to **Ignore grace periods for holds**. If you select **Yes**, the grace period is not applied in the case of an overdue hold.
+4.	Select whether to **Allow renewal of items with reminder fee(s)**. If you select **Yes**, items with reminder fees can be renewed.
+5.	Select whether to **Clear patron block when paid**. If you select **Yes**, patron blocks from reminder fees will be removed when the reminder fee is paid.
+6.	Click **Add reminder fee** to set up a reminder fee schedule:   
+    1.	Enter a number in **Interval** and choose the time interval in **Frequency** to determine how long after an item is overdue the fee is applied and the notice is sent.
+    2.	Enter **Fee** amount.
+    3.	Choose **Notice method**. **Email** will send an email to the address in the user record.
+    4.	Select a fee/fine **Notice template**.
+    5.	Select a **Block template** to determine if the user will be blocked from borrowing and/or renewing and/or requesting. Block templates are set up in [Settings > Users > Patron blocks Templates]({{< ref "/settings_users/#settings--users--patron-block-templates.md" >}}).
 
 
 ### Duplicating an overdue fine policy
 
 1. In the **Overdue fine policies** pane, select the overdue fine policy you want to duplicate.
 2. In the **overdue fine policy details** pane, click **Actions > Duplicate**. A New overdue fine policy window appears with the same overdue fine policy information as the policy you chose to duplicate.
-3. Edit any of the overdue fine policy information before saving the policy.
+3. Edit any of the overdue fine policy information before saving the policy. Note that you must change the **Overdue fine policy name** to a unique name.
 4. Click **Save & close**. The duplicate policy is saved and appears in the Overdue fine policies pane.
 
 
@@ -412,7 +427,7 @@ Overdue fine policies determine the amount of fines that accrue when a patron ha
 
 1. In the **Overdue fine policies** pane, select the overdue fine policy you want to delete.
 2. In the **overdue fine policy details** pane, click **Actions > Delete**.
-3. In the **Delete Overdue fine policy** dialog, click **Delete**. The policy is deleted and a confirmation message appears.
+3. In the **Delete Overdue fine policies** dialog, click **Delete**. The policy is deleted and a confirmation message appears. Note that you will be unable to delete an overdue fine policy that is being used in a circulation rule.
 
 
 ## Lost item fee policies
@@ -427,14 +442,14 @@ Lost item fee policies determine when overdue items automatically age to lost (t
 3. Optional: Enter a **Description** in the box.
 4. In the Lost item fee section, enter the amount of time in which **Items aged to lost after overdue**.
 5. Enter the amount of time in which **Patron billed after aged to lost**.
-6. Enter the amount of time in which **Recalled items age to lost after overdue**. This setting allows libraries to set a shorter “aged to lost” period if the item has been recalled for use by other patrons. This setting **must have a value** in order for recalled items to age to lost.
-7. Enter the amount of time in which **Patron billed for recall after aged to lost** This setting **must have a value** in order for patrons to be billed for recall after an item ages to lost.
+6. Enter the amount of time in which **Recalled items aged to lost after overdue**. This setting allows libraries to set a shorter “aged to lost” period if the item has been recalled for use by other patrons. This setting **must have a value** in order for recalled items to age to lost.
+7. Enter the amount of time in which **Patron billed for recall after aged to lost**. This setting **must have a value** in order for patrons to be billed when a recalled item ages to lost.
 8. Select the **Charge amount for item**. You can select the actual cost of the item, as indicated in the item record, or enter a set cost.
 9. Enter a **Lost item processing fee**. This is an additional charge that will be added to the charge amount for the item when billed to the patron.
 10. Select whether to **Charge lost item processing fee if item declared lost by patron**.
 11. Select whether to **Charge lost item processing fee if item aged to lost by system**.
-12. Enter an amount of time **For lost items not charged a fee/fine, close the loan after**. (This setting applies only to **Actual cost** lost item fee/fines, which is not yet implemented.)
-13. Select whether **If lost item returned, remove lost item processing fee**.
+12. Enter an amount of time **For lost items not charged a fee/fine, close the loan after**. (This setting applies only to **Actual cost** lost item fees/fines.)
+13. Select whether **If lost item returned or renewed, remove lost item processing fee**.
 14. Select whether to charge overdue fines **If lost item returned or renewed**.
 15. Select whether **Replacement allowed**.
 16. Select **If lost item replaced, remove lost item processing fee**.
