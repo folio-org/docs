@@ -462,7 +462,7 @@ Lost item fee policies determine when overdue items automatically age to lost (t
 
 1. In the **Lost item fee policies** pane, select the lost item fee policy you want to duplicate.
 2. In the **lost item fee policy details** pane, click **Actions > Duplicate**. A Lost item fee policies window appears with the same lost item fee policy information as the policy you chose to duplicate.
-3. Edit any of the lost item fee policy information before saving the policy.
+3. Edit any of the lost item fee policy information before saving the policy. Note that you must change the Lost item fee policy name to a unique name.
 4. Click **Save & close**. The duplicate policy is saved and appears in the Lost item fee policy pane.
 
 
@@ -478,7 +478,7 @@ Lost item fee policies determine when overdue items automatically age to lost (t
 
 1. In the **Lost item fee policies** pane, select the lost item fee policy you want to delete.
 2. In the **lost item fee policy details** pane, click **Actions > Delete**.
-3. In the **Delete Lost item fee policy** dialog, click **Delete**. The policy is deleted and a confirmation message appears.
+3. In the **Delete New Lost item fee policy** dialog, click **Delete**. The policy is deleted and a confirmation message appears. Note that you will be unable to delete a lost item fee policy that is being used in a circulation rule.
 
 
 ## Patron notice policies
@@ -496,36 +496,41 @@ Multiple notices can be set up in one policy. Whether it makes more sense to set
 ### Creating a patron notice policy
 
 1. In the **Patron notice policies** pane, click **New**.
-2. In the **New patron notice policy** window, enter a **Policy name**. Note: The policy name is what you will see in Circulation rules.
+2. In the **New patron notice policy** window, enter a **Patron notice policy name**. Note: The policy name is what you will see in Circulation rules.
 3. To make the policy available to Circulation rules, select **Active**. You may want to clear the checkbox if the policy is not in use but you do not want to delete it.
-4. Optional: Enter a **Policy description**.
+4. Optional: Enter a **Description**.
 5. Determine the type of notices you want to set up, and click **Add notice** in the particular notice section that you want to set up. See Loan notices, Request notices, and Fee/fine notices for more information.
-6. Select a notice **Template**. Depending on the type of notice you are setting up, different templates will appear. Templates are created in Patron notice templates. Templates can be used more than once in a policy.
+6. Select a notice **Template**. Depending on the type of notice you are setting up, different templates will appear. Templates are created in [Patron notice templates](#patron-notice-templates). Templates can be used more than once in a policy.
 7. Select the **Format** the notice will be sent as. Currently, email is the only option.
 8. Select the **Triggering event**. This event triggers the system to send a notice. Depending on the event, you might have the option to select a time period before or after.
 9. Optional: If you selected a time-based event, the **Send** drop-down list appears. Select to send the request Upon/At, Before, or After the event (settings variable on the Triggering event).
-10. Optional: If you select Before or After in the previous step, you will see the **Frequency** drop-down list. Select whether to send the notice One-Time or Recurring, until the event is reached.
+10. Optional: If you select Before or After in the previous step, you will see the **Frequency** drop-down list. Select whether to send the notice One Time or Recurring, until the event is reached.
 11. Click **Save & close**. The policy is saved and appears in the Patron notice policies pane.
 
 
 #### Loan notices triggering events
 
-**Check out.** The notice is sent when items are checked out. Additionally, the notice is always sent with multiples by patron by session. The template you select must be configured for multiple loans/items.
-
 **Check in.** The notice is sent when items are checked in. Additionally, the notice is always sent with multiples by patron by session. The template you select must be configured for multiple loans/items.
+
+**Check out.** The notice is sent when items are checked out. Additionally, the notice is always sent with multiples by patron by session. The template you select must be configured for multiple loans/items.
 
 **Item renewed.** The notice is sent when items are renewed.
 
 **Loan due date/time.** The notice is sent before, after, or when an item is due. Select when the notice is sent from the **Send** drop-down list:
 
 * To send the notice when the item is due, select **Upon/At**.
-* To send the notice before the item is due, select **Before**. Then, determine the **Frequency** of the notice. To send the notice once, before it is due, select **One-Time**. To send the notice multiple times before the item is due, select **Recurring** and enter how often the notice sends until the due date is reached.
-* To send the notice after the item is due, select **After**. Then, determine the **Frequency** of the notice. To send the notice once, after the item is due, select **One-Time**. To send the notice multiple times after the item is due, select **Recurring** and enter how often the notice sends until the item is returned or renewed.
+* To send the notice before the item is due, select **Before**. Then, determine the **Frequency** of the notice. To send the notice once, before it is due, select **One Time**. To send the notice multiple times before the item is due, select **Recurring** and enter how often the notice sends until the due date is reached.
+* To send the notice after the item is due, select **After**. Then, determine the **Frequency** of the notice. To send the notice once, after the item is due, select **One Time**. To send the notice multiple times after the item is due, select **Recurring** and enter how often the notice sends until the item is returned or renewed.
 * Additionally, select whether you want to **Send overnight with multiple loans/items by patron. Useful for long-term loans.** or **Send throughout the day without multiple loans/items. Useful for short-term loans.**
 
-**Loan due date changed.** The notice is sent when an item’s due date/time is manually changed.
+**Loan due date change.** The notice is sent when an item’s due date/time is manually changed.
 
 **Item recalled.** The notice is sent when an item is recalled.
+
+**Item aged to lost**. The notice is sent when or after an item is aged to lost. Select when the notice is sent from the **Send** drop-down list:
+
+* To send the notice when the item ages to lost, select **Upon/At**.
+* To send the notice after the item is due, select **After**. Then, determine the **Frequency** of the notice. To send the notice once, after the item is due, select **One Time**. To send the notice multiple times after the item is due, select **Recurring** and enter how often the notice sends until the item is returned or renewed.
 
 
 #### Request notices triggering events
@@ -545,41 +550,41 @@ For all request notices, the system is scanned every five minutes for triggering
 **Hold shelf expiration.** The notice is sent before or when the item is no longer available for pickup on the hold shelf. Select when the notice is sent from the **Send** drop-down list:
 
 * To send the notice when the item’s time on the hold shelf expires, select **Upon/At**.
-* To send the notice before the item’s time on the hold shelf expires, select **Before**. Then, determine the **Frequency** of the notice. To send the notice once, before its time on the hold shelf expires, select **One-Time**. To send the notice multiple times before the item’s time on the hold shelf expires, select **Recurring** and enter how often the notice sends until the hold shelf expiration is reached.
+* To send the notice before the item’s time on the hold shelf expires, select **Before**. Then, determine the **Frequency** of the notice. To send the notice once, before its time on the hold shelf expires, select **One Time**. To send the notice multiple times before the item’s time on the hold shelf expires, select **Recurring** and enter how often the notice sends until the hold shelf expiration is reached.
 
 **Request expiration.** The notice is sent before or when the request expires. Select when the notice is sent from the **Send** drop-down list:
 
 
 
 * To send the notice when the request expires, select **Upon/At**.
-* To send the notice before the request expires, select **Before**. Then, determine the **Frequency** of the notice. To send the notice once, before the request expires, select **One-Time**. To send the notice multiple times before the request expires, select **Recurring** and enter how often the notice sends until the hold shelf expiration is reached.
+* To send the notice before the request expires, select **Before**. Then, determine the **Frequency** of the notice. To send the notice once, before the request expires, select **One Time**. To send the notice multiple times before the request expires, select **Recurring** and enter how often the notice sends until the hold shelf expiration is reached.
 
 
 #### Fee/fine notices triggering events
 
 The system is scanned every five minutes for triggering events and fee/fine notices are sent when a triggering event is detected.
 
-**Overdue fine, returned.** The notice is sent after or when an overdue fine is charged to a patron. The fine would be charged when the item is returned. **Overdue fine, returned** notices always bundle fees/fines. Select when the notice is sent from the **Send** drop-down list:
+**Overdue fine, returned.** The notice is sent after or when an overdue fine is charged to a patron. The fine would be charged when the item is returned. **Overdue fine, returned** notices always bundle fees/fines. The template you select should be configured for multiple loans. Select when the notice is sent from the **Send** drop-down list:
 
 * To send the notice when the overdue fine is charged, select **Upon/At**.
 * To send the notice after the overdue fine is charged, select **After**. Then, determine the **Frequency** of the notice. To send the notice once, before the request expires, select **One-Time**. To send the notice multiple times before the request expires, select **Recurring** and enter how often the notice sends until the fee/fine is closed.
 
-**Overdue fine, renewed.** The notice is sent after or when an overdue fine is charged to a patron. The fine would be charged when the item is renewed. **Overdue fine, renewed** notices always bundle fees/fines. Select when the notice is sent from the **Send** drop-down list:
+**Overdue fine, renewed.** The notice is sent after or when an overdue fine is charged to a patron. The fine would be charged when the item is renewed. **Overdue fine, renewed** notices always bundle fees/fines. The template you select should be configured for multiple loans. Select when the notice is sent from the **Send** drop-down list:
 
 * To send the notice when the overdue fine is charged, select **Upon/At**.
-* To send the notice after the overdue fine is charged, select **After**. Then, determine the  **Frequency** of the notice. To send the notice once, before the request expires, select  **One-Time**. To send the notice multiple times before the request expires, select  **Recurring** and enter how often the notice sends until the fee/fine is closed.
+* To send the notice after the overdue fine is charged, select **After**. Then, determine the  **Frequency** of the notice. To send the notice once, before the request expires, select  **One Time**. To send the notice multiple times before the request expires, select  **Recurring** and enter how often the notice sends until the fee/fine is closed.
 
 **Lost item fee(s) charged.** The notice is sent after or when a lost item fine is charged to a patron.
 
 Select when the notice is sent from the **Send** drop-down list:
 
 * To send the notice when the lost item fine is charged, select **Upon/At**.
-* To send the notice after the lost item fine is charged, select **After**. Then, determine the **Frequency** of the notice. To send the notice once, before the request expires, select **One-Time**. To send the notice multiple times before the request expires, select **Recurring** and enter how often the notice sends until the fee/fine is closed.
+* To send the notice after the lost item fine is charged, select **After**. Then, determine the **Frequency** of the notice. To send the notice once, before the request expires, select **One Time**. To send the notice multiple times before the request expires, select **Recurring** and enter how often the notice sends until the fee/fine is closed.
   
 Select whether multiple lost item fee notices are bundled together from the radio buttons:
 
-* To bunch all a patron’s open lost item fees together in one email (processed at 11:59pm) choose **Send overnight with multiple lost item fee charges by patron.**
-* To send notices throughout the day (typically processed every five minutes, with a separate notice for each fee/fine charged) choose **Send throughout the day with one lost item fee charge per notice.**
+* To bunch all a patron’s open lost item fees together in one email (processed at 11:59pm) choose **Send overnight with multiple lost item fee charges by patron.** The template you select should be configured for multiple loans.
+* To send notices throughout the day (typically processed every five minutes, with a separate notice for each fee/fine charged) choose **Send throughout the day with one lost item fee charge per notice.** The template you select should not be configured for multiple loans.
   
 **Lost item returned - fee(s) adjusted.** The notice is sent when the event is triggered, i.e. when the lost item is checked in.
 
@@ -588,7 +593,7 @@ Select whether multiple lost item fee notices are bundled together from the radi
 
 1. In the **Patron notice policies** pane, select the patron notice policy you want to duplicate.
 2. In the **patron notice policy details** pane, click **Actions > Duplicate**. A New patron notice policy window appears with the same patron notice policy information as the policy you chose to duplicate.
-3. Edit any of the patron notice policy information before saving the policy.
+3. Edit any of the patron notice policy information before saving the policy. You cannot have two patron notice policies with the same name.
 4. Click **Save & close**. The duplicate policy is saved and appears in the Patron notice policies pane.
 
 
@@ -604,7 +609,7 @@ Select whether multiple lost item fee notices are bundled together from the radi
 
 1. In the **Patron notice policies** pane, select the patron notice policy you want to delete.
 2. In the **patron notice policy details** pane, click **Actions > Delete**.
-3. In the **Delete Patron notice policy** dialog, click **Delete**. The policy is deleted and a confirmation message appears.
+3. In the **Delete Patron notice policy** dialog, click **Delete**. The policy is deleted and a confirmation message appears. Note that you will be unable to delete a patron notice policy that is being used in a circulation rule.
 
 ## Patron notice templates
 
@@ -614,7 +619,7 @@ Patron notice templates are the templates used in your Patron notice policies. C
 ### Creating a new patron notice template
 
 1. In the **Patron notice templates** pane, click **New**.
-2. In the **New patron notice** window, enter a **Name** for the notice.
+2. In the **New patron notice template** window, enter a **Patron notice template name** for the notice.
 3. Clear the **Active** checkbox if you do not want the notice to be available for use in notice policies.
 4. Enter a **Description**.
 5. Select a **Category** for the template. Categories determine which section of the notice policy the notice can be used in and which tokens are available to be used in the body of the email.
@@ -627,7 +632,7 @@ Patron notice templates are the templates used in your Patron notice policies. C
 ### Duplicating a patron notice template
 
 1. In the **Patron notice templates** pane, select the patron notice template you want to duplicate.
-2. In the **patron notice template details** pane, click **Actions > Duplicate**. A New patron notice window appears with the same patron notice information as the notice you chose to duplicate.
+2. In the **patron notice template details** pane, click **Actions > Duplicate**. A New patron notice template window appears with the same patron notice information as the notice you chose to duplicate.
 3. Edit the notice name and any other details. You cannot have two notices with the same name.
 4. Click **Save & close**. The duplicate notice is saved and appears in the Patron notice templates pane.
 
@@ -644,7 +649,7 @@ Patron notice templates are the templates used in your Patron notice policies. C
 
 1. In the **Patron notice templates** pane, select the patron notice template you want to delete.
 2. In the **Patron notice template details** pane, click **Actions > Delete**.
-3. In the **Delete Patron notice templates** dialog, click **Delete**. The template is deleted and a confirmation message appears.
+3. In the **Delete Patron notice templates** dialog, click **Delete**. The template is deleted and a confirmation message appears. Note you cannot delete a template that is being used in a Patron notice policy.
 
 
 ## Settings > Circulation > Request cancellation reasons
@@ -681,9 +686,10 @@ Request policies determine the types of requests (pages, holds, and recalls) all
 
 1. Click **New** on the Request policies pane.
 2. In the **New request policy** window, enter a **Request policy name**.
-3. Optional: Enter a **Request policy description**.
+3. Optional: Enter a **Description**.
 4. Select the **Request types allowed**.
-5. Click **Save & close**. The policy saves and appears in the Request policies list.
+5. **Allow all pickup service points** allows the item to be requested for pickup at any service point. Select **Allow some pickup service points** if you want to choose which service points are allowed to be chosen as pickup locations. This can be used, for example, to restrict valuable items from going to an unstaffed pickup service point.
+6. Click **Save & close**. The policy saves and appears in the Request policies list.
 
 
 ### Editing a request policy
