@@ -720,10 +720,11 @@ FOLIO provides functionality for both item-level and title-level requesting. Tit
 
 * **Allow title level requests**. If your library wants to use title-level requesting, check this box.
 * **”Create title level request” selected by default.** If you are using title-level requesting, there will be a box on the request form in the Requests app to toggle whether a request is title-level or item-level. If you’d like title-level request to be the default choice, check this box.
+* **Fail to create title level hold when request is blocked by circulation rule**. Check this box if you want title level hold requests to follow the circulation rules. If you do not check this box, then title level hold requests will go through even when item level hold requests are blocked by the circulation rule.
 
 Make sure to click **Save** at the bottom of the screen to save any changes.
 
-Note that once you check the box to allow title level requests, if a title-level request is then created, you will not be able to turn title-level requesting off.
+Before allowing title level requesting, be aware that you will not be able to turn title-level requesting off if there are any open title level requests.
 
 ### Notice templates
 
