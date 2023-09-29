@@ -44,7 +44,7 @@ You can write circulation rules to determine the following:
 * The groups of patrons that can borrow items.
 * The rules for items in different locations, libraries, campuses, or institutions.
 * The types of items (material types or loan types) that can be borrowed.
-* The number of items a particular type that a user can borrow.
+* The number of items of a particular type that a user can borrow.
 * The notices that are sent to patrons.
 * The fines and fees that are charged.
 
@@ -272,7 +272,7 @@ After you create your loan policies, you should test them to make sure they func
 
 #### Loans
 
-**Loanable.** To create a non-circulating loan policy, clear the checkbox. Clearing the checkbox causes all other fields to disappear. Since loan policies are reusable, you only need to create one non-circulating policy.
+**Loanable.** To create a non-circulating loan policy, clear the checkbox. Clearing the checkbox causes all other fields to disappear. Since loan policies are reusable, you only need one non-circulating policy.
 
 **Loan profile.** Select the type of loan profile. Depending on your selection, you will see different fields.
 
@@ -307,7 +307,7 @@ If you selected **Rolling**, you will see the following fields:
 
 **Grace period.** Enter a grace period for overdue items. If you choose to have a grace period, there will be no overdue fine until after the loan due date/time plus the grace period interval.  If the grace period expires and the item has not been returned, the grace period will count towards calculating an overdue or lost fee/fine. Adding a grace period to a due date follows the same logic that you chose for closed library due date management if the grace period lands in a closed time for the service point.
 
-**Item limit.** Enter an item limit for items borrowed under this policy.
+**Item limit.** Enter the maximum number of items that can be borrowed by one patron under this policy. Leave blank to have no item limit.
 
 #### Renewals
 
@@ -402,7 +402,7 @@ Overdue fine policies determine the amount of fines that accrue when a patron ha
 6.	Click **Add reminder fee** to set up a reminder fee schedule:   
     1.	Enter a number in **Interval** and choose the time interval in **Frequency** to determine how long after an item is overdue the fee is applied and the notice is sent.
     2.	Enter **Fee** amount.
-    3.	Choose **Notice method**. **Email** will send an email to the address in the user record.
+    3.	Choose a **Notice method**. **Email** will send an email to the address in the user record.
     4.	Select a fee/fine **Notice template**.
     5.	Select a **Block template** to determine if the user will be blocked from borrowing and/or renewing and/or requesting. Block templates are set up in [Settings > Users > Patron blocks Templates]({{< ref "/settings_users/#settings--users--patron-block-templates.md" >}}).
 
@@ -530,7 +530,7 @@ Multiple notices can be set up in one policy. Whether it makes more sense to set
 **Item aged to lost**. The notice is sent when or after an item is aged to lost. Select when the notice is sent from the **Send** drop-down list:
 
 * To send the notice when the item ages to lost, select **Upon/At**.
-* To send the notice after the item is due, select **After**. Then, determine the **Frequency** of the notice. To send the notice once, after the item is due, select **One Time**. To send the notice multiple times after the item is due, select **Recurring** and enter how often the notice sends until the item is returned or renewed.
+* To send the notice after the item ages to lost, select **After**. Then, determine the **Frequency** of the notice. To send the notice once, after the item ages to lost, select **One Time**. To send the notice multiple times after the item ages to lost, select **Recurring** and enter how often the notice sends until the item is returned or renewed.
 
 
 #### Request notices triggering events
@@ -567,7 +567,7 @@ The system is scanned every five minutes for triggering events and fee/fine noti
 **Overdue fine, returned.** The notice is sent after or when an overdue fine is charged to a patron. The fine would be charged when the item is returned. **Overdue fine, returned** notices always bundle fees/fines. The template you select should be configured for multiple loans. Select when the notice is sent from the **Send** drop-down list:
 
 * To send the notice when the overdue fine is charged, select **Upon/At**.
-* To send the notice after the overdue fine is charged, select **After**. Then, determine the **Frequency** of the notice. To send the notice once, before the request expires, select **One-Time**. To send the notice multiple times before the request expires, select **Recurring** and enter how often the notice sends until the fee/fine is closed.
+* To send the notice after the overdue fine is charged, select **After**. Then, determine the **Frequency** of the notice. To send the notice once, before the request expires, select **One Time**. To send the notice multiple times before the request expires, select **Recurring** and enter how often the notice sends until the fee/fine is closed.
 
 **Overdue fine, renewed.** The notice is sent after or when an overdue fine is charged to a patron. The fine would be charged when the item is renewed. **Overdue fine, renewed** notices always bundle fees/fines. The template you select should be configured for multiple loans. Select when the notice is sent from the **Send** drop-down list:
 
@@ -581,7 +581,7 @@ Select when the notice is sent from the **Send** drop-down list:
 * To send the notice when the lost item fine is charged, select **Upon/At**.
 * To send the notice after the lost item fine is charged, select **After**. Then, determine the **Frequency** of the notice. To send the notice once, before the request expires, select **One Time**. To send the notice multiple times before the request expires, select **Recurring** and enter how often the notice sends until the fee/fine is closed.
   
-Select whether multiple lost item fee notices are bundled together from the radio buttons:
+Select whether multiple lost item fee notices are bundled together:
 
 * To bunch all a patron’s open lost item fees together in one email (processed at 11:59pm) choose **Send overnight with multiple lost item fee charges by patron.** The template you select should be configured for multiple loans.
 * To send notices throughout the day (typically processed every five minutes, with a separate notice for each fee/fine charged) choose **Send throughout the day with one lost item fee charge per notice.** The template you select should not be configured for multiple loans.
@@ -621,7 +621,7 @@ Patron notice templates are the templates used in your Patron notice policies. C
 1. In the **Patron notice templates** pane, click **New**.
 2. In the **New patron notice template** window, enter a **Patron notice template name** for the notice.
 3. Clear the **Active** checkbox if you do not want the notice to be available for use in notice policies.
-4. Enter a **Description**.
+4. Optional: Enter a **Description**.
 5. Select a **Category** for the template. Categories determine which section of the notice policy the notice can be used in and which tokens are available to be used in the body of the email.
 6. In the Email section, enter a **Subject** for the email sent to the patron.
 7. Enter a **Body** for the email sent to the patron. Click **{ }** to add tokens to the notice. Tokens fill in the item, loan, request, or user information based on the selected variables related to the notice event.
@@ -649,7 +649,7 @@ Patron notice templates are the templates used in your Patron notice policies. C
 
 1. In the **Patron notice templates** pane, select the patron notice template you want to delete.
 2. In the **Patron notice template details** pane, click **Actions > Delete**.
-3. In the **Delete Patron notice templates** dialog, click **Delete**. The template is deleted and a confirmation message appears. Note you cannot delete a template that is being used in a Patron notice policy.
+3. In the **Delete Patron notice templates** dialog, click **Delete**. The template is deleted and a confirmation message appears. Note that you cannot delete a template that is being used in a Patron notice policy.
 
 
 ## Settings > Circulation > Request cancellation reasons
@@ -691,6 +691,12 @@ Request policies determine the types of requests (pages, holds, and recalls) all
 5. **Allow all pickup service points** allows the item to be requested for pickup at any service point. Select **Allow some pickup service points** if you want to choose which service points are allowed to be chosen as pickup locations. This can be used, for example, to restrict valuable items from going to an unstaffed pickup service point.
 6. Click **Save & close**. The policy saves and appears in the Request policies list.
 
+### Duplicating a request policy
+
+1. Find and select the request you want to duplicate.
+2. Select **Actions > Duplicate**.
+3. Edit the policy name and any other details of the request. You cannot have two policies with the same name.
+4. Click **Save & close**. The duplicate policy saves and appears in the Request policies list.
 
 ### Editing a request policy
 
@@ -700,19 +706,11 @@ Request policies determine the types of requests (pages, holds, and recalls) all
 4. Click **Save & close**. The request is updated and saved.
 
 
-### Duplicating a request policy
-
-1. Find and select the request you want to duplicate.
-2. Select **Actions > Duplicate**.
-3. Edit the policy name and any other details of the request. You cannot have two policies with the same name.
-4. Click **Save & close**. The duplicate policy saves and appears in the Request policies list.
-
-
 ### Deleting a request policy
 
 1. Find and select the request you want to delete.
 2. Select **Actions > Delete**.
-3. In the **Delete Request policy** dialog, click **Delete**. A confirmation message appears confirming the request is deleted.
+3. In the **Delete Request policy** dialog, click **Delete**. A confirmation message appears confirming the request policy is deleted. You will be unable to delete a request policy that is being used in a circulation rule.
 
 ## Settings > Circulation > Title level requests
 
@@ -722,7 +720,7 @@ FOLIO provides functionality for both item-level and title-level requesting. Tit
 * **”Create title level request” selected by default.** If you are using title-level requesting, there will be a box on the request form in the Requests app to toggle whether a request is title-level or item-level. If you’d like title-level request to be the default choice, check this box.
 * **Fail to create title level hold when request is blocked by circulation rule**. Check this box if you want title level hold requests to follow the circulation rules. If you do not check this box, then title level hold requests will go through even when item level hold requests are blocked by the circulation rule.
 
-Make sure to click **Save** at the bottom of the screen to save any changes.
+Click **Save** at the bottom of the screen to save any changes.
 
 Before allowing title level requesting, be aware that you will not be able to turn title-level requesting off if there are any open title level requests.
 
@@ -734,5 +732,5 @@ Notices that are triggered by title-level requests are not yet included in FOLIO
 * **Cancellation notice**. Choose a notice template from the drop-down if you want to send a patron notice when a title-level request is canceled.
 * **Expiration notice**. Choose a notice template from the drop-down if you want to send a patron notice when a title-level request expires without having been fulfilled.
 
-Make sure to click **Save** at the bottom of the screen to save any changes.
+Click **Save** at the bottom of the screen to save any changes.
 
