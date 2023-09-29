@@ -22,7 +22,8 @@ The following are all the Courses permissions:
 * **Courses: Add and edit courses’ reserved items.** This permission allows users to add and edit items associated with a course. They cannot remove items from a course.
 * **Courses: Add, edit, and remove courses’ reserved items.** This permission allows users to view, add, edit, and remove items associated with a course.
 * **Courses: Read All.** This permission allows users to see all courses and item information.
-* **Settings (Courses): Can create, edit and delete Course Settings.** This permission allows users to maintain (view, add, edit, and delete) all course settings.
+* **Settings (Courses): Can create, edit and delete course settings.** This permission allows users to maintain (view, add, edit, and delete) all course settings.
+*  **Settings (Courses): Can view course settings.** This permission allows users to view course settings. They cannot add, edit or delete course settings.
 
 
 ## Keyboard shortcuts
