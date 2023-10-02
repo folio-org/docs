@@ -389,23 +389,12 @@ Overdue fine policies determine the amount of fines that accrue when a patron ha
 8. Enter the **Overdue recall fine** amount in the box and **Select interval** at which the fine accrues. This fine applies when an overdue item is recalled and the patron does not return the item on time according to the recall.
 9. Select whether to **Ignore grace periods for recalls**. If you select **Yes**, the grace period is not applied in the case of an overdue recall.
 10. Enter a **Maximum recall overdue fine** amount in the box. The recall overdue fine will stop accruing once this amount is reached.
-11. Click **Add reminder fee** to add a reminder fee. Reminder fees differ from overdue fines in that reminder fees are billed when an item becomes overdue, whereas overdue fines are billed when the item is returned.
+11. Reminder fee functionality is not ready for Poppy. 
 12. Click **Save & close**. The overdue fine policy is saved and appears in the Overdue fine policies pane.
 
 #### Reminder fees
 
-1.	Select whether overdue fines should **Count closed days/hours/minutes**. If you select **Yes**, overdue fines continue to accrue on days the library is closed.
-2.	Select whether to **Ignore grace periods for recalls**. If you select **Yes**, the grace period is not applied in the case of an overdue recall.
-3.	Select whether to **Ignore grace periods for holds**. If you select **Yes**, the grace period is not applied in the case of an overdue hold.
-4.	Select whether to **Allow renewal of items with reminder fee(s)**. If you select **Yes**, items with reminder fees can be renewed.
-5.	Select whether to **Clear patron block when paid**. If you select **Yes**, patron blocks from reminder fees will be removed when the reminder fee is paid.
-6.	Click **Add reminder fee** to set up a reminder fee schedule:   
-    1.	Enter a number in **Interval** and choose the time interval in **Frequency** to determine how long after an item is overdue the fee is applied and the notice is sent.
-    2.	Enter **Fee** amount.
-    3.	Choose a **Notice method**. **Email** will send an email to the address in the user record.
-    4.	Select a fee/fine **Notice template**.
-    5.	Select a **Block template** to determine if the user will be blocked from borrowing and/or renewing and/or requesting. Block templates are set up in [Settings > Users > Patron blocks Templates]({{< ref "/settings_users/#settings--users--patron-block-templates.md" >}}).
-
+Reminder fee functionality is not ready for Poppy. Ignore the reminder fee options, and do not try to add any reminder fees.
 
 ### Duplicating an overdue fine policy
 
