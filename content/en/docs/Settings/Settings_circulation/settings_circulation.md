@@ -433,7 +433,7 @@ Lost item fee policies determine when overdue items automatically age to lost (t
 5. Enter the amount of time in which **Patron billed after aged to lost**.
 6. Enter the amount of time in which **Recalled items aged to lost after overdue**. This setting allows libraries to set a shorter “aged to lost” period if the item has been recalled for use by other patrons. This setting **must have a value** in order for recalled items to age to lost.
 7. Enter the amount of time in which **Patron billed for recall after aged to lost**. This setting **must have a value** in order for patrons to be billed when a recalled item ages to lost.
-8. Select the **Charge amount for item**. You can select the actual cost of the item, as indicated in the item record, or enter a set cost.
+8. Enter a **Charge amount for item**. If you want to use Actual cost, you can enter zero here, and use the **Lost items requiring actual cost** report in the Users app to find the aged to lost items and then apply a manual cost.
 9. Enter a **Lost item processing fee**. This is an additional charge that will be added to the charge amount for the item when billed to the patron.
 10. Select whether to **Charge lost item processing fee if item declared lost by patron**.
 11. Select whether to **Charge lost item processing fee if item aged to lost by system**.
