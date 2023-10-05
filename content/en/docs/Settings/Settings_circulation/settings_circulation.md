@@ -200,7 +200,7 @@ Fixed due date schedules are used in Loan policies when you want to have a loan 
 
 1. In the **Fixed due date schedules** pane, select the fixed due date schedule you want to delete.
 2. In the **fixed due date schedule details** pane, click **Actions > Delete**.
-4. In the **Delete fixed due date schedule** dialog, click **Delete**. The fixed due date schedule is deleted and a confirmation message appears. Note that you will be unable to delete a fixed due date schedule that is being used in a loan policy.
+4. In the **Delete fixed due date schedule** dialog, click **Delete**. The fixed due date schedule is deleted and a confirmation message appears. Note that you cannot delete a fixed due date schedule that is being used in a loan policy.
 
 
 ## Settings > Circulation > Loan anonymization
@@ -230,7 +230,7 @@ If you want to treat loans with fees/fines differently, select **Treat closed lo
 
 Select one of the following options to determine if closed loans with associated fees/fines are anonymized:
 
-* **Immediately after fee/fone closes**.
+* **Immediately after fee/fine closes**.
 * **[Interval of time] after fee/fine closes**. Use the boxes to select the interval of time.
 * **Never**.
 
@@ -283,7 +283,7 @@ Depending on your selection for Loan Profile, you see different fields.
 
 If you selected **Fixed**, you will see the following fields:
 
-**Fixed due date schedule.** Select a fixed due date schedule, as configured in [Settings \> Circulation \> Fixed due date schedules](#settings--circulation--fixed-due-date-schedules). The selected schedule determines the due date for the item. Note: Fixed due dates are only applicable for loans longer than 24 hours, and the due date/time is automatically set to 11:59 PM on the due date.
+**Fixed due date schedule.** Select a fixed due date schedule, as configured in [Settings \> Circulation \> Fixed due date schedules](#settings--circulation--fixed-due-date-schedules). The selected schedule determines the due date for the item. Note: Fixed due dates are only applicable for loans longer than 24 hours, and the calculated due date/time is set to 11:59 PM on the due date.
 
 **Closed library due date management.** Select when the item is due if an item’s calculated due date lands in closed hours for the service point.
 * If an item’s loaned interval is in **minutes** or **hours**, the due date will follow the choice given in the loan policy.
@@ -337,7 +337,7 @@ All of the fields in this section are optional. If you leave them blank, the rec
 
 **Minimum guaranteed loan period for recalled items.** Enter an amount of time for the minimum guaranteed loan period for recalled items. If you allow an item to be recalled, but do not have a minimum guaranteed loan period, the recall return interval effectively becomes the minimum guaranteed loan period for recalled items.
 
-**Allow recalls to extend due dates for overdue loans.** Checking this box ensures that if an item is overdue, and is then recalled, that patrons aren’t suddenly assessed unexpected recall fines when they had been expecting that the item was simply overdue.
+**Allow recalls to extend due dates for overdue loans.** Checking this box ensures that if an overdue item is recalled, patrons aren’t suddenly assessed unexpected recall fines when they had been expecting that the item was simply overdue.
 
 
 ##### Holds
@@ -354,7 +354,7 @@ All of the fields in this section are optional. If you leave them blank, the rec
 1. In the **Loan policies** pane, select the loan policy you want to duplicate.
 2. In the **loan policy details** pane, click **Actions > Duplicate**. A New loan policy window appears with the same loan information as the policy you chose to duplicate.
 3. Edit any of the loan information before saving the policy. Be aware that the system does not warn you or prevent you from having two loan policies with the same Loan policy name.
-4. Click **Save & close**. The duplicate policy is saved and appears in the Loan policy pane.
+4. Click **Save & close**. The loan policy is saved and appears in the Loan policy pane.
 
 
 ### Editing a loan policy
@@ -374,7 +374,7 @@ All of the fields in this section are optional. If you leave them blank, the rec
 
 ## Overdue fine policies
 
-Overdue fine policies determine the amount of fines that accrue when a patron has an item checked out for longer than its loan period.
+Overdue fine policies determine the amount of fines that accrue when an item is checked out for longer than its loan period.
 
 
 ### Creating an overdue fine policy
@@ -401,7 +401,7 @@ Reminder fee functionality is not ready for Poppy. Ignore the reminder fee optio
 1. In the **Overdue fine policies** pane, select the overdue fine policy you want to duplicate.
 2. In the **overdue fine policy details** pane, click **Actions > Duplicate**. A New overdue fine policy window appears with the same overdue fine policy information as the policy you chose to duplicate.
 3. Edit any of the overdue fine policy information before saving the policy. Note that you must change the **Overdue fine policy name** to a unique name.
-4. Click **Save & close**. The duplicate policy is saved and appears in the Overdue fine policies pane.
+4. Click **Save & close**. The overdue fine policy is saved and appears in the Overdue fine policies pane.
 
 
 ### Editing an overdue fine policy
@@ -416,7 +416,7 @@ Reminder fee functionality is not ready for Poppy. Ignore the reminder fee optio
 
 1. In the **Overdue fine policies** pane, select the overdue fine policy you want to delete.
 2. In the **overdue fine policy details** pane, click **Actions > Delete**.
-3. In the **Delete Overdue fine policies** dialog, click **Delete**. The policy is deleted and a confirmation message appears. Note that you will be unable to delete an overdue fine policy that is being used in a circulation rule.
+3. In the **Delete Overdue fine policies** dialog, click **Delete**. The policy is deleted and a confirmation message appears. Note that you cannot delete an overdue fine policy that is being used in a circulation rule.
 
 
 ## Lost item fee policies
@@ -452,7 +452,7 @@ Lost item fee policies determine when overdue items automatically age to lost (t
 1. In the **Lost item fee policies** pane, select the lost item fee policy you want to duplicate.
 2. In the **lost item fee policy details** pane, click **Actions > Duplicate**. A Lost item fee policies window appears with the same lost item fee policy information as the policy you chose to duplicate.
 3. Edit any of the lost item fee policy information before saving the policy. Note that you must change the Lost item fee policy name to a unique name.
-4. Click **Save & close**. The duplicate policy is saved and appears in the Lost item fee policy pane.
+4. Click **Save & close**. The lost item fee policy is saved and appears in the Lost item fee policy pane.
 
 
 ### Editing a lost item fee policy
@@ -467,7 +467,7 @@ Lost item fee policies determine when overdue items automatically age to lost (t
 
 1. In the **Lost item fee policies** pane, select the lost item fee policy you want to delete.
 2. In the **lost item fee policy details** pane, click **Actions > Delete**.
-3. In the **Delete New Lost item fee policy** dialog, click **Delete**. The policy is deleted and a confirmation message appears. Note that you will be unable to delete a lost item fee policy that is being used in a circulation rule.
+3. In the **Delete New Lost item fee policy** dialog, click **Delete**. The policy is deleted and a confirmation message appears. Note that you cannot delete a lost item fee policy that is being used in a circulation rule.
 
 
 ## Patron notice policies
@@ -526,7 +526,7 @@ Multiple notices can be set up in one policy. Whether it makes more sense to set
 
 For all request notices, the system is scanned every five minutes for triggering events and sent when a triggering event is detected.
 
-**Awaiting pickup.** The notice is sent when a requested item was checked in at the request service point and now it’s available and awaiting pickup.
+**Awaiting pickup.** The notice is sent when a requested item is checked in at the pickup service point specified in the request.
 
 **Page request.** The notice is sent when a page request is placed.
 
@@ -573,7 +573,7 @@ Select when the notice is sent from the **Send** drop-down list:
 Select whether multiple lost item fee notices are bundled together:
 
 * To bunch all a patron’s open lost item fees together in one email (processed at 11:59pm) choose **Send overnight with multiple lost item fee charges by patron.** The template you select should be configured for multiple loans.
-* To send notices throughout the day (typically processed every five minutes, with a separate notice for each fee/fine charged) choose **Send throughout the day with one lost item fee charge per notice.** The template you select should not be configured for multiple loans.
+* To send notices throughout the day (typically processed every five minutes, with a separate notice for each fee/fine charged) choose **Send throughout the day with one lost item fee charge per notice.** The template you select should  be configured for single loans.
   
 **Lost item returned - fee(s) adjusted.** The notice is sent when the event is triggered, i.e. when the lost item is checked in.
 
@@ -583,7 +583,7 @@ Select whether multiple lost item fee notices are bundled together:
 1. In the **Patron notice policies** pane, select the patron notice policy you want to duplicate.
 2. In the **patron notice policy details** pane, click **Actions > Duplicate**. A New patron notice policy window appears with the same patron notice policy information as the policy you chose to duplicate.
 3. Edit any of the patron notice policy information before saving the policy. You cannot have two patron notice policies with the same name.
-4. Click **Save & close**. The duplicate policy is saved and appears in the Patron notice policies pane.
+4. Click **Save & close**. The patron notice policy is saved and appears in the Patron notice policies pane.
 
 
 ### Editing a patron notice policy
@@ -598,7 +598,7 @@ Select whether multiple lost item fee notices are bundled together:
 
 1. In the **Patron notice policies** pane, select the patron notice policy you want to delete.
 2. In the **patron notice policy details** pane, click **Actions > Delete**.
-3. In the **Delete Patron notice policy** dialog, click **Delete**. The policy is deleted and a confirmation message appears. Note that you will be unable to delete a patron notice policy that is being used in a circulation rule.
+3. In the **Delete Patron notice policy** dialog, click **Delete**. The policy is deleted and a confirmation message appears. Note that you cannot delete a patron notice policy that is being used in a circulation rule.
 
 ## Patron notice templates
 
@@ -623,7 +623,7 @@ Patron notice templates are the templates used in your Patron notice policies. C
 1. In the **Patron notice templates** pane, select the patron notice template you want to duplicate.
 2. In the **patron notice template details** pane, click **Actions > Duplicate**. A New patron notice template window appears with the same patron notice information as the notice you chose to duplicate.
 3. Edit the notice name and any other details. You cannot have two notices with the same name.
-4. Click **Save & close**. The duplicate notice is saved and appears in the Patron notice templates pane.
+4. Click **Save & close**. The patron notice template is saved and appears in the Patron notice templates pane.
 
 
 ### Editing a patron notice template
@@ -685,7 +685,7 @@ Request policies determine the types of requests (pages, holds, and recalls) all
 1. Find and select the request you want to duplicate.
 2. Select **Actions > Duplicate**.
 3. Edit the policy name and any other details of the request. You cannot have two policies with the same name.
-4. Click **Save & close**. The duplicate policy saves and appears in the Request policies list.
+4. Click **Save & close**. The request policy is saved and appears in the Request policies list.
 
 ### Editing a request policy
 
@@ -699,7 +699,7 @@ Request policies determine the types of requests (pages, holds, and recalls) all
 
 1. Find and select the request you want to delete.
 2. Select **Actions > Delete**.
-3. In the **Delete Request policy** dialog, click **Delete**. A confirmation message appears confirming the request policy is deleted. You will be unable to delete a request policy that is being used in a circulation rule.
+3. In the **Delete Request policy** dialog, click **Delete**. A confirmation message appears confirming the request policy is deleted. You cannot delete a request policy that is being used in a circulation rule.
 
 ## Settings > Circulation > Title level requests
 
