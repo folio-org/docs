@@ -18,7 +18,7 @@ The following are all the Circulation Settings permissions:
 * **Settings (Circ): View circulation rules.** This permission allows a user to view circulation rules but does not allow them to edit rules.
 * **Settings (Circ): Can create, edit and remove circulation rules.** This permission allows the user to create, read, update, and delete circulation rules.
 * **Settings (Circ): Can create, edit and remove other settings.** This permission allows the user to create, read, update, and delete other settings.
-* **Settings (Circ): Can create, edit and remove staff slips.** This permission allows the user to create, read, and update staff slips. Note that the content of staff slips can be erased in the editor, but the staff slip itself cannot be deleted.
+* **Settings (Circ): Can create, edit and remove staff slips.** This permission allows the user to create, read, and update staff slips. *Note*: Users can erase the content of staff slips in the editor, but cannot delete the staff slip itself.
 * **Settings (Circ): Can create, edit and remove fixed due date schedules.** This permission allows the user to create, read, update, and delete fixed due date schedules.
 * **Settings (Circ): Can create, edit and remove loan policies.** This permission allows the user to create, read, update, and delete loan policies.
 * **Settings (Circ): Can create, edit and remove overdue fine policies.** This permission allows the user to create, read, update, and delete overdue fine policies.
@@ -37,7 +37,7 @@ The following are all the Circulation Settings permissions:
 
 ## Settings > Circulation > Circulation rules
 
-Libraries can use circulation rules to determine how their items circulate. Circulation rules follow FOLIO specific criteria and logic. Each circulation rule is made up of one or more criteria and the policies to be associated with those criteria. When a defined set of criteria matches a circulation action, the policies that are attached to that criteria are then applied. The guidelines for constructing circulation rules are found in the [FOLIO GitHub Circulation rules documentation](https://github.com/folio-org/mod-circulation/blob/master/doc/circulationrules.md).
+Using Folio specific criteria and logic, libraries can create rules that determine how items circulate.  Each circulation rule is made up of one or more criteria and the policies associated with those criteria. When a defined set of criteria matches a circulation action, the policies attached to those criteria are applied. You can find the guidelines for constructing circulation rules in the [FOLIO GitHub Circulation rules documentation](https://github.com/folio-org/mod-circulation/blob/master/doc/circulationrules.md).
 
 You can write circulation rules to determine the following:
 
@@ -72,7 +72,7 @@ Before you begin to write your circulation rules, you should:
 
 ### Creating circulation rules
 
-Add your circulation rules to the Circulation rules editor. The editor contains responsive features to help write the rules. For example, typing a criteria letter displays the options for the criteria value, which you can select from the drop-down list that appears. Click **Save** once you have completed adding your circulation rules.
+Add your circulation rules to the Circulation rules editor. The editor contains responsive features that help you write the rules. For example, when you type a criteria letter, the Circulation rules editor facilitates your selection of the criteria value by displaying a drop-down list of the possible values for that criteria. Click **Save** once you have completed adding your circulation rules.
 
 
 #### Circulation rule tips
@@ -114,15 +114,15 @@ This setting is turned on by default with an inactivity period of 3 minutes.
 
 ### Enable audio alerts
 
-Audio alerts can be turned on to signal to library staff when a checkout succeeds or fails. This setting is turned off by default.
+You can turn on audio alerts to signal to library staff when a checkout succeeds or fails. This setting is turned off by default.
 
 Select **Enable audio alerts** to enable audio alerts. Select your desired audio-alerts theme from the drop-down.
 
 ### Perform wildcard lookup of items by barcode in circulation apps (Check in, Check out)
 
-Some libraries may want to use FOLIO and support circulating items that have the same barcode. They may be migrating to FOLIO from a prior system that allowed duplicate barcodes, or they may need to support consortial lending.
+Some libraries may want to use FOLIO and support circulating items that have the same barcode. These libraries may be migrating to FOLIO from a prior system that allowed duplicate barcodes or they may need to support consortial lending. 
 
-The inventory app requires barcodes to be unique, so libraries who have this scenario need to append a string to the barcode to make it unique without changing the physical barcode on the item. The library then needs the Check in and Check out apps to know what to do if they search for the physical barcode on the item and it's possible to retrieve more than one record.
+Since the inventory app requires unique barcodes, libraries with this scenario need to append a string to the barcode.  That will make it unique without changing the physical barcode on the item. The library then needs the Check in and Check out apps to know what to do if they search for the physical barcode on the item and it's possible to retrieve more than one record.
 
 If your library could potentially encounter duplicate barcodes as described, you can check this box to enable the Check in and Check out apps to use a wildcard search for item barcodes and present a modal if duplicate barcodes are found, so library staff can select the correct item.
 
@@ -137,7 +137,7 @@ Staff slips allow you to configure the information that appears on your staff sl
 
 ### Using tokens with staff slips
 
-There are six categories of available tokens for use with staff slips, listed in the table below. All of the categories appear as options in the staff slip editor, but some categories will only populate with information for some types of staff slips. 
+The following table lists the six categories of available tokens for use with staff slips. All six appear as options in the staff slip editor, but some categories will only populate with information for some types of staff slips. 
 
 |Token category|Populates with these staff slips|Does not populate with these staff slips|
 |---|---|---|
@@ -337,7 +337,7 @@ All of the fields in this section are optional. If you leave them blank, the rec
 
 **Minimum guaranteed loan period for recalled items.** Enter an amount of time for the minimum guaranteed loan period for recalled items. If you allow an item to be recalled, but do not have a minimum guaranteed loan period, the recall return interval effectively becomes the minimum guaranteed loan period for recalled items.
 
-**Allow recalls to extend due dates for overdue loans.** Checking this box ensures that if an overdue item is recalled, patrons aren’t suddenly assessed unexpected recall fines when they had been expecting that the item was simply overdue.
+**Allow recalls to extend due dates for overdue loans.** Checking this box ensures that if an overdue item is recalled, patrons are not assessed unexpected recall fines for a recalled item that they had thought was simply overdue.
 
 
 ##### Holds
@@ -374,7 +374,7 @@ All of the fields in this section are optional. If you leave them blank, the rec
 
 ## Overdue fine policies
 
-Overdue fine policies determine the amount of fines that accrue when an item is checked out for longer than its loan period.
+Overdue fine policies determine the fines that accrue when an item is checked out for longer than its loan period.
 
 
 ### Creating an overdue fine policy
@@ -383,9 +383,9 @@ Overdue fine policies determine the amount of fines that accrue when an item is 
 2. In the **New overdue fine policy** window, enter an **Overdue fine policy name** in the box.
 3. Optional: Enter a **Description** in the box.
 4. In the **Overdue fine** section, enter the **Overdue fine** amount in the box and **Select interval** at which the fine accrues.
-5. Select whether overdue fines should **Count closed days/hours/minutes**. If you select **Yes**, overdue fines continue to accrue on days the library is closed.
+5. Select **Yes** in the **Count closed days/hours/minutes** checkbox if you want overdue fines to continue accruing on days the library is closed.
 6. Enter a **Maximum overdue fine** amount in the box. The overdue fine will stop accruing once this amount is reached.
-7. Select whether you want to **Forgive overdue fine if item renewed**. If you select **Yes**, overdue fines on an item will be forgiven once a patron renews the item.
+7. Select **Yes** in the **Forgive overdue fine if item renewed** checkbox if you want overdue fines forgiven once a patron renews the item.
 8. Enter the **Overdue recall fine** amount in the box and **Select interval** at which the fine accrues. This fine applies when an overdue item is recalled and the patron does not return the item on time according to the recall.
 9. Select whether to **Ignore grace periods for recalls**. If you select **Yes**, the grace period is not applied in the case of an overdue recall.
 10. Enter a **Maximum recall overdue fine** amount in the box. The recall overdue fine will stop accruing once this amount is reached.
@@ -421,7 +421,7 @@ Reminder fee functionality is not ready for Poppy. Ignore the reminder fee optio
 
 ## Lost item fee policies
 
-Lost item fee policies determine when overdue items automatically age to lost (their Item status changes from Overdue to Lost) and the charges billed to patrons for lost items.
+Lost item fee policies determine when overdue items automatically age to lost (their Item status changes from Overdue to Lost); it also determines the charges billed to patrons for lost items.
 
 
 ### Creating a lost item fee policy
@@ -479,7 +479,7 @@ Patron notice policies determine which patron notice templates are sent out befo
 
 Before you can set up your patron notice policies, you must first configure your Patron notice templates.
 
-Multiple notices can be set up in one policy. Whether it makes more sense to set up one or a few notices within several policies or several notices with a few policies will vary based on each library’s needs. Additionally, patron notice policies can be associated with more than one circulation rule.
+You can set up multiple notices in one policy. Libraries’ needs differ. Some will want to create several policies with one or few notices in each policy. Other libraries may find it advantageous to create few policies, each containing several notices. Additionally, patron notice policies can be associated with more than one circulation rule.
 
 
 ### Creating a patron notice policy
@@ -703,7 +703,7 @@ Request policies determine the types of requests (pages, holds, and recalls) all
 
 ## Settings > Circulation > Title level requests
 
-FOLIO provides functionality for both item-level and title-level requesting. Title-level requesting is off by default; if your library wants to use it, you would enable and configure related settings in this section.
+FOLIO provides functionality for both item-level and title-level requesting. Since title-level requesting is off by default, you need to enable and configure related settings in this section if your library wants to use it.
 
 * **Allow title level requests**. If your library wants to use title-level requesting, check this box.
 * **”Create title level request” selected by default.** If you are using title-level requesting, there will be a box on the request form in the Requests app to toggle whether a request is title-level or item-level. If you’d like title-level request to be the default choice, check this box.
