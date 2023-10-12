@@ -122,7 +122,7 @@ Select **Enable audio alerts** to enable audio alerts. Select your desired audio
 
 Some libraries may want to use FOLIO and support circulating items that have the same barcode. These libraries may be migrating to FOLIO from a prior system that allowed duplicate barcodes or they may need to support consortial lending. 
 
-Since the inventory app requires unique barcodes, libraries with this scenario need to append a string to the barcode.  That will make it unique without changing the physical barcode on the item. The library then needs the Check in and Check out apps to know what to do if they search for the physical barcode on the item and it's possible to retrieve more than one record.
+Since the inventory app requires unique barcodes, libraries with this scenario need to append a string to the barcode.  That will make the barcode unique without changing the physical barcode on the item. The library then needs the Check in and Check out apps to know what to do if they search for the physical barcode on the item and it's possible to retrieve more than one record.
 
 If your library could potentially encounter duplicate barcodes as described, you can check this box to enable the Check in and Check out apps to use a wildcard search for item barcodes and present a modal if duplicate barcodes are found, so library staff can select the correct item.
 
@@ -141,19 +141,19 @@ The following table lists the six categories of available tokens for use with st
 
 |Token category|Populates with these staff slips|Does not populate with these staff slips|
 |---|---|---|
-|Item|Hold slip, Pick slip, Request delivery, Transit||
-|Effective location|Hold slip, Pick slip, Request delivery, Transit||
-|Staff slip|Hold slip, Pick slip, Request delivery, Transit||
-|Request|Hold slip|Pick slip, Request delivery, Transit| 
+|Item|Hold, Pick slip, Request delivery, Transit||
+|Effective location|Hold, Pick slip, Request delivery, Transit||
+|Staff slip|Hold, Pick slip, Request delivery, Transit||
+|Request|Hold|Pick slip, Request delivery, Transit| 
 |Request delivery address|Request delivery|Hold slip, Pick slip, Transit|
-|Requester|Hold slip, Pick slip, Request delivery|Transit|
+|Requester|Hold, Pick slip, Request delivery|Transit|
 
 
 ### Configuring a staff slip
 
 1. In the **Staff slips** pane, select the staff slip you want to configure.
 2. In the **staff slip details** pane, click **Edit**.
-3. Optional: In the **staff slip** window, enter a **Description** in the box.
+3. Optional: Enter a **Description** in the box.
 4. Use the Display box to edit the slip. Click **{ }** to add tokens to the slip.
 5. Optional: Click **Preview** to view a preview of the slip. Be aware that Preview will populate non-populating tokens.
 6. Click **Save & close**. The slip is saved and updated.
@@ -298,7 +298,7 @@ If you selected **Rolling**, you will see the following fields:
 
 **Loan period.** Select an amount of time for the loan period.
 
-**Fixed due date schedule (due date limit).** Select a fixed due date schedule, as configured in [Settings \> Circulation \> Fixed due date schedules](#settings--circulation--fixed-due-date-schedules). The schedule is used to enforce a stop point on continuing renewals. For example, you may allow students to renew items every four weeks, but want renewals to stop at the end of the semester.
+**Fixed due date schedule (due date limit).** Select a fixed due date schedule, as configured in [Settings \> Circulation \> Fixed due date schedules](#settings--circulation--fixed-due-date-schedules). The schedule is used to enforce a stop point on loans. For example, you may want to generally have 28 day loans, but have items that are borrowed 1-4 weeks before the end of the semester be due on the last day of the semester. This setting applies to both initial loans and renewals (unless over-ridden by having an Alternate loan period for renewals).
 
 **Closed library due date management.** Select when the item is due if an item’s calculated due date lands in closed hours for the service point.
 * If an item’s loaned interval is in **minutes** or **hours**, the due date will be determined by the loan policy.
@@ -323,7 +323,7 @@ If you selected **Rolling**, you will see the following fields:
 
 **Alternate loan period for renewals.** Enter the alternate loan period for renewals.
 
-**Alternate fixed due date schedule (due date limit) for renewals.** Select a fixed due date schedule, as configured in [Settings \> Circulation \> Fixed due date schedules](#settings--circulation--fixed-due-date-schedules). The schedule is used to enforce a stop point on continuing renewals.
+**Alternate fixed due date schedule (due date limit) for renewals.** Select a fixed due date schedule, as configured in [Settings \> Circulation \> Fixed due date schedules](#settings--circulation--fixed-due-date-schedules). The schedule is used to enforce a stop point on renewals.
 
 
 #### Request management
@@ -344,7 +344,7 @@ All of the fields in this section are optional. If you leave them blank, the rec
 
 **Alternate loan period at checkout for items with an active, pending hold request.** To shorten a loan period for an item that has a request queue, enter an amount of time. If an item is checked out and has no queue, the regular loan period is applied.
 
-**Allow renewal of items with an active, pending hold request.** If you want to allow renewals on a checked out item that has hold requests, select the check box. When renewals are allowed, patrons can continue to renew the item based on the settings in the Renewals section.
+**Allow renewal of items with an active, pending hold request.** If you want to allow renewals on a checked out item that has hold requests, select the checkbox. When renewals are allowed, patrons can continue to renew the item based on the settings in the Renewals section.
 
 **Alternate loan period at renewal for items with an active, pending hold request.** If you allow renewals on items with an active, pending hold request, and want to shorten the renewal loan period, enter an amount of time.
 
@@ -503,7 +503,7 @@ You can set up multiple notices in one policy. Libraries’ needs differ. Some w
 
 **Check out.** The notice is sent when items are checked out. Additionally, the notice is always sent with multiples by patron by session. The template you select must be configured for multiple loans/items.
 
-**Item renewed.** The notice is sent when items are renewed.
+**Item renewed.** The notice is sent when items are renewed.The template you select must not be configured for multiple loans/items.
 
 **Loan due date/time.** The notice is sent before, after, or when an item is due. Select when the notice is sent from the **Send** drop-down list:
 
@@ -546,7 +546,7 @@ For all request notices, the system is scanned every five minutes for triggering
 
 
 * To send the notice when the request expires, select **Upon/At**.
-* To send the notice before the request expires, select **Before**. Then, determine the **Frequency** of the notice. To send the notice once, before the request expires, select **One Time**. To send the notice multiple times before the request expires, select **Recurring** and enter how often the notice sends until the hold shelf expiration is reached.
+* To send the notice before the request expires, select **Before**. Then, determine the **Frequency** of the notice. To send the notice once, before the request expires, select **One Time**. To send the notice multiple times before the request expires, select **Recurring** and enter how often the notice sends until the request expiration is reached.
 
 
 #### Fee/fine notices triggering events
