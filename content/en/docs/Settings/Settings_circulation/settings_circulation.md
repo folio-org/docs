@@ -15,24 +15,24 @@ Each setting within Circulation has its own permission associated with it. If a 
 
 The following are all the Circulation Settings permissions:
 
-* **Settings (Circ): View circulation rules.** This permission allows a user to view circulation rules but does not allow them to edit rules.
-* **Settings (Circ): Can create, edit and remove circulation rules.** This permission allows the user to create, read, update, and delete circulation rules.
-* **Settings (Circ): Can create, edit and remove other settings.** This permission allows the user to create, read, update, and delete other settings.
-* **Settings (Circ): Can create, edit and remove staff slips.** This permission allows the user to create, read, and update staff slips. *Note*: Users can erase the content of staff slips in the editor, but cannot delete the staff slip itself.
-* **Settings (Circ): Can create, edit and remove fixed due date schedules.** This permission allows the user to create, read, update, and delete fixed due date schedules.
-* **Settings (Circ): Can create, edit and remove loan policies.** This permission allows the user to create, read, update, and delete loan policies.
-* **Settings (Circ): Can create, edit and remove overdue fine policies.** This permission allows the user to create, read, update, and delete overdue fine policies.
-* **Settings (Circ): Can create, edit and remove lost item fee policies.** This permission allows the user to create, read, update, and delete lost item fee policies.
-* **Settings (Circ): Can create, edit and remove notice policies.** This permission allows the user to create, read, update, and delete patron notice policies.
-* **Settings (Circ): Can create, edit and remove patron notice templates.** This permission allows the user to create, read, update, and delete patron notice templates.
-* **Settings (Circ): Can create, edit and remove cancellation reasons.** This permission allows the user to create, read, update, and delete request cancellation reasons.
-* **Settings (Circ): Can create, edit and remove request policies.** This permission allows the user to create, read, update, and delete request policies.
-* **Settings (Circ): Can view loan history.** This permission allows the user to view settings in Settings \> Circulation \> Loan anonymization.
-* **Settings (Circ): Can edit loan history.** This permission allows the user to edit settings in Settings \> Circulation \> Loan anonymization.
-* **Settings (Circ): Can view loan policies.** This permission allows the user to view loan policies but does not allow create, edit or delete.
-* **Settings (Circ): Can view lost item fee policies.** This permission allows the user to view lost item fee policies but does not allow create, edit or delete.
-* **Settings (Circ): Can view overdue fine policies.** This permission allows the user to view overdue fine policies but does not allow create, edit or delete. 
-* **Settings (Circulation): Title level request edit.** This permission allows users to enable, disable and configure title-level requesting. Note that title level requesting cannot be disabled via settings if there are any open title level requests.
+* **Settings (Circ): Can create, edit and remove cancellation reasons:** Allows the user to create, read, update, and delete request cancellation reasons.
+* **Settings (Circ): Can create, edit and remove circulation rules:** Allows the user to create, read, update, and delete circulation rules.
+* **Settings (Circ): Can create, edit and remove fixed due date schedules:** Allows the user to create, read, update, and delete fixed due date schedules.
+* **Settings (Circ): Can create, edit and remove loan policies:** Allows the user to create, read, update, and delete loan policies.
+* **Settings (Circ): Can create, edit and remove lost item fee policies:** Allows the user to create, read, update, and delete lost item fee policies.
+* **Settings (Circ): Can create, edit and remove notice policies:** Allows the user to create, read, update, and delete patron notice policies.
+* **Settings (Circ): Can create, edit and remove other settings:** Allows the user to read and update Settings > Circulation > Other settings.
+* **Settings (Circ): Can create, edit and remove overdue fine policies:** Allows the user to create, read, update, and delete overdue fine policies.
+* **Settings (Circ): Can create, edit and remove patron notice templates:** Allows the user to create, read, update, and delete patron notice templates.
+* **Settings (Circ): Can create, edit and remove request policies:** Allows the user to create, read, update, and delete request policies.
+* **Settings (Circ): Can create, edit and remove staff slips:** Allows the user to create, read, and update staff slips. Note: Users can erase the content of staff slips in the editor, but cannot delete the staff slip itself.
+* **Settings (Circ): Can edit loan history:** Allows the user to edit settings in Settings > Circulation > Loan anonymization.
+* **Settings (Circ): Can view loan history:** Allows the user to view settings in Settings > Circulation > Loan anonymization.
+* **Settings (Circ): Can view loan policies:** Allows the user to view loan policies but does not allow create, edit or delete.
+* **Settings (Circ): Can view lost item fee policies:** Allows the user to view lost item fee policies but does not allow create, edit or delete.
+* **Settings (Circ): Can view overdue fine policies:** Allows the user to view overdue fine policies but does not allow create, edit or delete.
+* **Settings (Circ): View circulation rules:** Allows a user to view circulation rules but does not allow them to edit rules.
+* **Settings (Circulation): Title level request edit:** Allows users to enable, disable and configure title-level requesting. Note that title level requesting cannot be disabled via settings if there are any open title level requests.
 
 
 ## Settings > Circulation > Circulation rules
@@ -374,7 +374,7 @@ All of the fields in this section are optional. If you leave them blank, the rec
 
 ## Overdue fine policies
 
-Overdue fine policies determine the fines that accrue when an item is checked out for longer than its loan period.
+Overdue fine policies determine the fines that accrue when an item is checked out for longer than its loan period. Overdue fine policies are used in Circulation rules.
 
 
 ### Creating an overdue fine policy
@@ -421,7 +421,7 @@ Reminder fee functionality is not ready for Poppy. Ignore the reminder fee optio
 
 ## Lost item fee policies
 
-Lost item fee policies determine when overdue items automatically age to lost (their Item status changes from Overdue to Lost); it also determines the charges billed to patrons for lost items.
+Lost item fee policies determine when overdue items automatically age to lost (their Item status changes from Overdue to Lost); it also determines the charges billed to patrons for lost items. Lost item fee policies are used in Circulation rules.
 
 
 ### Creating a lost item fee policy
@@ -433,11 +433,11 @@ Lost item fee policies determine when overdue items automatically age to lost (t
 5. Enter the amount of time in which **Patron billed after aged to lost**.
 6. Enter the amount of time in which **Recalled items aged to lost after overdue**. This setting allows libraries to set a shorter “aged to lost” period if the item has been recalled for use by other patrons. This setting **must have a value** in order for recalled items to age to lost.
 7. Enter the amount of time in which **Patron billed for recall after aged to lost**. This setting **must have a value** in order for patrons to be billed when a recalled item ages to lost.
-8. Enter a **Charge amount for item**. If you want to use Actual cost, you can enter zero here, and use the **Lost items requiring actual cost** report in the Users app to find the aged to lost items and then apply a manual cost.
+8. In the **Charge amount for item** section, choose **Actual cost** or **Set cost**. If you use Actual cost, you can use the **Lost items requiring actual cost** report in the Users app to find the aged to lost items and then apply a manual cost. If you use Set cost, then enter an amount in the box.
 9. Enter a **Lost item processing fee**. This is an additional charge that will be added to the charge amount for the item when billed to the patron.
 10. Select whether to **Charge lost item processing fee if item declared lost by patron**.
 11. Select whether to **Charge lost item processing fee if item aged to lost by system**.
-12. Enter an amount of time **For lost items not charged a fee/fine, close the loan after**. (This setting applies only to **Actual cost** lost item fees/fines.)
+12. Enter an amount of time **For lost items not charged a fee/fine, close the loan after**. (This setting is required for Actual cost and does not apply to Set cost.)
 13. Select whether **If lost item returned or renewed, remove lost item processing fee**.
 14. Select whether to charge overdue fines **If lost item returned or renewed**.
 15. Select whether **Replacement allowed**.
@@ -472,7 +472,7 @@ Lost item fee policies determine when overdue items automatically age to lost (t
 
 ## Patron notice policies
 
-Patron notice policies determine which patron notice templates are sent out before, during, or after certain triggering events. Multiple notices can be set up in one policy. The patron notice policies you configure are used in Circulation rules.
+Patron notice policies determine which patron notice templates are sent out before, during, or after certain triggering events. Multiple notices can be set up in one policy. Patron notice policies are used in Circulation rules.
 
 
 ### Implementation considerations
@@ -530,7 +530,7 @@ For all request notices, the system is scanned every five minutes for triggering
 
 **Page request.** The notice is sent when a page request is placed.
 
-**Hold request.** The notice is sent when a hold request is placed.
+**Hold request.** The notice is sent when an item-level hold request is placed.
 
 **Recall request.** The notice is sent when a recall request is placed.
 
@@ -556,19 +556,19 @@ The system is scanned every five minutes for triggering events and fee/fine noti
 **Overdue fine, returned.** The notice is sent after or when an overdue fine is charged to a patron. The fine would be charged when the item is returned. **Overdue fine, returned** notices always bundle fees/fines. The template you select should be configured for multiple loans. Select when the notice is sent from the **Send** drop-down list:
 
 * To send the notice when the overdue fine is charged, select **Upon/At**.
-* To send the notice after the overdue fine is charged, select **After**. Then, determine the **Frequency** of the notice. To send the notice once, before the request expires, select **One Time**. To send the notice multiple times before the request expires, select **Recurring** and enter how often the notice sends until the fee/fine is closed.
+* To send the notice after the overdue fine is charged, select **After**. Then, determine the **Frequency** of the notice. To send the notice once, select **One Time**. To send the notice multiple times, select **Recurring** and enter how often the notice sends until the fee/fine is closed.
 
 **Overdue fine, renewed.** The notice is sent after or when an overdue fine is charged to a patron. The fine would be charged when the item is renewed. **Overdue fine, renewed** notices always bundle fees/fines. The template you select should be configured for multiple loans. Select when the notice is sent from the **Send** drop-down list:
 
 * To send the notice when the overdue fine is charged, select **Upon/At**.
-* To send the notice after the overdue fine is charged, select **After**. Then, determine the  **Frequency** of the notice. To send the notice once, before the request expires, select  **One Time**. To send the notice multiple times before the request expires, select  **Recurring** and enter how often the notice sends until the fee/fine is closed.
+* To send the notice after the overdue fine is charged, select **After**. Then, determine the  **Frequency** of the notice. To send the notice once, select  **One Time**. To send the notice multiple times, select  **Recurring** and enter how often the notice sends until the fee/fine is closed.
 
 **Lost item fee(s) charged.** The notice is sent after or when a lost item fine is charged to a patron.
 
 Select when the notice is sent from the **Send** drop-down list:
 
 * To send the notice when the lost item fine is charged, select **Upon/At**.
-* To send the notice after the lost item fine is charged, select **After**. Then, determine the **Frequency** of the notice. To send the notice once, before the request expires, select **One Time**. To send the notice multiple times before the request expires, select **Recurring** and enter how often the notice sends until the fee/fine is closed.
+* To send the notice after the lost item fine is charged, select **After**. Then, determine the **Frequency** of the notice. To send the notice once, select **One Time**. To send the notice multiple times, select **Recurring** and enter how often the notice sends until the fee/fine is closed.
   
 Select whether multiple lost item fee notices are bundled together:
 
@@ -673,7 +673,7 @@ Request policies determine the types of requests (pages, holds, and recalls) all
 
 ### Creating a new request policy
 
-1. Click **New** on the Request policies pane.
+1. Click **New** in the **Request policies** pane.
 2. In the **New request policy** window, enter a **Request policy name**.
 3. Optional: Enter a **Description**.
 4. Select the **Request types allowed**.
@@ -682,22 +682,22 @@ Request policies determine the types of requests (pages, holds, and recalls) all
 
 ### Duplicating a request policy
 
-1. Find and select the request you want to duplicate.
+1. In the **Request policies** pane select the request policy you want to duplicate.
 2. Select **Actions > Duplicate**.
 3. Edit the policy name and any other details of the request. You cannot have two policies with the same name.
 4. Click **Save & close**. The request policy is saved and appears in the Request policies list.
 
 ### Editing a request policy
 
-1. Find and select the request policy you want to edit.
+1. In the **Request policies** pane select the request policy you want to edit.
 2. Select **Actions > Edit**.
-3. Edit the policy.
-4. Click **Save & close**. The request is updated and saved.
+3. Edit the request policy.
+4. Click **Save & close**. The request policy is updated and saved.
 
 
 ### Deleting a request policy
 
-1. Find and select the request you want to delete.
+1. In the **Request policies** pane select the request policy you want to delete.
 2. Select **Actions > Delete**.
 3. In the **Delete Request policy** dialog, click **Delete**. A confirmation message appears confirming the request policy is deleted. You cannot delete a request policy that is being used in a circulation rule.
 
