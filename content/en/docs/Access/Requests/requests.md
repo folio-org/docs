@@ -66,7 +66,7 @@ Closed requests have one of the following statuses:
 
 ## Searching for requests
 
-To search for requests, enter your search terms into the box on the **Search & filter** pane. You can search by title, or "starts with" searching by item barcode, requester barcode, or item call number.
+To search for requests, enter your search terms into the box on the **Search & filter** pane. You can search by title, or "starts with" search by item barcode, requester barcode, or item call number.
 
 You can also use the Request type, Request status, Request level, Tags, and Pickup service point filters to find requests or further limit your search.
 
@@ -157,7 +157,7 @@ Note: When cancelling a request, you should consider the following:
 1. [Find the request you want to cancel.](#searching-for-requests)
 2. In the **Request Detail** pane, select **Actions > Cancel request**.
 3. In the **Confirm request cancellation** dialog, select the **Reason for cancellation**.
-4. Optional: Enter any additional notes on the cancellation in the **Additional information for patron** box. If you selected **Other**, then you must supply additional information.
+4. Optional: Enter any additional notes on the cancellation in the **Additional information for patron** box. If you select **Other**, then you must supply additional information.
 5. Click **Confirm**. The dialog closes and the request is cancelled. The Request status is updated to Closed - Cancelled and the patron receives a cancellation notification email, [if you have this notification configured.]({{< ref "settings_circulation.md#patron-notice-policies" >}})
 
 ## Title level requesting
@@ -166,7 +166,7 @@ Note: When cancelling a request, you should consider the following:
 
 Library staff create requests in the Request app.  They can also start the request process from a user record in Users, or an item record in Inventory; those apps will route you into the Requests app to create the request. 
 
-Note that you must have permission to create requests in the Requests app in order to see the option to create a request from Inventory. Also note that a title-level request can only be placed on an instance if that instance has a holdings record. An item record is not required to create the request, but it is required to fill the request.
+Note that you must have permission to create requests in the Requests app in order to see the option to create a request from Inventory. Also note that a title-level request can only be placed on an instance if that instance has a holdings record. If you do not have the Settings > Circulation option **Fail to create title level hold when request is blocked by circulation rule** selected, then an item record is not required to create the request, but it is required to fill the request.
 
 1. In the **Requests** pane, select **Actions > New**.
 2. To create a title level request, make sure **Create title level request** is checked.
@@ -195,11 +195,11 @@ If several items are available, FOLIO will first choose an item that has the eff
 
 If there is no matching item at an effective location with a primary service point that corresponds to the requester’s pick-up service point, then FOLIO looks for items in the next closest location.
 
-If no items are available on the instance when the request is created, the request will become either a **Hold** or a **Recall**, depending on the choice made in the requests app.
+If the instance has no available items when the request is created, the request will become either a **Hold** or a **Recall**, depending on the choice made in the requests app.
 
 If the request is a hold, it will remain in the request queue for the title, but it will not be associated with an item until the request is first in the queue and an item is returned.
 
-If the request is a recall, the recall will apply to the loan with a due date closest to the current due date. When the item is returned, it goes to the first open request, regardless of whether that request is the recall that triggered the item's return.
+If the request is a recall, the recall will apply to the loan with the earlist due date. When the item is returned, it goes to the first open request, regardless of whether that request is the recall that triggered the item's return.
 
 ### Viewing Title Level Requests
 
@@ -220,7 +220,7 @@ You can only edit open requests. Once a request is closed, it cannot be edited.
 
 ### Duplicating a title level request
 
-Any open title level request can be duplicated. When you duplicate the request, you will need to change the requester, because a single patron cannot have more than one open title level request on the same instance. 
+Any open title level request can be duplicated. When you duplicate the request, you will need to change the requester, because a patron cannot have more than one open title level request on the same instance. 
 
 1. [Find the request you wish to duplicate.](#searching-for-requests) 
 
@@ -262,7 +262,7 @@ Before you cancel a request, consider:
 * When a page request is canceled and there are no other requests in the queue, its Item status changes back to Available.
 * If you cancel a request that has begun fulfillment (it has a Request status of Open - In transit or Open - Awaiting pickup), the Request status changes to Closed - Canceled, but the Item status will not change until it is checked in.
 * If a requested item is awaiting pickup and its request is canceled, it appears on the Hold shelf clearance report.
-* If there are other open title level requests that are not in progress, the item needs to be checked in to fulfill the next request in queue.
+* If there are other open title level requests that are not in progress, the item needs to be checked in to fulfill the next request in the queue.
 
 1. [Find the request you want to cancel.](#searching-for-requests) 
 2. In the **Request Detail** pane, select **Actions > Cancel request**.
@@ -298,7 +298,7 @@ To create a pick report, follow these steps:
 
 1. In the Search & filter pane, select **Request type > Pages** and **Request status > Open - Not yet filled** to filter the items down to open page requests.
 2. In the **Requests** pane, select **Actions > Export search results to CSV**.
-3. Save and open the file in a spreadsheet application.
+3. Open the file in a spreadsheet application.
 4. Optional: Filter the report by **Effective location** to see available items within your area of responsibility.
 
 
@@ -360,13 +360,13 @@ When checking in a delivery request, you have two options: check the item out to
 
 To check the item out to the patron, follow these steps:
 
-1. [Check in the item on the Check in app.]({{< ref "/checkin.md#checking-in-an-item" >}})
+1. [Check in the item with the Check in app.]({{< ref "/checkin.md#checking-in-an-item" >}})
 2. Optional: In the **Route for delivery request** dialog, if you do not want to print a request delivery slip, clear the **Print slip** checkbox.
 3. To check out the item to the patron, click **Close and check out**. The check out window appears and the item is automatically checked out to the patron.
 4. To end the check out session, click **End Session**.
 
 To wait to process the request, follow these steps:
 
-1. [Check in the item on the Check in app.]({{< ref "/checkin.md#checking-in-an-item" >}})
+1. [Check in the item with the Check in app.]({{< ref "/checkin.md#checking-in-an-item" >}})
 2. Optional: In the **Route for delivery request** dialog, if you do not want to print a hold slip, clear the **Print slip** checkbox.
 3. Click **Close**. The Route for delivery request dialog closes, and the Item status changes to Awaiting delivery.
