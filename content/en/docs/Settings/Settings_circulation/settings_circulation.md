@@ -44,7 +44,7 @@ You can write circulation rules to determine the following:
 * The groups of patrons that can borrow items.
 * The rules for items in different locations, libraries, campuses, or institutions.
 * The types of items (material types or loan types) that can be borrowed.
-* The number of items of a particular type that a user can borrow.
+* The number of items of a particular type that a patron can borrow.
 * The notices that are sent to patrons.
 * The fines and fees that are charged.
 
@@ -145,7 +145,7 @@ The following table lists the six categories of available tokens for use with st
 |Effective location|Hold, Pick slip, Request delivery, Transit||
 |Staff slip|Hold, Pick slip, Request delivery, Transit||
 |Request|Hold|Pick slip, Request delivery, Transit| 
-|Request delivery address|Request delivery|Hold slip, Pick slip, Transit|
+|Request delivery address|Request delivery|Hold, Pick slip, Transit|
 |Requester|Hold, Pick slip, Request delivery|Transit|
 
 
@@ -386,7 +386,7 @@ Overdue fine policies determine the fines that accrue when an item is checked ou
 5. Select **Yes** in the **Count closed days/hours/minutes** checkbox if you want overdue fines to continue accruing on days the library is closed.
 6. Enter a **Maximum overdue fine** amount in the box. The overdue fine will stop accruing once this amount is reached.
 7. Select **Yes** in the **Forgive overdue fine if item renewed** checkbox if you want overdue fines forgiven once a patron renews the item.
-8. Enter the **Overdue recall fine** amount in the box and **Select interval** at which the fine accrues. This fine applies when an overdue item is recalled and the patron does not return the item on time according to the recall.
+8. Enter the **Overdue recall fine** amount in the box and **Select interval** at which the fine accrues. This fine applies when an item is recalled and the patron does not return the item on time according to the recall.
 9. Select whether to **Ignore grace periods for recalls**. If you select **Yes**, the grace period is not applied in the case of an overdue recall.
 10. Enter a **Maximum recall overdue fine** amount in the box. The recall overdue fine will stop accruing once this amount is reached.
 11. Reminder fee functionality is not ready for Poppy. 
@@ -492,8 +492,8 @@ You can set up multiple notices in one policy. Libraries’ needs differ. Some w
 6. Select a notice **Template**. Depending on the type of notice you are setting up, different templates will appear. Templates are created in [Patron notice templates](#patron-notice-templates). Templates can be used more than once in a policy.
 7. Select the **Format** the notice will be sent as. Currently, email is the only option.
 8. Select the **Triggering event**. This event triggers the system to send a notice. Depending on the event, you might have the option to select a time period before or after.
-9. Optional: If you selected a time-based event, the **Send** drop-down list appears. Select to send the request Upon/At, Before, or After the event (settings variable on the Triggering event).
-10. Optional: If you select Before or After in the previous step, you will see the **Frequency** drop-down list. Select whether to send the notice One Time or Recurring, until the event is reached.
+9. If you selected a time-based event, the **Send** drop-down list appears. Select to send the request Upon/At, Before, or After the event (settings variable on the Triggering event).
+10. If you select Before or After in the previous step, you will see the **Frequency** drop-down list. Select whether to send the notice One Time or Recurring.
 11. Click **Save & close**. The policy is saved and appears in the Patron notice policies pane.
 
 
@@ -519,7 +519,7 @@ You can set up multiple notices in one policy. Libraries’ needs differ. Some w
 **Item aged to lost**. The notice is sent when or after an item is aged to lost. Select when the notice is sent from the **Send** drop-down list:
 
 * To send the notice when the item ages to lost, select **Upon/At**.
-* To send the notice after the item ages to lost, select **After**. Then, determine the **Frequency** of the notice. To send the notice once, after the item ages to lost, select **One Time**. To send the notice multiple times after the item ages to lost, select **Recurring** and enter how often the notice sends until the item is returned or renewed.
+* To send the notice after the item ages to lost, select **After**. Then, determine the **Frequency** of the notice. To send the notice once, after the item ages to lost, select **One Time**. To send the notice multiple times after the item ages to lost, select **Recurring** and enter how often the notice sends while the status remains aged to lost.
 
 
 #### Request notices triggering events
@@ -539,14 +539,14 @@ For all request notices, the system is scanned every five minutes for triggering
 **Hold shelf expiration.** The notice is sent before or when the item is no longer available for pickup on the hold shelf. Select when the notice is sent from the **Send** drop-down list:
 
 * To send the notice when the item’s time on the hold shelf expires, select **Upon/At**.
-* To send the notice before the item’s time on the hold shelf expires, select **Before**. Then, determine the **Frequency** of the notice. To send the notice once, before its time on the hold shelf expires, select **One Time**. To send the notice multiple times before the item’s time on the hold shelf expires, select **Recurring** and enter how often the notice sends until the hold shelf expiration is reached.
+* To send the notice before the item’s time on the hold shelf expires, select **Before**. Then, determine the **Frequency** of the notice. To send the notice once, before its time on the hold shelf expires, select **One Time**. To send the notice multiple times, select **Recurring** and enter how often the notice sends until the hold shelf expiration is reached.
 
 **Request expiration.** The notice is sent before or when the request expires. Select when the notice is sent from the **Send** drop-down list:
 
 
 
 * To send the notice when the request expires, select **Upon/At**.
-* To send the notice before the request expires, select **Before**. Then, determine the **Frequency** of the notice. To send the notice once, before the request expires, select **One Time**. To send the notice multiple times before the request expires, select **Recurring** and enter how often the notice sends until the request expiration is reached.
+* To send the notice before the request expires, select **Before**. Then, determine the **Frequency** of the notice. To send the notice once, before the request expires, select **One Time**. To send the notice multiple times, select **Recurring** and enter how often the notice sends until the request expiration is reached.
 
 
 #### Fee/fine notices triggering events
@@ -573,7 +573,7 @@ Select when the notice is sent from the **Send** drop-down list:
 Select whether multiple lost item fee notices are bundled together:
 
 * To bunch all a patron’s open lost item fees together in one email (processed at 11:59pm) choose **Send overnight with multiple lost item fee charges by patron.** The template you select should be configured for multiple loans.
-* To send notices throughout the day (typically processed every five minutes, with a separate notice for each fee/fine charged) choose **Send throughout the day with one lost item fee charge per notice.** The template you select should  be configured for single loans.
+* To send notices throughout the day (typically processed every five minutes, with a separate notice for each fee/fine charged) choose **Send throughout the day with one lost item fee charge per notice.** The template you select should not be configured for multiple loans.
   
 **Lost item returned - fee(s) adjusted.** The notice is sent when the event is triggered, i.e. when the lost item is checked in.
 
@@ -706,7 +706,7 @@ Request policies determine the types of requests (pages, holds, and recalls) all
 FOLIO provides functionality for both item-level and title-level requesting. Since title-level requesting is off by default, you need to enable and configure related settings in this section if your library wants to use it.
 
 * **Allow title level requests**. If your library wants to use title-level requesting, check this box.
-* **”Create title level request” selected by default.** If you are using title-level requesting, there will be a box on the request form in the Requests app to toggle whether a request is title-level or item-level. If you’d like title-level request to be the default choice, check this box.
+* **”Create title level request” selected by default.** If you are using title-level requesting, there will be a checkbox in the Requests app to toggle whether a request is title-level or item-level. If you’d like title-level request to be the default choice, check this box.
 * **Fail to create title level hold when request is blocked by circulation rule**. Check this box if you want title level hold requests to follow the circulation rules. If you do not check this box, then title level hold requests will go through even when item level hold requests are blocked by the circulation rule.
 
 Click **Save** at the bottom of the screen to save any changes.
