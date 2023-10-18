@@ -14,14 +14,14 @@ The permissions listed below allow you to interact with the Check out app and de
 
 * **Check out: All permissions.** This permission allows the user to check out items to patrons (create new loans) and view open loans and loan details. However, this permission does not include seeing the entirety of the user record.
 * **Check out: Check out circulating items.** This permission allows the user to check out items, but they cannot override non-circulating loan policies.
-* **Check out: View fees/fines.** This permission allows users to click the fee in the **Scan patron card** pane to view the patron’s fees/fines in the Users app. The user must have permission to view fees/fines in the Users app for the link to work -- for example the permission **Users: Can view fees/fines and loans** (see [Users \> Permissions](../../../users/#permissions).
+* **Check out: View fees/fines.** This permission allows users to click the fee in the **Scan patron card** pane to view the patron’s fees/fines in the Users app. The user must have permission to view fees/fines in the Users app for the link to work -- for example the permission **Users: Can view fees/fines and loans** (see [Users \> Permissions](../../../users/#permissions)).
 A user who has **Check out: all permissions** but does not have **Check out: View fees/fines** will see a patron’s fee/fine amount in the **Scan patron card** pane as text (not a link).
 
-* **Check out: View loans.** This permission allows users to click to click the number of open loans in the **Scan patron card** pane to view the patron’s current loans in the Users app. The user must have permission to view loans in the Users app in order for the link to work -- for example the permission **Users: User loans view** (see [Users \> Permissions](../../../users/#permissions).
+* **Check out: View loans.** This permission allows users to click to click the number of open loans in the **Scan patron card** pane to view the patron’s current loans in the Users app. The user must have permission to view loans in the Users app in order for the link to work -- for example the permission **Users: User loans view** (see [Users \> Permissions](../../../users/#permissions)).
 A user who has **Check out: all permissions** but does not have **Check out: View loans** will see how many loans a patron has in the **Scan patron card** pane as text (not a link).
 
 
-* **Check out: View requests.**  This permission allows users to be able to click the number of open requests in the **Scan patron card** pane to view the patron’s current requests in the Requests app. The user must have permission to view requests in the Requests app in order for the link to work -- for example the permission **Requests: View** (see [Requests \> Permissions](../../requests/requests/#permissions).
+* **Check out: View requests.**  This permission allows users to be able to click the number of open requests in the **Scan patron card** pane to view the patron’s current requests in the Requests app. The user must have permission to view requests in the Requests app in order for the link to work -- for example the permission **Requests: View** (see [Requests \> Permissions](../../requests/requests/#permissions)).
 A user who has **Check out: all permissions** but does not have **Check out: View requests** will see how many requests a patron has in the **Scan patron card** pane as text (not a link).
 
 
