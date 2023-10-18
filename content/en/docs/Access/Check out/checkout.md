@@ -21,7 +21,7 @@ A user who has **Check out: all permissions** but does not have **Check out: Vie
 A user who has **Check out: all permissions** but does not have **Check out: View loans** will see how many loans a patron has in the **Scan patron card** pane as text (not a link).
 
 
-* **Check out: View requests.**  This permission allows users to be able to click the number of open requests in the **Scan patron card** pane to view the patron’s current requests in the Requests app. The user must have permission to view requests in the Requests app in order for the link to work -- for example the permission **Requests: View**(see [Requests \> Permissions](../../requests/requests/#permissions).
+* **Check out: View requests.**  This permission allows users to be able to click the number of open requests in the **Scan patron card** pane to view the patron’s current requests in the Requests app. The user must have permission to view requests in the Requests app in order for the link to work -- for example the permission **Requests: View** (see [Requests \> Permissions](../../requests/requests/#permissions).
 A user who has **Check out: all permissions** but does not have **Check out: View requests** will see how many requests a patron has in the **Scan patron card** pane as text (not a link).
 
 
@@ -103,7 +103,7 @@ To change the due date:
 
 ## Adding a loan comment
 
-Loan comments can be used to store ILL transaction numbers, record a reason why a due date was changed, or track how many times a claimed returned item was searched for. Patron info comments can be included as a token in patron notices (only the most recent comment is included in the token). You need to have the appropriate permissions to be able to add patron or staff info loan comments (see [Users \> Permissions](../../../users/#permissions).
+Loan comments can be used to store ILL transaction numbers, record a reason why a due date was changed, or track how many times a claimed returned item was searched for. Patron info comments can be included as a token in patron notices (only the most recent comment is included in the token). You need to have the appropriate permissions to be able to add patron or staff info loan comments -- see [Users \> Permissions](../../../users/#permissions).
 
 To add a patron info loan comment:
 
