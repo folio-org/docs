@@ -53,6 +53,8 @@ In the **Search & filter** pane, type or select the **Service point** from the b
 In the **Search & filter** pane, click **Loan** and select any applicable filters:
 
 * **Changed due date.** Include items whose due date was manually changed.
+* **Patron info added.** Include items that had a patron info loan comment added.
+* **Staff info added.** Include items that had a staff info loan comment added.
 * **Checked out.** Include items that were checked out.
 * **Checked out through override.** Include items that were checked out using an override.
 * **Checked in** Include items that were checked in. The items may or may not have been out on loan.
@@ -64,7 +66,7 @@ In the **Search & filter** pane, click **Loan** and select any applicable filter
 * **Recall requested.** Include items that were requested as [recalls]({{< ref "/requests.md" >}}).
 * **Renewed.** Include items that were renewed.
 * **Renewed through override.** Include items that were renewed using an override.
-* **Age to lost.** Include overdue items that have an Item status of Aged to lost. The time in which an overdue item ages to lost is set up in the [Circulation Setting Lost item fee policies.]({{< ref "/settings_circulation.md#creating-a-lost-item-fee-policy" >}})
+* **Aged to lost.** Include overdue items that have an Item status of Aged to lost. The time in which an overdue item ages to lost is set up in the [Circulation Setting Lost item fee policies.]({{< ref "/settings_circulation.md#creating-a-lost-item-fee-policy" >}})
 
 Some user block functionality is also recorded, but not available through filters. You can find when manual user blocks were created or deleted by searching the description field for "Block" and applying other search/filter options as needed.
 
@@ -86,7 +88,7 @@ In the **Search & filter** pane, click **Fee/fine** and select any applicable fi
 * **Paid partially.** Include fees/fines that were partially paid.
 * **Refunded fully.** Include fees/fines that were fully refunded.
 * **Refunded partially.** Include fees/fines that were partially refunded. Note: Partial refunds are not implemented at this time. Only automated (full) refunds appear in the Circulation Log.
-* **Staff information only information added.** Include fees/fines that had staff information added to them.
+* **Staff information only added.** Include fees/fines that had staff information added to them.
 * **Transferred fully.** Include fees/fines that were fully transferred from the user to another account.
 * **Transferred partially.** Include fees/fines that were partially transferred from the user to another account.
 * **Waived fully.** Include fees/fines that were fully waived.
