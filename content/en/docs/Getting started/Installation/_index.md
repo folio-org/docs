@@ -43,7 +43,7 @@ At least 24 GB memory are needed to run the official [platform-complete](https:/
 
 ### PostgreSQL
 
-FOLIO requires PostgreSQL 12 or any later version.
+FOLIO requires PostgreSQL 12, 13 or 14, only 12 has been tested thoroughly. Versions 15 and 16 fail with mod-finance-storage ([MODFISTO-446](https://issues.folio.org/browse/MODFISTO-446)).
 
 `pg_hba.conf` must be configured for `md5` [password authentication](https://www.postgresql.org/docs/current/auth-password.html). Some PostgreSQL distributions default to `scram-sha-256` password authentication failing the FOLIO installation with this error message:
 
