@@ -183,7 +183,7 @@ Add an instructor that does not have a FOLIO user record:
 Note: If an instructor has a FOLIO user record, you cannot edit that instructor's information.
 1. [Find the course](#searching-for-courses) and click on it in the **Courses** list.
 2. Under **Instructors**, find the instructor you want to edit.
-3. Click the **edit icon**.
+3. Click the **pencil icon**.
 4. In the **Add instructor for [course]** window, edit the **Name** or **Barcode** of the instructor.
 5. Click **Save & close**.
 
@@ -287,7 +287,7 @@ Editing a reserve item allows you to change or add information to the following 
 * **Copyright information.** This section facilitates copyright tracking.
 
 1. [Find the course](#searching-for-courses) with the item you want to edit and click on it in the **Courses** list.
-2. In the **Items** section, find the reserve item and click the **edit icon**.
+2. In the **Items** section, find the reserve item and click the **pencil icon**.
 3. In the **Item title** window, make your changes.
 4. Click **Save & close**. The item is updated.
 
