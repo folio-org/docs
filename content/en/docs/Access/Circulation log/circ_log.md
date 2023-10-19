@@ -9,11 +9,12 @@ The Circulation log app allows you to view and search for some circulation actio
 
 ## Permissions
 
-In order to view and interact with the Circulation log app, a user needs to be assigned the following permission:
+You can assign permissions to users in the Users app. The permissions described below allow you to interact with the Circulation log app and determine what you can and cannot do within the app. If you don’t assign any of these permissions to a user, the user will be unable to see the Circulation log app or any related information.
+The following are all the Circulation log permissions:
 
-* **Circulation log: All.** This permission allows the user to access the circulation log and filter all log actions and data.
 
-Note: This is the only permission available for the Circulation log app. You are unable to view and access the Circulation log if you do not have this permission assigned to you. You can assign permissions to users in the Users app.
+* **Circulation log: All.** This permission allows the user all circulation log functions.
+* **Circulation log: View.** This permission allows the user to search and filter the circulation log, but does not allow exporting the circulation log or using the **...** menu items in the Action column.
 
 
 ## Generating a circulation log
@@ -27,7 +28,7 @@ Note: Panes are resizable throughout FOLIO and in the Circulation log. Resize th
 
 In the **Search & filter** pane, type or paste a **User barcode** into the box.
 
-If you don't know the user's barcode, click **Patron look-up** to open the user search box and search for that user's record 
+If you don't know the user's barcode, click **Patron look-up** to open the user search box and search for that user's record.
 
 ### Generating circulation actions associated with an item barcode
 
@@ -52,12 +53,12 @@ In the **Search & filter** pane, type or select the **Service point** from the b
 
 In the **Search & filter** pane, click **Loan** and select any applicable filters:
 
-* **Changed due date.** Include items whose due date was manually changed.
-* **Patron info added.** Include items that had a patron info loan comment added.
-* **Staff info added.** Include items that had a staff info loan comment added.
+* **Changed due date.** Include items whose due dates were manually changed.
+* **Patron info added.** Include items that had patron info loan comments added.
+* **Staff info added.** Include items that had staff info loan comments added.
 * **Checked out.** Include items that were checked out.
 * **Checked out through override.** Include items that were checked out using an override.
-* **Checked in** Include items that were checked in. The items may or may not have been out on loan.
+* **Checked in.** Include items that were checked in. The items may or may not have been out on loan.
 * **Anonymized.** Include loans that were anonymized.
 * **Claimed returned.** Include items that were claimed returned.
 * **Closed loan.** Include items that were returned.
@@ -66,7 +67,7 @@ In the **Search & filter** pane, click **Loan** and select any applicable filter
 * **Recall requested.** Include items that were requested as [recalls]({{< ref "/requests.md" >}}).
 * **Renewed.** Include items that were renewed.
 * **Renewed through override.** Include items that were renewed using an override.
-* **Aged to lost.** Include overdue items that have an Item status of Aged to lost. The time in which an overdue item ages to lost is set up in the [Circulation Setting Lost item fee policies.]({{< ref "/settings_circulation.md#creating-a-lost-item-fee-policy" >}})
+* **Aged to lost.** Include items that have an Item status of Aged to lost. The time in which an overdue item ages to lost is set up in the [Circulation Setting Lost item fee policies.]({{< ref "/settings_circulation.md#creating-a-lost-item-fee-policy" >}})
 
 Some user block functionality is also recorded, but not available through filters. You can find when manual user blocks were created or deleted by searching the description field for "Block" and applying other search/filter options as needed.
 
@@ -120,12 +121,12 @@ Once you generate a circulation log, these are the columns that appear:
 * **Service point.** The service point at which the action occurred.
 * **Source.** The source of the action: System, user, or none (blank).
 * **Description.** A description of the action.
-* **Action.** Click **…** to see more information about the action. See [Getting additional circulation action information for more information.](#getting-additional-circulation-action-information)
+* **Action.** Click **…** to see more information about the action. See [Getting additional circulation action information](#getting-additional-circulation-action-information) for more information.
 
 
 ## Getting additional circulation action information
 
-Clicking the Action button displays a menu that enables access to additional information. The menu options that appear differ depending upon the **[Object](#columns-in-the-circulation-log)** (Fee/fine, Loan, Manual block, Notice, or Request). For example, clicking **... > Item details** opens the Inventory app for more information. In some cases the **Action** button may not appear, e.g., when a loan has been anonymized.
+Clicking the **...** in the Action column displays a menu that enables access to additional information. The menu options that appear differ depending upon the **[Object](#columns-in-the-circulation-log)** (Fee/fine, Loan, Manual block, Notice, or Request). For example, clicking **... > Item details** opens the Inventory app for more information. In some cases the **...** may not appear, e.g., when a loan has been anonymized.
 
 ## Exporting circulation log search results
 
