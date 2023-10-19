@@ -38,7 +38,7 @@ Note: These are the only permissions available for the Data import app. You are 
 
 The Data import app accepts MARC and EDIFACT files for import.
 
-1.  In the **Jobs** pane, either drag and drop your file into the box, or click **or choose files** to locate the file on your computer.
+1.  In the **Jobs** pane, either drag and drop your file into the box, or click **or choose files** to locate the file on your computer. Note that the file must have one of the permitted file extensions that are defined in the Settings App for Data Import.
 2.  In the **Job profiles** window, select the job profile to run. If the list is long, you can search for job profiles by using the search bar at the top of the window to search through the Name and Description fields. To search for job profiles, enter terms in the search box and click **Search**.
 3.  In the **job profile details** pane, click **Actions \> Run**.
 4.  In the **Are you sure you want to run this job** dialog, click **Run**. The window closes and the job status appears in the Jobs pane.
@@ -66,7 +66,9 @@ You can click on any column name to sort by that column.
 
 ### Viewing all logs
 
-Logs are never deleted. The most recent logs are displayed in the Logs list in the Logs pane when you first select the Data Import app. To view all logs, in the **Logs** pane, click **Actions** then select **View all**.
+Logs are never deleted unless a user with appropriate permission selects a log for deletion. Users need the permission **Can delete import logs** in order to delete log entries.
+
+The most recent logs for imports other than single record imports are displayed in the Logs list in the Logs pane when you first select the Data Import app. To view all logs, in the **Logs** pane, click **Actions** then select **View all**.
 
 #### Searching and filtering logs
 
