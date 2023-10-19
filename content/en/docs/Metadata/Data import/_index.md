@@ -1,17 +1,26 @@
 ---
 title: "Data import"
 linkTitle: "Data import"
-date: 2022-09-22
+date: 2023-10-19
 weight: 20
 tags: ["parenttopic"]
 ---
 
-The Data import app allows you to import one or more records into the Inventory app or load invoices into the Acquisitions app. With data import, you can import MARC bibliographic records to create and/or update records in the Inventory app and Source Record Storage (SRS).
+The Data import app allows you to: 
+- **Import one or more Bibliographic MARC records for use by the Inventory app.**  To create or update (overlay) records.
+- **Import one or more Authority MARC records for use by the MARC Authority app.**  To create or update (overlay) records.
+- **Load EDIFACT invoices for use by the Invoices app.**  Supports the Folio acquisitions workflow.
 
 Definition of terms related to the Data Import app:
 
--   **Job profile.** Contains all the steps needed to complete an individual data import job.
--   **SRS.** Source Record Storage. A storage layer in FOLIO. If an instance has an underlying MARC record, then this record is stored in SRS.
+-   **Action profile.** Data structure/definition that contains instructions on what actions to take when certain conditions are present when an import job is run.
+-   **Field mapping profile.** Data structure/definition that contains instructions for mapping field data being imported to field data within Folio.
+-   **Holdings.** Holdings data linked to one or more instance records, which may be created from a MARC record's data or from other data sources and/or apps.
+-   **Instance.** A non-MARC bibliographic record in Folio, which may be created from a MARC record's data or from other data sources and/or apps.
+-   **Job profile.** Data structure/definition that contains all the steps needed to complete an individual data import job. A job profile connects specific match, action and field mapping profiles together into a set of instructions for importing data.
+-   **Match profile.** Data structure/definition that contains instructions on how records being imported are matched with existing records within Folio.
+-   **SRS.** Source Record Storage. A storage layer in FOLIO. If an instance has an underlying MARC record, then the MARC record is stored in SRS.
+-   **SRS Holdings.** Holdings data specified in MARC record information.
 
 ## Permissions
 
