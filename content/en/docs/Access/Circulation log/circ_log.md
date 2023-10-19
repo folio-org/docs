@@ -88,7 +88,7 @@ In the **Search & filter** pane, click **Fee/fine** and select any applicable fi
 * **Paid fully.** Include fees/fines that were fully paid.
 * **Paid partially.** Include fees/fines that were partially paid.
 * **Refunded fully.** Include fees/fines that were fully refunded.
-* **Refunded partially.** Include fees/fines that were partially refunded. Note: Partial refunds are not implemented at this time. Only automated (full) refunds appear in the Circulation Log.
+* **Refunded partially.** Include fees/fines that were partially refunded.
 * **Staff information only added.** Include fees/fines that had staff information added to them.
 * **Transferred fully.** Include fees/fines that were fully transferred from the user to another account.
 * **Transferred partially.** Include fees/fines that were partially transferred from the user to another account.
