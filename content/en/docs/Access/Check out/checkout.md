@@ -17,7 +17,7 @@ The permissions listed below allow you to interact with the Check out app and de
 * **Check out: View fees/fines.** This permission allows users to click the fee in the **Scan patron card** pane to view the patron’s fees/fines in the Users app. The user must have permission to view fees/fines in the Users app for the link to work -- for example the permission **Users: Can view fees/fines and loans** (see [Users \> Permissions](../../../users/#permissions)).
 A user who has **Check out: all permissions** but does not have **Check out: View fees/fines** will see a patron’s fee/fine amount in the **Scan patron card** pane as text (not a link).
 
-* **Check out: View loans.** This permission allows users to click to click the number of open loans in the **Scan patron card** pane to view the patron’s current loans in the Users app. The user must have permission to view loans in the Users app in order for the link to work -- for example the permission **Users: User loans view** (see [Users \> Permissions](../../../users/#permissions)).
+* **Check out: View loans.** This permission allows users to click the number of open loans in the **Scan patron card** pane to view the patron’s current loans in the Users app. The user must have permission to view loans in the Users app in order for the link to work -- for example the permission **Users: User loans view** (see [Users \> Permissions](../../../users/#permissions)).
 A user who has **Check out: all permissions** but does not have **Check out: View loans** will see how many loans a patron has in the **Scan patron card** pane as text (not a link).
 
 
@@ -38,9 +38,9 @@ Locate the patron using a barcode:
 1. Either scan the barcode on the patron's library card, or enter the patron barcode number.
 2. Click **Enter**. Patron details are displayed.
 
-Locate the patron using the Patron Lookup function:
+Locate the patron using the Patron Look-up function:
 
-1. In the Scan patron card pane, click **Patron Look-up**.
+1. In the Scan patron card pane, click **Patron look-up**.
 2. In the **Select User** dialog, in the **User search** box, enter part or all of the patron's name, email, or username.
 3. Optional: Filter results by Status (active/inactive), or by Patron group.
 4. Click **Search**.
