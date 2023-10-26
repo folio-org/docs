@@ -9,7 +9,7 @@ The Requests app allows you to create and manage requests.
 
 FOLIO supports two kinds of requests - item level, and title level. 
 
-Item level requests are made on an individual item record and are the default type of request for FOLIO. 
+Item level requests are the default type of request for FOLIO and are made on an individual item record.
 
 Title level requests are made on the instance level. FOLIO chooses the item from the holdings on that instance to fill the request, whether the item is available immediately or becomes available when the item is returned.
 
@@ -17,11 +17,11 @@ Libraries can turn on title-level requests in [Settings > Circulation > Title le
 
 Libraries that want to use title level requests should consider:
 
-* Once title level requesting is turned on, if a title level request is then created, title-level requesting cannot be turned off without removing those title level requests from the FOLIO system.
-* Open item level requests in the system from previous versions of FOLIO should be closed prior to turning on title level requests, to avoid issues with queue ordering. 
+* You will not be able to turn off title level requesting while there are any open title level requests.
+* To avoid issues with queue ordering, you should first close open item level requests before turning on title level requesting. 
 * Check Settings > Circulation > Title level requests > **Fail to create title level hold when request is blocked by circulation rule** if you want title level requests to follow circulation rules. If you do not choose this option, then title level requests will go through even when item level requests (of all types) are blocked by the circulation rule. The title level request will remain Open - not yet filled as the circulation rule will prevent the request from being associated with an item.
 * Title level requests are not yet supported for multi-volume sets - e.g., "any copy of volume D of the Longman Anthology of World Literature." Those requests must continue to be handled as item-level requests.
-* If an item is new in FOLIO and added via the Receiving app, via Inventory, or via Data Import, there will be no indication that the item could be used to fill an open title level request. The item needs to be checked in in order for a request to be potentially filled.
+* Items newly added to FOLIO via the Receiving app, Inventory, or Data Import must be checked in in order to be made available to fill open title level requests
 
 
 ## Permissions
@@ -33,7 +33,7 @@ The following are all the Requests permissions:
 * **Requests: All permissions.** This permission allows the user all request functions.
 * **Requests: Move to new item, reorder queue.** This permission allows the user to move requests from one item to another (subject to request policies).
 * **Requests, Reorder queue.** This permission allows the user to access the dedicated request queue page with reorder capabilities. It is only needed for users who need to reorder the queue. You do not need this permission to view the queue.
-* **Requests: View.** This permission allows the user to search and view request records.
+* **Requests: View.** This permission allows the user to search and view requests.
 * **Requests: View, create.** This permission allows the user to create new requests and view existing requests.
 * **Requests: View, edit, cancel.** This permission allows the user to view, edit and cancel requests.
 
@@ -52,9 +52,9 @@ Note that FOLIO allows items in some statuses to be recalled even if they are no
 
 Open requests have one of the following statuses:
 
-* **Open - Awaiting delivery**: The request has been associated with an item and is in the process of being delivered, but the item has not yet been checked out to the patron. Generally this signals that there may be an issue with the delivery request.
-* **Open - Awaiting pickup**: The request has an associated item, and it is currently at the requested pickup point, waiting for the requester to come pick it up.
-* **Open - In transit**: The request has been associated with an item, and the item is currently being delivered to the patron’s requested pickup service point.
+* **Open - Awaiting delivery**: The request has been associated with an item and is in the process of being delivered, but the item has not yet been checked out to the patron. Generally this signals a possible issue with the delivery request.
+* **Open - Awaiting pickup**: The request has an associated item that is currently at the requested pickup point, waiting for the requester to pick it up.
+* **Open - In transit**: The request has been associated with an item which is currently being delivered to the patron’s requested pickup service point.
 * **Open - Not yet filled**: The request has not yet been associated with an item, and the Request expiration date, if it exists, is in the future.
 
 Closed requests have one of the following statuses:
@@ -66,37 +66,37 @@ Closed requests have one of the following statuses:
 
 ## Searching for requests
 
-To search for requests, enter your search terms into the box on the **Search & filter** pane. You can search by title, or "starts with" search by item barcode, requester barcode, or item call number.
+To search for requests, enter your search terms into the box on the **Search & filter** pane. You can keyword search by title, or "starts with" search by item barcode, requester barcode, or item call number.
 
 You can also use the Request type, Request status, Request level, Tags, and Pickup service point filters to find requests or further limit your search.
 
-You can choose which columns appear in your search results by clicking on the Action menu. Under Show columns, check or uncheck columns to change what you see in the results pane.
+You can choose which columns appear in your search results by clicking on the Actions menu. Under Show columns, you can check or uncheck columns to change what you see in the results pane.
 
 ### Exporting your search results to CSV
 
 After you perform a search for requests, you can save your results to a comma-separated values (CSV) file. The fields visible in the Requests results list appear in the CSV file, along with additional request and item information.
 
 1. [Search for requests.](#searching-for-requests) 
-2. In the **Requests** pane, select **Actions > Export search results to CSV**. Depending on your browser and its configurations, the file automatically downloads or you are prompted to save it.
+2. In the **Requests** pane, select **Actions > Export search results to CSV**. Depending on your browser and its configurations, the file either automatically downloads or you are prompted to save it.
 
 ## Item level requesting
 
 ### Creating a request
 
-Library staff create requests in the Request app.  They can also start the request process from a user record in Users, or an item record in Inventory; those apps will route you into the Requests app to create the request. Note that you must have permission to create requests in the Requests app in order to see the option to create a request from Inventory.
+Library staff create requests in the Request app.  They also can start the request process from a user record in Users, or an item record in Inventory; those apps will route you into the Requests app to create the request. Note: You must have permission to create requests in the Requests app in order to see the option to create a request from Inventory.
 
-Requesting is controlled by circulation rules and item statuses. Some item statuses cannot be requested at all; some item statuses only allows holds and recalls. See [Platform Essentials > Item Status](https://docs.folio.org/docs/platform-essentials/item-status/itemstatus/) for more information.
+Requesting is controlled by circulation rules and item statuses. You cannot request some item statuses and some only allow holds and recalls. See [Platform Essentials > Item Status](https://docs.folio.org/docs/platform-essentials/item-status/itemstatus/) for more information.
 
 1. In the **Requests** pane, select **Actions > New**.
 2. If you have title level requesting turned on, make sure **Create title level request** is not checked.
 3. In the **Item barcode** box, either scan the barcode of the requested item or enter the barcode and click **Enter**. The item is added to the request and its item information appears.
 4. In the **Requester barcode** box, either scan the requester’s barcode or enter the barcode and click **Enter**.
 5. If you do not have the requester’s barcode, click **Requester look-up** to search for the patron:
-    1. In the **Select User** dialog, search for the requester.
-    2. Once you find the requester, select them from the **User Search Results** list. They are applied to the request and their information appears.
+    1. Use the Select User dialog to find the requester.
+    2. Once found, select the requester from the User Search Results list. The requester’s information will then appear on the request.
 6. Select a **Request type**. The options that appear depend on the Item status of the item you are requesting.
 7. Optional: Enter a **Request expiration date**. If the request is still open by the selected date, it closes and its status changes to Closed - Unfilled.
-8. Optional: Enter any **Patron comments.** For example, if the patron needs the item immediately, you can note it here. Patron comments show up in the CSV report and pick slips.
+8. Optional: Enter any **Patron comments.** For example, if the patron needs the item immediately, you can note it here. Patron comments show up in the CSV report and can be included pick slips.
 9. Select the **Fulfillment preference**.
 10. Select the **Pickup service point** or **Delivery address**, depending on your selection in the previous step.
 11. Click **Save & close**. The request is saved and the Request Detail pane appears. The patron receives an email notification saying their request was received by the library, [if you have this notification configured.]({{< ref "settings_circulation.md#patron-notice-policies" >}})
@@ -141,8 +141,8 @@ You can change a patron’s location in the request queue for an item by reorder
 
 1. [Find the request with the queue you want to reorder.](#searching-for-requests)
 2. In the **Request Detail** pane, select **Actions > Reorder queue**.
-3. In the **Request queue** window, drag the requests in the order you would like them to appear. Requests cannot be moved above Page requests, even if fulfillment has not begun.
-4. Once you are done moving the requests, click the **X** to exit the Request queue window. The queue order is saved.
+3. In the **Request queue** window, reorder the requests by dragging them into their new positions.. Requests cannot be moved above Page requests, even if fulfillment has not begun.
+4. Once you are done moving the requests, click the **X** to exit the Request queue window. The revised queue order is saved.
 
 ## Canceling an item level request
 
@@ -150,9 +150,9 @@ You can only cancel open requests. Once a request is closed, it cannot be cancel
 
 Note: When cancelling a request, you should consider the following:
 
-* When a page request is cancelled and there are no other requests in the queue, its Item status changes back to Available.
+* When you cancel a page request and there are no other requests in the queue, the item's status changes back to Available.
 * If you cancel a request that has begun fulfillment (it has a Request status of Open - In transit or Open - Awaiting pickup), the Request status changes to Closed - Cancelled, but the Item status will not change until it is checked in.
-* If a requested item is awaiting pickup and its request is cancelled, it appears on the Hold shelf clearance report.
+* If you cancel a requested item that is awaiting pickup, it appears on the Hold shelf clearance report.
 
 1. [Find the request you want to cancel.](#searching-for-requests)
 2. In the **Request Detail** pane, select **Actions > Cancel request**.
@@ -164,20 +164,20 @@ Note: When cancelling a request, you should consider the following:
 
 ### Creating a title-level request
 
-Library staff create requests in the Request app.  They can also start the request process from a user record in Users, or an item record in Inventory; those apps will route you into the Requests app to create the request. 
+Although library staff create requests in the Request app, they can initiate the request process from a user record in Users, or an item record in Inventory. Those apps will route the user to the Requests app to create the request. 
 
-Note that you must have permission to create requests in the Requests app in order to see the option to create a request from Inventory. Also note that a title-level request can only be placed on an instance if that instance has a holdings record. If you do not have the Settings > Circulation option **Fail to create title level hold when request is blocked by circulation rule** selected, then an item record is not required to create the request, but it is required to fill the request.
+Note: You must have permission to create requests in the Requests app in order to see the option to create a request from Inventory. Also note that you only can place a title-level request on an instance if that instance has a holdings record. If you do not have the Settings > Circulation option **Fail to create title level hold when request is blocked by circulation rule** selected, then an item record is not required to create the request, but it is required to fill the request.
 
 1. In the **Requests** pane, select **Actions > New**.
 2. To create a title level request, make sure **Create title level request** is checked.
-3. Title information may already be filled in (if you started your request from the Inventory app.) If not, you need to search for the title:
+3. Title information may already be filled in (if you started your request from the Inventory app). If not, you need to search for the title:
     1. Click **Title look-up**.
     2. In the modal that appears, search for the title you wish to place the request on.
     3. Click the title to select it; the modal will close, and the title information will populate in the request form.
 4. In the **Requester barcode** box, either scan the requester’s barcode or enter the barcode and click **Enter**.
 5. If you do not have the requester’s barcode, click **Requester look-up** to search for the patron:
-    1. In the **Select User** dialog, search for the requester.
-    2. Once you find the requester, select them from the **User Search Results** list. They are applied to the request and their information appears.
+    1. Use the Select User dialog to find the requester. 
+    2. Once found, select the requester from the User Search Results list. The requester’s information will then appear on the request.
 6. Select a **Request type**. The options that appear depend on the Item status of the item you are requesting.
 7. Optional: Enter a **Request expiration date**. If the request is still open by the selected date, it closes and its status changes to Closed - Unfilled. 
 8. Optional: Enter any **Patron comments**. For example, if the patron needs the item immediately, you can note it here. Patron comments show up in the CSV report and can be included in request pick slips.
@@ -203,7 +203,7 @@ If the request is a recall, the recall will apply to the loan with the earlist d
 
 ### Viewing Title Level Requests
 
-When viewing a title level request, additional information shows on the request view. **Title information** displays in the top accordion, including the number of open title level requests on that instance.
+When you view a title level request, the request view displays Title information in the top accordion, including the number of open title level requests on that instance.
 
 Once a title level request becomes a **page** or a **recall**, the **Item information accordion** will also display, including the number of the open requests on the item.
 
@@ -220,7 +220,7 @@ You can only edit open requests. Once a request is closed, it cannot be edited.
 
 ### Duplicating a title level request
 
-Any open title level request can be duplicated. When you duplicate the request, you will need to change the requester, because a patron cannot have more than one open title level request on the same instance. 
+You can duplicate any open title level request. When you duplicate the request, you will need to change the instance or the requester, because a patron cannot have more than one open title level request on the same instance. 
 
 1. [Find the request you wish to duplicate.](#searching-for-requests) 
 
@@ -255,11 +255,11 @@ In this section, the **Item barcode** column may contain item information, or it
  
 ### Canceling a title level request
 
-Only requests that are open can be cancelled. 
+You can only cancel open requests. 
 
 Before you cancel a request, consider:
 
-* When a page request is canceled and there are no other requests in the queue, its Item status changes back to Available.
+* When a page request is canceled and there are no other requests in the queue, the item's status changes back to Available.
 * If you cancel a request that has begun fulfillment (it has a Request status of Open - In transit or Open - Awaiting pickup), the Request status changes to Closed - Canceled, but the Item status will not change until it is checked in.
 * If a requested item is awaiting pickup and its request is canceled, it appears on the Hold shelf clearance report.
 * If there are other open title level requests that are not in progress, the item needs to be checked in to fulfill the next request in the queue.
@@ -268,7 +268,7 @@ Before you cancel a request, consider:
 2. In the **Request Detail** pane, select **Actions > Cancel request**.
 3. In the **Confirm request cancellation** dialog, select the **Reason for cancellation**.
 4. Optional: Enter any additional notes on the cancellation in the **Additional information for patron** box. If you selected **Other**, then you must supply additional information.
-5. Click **Confirm**. The dialog closes and the request is canceled. The Request status is updated to Closed - Canceled and the patron receives a cancellation notification email, [if that option is configured]({{< ref "/settings_circulation/#notice-templates.md" >}}).
+5. Click **Confirm**. The dialog closes and the request is canceled. The Request status is updated to Closed - Canceled and the patron receives a cancellation notification email, if that option is configured.
 
 
 ## Exporting a hold shelf clearance report
@@ -304,7 +304,7 @@ To create a pick report, follow these steps:
 
 ### Printing pick slips
 
-The pick slips report generates a single slip for every paged item that needs to be pulled from the shelf. This report automatically prints only those items whose Effective location is associated with the currently selected service point. Therefore, you must be signed in to the service point you want to generate the slips for. If there are no items matching the report’s criteria, the option appears grayed out.
+The pick slips report generates a single slip for every paged item that needs to be pulled from the shelf. Because this report automatically prints only those items whose Effective location is associated with the currently selected service point, you must be signed in to the service point you want to generate the slips for. If no items match the report’s criteria, the option is grayed out.
 
 You can configure the information that appears on the pick slips in the [Settings app]({{< ref "settings_circulation.md#settings--circulation--staff-slips" >}}).
 
@@ -321,7 +321,7 @@ You can add a tag to any open request. Tags are included in the [CSV export repo
 
 ## Requesting items from remote storage
 
-Some libraries store items at a remote storage facility that is not on campus. Often these facilities have their own inventory system in addition to FOLIO to manage high-capacity storage and facilitate requests of items to be brought back to campus. FOLIO supports connections to two types of remote storage systems: CAIASoft and Dematic.
+Some libraries store items at a remote, off-campus storage facility. These facilities often have their own inventory system in addition to FOLIO to manage high-capacity storage and facilitate requests of items to be brought back to campus. FOLIO supports connections to two types of remote storage systems: CAIASoft and Dematic.
 
 If your library integrates FOLIO with a remote storage system, you will be able to request items from remote storage through the FOLIO Requests app. The basic workflows in the Requests app will be the same as for on-campus items.
 
