@@ -21,7 +21,7 @@ Libraries that want to use title level requests should consider:
 * To avoid issues with queue ordering, you should first close open item level requests before turning on title level requesting. 
 * Check Settings > Circulation > Title level requests > **Fail to create title level hold when request is blocked by circulation rule** if you want title level requests to follow circulation rules. If you do not choose this option, then title level requests will go through even when item level requests (of all types) are blocked by the circulation rule. The title level request will remain Open - not yet filled as the circulation rule will prevent the request from being associated with an item.
 * Title level requests are not yet supported for multi-volume sets - e.g., "any copy of volume D of the Longman Anthology of World Literature." Those requests must continue to be handled as item-level requests.
-* Items newly added to FOLIO via the Receiving app, Inventory, or Data Import must be checked in in order to be made available to fill open title level requests
+* Items newly added to FOLIO via the Receiving app, Inventory, or Data Import must be checked in in order to be made available to fill open title level requests.
 
 
 ## Permissions
@@ -83,7 +83,7 @@ After you perform a search for requests, you can save your results to a comma-se
 
 ### Creating a request
 
-Library staff create requests in the Request app.  They also can start the request process from a user record in Users, or an item record in Inventory; those apps will route you into the Requests app to create the request. Note: You must have permission to create requests in the Requests app in order to see the option to create a request from Inventory.
+Library staff create requests in the Requests app.  They also can start the request process from a user record in Users, or an item record in Inventory; those apps will route you into the Requests app to create the request. Note: You must have permission to create requests in the Requests app in order to see the option to create a request from Inventory.
 
 Requesting is controlled by circulation rules and item statuses. You cannot request some item statuses and some only allow holds and recalls. See [Platform Essentials > Item Status](https://docs.folio.org/docs/platform-essentials/item-status/itemstatus/) for more information.
 
@@ -96,7 +96,7 @@ Requesting is controlled by circulation rules and item statuses. You cannot requ
     2. Once found, select the requester from the User Search Results list. The requester’s information will then appear on the request.
 6. Select a **Request type**. The options that appear depend on the Item status of the item you are requesting.
 7. Optional: Enter a **Request expiration date**. If the request is still open by the selected date, it closes and its status changes to Closed - Unfilled.
-8. Optional: Enter any **Patron comments.** For example, if the patron needs the item immediately, you can note it here. Patron comments show up in the CSV report and can be included pick slips.
+8. Optional: Enter any **Patron comments.** For example, if the patron needs the item immediately, you can note it here. Patron comments show up in the CSV report and can be included in pick slips.
 9. Select the **Fulfillment preference**.
 10. Select the **Pickup service point** or **Delivery address**, depending on your selection in the previous step.
 11. Click **Save & close**. The request is saved and the Request Detail pane appears. The patron receives an email notification saying their request was received by the library, [if you have this notification configured.]({{< ref "settings_circulation.md#patron-notice-policies" >}})
@@ -116,13 +116,13 @@ You can duplicate open requests but you will need to change either the requester
 
 1. [Find the request you want to duplicate.](#searching-for-requests) 
 
-2. In the **Request Detail** pane, select **Actions > Duplicate**. A New request window appears with the same Item information, Request information, and Requester information as the request you chose to duplicate.
+2. In the **Request Detail** pane, select **Actions > Duplicate**. A New request window appears with the same Item information, Requester information, and Request information as the request you chose to duplicate.
 
 3. Edit any of the request information before submitting the request.
 
 4. Select a **Pickup service point**.
 
-5. Click **Save & close**. The duplicate request appears in the Request Detail pane.
+5. Click **Save & close**. The new request appears in the Request Detail pane.
 
 ### Moving an item-level request to another item on the same instance
 
@@ -141,7 +141,7 @@ You can change a patron’s location in the request queue for an item by reorder
 
 1. [Find the request with the queue you want to reorder.](#searching-for-requests)
 2. In the **Request Detail** pane, select **Actions > Reorder queue**.
-3. In the **Request queue** window, reorder the requests by dragging them into their new positions.. Requests cannot be moved above Page requests, even if fulfillment has not begun.
+3. In the **Request queue** window, reorder the requests by dragging them into their new positions. Requests cannot be moved above Page requests, even if fulfillment has not begun.
 4. Once you are done moving the requests, click the **X** to exit the Request queue window. The revised queue order is saved.
 
 ## Canceling an item level request
@@ -151,7 +151,7 @@ You can only cancel open requests. Once a request is closed, it cannot be cancel
 Note: When cancelling a request, you should consider the following:
 
 * When you cancel a page request and there are no other requests in the queue, the item's status changes back to Available.
-* If you cancel a request that has begun fulfillment (it has a Request status of Open - In transit or Open - Awaiting pickup), the Request status changes to Closed - Cancelled, but the Item status will not change until it is checked in.
+* If you cancel a request that has begun fulfillment (it has a Request status of Open - In transit or Open - Awaiting pickup), the Request status changes to Closed - Cancelled, but the Item status will not change until the item is checked in.
 * If you cancel a requested item that is awaiting pickup, it appears on the Hold shelf clearance report.
 
 1. [Find the request you want to cancel.](#searching-for-requests)
@@ -180,7 +180,7 @@ Note: You must have permission to create requests in the Requests app in order t
     2. Once found, select the requester from the User Search Results list. The requester’s information will then appear on the request.
 6. Select a **Request type**. The options that appear depend on the Item status of the item you are requesting.
 7. Optional: Enter a **Request expiration date**. If the request is still open by the selected date, it closes and its status changes to Closed - Unfilled. 
-8. Optional: Enter any **Patron comments**. For example, if the patron needs the item immediately, you can note it here. Patron comments show up in the CSV report and can be included in request pick slips.
+8. Optional: Enter any **Patron comments**. For example, if the patron needs the item immediately, you can note it here. Patron comments show up in the CSV report and can be included in pick slips.
 9. Select the **Fulfillment preference**.
 10. Select the **Pickup service point** or **Delivery address**, depending on your selection in the previous step.
 11. Click **Save & close**. The request is saved and the Request Detail pane appears. The patron receives an email notification saying their request was received by the library, if you have this notification configured.
@@ -224,13 +224,13 @@ You can duplicate any open title level request. When you duplicate the request, 
 
 1. [Find the request you wish to duplicate.](#searching-for-requests) 
 
-2. In the **Request Detail** pane, select **Actions > Duplicate**. A New request window appears with the same Item information, Request information, and Requester information as the request you chose to duplicate.
+2. In the **Request Detail** pane, select **Actions > Duplicate**. A New request window appears with the same Item information, Requester information, and Request information as the request you chose to duplicate.
 
 3. Edit any of the request information before submitting the request.
 
 4. Select a **Pickup service point**.
 
-5. Click **Save & close**. The duplicate request appears in the Request Detail pane.
+5. Click **Save & close**. The new request appears in the Request Detail pane.
 
 ### Reordering Request Queues with Title Level Requests
 
@@ -241,9 +241,9 @@ To view a request queue from the request record, search for the request in the R
 **Fulfillment in progress** shows requests that are in progress and have an assigned item. These requests include:
 
 * Page requests, regardless of the request status. That means that you will see page requests in this section with a status of **Open - Not yet filled**. 
-* Requests that are **Open - Awaiting pickup**
-* Requests that are **Open - Awaiting delivery**
-* Requests that are **Open - In transit**
+* Requests that are **Open - Awaiting pickup**.
+* Requests that are **Open - Awaiting delivery**.
+* Requests that are **Open - In transit**.
 
 **Open - Not yet filled** shows hold and recall requests that are not yet being processed. These requests can be reordered using drag-and-drop. These requests all have a status of **Open - Not yet filled**.
 
@@ -260,7 +260,7 @@ You can only cancel open requests.
 Before you cancel a request, consider:
 
 * When a page request is canceled and there are no other requests in the queue, the item's status changes back to Available.
-* If you cancel a request that has begun fulfillment (it has a Request status of Open - In transit or Open - Awaiting pickup), the Request status changes to Closed - Canceled, but the Item status will not change until it is checked in.
+* If you cancel a request that has begun fulfillment (it has a Request status of Open - In transit or Open - Awaiting pickup), the Request status changes to Closed - Canceled, but the Item status will not change until the item is checked in.
 * If a requested item is awaiting pickup and its request is canceled, it appears on the Hold shelf clearance report.
 * If there are other open title level requests that are not in progress, the item needs to be checked in to fulfill the next request in the queue.
 
