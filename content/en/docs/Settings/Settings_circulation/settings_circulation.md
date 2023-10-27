@@ -140,7 +140,7 @@ Staff slips allow you to configure the information that appears on your staff sl
 The following table lists the six categories of available tokens for use with staff slips. All six appear as options in the staff slip editor, but some categories will only populate with information for some types of staff slips. 
 
 |Token category|Populates with these staff slips|Does not populate with these staff slips|
-|---|---|---|
+|:---|:---|:---|
 |Item|Hold, Pick slip, Request delivery, Transit||
 |Effective location|Hold, Pick slip, Request delivery, Transit||
 |Staff slip|Hold, Pick slip, Request delivery, Transit||
@@ -281,20 +281,20 @@ After you create your loan policies, you should test them to make sure they func
 
 Depending on your selection for Loan Profile, you see different fields.
 
-If you selected **Fixed**, you will see the following fields:
+If you select **Fixed**, you see the following fields:
 
 **Fixed due date schedule.** Select a fixed due date schedule, as configured in [Settings \> Circulation \> Fixed due date schedules](#settings--circulation--fixed-due-date-schedules). The selected schedule determines the due date for the item. Note: Fixed due dates are only applicable for loans longer than 24 hours, and the calculated due date/time is set to 11:59 PM on the due date.
 
 **Closed library due date management.** Select when the item is due if an item’s calculated due date lands in closed hours for the service point.
-* If an item’s loaned interval is in **minutes** or **hours**, the due date will follow the choice given in the loan policy.
+* If an item’s loaned interval is in **minutes** or **hours**, the due date will be determined by the loan policy.
 * If an item’s loaned interval is in **days**, **weeks**, or **months**, the due date will follow the choice given in the loan policy *only* in the case that the service point is completely closed on the day that the item would be due. When the loan is created, FOLIO will check the service point calendar; if the service point is open for any time on the day that the item is due, FOLIO will set the due time to 11:59 PM on that day.
 
 
-**Grace period.** Enter a grace period for overdue items. If you choose to have a grace period, items will not count against the [Maximum number of overdue items]({{< ref "settings_users/#settings--users--conditions" >}}) patron block and there will be no overdue fine until after the loan due date/time plus the grace period interval. If the grace period expires and the item has not been returned, the grace period will count towards calculating an overdue or lost fee/fine. Adding a grace period to a due date follows the same logic that you chose for closed library due date management, if the grace period lands in a closed time for the service point.
+**Grace period.** Enter a grace period for overdue items. If you choose to have a grace period, items will not count against the [Maximum number of overdue items]({{< ref "settings_users/#settings--users--conditions" >}}) patron block and there will be no overdue fine until after the loan due date/time plus the grace period interval. If the grace period expires and the item has not been returned, the grace period will count towards calculating an overdue or lost item fee/fine. Adding a grace period to a due date follows the same logic that you chose for closed library due date management, if the grace period lands in a closed time for the service point.
 
 **Item limit.** Enter the maximum number of items that can be borrowed by one patron under this policy. Leave blank to have no item limit.
 
-If you selected **Rolling**, you will see the following fields:
+If you select **Rolling**, you see the following fields:
 
 **Loan period.** Select an amount of time for the loan period.
 
@@ -305,7 +305,7 @@ If you selected **Rolling**, you will see the following fields:
 * If an item’s loaned interval is in **days**, **weeks**, or **months**, the due date will follow the choice given in the loan policy *only* in the case that the service point is completely closed on the day that the item would be due. When the loan is created, FOLIO will check the service point calendar; if the service point is open for any time on the day that the item is due, FOLIO will set the due time to 11:59 PM on that day.
 
 
-**Grace period.** Enter a grace period for overdue items. If you choose to have a grace period, items will not count against the [Maximum number of overdue items]({{< ref "settings_users/#settings--users--conditions" >}}) patron block and there will be no overdue fine until after the loan due date/time plus the grace period interval.  If the grace period expires and the item has not been returned, the grace period will count towards calculating an overdue or lost fee/fine. Adding a grace period to a due date follows the same logic that you chose for closed library due date management if the grace period lands in a closed time for the service point.
+**Grace period.** Enter a grace period for overdue items. If you choose to have a grace period, items will not count against the [Maximum number of overdue items]({{< ref "settings_users/#settings--users--conditions" >}}) patron block and there will be no overdue fine until after the loan due date/time plus the grace period interval.  If the grace period expires and the item has not been returned, the grace period will count towards calculating an overdue or lost item fee/fine. Adding a grace period to a due date follows the same logic that you chose for closed library due date management if the grace period lands in a closed time for the service point.
 
 **Item limit.** Enter the maximum number of items that can be borrowed by one patron under this policy. Leave blank to have no item limit.
 
@@ -389,12 +389,21 @@ Overdue fine policies determine the fines that accrue when an item is checked ou
 8. Enter the **Overdue recall fine** amount in the box and **Select interval** at which the fine accrues. This fine applies when an item is recalled and the patron does not return the item on time according to the recall.
 9. Select whether to **Ignore grace periods for recalls**. If you select **Yes**, the grace period is not applied in the case of an overdue recall.
 10. Enter a **Maximum recall overdue fine** amount in the box. The recall overdue fine will stop accruing once this amount is reached.
-11. Reminder fee functionality is not ready for Poppy. 
+11. Click **Add reminder fee** to add a reminder fee. Reminder fees differ from overdue fines in that reminder fees are billed when an item becomes overdue, whereas overdue fines are billed when the item is returned. 
 12. Click **Save & close**. The overdue fine policy is saved and appears in the Overdue fine policies pane.
 
 #### Reminder fees
 
-Reminder fee functionality is not ready for Poppy. Ignore the reminder fee options, and do not try to add any reminder fees.
+The five options, Count closed days/hours/minutes, Ignore grace periods for recalls, Ignore grace periods for holds, Allow renewal of items with reminder fee(s), and Clear patron block when paid are not available for Poppy.
+
+Click **Add reminder fee** to set up a reminder fee schedule:
+
+1. Enter a number in **Interval** and choose the time interval in **Frequency** to determine how long after an item is overdue the fee is applied and the notice is sent.
+2. Enter **Fee** amount.
+3. Choose a **Notice method**. **Email** will send an email to the address in the user record.
+4. Select a fee/fine **Notice template**.
+5. Select a **Block template** to determine if the user will be blocked from borrowing and/or renewing and/or requesting. Block templates are set up in [Settings > Users > Patron blocks > Templates]({{< ref "/settings_users/#settings--users--patron-block-templates.md" >}}).
+
 
 ### Duplicating an overdue fine policy
 
@@ -492,7 +501,7 @@ You can set up multiple notices in one policy. Libraries’ needs differ. Some w
 6. Select a notice **Template**. Depending on the type of notice you are setting up, different templates will appear. Templates are created in [Patron notice templates](#patron-notice-templates). Templates can be used more than once in a policy.
 7. Select the **Format** the notice will be sent as. Currently, email is the only option.
 8. Select the **Triggering event**. This event triggers the system to send a notice. Depending on the event, you might have the option to select a time period before or after.
-9. If you selected a time-based event, the **Send** drop-down list appears. Select to send the request Upon/At, Before, or After the event (settings variable on the Triggering event).
+9. If you select a time-based event, the **Send** drop-down list appears. Select to send the request Upon/At, Before, or After the event (settings variable on the Triggering event).
 10. If you select Before or After in the previous step, you will see the **Frequency** drop-down list. Select whether to send the notice One Time or Recurring.
 11. Click **Save & close**. The policy is saved and appears in the Patron notice policies pane.
 
@@ -534,7 +543,7 @@ For all request notices, the system is scanned every five minutes for triggering
 
 **Recall request.** The notice is sent when a recall request is placed.
 
-**Cancel request.** The notice is sent when a request is cancelled.
+**Cancel request.** The notice is sent when a request is cancelled. Note: Title level *hold* requests will send the notice selected in [Settings \> Circulation \> Title level requests](#notice-templates).
 
 **Hold shelf expiration.** The notice is sent before or when the item is no longer available for pickup on the hold shelf. Select when the notice is sent from the **Send** drop-down list:
 
@@ -567,8 +576,8 @@ The system is scanned every five minutes for triggering events and fee/fine noti
 
 Select when the notice is sent from the **Send** drop-down list:
 
-* To send the notice when the lost item fine is charged, select **Upon/At**.
-* To send the notice after the lost item fine is charged, select **After**. Then, determine the **Frequency** of the notice. To send the notice once, select **One Time**. To send the notice multiple times, select **Recurring** and enter how often the notice sends until the fee/fine is closed.
+* To send the notice when the lost item fee is charged, select **Upon/At**.
+* To send the notice after the lost item fee is charged, select **After**. Then, determine the **Frequency** of the notice. To send the notice once, select **One Time**. To send the notice multiple times, select **Recurring** and enter how often the notice sends until the fee is closed.
   
 Select whether multiple lost item fee notices are bundled together:
 
@@ -655,14 +664,14 @@ When  you cancel a request, you must select a cancellation reason. Use this sett
 
 ### Editing a request cancellation reason
 
-1. Find the request cancellation reason you want to edit and click the **Edit icon**.
+1. Find the request cancellation reason you want to edit and click the **pencil icon**.
 2. Edit the reason.
 3. Click **Save**. The changes you made to the request cancellation reason are saved.
 
 
 ### Deleting a request cancellation reason
 
-1. Find the request cancellation reason you want to delete and click the **Delete icon**.
+1. Find the request cancellation reason you want to delete and click the **trash can icon**.
 2. In the **Delete cancel reason** dialog, click **Delete**. The reason is deleted and a confirmation message appears.
 
 
