@@ -394,7 +394,7 @@ Overdue fine policies determine the fines that accrue when an item is checked ou
 
 #### Reminder fees
 
-The five options, Count closed days/hours/minutes, Ignore grace periods for recalls, Ignore grace periods for holds, Allow renewal of items with reminder fee(s), and Clear patron block when paid are not available for Poppy.
+The five options, **Count closed days/hours/minutes**, **Ignore grace periods for recalls**, **Ignore grace periods for holds**, **Allow renewal of items with reminder fee(s)**, and **Clear patron block when paid** are not available for Poppy. They can only have the selection value of **No**.
 
 Click **Add reminder fee** to set up a reminder fee schedule:
 
@@ -517,7 +517,7 @@ You can set up multiple notices in one policy. Libraries’ needs differ. Some w
 **Loan due date/time.** The notice is sent before, after, or when an item is due. Select when the notice is sent from the **Send** drop-down list:
 
 * To send the notice when the item is due, select **Upon/At**.
-* To send the notice before the item is due, select **Before**. Then, determine the **Frequency** of the notice. To send the notice once, before it is due, select **One Time**. To send the notice multiple times before the item is due, select **Recurring** and enter how often the notice sends until the due date is reached.
+* To send the notice before the item is due, select **Before**. Then, determine the **Frequency** of the notice. To send the notice once, select **One Time**. To send the notice multiple times before the item is due, select **Recurring** and enter how often the notice sends until the due date is reached.
 * To send the notice after the item is due, select **After**. Then, determine the **Frequency** of the notice. To send the notice once, after the item is due, select **One Time**. To send the notice multiple times after the item is due, select **Recurring** and enter how often the notice sends until the item is returned or renewed.
 * Additionally, select whether you want to **Send overnight with multiple loans/items by patron. Useful for long-term loans.** or **Send throughout the day without multiple loans/items. Useful for short-term loans.**
 
@@ -539,16 +539,16 @@ For all request notices, the system is scanned every five minutes for triggering
 
 **Page request.** The notice is sent when a page request is placed.
 
-**Hold request.** The notice is sent when an item-level hold request is placed.
+**Hold request.** The notice is sent when an item-level hold request is placed. You can select a notice to send when title-level holds are placed in [Settings > Circulation > Title level requests](#notice-templates).
 
 **Recall request.** The notice is sent when a recall request is placed.
 
-**Cancel request.** The notice is sent when a request is cancelled. Note: Title level *hold* requests will send the notice selected in [Settings \> Circulation \> Title level requests](#notice-templates).
+**Cancel request.** The notice is sent when a request is cancelled. Note: Title level *hold* request cancellations will send the notice selected in [Settings \> Circulation \> Title level requests](#notice-templates).
 
 **Hold shelf expiration.** The notice is sent before or when the item is no longer available for pickup on the hold shelf. Select when the notice is sent from the **Send** drop-down list:
 
 * To send the notice when the item’s time on the hold shelf expires, select **Upon/At**.
-* To send the notice before the item’s time on the hold shelf expires, select **Before**. Then, determine the **Frequency** of the notice. To send the notice once, before its time on the hold shelf expires, select **One Time**. To send the notice multiple times, select **Recurring** and enter how often the notice sends until the hold shelf expiration is reached.
+* To send the notice before the item’s time on the hold shelf expires, select **Before**. Then, determine the **Frequency** of the notice. To send the notice once, select **One Time**. To send the notice multiple times, select **Recurring** and enter how often the notice sends until the hold shelf expiration is reached.
 
 **Request expiration.** The notice is sent before or when the request expires. Select when the notice is sent from the **Send** drop-down list:
 
@@ -572,7 +572,7 @@ The system is scanned every five minutes for triggering events and fee/fine noti
 * To send the notice when the overdue fine is charged, select **Upon/At**.
 * To send the notice after the overdue fine is charged, select **After**. Then, determine the  **Frequency** of the notice. To send the notice once, select  **One Time**. To send the notice multiple times, select  **Recurring** and enter how often the notice sends until the fee/fine is closed.
 
-**Lost item fee(s) charged.** The notice is sent after or when a lost item fine is charged to a patron.
+**Lost item fee(s) charged.** The notice is sent after or when a lost item fee is charged to a patron.
 
 Select when the notice is sent from the **Send** drop-down list:
 
@@ -686,7 +686,7 @@ Request policies determine the types of requests (pages, holds, and recalls) all
 2. In the **New request policy** window, enter a **Request policy name**.
 3. Optional: Enter a **Description**.
 4. Select the **Request types allowed**.
-5. **Allow all pickup service points** allows the item to be requested for pickup at any service point. Select **Allow some pickup service points** if you want to choose which service points are allowed to be chosen as pickup locations. This can be used, for example, to restrict valuable items from going to an unstaffed pickup service point.
+5. **Allow all pickup service points** allows the item to be requested for pickup at any service point. Select **Allow some pickup service points** if you want to choose which service points are allowed to be chosen as pickup locations. This can be used, for example, to restrict valuable items from going to an unstaffed service point.
 6. Click **Save & close**. The policy saves and appears in the Request policies list.
 
 ### Duplicating a request policy
