@@ -22,7 +22,8 @@ The following are all the Courses permissions:
 * **Courses: Add and edit courses’ reserved items.** This permission allows users to add and edit items associated with a course. They cannot remove items from a course.
 * **Courses: Add, edit, and remove courses’ reserved items.** This permission allows users to view, add, edit, and remove items associated with a course.
 * **Courses: Read All.** This permission allows users to see all courses and item information.
-* **Settings (Courses): Can create, edit and delete Course Settings.** This permission allows users to maintain (view, add, edit, and delete) all course settings.
+* **Settings (Courses): Can create, edit and delete course settings.** This permission allows users to maintain (view, add, edit, and delete) all course settings.
+*  **Settings (Courses): Can view course settings.** This permission allows users to view course settings. They cannot add, edit or delete course settings.
 
 
 ## Keyboard shortcuts
@@ -182,7 +183,7 @@ Add an instructor that does not have a FOLIO user record:
 Note: If an instructor has a FOLIO user record, you cannot edit that instructor's information.
 1. [Find the course](#searching-for-courses) and click on it in the **Courses** list.
 2. Under **Instructors**, find the instructor you want to edit.
-3. Click the **edit icon**.
+3. Click the **pencil icon**.
 4. In the **Add instructor for [course]** window, edit the **Name** or **Barcode** of the instructor.
 5. Click **Save & close**.
 
@@ -286,7 +287,7 @@ Editing a reserve item allows you to change or add information to the following 
 * **Copyright information.** This section facilitates copyright tracking.
 
 1. [Find the course](#searching-for-courses) with the item you want to edit and click on it in the **Courses** list.
-2. In the **Items** section, find the reserve item and click the **edit icon**.
+2. In the **Items** section, find the reserve item and click the **pencil icon**.
 3. In the **Item title** window, make your changes.
 4. Click **Save & close**. The item is updated.
 
