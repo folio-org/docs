@@ -6,16 +6,20 @@ weight: 10
 tags: ["parenttopic"]
 ---
 
-The Data export app allows you to export bibliographic data from Source Record Storage (SRS) and Instance, Holdings, and Item data stored in the Inventory app. Exported records are delivered in MARC 21 format.
-
-When the records are exported from the Inventory app and there is underlying MARC source data, that data is exported. If there is no underlying source data, a simplified MARC record is generated.
+The Data Export app allows you to:
+- **Export bibliographic data from Source Record Storage (SRS)** in MARC21 format.
+- **Export Instance, Holdings, and Item data stored by the Inventory app.** A file in MARC21 format is generated from non-MARC data in this case.
+- **Export Authority data stored by the MARC Authority app** in MARC21 format.
+- **Export a list of UUIDs for selected records** in a .csv file
 
 The Data export app comes with a default job profile, which determines how information is exported in the generated MARC file. To create your own customized job profiles, you can configure job profiles in the Settings app. For more information, see [Settings \> Data Export](../../settings/settings_data_export/settings_data_export/).
 
-Definition of terms related to the Data export app:
+Definition of terms related to the Data Export app:
 
+-   **CQL.** Contextual Query Language. A CQL query can be used in certain circumstances to identify the FOLIO records to export.
 -   **Job profile.** Determines how information from FOLIO is exported to the generated MARC file.
 -   **SRS.** Source Record Storage. A storage layer in FOLIO. If an instance has an underlying MARC record, then this record is stored in SRS.
+-   **UUID.** Universally unique identifier. Each record in FOLIO has a UUID.
 
 ## Permissions
 
@@ -25,23 +29,23 @@ In order to view and interact with the Data export app, a user needs to be assig
 
 Note: This is the only permission available for the Data export app. You are unable to view and access Data export if you do not have this permission assigned to you. You can assign permissions to users in the Users app.
 
-## Quick exports
+## Quick exports from the Inventory App
 
-Quick exports are performed in the Inventory app. They allow you to quickly download instances in MARC or JSON formats for selected records. Currently, only the export of a .csv of UUIDs has been implemented.
+Quick exports can be performed from the Inventory app. A quick export creates two files for selected records - a file of UUIDs and a file of MARC records.
 
 ### Exporting instances (MARC)
 
-Note: At this time, full MARC export via Quick Export is not implemented. Following these steps will instead export a .csv of the selected files’ UUIDs for use in the Data Export module.
+1.  Open the **Inventory** app and use the **Search & Filter** pane to generate a list of records that match your search criteria. 
+2.  In the right-hand-side **Inventory** pane, find the records you want to export, and for each record, select the **checkbox** in the first column.
+3.  Click **Actions \> Export instances (MARC)**. Depending on your browser and its configurations, the file of UUIDs for the selected records automatically downloads or you are prompted to save it. The creation of a MARC (.mrc) file is logged in the Data export app and if you open that app you can find and download the MARC file containing your selected records.
 
-1.  Open the **Inventory** app. 
-2.  In the **Inventory** pane, find the records you want to export, and for each record, select the **checkbox** in the first column.
-3.  Click **Actions \> Export instances (MARC)**. Depending on your browser and its configurations, the file automatically downloads or you are prompted to save it. The export is logged in the Data export app.
+## Quick exports from the MARC Authority App
 
-### Exporting instances (JSON)
+Quick exports can be performed from the MARC Authority app.
 
-Exporting instances to JSON is not implemented at this time.
 
-## Triggering an export by uploading a file
+
+## Triggering an export from the Data Export App by uploading a file
 
 The Data export app accepts two types of data and file types that identify sets of records for export: a CSV file listing Instance UUIDs and a CQL query in CQL format. Triggering an export generates a .mrc file.
 
