@@ -19,7 +19,7 @@ Libraries that want to use title level requests should consider:
 
 * You will not be able to turn off title level requesting while there are any open title level requests.
 * To avoid issues with queue ordering, you should first close open item level requests before turning on title level requesting. 
-* Check Settings > Circulation > Title level requests > **Fail to create title level hold when request is blocked by circulation rule** if you want title level requests to follow circulation rules. If you do not choose this option, then title level requests will go through even when item level requests (of all types) are blocked by the circulation rule. The title level request will remain Open - not yet filled as the circulation rule will prevent the request from being associated with an item.
+* Check Settings > Circulation > Title level requests > **Fail to create title level hold when request is blocked by circulation rule** if you want title level requests to follow circulation rules. If you do not choose this option, then title level requests will go through even when hold requests are blocked by the circulation rule. The title level hold request will remain Open - not yet filled as the circulation rule will prevent the request from being associated with an item.
 * Title level requests are not yet supported for multi-volume sets - e.g., "any copy of volume D of the Longman Anthology of World Literature." Those requests must continue to be handled as item-level requests.
 * Items newly added to FOLIO via the Receiving app, Inventory, or Data Import must be checked in in order to be made available to fill open title level requests.
 
