@@ -425,7 +425,7 @@ Click **Add reminder fee** to set up a reminder fee schedule:
 
 1. In the **Overdue fine policies** pane, select the overdue fine policy you want to delete.
 2. In the **overdue fine policy details** pane, click **Actions > Delete**.
-3. In the **Delete Overdue fine policies** dialog, click **Delete**. The policy is deleted and a confirmation message appears. Note that you cannot delete an overdue fine policy that is being used in a circulation rule.
+3. In the **Delete Overdue fine policies** dialog, click **Delete**. The policy is deleted and a confirmation message appears. Note that you cannot delete an overdue fine policy that is associated with an open loan.
 
 
 ## Lost item fee policies
@@ -476,7 +476,7 @@ Lost item fee policies determine when overdue items automatically age to lost (t
 
 1. In the **Lost item fee policies** pane, select the lost item fee policy you want to delete.
 2. In the **lost item fee policy details** pane, click **Actions > Delete**.
-3. In the **Delete New Lost item fee policy** dialog, click **Delete**. The policy is deleted and a confirmation message appears. Note that you cannot delete a lost item fee policy that is being used in a circulation rule.
+3. In the **Delete New Lost item fee policy** dialog, click **Delete**. The policy is deleted and a confirmation message appears. Note that you cannot delete a lost item fee policy that is associated with an open loan.
 
 
 ## Patron notice policies
