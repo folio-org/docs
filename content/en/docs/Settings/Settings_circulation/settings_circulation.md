@@ -31,7 +31,7 @@ The following are all the Circulation Settings permissions:
 * **Settings (Circ): Can view loan policies:** Allows the user to view loan policies but does not allow create, edit or delete.
 * **Settings (Circ): Can view lost item fee policies:** Allows the user to view lost item fee policies but does not allow create, edit or delete.
 * **Settings (Circ): Can view overdue fine policies:** Allows the user to view overdue fine policies but does not allow create, edit or delete.
-* **Settings (Circ): View circulation rules:** Allows a user to view circulation rules but does not allow them to edit rules.
+* **Settings (Circ): View circulation rules:** Allows a user to view circulation rules but does not allow them to create, edit or delete rules.
 * **Settings (Circulation): Title level request edit:** Allows users to enable, disable and configure title-level requesting. Note that title level requesting cannot be disabled via settings if there are any open title level requests.
 
 
@@ -286,8 +286,7 @@ If you select **Fixed**, you see the following fields:
 **Fixed due date schedule.** Select a fixed due date schedule, as configured in [Settings \> Circulation \> Fixed due date schedules](#settings--circulation--fixed-due-date-schedules). The selected schedule determines the due date for the item. Note: Fixed due dates are only applicable for loans longer than 24 hours, and the calculated due date/time is set to 11:59 PM on the due date.
 
 **Closed library due date management.** Select when the item is due if an item’s calculated due date lands in closed hours for the service point.
-* If an item’s loaned interval is in **minutes** or **hours**, the due date will be determined by the loan policy.
-* If an item’s loaned interval is in **days**, **weeks**, or **months**, the due date will follow the choice given in the loan policy *only* in the case that the service point is completely closed on the day that the item would be due. When the loan is created, FOLIO will check the service point calendar; if the service point is open for any time on the day that the item is due, FOLIO will set the due time to 11:59 PM on that day.
+* The due date will follow the choice given in the loan policy *only* in the case that the service point is completely closed on the day that the item would be due. When the loan is created, FOLIO will check the service point calendar; if the service point is open for any time on the day that the item is due, FOLIO will set the due time to 11:59 PM on that day.
 
 
 **Grace period.** Enter a grace period for overdue items. If you choose to have a grace period, items will not count against the [Maximum number of overdue items]({{< ref "settings_users/#settings--users--conditions" >}}) patron block and there will be no overdue fine until after the loan due date/time plus the grace period interval. If the grace period expires and the item has not been returned, the grace period will count towards calculating an overdue or lost item fee/fine. Adding a grace period to a due date follows the same logic that you chose for closed library due date management, if the grace period lands in a closed time for the service point.
@@ -496,8 +495,8 @@ You can set up multiple notices in one policy. Libraries’ needs differ. Some w
 1. In the **Patron notice policies** pane, click **New**.
 2. In the **New patron notice policy** window, enter a **Patron notice policy name**. Note: The policy name is what you will see in Circulation rules.
 3. To make the policy available to Circulation rules, select **Active**. You may want to clear the checkbox if the policy is not in use but you do not want to delete it.
-4. Optional: Enter a **Description**.
-5. Determine the type of notices you want to set up, and click **Add notice** in the particular notice section that you want to set up. See Loan notices, Request notices, and Fee/fine notices for more information.
+4. Optional: Enter a **Description** in the box.
+5. Click **Add notice** in the particular notice section that you want to set up. See [Loan notices](#loan-notices-triggering-events), [Request notices](#request-notices-triggering-events), and [Fee/fine notices](#feefine-notices-triggering-events) for more information.
 6. Select a notice **Template**. Depending on the type of notice you are setting up, different templates will appear. Templates are created in [Patron notice templates](#patron-notice-templates). Templates can be used more than once in a policy.
 7. Select the **Format** the notice will be sent as. Currently, email is the only option.
 8. Select the **Triggering event**. This event triggers the system to send a notice. Depending on the event, you might have the option to select a time period before or after.
@@ -619,7 +618,7 @@ Patron notice templates are the templates used in your Patron notice policies. C
 1. In the **Patron notice templates** pane, click **New**.
 2. In the **New patron notice template** window, enter a **Patron notice template name** for the notice.
 3. Clear the **Active** checkbox if you do not want the notice to be available for use in notice policies.
-4. Optional: Enter a **Description**.
+4. Optional: Enter a **Description** in the box.
 5. Select a **Category** for the template. Categories determine which section of the notice policy the notice can be used in and which tokens are available to be used in the body of the email.
 6. In the Email section, enter a **Subject** for the email sent to the patron.
 7. Enter a **Body** for the email sent to the patron. Click **{ }** to add tokens to the notice. Tokens fill in the item, loan, request, or user information based on the selected variables related to the notice event.
