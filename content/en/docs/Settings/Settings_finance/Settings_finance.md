@@ -25,9 +25,6 @@ Note: This is the only permission available for Finance settings. With some othe
 
 A fund type is a categorization to help distinguish between the purpose of the different funds. You can use fund types to track the types of items funds are applied to, such as gifts, endowments, and exchanges. You need to first add the fund types in the Settings app in order to assign them to funds as fund types are created within the system. Fiscal year rollover of funds is often defined by fund type, so definition of the type values should consider future fiscal year rollover requirements.
 
-For more information on adding funds and fund information, see [Creating a new fund]({{< ref ".
-[Settings > Finance > Expense classes]({{< ref "/settings_finance.md#settings--finance--expense-classes" >}})
-
 
 ### Creating a new fund type
 
@@ -57,8 +54,6 @@ For more information on adding funds and fund information, see [Creating a new f
 ## Settings > Finance > Expense classes
 
 Expense classes allow you to track spending by defined categories within a fund. They enable tracking and reporting by the classes defined in this setting. For example, you may want to track spending based on order format (electronic vs print). When an order or invoice is created, both the fund and the expense class can be selected by the user.
-
-For more information on adding funds and fund information, see Creating a new fund.
 
 
 ### Creating a new expense class
