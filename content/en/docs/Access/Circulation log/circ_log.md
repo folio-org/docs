@@ -36,7 +36,7 @@ In the **Search & filter** pane, type or paste an **Item barcode** into the box.
 
 ### Generating circulation actions by description
 
-To search through the **Description** field, in the **Search & filter** pane, enter your search terms into the box.
+In the **Search & filter** pane, enter your search terms into the **Description** box.
 
 ### Generating circulation actions by date
 
@@ -69,7 +69,7 @@ In the **Search & filter** pane, click **Loan** and select any applicable filter
 * **Renewed through override.** Include items that were renewed using an override.
 * **Aged to lost.** Include items that have an Item status of Aged to lost. The time in which an overdue item ages to lost is set up in the [Circulation Setting Lost item fee policies.]({{< ref "/settings_circulation.md#creating-a-lost-item-fee-policy" >}})
 
-Some user block functionality is also recorded, but not available through filters. You can find when manual user blocks were created or deleted by searching the description field for "Block" and applying other search/filter options as needed.
+The Circulation log app records some user block functionality, but it is not available through filters. To find when manual user blocks were created or deleted, search the description field for "Block" and apply other search/filter options as needed.
 
 
 ### Notice filter options
@@ -83,17 +83,17 @@ In the **Search & filter** pane, click **Notice** and select any applicable filt
 
 In the **Search & filter** pane, click **Fee/fine** and select any applicable filters:
 
-* **Billed.** Include items that were billed.
-* **Credited fully.** Include fees/fines that were fully credited.
-* **Paid fully.** Include fees/fines that were fully paid.
-* **Paid partially.** Include fees/fines that were partially paid.
-* **Refunded fully.** Include fees/fines that were fully refunded.
-* **Refunded partially.** Include fees/fines that were partially refunded.
+* **Billed.** Include billed fees/fines.
+* **Credited fully.** Include fully credited fees/fines.
+* **Paid fully.** Include fully paid fees/fines.
+* **Paid partially.** Include partially paid fees/fines.
+* **Refunded fully.** Include fully refunded fees/fines.
+* **Refunded partially.** Include partially refunded fees/fines.
 * **Staff information only added.** Include fees/fines that had staff information added to them.
 * **Transferred fully.** Include fees/fines that were fully transferred from the user to another account.
 * **Transferred partially.** Include fees/fines that were partially transferred from the user to another account.
-* **Waived fully.** Include fees/fines that were fully waived.
-* **Waived partially.** Include fees/fines that were partially waived.
+* **Waived fully.** Include fully waived fees/fines.
+* **Waived partially.** Include partially waived fees/fines.
 * **Cancelled as error.** Include fees/fines that were cancelled because they were created in error.
 
 
@@ -101,8 +101,8 @@ In the **Search & filter** pane, click **Fee/fine** and select any applicable fi
 
 In the **Search & filter** pane, click **Request** and select any applicable filters:
 
-* **Cancelled.** Include requests that were cancelled.
-* **Created.** Include requests that were created.
+* **Cancelled.** Include cancelled requests.
+* **Created.** Include created requests.
 * **Pickup expired.** Include requests that were awaiting pickup and the pickup period expired.
 * **Expired.** Include requests that expired before they were filled.
 * **Moved.** Include requests that were [moved from one item to another.]({{< ref "requests#moving-an-item-level-request-to-another-item-on-the-same-instance" >}})
@@ -111,14 +111,14 @@ In the **Search & filter** pane, click **Request** and select any applicable fil
 
 ### Columns in the circulation log
 
-Once you generate a circulation log, these are the columns that appear:
+Once you generate a circulation log, these columns appear:
 
 * **User barcode.** The user barcode associated with the action.
 * **Item barcode.** The item barcode associated with the action.
 * **Object.** The object associated with the action: Fee/fine, Loan, Manual block, Notice, or Request.
 * **Circ action.** The action that occurred.
 * **Date.** The date and time the action occurred.
-* **Service point.** The service point at which the action occurred.
+* **Service point.** The service point where the action occurred.
 * **Source.** The source of the action: System, user, or none (blank).
 * **Description.** A description of the action.
 * **Action.** Click **…** to see more information about the action. See [Getting additional circulation action information](#getting-additional-circulation-action-information) for more information.
@@ -135,6 +135,6 @@ If your search for circulation log records returns results, you can export those
 1. Click the **Actions** menu.
 2. Select **Export results (CSV)**.
 
-A green success toast message informs you that the export file is being generated. Once the file is generated, it downloads automatically.
+A green success toast message informs you that you have generated the export file. Once generated, the file downloads automatically.
 
 If you do not receive the download file, check that your browser did not block the pop-up window. If the pop-up was blocked, change your browser to allow pop-ups, and export your circulation log search results again. You may also be able to access your download through the Export Manager app if you have permission to view that app.
