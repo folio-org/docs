@@ -1,8 +1,9 @@
 ---
 title: "quickMARC"
 linkTitle: "QuickMARC"
-weight: 4
-tags: ["subtopic"]   
+date: 2023-11-07
+weight: 30
+tags: ["parenttopic"]   
 ---
 
 quickMARC is FOLIO's MARC editing tool, which allows you to make edits to instance and holdings records with underlying MARC records. For all instances or holdings whose source record is a MARC record you have the option to edit the MARC using quickMARC. quickMARC saves to Source Record Storage (SRS) and updates both the Source Record and the corresponding Inventory record. quickMARC has minimal validation and is best used in addition to other cataloging tools.
@@ -21,11 +22,12 @@ The permissions listed below allow you to interact with quickMARC and determine 
 
 The following are all the quickMARC permissions:
 
--   **quickMARC: Create a new MARC holdings record.** This permission allows the user to create new MARC holdings records. (This cannot be done in the UI in Kiwi)
+-   **quickMARC: Can Link/unlink authority records to bib records.** This permission allows the user to link and unlink authority records to access points in bibliographic records.
+-   **quickMARC: Create a new MARC holdings record.** This permission allows the user to create new MARC holdings records.
+-   **quickMARC: Create new MARC bibliographic record.** This permission allows the user to create a new MARC bibliographic record.
 -   **quickMARC: Derive new MARC bibliographic record.** This permission allows the user to duplicate and create new MARC bibliographic records.
--   **quickMARC: View, MARC bibliographic record.** This permission allows the user to view MARC bibliographic records in the Inventory app.
--   **quickMARC: View, MARC holdings  record.** This permission allows the user to view MARC holdings records in the Inventory app.
--   **quickMARC: View, edit MARC authorities record.** This permission allows the user to view and edit MARC authority records in the MARC authority app.
+-   **quickMARC: View MARC bibliographic record.** This permission allows the user to view MARC bibliographic records in the Inventory app.
+-   **quickMARC: View MARC holdings  record.** This permission allows the user to view MARC holdings records in the Inventory app.
 -   **quickMARC: View, edit MARC bibliographic record.** This permission allows the user to view and edit MARC bibliographic records.
 -   **quickMARC: View, edit MARC holdings record.** This permission allows the user to view and edit MARC holdings records.
 
@@ -62,26 +64,46 @@ In the Edit MARC record window, you can perform the following actions:
 -   **Move a field up.** To move a field up, click the **up arrow** in the row of the field you want to move. The field is moved one row up.
 -   **Move a field down.** To move a field down, click the **down arrow** in the row of the field you want to move. The field is moved one row down.
 -   **Edit text within a field.** Click into a field to make changes to the text.
-Once you have made your desired changes, click **Save & close**. A confirmation record appears and the record is updated. Alternatively, click **Save & keep editing** to save the current changes and stay in edit mode.
+Once you have made your desired changes, click **Save & close**. A confirmation message appears and the record is updated. Alternatively, click **Save & keep editing** to save the current changes and stay in edit mode. Click **Cancel** to discard changes and exit the Edit MARC record window.
 
-### Linking a field to an authority record
+### Linking to authority records
 
-Link icons display to the right of the following MARC tags:
-100, 110, 111, 600, 610, 611, 650, 651, 700, 710, 711
+Link icons can display to the right of the following MARC tags: 100, 110, 111, 600, 610, 611, 650, 651, 700, 710, 711. These fields can be enabled or disabled for automatic linking at the tenant level with the [linking-rules API end point](https://github.com/folio-org/mod-entities-links/blob/master/doc/documentation.md#api-instance-authority-linking-rules).
+
+#### Linking a single field to an authority record
 
 To link a field to an authority record:
-Click on the link to the right of the selected field.
-In the MARC authority Search & filter modal, verify that the desired type of entity and authority source are selected.
-Search by text string or by identifier.
-Select and open the appropriate authority record from the results list.
-Click the **Link** button in the upper right.
+1.  Click on the link to the right of the selected field.
+2.  In the MARC authority Search & filter modal, verify that the desired type of entity and authority source are selected.
+3.  Search by text string or by identifier.
+4.  Select and open the appropriate authority record from the results list.
+5.  Click the **Link** button in the upper right.
+
 The access point in the bibliographic record will exactly match the authorized access point in the authority record and the $0 will be populated.
 The link icon to the right of the field is replaced with **Unlink from MARC Authority record** and **View MARC authority record** icons.
 When a field is linked, all subfields that are part of the access point, as well as the $0 (identifier) cannot be edited.
 
 To unlink a field from an authority record:
-Click on the **Unlink from MARC Authority record** icon to the right of the selected field.
-Click again on **Unlink** in the verification modal.
+1.  Click on the **Unlink from MARC Authority record** icon to the right of the selected field.
+2.  Click again on **Unlink** in the verification modal.
+
+The field is no longer linked and all subfields can be edited.
+
+#### Linking all access points in a bibliographic record to authority records
+
+Access point fields must contain a $0 in order to be linked using this feature.
+
+To link all access points in a bibliographic record to authority records:
+1.  Click the **Link headings** button in the upper right.
+
+The access points in the bibliographic record will exactly match the authorized access points in the authority record.
+The link icon to the right of the field is replaced with **Unlink from MARC Authority record** and **View MARC authority record** icons.
+When a field is linked, all subfields that are part of the access point, as well as the $0 (identifier) cannot be edited.
+
+Fields must be unlinked individually from an authority record:
+1.  Click on the **Unlink from MARC Authority record** icon to the right of the selected field.
+2.  Click again on **Unlink** in the verification modal.
+
 The field is no longer linked and all subfields can be edited.
 
 ### Validations and restrictions
@@ -120,16 +142,18 @@ There are three record statuses:
 -   **Error.** Something is preventing an update from moving to the Inventory record or SRS.
 
 ## Creating a new MARC record using quickMARC
- 
-To create a new **MARC bibliographic record**, derive a new record from an existing MARC record.
 
+To create a new **MARC bibliographic record** for an item without an instance or SRS record:
+1.  Click **Actions \> New MARC Bib Record.**
+2.  Filling in LDR field positions 06 and 07 will add fillable form fields to the 008 field.
+3.  Edit the new record following the instructions in [Editing a MARC record using quickMARC](#editing-a-marc-record-using-quickmarc).
+ 
+To derive a new **MARC bibliographic record**:
 1.  Start with an instance record that has an underlying MARC source record and the same [Resource type](../inventory/#resource-type) and [Format](../#format) as the record you wish to create.
 2.  Click **Actions \> Derive new MARC bibliographic record.**
 3.  Edit the new record following the instructions in [Editing a MARC record using quickMARC](#editing-a-marc-record-using-quickmarc).
 
-To create a new **MARC holdings record**
-
+To create a new **MARC holdings record**:
 1.   [Find the instance record](../#searching-for-a-record) to which you want to add holdings and select it. The instance source must be MARC.
-2.  Click **Actions \> Add  MARC holdings record.** 
+2.  Click **Actions \> Add MARC holdings record.** 
 3.  Edit the new record following the instructions in [Editing a MARC record using quickMARC](#editing-a-marc-record-using-quickmarc).
-
