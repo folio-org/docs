@@ -1,14 +1,14 @@
 ---
 title: "Settings > Data import"
 linkTitle: "Data import"
-date: 2022-09-22
+date: 2023-11-07
 weight: 70
 tags: ["subtopic"]   
 ---
 
-The Data export section of the Settings app is where you can configure the source and structure of the import files, map incoming records to existing records, configure the types of action to be taken on an import (creating new records, updating existing records, etc.), and define ways to transform the data and map data to particular fields (add a value to the information to the incoming record when importing such as a proxy).
+The Data Import section of the Settings app is where you can configure the source and structure of the import files, map incoming records to existing records, configure the types of action to be taken on an import (e.g., creating new records, updating existing records, etc.), and define ways to transform the data and map data to particular fields (e.g., add a value such as a proxy to the information in the incoming record, or eliminate data such as selected MARC tags from the incoming data).
 
-It is recommended that you configure the Data import settings in the following order:
+It is recommended that you configure the Data Import settings in the following order for a new Job Profile:
 
 1.  Field mapping profile
 2.  Action profile
@@ -17,13 +17,11 @@ It is recommended that you configure the Data import settings in the following o
 
 ## Permissions
 
-In order to interact with Data import settings, a user needs to be assigned the following permission:
+The permissions listed below allow you to interact with Data Import settings. You can assign permissions to users in the Users app.
 
--   **Settings (Data import): Can view, create, edit, and remove.** This permission allows the user to see and use the Data import settings.
+-   **Settings (Data import): Can view, create, edit, and remove.** This permission allows the user to see and and change the Data Import settings.
 
--   **Settings (Data import): Can view only.** This permission allows the user to see the Data import settings but not make changes.
-
-Note: This is the only permission available for Data import settings. You are unable to view and access Data import settings if you do not have this permission assigned to you. You can assign permissions to users in the Users app.
+-   **Settings (Data import): Can view only.** This permission allows the user to see the Data Import settings but not make any changes to them.
 
 ## Settings \> Data import \> Job profiles
 
@@ -40,9 +38,9 @@ Job profiles define the type of import at the highest level. A job profile conta
 
 ### Searching for an import job profile
 
-Use the search bar to search for job profiles contained in the Job profile table. 
+Use the search bar at the top of the Job Profiles pane to search the names of job profiles contained in the Job profile list. 
 
-The Job profiles table contains the following columns:
+The Job profiles list contains the following columns:
 
 -   **Name.** Name of the job profile.
 -   **Tags.** Any tags assigned to the job profile
@@ -98,15 +96,15 @@ Before creating a match profile, you should first create action profiles and fie
 1.  In the **Match profiles** pane, click **Actions \> New match profile**.
 2.  In the **New match profile** window, enter a **Name** for the match profile.
 3.  Optional: Enter a **Description** of the match profile.
-4.  In the **Details** section, select the format of the incoming record, then select the format of the existing record to which you are matching.
+4.  In the **Details** section, select the format of the incoming record, then select the format of the existing record to which you are matching (e.g., Instance, Holdings, Item, MARC Bibliographic, MARC Authority)
 5.  In the **Match criteria** section, select the field to match from the incoming record and the corresponding field to match on in the existing record.
 6.  Click **Save as profile & Close**. A confirmation message appears and the match profile is created.
 
 ### Searching for an import match profile
 
-Use the search bar to search for match profiles contained in the Match profile table. 
+Use the search bar to search for match profiles contained in the Match profile list. 
 
-The Match profiles table contains the following columns:
+The Match profiles list contains the following columns:
 
 -   **Name.** Name of the match profile.
 -   **Match.** The match contained within the match profile.
@@ -173,9 +171,9 @@ Before creating an action profile, you should first create field mapping profile
 
 ### Searching for an import action profile
 
-Use the search bar to search for action profiles contained in the Action profile table. 
+Use the search bar to search for action profiles contained in the Action profile list. 
 
-The Action profiles table contains the following columns:
+The Action profiles list contains the following columns:
 
 -   **Name.** Name of the action profile.
 -   **Action.** The action contained within the action profile.
@@ -229,8 +227,8 @@ Field mapping profiles map fields of the incoming records to FOLIO according to 
 
 1.  In the **Field mapping profiles** pane, click **Actions \> New field mapping profile**.
 2.  In the **New field mapping profile** window, enter a **Name** for the field mapping profile.
-3.  Select an **Incoming record type** from the drop-down list: MARC Bibliographic, MARC Authority or EDIFACT invoice.
-4.  Select a **FOLIO record type** from the drop-down list: Instance, Holdings, Item, Invoice, MARC Bibliographic, or MARC Authority. Depending on your selection, different options appear. The field mapping details are designed to mimic the FOLIO record's create/edit screen as much as possible. However individual fields may be populated with a reference to a particular field in the incoming record, a default value, or a combination of both. See the sections below for more information.
+3.  Select an **Incoming record type** from the drop-down list: MARC Bibliographic, MARC Holdings, MARC Authority or EDIFACT invoice.
+4.  Select a **FOLIO record type** from the drop-down list: Instance, Holdings, Item, Order, Invoice, MARC Bibliographic, MARC Holdings, or MARC Authority. Depending on your selection, different options appear. The field mapping details are designed to mimic the FOLIO record's create/edit screen as much as possible. However individual fields may be populated with a reference to a particular field in the incoming record, a default value, or a combination of both. See the sections below for more information.
 5.  Optional: Enter a **Description** for the field mapping profile.
 6.  Optional: To link action profiles to the field mapping profile, under **Associated action profiles**, click **Link Profile**, and follow these steps:
     <ol type="a">
@@ -252,6 +250,9 @@ Note: Inactive fields cannot be mapped because they are controlled by the system
 #### Item
 
 -   In the **Field mapping - Item** section, fill in the applicable fields. For more information on the fields, see [Adding an item to a record](../../../metadata/inventory/#adding-an-item-to-a-record).
+
+### Order
+-    In the **Field mapping - Order** section, fill in the applicable fields. for more information on the fields, see [Creating an order](../../../acquisitions/orders/#creating-an-order).
 
 #### Invoice
 
@@ -278,9 +279,9 @@ Note: Inactive fields cannot be mapped because they are controlled by the system
 
 ### Searching for an import field mapping profile
 
-Use the search bar to search for field mapping profiles contained in the Field mapping profile table. 
+Use the search bar to search for field mapping profiles contained in the Field mapping profile list. 
 
-The Field mapping profiles table contains the following columns:
+The Field mapping profiles list contains the following columns:
 
 -   **Name.** Name of the field mapping profile.
 -   **FOLIO record type.** The record type affected by the field mapping profile.
@@ -341,13 +342,15 @@ Use File extensions to configure which file formats are allowed for import and w
 
 ### Searching for a file extension
 
-Use the search bar to search for file extensions contained in the File extensions table. 
+Use the search bar to search for file extensions contained in the File extensions list. 
 
-The File extensions table contains the following columns:
+The File extensions list contains the following columns:
 
 -   **Extension.** The file extension.
 -   **Block import.** Whether an import of the file extension is allowed or blocked.
 -   **Data type(s).** The data type associated with the file extension.
+-   **Updated.** Date when entry was last updated.
+-   **Updated by.** ID of user who made the last update.
 
 You can click on any column name to sort by that column.
 
