@@ -1,7 +1,7 @@
 ---
 title: "Export manager"
 linkTitle: "Export manager"
-date: 2022-12-05	
+date: 2023-11-06	
 weight: 625
 ---
 
@@ -17,6 +17,7 @@ The following are all the Export manager app permissions:
 
 *  **Export manager: All.** This permission enables the Export manager app for the user and allows the user to view and access logs, download files from the Export manager app, and download and re-send EDIFACT export jobs. 
 *  **Export manager: Download and re-send files.** This permission allows the user to download and re-send EDIFACT export jobs.
+*  **Export manager: View.** This permission allows the user to view the Export manager, search and view logs, but not download generated files.
 
 Since exports begin in other FOLIO apps, not in the Export Manager app, a user needs additional permissions to begin an export, but may download files given the **Export manager: All** permission.
 
@@ -39,7 +40,7 @@ The **All** tab results pane  displays the following columns:
 
 *   **Job ID.** Identification number of the export.
 *   **Status.** Status of the export:: Scheduled, In progress, Successful, Failed.
-*   **Job type.** The type of export that resulted in the corresponding job. Job types include: Bursar, Circulation log, eHoldings, MARC authority headings update, EDIFACT orders export, BULK_EDIT_IDENTIFIERS, and BULK_EDIT_UPDATE.
+*   **Job type.** The type of export that resulted in the corresponding job. Job types include: Bursar, Circulation log, eHoldings, MARC authority headings update, EDIFACT orders export, Bulk edit identifiers, and Failed updates: Linked bibliographic fields.
 *   **Description.** A description of the file, if applicable.
 *   **Source.** The user who initiated the export. Entries may include ‘System’ for automated exports or ‘folio’ for jobs resulting from bulk edit or a re-run EDIFACT export.
 *   **Start time.** Date and time the export began.
@@ -57,7 +58,7 @@ The **Organizations** tab results pane displays the following columns:
 *   **End time.** Date and time the export finished.
 *   **Export method.** This value corresponds to the **Integration name** on the associated Organization record’s [Integration details]({{< ref "/organizations.md#adding-integration-details-to-a-vendor-organization" >}}).
 
-Click on any column name, except **Description**, **Source**, and **Export method**, to sort by that column.
+Click on any column name, except **Description** and **Source** to sort by that column.
 
 For jobs with a status of **Successful**, click on the hyperlinked job ID to download the file.
 
@@ -85,6 +86,7 @@ To filter by **Job type**, select a filter:
 * **Circulation log.** This export contains search results from the Circulation log. Output format is .csv.
 * **eHoldings.** This export contains package and title details from eHoldings. Output format is .csv.
 * **Bulk edit** This export contains downloaded information from Bulk edit. Output format is .csv.
+* **EDIFACT orders export** This export contains records exported from the Orders app in EDIFACT format. Output format is .edi.
 
 ### System
 
