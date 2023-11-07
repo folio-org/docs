@@ -349,7 +349,7 @@ The File extensions list contains the following columns:
 -   **Extension.** The file extension.
 -   **Block import.** Whether an import of the file extension is allowed or blocked.
 -   **Data type(s).** The data type associated with the file extension.
--   **Updated.** Date when entry was last updated.
+-   **Updated.** Date when file extension entry was last updated.
 -   **Updated by.** ID of user who made the last update.
 
 You can click on any column name to sort by that column.
