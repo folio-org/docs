@@ -50,7 +50,6 @@ Differences between the two types of loans include:
 * The time a loan is due. A short-term loan sets its due date based on the loan date/time and the loan policy; a long-term loan sets its due date based on the loan policy and the loan date, but the due time is always 11:59 PM. 
     * For example: suppose a patron borrows an item from a service point open 9 AM to 10 PM seven days a week. If they borrow the item at 11 AM on April 1st, and the loan policy says they can borrow it for 48 hours, it will be due at 11 AM on April 3rd. But, if the loan policy said they could borrow the item for 2 days, it would instead be due at 11:59 PM on April 3rd, even though the service point is closed.
 
-* How notices are delivered. Notices for short-term loans are always delivered in real time. Most notices for long-term loans are also delivered in real-time, **except for** notices triggered by **Loan due date/time**. Those notices must use the **multiple items** tokens and are processed overnight (beginning at 11:59 PM).
 
 ## <a id="loanrenew"></a>When a loan is renewed, or a loan due date is changed, what circulation rule applies and what policies are used?
 
