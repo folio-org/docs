@@ -12,15 +12,12 @@ The Check Out app allows you to check out items to patrons. To check out an item
 
 The permissions listed below allow you to interact with the Check out app and determine what you can or cannot do within the app. You can assign permissions to users in the Users app. If none of these permissions are assigned to a user, then they will be unable to see the Check out app or any related information.
 
-* **Check out: All permissions.** This permission allows the user to check out items to patrons (create new loans) and view open loans and loan details. However, this permission does not include seeing the entirety of the user record.
+* **Check out: All permissions.** This permission allows the user to check out items to patrons (create new loans). However, this permission does not include seeing open loans or requests or seeing the entirety of the user record.
 * **Check out: Check out circulating items.** This permission allows the user to check out items, but they cannot override non-circulating loan policies.
 * **Check out: View fees/fines.** This permission allows users to click the fee in the **Scan patron card** pane to view the patron’s fees/fines in the Users app. The user must have permission to view fees/fines in the Users app for the link to work -- for example the permission **Users: Can view fees/fines and loans** (see [Users \> Permissions](../../../users/#permissions)).
 A user who has **Check out: all permissions** but does not have **Check out: View fees/fines** will see a patron’s fee/fine amount in the **Scan patron card** pane as text (not a link).
-
-* **Check out: View loans.** This permission allows users to click to click the number of open loans in the **Scan patron card** pane to view the patron’s current loans in the Users app. The user must have permission to view loans in the Users app in order for the link to work -- for example the permission **Users: User loans view** (see [Users \> Permissions](../../../users/#permissions)).
+* **Check out: View loans.** This permission allows users to click the number of open loans in the **Scan patron card** pane to view the patron’s current loans in the Users app. The user must have permission to view loans in the Users app in order for the link to work -- for example the permission **Users: User loans view** (see [Users \> Permissions](../../../users/#permissions)).
 A user who has **Check out: all permissions** but does not have **Check out: View loans** will see how many loans a patron has in the **Scan patron card** pane as text (not a link).
-
-
 * **Check out: View requests.**  This permission allows users to be able to click the number of open requests in the **Scan patron card** pane to view the patron’s current requests in the Requests app. The user must have permission to view requests in the Requests app in order for the link to work -- for example the permission **Requests: View** (see [Requests \> Permissions](../../requests/requests/#permissions)).
 A user who has **Check out: all permissions** but does not have **Check out: View requests** will see how many requests a patron has in the **Scan patron card** pane as text (not a link).
 
@@ -38,9 +35,9 @@ Locate the patron using a barcode:
 1. Either scan the barcode on the patron's library card, or enter the patron barcode number.
 2. Click **Enter**. Patron details are displayed.
 
-Locate the patron using the Patron Lookup function:
+Locate the patron using the Patron Look-up function:
 
-1. In the Scan patron card pane, click **Patron Look-up**.
+1. In the Scan patron card pane, click **Patron look-up**.
 2. In the **Select User** dialog, in the **User search** box, enter part or all of the patron's name, email, or username.
 3. Optional: Filter results by Status (active/inactive), or by Patron group.
 4. Click **Search**.
@@ -70,7 +67,7 @@ Make sure you have [looked up the user record prior to scanning items.](#locatin
 
 To select the item for check out, scan or enter the barcode of the item and click **Enter**. The item is displayed in the Scan Items area with the **Due date** and **Time** and the total number of items scanned is incremented.
 
-If the item is going to be due sooner than expected, a flag icon will appear next to the item due date after checkout. This can happen if a service point is going to be closed when the item would normally be due, or if the patron's account is set to expire sooner than the expected due date/time.
+If the item is going to be due sooner than expected, a flag icon will appear next to the item due date after checkout. This can happen if a service point is going to be closed when the item would normally be due, if there is a recall on the item, or if the patron's account is set to expire sooner than the expected due date/time.
 
 ### Pop-ups that can occur when checking out an item
 
@@ -98,7 +95,7 @@ To access more information about each item:
 To change the due date:
 
 1. Click **... > Change due date**.
-2. In the **Change Due Date** dialog, enter the date and /or time for the new due date.
+2. In the **Change Due Date** dialog, enter the date and/or time for the new due date.
 3. Click **Save and Close**. The new due date is saved.
 
 ## Adding a loan comment
