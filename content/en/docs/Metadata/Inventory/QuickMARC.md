@@ -6,6 +6,8 @@ weight: 30
 tags: ["parenttopic"]   
 ---
 
+<table style="border: 2px solid black"><tr><td><strong>This section of the documentation contains links to external sites. Please be advised that these sites are not maintained by the FOLIO Documentation Group and may not be aligned with the current release of FOLIO.</strong></td></tr></table>
+
 quickMARC is FOLIO's MARC editing tool, which allows you to make edits to instance and holdings records with underlying MARC records. For all instances or holdings whose source record is a MARC record you have the option to edit the MARC using quickMARC. quickMARC saves to Source Record Storage (SRS) and updates both the Source Record and the corresponding Inventory record. quickMARC has minimal validation and is best used in addition to other cataloging tools.
 
 Note: quickMARC is a module that you can access through the Inventory app; it is not its own app. For more information, see Accessing quickMARC.
@@ -119,7 +121,6 @@ The following validation rules and restrictions apply when working with bibliogr
 -   Only positions 5-8, 17, 18, and/or 19 in the Leader can be edited. Invalid values in the leader will result in an error message
 -   245 is required and non-repeatable
 
-
 The following validation rules and restrictions apply to working with MARC holdings records in quickMARC:
 
 -   001, 004, 005, and 999ff are system supplied and cannot be edited or deleted.
@@ -142,6 +143,8 @@ There are three record statuses:
 -   **Error.** Something is preventing an update from moving to the Inventory record or SRS.
 
 ## Creating a new MARC record using quickMARC
+
+Information on how MARC bibliographic fields are mapped to inventory instances is available in the [FOLIO Wiki](https://wiki.folio.org/display/FOLIOtips/Default+MARC+Bibliographic-to-Inventory+Instance+Mappings). 
 
 To create a new **MARC bibliographic record** for an item without an instance or SRS record:
 1.  Click **Actions \> New MARC Bib Record.**
