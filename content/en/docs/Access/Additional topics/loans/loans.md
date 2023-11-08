@@ -6,6 +6,8 @@ description: >
 tags: ["subtopic"]
 ---
 
+<table style="border: 2px solid black"><tr><td><strong> This section of the documentation contains links to external sites. Please be advised that these sites are not maintained by the FOLIO Documentation Group and may not be aligned with the current release of FOLIO.</strong></td></tr></table>
+
 Library staff manage patron loans in FOLIO through three primary apps - Check in, Check out, and Users. Staff also can view information about loans in the Circulation log and Inventory apps.
 
 The terms of a loan - who can borrow, how long they can borrow the item for, whether it can be renewed, what notices patrons receive, and whether any charges are accrued if the item is late - are determined by the circulation rule that is applied when the item is loaned, renewed, or has a due date change.
