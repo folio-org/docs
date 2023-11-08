@@ -103,7 +103,7 @@ At least one of the options must be selected:
 * **Username.**
 * **User custom fields.**
 
-If you choose **User custom fields**, you can then select one or more custom fields that the Check out app would include when searching for patron records. Custom fields must be configured in [Settings > Users]({{< ref "settings--users--custom-fields.md" >}}) before they can be selected here.
+If you choose **User custom fields**, you can then select one or more custom fields that the Check out app would include when searching for patron records. Custom fields must be configured in [Settings > Users](../../settings_users/settings_users/#settings--users--custom-fields) before they can be selected here.
 
 ###  Automatically end check in and check out session after period of inactivity
 
