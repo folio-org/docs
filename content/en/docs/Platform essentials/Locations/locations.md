@@ -1,7 +1,7 @@
 ---
 title: "Locations"
 linkTitle: "Locations"
-date: 2022-01-12
+date: 2023-11-09
 weight: 50
 ---
 In FOLIO, **locations** are used to describe where items are located in a library.
@@ -83,4 +83,4 @@ FOLIO sets the item effective location to the first value it finds in the follow
 3. Holding temporary location
 4. Holding permanent location
 
-Note that an item permanent location **does not need to be set** if the holding permanent location is set. **Item effective location** is what is used in circulation workflows, and it will inherit the holding permanent location if no location values are set directly on the item.
+Note that an item permanent location **does not need to be set** if the holding permanent location is set. **Item effective location** is what is used in circulation workflows, and it will inherit the holding permanent location if no location values are set directly on the item. If an item record is moved to a new holdings record, it will inherit its effective location and call number from the holdings record unless it has a temporary or permanent location or call number specified in the item record.
