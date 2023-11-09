@@ -758,7 +758,7 @@ A check in or check out note is required by default.
 
 ### Location
 
-The Location section contains information on the physical or electronic location of the item.
+The Location section contains information on the physical or electronic location of the item. For more information on locations, see [item effective location](../../platform-essentials/locations/locations/#item-effective-location).
 
 -   **Permanent.** The default location of the resource, which can be a physical location where the resource is stored or an online location. Permanent location is assigned at the holdings level, but can be overridden at the item level, if needed. Select a **Permanent location** from the drop-down list, or click **Location look-up** to select a location.
 -   **Temporary.** A temporary location for the resource, which can be a physical location where the resource is stored or an online location. Temporary location can be assigned at the holdings level and overridden at the item level, if needed. Select a **Temporary location** from the drop-down list, or click **Location look-up** to select a location.
