@@ -195,6 +195,7 @@ Reminder fees differ from overdue fines in that reminder fees are billed when an
 | 1        | 0        | Day(s)    | Overdue           | 3   | Email         | 1st reminder    | noblock        |
 | 2        | 3        | Day(s)    | Previous reminder | 3   | Email         | 2nd reminder    | noblock        |
 | 3        | 3        | Day(s)    | Previous reminder | 6   | Email         | 3rd reminder    | noblock        |
+
 Preconditions:
 * Notices are sent out once per day (shortly after midnight).
 * An item with the associated reminder fee policy in the above example becomes overdue at 11:59 PM on Monday.
