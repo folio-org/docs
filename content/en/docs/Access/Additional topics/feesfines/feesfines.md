@@ -127,7 +127,7 @@ You can send **Lost item fee(s) charged** notices throughout the day (typically 
 **Lost item returned - fee(s) adjusted** notices are always sent when the event is triggered, i.e. when the lost item is checked in. **Lost item returned - fee(s) adjusted** notices will be sent for both set cost and actual cost fees/fines, and any applicable processing fees.
 
 
-## How are overdue and overdue recall fee/fines calculated?
+## How are overdue and overdue recall fees/fines calculated?
 
 FOLIO’s fee/fine system is very dynamic and allows for many different configuration options of loan length and fee/fine settings. It can be helpful to know how the underlying logic works when FOLIO computes an overdue or overdue recall fine amount. 
 
@@ -137,9 +137,9 @@ The factors that are used when calculating overdue fines are
 * The stated overdue charge, as defined in the overdue policy
 * Whether overdue fines should be charged when the service desk is closed, as defined in the overdue policy
 
-Because you can define fine rates and loan lengths in different intervals - minutes, hours, days, weeks or months - FOLIO’s approach is to take the length of time an item was overdue, convert it to minutes, and then compare that date/time to the fine interval - also in minutes - to determine how to charge. This is fairly simple when a library charges fines for all hours, but can become much more complicated when charging fines only when an associated service point is open.
+Because you can define fine rates and loan lengths in different intervals - minutes, hours, days, weeks or months - FOLIO’s approach is to take the length of time an item was overdue, convert it to minutes, and then compare that date/time to the fine interval - also in minutes - to determine how much to charge. This is fairly simple when a library charges fines for all hours, but can become much more complicated when charging fines only when an associated service point is open.
 
-Note that FOLIO does not do these calculations until the overdue or overdue recalled item is returned. FOLIO does not yet offer a “running total” calculation for overdue fines.
+Note that FOLIO does not do calculations for overdue fees until the overdue or overdue recalled item is returned. Use [reminder fees](#reminder-fees) to have overdue items billed, and overdue notices sent, when an item becomes overdue.
 
 ### Example: A patron returns an overdue item at a 24/7 service point
 
@@ -183,6 +183,28 @@ So, once the item is returned, FOLIO computes the overdue fine like this:
 It is important to notice that the patron was charged for 2 days even though the item was returned on the 3rd day after it became overdue. 
 
 There is development planned to better handle calculating fines for closed periods, but it is not currently scheduled.
+
+## Reminder fees
+
+Reminder fees differ from overdue fines in that reminder fees are billed when an item becomes overdue, whereas overdue fines are billed when the item is returned.
+
+### A Reminder fee example
+
+| Sequence | Interval | Frequency | After             | Fee | Notice method | Notice template | Block template |
+|:----------|:----------|:-----------|:-------------------|:-----|:---------------|:-----------------|:----------------|
+| 1        | 0        | Day(s)    | Overdue           | 3   | Email         | 1st reminder    | noblock        |
+| 2        | 3        | Day(s)    | Previous reminder | 3   | Email         | 2nd reminder    | noblock        |
+| 3        | 3        | Day(s)    | Previous reminder | 6   | Email         | 3rd reminder    | noblock        |
+Preconditions:
+* Notices are sent out once per day (shortly after midnight).
+* An item with the associated reminder fee policy in the above example becomes overdue at 11:59 PM on Monday.
+* The item is not returned to the library and the loan is not renewed.
+  
+Reminder process:
+* The first sequence will create a first reminder with an email using the selected notice template. The email is sent out shortly after midnight on the first day after the overdue date (12:05 AM on Tuesday in the example). A 3.00 fee is charged.
+* The second sequence will create a second reminder with an email using the selected notice template. The email is sent out three plus one equals **four** days after the previous reminder (Saturday in the example). A 3.00 fee is charged.
+* The third sequence will create a third reminder with an email using the selected notice template. The email is sent out three plus one equals **four** days after the previous reminder (Wednesday in the example). A 6.00 fee is charged.
+
 
 ## What happens to a loan when the fine is resolved?
 
