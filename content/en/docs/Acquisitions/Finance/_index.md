@@ -1,7 +1,7 @@
 ---
 title: "Finance"
 linkTitle: "Finance"
-date: 2022-04-18
+date: 2023-11-13
 weight: 10
 tags: ["parenttopic"]
 ---
@@ -64,7 +64,7 @@ Keyboard shortcuts allow you to perform actions in this app using the keyboard. 
 
 ## Creating a fiscal year
 
-A fiscal year is the twelve-month period your library uses for accounting and budgetary purposes. In FOLIO, a fiscal year serves as the basis for the entire fund structure and its parts. 
+A fiscal year is the twelve-month period your library uses for accounting and budgetary purposes. In FOLIO, a fiscal year serves as the basis for the entire fund structure and its parts. Note: Before creating a new fiscal year, be sure to check the **Primary currency** value specified in your [Settings > Tenant > Language and localization]({{< ref "/settings_tenant.md#settings--tenant--language-and-localization" >}}). The currency on a budget is set to the Tenant currency value at the time the fiscal year record is created; therefore, if the Tenant currency value is updated, any budgets created prior to the update will still operate based on the Tenant currency that existed when the Fiscal year associated with the budget was created.
 
 
 1. In the **Search & filter** pane, click **Fiscal year**.
@@ -590,7 +590,7 @@ This section contains a table of information about the current budget, if one ex
 
 #### Current expense classes
 
-This section contains a table of information about expenses classes assigned to the current budget, if any exist.
+This section contains a table of information about expenses classes assigned to the current budget, if applicable.
 
 
 #### Planned budget
@@ -642,14 +642,14 @@ The Budget summary section contains the following fields:
 *   **Awaiting Payment.** The sum of pending payment transaction amounts against the budget.
 *   **Expended.** The sum of payment transaction amounts minus credit transaction amounts against the budget.
 *   **Unavailable** The total amount unavailable for the budget, calculated as the sum of the encumbered, awaiting payment, and expended amounts.
-*   **Available balance.** Total amount available for the budget, calculated as **Total funding** amount minus the **Unavailable** amount.  Note: In this version of FOLIO, negative available balances display as zero.  For example, if the allowed expenditure field for the budget is blank, then there are no restrictions on how much can be expended against the budget.  If transactions have processed that exceed the total funding amount by $100, then the amount in the Available balance will display as zero rather than negative ($100).  Negative balance amounts will display in a future version of the system.
+*   **Available balance.** Total amount available for the budget, calculated as **Total funding** amount minus the **Unavailable** amount.  
 
 #### Budget information
 
 The Budget information section contains the following fields:
 
-*   **Name.** Budget name.
-*   **Status.** Status of the ledger: Active, Frozen, or Inactive.
+*   **Name.** Budget name. The structure of this name is the fund code, followed by a hyphen and the fiscal year code, e.g. ACCOUNTING-FY2021.
+*   **Status.** Status of the ledger: Active, Closed, Frozen, Inactive, or Planned.
 *   **Fiscal start.** Fiscal year start date.
 *   **Fiscal end.** Fiscal year end date.
 *   **Allowable expenditure.** Expenditure allowed, expressed as a percentage.
@@ -673,7 +673,7 @@ Use the **Actions** menu to allocate money to a budget.  You can **Increase allo
 
 ### Increasing allocation to a fund budget
 
-1. Find the budget to which you want to allocate money and select it.
+1. [Find the budget](#viewing-budget-details) to which you want to allocate money and select it.
 2. In the **Budget details** window, click **Actions > Increase allocation.**
 3. In the **Increase allocation** dialog, enter the following information:
 
@@ -689,7 +689,7 @@ Use the **Actions** menu to allocate money to a budget.  You can **Increase allo
 ### Decreasing allocation to a fund budget
 
 
-1. Find the budget to which you want to submit a decreased allocation and select it.
+1. [Find the budget](#viewing-budget-details) to which you want to submit a decreased allocation and select it.
 2. In the **Budget details** window, click **Actions > Decrease allocation.**
 3. In the **Decrease allocation** dialog, enter the following information:
 
@@ -704,9 +704,9 @@ Use the **Actions** menu to allocate money to a budget.  You can **Increase allo
 ### Moving allocation to another fund budget
 
 
-Use the **Move allocation** action to move money between fund current fiscal year budgets as allocation transactions. Allocated amounts can be included in the next fiscal year allocation amount for a fund, depending on your fiscal year rollover settings . See [Transferring money between funds](#transferring-money-between-funds) for information about transfers to determine whether you want to move money using **Move allocation** or **Transfer**.
+Use the **Move allocation** action to move money between current fiscal year budgets as allocation transactions. Allocated amounts can be included in the next fiscal year allocation amount for a fund, depending on your fiscal year rollover settings . See [Transferring money between funds](#transferring-money-between-funds) for information about transfers to determine whether you want to move money using **Move allocation** or **Transfer**.
 
-1. Find the budget to which you want to move an allocation and select it.
+1. [Find the budget](#viewing-budget-details) to which you want to move an allocation and select it.
 2. In the **Budget details** window, click **Actions > Move allocation.**
 3. In the **Move allocation** dialog, enter the following information:
 
@@ -735,7 +735,7 @@ You can transfer money between the current fiscal year budgets of two funds. Thi
 3. In the **Transfer** dialog, enter the following information:
 
 *   **From (required).** Select the fund from which you want to transfer money.  
-*   **To (required).** Select the fund to which you want to transfer money.
+*   **To (required).** Select the fund to which you want to transfer money. This field displays the fund name (code) with which this budget is associated. You must populate either **From** or **To** with the fund for the budget you are currently viewing.
 *   **Amount (required).** Enter an amount as a numeric value. Values with or without decimals are accepted (100 or 100.00). Negative values are accepted.  
 *   **Tags.** Enter or select any tags from the drop-down list you would like to apply to the transfer transaction.
 *   **Description.** Enter a description of the transfer.  
@@ -768,22 +768,22 @@ To search budget transactions, follow these steps:
 
 
 1. To search budget transactions by amount, in the **Transactions** window **Search & Filter** pane, enter a numeric value into the search box and click **Search**. A list of transactions containing the amount value entered is returned.
-2. To filter results by Type, Source, Tags, or Expense class. See below for more information on the filters. Your results display in the Transactions pane.
+2. You may filter results by Type, Source, Source POL number, Source invoice number, Tags, or Expense class. See below for more information on the filters. Your results display in the Transactions pane.
 
 
 #### Type
 
-To filter transactions by Type, select one of the following:
+To filter transactions by Type, select one or more of the following:
 
 
 
-*   **Allocation.** Filter transactions by type of Allocation.
-*   **Credit.** Filter transactions by type of Credit.
-*   **Encumbrance.** Filter transactions by type of Encumbrance.
-*   **Payment.** Filter transactions by type of Payment.
-*   **Pending payment.** Filter transactions by type of Pending payment.
-*   **Rollover transfer.**  Filter transactions by type of Rollover transfer.
-*   **Transfer.** Filter transactions by type of Transfer.
+*   **Allocation.** Filter transactions by type of Allocation. This includes initial allocations, as well as increases, decreases, and movements of allocations to the budget.
+*   **Credit.** Filter transactions by type of Credit. Credit transactions are produced by paid invoices with negative totals.
+*   **Encumbrance.** Filter transactions by type of Encumbrance. Encumbrance transactions are created on open orders based on the fund distribution(s) on the corresponding purchase order line (POL).
+*   **Payment.** Filter transactions by type of Payment. Payment transactions are produced by paid invoices with positive totals.
+*   **Pending payment.** Filter transactions by type of Pending payment. Pending payment transactions are produced by approved invoices. 
+*   **Rollover transfer.**  Filter transactions by type of Rollover transfer. Rollover transfer transactions are the result of fiscal year rollover operations when a previous fiscal year's surplus funds are rolled over to the new fiscal year budget as a transfer.
+*   **Transfer.** Filter transactions by type of Transfer. Transfer transactions result from the transfer of funds between budgets in a given fiscal year.
 
 
 #### Source
@@ -793,7 +793,7 @@ To filter transactions by Source, select one of the following:
 
 
 *   **Fiscal year.** Transactions generated during the fiscal year rollover process. For example, automated allocations during fiscal year rollover, as defined in [Rollover fiscal year](#rollover-fiscal-year) settings.
-*   **Invoice.** Transactions generated through invoicing, specifically transaction types of **Credit**, and **Pending payment.**
+*   **Invoice.** Transactions generated through invoicing, specifically transaction types of **Credit**, **Payment**, and **Pending payment.**
 *   **PO line** Transactions generated from a PO line, specifically **Encumbrance** transaction types.
 *   **User.** Transactions created by a user through the fund action menu, specifically **Allocation** and **Transfer** transaction types.
 
@@ -844,7 +844,7 @@ Once you view budget transactions, the following columns appear in the Transacti
 
 
 *   **Transaction date.** Date of the transaction.
-*   **Type.** Transaction type: Allocation, Credit, Encumbrance, Payment, Pending Payment, or Transfer.
+*   **Type.** Transaction type: Allocation, Credit, Encumbrance, Payment, Pending Payment, Rollover transfer, or Transfer.
 *   **Amount.** Amount for the transaction. Negative values are in parentheses.
 *   **From.** Fund code of the fund from which a transfer was made into the budget.
 *   **To.** Fund code of the fund to which a transfer was made from the budget.
@@ -863,7 +863,7 @@ To view additional information about a transaction, click the transaction row in
 *   **Source.** Name of the user who last updated the record.
 *   **Record created.** Date and time when the record was created.
 *   **Source.** Name of the user who created the record.
-*   **Transaction date.** Date of the transaction.
+*   **Transaction date.** Date and time of the transaction.
 *   **Fiscal year.**  The fiscal year for the budget.
 *   **Amount.** Amount of the transaction. Negative values are in parentheses.
 *   **Source.** Fiscal year or User.
@@ -899,7 +899,7 @@ When an order containing a PO Line with a fund distribution is opened, an **Encu
 *   **To.** This field will be blank for encumbrance transactions.
 *   **Expense class.**  The expense class assigned to this encumbrance transaction.
 *   **Initial encumbrance.**  The amount originally encumbered by the related PO Line; the estimated price value.  
-*   **Awaiting payment.**  The amount awaiting payment.  
+*   **Awaiting payment.**  The amount awaiting payment. This amount is populated after an invoice for the related PO Line is approved.
 *   **Expended.**  The amount expended.  This amount is populated after an invoice for the related PO Line is paid.
 *   **Status.** The status of this encumbrance: Unreleased or Released.  The encumbrance can be [released manually](#releasing-encumbrances-manually) by the user or automatically by the system upon payment of an invoice.
 *   **Description.**  This field will be blank for encumbrance transactions.
@@ -925,7 +925,7 @@ To release an encumbrance, follow these steps:
 When an invoice is paid, the existing **Pending payment** transaction record type value is updated from type [Pending payment](#viewing-pending-payment-transactions) to type **Payment.** The payment transaction detail pane contains many of the same fields as the [allocation detail pane](#viewing-allocation-transactions).  Some fields are populated differently for payment transactions:
 
 
-*   **Source.** Invoice number or identifier that generated this credit transaction.  Click on the invoice identifier to open the Invoices app invoice detail pane for that invoice.
+*   **Source.** Invoice number or identifier that generated this payment transaction.  Click on the invoice identifier to open the Invoices app invoice detail pane for that invoice.
 *   **Type.** Transaction type: Payment.
 *   **From.** Fund name and code for this budget to which this payment was applied.  
 *   **To.** This field will be blank for payment transactions. 
@@ -950,13 +950,13 @@ The fiscal year rollover process creates transfer transactions if the [rollover 
 ### Viewing transfer transactions
 
 
-When an [transfer of money](#transferring-money-between-funds) is made between two funds, a **Transfer** transaction is created. The transfer transaction detail pane contains many of the same fields as the [allocation detail pane](#viewing-allocation-transactions).  Some fields are populated differently for transfer transactions:
+When a [transfer of money](#transferring-money-between-funds) is made between two funds, a **Transfer** transaction is created. The transfer transaction detail pane contains many of the same fields as the [allocation detail pane](#viewing-allocation-transactions).  Some fields are populated differently for transfer transactions:
 
 
 *   **Source.**  Set to User for transfer transactions.  
 *   **Type.** Transaction type: Transfer.
 *   **From.** Fund name and fund code from which the transfer was made into this budget. 
-*   **To.** Fund name and fund code of this budget to which the allocation was made.
+*   **To.** Fund name and fund code of this budget to which the transfer was made.
 *   **Description.**  A description added by the user during the [transfer](#transferring-money-between-funds).
 
 
@@ -987,7 +987,12 @@ Note: Financial structure records cannot be deleted if they have other records a
 ## Rollover fiscal year
 
 
-Fiscal year rollover is initiated from the ledger detail pane.  This process closes current fiscal year budgets, applies leftover amounts from the current fiscal year budgets into new upcoming fiscal year budgets based on fund type, and rolls encumbrances onto new fiscal year budgets based on order type (one-time, ongoing, and ongoing subscription). This action is applied only to the funds associated with the ledger, so rollover must be run separately for each ledger.  Run  a test of rollover to identify whether any unpaid invoices exist and to view the rollover log prior to running the actual rollover.
+Fiscal year rollover is initiated from the ledger detail pane.  This process can close current fiscal year budgets, create upcoming fiscal year budgets with or without allocated funds based on fund type, and roll encumbrances onto new fiscal year budgets based on order type (one-time, ongoing, and ongoing subscription). This action is applied only to the funds associated with the ledger, so rollover must be run separately for each ledger.  
+
+Note: Prior to running the fiscal year rollover process, it is recommended to do the following:
+1. Review open orders to determine if the **Re-encumber** check box is selected where desired.
+2. Review and resolve approved invoices.
+3. Run at least one test of rollover to identify any remaining unpaid invoices and to view the rollover log prior to running the actual rollover.
 
 To run a test of fiscal year rollover, follow these steps:
 
@@ -996,31 +1001,38 @@ To run a test of fiscal year rollover, follow these steps:
 3. In the ledger results pane, select the name of the ledger to rollover.
 4. The ledger detail pane will open. Open the Action menu and select **Rollover.**
 5. In the Rollover window, complete the form to indicate your preferences for rollover settings.  For more information on the fields on the rollover screen, see the descriptions below.
-6. **Save a screenshot of the completed form**.  The system does not currently retain a copy of the settings used for rollover, so it is recommended that you save a copy of the settings used for rollover for reference.
-7. Click the **Test rollover** button to initiate a test of fiscal year rollover for this ledger.
-8. If any unpaid invoices exist, a dialog window displays, “FOLIO has found invoices that are not yet paid or canceled. If you are sure you want to continue with rollover click continue.”  A table list of invoices displays the following information:
+6. Click the **Test rollover** button to initiate a test of fiscal year rollover for this ledger.
+7. If any unpaid invoices exist, a dialog window displays, “FOLIO has found invoices that are not yet paid or canceled. If you are sure you want to continue with rollover click continue.”  A table list of invoices displays the following information:
 *   **Vendor invoice number.**
-*   **Vendor.**  Organization name of the vendor.
+*   **Vendor.**  
 *   **Invoice date.** 
 *   **Status.**
-9. Click **Cancel** to exit the dialog list without proceeding with the rollover test, click **Export list** to download a .csv file list unpaid invoices, or click **Continue** to proceed with the rollover test.
-10. After continuing, a dialog displays “Please confirm that you have completed the necessary details and are ready to proceed with your rollover TEST. This process may take several minutes to complete. A link to the results will be sent to [user email address] when the process is complete.” 
-11. Click **Confirm.**  A green toast message indicates that the rollover test started successfully and focus returns to the three pane layout for the ledger.  A confirmation email is sent to the user’s email address.
-12. To [view the test rollover results](#viewing-rollover-log-results) in the log, open the Actions menu and select **Rollover logs.** 
+*   **Total amount (system)**
+8. Click **Cancel** to exit the dialog list without proceeding with the rollover test, click **Export list** to download a .csv file list unpaid invoices, or click **Continue** to proceed with the rollover test.
+9  After continuing, a dialog displays “Please confirm that you have completed the necessary details and are ready to proceed with your rollover TEST. This process may take several minutes to complete. A link to the results will be sent to [user email address] when the process is complete.” 
+10. Click **Confirm.**  A green toast message indicates that the rollover test started successfully and focus returns to the three pane layout for the ledger.  A confirmation email is sent to the user’s email address.
+11. To [view the test rollover results](#viewing-rollover-log-results) in the log, open the Actions menu and select **Rollover logs.** 
 
 
 To run fiscal year rollover, follow these steps:
 
 
 1. In the **Search & filter** pane, click **Ledger.**
-2. Use the search and filter tools, if needed, to find the ledger you want to rollover.
-3. In the ledger results pane, select the name of the ledger you want to rollover.
-4. The ledger detail pane will open. Click on the Action menu button and select **Rollover.**
+2. Use the search and filter tools, if needed, to find the ledger to rollover.
+3. In the ledger results pane, select the name of the ledger to rollover.
+4. The ledger detail pane will open. Open the Action menu and select **Rollover.**
 5. In the Rollover window, complete the form to indicate your preferences for rollover settings.  For more information on the fields on the rollover screen, see the descriptions below.
-6. **Save a screenshot of the completed form**.  The system does not currently retain a copy of the settings used for rollover, so it is recommended that you save a copy of the settings used for rollover for reference.
-7. Click the **Rollover** button to initiate fiscal year rollover for this ledger.
-8. Click **Confirm.**  Wait for the process to complete, as indicated by the blue progress bar. When complete, the “Rolling over is finished” message appears.
-10. Click **Close & view ledger details** to return to the detail pane for the ledger.
+6. Click the **Rollover** button to initiate a test of fiscal year rollover for this ledger.
+7. If any unpaid invoices exist, a dialog window displays, “FOLIO has found invoices that are not yet paid or canceled. If you are sure you want to continue with rollover click continue.”  A table list of invoices displays the following information:
+*   **Vendor invoice number.**
+*   **Vendor.**  
+*   **Invoice date.** 
+*   **Status.**
+*   **Total amount (system)**
+8. Click **Cancel** to exit the dialog list without proceeding with the rollover test, click **Export list** to download a .csv file list unpaid invoices, or click **Continue** to proceed with the rollover.
+9  After continuing, a dialog displays “Please confirm that you have completed the necessary details and are ready to proceed with your rollover. This process may take several minutes to complete. A link to the results will be sent to [user email address] when the process is complete.” 
+10. Click **Confirm.**  A green toast message indicates that the rollover started successfully and focus returns to the three pane layout for the ledger.  A confirmation email is sent to the user’s email address.
+11. To [view the rollover results](#viewing-rollover-log-results) in the log, open the Actions menu and select **Rollover logs.** 
 
 
 ### Fiscal year rollover information
@@ -1033,19 +1045,19 @@ If your institution runs rollover before or after the fiscal year end date, you�
 *   **Period begin date.**  The fiscal year begin date for the **Fiscal year** selected.   See [Creating a fiscal year](#creating-a-fiscal-year) for more information about period dates.
 *   **Period end date.** The Fiscal Year end date for the Fiscal year selected.  Note: The **Period end date** must be greater than the current date to initiate rollover from the current year to an upcoming year. 
 *   **Fiscal year.**  Select the next fiscal year.  If the next fiscal year has not yet been set up, click **New fiscal year** to create one.  See  [Creating a fiscal year](#creating-a-fiscal-year) for more information.
-*   **Enforce all budget encumbrance limits.** This box is checked by default. Leave this box checked if you want the system to reject any encumbrances that would exceed the available amount. For example, if your institution typically doesn’t rollover allocations and adds initial allocation amounts manually after rollover, you might want to check this box to allow current year encumbrances to be applied to the upcoming year budgets that are awaiting initial allocations.  Uncheck this box to allow encumbrance amounts on the current year budget to rollover to the upcoming year budget without restrictions based on the budget’s available amount.
+*   **Enforce all budget encumbrance limits.** This box is checked by default. Leave this box checked if you want the system to reject any encumbrances that would exceed the available amount. For example, if your institution typically doesn’t rollover allocations and adds initial allocation amounts manually after rollover, you might want to uncheck this box to allow current year encumbrances to be applied to the upcoming year budgets that are awaiting initial allocations.  
 *   **Enforce all budget expenditure limits.** This box is checked by default. Uncheck this box to allow expenditures to rollover even if the new budget has insufficient funds allocated.  
-*   **Close all current budgets.**  This checkbox is selected by default and indicates that you want to close all the current fiscal year budgets as part of this rollover.
+*   **Close all current budgets.**  This checkbox is selected by default and indicates that you want to close all the current fiscal year budgets as part of this rollover. Uncheck this box if you wish to leave the budget active if you must pay future invoices against past fiscal years.
 
 
 #### Rollover budgets 
 
-The information in this section defines rollover behavior for budgets by fund type.  For more information about creating fund types, see [Settings > Finance > Fund types]({{< ref "/settings_finance.md#settings--finance--fund-types" >}}).  For each fund type listed, select the appropriate settings for each of the fields defined below.  These settings will be applied to all upcoming fiscal year budgets of that fund type.
+The information in this section defines rollover behavior for budgets by fund type.  For more information about creating fund types, see [Settings > Finance > Fund types]({{< ref "/settings_finance.md#settings--finance--fund-types" >}}).  For each fund type listed, select the appropriate settings for each of the fields defined below.  These settings will be applied to all upcoming fiscal year budgets of that fund type. If a fund does not have a fund type assigned, it will be listed under **No fund type**.
 
 
 *   **Rollover allocation.**  Check this box if you want the upcoming fiscal year budget initial allocation amount to equal the current fiscal year budget total allocation amount.
 *   **Adjust allocation, %.**  The percentage amount to be applied to the current fiscal year budget total allocation amount to set the upcoming fiscal year's budget initial allocation amount. For example, if the current budget total allocation is $1000 and you enter two percent, the upcoming budget initial allocation value is set to $1020.
-*   **Rollover budget value.**  Select which value from the current fiscal year budget to consider as the upcoming budget inital allocation value: Select **None** to ignore the current fiscal year budget values, **Available** to use the available amount, and **Cash balance** to use the remaining cash balance which is the total funding amount minus the total expended amount.  See [Viewing budget details](#viewing-budget-details) for a full description of the Available and Cash balance values.
+*   **Rollover budget value.**  Select which value from the current fiscal year budget to roll over to the new fiscal year budget, if your library allows the rollover of surplus funds: Select **None** to ignore the current fiscal year budget values, **Available** to use the available amount, and **Cash balance** to use the remaining cash balance which is the total funding amount minus the total expended amount.  See [Viewing budget details](#viewing-budget-details) for a full description of the Available and Cash balance values.
 *   **Rollover value as.**  Indicates whether any available amounts that are rolled over should be categorized as a **Transfer** or an **Allocation.**
 *   **Set allowances.** Check this box to activate the  **Allowed encumbrance, %.** and **Allowed expenditure, %.** fields. 
 *   **Allowed encumbrance, %.**  The percentage amount to be applied to the upcoming fiscal year's budget allocated amount to calculate allowed encumbrances against funds of this fund type.  To allow all encumbrances with no limit, leave this field blank.  For example, if the budget’s total allocated amount is $1000 and you set an **Allowed encumbrance, %** of 110 percent, the system will allow payment of invoices up to $1100.  Similarly, a value of 90 percent will limit expenditures to $900.   Note: You can only enter a value in this field if the **Set allowances** checkbox is checked.
@@ -1055,7 +1067,7 @@ The information in this section defines rollover behavior for budgets by fund ty
 
 #### Rollover encumbrances
 
-The information in this section defines rollover behavior for encumbrances by order type: one-time, ongoing, or ongoing-subscription.  An order is considered an ongoing-subscription if the order type is **Ongoing** and the **Subscription** checkbox is checked. See [Orders > Creating an ongoing order > Ongoing order information](../orders/#ongoing-order-information) for more information about the subscription checkbox.   For each order type listed, select the appropriate settings for each of the fields defined below:
+The information in this section defines rollover behavior for encumbrances by order type: one-time, ongoing, or ongoing-subscription.  An order is considered an ongoing-subscription if the order type is **Ongoing** and the **Subscription** checkbox is checked. See [Orders > Creating an ongoing order > Ongoing order information](../orders/#ongoing-order-information) for more information about the subscription checkbox.  An open order must have the **Re-encumber** checkbox activated to be eligible for fiscal year rollover. For each order type listed, select the appropriate settings for each of the fields defined below:
 
 *   **Rollover.**  Check this box if you want encumbrances for open orders of this type of order to rollover to the upcoming fiscal year budget associated with each order.  Checking this box will activate the  **Based on** and **Increase by, %** fields.
 *   **Based on.**  From the drop down list, select **Expended** to encumber the total amount that was expended during the current fiscal year. Select **Initial encumbrance** to encumber the purchase order line estimated price. Select **Remaining** to encumber the amount that has not yet been paid.
@@ -1077,12 +1089,23 @@ Rollover logs and results  are available for each rollover event.  To view rollo
 *   **Status.** Status of the rollover or rollover test: In progress, Successful, Failed.
 *   **Errors.** If errors exist, a file name in format ‘mm/dd/yyyyy-error’ displays.  Click on the file name to download a .csv file containing error information.
 *   **Results.** If rollover completes successfully, a file name in format ‘mm/dd/yyyyy-result’ displays. Click on the file name to download a .csv file containing results information.  See [Rollover log results file](#rollover-log-results-file) below for the list of fields in the file.
+*   **Settings.** A file name in format ‘mm/dd/yyyyy-settings’ displays. Click on the file name to download view a screen capture of the settings in place for the rollover or rollover test.
 *   **Source.** The name of the process that created the rollover log: Rollover or Rollover test.
 
 #### Rollover log results file
 
 The following fields are included in the downloadable rollover log results file:
 
+*   Name (Fund)
+*   Code (Fund)
+*   Status (Fund)
+*   Type
+*   Group (Code)
+*   Acquisition unit
+*   Transfer from
+*   Transfer to
+*   External account number
+*   Description
 *   Name (Budget)
 *   Status (Budget)
 *   Allowable encumbrance
@@ -1114,7 +1137,7 @@ The following fields are included in the downloadable rollover log results file:
 
 To filter the rollover log table list using the **Search & filter** pane, apply one of the following filters: 
 
-*   **Start time.** Date and time at which rollover or rollover test was initiated. Enter a start from and to date/times and click *Apply* to filter log results to a start date/time range.
-*   **End time.** Date and time at which rollover or rollover test was completed. Enter from and to date/times and click *Apply* to filter log results to an end date/time range.
+*   **Start time.** Date and time at which rollover or rollover test was initiated. Enter a start from and to date/times and click **Apply** to filter log results to a start date/time range.
+*   **End time.** Date and time at which rollover or rollover test was completed. Enter from and to date/times and click **Apply** to filter log results to an end date/time range.
 *   **Status.** Status of the rollover or rollover test: In progress, Successful, Failed.
 *   **Source.** The name of the process that created the rollover log: Rollover or Rollover test.
