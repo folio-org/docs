@@ -291,7 +291,7 @@ If you select **Fixed**, you see the following fields:
 * The due date will follow the choice given in the loan policy *only* in the case that the service point is completely closed on the day that the item would be due. When the loan is created, FOLIO will check the service point calendar; if the service point is open for any time on the day that the item is due, FOLIO will set the due time to 11:59 PM on that day.
 
 
-**Grace period.** Enter a grace period for overdue items. If you choose to have a grace period, items will not count against the [Maximum number of overdue items]({{< ref "settings_users/#settings--users--conditions" >}}) patron block and there will be no overdue fine until after the loan due date/time plus the grace period interval. If the grace period expires and the item has not been returned, the grace period will count towards calculating an overdue or lost item fee/fine. Adding a grace period to a due date follows the same logic that you chose for closed library due date management, if the grace period lands in a closed time for the service point.
+**Grace period.** Enter a grace period for overdue items. If you choose to have a grace period, items will not count against the [Maximum number of overdue items]({{< ref "../settings_users/settings_users/#settings--users--conditions" >}}) patron block and there will be no overdue fine until after the loan due date/time plus the grace period interval. If the grace period expires and the item has not been returned, the grace period will count towards calculating an overdue or lost item fee/fine. Adding a grace period to a due date follows the same logic that you chose for closed library due date management, if the grace period lands in a closed time for the service point.
 
 **Item limit.** Enter the maximum number of items that can be borrowed by one patron under this policy. Leave blank to have no item limit.
 
@@ -306,7 +306,7 @@ If you select **Rolling**, you see the following fields:
 * If an item’s loaned interval is in **days**, **weeks**, or **months**, the due date will follow the choice given in the loan policy *only* in the case that the service point is completely closed on the day that the item would be due. When the loan is created, FOLIO will check the service point calendar; if the service point is open for any time on the day that the item is due, FOLIO will set the due time to 11:59 PM on that day.
 
 
-**Grace period.** Enter a grace period for overdue items. If you choose to have a grace period, items will not count against the [Maximum number of overdue items]({{< ref "settings_users/#settings--users--conditions" >}}) patron block and there will be no overdue fine until after the loan due date/time plus the grace period interval.  If the grace period expires and the item has not been returned, the grace period will count towards calculating an overdue or lost item fee/fine. Adding a grace period to a due date follows the same logic that you chose for closed library due date management if the grace period lands in a closed time for the service point.
+**Grace period.** Enter a grace period for overdue items. If you choose to have a grace period, items will not count against the [Maximum number of overdue items]({{< ref "../settings_users/settings_users/#settings--users--conditions" >}}) patron block and there will be no overdue fine until after the loan due date/time plus the grace period interval.  If the grace period expires and the item has not been returned, the grace period will count towards calculating an overdue or lost item fee/fine. Adding a grace period to a due date follows the same logic that you chose for closed library due date management if the grace period lands in a closed time for the service point.
 
 **Item limit.** Enter the maximum number of items that can be borrowed by one patron under this policy. Leave blank to have no item limit.
 
@@ -403,7 +403,7 @@ Click **Add reminder fee** to set up a reminder fee schedule:
 2. Enter **Fee** amount.
 3. Choose a **Notice method**. **Email** will send an email to the address in the user record. Printed reminder fee notices are not available.
 4. Select a fee/fine **Notice template**.
-5. **Block template** functionality is not yet available. Block templates are set up in [Settings > Users > Patron blocks > Templates]({{< ref "/settings_users/#settings--users--patron-block-templates.md" >}}).
+5. **Block template** functionality is not yet available. Block templates are set up in [Settings > Users > Patron blocks > Templates]({{< ref "../settings_users/settings_users/#settings--users--patron-block-templates.md" >}}).
 
 
 ### Duplicating an overdue fine policy
