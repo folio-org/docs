@@ -106,7 +106,7 @@ In the **Search & filter** pane, click **Request** and select any applicable fil
 * **Pickup expired.** Include [pickup expired request actions]({{< ref "requests#request-types-and-statuses" >}}).
 * **Expired.** Include [expired request actions]({{< ref "requests#request-types-and-statuses" >}}).
 * **Moved.** Include requests that were [moved from one item to another.]({{< ref "requests#moving-an-item-level-request-to-another-item-on-the-same-instance" >}}).
-* **Queue position reordered.** Include [requests that were moved up or down in the request queue] ({{< ref "requests#reordering-the-request-queue-for-an-item >}}).
+* **Queue position reordered.** Include [requests that were moved up or down in the request queue] ({{< ref "requests#reordering-the-request-queue-for-an-item" >}}).
 
 
 ### Columns in the circulation log
