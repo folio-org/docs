@@ -3,7 +3,7 @@ title: "Settings > Users"
 linkTitle: "Users"
 date: 2023-05-01   
 weight: 220
-tags: ["subtopic"]   
+tags: ["subtopic"]
 ---
 
 The Users section in the Settings app provides configuration options for managing user records, including user information, patron blocks, fee/fine processing, permissions, and service points.
@@ -12,7 +12,7 @@ The Users section in the Settings app provides configuration options for managin
 
 The following are all the permissions for Users in the Settings app:
 
--   **Settings (Users): Can create, edit and remove address types.** 
+-   **Settings (Users): Can create, edit and remove address types.**
 -   **Settings (Users): Can create, edit and remove all feefines-related entries.**
 -   **Settings (Users): Can create, edit and remove comments.**
 -   **Settings (Users): Can create, edit and remove feefines.**
@@ -45,11 +45,11 @@ For more information about permissions, see [Platform Essentials > Permissions](
 ### Create a permission set
 
 1.  In the **Permission sets** pane, click **New**.
-2.  To name the permissions set, enter a **Permission set name**. The system does not automatically enforce uniqueness in naming permission sets. To avoid creating permission sets with duplicate display names, make sure this new permission set has a unique name. 
+2.  To name the permissions set, enter a **Permission set name**. The system does not automatically enforce uniqueness in naming permission sets. To avoid creating permission sets with duplicate display names, make sure this new permission set has a unique name.
 3.  Optional: Enter a **Description** of the permission set.
-4.  Under **Assigned permissions**, click **Add permission**. You can assign individual permissions or existing permission sets to the new permission set. 
-5.  In the **Select Permissions** modal, search and filter by **Permission type** and/or **Permission assignment status** or type in the name of the permission or permission set into the search box. 
-6. Select the permission(s) or permission set(s) to assign to the new permission set. 
+4.  Under **Assigned permissions**, click **Add permission**. You can assign individual permissions or existing permission sets to the new permission set.
+5.  In the **Select Permissions** modal, search and filter by **Permission type** and/or **Permission assignment status** or type in the name of the permission or permission set into the search box.
+6. Select the permission(s) or permission set(s) to assign to the new permission set.
 7.  Click **Save & close**. The permission(s) or permission set(s) are added to the new permission set.
 8.  Click **Save & close**. The new permission set is saved.
 
@@ -58,7 +58,7 @@ For more information about permissions, see [Platform Essentials > Permissions](
 1.  In the **Permission Sets** pane, find the permission set you want to edit and select it.
 2.  Click **Edit**.
 3.  Make your desired changes to the permission set.
-4.  Click **Save & Close**. 
+4.  Click **Save & Close**.
 
 ### Delete a permission set
 
@@ -77,30 +77,28 @@ Only one patron group can be assigned to a user record. Patron groups are also u
 
 ### Create a patron group
 
-1.  In the Settings app, select **Users \> Patron groups**. 
+1.  In the **Settings app**, select **Users \> Patron groups**.
 2.  In the **Patron groups** pane, click **New**.
 3.  Enter a name for the **Patron group** in the box. Patron group names must be unique and should not contain any punctuation.
 4.  (Optional): Enter a **Description** of the patron group.
-5.  (Optional): Enter a number in the **Expiration date offset (days)** box. This number represents the number of days of active status for user records assigned to the patron group.  
-6.  Click **Save**. The **Patron group** is saved.
+5.  (Optional): Enter a number in the **Expiration date offset (days)** box. This number represents
+     the number of days of active status for user records assigned to the patron group.
+6.  Click **Save**. The patron group is saved.
 
 ### Edit a patron group
 
-1.  In the Settings app, select **Users \> Patron groups**.
-2.  In the **Patron groups** pane, find the **Patron group** you want to edit and click the **pencil icon** in the **actions** column. 
-3.  Make your changes to the **Patron group**, **Description**, or **Expiration offset date (days)**. 
-4.  Click **Save**. The changes to the **Patron group** are saved.
+1.  In the **Settings app**, select **Users \> Patron groups**.
+2.  In the **Patron groups** pane, find the **Patron group** you want to edit and click the **pencil icon** in the **actions** column.
+3.  Make your changes to the **Patron group**, **Description**, or **Expiration offset date (days)**.
+4.  Click **Save**. The changes to the patron group are saved.
 
 ### Delete a patron group
 
 A patron group can be deleted only if it is no longer applied to any user records. To delete a patron group, you must first check that no users are currently assigned to that group.
 
-To see the number of user records assigned to a patron group: 
+To see the number of user records assigned to a patron group, complete the following:
 
--   In the Users app, in the **User search** pane, select the checkbox next to the appropriate Patron group. 
--   The list of user records assigned to that patron group appears in the **User search results** pane. 
--   The number of records found displays at the top of the pane. 
--   If *0 records found* appears, the patron group can be deleted. 
+-   In the **Users app**, in the **User search** pane, select the checkbox next to the appropriate Patron group. The list of user records assigned to that patron group appears in the **User search results** pane. The number of records found displays at the top of the pane. If *0 records found* appears, the Patron group can be deleted.
 
 To delete a patron group, follow these steps:
 
@@ -124,26 +122,25 @@ Note: Address types should be configured before bulk loading of patrons occurs i
 
 ### Edit an address type
 
-1.  In the Settings app, select **Users \> Address Types**. 
-2.  In the **Address Types** pane, find the **Address Type** you want to edit and click the **pencil  
-     icon** in the **Actions** menu. 
+1.  In the **Settings app**, select **Users \> Address Types**.
+2.  In the **Address Types** pane, find the Address Type you want to edit and click the **pencil
+     icon** in the **actions** menu.
 3.  Make your changes to the **Address Type** or **Description**.
 4.  Click **Save**. The **Address Type** is saved.
 
 ### Delete an address type
 
-An address type can be deleted only if it is not assigned to any user records. To delete an **Address Type**, you should first check that no user records are assigned the address type. 
+An address type can be deleted only if it is not assigned to any user records. To delete an **Address Type**, you should first check to make sure no user records are assigned the address type.
 
-To see the number of user records assigned to an address type:
+To see the number of user records assigned to an **Address Type**:
+In Settings \> Users \> Address Types, the number of user records assigned to an Address Type will display in the **# of Addresses** column. If a *-* is displayed, the address type can be deleted.
 
 - In **Settings \> Users \> Address Types**, the number of user records assigned to an **Address Type** will display in the **# of Addresses** column. 
 - If a *-* is displayed, no user records are assigned this address type and the address type can be deleted. 
 
-To delete an address type:
-
-In the Settings app, select **Users \> Address Types**.  
-In the **Address Types** pane, find the address type you want to delete and click the **trash can icon** in the **Actions** column.
-In the **Delete Address Type** dialog, click on the **Delete** button. A confirmation message appears and the address type is deleted.
+In the **Settings app**, select **Users \> Address Types**.
+In the **Address Types** pane, find the Address Type you want to delete and click the **trash can icon** in the **actions** column.
+In the **Delete Address Type** dialog, click on the **Delete** button. A confirmation message appears and the **Address Type** is deleted.
 
 ## Settings \> Users \> Departments
 
@@ -151,7 +148,7 @@ Use this setting to configure departments. Departments can be added in the [Exte
 
 ### Create a department
 
-1. In the Settings app, select **Users \> Departments**. 
+1. In the **Settings app**, select **Users \> Department**.
 2. In the **Departments** pane, click **New**.
 3.  Enter a **Name** for the department in the box.
 4.  Enter a department **Code** in the box.
@@ -159,15 +156,15 @@ Use this setting to configure departments. Departments can be added in the [Exte
 
 ### Edit a department
 
-In the Settings app, select **Users \> Departments**. 
+In the **Settings app**, select **Users \> Department**.
 In the **Departments** pane, find the department you want to edit and click the **pencil icon** in the **actions** column.
 Make your changes to the **Name** or **Code**.
 Click **Save**. The department is updated.
 
 ### Delete a department
 
- In the Settings app, select **Users \> Departments**.  
-In the **Departments** pane, find the department you want to delete and click the **trash can icon** in the **Actions** column.
+In the **Settings app**, select **Users \> Department**.
+In the **Departments** pane, find the department you want to delete and click the **trash can icon** in the **actions** column.
 In the **Delete Department** dialog, click **Delete**. A confirmation message appears and the department is deleted.
 
 ## Settings \> Users \> Custom fields
@@ -176,14 +173,12 @@ Use this setting to configure custom fields. Custom fields are used to track add
 
 ### Create a custom field
 
-1.  In the Settings app, select **Users /> Custom fields**.
-2. In the **Custom fields** pane, click **New**.
-3. In the **Edit custom fields** pane, enter the name of the user record section for the custom field(s) in the **Accordion title** box. 
-4. Click **Add custom field** and select the type of field you want to create: **Checkbox**, **Multi-select**, **Radio button set**, **Single select**, **Text area**, or **Text field**.
-5. Configure the custom field by checking the box next to **Hidden** and/or **Required*. Add a name for the field in the **Field label** box. Optional: Add text to appear under the information icon in the **Help text** box.
-6. In the **Options** section, add a name for the label in the **Option label** box. Select the radio button in the **Default** column to set up the default label. Click the **Add option** button to add the option(s). 
-7. Optional: To add additional custom fields, click the **Add custom field** button and repeat steps 2-6.
-8. Click **Save & close**. The custom field(s) is/are saved.
+1.  In the **Custom fields** pane, click **New**.
+2.  In the **Edit custom fields** pane, in the **Accordion title** box, enter the name of the user record section for the custom field(s).
+3.  Click **Add custom field** and select the type of field you want to create: **Checkbox**, **Multi-select**, **Radio button set**, **Single select**, **Text area**, or **Text field**.
+4.  Configure the custom field by checking the box next to **Hidden** and/or **Required*. Add a name for the field in the **Field name** box.
+5.  Optional: To add additional custom fields, repeat steps 3-4.
+6.  Click **Save & close**. The custom field(s) are saved.
 
 ### Edit a custom field
 
@@ -198,12 +193,12 @@ Note: Custom fields can be deleted if they are in use, but any information tied 
 1.  In the **Custom fields** pane, click **Edit**.
 2.  In the **Edit custom fields** pane, click the **trash can icon** next to the custom fields you want to delete. Clear out all of the fields to remove the accordion from appearing in user records.
 3.  Click **Save & close**.
-4.  In the **Delete field data** dialog, click **Save & lose data**. 
+4.  In the **Delete field data** dialog, click **Save & lose data**.
 
 ## Settings \> Users \> Owners
  A Fee/fine owner is the agent or office that manages fines for FOLIO transactions. Fee/fine owners collect fees/fines for FOLIO service points.
 
-Libraries may use owners in different ways, such as creating a fee/fine owner for each service point, or creating a fee/fine owner for each library's accounting office, that may collect fee/fines for multiple service points. 
+Libraries may use owners in different ways, such as creating a fee/fine owner for each service point, or creating a fee/fine owner for each library's accounting office, that may collect fee/fines for multiple service points.
 
 If your library intends to charge any fines, it is important that *every service point* be assigned to a fee/fine owner, even if you do not expect fines to accrue for items associated with that service point. Ensuring that the service point is assigned to an owner will prevent unexpected errors.
 
@@ -214,13 +209,13 @@ When manually creating a fee/fine, Fee/fine owner is a required field.
 1.  In the **Fee/fine: Owners** pane, click **New**.
 2.  Enter a name for the **Owner** in the box.
 3.  Optional: Enter a **Description** about the owner.
-4.  Optional: Select the desired **Associated service points**. Note that while a fee/fine owner does not have to have associated service points, you will not be able to use the fee/fine owner in workflows unless it has service points associated with it. 
+4.  Optional: Select the desired **Associated service points**. Note that while a fee/fine owner does not have to have associated service points, you will not be able to use the fee/fine owner in workflows unless it has service points associated with it.
 5.  Click **Save**. The fee/fine owner is saved.
 
 ### Edit a fee/fine owner
 
-1.  In the **Fee/fine: Owners** pane, find the owner you want to edit and click the **pencil icon** in the **Actions** column. 
-2.  Make your changes to the **Owner**, **Description,** or **Associated service points**.
+1.  Find the owner you want to edit and click the **pencil icon** in the **actions** column.
+2.  Make your changes to the **Owner, Description,** or **Associated service points**.
 3.  Click **Save**. The owner is updated.
 
 ### Delete a fee/fine owner
@@ -230,7 +225,7 @@ When manually creating a fee/fine, Fee/fine owner is a required field.
 
 ## Settings \> Users \> Manual charges
 
-Use this setting to configure fee/fine types. For example, fee/fine types could be overdue fines, processing fees, or lost item fees. 
+Use this setting to configure fee/fine types. For example, fee/fine types could be overdue fines, processing fees, or lost item fees.
 
 When manually creating a fee/fine, **Fee/fine Type** is a required field.
 
@@ -258,9 +253,9 @@ When manually creating a fee/fine, **Fee/fine Type** is a required field.
 
 ## Settings \> Users \> Waive reasons
 
-Use this setting to configure **Fee/fine: Waive reasons**. 
+Use this setting to configure **Fee/fine: Waive reasons**.
 
-### Create a waive reason
+### Creating a waive reason
 
 1.  In the **Fee/fine: Waive reasons** pane, click **New**.
 2.  Enter a name for the **Reason** in the box.
@@ -367,7 +362,7 @@ Use this setting to configure available transfer accounts. Transfer accounts are
 
 ## Settings \> Users \> Transfer criteria
 
-Use this setting to configure the criteria for transferring accounts. For more information about transfer accounts, see [Settings \> Users \> Transfer accounts](#settings–users–transfer-accounts).
+The **Transfer Criteria** section contains many sections to allow for a wide variety of criteria to be configured. Use this information to configure the criteria for transferring accounts. For more information about transfer accounts, see [Settings \> Users \> Transfer accounts](#settings--users--transfer-accounts).
 
 ### Create transfer criteria
 
@@ -378,7 +373,212 @@ Select the transfer owner from the **Transfer owner** drop-down list.
 Select a transfer account from the **Transfer account** drop-down list.
 Select the **Fee/fine owner**.
 Add **Transfer type**, **Transfer description**, and **Transfer code** to each **Fee/fine type**.
-Click **Save** to save the transfer criteria or click **Run manually** to run a report. 
+Click **Save** to save the transfer criteria or click **Run manually** to run a report.
+
+### Scheduling
+
+The **Scheduling** dropdown allows you to configure the frequency of the transfer process. If you want to run the transfer manually, you can skip this section.
+
+The following options and suboptions are available:
+- Never (run manually)
+- Hours
+     - Hours between runs
+- Days
+     - Days between runs
+     - Run at
+- Weeks
+     - Weeks between runs
+     - Run at
+     - Run on weekdays
+
+Example:
+
+To set the schedule to occur twice a week on Monday and Thursday at 12:00am CDT, you would configure the following options:
+
+1.   Set the "Frequency" option to "Weeks".
+2.   Set the "Weeks between runs" option to "0".
+3.   Set the "Run at" option to "12:00 AM".
+4.   Set the "Run on weekdays" to the options "Monday" and "Thursday".
+
+### Criteria
+
+The **Criteria** section allows you to configure the criteria for the transfer process.
+
+The following options are available to configure the criteria:
+- No criteria (always run)
+     - This option will always run the transfer process when the schedule is met.
+- All of
+    - This option will run the transfer process when all the criteria is met.
+- Any of
+    - This option will run the transfer process when any one or more of the criteria are met.
+- None of
+    - This option will run the transfer process when none of the criteria is met.
+
+The following are options for the criteria:
+- Age
+- Amount
+- Fee/fine owner
+- Fee/fine type
+- Item location
+- Item service point
+- Patron group
+
+Example:
+
+To set the criteria to run the transfer process for all fees/fines that are older than 30 days, you would configure the following options:
+
+1.   Set the "Criteria" option to "All of".
+2.   Click on the "+" button on the top right corner to add a criteria.
+3.   Set the criteria to "Age".
+4.   Set the "Comparison operator" to "Greater than but not equal to"
+5.   Set the "Number of days old" option to "30".
+
+### Aggregate by patron
+
+The **Aggregate by patron** section is used to enable/disable aggregating data by patron. This is useful if you want to generate a file that aggregate all the data by each patron and list them, so each row would represent data of one patron instead of one fee/fine. If you do not want to aggregate by patron, make sure the **Group by patron** box is unchecked.
+
+Note: If **Group by patron** box is unchecked, then the body format, in between the **Header format** and **Footer format**, will be called **Account data format**. If **Group by patron** box is checked, then the body format will be called **Patron data format**.
+
+If you want to aggregate by patron, check the box and you can configure the aggregate criteria, which include the following options:
+- None (include all patrons)
+- Number of accounts
+- Total amount
+
+For both number of accounts and total amount, you need to set a comparison operator and a number of accounts or total amount. The following comparison operators are available:
+
+- Less than but not equal to
+- Less than or equal to
+- Greater than but not equal to
+- Greater than or equal to
+
+Example:
+
+To set the criteria to run the transfer process for all patrons that have a total amount greater than or equal to $100, you would configure the following options:
+
+1.   Check the "Group by patron" box.
+2.   Select the "Filter type" to be "Total amount".
+3.   Select the "Comparison operator" to be "Greater than or equal to".
+4.   Enter "100" in the "Total amount" box.
+
+### Format sections
+
+The sections **Header format**, **Account data format/Patron data format** and **Footer format** allow you to configure the format of the file that is generated by the transfer process. The format is configured using a series of blocks, in a column based structure. Each block can be configured to contain a fixed value or a variable. The variable will be replaced with the actual value when the file is generated.
+
+You need to configure all data you want to include in the file, including whitespace and delimiters. If you do not want to include a section, you can leave it blank.
+
+The following tokens are available for all sections:
+- Newline (LF)
+- Newline (Microsoft, CRLF)
+- Tab
+- Comma
+- Whitespace
+    - Number of spaces
+- Text
+     - Text to include
+- Current Date
+     - Format
+          - There are several options for the format of the date(eg. ISO Day, American Date, etc.)
+     - Timezone
+          - There are several options for the timezone(eg. American/Chicago, etc.)
+
+The following tokens are available in the **Header** and **Footer** sections only:
+- Number of Accounts
+- Total Amount
+     - Has a checkbox to include decimal point checkbox.
+
+The following tokens are available in the **Account data format/Patron data format** section only:
+- Account amount
+- Account date
+- Fee/fine type
+- User info
+- Item info
+
+For certain tokens, there is a gear icon to configure the format of the value. The following options are available:
+- Desired length
+     - You can enter an integer for the desired length.
+- Fill extra spaces with
+     - You can enter a character to fill extra spaces with (eg. 0, " ", etc.).
+- Add characters to
+     - You can select to add characters to the beginning or end of the value.
+- Truncate if too long
+     - You can select to truncate the value if it is longer than the desired length.
+
+**Example**:
+
+Here is what an example header structure would look like with variables:
+
+```
+$$$LIB{day_of_year}{current_date}Library B&F    YBR{row_count}{fee_fee_total}{year}{quarter}
+```
+
+Here is what the header would look like with the variables replaced with actual values and the date is 02/01/2021:
+
+```
+$$$LIB3202012023Library B&F    YBR000170000097195020231
+```
+
+Note: Some values have been padded with zeros to ensure the correct number of characters. This must be specified in the format and is detailed below.
+
+To configure this header in the transfer criteria, you would add the following elements:
+
+1.   Arbitrary Text
+     -  Value: "$$$LIB"
+2.   Current date
+     - Format: ISO Day
+     - Timezone: American/Chicago
+3.   Current date
+     - Format: American Date
+     - Timezone: American/Chicago
+4.   Arbitrary Text
+     - Value: "Library B&F"
+5.   Tab
+6.   Text
+     - Value: "YBR"
+7.   Number of accounts
+     - In the Gear settings:
+          - Desired length: 5
+          - Fill extra spaces with: 0
+          - Add characters to: Start
+          - Truncate if too long: Checked
+8.   Total amount
+     - Include the decimal point: Checked
+     - In the Gear settings:
+          - Desired length: 11
+          - Fill extra spaces with: 0
+          - Add characters to: Start
+          - Truncate if too long: Checked
+9.   Current date
+     - Format: Year
+     - Timezone: American/Chicago
+10.  Current date
+     - Format: Quarter
+     - Timezone: American/Chicago
+
+### Preview
+
+The preview pane displays a preview of the header, account data and footer based on the criteria you have configured. You can use this preview to verify that the criteria you have configured is correct, before saving or running.
+
+There are two checkboxes in the preview pane to configure how the preview is displayed:
+- Wrap long lines
+- Display invisible characters (newlines, tabs, and spaces)
+
+### Transfer accounts
+
+Here, you can specify where the transfer accounts will be sent. In addition, you can configure any conditional statements regarding the transfer accounts.
+
+To configure the **Transfer to** section, you will need to select options for the two dropdowns:
+- Fee/fine owner
+     - The fee/fine owner that the transfer accounts will be sent to.
+- Transfer account
+     - The transfer account that the transfer accounts will be sent to.
+
+Optionally, you can configure multiple conditional statements for the transfer accounts. To configure a conditional statement, you have to click **Add condition**, then in the same way as the [**Criteria**](#criteria) section, you will configure your critera. After that, you can configure the **Transfer to** section for the conditional statement.
+
+### Running the transfer
+
+To run the transfer now without saving, click the "Run manually" button.
+
+To save the criteria and run the transfer on the desired schedule, click the "Save" button.
 
 ## Settings \> Users \> Conditions
 
@@ -424,7 +624,7 @@ These are all the categories for which you can set conditions and limits:
 
 Libraries can choose to create templates for use with patron blocks that staff can apply to user records. This allows libraries to have more consistent patron messaging, and can improve reporting.
 
-Patron block templates are created in **Settings \> Users \> Templates**. 
+Patron block templates are created in **Settings \> Users \> Templates**.
 
 ### Create patron block template
 1. In the **Patron block templates** pane, select **New** in the top right corner. A **New patron block template** window will open.
