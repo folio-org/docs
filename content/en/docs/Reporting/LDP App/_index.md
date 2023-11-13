@@ -1,8 +1,8 @@
 ---
 title: "LDP App"
 linkTitle: "LDP App"
-date: 2022-04-29
-weight: 40
+date: 2023-10-25
+weight: 20
 tags: ["parenttopic"]
 ---
 
@@ -22,13 +22,13 @@ The following are all the LDP app permissions:
 * **Settings (LDP): Can select which tables are available to search**
 
 ### Schema
-Think of schema as the “buckets” in which data tables live. The schema drop-down menu allows you to select one schema at a time to use in your query. Three schemas are available: public, folio_reporting, and local. For a fuller explanation of schemas and examples of some defaults included see [Library Data Platform - Using schemas](../library-data-platform/#using-schemas).
+Think of schema as the “buckets” in which data tables live. The schema drop-down menu allows you to select one schema at a time to use in your query. Three schemas are available: public, folio_reporting, and local. For a fuller explanation of schemas and examples of some defaults included see [Library Data Platform - Using schemas](../ldp1-metadb/#using-schemas).
 
 ### Table
 The **Table** drop-down menu allows you to select a data table from the schema you have selected to use in your query. Tables are where related data lives. Tables belong to a specific schema. With the schema and table selected, the other fields will unlock and update based on the selection.
 
 ## Filter by column
-The **Filter by column** drop-down menu allows you to refine your results by selecting a column and applying constraints. You can create multiple filters using the Add Filter button. When you use multiple filters, results are generated using the AND operator. Once you select a column to filter on, you may select equality and inequality operations in combination with a numeric value (e.g., a date or a count), TRUE, or FALSE. Operators include:
+The **Filter by column** drop-down menu allows you to refine your results by selecting a column and applying constraints. You can create multiple filters using the Add Filter button. When you use multiple filters, results are generated using the AND operator. Once you select a column to filter on, you may select equality and inequality operations in combination with a numeric value (e.g., a date or a count), TRUE, or FALSE. Operators include: 
 * **equal to (=)
 * **not equal to (<>)
 * **less than (<)
@@ -62,25 +62,4 @@ The Save icon at the top right of the Query builder allows you to save a query o
 ### Saved queries
 The **Saved queries** section of the LDP app lists queries that have been saved by LDP app users by clicking the Save icon in the **Query builder** section of the LDP app. Anyone with access to the LDP app may click and run the queries in the Saved queries list. Queries may be removed from this list by clicking the trash can icon next to the individual query on the right end of the list.
 
-## What can be changed in the Settings app
-You can use the Settings app to configure global settings for the LDP app. To get to LDP settings, choose Settings from the Apps menu, then choose LDP.
 
-### Record limits
-The **Record limits** setting allows you to set the default and maximum numbers of records to show in a user’s query results. You may also restrict the number of records a user can export using the **Maximum number to export** setting.
-* Default number to show
-* Maximum number to show
-* Maximum number of export
-### Table availability
-The **Table availability** setting
-* Shows the schema and tables in the connected database and allows tables to be “turned off” from being able to query against them so that users cannot include them in queries. This is useful for tables that may contain restricted data, such as PII (Personally Identifiable Information).
-
-{{% alert title="Currently recommended to disable" color="info"%}}
-It is currently recommended to disable tables: srs_marc, srs_marctab, srs_records.
-Currently the app does not support indexing of certain columns. Keeping them enabled can cause performance issues and extra stress on the database.
-{{% /alert %}}
-
-### Database configuration
-The **Configure database connection URL & credentials** setting is used to set the connection from the FOLIO application instance to the LDP reporting database instance. This is also used to set the username and password to be used by the LDP app to query the LDP reporting database.
-
-### Saved queries configuration (experimental feature)
-The **Saved queries configuration** setting allows you to configure a GitHub repository location for the queries that users save when they use the Save icon to save queries they have built using the Query builder. The GitHub repository owner, name, branch and OAuth token for access to the repository must be specified here.
