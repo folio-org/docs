@@ -6,7 +6,7 @@ description: >
 tags: ["subtopic"]
 ---
 
-<table style="border: 2px solid black"><tr><td><strong> This section of the documentation contains links to external sites. Please be advised that these sites are not maintained by the FOLIO Documentation Group and may not be aligned with the current release of FOLIO.</strong></td></tr></table>
+**This section of the documentation contains links to external sites. Please be advised that these sites are not maintained by the FOLIO Documentation Group and may be aligned with a different FOLIO release.**
 
 Library staff manage patron loans in FOLIO through three primary apps - Check in, Check out, and Users. Staff also can view information about loans in the Circulation log and Inventory apps.
 
