@@ -78,10 +78,10 @@ A fiscal year is the twelve-month period your library uses for accounting and bu
 
 
 *   **Name (required).** The name of the fiscal year. A suggested naming convention is the term “Fiscal Year” followed by the numeric year. For example, Fiscal Year 2021.
-*   **Code (required).** The code must be an alpha followed by a four-digit number. It can be based on name and year. For example, FY2021.
+*   **Code (required).** The code must be an alpha followed by a four-digit number. It can be based on name and year; for example, FY2021. The code that you establish for your fiscal year one will determine the code structure moving forward. In this example, FY2021 would be followed in succession by FY2022, FY2023, etc. Adherence to this code structure is essential to the success of fiscal year rollover. A single FOLIO tenant may have multiple fiscal years running in parallel. For example, an academic library with a July 1 - June 30 fiscal year may share a tenant with a government library operating on an October 1 - September 30 fiscal year. The academic library may configure FYA2021 with the government library configuring FYG2021 to allow rollover at different points in the calendar year.
 *   **Acquisition units.** If you only want particular users within certain acquisition units to be able to edit the fiscal year, enter or select the Acquisition units from the drop-down list. You can select multiple units. If blank, any users with the appropriate permissions are allowed to edit the fiscal year information. For more information, see [Settings > Acquisition units]({{< ref "/settings_acquisition_units.md" >}})
-*   **Period Begin Date (required).** The date when the fiscal year begins.
-*   **Period End Date (required).** The date when the fiscal year ends.
+*   **Period Begin Date (UTC) (required).** The date when the fiscal year begins.
+*   **Period End Date (UTC) (required).** The date when the fiscal year ends.
 *   **Description.** A description of the fiscal year.
 Note about Currency:  The currency value does not display on the Fiscal year detail pane after creation, but the system does associate a currency with the Fiscal year based on the currency value from [Settings > Tenant > Language and localization]({{< ref "/settings_tenant.md#settings--tenant--language-and-localization" >}}). See [Viewing fund details > Fund information](#viewing-fund-details) for a description of expected system behavior for budget transaction when the Tenant currency value is changed.
 
@@ -137,7 +137,7 @@ Groups categorize funds and bring multiple funds together as a single group rega
 
 ## Creating a fund
 
-Funds show information regarding an ongoing ledger with a budget for the current fiscal year. There can be many funds in a ledger and many funds can be placed in a group.
+Funds show information regarding an ongoing ledger with a budget for the current fiscal year. There can be many funds in a ledger, but each fund may only be associated with a single ledger. Many funds can be placed in a group and a fund can be assigned to multiple groups.
 
 
 
@@ -152,21 +152,21 @@ Funds show information regarding an ongoing ledger with a budget for the current
 
 
 *   **Name (required).** Name of the fund.
-*   **Code (required).** User-created, based on name.
-*   **Ledger (required).** Select the ledger associated with the fund.
+*   **Code (required).** User-created, based on name. The code must be unique. It is recommended to use alphanumeric and intuitive codes.
+*   **Ledger (required).** Select the ledger associated with the fund. A fund may only be associated with a single ledger.
 *   **Status (required).** Select the status of the fund: Active, Frozen, or Inactive. Active means the fund is ongoing, Frozen means the fund has been put on pause, and Inactive means the fund is no longer in use. Note: The fund must be active to successfully open an order or for an invoice to be fully paid.
-*   **Type.** A category to describe the fund. Fiscal year rollover of funds is often defined by fund type, so definition of the type values should consider fiscal year rollover requirements. For example, endowment, or restricted. For more information about creating fund types, see [Settings > Finance > Fund types]({{< ref "/settings_finance.md#settings--finance--fund-types" >}}).
-*   **Acquisition units.** If you only want particular users within certain acquisition units to be able to edit the fund, enter or select the Acquisition units from the drop-down list. You can select multiple units. If blank, any users with the appropriate permissions are allowed to edit the fund's information. For more information, see [Settings > Acquisition units]({{< ref "/settings_acquisition_units.md" >}}).
+*   **Type.** A category to describe the fund. Fiscal year rollover of funds is often defined by fund type, so definition of the type values should consider fiscal year rollover requirements. For example, endowment, or restricted. For more information about creating fund types, see [Settings > Finance > Fund types]({{< ref "/settings_finance.md#settings--finance--fund-types" >}}). Funds that are not assigned a fund type will be grouped under **No fund type** at fiscal year rollover.
+*   **Acquisition units.** If you only want particular users within certain acquisition units to be able to edit the fund, enter or select the Acquisition units from the drop-down list. You can select multiple units. If blank, any users with the appropriate permissions are allowed to edit the fund's information. For more information, see [Settings > Acquisition units]({{< ref "/settings_acquisition_units.md" >}}). PLease note: if the assigned acquisition unit restricts view, the fund will be filtered out of the selection list that appears in **Fund distribution** accordions on purchase order lines and invoices. Users will only be able to apply funds that are "public" or with which they share an acquisition unit.
 *   **Group.** To associate this fund with a group, select the group from the drop-down list.  You can assign multiple groups. See [Creating a group](#creating-a-group) for more information. 
 *   **Transfer from.** To allow transfers to this fund from any other fund, leave this field blank. To restrict transfers to this fund, enter or select the allowed funds from the drop-down list. You can select multiple funds.
 *   **Transfer to.** To allow transfers from this fund to any other fund, leave this field blank. To restrict transfers from this fund, enter or select the allowed funds from the drop-down list. You can select multiple funds.
-*   **External account (required).** The identifier for this account in an external financial system.
+*   **External account (required).** The identifier for this account in an external financial system. If no integration with a financial system is desired, a library may use a hyphen (-) or other special character to satisfy the field requirement.
 *   **Description.** A description of the fund. For example, you may want to include the purpose of the fund.
 
 
 #### Creating a new budget
 
-A budget is a finance record that describes the amount of money available for a fiscal year within a fund. You can create a current or planned budget for a fund from the fund details pane. To create a planned budget, one or more upcoming fiscal years must already be set up in the fiscal year series associated with the Ledger.  See  [Creating a fiscal year](#creating-a-fiscal-year) for more information.
+A budget is a finance record that describes the amount of money available for a fiscal year within a fund. You can create a current or planned budget for a fund from the fund details pane. To create a planned budget, one or more upcoming fiscal years must already be set up in the fiscal year series associated with the Ledger.  See  [Creating a fiscal year](#creating-a-fiscal-year) for more information. Previous budgets for past fiscal years will also appear on the fund details pane.
 
 
 
@@ -192,10 +192,12 @@ A budget is a finance record that describes the amount of money available for a 
 
 
 1. [Find the fund](#searching-for-a-fiscal-year-ledger-group-or-fund) to which you want to add an expense class and select it.
-2. In the **Budget details** window, click **Actions > Edit**.
-3. In the **Expense classes** section, click **Add expense class**.
-4. Select an expense class from the drop-down list. See [Settings > Finance > Expense classes]({{< ref "/settings_finance.md#settings--finance--expense-classes" >}}) for more information about creating expense classes.
-5. Click **Save & close**. A confirmation message appears and the expense class is saved.
+2. Click on the budget to access the **Budget details** window.
+3. In the **Budget details** window, click **Actions > Edit**.
+4. In the **Expense classes** section, click **Add expense class**.
+5. Select an expense class from the drop-down list. See [Settings > Finance > Expense classes]({{< ref "/settings_finance.md#settings--finance--expense-classes" >}}) for more information about creating expense classes.
+6. Repeat steps 4 & 5 for all expense classes you wish to add.
+7. Click **Save & close**. A confirmation message appears and the expense class is saved.
 
 
 
@@ -205,9 +207,10 @@ You can search for fiscal years, ledgers, groups, or funds by clicking on either
 
 
 
-*   **All.** Searches through all fields in the drop-down list. This is the default search.
+*   **All.** Searches through names, codes, and descriptions. For funds, this will also search the external account field. This is the default search.
 *   **Name.** The name of the fiscal year, ledger, group, or fund.
 *   **Code.** A unique identifier for the fiscal year, ledger, group, or fund.
+*   **External account number.** The identifier for this account in an external financial system. Appears only on the fund pane. 
 
 You can also search for fiscal year, ledger, group, or fund by selecting any of the filters in the **Search & filter** pane when in the appropriate Finance pane. The filters available vary depending on whether you are searching for a fiscal year, ledger, group, or fund.  The following instructions are for searches in the **Fund** tab.
 
@@ -250,7 +253,7 @@ To search for funds assigned to a group, follow these steps:
 
 
 1. In the **Search & filter** pane, click **Group**.
-2. Select the group from the drop-down list. The funds are listed in the result pane..
+2. Select the group from the drop-down list. The funds are listed in the result pane.
 
 
 ### Acquisition units
@@ -277,10 +280,10 @@ The type of information displayed in your search results depends upon the type o
 
 
 
-*   **Name.** The name of the fiscal year, ledger, group, fund, or budget record.
-*   **Code.** A unique identifier for the fiscal year, ledger, group, fund, or budget record.
-*   **Description.** The purpose of the fiscal year, ledger, group, fund, or budget record.
-*   **Status.** Whether the ledger, group, fund, or budget record is Active, Inactive, or Frozen.
+*   **Name.** The name of the fiscal year, ledger, group, or fund record.
+*   **Code.** A unique identifier for the fiscal year, ledger, group, or fund record.
+*   **Description.** The purpose of the fiscal year record.
+*   **Status.** Whether the fund is Active, Inactive, or Frozen.
 *   **Ledger.** The ledger associated with the fund.
 
 In the search results, click any result to view it. The fiscal year, ledger, group, or fund details pane each display additional information, including financial summaries. Funds that have a budget for the fiscal year appear on the fiscal year details pane. Funds that have a budget for the current fiscal year appear on the ledger, or group details panes. Funds without any budgets created only appear in the fund search results pane.
@@ -327,7 +330,7 @@ This section displays a table containing summary financial information for all f
 *   **Unavailable.** The total amount unavailable across all fund budgets for the fiscal year, calculated as the sum of the encumbered, awaiting payment, and expended amounts.
 *   **Over encumbrance.** The total amount encumbered minus the total funding amount for all fund budgets for the fiscal year.
 *   **Over expended.** The total amount expended minus the total funding amount for all fund budgets for the fiscal year.
-*   **Available balance.** Total amount available across all fund budgets for the fiscal year, calculated as **Total funding** amount minus the **Unavailable** amount.  Note: In this version of FOLIO, negative available balances display as $0.  For example, if the allowed expenditure field for the budget is blank, then there are no restrictions on how much can be expended against the budget.  If transactions have processed that exceed the total funding amount by $100, then the amount in the Available balance will display as $0 rather than negative ($100).  Negative balance amounts will display in a future version of the system.
+*   **Available balance.** Total amount available across all fund budgets for the fiscal year, calculated as **Total funding** amount minus the **Unavailable** amount.  
 
 #### Ledger
 
@@ -375,8 +378,10 @@ The Ledger information section contains the following fields:
 *   **Name.** Name of the ledger.
 *   **Code.** Code for the ledger.
 *   **Current fiscal year.** The current fiscal year name. The system determines which fiscal year is current based on the current date and the period start and end dates for the fiscal year.
-*  **Status.** Status of the ledger: Active, Inactive, Frozen.
+*   **Status.** Status of the ledger: Active, Inactive, Frozen.
 *   **Acquisition units.** All acquisition units assigned to the ledger.
+*   **Enforce all budget encumbrance limits.** When checked, the system rejects any encumbrances against funds related to this ledger that would exceed the available amount of the current budget.
+*   **Enforce all budget expenditure limits.** When checked, the system rejects any expenditures against funds related to this ledger that would exceed the available amount of the current budget.
 *   **Description.** Description of the ledger.
 
 
@@ -402,7 +407,7 @@ The Ledger information section contains the following fields:
 *   **Unavailable.** The total amount unavailable across all fund budgets for the ledger during the current fiscal year, calculated as the sum of the encumbered, awaiting payment, and expended amounts.
 *   **Over encumbrance.** The total amount encumbered minus the total funding amount for all fund budgets for the ledger during the current fiscal year.
 *   **Over expended.**  The total amount expended minus the total funding amount for all fund budgets for the ledger during the current fiscal year.
-*   **Available balance.** Total amount available across all fund budgets for the ledger during the current fiscal year, calculated as **Total funding** amount minus the **Unavailable** amount.  Note: In this version of FOLIO, negative available balances display as $0.  For example, if the allowed expenditure field for the budget is blank, then there are no restrictions on how much can be expended against the budget.  If transactions have processed that exceed the total funding amount by $100, then the amount in the Available balance will display as $0 rather than negative ($100).  Negative balance amounts will display in a future version of the system.
+*   **Available balance.** Total amount available across all fund budgets for the ledger during the current fiscal year, calculated as **Total funding** amount minus the **Unavailable** amount.  
 
 
 #### Group
@@ -438,7 +443,7 @@ In the **Export settings** dialog, the following message will display: “This e
 
 Select the **Fiscal year** to export from the drop-down list.
 
-Select the *Expense classes** to export from the drop-down list: All, Active, Inactive, None.
+Select the **Expense classes** to export from the drop-down list: All, Active, Inactive, None.
 
 Click **Export**.  The file downloads to your local download location and contains the following fields:
 
@@ -525,7 +530,7 @@ The group details pane contains group financial summary information and lists al
 *   **Unavailable** Total amount unavailable across all fund budgets for the group during the fiscal year selected, calculated as the sum of the encumbered, awaiting payment, and expended amounts.
 *   **Over encumbrance.** The total amount encumbered minus the total funding amount for all fund budgets for the group during the current fiscal year.
 *   **Over expended.**  The total amount expended minus the total funding amount for all fund budgets for the group during the current fiscal year.
-*   **Available balance.** Total amount available across all fund budgets for the group during the fiscal year selected, calculated as **Total funding** amount minus the **Unavailable** amount.  Note: In this version of FOLIO, negative available balances display as zero.  For example, if the allowed expenditure field for the budget is blank, then there are no restrictions on how much can be expended against the budget.  If transactions exceed the total funding amount by $100, then the amount in the Available balance will display as zero rather than negative ($100).  Negative balance amounts will display in a future version of the system.
+*   **Available balance.** Total amount available across all fund budgets for the group during the fiscal year selected, calculated as **Total funding** amount minus the **Unavailable** amount.  
 
 
 #### Fund
@@ -535,7 +540,7 @@ This section lists all funds assigned to the group. To assign the group to a fun
 1. Click **Add to group** in the fund accordion section.
 2. In the **Select funds** dialog, find the fund or multiple funds using the search box and/or filters.
 3. Click the fund(s) to select. 
-4. Click Save.  The funds are added to the group.
+4. Click Save.  The funds are added to the group. The funds will display only if they have a budget allocated for the selected fiscal year.
 
 To remove a fund from the group, click on the **X** at the end of the fund row in the Fund accordion table list.
 
@@ -561,7 +566,7 @@ This section lists all expense classes associated with funds assigned to the gro
 
 ### Viewing fund details
 
-The fund details pane contains fund information and all current, planned, and previous budgets as well as expense classes associated with a fund. The budget sections in the pane display total allocated, unavailable, and available by fund and expense class. To view a list of transactions for the current budget of a fund, click **Actions > View transactions for current budget**. See [Viewing budget transactions](#viewing-transactions-for-a-current-budget) for more information.
+The fund details pane contains fund information and all current, planned, and previous budgets as well as expense classes associated with a fund. The budget sections in the pane display total allocated, net transfers, unavailable, and available for the budget. The expense class detail is further broken down by encumbered, awaiting payment, expnded, and percent of total expended. To view a list of transactions for the current budget of a fund, click **Actions > View transactions for current budget**. See [Viewing budget transactions](#viewing-transactions-for-a-current-budget) for more information.
 
 
 
