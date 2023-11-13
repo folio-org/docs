@@ -93,6 +93,5 @@ When exporting the combined fund and expense class codes for a selected fiscal y
 
 1. In the **Fiscal year** dropdown, select the fiscal year for which you wish to export information.
 
-2. The CSV file will download to your machine. It contains two columns: **Fund code** and	**Fund and active expense class codes**.
-
+2. The CSV file will download to your machine. It contains two columns: **Fund code** and **Fund and active expense class codes**.
 
