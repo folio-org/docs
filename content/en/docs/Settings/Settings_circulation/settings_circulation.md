@@ -401,9 +401,9 @@ Click **Add reminder fee** to set up a reminder fee schedule:
 
 1. Enter a number in **Interval** and choose the time interval in **Frequency** to determine how long after an item is overdue the fee is applied and the notice is sent.
 2. Enter **Fee** amount.
-3. Choose a **Notice method**. **Email** will send an email to the address in the user record.
+3. Choose a **Notice method**. **Email** will send an email to the address in the user record. Printed reminder fee notices are not available.
 4. Select a fee/fine **Notice template**.
-5. Select a **Block template** to determine if the user will be blocked from borrowing and/or renewing and/or requesting. Block templates are set up in [Settings > Users > Patron blocks > Templates]({{< ref "/settings_users/#settings--users--patron-block-templates.md" >}}).
+5. **Block template** functionality is not yet available. Block templates are set up in [Settings > Users > Patron blocks > Templates]({{< ref "/settings_users/#settings--users--patron-block-templates.md" >}}).
 
 
 ### Duplicating an overdue fine policy
