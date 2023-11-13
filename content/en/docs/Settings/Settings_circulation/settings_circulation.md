@@ -6,7 +6,7 @@ weight: 40
 tags: ["subtopic"]   
 ---
 
-<table style="border: 2px solid black"><tr><td><strong> This section of the documentation contains links to external sites. Please be advised that these sites are not maintained by the FOLIO Documentation Group and may not be aligned with the current release of FOLIO.</strong></td></tr></table>
+**This section of the documentation contains links to external sites. Please be advised that these sites are not maintained by the FOLIO Documentation Group and may be aligned with a different FOLIO release.**
 
 The Circulation section of the Settings app is where you establish your loan policies, lost item policies, overdue policies, notices, and other circulation configurations.
 
