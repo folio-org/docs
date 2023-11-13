@@ -6,7 +6,7 @@ weight: 30
 tags: ["parenttopic"]
 ---
 
-<table style="border: 2px solid black"><tr><td><strong>This section of the documentation contains links to external sites. Please be advised that these sites are not maintained by the FOLIO Documentation Group and may not be aligned with the current release of FOLIO.</strong></td></tr></table>
+**This section of the documentation contains links to external sites. Please be advised that these sites are not maintained by the FOLIO Documentation Group and may be aligned with a different FOLIO release.**
 
 The Inventory app allows you to manage your collections (physical and/or virtual). Inventory stores bibliographic, holdings, and item data in the form of Instance, Holdings, and Item records. Instance records may be created within FOLIO or generated from records in source record storage (SRS). Data within Inventory integrates with other apps like Orders, Check in, Check out, and Requests.
 
