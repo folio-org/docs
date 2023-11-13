@@ -1,10 +1,12 @@
 ---
 title: "Inventory"
 linkTitle: "Inventory"
-date: 2022-04-21
+date: 2023-11-08
 weight: 30
 tags: ["parenttopic"]
 ---
+
+**This section of the documentation contains links to external sites. Please be advised that these sites are not maintained by the FOLIO Documentation Group and may be aligned with a different FOLIO release.**
 
 The Inventory app allows you to manage your collections (physical and/or virtual). Inventory stores bibliographic, holdings, and item data in the form of Instance, Holdings, and Item records. Instance records may be created within FOLIO or generated from records in source record storage (SRS). Data within Inventory integrates with other apps like Orders, Check in, Check out, and Requests.
 
@@ -25,7 +27,7 @@ The permissions listed below allow you to interact with the Inventory app and de
 The following are all the Inventory permissions:
 
 -   **Inventory: All permissions.** This permission allows the user to perform all actions in Inventory.
--   **Inventory: Create order from instance.” This permission allows the user to initiate the creation of a new purchase order or a new purchase order line (in the Orders app) from an Instance record in Inventory.
+-   **Inventory: Create order from instance.** This permission allows the user to initiate the creation of a new purchase order or a new purchase order line (in the Orders app) from an Instance record in Inventory.
 -   **Inventory: Import single bibliographic records.** This permission allows the user to import and overlay Instance records from external sources. External sources must be configured in Settings.
 -   **Inventory: Mark items in process.** This permission allows the user to update an item record's Item status to In process.
 -   **Inventory: Mark items in process (non-requestable).** This permission allows the user to update an item record's Item status to In process (non-requestable).
@@ -337,7 +339,7 @@ Note: Adding a classification is optional, but if you click **Add classification
 
 ### Instance relationship (analytics and bound-with)
 
-In the Instance relationship section, you can add any relationships between the instance and other instances. This is not the same as the Bound-with data in the Holdings record.
+In the Instance relationship section, you can add any relationships between the instance and other instances. This is not the same as the Bound-with data in the Holdings and Item records.
 
 -   **Parent instances.** The parent instance is the record chosen as the primary record and to which all other child records are linked. Information about parent instances (Title, Instance HRID, Publisher, Publication date, ISBN, ISSN) including a link to the corresponding parent instance record displays on the child instance record(s).
 -   **Child instances.** A child instance record is any record that has been associated with a parent record. Information about child instances (Title, Instance HRID, Publisher, Publication date, ISBN, ISSN) including a link to each corresponding child instance record displays on the parent instance record.
@@ -418,7 +420,7 @@ The Holdings section contains select holdings record fields. For all fields avai
 
 ### Item
 
-The Item section contains select item record fields. For all fields available in an item record, see Adding an item to a record.
+The Item section contains select item record fields. For all fields available in an item record, see [Adding an item to a record](#adding-an-item-to-a-record).
 
 -   **Barcode.** Generally a numerical sequence attached to the resource and validated by a barcode scanner. Must be a unique value.
 -   **Material type (required).** Describes the material nature of a specific item, with the intention to permit more specific information than resource type alone. Configured in [Settings \> Inventory \> Material types](../../settings/settings_inventory/settings_inventory/#settings--inventory--material-types).
@@ -756,7 +758,7 @@ A check in or check out note is required by default.
 
 ### Location
 
-The Location section contains information on the physical or electronic location of the item.
+The Location section contains information on the physical or electronic location of the item. For more information on locations, see [item effective location](../../platform-essentials/locations/locations/#item-effective-location).
 
 -   **Permanent.** The default location of the resource, which can be a physical location where the resource is stored or an online location. Permanent location is assigned at the holdings level, but can be overridden at the item level, if needed. Select a **Permanent location** from the drop-down list, or click **Location look-up** to select a location.
 -   **Temporary.** A temporary location for the resource, which can be a physical location where the resource is stored or an online location. Temporary location can be assigned at the holdings level and overridden at the item level, if needed. Select a **Temporary location** from the drop-down list, or click **Location look-up** to select a location.
@@ -782,6 +784,22 @@ Note: Adding electronic access is optional, but if you click **Add electronic ac
 1.  Find the electronic access you want to delete.
 2.  Click the **trash can icon** next to the electronic access. The electronic access is removed from the record and is deleted once you save the instance.
 
+### Bound-with and analytics
+
+The Bound-with and analytics section contains information on holdings that are bound with the instance.
+
+#### Adding a bound-with
+
+1. Click **Add Bound-with and analytics**.
+2. In the modal that appears, enter the Holdings HRID of the bound-with. You may add up to seven at once.
+3. Click **Save & close**. The bound-with Instance HRID, Instance title, and Holdings HRID will now appear in the instance record.
+4. Repeat steps 1-3 as needed. The bound-with is saved once you save the instance.
+
+#### Deleting a bound-with
+
+1.  Find the bound-with you want to delete.
+2.  Click the **trash can icon** next to the bound-with. The bound-with is removed from the record and is deleted once you save the instance.
+
 ## Generating an In transit items report
 
 The In transit items report displays all items with the Item status of In transit.
@@ -797,7 +815,7 @@ Produces a .csv file that is ONLY a listing of UUIDs
 
 ## Saving instances CQL query
 
-Produces a file that contains the 'commands' used in the query, in Contextual Query Language (CQL), as defined on dev.folio.org.
+Produces a file that contains the 'commands' used in the query, in Contextual Query Language (CQL), as defined on [dev.folio.org](https://dev.folio.org/reference/glossary/#cql).
 
 1.  [Find the instances, holdings, or items](#searching-for-a-record) with the instances CQL queries you want to save.
 2.  In the Inventory pane, click **Actions \> Save instances CQL query**. Depending on your browser and its configurations, the file automatically downloads or you are prompted to save it.
@@ -812,18 +830,18 @@ Exporting instances to JSON is not implemented at this time.
 
 ## Searching for a record
 
-When you search for a record in Inventory, you can toggle between searching on an instance, holdings, or item level. Searching for an instance record supports bibliographic data searches. Searching for a holdings or item record allows you to search through instance record data along with holdings and item specific data elements.
+When you search for a record in the Inventory App, the **Search** toggle is highlighted and then you can toggle between searching on an instance, holdings, or item level. Searching for an instance record supports bibliographic data searches. Searching for a holdings or item record allows you to search through instance record data along with holdings and item specific data elements.
 
-You can search for instance, holdings, or items by clicking on either **Instance**, **Holdings**, or **Item** in the **Search & filter** pane. The elements available for searching and filtering are different based on your selection, but the results always display instance records.
+You can search for instance, holdings, or items by clicking on either **Instance**, **Holdings**, or **Item** in the **Search & filter** pane. The elements available for searching and filtering are different based on your selection, but the **results always display instance records**.
 
-To search, first select the record type (instance, holdings, or item); enter your search terms into the box and click **Search**. Select the **Keyword (title, contributor, identifier)** drop-down list to search through one of the following:
+To search, first select the record type (instance, holdings, or item) then enter your search terms into the box and click **Search**. Use the drop-down list to select what you want to search:
 
--   **Keyword (title, contributor, identifier)**. Keyword search through title, contributor, and identifier fields.
+-   **Keyword (title, contributor, identifier, HRID, UUID)**. Keyword search through title, contributor, identifier, HRID, UUID fields.
 -   **Contributor.** Keyword search through all contributor fields. 
 -   **Title (all).** Keyword search through all title fields. This includes searching the equivalent of title proper, alternative titles (including uniform titles) and, series titles, but not preceding and succeeding titles.
 -   **Identifier (all).** Searches through all identifier types. Not normalized: the search may be left truncated, otherwise the entire identifier, including any prefix, must be entered.
 -   **ISBN.** Searches the number exactly as it appears in the data. For example, if there are hyphens in the data, the hyphens must be entered in the search.
--   **ISSN.** Searches should include hyphens.
+-   **ISSN.** Searches the number exactly as it appears in the data. Searches should include hyphens.
 -   **OCLC number, normalized.** Searches for the OCLC number with or without any prefixes.
 -   **Instance notes (all).** Keyword search across all Instance notes; includes administrative notes. 
 -   **Instance administrative notes.** Keyword search of instance record administrative notes.
@@ -834,23 +852,35 @@ To search, first select the record type (instance, holdings, or item); enter you
 -   **Authority UUID.** Universally unique identifier for an authority record stored in FOLIO. This searches for UUIDs in bibliographic data where a field is linked to and controlled by an authority record. This value is stored in a $9 the bibliographic record (visible via “View source”).
 -   **All.** Searches across all fields in all record types. May impact performance.
 -   **Query search.** A search for advanced users to query by property names using CQL.
--   **Browse call numbers.** The call number browse is based on the shelving order element in the item record; only Instances with item records will be retrieved. It includes LC, Dewey Decimal, NLM, SuDoc and Local call numbers.
--   **Browse contributors.** The contributor browse is based on the contributor field in Instance records. Names should be entered as they appear in the contributor field.
--   **Browse subjects.** The subject browse is based on the Subject field in instance records.
+-   **Advanced search** Either selected from the list of search options, or by clicking the **Advanced search** button, the user is presented with a popup window where up to six different search terms, boolean operators (AND, OR, NOT), types of search (Exact phrase, Contains all, Starts with) and fields to search may be specified.
+
 -   **Call number, eye readable.** Requires you to enter the call number exactly as it appears in the holdings record, including punctuation.
 -   **Call number, normalized.** Ignores any characters other than numbers and letters, such as punctuation and spaces.
--   **Holdings notes (all).** Keyword search across all Holdings notes; includes administrative notes. 
+-   **Holdings notes (all).** Keyword search across all holdings notes; includes administrative notes. 
 -   **Holdings administrative notes.** Keyword search of holdings record administrative notes.
 -   **Holdings HRID.** Human readable identifier for the holdings record.
 -   **Holdings UUID.** Universally unique identifier for the holdings record.
+
 -   **Barcode.** Allows you to scan, copy/paste, or type a barcode.
--   **Effective call number (item) eye readable.** Requires you to enter the call number exactly as it appears in the holdings record, including the punctuation and call number prefix.
+-   **Effective call number (item) eye readable.** Requires you to enter the call number exactly as it appears in the item record, including the punctuation and call number prefix.
 -   **Effective call number (item), normalized.** Ignores any characters other than numbers and letters, such as punctuation and spaces.
 -   **Item notes (all).** Keyword search across all item notes; includes administrative notes, check in and check out notes.
--   **IItem administrative notes.** Keyword search of item record administrative notes.
+-   **Item administrative notes.** Keyword search of item record administrative notes.
 -   **Circulation notes.** Keyword search across check in and check out notes.
 -   **Item HRID.** Human readable identifier for the item record.
 -   **Item UUID.** Universally unique identifier for the item record.
+
+## Browsing for a record
+
+When you browse records in the Inventory App, the **Browse** toggle is highlighted and then you can select a browse option:
+
+-   **Call numbers.** The call number browse is based on the shelving order element in the item record; only instances with item records will be retrieved. You can choose to browse all call numbers, or to browse only those call numbers with a particular call number classification (e.g., Dewey Decimal, Library of Congress, Local, National Library of Medicine, SuDoc or Other Scheme). Note that call number types must first be configured in Settings for Inventory, then specified for an item call number when each item record is created, before it is possible to browse by call number classification.
+-   **Contributors.** The contributor browse is based on the contributor field in instance records. Names should be entered as they appear in the contributor field.
+-   **Subjects.** The subject browse is based on the subject field in instance records. Subjects should be entered as they appear in the subject field.
+
+The result of a browse search is shown in the pane to the right of the Search & filter pane under the title **Browse inventory**. It will include a list of call numbers, contributors or subjects that come before and after the data you specified, along with a number that indicates how many inventory records have those call numbers, contributors or subjects. If there is a match to what you specified, that result will be highlighted, otherwise you'll see a highlighted message "[your specified data] would be here". If you click on one of the links in the browse results you'll get list of inventory records that contain the selected call number, contributor or subject.
+
+## Filtering for a record, or for limiting results after a search
 
 You can also search for instance, holdings, or item records by selecting any of the filters in the **Search & filter** pane. Additionally, you can apply the filters after you perform a search to limit your results. The filters available vary depending on whether you are searching for an instance, holdings, or item record. See the sections below for more information.
 
@@ -1010,7 +1040,6 @@ To search for items based on their material type, follow these steps:
 2.  Click the drop-down list and either enter the material type or select it from the list.
 3.  Repeat step 2 to add more than one material type. Your search results appear in the Inventory pane.
 
-
 ## Viewing an instance record
 
 Once you search for an instance, holding, or item, the following information appears in the Inventory pane:
@@ -1050,7 +1079,7 @@ To view an item record, follow these steps:
 
 ## Editing an instance record with underlying MARC
 
-See [Editing a MARC record using quickMARC](quickmarc/#Editing a MARC record using quickmarc).
+See [Editing a MARC record using quickMARC](quickmarc/#editing-a-marc-record-using-quickmarc)).
 
 ## Updating an instance record with underlying MARC using the Overlay source bibliographic record action in FOLIO
 
