@@ -29,13 +29,13 @@ LIMIT 10
 
 For detailed information about how to set up and configure the marct tool for LDP, please review the guide linked below:
 
-*[MARC Transformation Guide for LDP] (https://metadb.dev/doc/#_marc_transform_for_ldp)
+* [MARC Transformation Guide for LDP] (https://metadb.dev/doc/#_marc_transform_for_ldp)
 
 
 ### MARC Transformation for Metadb
 
 Metadb includes native marct tables when it is installed. For information about how MARC data is transformed in Metadb, please review the guide linked below:
 
-*[MARC Transformation Guide for Metadb] (https://d1f3dtrg62pav.cloudfront.net/doc/#_marc_transform)
+* [MARC Transformation Guide for Metadb] (https://d1f3dtrg62pav.cloudfront.net/doc/#_marc_transform)
 
 

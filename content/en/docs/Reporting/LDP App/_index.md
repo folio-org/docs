@@ -29,14 +29,14 @@ The **Table** drop-down menu allows you to select a data table from the schema y
 
 ## Filter by column
 The **Filter by column** drop-down menu allows you to refine your results by selecting a column and applying constraints. You can create multiple filters using the Add Filter button. When you use multiple filters, results are generated using the AND operator. Once you select a column to filter on, you may select equality and inequality operations in combination with a numeric value (e.g., a date or a count), TRUE, or FALSE. Operators include: 
-* **equal to (=)
-* **not equal to (<>)
-* **less than (<)
-* **less than or equal to (<=)
-* **greater than (>)
-* **greater than or equal to (>=)
-* **TRUE (not case sensitive)
-* **FALSE (not case sensitive)
+* **equal to (=)**
+* **not equal to (<>)**
+* **less than (<)**
+* **less than or equal to (<=)**
+* **greater than (>)**
+* **greater than or equal to (>=)**
+* **TRUE (not case sensitive)**
+* **FALSE (not case sensitive)**
 
 Here are some examples for filtering by column:
 * **find where previously_held = TRUE
