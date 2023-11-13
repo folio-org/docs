@@ -364,6 +364,17 @@ Use this setting to configure available transfer accounts. Transfer accounts are
 
 The **Transfer Criteria** section contains many sections to allow for a wide variety of criteria to be configured. Use this information to configure the criteria for transferring accounts. For more information about transfer accounts, see [Settings \> Users \> Transfer accounts](#settings--users--transfer-accounts).
 
+### Create transfer criteria
+
+In the **Transfer criteria** pane, select the **Schedule period**.
+Add a number to the **Fee/Fines older than (days)** field.
+Click the **+** sign to add patron group(s) in the **Patron groups** list.
+Select the transfer owner from the **Transfer owner** drop-down list.
+Select a transfer account from the **Transfer account** drop-down list.
+Select the **Fee/fine owner**.
+Add **Transfer type**, **Transfer description**, and **Transfer code** to each **Fee/fine type**.
+Click **Save** to save the transfer criteria or click **Run manually** to run a report.
+
 ### Scheduling
 
 The **Scheduling** dropdown allows you to configure the frequency of the transfer process. If you want to run the transfer manually, you can skip this section.
