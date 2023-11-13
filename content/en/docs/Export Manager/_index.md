@@ -58,7 +58,7 @@ The **Organizations** tab results pane displays the following columns:
 *   **End time.** Date and time the export finished.
 *   **Export method.** This value corresponds to the **Integration name** on the associated Organization record’s [Integration details]({{< ref "/organizations.md#adding-integration-details-to-a-vendor-organization" >}}).
 
-Click on any column name, except **Description** and **Source** to sort by that column.
+Click on any column name, except **Description** and **Source**, to sort by that column.
 
 For jobs with a status of **Successful**, click on the hyperlinked job ID to download the file.
 
