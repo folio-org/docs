@@ -211,16 +211,16 @@ There are four default interactions you can select:
 
 Use this setting to determine the instance status that is assigned to the instances that are created through opening an order. Note: If you have not selected a default, then you may encounter problems when trying to receive an item or when you close an order.
 
-For information on managing instance status values, see [Settings > Inventory > Instances > Instance status types](https://docs.folio.org/docs/settings/settings_inventory/settings_inventory/#settings--inventory--instance-status-types).
+For information on managing instance status values, see [Settings > Inventory > Instances > Instance status types]]({{< relref "settings_inventory#settings--inventory--instance-status-types" >}}).
 
 
 ## Settings > Orders > Inventory interaction > Instance type
 
 Use this setting to determine the instance resource type that is assigned to the instances that are created through opening an order. Note: If you have not selected a default, then you may encounter problems when trying to open an order that should create a new instance.
 
-For information on managing instance type values, see [Settings > Inventory > Instances > Resource types](https://docs.folio.org/docs/settings/settings_inventory/settings_inventory/#settings--inventory--resource-types).
+For information on managing instance type values, see [Settings > Inventory > Instances > Resource types]({{< relref "settings_inventory#settings--inventory--resource-types" >}}).
 
 
 ## Settings > Orders > Inventory interaction > Loan type
 
-Use this setting to determine the loan type that is assigned to the items that are created through opening an order. Note: If you have not selected a default, then you will not be able to open orders where new items are being created. For information on managing loan type values, see [Settings > Inventory > Loan types](https://docs.folio.org/docs/settings/settings_inventory/settings_inventory/#settings--inventory--loan-types).
+Use this setting to determine the loan type that is assigned to the items that are created through opening an order. Note: If you have not selected a default, then you will not be able to open orders where new items are being created. For information on managing loan type values, see [Settings > Inventory > Loan types]({{< relref "settings_inventory#settings--inventory--loan-types" >}}).
