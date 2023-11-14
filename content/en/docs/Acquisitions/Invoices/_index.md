@@ -764,7 +764,7 @@ To export a file of voucher information in JSON or XML format, follow these step
 4. To run a new voucher export for a batch group, click **Run manual export**. A message appears, “All vouchers created since last export for the batch group FOLIO will be exported and this process cannot be reversed.”
 5. Click Continue to proceed or Cancel.
 6. When the export is complete, a new table row is created containing a message to indicate whether the file uploaded successfully to FTP location or vouchers for batch voucher export were not found.
-7. To download one of the voucher export files, click on the downward arrow at the end of the table row. Note: The file will download in the format configured on the batch group configuration. For more information see [Settings > Invoices > Batch group configuration]({{< ref "/settings_invoices/settings_invoices/#settings--invoices--batch-group-configuration.md" >}}).
+7. To download one of the voucher export files, click on the downward arrow at the end of the table row. Note: The file will download in the format configured on the batch group configuration. For more information see [Settings > Invoices > Batch group configuration]({{<ref "settings_invoices#settings--invoices--batch-group-configuration">}}).
 
 ### Voucher export details
 The voucher export details section appears on invoices that have the **Export to accounting** checkbox activated, where the export has been performed. It includes the following fields:
