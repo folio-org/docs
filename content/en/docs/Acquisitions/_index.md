@@ -15,4 +15,4 @@ In FOLIO, acquisitions includes essential functions. These functions include:
 
 ## Acquisitions Settings
 
-The acquisition of library materials is governed by a set of rules and policies. These rules and policies are defined by the library and implemented in the Finance, Invoices, Orders, and Organizations areas of the [FOLIO Settings app]([{{< ref "/settings.md" >}}](https://docs.folio.org/docs/settings/)https://docs.folio.org/docs/settings/).
+The acquisition of library materials is governed by a set of rules and policies. These rules and policies are defined by the library and implemented in the Finance, Invoices, Orders, and Organizations areas of the [FOLIO Settings app](https://docs.folio.org/docs/settings/)https://docs.folio.org/docs/settings/).
