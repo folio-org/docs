@@ -2,7 +2,7 @@
 title: "Settings > Reporting"
 linkTitle: "Reporting"
 date: 2023-10-16  
-weight: 220
+weight: 225
 tags: ["subtopic"]   
 ---
 
