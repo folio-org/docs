@@ -1,7 +1,7 @@
 ---
 title: "Receiving"
 linkTitle: "Receiving"
-date: 2023-04-03
+date: 2023-11-13
 weight: 50
 tags: ["parenttopic"]
 ---
@@ -167,7 +167,7 @@ In the **Search & filter** pane, click **Order status** and select any applicabl
 *   **Open.** Orders that are open.
 *   **Pending.** Orders that are pending.
 
-Only open orders can be received.
+Note: Receiving is only possible if an order is in "Open" or "Closed" status. If attempting to receive against a closed order, a pop-up window will appear that says "The order linked to this Title is closed. Are you sure you want to receive this piece(s)?"
 
 
 ### Vendor
