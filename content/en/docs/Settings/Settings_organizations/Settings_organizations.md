@@ -1,23 +1,24 @@
 ---
 title: "Settings > Organizations"
 linkTitle: "Organizations"
-date: 2022-09-22
+date: 2023-11-13
 weight: 210
 tags: ["subtopic"]   
 ---
 
-The Organizations section of the Settings app is where you establish the categories you want to use to classify the contact people and contact information you add to an organization.
+The Organizations section of the Settings app is where you establish the categories you want to use to classify the contact people and contact information you add to an organization, as well as any types you may wish to use to classify the organization records for filtering purposes.
 
 
 ## Permissions
 
-In order to interact with Organizations settings, a user needs to be assigned the following permission:
+In order to interact with Organizations settings, a user needs to be assigned the following permissions:
 
 
 
 *   **Settings (Organizations): Can view and edit settings.** This permission allows the user to view, create, edit, and delete all organizations settings.
+*   **Settings (Organizations): View settings.** This permission allows the user to view, but not interact with, organizations settings.
 
-Note: This is the only permission available for [Organizations settings]({{< ref "/organizations.md#permissions" >}}). With some other Organizations permissions, the user is able to view the settings, but they are unable to create, edit, or delete the settings. You can assign permissions to users in the Users app.
+You can assign permissions to users in the Users app.
 
 
 ## Settings \> Organizations \> Categories
@@ -46,13 +47,17 @@ For more information on adding contact information and contact people to organiz
 
 
 ### Deleting a category
+Note: Categories may be deleted when in use on Organization records. FOLIO will not produce a warning to prevent the deletion.
 
 1. Find the category you want to delete.
 
 2. Click the **trash can icon**.
 
-3. In the **Delete Category** dialog, click **Delete**. The category is deleted and a confirmation message appears.
+3. In the **Delete Category** dialog, click **Delete**. The category is deleted and a confirmation message appears. 
 
+
+## Settings \> Organizations \> Types
+Libraries may create controlled lists of organization types to facilitate filtering based on the nature of the library's relationship with the organization, e.g. Subscription agent, consortium. An organization may have multiple types assigned to its record. This value can also be exported within the Orders CSV, when applied to selected vendors.
 
 ### Creating a new type
 
@@ -60,7 +65,7 @@ For more information on adding contact information and contact people to organiz
 
 2. Enter a type **Name** in the box.
 
-3. Enter a type **Status**: Active or Inactive.
+3. Enter a type **Status**: Active or Inactive. Inactive types will not appear in the dropdown menu to assign to Organization records, but will still appear within the **Types** filter in the Organizations app.
 
 3. Click **Save**. The type is saved and appears in the Types list.
 
@@ -80,5 +85,5 @@ For more information on adding contact information and contact people to organiz
 
 2. Click the **trash can icon**.
 
-3. In the **Delete Type** dialog, click **Delete**. The type is deleted and a confirmation message appears.
+3. In the **Delete Type** dialog, click **Delete**. The type is deleted and a confirmation message appears. Note: Types cannot be deleted when in use on an Organization record. You will see an error: "This type cannot be deleted, as it is in use by one or more records."
 
