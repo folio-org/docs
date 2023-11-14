@@ -8,7 +8,7 @@ tags: ["parenttopic"]
 
 
 {{% alert color="info"%}}
-<b>Note:</b> This [WOLFcon 2021 presentation](https://www.youtube.com/watch?v=SM1vq0zvxsY) gives an overview of the Library Data Platform.
+**Note:** This [WOLFcon 2021 presentation](https://www.youtube.com/watch?v=SM1vq0zvxsY) gives an overview of the Library Data Platform.
 {{% /alert %}}
 
 In order for the LDP software to connect to FOLIO, it needs read-only access to Okapi and the FOLIO database. The LDP can be hosted and administered locally by an institution's own staff or by contracting hosting services out to a third party. You can find specific [system requirements](https://github.com/library-data-platform/ldp/blob/1.8.2/doc/Admin_Guide.md#2-system-requirements) in the LDP documentation.
@@ -26,7 +26,7 @@ For detailed information about how to set up and configure the LDP software, ple
 To let report users take full advantage of the community-developed [report queries](../folio-analytics/#using-queries-from-the-folio-analytics-repository) as well as having a good starting point for [ad hoc querying](../folio-analytics/#ad-hoc-querying-using-ldp-tables), it is strongly recommended to set up a nightly update on [derived tables](https://github.com/folio-org/folio-analytics/blob/main/sql/derived_tables/README.md  ). 
 
 {{% alert color="info"%}}
-<b>Note:</b>use of *views* and *materialized views* is not supported in LDP databases and may cause the LDP software to be unable to perform data updates.
+**Note:** use of *views* and *materialized views* is not supported in LDP databases and may cause the LDP software to be unable to perform data updates.
 {{% /alert %}}
 
 You can find instructions in Github on how to set up [FOLIO Reporting Derived Tables](https://github.com/folio-org/folio-analytics/tree/main/sql/derived_tables#folio-reporting-derived-tables).
@@ -68,5 +68,5 @@ For Postgres there are two common approaches:
 * [pg_dump](https://www.postgresql.org/docs/current/app-pgdump.html) / [pg_restore](https://www.postgresql.org/docs/current/app-pgrestore.html): Postgres command line tools for importing and exporting data
 
 ## Installing and configuring the Metadb software 
-\* The next generation software platform Metadb has been released and has been adopted by some institutions. Metadb is a new streaming data integration platform intended to eventually replace LDP. For installing and configuring Metadb follow the *Metadb Documentation* at the [Library Data Platform - resources site](https://librarydataplatform.org/resources/).
+The next generation software platform Metadb has been released and has been adopted by some institutions. Metadb is a new streaming data integration platform intended to eventually replace LDP. For installing and configuring Metadb follow the *Metadb Documentation* at the [Library Data Platform - resources site](https://librarydataplatform.org/resources/).
 

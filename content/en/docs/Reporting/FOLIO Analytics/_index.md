@@ -7,7 +7,7 @@ tags: ["parenttopic"]
 ---
 
 {{% alert color="info"%}}
-<b>Note:</b> This documentation covers FOLIO Analytics v1.7.0, which was released at  approximately the same time as the FOLIO Poppy release.
+**Note:**  This documentation covers FOLIO Analytics v1.7.0, which was released at  approximately the same time as the FOLIO Poppy release.
 {{% /alert %}}
 
 ## What is the FOLIO Analytics repository
@@ -77,7 +77,7 @@ The following section demonstrates this workflow using [DBeaver](https://dbeaver
   	* User name and password
   	* SSL mode (will likely be “require”)
 {{% alert color="info"%}}
-<b> Note </b>that a hosted LDP/Metadb reporting database is currently available for the FOLIO community.  It provides access to data from the FOLIO reference environment folio-snapshot and is updated hourly. For login info, please review the [Library Data Platform testbed documentation](https://librarydataplatform.org/testbed/).{{% /alert %}}
+**Note** that a hosted LDP/Metadb reporting database is currently available for the FOLIO community.  It provides access to data from the FOLIO reference environment folio-snapshot and is updated hourly. For login info, please review the [Library Data Platform testbed documentation](https://librarydataplatform.org/testbed/).{{% /alert %}}
 1. In addition to the first page of connection details, you must click on the SSL tab to select “require” under **SSL mode**.
 1. Finally, expand **Connection Settings** in the sidebar on the left and select the **Initialization** subheading. In the settings on the right, make sure the **Auto-commit** check box is selected.
 1. When you are done setting up the connection, you can double click on the connection name in the **Database Navigator** tab to connect to the database.
@@ -94,7 +94,7 @@ The following section demonstrates this workflow using [DBeaver](https://dbeaver
 1. To run the query, either click on the **Execute SQL Script** button on the left side of the script editor (it should be the third button from the top and look like a document with a “play” symbol inside of it) or select **Execute SQL Script** from the **SQL Editor** menu.
 1. The results will hopefully then appear in the **results panel** below the script. 
 {{% alert color="info"%}}
-<b> Note </b>When querying parts of the database with a lot of data, like the inventory tables, there may be a long delay before results are returned.
+**Note:** When querying parts of the database with a lot of data, like the inventory tables, there may be a long delay before results are returned.
 {{% /alert %}}
 
 
