@@ -287,7 +287,7 @@ curl -w '\n' -D - -X DELETE http://localhost:9130/_/discovery/modules/edge-rtac-
 Now, finally once again get a list of the deployed backend modules:
   
   ```
-  curl -w '\n' -D - http://localhost:9130/_/discovery/modules | grep srvcId | wc
+  curl -w '\n' -D - http://localhost:9130/_/discovery/modules | grep srvcId | grep "mod-" | wc
  62
   ```
   
