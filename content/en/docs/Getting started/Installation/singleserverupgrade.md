@@ -29,7 +29,7 @@ This is a documentation for an **upgrade** of your FOLIO system.
 
 | **Requirement**      | **Recommended Version**                    |
 |----------------------|--------------------------------------------|
-| Operating system     | Ubuntu 20.04.06 LTS (Focal Fossa) 64-bits  |
+| Operating system     | Ubuntu 22.04.3 LTS (Jammy) 64-bits  |
 | FOLIO system         | Morning Glory (R2-2022)                          |
 
 **Hardware requirements**
@@ -100,7 +100,7 @@ git stash pop
 Upgrade the Okapi version and restart Okapi.
 Read the Nolana Okapi version from install.json: **okapi-4.14.12**
 
-Update the Okapi Debian package:
+Update the Okapi Debian package. Use the "focal" distribution also for Ubuntu jammy:
 ```
 sudo add-apt-repository "deb https://repository.folio.org/packages/ubuntu focal/"
 sudo apt-get update
