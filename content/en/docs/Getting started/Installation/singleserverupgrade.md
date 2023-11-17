@@ -286,7 +286,7 @@ curl -w '\n' -XGET http://localhost:9130/_/proxy/tenants/diku/modules | grep id 
 
 This number is the sum of the following:
 
- Nolana release:
+ Orchid release:
  - 59 Frontend modules
  -  9 Edge modules
  - 65 Backend modules
