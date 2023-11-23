@@ -273,7 +273,7 @@ Before you cancel a request, consider:
 
 ## Exporting a hold shelf clearance report
 
-The hold shelf clearance report contains requests that expired or were cancelled while awaiting pickup. These are items that need to be cleared from the hold shelf.
+The hold shelf clearance report contains requests that expired or were cancelled while awaiting pickup. Check in these items to clear them from the hold shelf.
 
 Hold shelf clearance reports are specific to individual service points. Therefore, you must be signed in to the service point you want to generate the report for.
 
