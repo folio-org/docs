@@ -307,7 +307,8 @@ The most common use case for these fields is when an electronic item is put on r
 
 ## Removing a reserve item from a course
 
-Note: Removing an item from a course does not remove it from the Inventory app. If the item on reserve had a temporary location inherited from the course, removing the item from reserve will remove the temporary location from the item in inventory.
+Note: Removing an item from a course does not remove it from the Inventory app. If the item on reserve had a temporary location inherited from the course, removing the item from the course will remove the temporary location from the item in inventory. If the item had a temporary loan type inherited from the course, removing the item from the course will **not** remove the temporary loan type from the item in inventory.
 
 1. [Find the course](#searching-for-courses) with the item you want to remove and click on it in the **Courses** list.
 2. In the **Items** section, find the reserve item and click the **trash icon**. The item is removed.
+3. If you added a temporary loan type, [remove the temporary loan type in the inventory app]({{< ref "/inventory.md#loan-and-availability" >}}). Alternatively, use **Bulk Edit** to clear temporary loan types at the end of the semester.
