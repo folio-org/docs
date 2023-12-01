@@ -230,11 +230,13 @@ In the Launch Descriptor of mod-authtoken-2.13.0, set jwt.signing.key in the JAV
       "value" : "-XX:MaxRAMPercentage=66.0 -Dcache.permissions=true -Djwt.signing.key=folio-demo"
 ```
 
-### v. Set KAFKA_EVENTS_CONSUMER_PATTERN for mod-search
+### v. Set env vars for mod-search
 If you have set ENV = orchid, set KAFKA_EVENTS_CONSUMER_PATTERN for mod-search, using the value of ENV as a part of its value:
     KAFKA_EVENTS_CONSUMER_PATTERN = (orchid\.)(.*\.)inventory\.(instance|holdings-record|item|bound-with)
     
 If you have set ENV = folio, set  KAFKA_EVENTS_CONSUMER_PATTERN = (folio\.)(.*\.)inventory\.(instance|holdings-record|item|bound-with)
+
+Set SEARCH_BY_ALL_FIELDS_ENABLED to "true" if you want to activate the search option "all" (search in all fields). By default, SEARCH_BY_ALL_FIELDS_ENABLED is set to "false".
 
 ### II.v) Deploy a new FOLIO backend and enable all modules of the new platform (backend & frontend)
 
