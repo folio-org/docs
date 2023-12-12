@@ -6,14 +6,12 @@ weight: 20
 tags: ["parenttopic"]
 ---
 
-<table style="border: 2px solid black"><tr><td><strong>This section of the documentation contains links to external sites. Please be advised that these sites are not maintained by the FOLIO Documentation Group and may not be aligned with the current release of FOLIO.</strong></td></tr></table>
 
 The Data import app allows you to: 
 - **Import one or more Bibliographic MARC records for use by the Inventory app.**  To create or update (overlay) records.
 - **Import one or more Authority MARC records for use by the MARC Authority app.**  To create or update (overlay) records.
 - **Load EDIFACT invoices for use by the Invoices app.**  Supports the Folio acquisitions workflow.
 
-This section of the documentation only provides a searchable overview of the Data Import App. For more detailed information about Data Import, including tutorials and examples, explore the Folio Wiki area for the <a href=https://wiki.folio.org/display/MM/Data+Import+%28formerly+Batch+Loader%29+Subgroup>Data Import Subgroup</a>
 
 Definition of terms related to the Data Import app:
 
