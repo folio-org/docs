@@ -1,7 +1,7 @@
 ---
 title: "Users"
 linkTitle: "Users"
-date: 2023-05-01	
+date: 2023-12-12	
 weight: 250
 ---
 
@@ -27,7 +27,7 @@ The following are all the User permissions:
 -  **Users: Can assign and unassign permissions to users.** This permission allows the user to assign or unassign permissions to another user. 
 -  **Users: Can assign and unassign service points to users.** This permission allows the user to view and edit service points assigned to users. The user can also view and edit basic user data elements.
 -  **Users: Can check open transactions.** This permission allows the user to check for open transactions on a user record. If there are no open transactions, the user record can be deleted.
--  **Users: Can create new user.** This permission allows the user to create a new user record and add User information, Extended information, and Contact Information to the user record. 
+-  **Users: Can create and edit users.** This permission allows the user to create a new user record and edit the **User information**, **Extended information**, and **Contact information** to the user record. 
 -  **Users: Can create, edit and remove fees/fines.** This permission allows the user to create, edit, remove, and view user fees/fines.
 -  **Users: Can create, edit and remove patron blocks.** This permission allows the user to see the Patron blocks section on the user record, and view, edit, and create blocks.
 -  **Users: Can create, edit and remove proxies.** This permission allows the user to view and edit proxies assigned to a user. The user can also view and edit basic user data elements.
@@ -52,7 +52,9 @@ The following are all the User permissions:
 -  **Users: User loans renew through override.** This permission allows the user to override failed renewals.
 -  **Users: User loans view.** This permission allows the user to view the Loans section on a user record, view the loans page and loan details. 
 -  **Users: User loans view, change due date, renew.** This permission allows the user to view the Loans section on a user record, to change a due date on a loan, and renew loans.
--  **Users: View requests.** This permission allows the user to view the Requests section on a user record. This permission also includes the ability to search and view user records (basic user fields only).
+-  **Users: User loans: add patron information.** This permission allows users to add patron-viewable information to the patron’s loan record. The information added can be viewed by both patron and staff.
+-  **Users: User loans: add staff information.** This permission allows users to add staff-viewable information to the patron’s loan record. The information added cannot be viewed by the patron.
+-  **Users: View requests.** This permission allows the user to view the **Requests** section on a user record. This permission also includes the ability to search and view user records (basic user fields only).
 
 ## Keyboard shortcuts
 
@@ -70,15 +72,13 @@ Keyboard shortcuts allow you to perform actions in this app using the keyboard. 
 -   **First name.** The given name of the user.
 -   **Middle name.** The middle name of the user.
 -  **Preferred first name.** The name by which the user prefers to be called. If a preferred first name is provided, it will display in the user record in place of the first name. 
--  **Patron group (required).** Select a patron group to assign to the user. Patron groups are classes of library users configured by your library in the Settings app. Examples of patron groups include:
--   **Adult.** Patrons over the age of 18.
--   **Faculty.** Patrons with faculty status at your institution.
--   **Student.** Patrons that are students at your institution.
-
-See [Settings \> Users \> Patron Groups](../settings/settings_users/settings_users/#settings--users--patron-groups) for more information.
+-  **Patron group (required).** Select a patron group to assign to the user. Patron groups are classes of library users configured by your library in the Settings app. See [Settings \> Users \> Patron Groups](../settings/settings_users/settings_users/#settings--users--patron-groups) for more information.
 -  **Status (required).** Select a status for the user: **Active** or **Inactive.** A user's status is tied to the expiration date set on their user record. Active status indicates current affiliation, employment, or enrollment within the library's institution. Inactive status indicates that the expiration date on the user's record has passed and the user is no longer affiliated, employed, or enrolled. When a **Patron Group** is selected, the **Status** automatically defaults to **Active**.
 -  **Expiration date.** The amount of time set before the user record lapses and the user no longer has active permissions or the ability to borrow items. The expiration date determines when a user's status changes from Active to Inactive. Expiration date is optional and this field may be left blank. For information about editing an expiration date, see [Edit an expiration date](#edit-an-expiration-date).
 -  **Barcode.** The barcode number for the user's library card.
+-  **User Type.** Select the user type: **Patron** or **Staff**. This field is optional for a non-ECS-enabled tenant but required in an ECS-enabled tenant. For more information, see  [Consortium manager \> Members](../consortia/consortium-manager/#members/). 
+	-  **Patrons.** Users who may borrow library materials but have no FOLIO permissions assigned to their User record and do not log in to FOLIO to manage their library accounts.
+	-  **Staff.** Users who are employed by the library, have FOLIO permissions assigned to their User record for the purpose of performing their library work, and may borrow library materials. 
 
 ### Extended information
 
@@ -93,7 +93,8 @@ See [Settings \> Users \> Patron Groups](../settings/settings_users/settings_use
 -  To associate the user with a department, click **Add Department** and select the department from the drop-down list. 
 -  Delete **Department** from a user record by clicking the **trash can icon**.  
 -  **Username.** The name library staff use to log into FOLIO. Note: Patrons don't have a username because they don't need to log into FOLIO.
--  **Password.** Users can be sent a reset password link via email. This link expires after 24 hours. The password must meet the following default validation rules:
+-  **Password.** Users can be sent a reset password link via email. This link expires after 24 hours. An institution may apply different password validation rules for their users. The password must meet the following default validation rules:
+  
 	* Contain a minimum of 8 characters.
 	* Contain both uppercase and lowercase letters.
 	* Contain at least 1 numeric character.
@@ -102,7 +103,6 @@ See [Settings \> Users \> Patron Groups](../settings/settings_users/settings_use
 	* Does not contain a keyboard sequence.
 	* Does not contain the same character.
 	* Does not contain whitespace(s).
-Note: The institution may decide to apply different password validation rules for their users. 
 
 ### Contact information
 
@@ -119,7 +119,22 @@ The **Custom fields** section appears only if it is configured in the **Settings
 
 ## Search for user records
 
-You can search for user records in the **User search** pane. To search for users, enter your search terms into the box and click **Search**. The user search box searches through these fields: Keyword (name, email, identifier), Barcode, Last Name, or Username. First name or Preferred first name can be used as name in the Keyword field. 
+You can search for user records in the **User search** pane. To search for users, enter your search terms into the box and click **Search**. The user search box searches through these fields:
+
+- Keyword (name, email, identifier)
+	- Username
+	- First Name
+	- Preferred First Name
+	- Last Name
+	- Middle Name
+	- Email
+	- Barcode
+	- User UUID
+	- External System Id
+	- Custom Fields with the "Text Field" or "Text Area" custom field types
+- Barcode
+- Last Name
+- Username. 
 
 You can also search for user records by selecting any of the filters in the **User search** pane. Additionally, you can apply the filters after you perform a search to limit your results. See the sections below for more information on the filters.
 
@@ -134,11 +149,11 @@ In the **User search** pane, expand the **Status** accordion if needed and selec
 
 To filter users by their patron group, in the **User search** pane, expand the **Patron Group** accordion if needed and select one of the listed options. 
 
-Patron groups are configured in [Settings \> Users \> Patron groups](../settings/settings_users/settings_users/#settings--users--patron-groups).
+Patron groups are configured in [Settings \> Users \> Patron groups](..settings/settings_users/settings_users/#settings--users--patron-groups).
 
 ### Tags
 
-Tags must be enabled in the [Settings > Tags](../settings/settings_tags/settings_tags/) in order to appear as a filter. To search for user records assigned with specific tags, follow these steps:
+Tags must be enabled in the [Settings > Tags](..settings/settings_tags/settings_tags/) in order to appear as a filter. To search for user records assigned with specific tags, follow these steps:
 
 1.  In the **User search** pane, expand the **Tags** accordion if needed. 
 2.  Select the tag(s) from the drop-down list. The search results appear in the User search results pane. 
@@ -146,10 +161,11 @@ Tags must be enabled in the [Settings > Tags](../settings/settings_tags/settings
 ## View a user record
 
 Once you search for a user record, the following information appears in the **User search results** pane:
+
 -   **Name.** Name of the user. *Last Name, First Name* or *Last Name, Preferred first name (First name)*
 -   **Active.** The status of the user.
 -   **Barcode.** The barcode number of the user.
--   **Patron group.** The patron group to which the user belongs.
+-   **Patron group.** The patron group to which the user is assigned.
 -   **Username.** The username of the user.
 -   **Email.** The email address of the user.
 
@@ -157,11 +173,11 @@ In the **User search results** pane, click on a user record to view it. The User
 
 ### User information
 
-For information about the fields displayed in the User information section, see [Create a user record > User information](#user-information). 
+For information about the fields displayed in the **User information section**, see [Create a user record > User information](#user-information). 
 
 ### Patron blocks
 
-Within the Patron blocks section, you can view all blocks on the user record and create manual blocks. For more information on manual blocks, see [Creating a manual patron block](#creating-a-manual-patron-block).
+Within the Patron blocks section, you can view all blocks on the user record and create manual blocks. For more information on manual blocks, see [Create a manual patron block](#create-a-manual-patron-block).
 
 Patron blocks appear in a table format with the most recent block listed first.
 
@@ -175,7 +191,7 @@ For information about the fields displayed in the Contact information section, s
 
 ### Custom fields
 
-Custom fields are configured by your institution and allow additional information in the user record. For more information about custom fields see [Settings \> Users \> Custom fields](../settings/settings_users/settings_users/#settings--users--custom-fields). 
+Custom fields are configured by your institution and allow additional information in the user record. For more information about custom fields see [Settings \> Users \> Custom fields](..settings/settings_users/settings_users/#settings--users--custom-fields). 
 
 ### Proxy/sponsor
 
@@ -195,11 +211,23 @@ You can also create manual fees/fines in the **Fees/fines** section. For more in
 
 The Loans section displays the number of *open loans* and *closed loans* on a user’s record.
 
-A patron has an open loan when they have borrowed an item and the item has not yet been returned. A loan is also considered open when the patron has returned the item but owes a fee/fine, or when a patron says they have returned an item and the library marks it as “claim returned” while they search the shelves.
+#### Open loans
 
-Once an item is returned to the library and checked in, and any associated fee/fines are  resolved, the loan is closed. Once a loan is closed, it can be anonymized. To set up loan anonymization, see [Settings > Circulation > Loan anonymization](../settings/settings_circulation/settings_circulation/#settings--circulation--loan-anonymization). 
+A patron has an open loan when they have borrowed an item and the item has not yet been returned. A loan is also considered open when the patron has returned the item but owes a fee/fine, or when a patron says they have returned an item and the library marks it as “claim returned” while they search the shelves. To view additional details about the user’s open loans or closed loans, expand the **Loans** accordion and click **open loans** or **closed loans**, respectively.
 
-To view additional details about the user’s open loans or closed loans, expand the **Loans** accordion and click **open loans** or **closed loans**, respectively.
+#### Closed loans
+
+Once an item is returned to the library and checked in, and any associated fee/fines are  resolved, the loan is closed. Once a loan is closed, it can be anonymized. To set up loan anonymization, see [Settings > Circulation > Loan anonymization](..settings/settings_circulation/settings_circulation/#settings--circulation--loan-anonymization). 
+
+#### Loan anonymization
+
+Once a loan is closed, it can be anonymized if **loan anonymization** is set up. For more information see [Settings \> Circulation \> Loan anonymization](..settings/settings_circulation/settings_circulation/#settings--circulation--loan-anonymization).
+
+To anonymize a user’s closed loan, follow these steps:
+
+Open the **Loans** accordion in the user’s record and click on **Closed loans**. 
+Click the **Anonymize all loans** button. A confirmation modal appears with the message, *All loans for this user will be anonymized. The loans will no longer appear in the user’s closed loans. Anonymizing loans cannot be reversed.*
+Click **Confirm** to anonymize the loan or click **Cancel** to cancel loan anonymization. 
 
 ### Requests
 
