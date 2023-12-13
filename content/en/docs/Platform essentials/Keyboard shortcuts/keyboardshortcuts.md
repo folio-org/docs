@@ -56,6 +56,7 @@ The following apps display the list of keyboard shortcuts which can be viewed by
 *   Invoices
 *   Licenses
 *   Local KB admin
+*   MARC Authority
 *   Orders
 *   Organizations
 *   Receiving
