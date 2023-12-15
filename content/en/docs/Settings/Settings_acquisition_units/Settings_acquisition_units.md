@@ -35,10 +35,6 @@ In order to interact with acquisition units settings, a user needs to be assigne
 
 
 
-## Keyboard shortcuts
-Keyboard shortcuts allow you to perform actions in this setting using the keyboard.  See [Platform essentials > Keyboard shortcuts]({{< ref "/keyboardshortcuts.md" >}}) for more information.
-
-
 ## Creating an acquisition unit
 
 1. In the **Acquisition units** pane, click **New**.
