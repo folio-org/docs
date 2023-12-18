@@ -17,7 +17,7 @@ Definition of terms related to the Users app:
 ## Permissions
 
 
-The permissions listed below allow the user to interact with the Users app and determine what they can and cannot do within the app. If none of these permissions are assigned to a user, they are unable to see the User app or any related information. Permission sets are defined by your library in [Settings \> Users \> Permission sets](..settings/settings_users/settings_users/#settings--users--permission-sets). For more information on permissions, see [../Platform Essentials \> Permissions/](../platform-essentials/permissions/).
+The permissions listed below allow the user to interact with the Users app and determine what they can and cannot do within the app. If none of these permissions are assigned to a user, they are unable to see the User app or any related information. Permission sets are defined by your library in [Settings \> Users \> Permission sets](..settings/settings_users/settings_users/#settings--users--permission-sets). For more information on permissions, see [Platform Essentials \> Permissions](../platform-essentials/permissions/).
 
 
 The following are all of the User permissions:
@@ -138,7 +138,7 @@ The password must meet the following default validation rules:
 ### Custom fields
 
 
-The **Custom fields** section appears only if it is configured in the **Settings>Users** app. For information on configuring the **Custom fields** section, see [Settings /> Users /> Custom fields](../settings/settings_users/settings_users/#settings--users--custom-fields).
+The **Custom fields** section appears only if it is configured in the **Settings>Users** app. For information on configuring the **Custom fields** section, see [Settings \> Users \> Custom fields](../settings/settings_users/settings_users/#settings--users--custom-fields).
 
 
 ## Search for user records
@@ -301,7 +301,7 @@ Requests can be created for the user in the user record or in the **Requests** a
 ### User permissions
 
 
-The **User permissions** section displays all permissions assigned to the user record. For more information, see [Assign permissions](#assign-permissions) or [Unassign permissions](#unassign-permissions) as appropriate. 
+The **User permissions** section displays all permissions assigned to the user record. For more information, see [Assign or unassign permissions](#assign-or-unassign-permissions). 
 
 
 For more information on permissions, see [Platform Essentials \> Permissions](../platform-essentials/permissions/).
@@ -310,7 +310,7 @@ For more information on permissions, see [Platform Essentials \> Permissions](..
 ### Service points
 
 
-The **Service points** section displays all service points assigned to the user record, including the user's service point preference, if applicable. For more information, see [Add or remove a service point](#add–or-remove-a-service-point).
+The **Service points** section displays all service points assigned to the user record, including the user's service point preference, if applicable. For more information, see [Add or remove a service point](/users/#add–or-remove-a-service-point) .
 
 
 ### Notes
@@ -325,7 +325,7 @@ The Notes section displays any notes about the patron. For more information, see
 To edit the **User information**, **Extended information**, or **Contact information** section in a user record, follow these steps: 
 
 
-1. [Find the user record](#search-for-user-a-record) you want to edit and select it.
+1. [Find the user record](#search-for-user-records) you want to edit and select it.
 2. In the **User record** pane, click **Actions \> Edit**.
 3. In the **Edit** window, edit the appropriate information in the [User information](#user-information), [Extended information](#extended-information), or [Contact information](#contact-information) sections.
 4. Click **Save & Close**. The user record is updated.
@@ -337,7 +337,7 @@ To edit the **User information**, **Extended information**, or **Contact informa
 To edit (or re-set) an **Expiration date** in an existing user record:
 
 
-1. [Find the User Record](#search-for-a-user-record) you want to edit and select it.
+1. [Find the user record](#search-for-user-records) you want to edit and select it.
 2. Select the user record from the **User search results** list. Click **Actions \> Edit**.
 3. Customize the expiration date by typing the new date in the **Expiration date** field using YYYY-MM-DD format. Or click on the **Calendar** icon in the **Expiration date** field to select a date. 
 * Reset the date to the default expiration date for the assigned patron group by clicking on the **Re-set** button in the **Expiration Date** field. The Expiration date reverts to the default expiration date for the assigned Patron Group.
@@ -351,7 +351,7 @@ To edit (or re-set) an **Expiration date** in an existing user record:
 A user's status can be changed between **Active** or **Inactive** based on changes in their employment status or enrollment status. 
 
 
-1. [Find the user record](#search-for-a-user-record) you want to edit and select it.
+1. [Find the user record](#search-for-user-records) you want to edit and select it.
 2. In the **User record** pane, click **Edit**.
 3. In the **Edit** window, in the **User Information** section, in the **Status** drop-down list, select **Active** or **Inactive**.
 4. Click **Save & Close**. 
@@ -366,7 +366,7 @@ Once a user record is created, a reset password link can be emailed to the user.
 To send a password reset link:
 
 
-1. [Find the user record](#search-for-a-user-record) for which you want to send a password reset email and select it.
+1. [Find the user record](#search-for-user-records) for which you want to send a password reset email and select it.
 2. In the **User record** pane, click **Edit**.
 3. In the **Edit** window, in the **Extended information**, click the **Send reset password email** link under **Folio password**. The reset password email is sent to the email address listed in the user’s **Contact information**.
 4. Optional: In the **Reset password email sent** pop-up window, click **Copy link** to copy the password reset link and manually send the link to the user in a different email application.
@@ -379,7 +379,7 @@ To send a password reset link:
 A **sponsor** is a user who authorizes another user to borrow library materials on their behalf. For example, if you are adding a sponsor to the user record of User One, then User One is the proxy and can borrow on behalf of User Two (the sponsor).
 
 
-1. [Find the user record](#search-for-a-user-record) to which you want to add a sponsor and select it.
+1. [Find the user record](#search-for-user-records) to which you want to add a sponsor and select it.
 2. In the **User record** pane, click **Edit**.
 3. In the **Edit** window, expand the **Proxy/sponsor** accordion and click **Add** in the **Sponsors** section.
 4. In the **Select User** pop-up window, search for the sponsor and select them. Optionally, additional information may be included: 
@@ -397,7 +397,7 @@ A **sponsor** is a user who authorizes another user to borrow library materials 
 A **proxy** is a user who is authorized to borrow library materials on another user’s behalf. For example, if you are adding a proxy to the user record of User One, then User Two is the proxy and can borrow on the behalf of User One (the sponsor).
 
 
-1. [Find the user record](#search-for-a-user-record) to which you want to add a proxy and select it.
+1. [Find the user record](#search-for-user-records) to which you want to add a proxy and select it.
 2. In the **User record** pane, click **Edit**.
 3. In the **Edit** window, expand the **Proxy/sponsor** accordion and click **Add** in the **Proxies** section.
 4. In the **User search** pop-up window, search for the proxy user and select them. Optionally, additional information may be included. 
@@ -412,13 +412,13 @@ A **proxy** is a user who is authorized to borrow library materials on another u
 ### Assign or unassign permissions
 
 
-Library staff must have permissions assigned to their user record in order to interact with the FOLIO user interface. Permissions are not and should not be assigned to patrons for library services such as borrowing books, requesting items, etc. For a list of permissions and their definitions, see the respective app's Permissions section in the documentation.
+Library staff must have permissions assigned to their user record in order to interact with the FOLIO user interface. Permissions are not and should not be assigned to patrons for library services such as borrowing books, requesting items, etc. For a list of permissions and their definitions, see the respective app's Permissions section in the documentation. For information about viewing a list of all users who are assigned a specific permissions set, see [Settings \> Users \> Permission sets](../settings/settings_users/settings_users/#settings--users--permission-sets).
 
 
 To **assign permissions** to a user’s record:
 
 
-1. [Find the user record](#search-for-a-user-record) to which you want to add permissions and select it.
+1. [Find the user record](#search-for-user-records) to which you want to add permissions and select it.
 2. In the **User record** pane, click **Edit**.
 3. In the **Edit** window, expand the **User permissions** accordion if needed. 
 4. Click **Add permission**.
@@ -434,7 +434,7 @@ Permissions can be unassigned, or removed, from a user’s record either individ
 To **unassign permissions** in a user’s record:
 
 
-1. [Find the user record](#search-for-a-user-record) for which you want to unassign, or remove permissions and select it.
+1. [Find the user record](#search-for-user-records) for which you want to unassign, or remove permissions and select it.
 2. In the **User record** pane, click **Edit**.
 3. In the **Edit** window, expand the **User permissions** accordion if needed. 
 4. Click the “x” next to the individual permission(s) or permission set(s) to unassign, or remove, them from the user record. 
@@ -444,7 +444,7 @@ To **unassign permissions** in a user’s record:
 Permissions can also be unassigned by following a modified version of the process for assigning them:
 
 
-1. [Find the user record](#search-for-a-user-record) to which you want to unassign, or remove permissions and select it.
+1. [Find the user record](#search-for-user-records) to which you want to unassign, or remove permissions and select it.
 2. In the **User record** pane, click **Edit**.
 3. In the **Edit** window, expand the **User permissions** accordion if needed. 
 4. Click **Add permission**.
@@ -457,7 +457,7 @@ Permissions can also be unassigned by following a modified version of the proces
 To remove all assigned permissions or permission sets from the user’s record in one click: 
 
 
-1. [Find the user record](#search-for-a-user-record) to which you want to remove permissions and select it.
+1. [Find the user record](#search-for-user-records) to which you want to remove permissions and select it.
 2. In the **User record** pane, click **Edit**.
 3. In the **Edit** window, expand the **User permissions** accordion if needed. 
 4. Click the **Unassign all permissions** button.
@@ -489,7 +489,7 @@ To add one or more service points to a user record:
 To remove one or more service points from a user record:
 
 
-1. [Find the user record](#search-for-a-user-record) to which you want to remove a service point and select it.
+1. [Find the user record](#search-for-user-records) to which you want to remove a service point and select it.
 2. In the **User record** pane, click **Edit**.
 3. In the **Edit** window, expand the **Service points** accordion if needed. 
 4. Click the “x” next to the service point(s) to remove them from the user record.
@@ -499,7 +499,7 @@ To remove one or more service points from a user record:
 Service points can also be removed by following a modified version of the process for adding them:
 
 
-1. [Find the user record](#search-for-a-user-record) to which you want to remove a service point and select it.
+1. [Find the user record](#search-for-user-records) to which you want to remove a service point and select it.
 2. In the **User record** pane, click **Edit**.
 3. In the **Edit** window, expand the **Service points** accordion if needed. 
 4. Click **Add service points**. 
@@ -516,7 +516,7 @@ Tags must be enabled in your FOLIO tenant in order to use tags in the Users app.
 To add a tag to a user record:
 
 
-1. [Find the user record](#search-for-a-user-record) to which you want to add a tag and select it.
+1. [Find the user record](#search-for-user-records) to which you want to add a tag and select it.
 2. In the **User record** pane, click the **tag icon** next to the **Actions** button.
 3. If you want to use an existing tag, select it from the drop-down list. If you want to create a new tag, type the tag into the box and select **Add tag for** the new tag name in the drop-down. 4.  Click the **X** on the **Tags** pane to close the pane and save the tag. The tag number updates to the number of tags applied to the user record.
 
@@ -524,7 +524,7 @@ To add a tag to a user record:
 To remove a tag from a user record:
 
 
-1. [Find the user record](#search-for-a-user-record) to which you want to add a tag and select it.
+1. [Find the user record](#search-for-user-records) to which you want to add a tag and select it.
 2. In the **User record** pane, click the **tag icon** next to the **Actions** button.
 3. Click the **X** next to the tag to be removed.  
 4. Click the **X** on the **Tags** pane to close the pane. The tag number updates to the number of tags applied to the user record.
@@ -547,7 +547,7 @@ Patron block templates must be set up in your FOLIO instance before using them t
 To create a patron block using a patron block template:
 
 
-1. [Find the user record](#search-for-a-user-record) of the patron you want to block and select it. 
+1. [Find the user record](#search-for-user-records) of the patron you want to block and select it. 
 2. Click on **Actions \> Create block** or in the **User record** pane, expand the **Patron blocks** accordion if needed and click **Create block**.  
 3. Select a patron block template from the **Template name** menu. Template values will be applied to the block.
 4. Add any additional information to the block and select an expiration date if needed.
@@ -557,7 +557,7 @@ To create a patron block using a patron block template:
 To create a patron block without a patron block template: 
 
 
-1. [Find the user record](#search-for-a-user-record) of the patron you want to block and select it.
+1. [Find the user record](#search-for-user-records) of the patron you want to block and select it.
 2. In the **User record** pane, expand the **Patron blocks** accordion.
 3. Click **Create block**.
 4. In the **New Block** window, expand the **Block information** accordion if needed. Enter a **Display Description**. This is the description that displays on the user record and in pop-up windows that appear when staff try to check out, renew, or request items on behalf of the patron, depending on their block.
@@ -571,7 +571,7 @@ To create a patron block without a patron block template:
 ### Edit a patron block
 
 
-1. [Find the user record](#search-for-a-user-record) of the patron with the block you want to edit and select it.
+1. [Find the user record](#search-for-user-records) of the patron with the block you want to edit and select it.
 2. In the **User record** pane, expand the **Patron blocks** accordion.
 3. In the **block table**, select the **block** you want to edit.
 4. In the **user block** window, make your changes.
@@ -587,7 +587,7 @@ Patron blocks with expiration dates are automatically removed from the user reco
 To remove a patron block with no assigned expiration date, follow these steps:
 
 
-1. [Find the user record](#search-for-a-user-record) of the patron with the block you want to edit and select it.
+1. [Find the user record](#search-for-user-records) of the patron with the block you want to edit and select it.
 2. In the **User record** pane, expand the **Patron blocks** accordion.
 3. Select the block you want to remove
 4. In the user record window, click **Delete**.
@@ -625,7 +625,7 @@ A user record can be deleted only if the user has no open transactions. To delet
 Follow these steps to check for open transactions and delete a user record in the UI:
 
 
-1. [Find the user record](#search-for-a-user-record) for which you want to check for open transactions and select it.
+1. [Find the user record](#search-for-user-records) for which you want to check for open transactions and select it.
 2. In the **Actions** menu, select **Check for open transactions/delete user**. 
 3. If there are no open transactions for this user, the message *No open transactions for user (Last Name, First Name). Are you sure you want to delete this user?* will appear in the **Check for open transactions/delete user** modal..  
 4. Click **Yes** to delete the user record. A *User (Last Name, First Name) deleted successfully* message will confirm deletion of the user record. 
@@ -813,7 +813,7 @@ When an item is declared lost, FOLIO will check the associated lost item fee pol
 
 
 A note can be added to an open loan. This note can be set to display for the patron and staff. To add patron information to an open loan on a user’s record:
-1. [Find the user record](#searching-for-user-records) to which you want to add **New patron info** and select it.
+1. [Find the user record](#search-for-user-records) to which you want to add **New patron info** and select it.
 2. In the **User record** pane, expand the **Loans** accordion and click on **Open loan(s)**. 
 3. Click on the Loan you wish to add patron info to. The **Loan details** window appears. 
 4. Click on the **New patron info** button. 
@@ -828,7 +828,7 @@ A note can be added to an open loan. The note can be viewed by staff with proper
 
 
 . To add staff information to an open loan on a user’s record:
-1. [Find the user record](#searching-for-user-records) to which you want to add **New staff information** and select it.
+1. [Find the user record](#search-for-user-records) to which you want to add **New staff information** and select it.
 2. In the **User record** pane, expand the **Loans** accordion and click on **Open loan(s)**. 
 3. Click on the Loan you wish to add staff info to. The **Loan details** window appears. 
 4. Click on the **New staff info** button. 
@@ -839,7 +839,7 @@ A note can be added to an open loan. The note can be viewed by staff with proper
 When an open loan including staff info or patron info is checked in, the loan becomes closed and the staff info or patron info is retained in the loan details. To view patron info or staff info on a closed loan: 
 
 
-1. [Find the user record](#searching-for-user-records) to which you want to view **Staff info** or **Patron info** and select it.
+1. [Find the user record](#search-for-user-records) to which you want to view **Staff info** or **Patron info** and select it.
 2. In the **User record** pane, expand the **Loans** accordion and click on **Closed  loan(s)**. 
 3. Click on the closed loan to select it. The **Loan details** window appears and displays *Staff info only* and *Patron info only* for the closed loan.  
 
@@ -850,7 +850,7 @@ When an open loan including staff info or patron info is checked in, the loan be
 Note that your library must configure fee/fine settings prior to charging fee/fines to patrons. See [Settings \> Users \> Owners](../settings/settings_users/settings_users/#settings--users--owners) and [Settings \> Users \> Manual Charges](../settings/settings_users/settings_users/#settings--users--manual-charges) for more information.
 
 
-1. [Find the user record](#searching-for-user-records) to which you want to add a fee/fine and select it.
+1. [Find the user record](#search-for-user-records) to which you want to add a fee/fine and select it.
 2. In the **User record** pane, expand the **Fees/fines** accordion if needed.
 3. Click **Create fee/fine**.
 4. In the **New fee/fine** window, select the **Fee/fine owner**.
@@ -868,7 +868,7 @@ Note that your library must configure fee/fine settings prior to charging fee/fi
 ### Accepting payment for a fee/fine
 
 
-1. [Find the user record](#searching-for-user-records) to which you want to accept payment for a fee/fine and select it.
+1. [Find the user record](#search-for-user-records) to which you want to accept payment for a fee/fine and select it.
 2. In the **User record** pane, expand the **Fees/fines** accordion if needed.
 3. Select **(number of) open fee/fine** to view the patron’s open fines.
 4. The **Fees/fines** modal will open. Click the fee/fine you wish to accept payment for.
@@ -888,7 +888,7 @@ The modal will close, and the **Fee/fine details** page will update with the pay
 Staff with appropriate permissions can apply a partial or full waive to a fee/fine.
 
 
-1. [Find the user record](#searching-for-user-records) to which you want to accept payment for a fee/fine and select it.
+1. [Find the user record](#search-for-user-records) to which you want to accept payment for a fee/fine and select it.
 2. In the **User record** pane, expand the **Fees/fines** accordion if needed.
 3. Select **(number of) open fee/fine** to view the patron’s open fines.
 4. The **Fees/fines** modal will open. Click the fee/fine you wish to waive.
@@ -907,7 +907,7 @@ The modal will close, and the **Fee/fine details** page will update with the pay
 Staff with appropriate permissions can partially or fully refund a fee/fine. The payment method must allow refunds. 
 
 
-1. [Find the user record](#searching-for-user-records) to which you want to refund a payment and click it.
+1. [Find the user record](#search-for-user-records) to which you want to refund a payment and click it.
 2. In the **User record** pane, expand the **Fees/fines** accordion if needed.
 3. Select **View all fees/fines** to view the patron’s fines.
 4. The **Fees/fines** modal will open. Click the fee/fine you wish to refund a payment for. It may be **Open** or **Closed**.
@@ -929,7 +929,7 @@ Staff with appropriate permissions can mark a fee/fine as an error; this has the
 Note that an error can only be applied to a fine in an **Outstanding** payment status. Marking a fine as an error is intended to be used when the fine is charged as a result of a staff or system/error and as such none of it should be paid.
 
 
-1. [Find the user record](#searching-for-user-records) to which you want to refund a payment and click it.
+1. [Find the user record](#search-for-user-records) to which you want to refund a payment and click it.
 2. In the **User record** pane, expand the **Fees/fines** accordion if needed.
 3. Select **View all fees/fines** to view the patron’s fines.
 4. The **Fees/fines** modal will open. Click the fee/fine you wish to refund a payment for. It may be **Open** or **Closed**.
