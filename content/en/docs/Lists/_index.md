@@ -3,7 +3,7 @@ title: "Lists"
 linkTitle: "Lists"
 date: 2023-12-14        
 weight: 
-—
+---
 
 
 The Lists app provides actionable lists in FOLIO at the point of need. Some use cases include:

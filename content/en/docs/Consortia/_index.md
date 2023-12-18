@@ -3,7 +3,7 @@ title: "Consortium manager"
 linkTitle: "Consortium manager"
 date: 2023-12-13        
 weight[a]: 
-—
+---
 
 
 **This section of the documentation contains links to external sites. Please be advised that these external sites are not maintained by the FOLIO Documentation Group and may be aligned with a different FOLIO release.**
