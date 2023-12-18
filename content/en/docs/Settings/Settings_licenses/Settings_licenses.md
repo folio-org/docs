@@ -1,7 +1,7 @@
 ---
 title: "Settings > Licenses"
 linkTitle: "Licenses"
-date: 2022-10-17
+date: 2023-10-31
 weight: 150
 tags: ["subtopic"]   
 ---
@@ -25,7 +25,7 @@ In order to interact with License settings, a user needs to be assigned the foll
 
 Terms are the terms of use that define what you can or cannot do with the content associated with the license.
 
-There are two types of terms you can create in FOLIO: primary and optional. Primary terms appear on every license record by default. Optional terms can be added on a license-by-license basis.
+There are two types of terms you can create in FOLIO: primary and optional. Primary terms appear on every license record by default. Optional terms can be added on a license-by-license basis. Primary terms will sort above optional terms even if an optional term is weighted higher. 
 
 
 ### Creating a term
@@ -145,4 +145,25 @@ Note: If you edit a pick list value, only the Label changes and not the Value te
 1. Select the **Pick list** with the value you want to delete in the drop-down list.
 2. In the row of the value you want to edit, click the **trash can icon**.
 3. In the **Delete Value** dialog, click **Delete**. A confirmation message appears and the value is deleted.
+
+
+## Settings > Licenses > App settings
+
+
+### File storage
+
+The Licenses app allows the uploading of files as part of the Supplementary documents and Core documents functionality (note that a document does not require a file upload as the document can refer to a physical document or an online document with a URL). When a file is uploaded as part of a supplementary or core document record, it will be automatically stored in one of two ways, depending on how the application has been configured. 
+
+Viewing and Editing the file storage settings requires appropriate permissions, which are as follows:
+
+Settings (Licenses): Can view and edit app settings
+
+The primary setting, which determines the overall method used for file storage, is the "Storage engine". There are currently two valid values for the Storage engine setting:
+
+1. LOB
+2. S3
+
+For information about using the LOB or S3 storage engines, please see: https://wiki.folio.org/display/FOLIOtips/File+storage+options
+
+This FOLIO wiki page also contains information about switching storage engines and maximum file sizes. 
 

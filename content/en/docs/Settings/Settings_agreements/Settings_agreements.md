@@ -1,7 +1,7 @@
 ---
 title: "Settings > Agreements"
 linkTitle: "Agreements"
-date: 2022-10-17
+date: 2023-10-31
 weight: 20
 tags: ["subtopic"]   
 ---
@@ -205,3 +205,24 @@ Note: If you edit a pick list value, only the Label changes and not the Value.
 1. Select the **Pick list** with the value you want to delete in the drop-down list.
 2. In the row of the value you want to edit, click the **trash can icon**.
 3. In the **Delete Value** dialog, click **Delete**. A confirmation message appears and the value is deleted.
+
+
+## Settings > Agreements > App settings
+
+
+### File storage
+
+The Agreements app allows the uploading of files as part of the Supplementary documents functionality (note that a document does not require a file upload as the document can refer to a physical document or an online document with a URL). When a file is uploaded as part of a supplementary record, it will be automatically stored in one of two ways, depending on how the application has been configured. 
+
+Viewing and Editing the file storage settings requires appropriate permissions, which are as follows:
+
+Settings (Agreements): Can view and edit app settings
+
+The primary setting, which determines the overall method used for file storage, is the "Storage engine". There are currently two valid values for the Storage engine setting:
+
+1. LOB
+2. S3
+
+For information about using the LOB or S3 storage engines, please see: https://wiki.folio.org/display/FOLIOtips/File+storage+options
+
+This FOLIO wiki page also contains information about switching storage engines and maximum file sizes. 
