@@ -1,12 +1,13 @@
 ---
 title: "Dashboard"
 linkTitle: "Dashboard"
-date: 2022-11-15
+date: 2023-11-15
 weight: 635
+tags: ["parenttopic"]
 ---
 
 
-The Dashboard app is designed to enable a personalized view of key information from across FOLIO apps at a glance. In its first release (included in the Juniper flower release), the Dashboard includes the ability to display information from the [Agreements](/docs/erm/agreements/) and [Licenses](/docs/erm/licenses/) applications.
+The Dashboard app is designed to enable a personalized view of key information from across FOLIO apps at a glance. In its first release (included in the Juniper flower release), the Dashboard includes the ability to display information from the [Agreements]() and [Licenses]() applications.
 
 Information for developers wishing to take advantage of Dashboard functionality for their own apps is available at the [Dashboard Documentation](https://wiki.folio.org/display/ERM/Dashboard%2BDocumentation) FOLIO wiki page.
 
@@ -33,7 +34,7 @@ The following are the Dashboard permissions:
 
 *   **Dashboard: Manage dashboard.** This includes the permission to see and access the Dashboard app in the FOLIO interface and allows the user to: 
 ** create, edit and delete dashboards.
-** add, edit, remove and reorder widgets on dashboards.
+** add, edit, remove, reorder and resize widgets on dashboards.
 ** add and remove users to/from the user access list for a dashboard.
 ** update the access level for a user in the user access list for a dashboard.
  *   **Dashboard: Dashboard Administrator.** This permission allows the user to access and make changes to all dashboards in the system as if they had been granted the 'manage' access level to the dashboard.  
@@ -64,20 +65,22 @@ Upon accessing the Dashboard application for the first time, the user is present
 3. Select a **Widget definition** from the drop-down list.
     *   The widget definition determines the type of widget being added to the dashboard, and comes with its own configuration options.
     *   The widget definitions are created by the applications that support the dashboard, so which widget definitions are available depends on the applications you have installed in your FOLIO tenant.
-    *   In the Nolana release the Agreements app comes with two dashboard widgets ("ERM Agreements" and "ERM Agreement Jobs") and the Licenses app comes with one dashboard widget ("ERM Licenses"). There are examples of how you can use these three widget definitions to achieve a wide range of outcomes in the [Example widget configurations](https://wiki.folio.org/display/FOLIOtips/Example+widget+configurations) documentation.
+    *   In the Poppy release the Agreements app comes with three dashboard widgets ("ERM Agreements," "ERM Agreement Jobs," and “ERM Agreement Lines”) and the Licenses app comes with one dashboard widget ("ERM Licenses"). There are examples of how you can use these four widget definitions to achieve a wide range of outcomes in the [Example widget configurations](https://wiki.folio.org/display/FOLIOtips/Example+widget+configurations) documentation.
 4. Complete the required fields.
 5. Click **Save & close**. The widget is saved and appears in the Dashboard pane.
 
 
 ## Reordering widgets
 
+Hover your mouse pointer over the six dots on the upper-left corner of a widget. A hand icon will appear. You can now drag and drop the widget into the desired position on the dashboard.
 
+Widget reordering via keyboard shortcuts is also supported. Use the Tab key until the widget you wish to move is highlighted, indicated by a solid bar across the top of a widget and an outline around the six dots on the upper-left corner of a widget. Press the spacebar to put the widget into move mode, then use an arrow key to move the widget left, right, up or down.
 
-1. In the **Dashboard** pane, click the **Actions** button and select **Manage widgets**. You will be shown a list of all of the widgets on your dashboard.
-2. Hover over the six dots to drag and drop the widgets into the desired order.
-    *   Widgets are displayed across the dashboard first and then down.
-    *   A minimum of one and a maximum of four widgets will display on one row.
-3. Click **Save & close**. The widget order is saved and appears in the Dashboard pane.
+## Resizing widgets
+
+Hover your mouse pointer over the L shaped mark on the bottom-right corner of a widget. An arrow icon will appear. You can now drag and drop the corner of the widget to get it to the desired size 
+
+Widget resizing via keyboard shortcuts is also supported. Use the Tab key until the widget you wish to move is highlighted, indicated by a solid bar across the top of a widget and an outline around the six dots on the upper-left corner of a widget. Press the spacebar to put the widget into move mode, then use Shift+an arrow key to increase or decrease the height or the width of the widget.
 
 
 ## Editing widgets
