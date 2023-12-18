@@ -1,7 +1,7 @@
 ---
 title: "eHoldings"
 linkTitle: "eHoldings"
-date: 2022-11-15
+date: 2023-11-20
 weight: 20
 tags: ["parenttopic"]
 ---
@@ -34,15 +34,15 @@ The following are all the eHoldings permissions:
 * **Settings (eholdings): Create, edit, and view Usage Consolidation API credentials.** This permission allows the user to update and view usage consolidation settings.
 * **Settings (eholdings): View Usage Consolidation API credentials.** This permission allows the user to view usage consolidation settings.
 * **Settings (eHoldings): Can assign/unassign a user from a KB.** This permission allows the user to assign and unassign a user from KB credentials.
-* **Export manager: All.** This permission allows the user to export eHoldings package and title+package details via the Export manager app.
-* **Export manager: Download and re-send files.** This permission allows the user to download and re-send files via the Export manager app. 
+* **Export manager: All.** This permission allows the user to export eHoldings package and title+package details via the [Export manager app](/docs/export-manager/).
+* **Export manager: Download and re-send files.** This permission allows the user to download and re-send files via the [Export manager app](/docs/export-manager/). 
 
 Note: This permission should only be used by institutions that maintain multiple EBSCO KB configurations.
 
 
 
 ## Keyboard shortcuts
-Keyboard shortcuts allow you to perform actions in this app using the keyboard.  See [Platform essentials > Keyboard shortcuts]({{< ref "keyboardshortcuts.md" >}}) for more information.
+Keyboard shortcuts allow you to perform actions in this app using the keyboard.  See [Platform essentials > Keyboard shortcuts](../../platform-essentials/keyboard-shortcuts/keyboardshortcuts/) for more information.
 
 
 
@@ -159,6 +159,19 @@ To filter titles by publication type, in the **Search & filter** pane, click **P
 * **Thesis & Dissertation.** A long essay on a particular subject written as a requirement for an advanced degree.
 * **Website.** A set of related web pages located under a single domain name.
 * **Unspecified.** The publication type is undefined.
+
+
+### Packages
+
+To filter titles by packages:
+
+
+
+1. In the **Search & filter** pane with the **Titles** toggle selected, enter a title in the Titles search box. You can also enter a ISSN/ISBN, Publisher, or Subject. Click **Search**.
+2. Click **Packages**.
+3. Select a package from the drop-down list.
+4. You can filter the list in the **Filter options list** box. 
+5. The title in that package will appear in the title record window. 
 
 
 ## Viewing provider, package, and title records
@@ -387,7 +400,7 @@ Use the Agreements section to create agreements or link the package to agreement
 2. In the **Package record** window, in the **Agreements** section, click **Add.**
 3. In the **Select agreement** dialog, enter the agreement’s name or a portion of the name into the search box in the **Search & filter** pane, and click **Search**. Search results appear in the Agreements pane.
 4. Optional: Filter results using the filters in the **Search & filter** pane.
-5. Click the agreement to select. The agreement is added to the package record.
+5. Click the agreement to select. The package is added to the agreement as an agreement line.
 
 
 ##### Creating a new agreement
@@ -397,7 +410,7 @@ Use the Agreements section to create agreements or link the package to agreement
 1. [Find the package](#searching-for-providers-packages-and-titles) to which you want to link an agreement and select it.
 2. In the **Package record** window, in the **Agreements** section, click **New.**
 3. Fill in the fields. See [Creating an agreement]({{< ref "/agreements.md#creating-an-agreement" >}}) for more information.
-4. Click **Save & close.** A confirmation message appears and the agreement is added to the package record.
+4. Click **Save & close.** A confirmation message appears and the package is added to the agreement as an agreement line..
 
 
 ##### Removing an agreement
@@ -406,7 +419,7 @@ Use the Agreements section to create agreements or link the package to agreement
 
 1. [Find the package](#searching-for-providers-packages-and-titles) from which you want to remove an agreement and select it.
 2. In the **Package record** window, in the **Agreements** section, click the **trash can icon** next to the agreement you want to remove.
-3. In the **Unassign an agreement from this record** dialog, click **Unassign**. A confirmation message appears and the agreement is removed from the package record, but not deleted from the Agreements app.
+3. In the **Unassign an agreement from this record** dialog, click **Unassign**. A confirmation message appears and the agreement line is removed from the package record, but not deleted from the Agreements app.
 
 
 ##### Usage & analysis
@@ -592,7 +605,7 @@ Note: There will be a 10,000 title limit when exporting a package detail record.
 3. From the **Package fields to export** drop-down list, you can select the following eHoldings information for export: Access Status Type, Agreements, Automatically Select titles, Custom Coverage, Holdings status, Notes, Package Content Type, Package Id, Package Name, Package Type, Provider Id, Provider Name, Proxy, Show To Patrons, and Tags.
 4. From the **Title fields to export** drop-down list, you can select the following eHoldings information for export: Access Status Type, Agreements, Alternative title(s), Contributors, Coverage statement, Custom Coverage, Custom Embargo, Custom label, Description, Edition, Holdings status, ISBN_Online, ISBN_Print, Managed coverage dates, Managed Embargo, Notes, Peer reviewed, Proxy, Publication Type, Publisher, Show To Patrons, Subjects, Tags, Title ID, Title name, Title Type, and URL.
 5. Click **Export.**
-6. The export will appear in the [Export manager app](/docs/export-manager/).
+6. The export will appear in the [Export manager app](/docs/export-manager/). 
 
 
 ## Deleting a custom package
@@ -689,7 +702,7 @@ Coverage is the available years or version of a publication. For a journal this 
 4. From the **Package fields to export** drop-down list, you can select the following eHoldings information for export: Access Status Type, Agreements, Automatically Select titles, Custom Coverage, Holdings status, Notes, Package Content Type, Package Id, Package Name, Package Type, Provider Id, Provider Name, Proxy, Show To Patrons, and Tags.
 5. From the **Title fields to export** drop-down list, you can select the following eHoldings information for export: Access Status Type, Agreements, Alternative title(s), Contributors, Coverage statement, Custom Coverage, Custom Embargo, Custom label, Description, Edition, Holdings status, ISBN_Online, ISBN_Print, Managed coverage dates, Managed Embargo, Notes, Peer reviewed, Proxy, Publication Type, Publisher, Show To Patrons, Subjects, Tags, Title ID, Title name, Title Type, and URL.
 6. Click **Export.**
-7. The export will appear in the [Export manager app](/docs/export-manager/).
+7. The export will appear in the [Export manager app](/docs/export-manager/). 
 
 
 ## Adding a tag to a title record
