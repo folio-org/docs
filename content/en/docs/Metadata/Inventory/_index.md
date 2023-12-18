@@ -522,7 +522,7 @@ The Location section contains information on the physical or electronic location
 -   **Permanent (required).** The default location of the resource, which can be a physical location where the resource is stored or an online location. Permanent location is assigned at the holdings level, but can be overridden at the item level, if needed. Select a **Permanent location** from the drop-down list, or click **Location look-up** to select a location.
 -   **Temporary.** A temporary location for the resource, which can be a physical location where the resource is stored or an online location. Temporary location can be assigned at the holdings level and overridden at the item level, if needed. Select a **Temporary location** from the drop-down list, or click **Location look-up** to select a location.
 -   **Shelving order.** A system-generated normalization of the call number that allows for call number sorting in reports and in search results.
--   **Shelving title.** ???
+-   **Shelving title.** A title by which the resource is shelved.
 -   **Copy number.** The copy number of the holdings.
 -   **Call number type.** The classification system used for the call number. Select the **Call number type** from the drop-down list. Configured in [Settings \> Inventory \> Call number types](../../settings/settings_inventory/settings_inventory/#settings--inventory--call-number-types).
 -   **Call number prefix.** Prefix of the call number on the holdings level. For example, FIC.
@@ -533,7 +533,7 @@ The Location section contains information on the physical or electronic location
 
 The Holding details section contains additional details about the holdings.
 
--   **Number of items.** Number of items in the holding?
+-   **Number of items.** Number of items in the holding.
 -   **Holdings statements.** Specifies the exact content to which the library has access, typically for continuing publications.
 -   **ILL policy.** Select list of values defining the library's lending policy, the ILL policy. For example, Will lend, Will not lend, Will reproduce, Will not reproduce, etc. Configured in [Settings \> Inventory \> ILL policy](../../settings/settings_inventory/settings_inventory/#settings--inventory--ill-policy).
 -   **Digitization policy.** Notes about the digitization policy.
@@ -620,7 +620,7 @@ The Acquisition section contains information on the acquisition of the holdings.
 
 #### Receiving history
 
-Receiving history is used for serials and continuing resources? Shows the materials that have already been received?
+Receiving history is used for serials and continuing resources. Shows the materials that have already been received.
 
 ##### Adding receiving history
 
@@ -852,7 +852,7 @@ To search, first select the record type (instance, holdings, or item) then enter
 -   **Authority UUID.** Universally unique identifier for an authority record stored in FOLIO. This searches for UUIDs in bibliographic data where a field is linked to and controlled by an authority record. This value is stored in a $9 the bibliographic record (visible via “View source”).
 -   **All.** Searches across all fields in all record types. May impact performance.
 -   **Query search.** A search for advanced users to query by property names using CQL.
--   **Advanced search** Either selected from the list of search options, or by clicking the **Advanced search** button, the user is presented with a popup window where up to six different search terms, boolean operators (AND, OR, NOT), types of search (Exact phrase, Contains all, Starts with) and fields to search may be specified.
+-   **Advanced search** Either selected from the list of search options, or by clicking the **Advanced search** button, the user is presented with a modal where up to six different search terms, boolean operators (AND, OR, NOT), types of search (Exact phrase, Contains all, Starts with) and fields to search may be specified.
 
 -   **Call number, eye readable.** Requires you to enter the call number exactly as it appears in the holdings record, including punctuation.
 -   **Call number, normalized.** Ignores any characters other than numbers and letters, such as punctuation and spaces.
@@ -880,7 +880,7 @@ When you browse records in the Inventory App, the **Browse** toggle is highlight
 
 The result of a browse search is shown in the pane to the right of the Search & filter pane under the title **Browse inventory**. It will include a list of call numbers, contributors or subjects that come before and after the data you specified, along with a number that indicates how many inventory records have those call numbers, contributors or subjects. If there is a match to what you specified, that result will be highlighted, otherwise you'll see a highlighted message "[your specified data] would be here". If you click on one of the links in the browse results you'll get list of inventory records that contain the selected call number, contributor or subject.
 
-## Filtering for a record, or for limiting results after a search
+## Filtering for a record, limiting results after a search, and sorting
 
 You can also search for instance, holdings, or item records by selecting any of the filters in the **Search & filter** pane. Additionally, you can apply the filters after you perform a search to limit your results. The filters available vary depending on whether you are searching for an instance, holdings, or item record. See the sections below for more information.
 
@@ -1040,6 +1040,14 @@ To search for items based on their material type, follow these steps:
 2.  Click the drop-down list and either enter the material type or select it from the list.
 3.  Repeat step 2 to add more than one material type. Your search results appear in the Inventory pane.
 
+### Sorting search results
+
+To sort results after conducting a search, click **Action** and use the dropdown menu under **Sort by** to select a sort option:
+
+- **Title.** This is the default sort option. Sorts the search results alphabetically (A to Z) by title.
+- **Contributors.** Sorts the search results alphabetically (A to Z) by contributor.
+- **Relevance.** Sorts the search results by relevancy (most to least relevant).
+
 ## Viewing an instance record
 
 Once you search for an instance, holding, or item, the following information appears in the Inventory pane:
@@ -1047,7 +1055,7 @@ Once you search for an instance, holding, or item, the following information app
 -   **Title.** Title of the instance.
 -   **Contributors.** Contributors of the instance.
 -   **Publishers.** Publisher of the instance.
--   **Relation.** Relation to other instances?
+-   **Relation.** Relation to other instances.
 
 In the search results, click any result to view the instance record.
 
