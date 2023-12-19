@@ -1,8 +1,8 @@
 ---
 title: "Consortium manager"
 linkTitle: "Consortium manager"
-date: 2023-12-13        
-weight[a]: 
+date: 2023-12-19       
+weight: 275 
 —
 
 
@@ -39,12 +39,12 @@ The permissions listed below allow the user to interact with the Consortium mana
 The following are the permissions for Consortium manager:
 
 
-* **Consortia manager: Consortia API module all permissions** This permission allows the user to use the Consortia API module to add or remove members in Consortium manager. 
-* **Consortia: Assign and unassign affiliations** This permission allows the user to add or remove affiliations of other users.
-* **Consortia: View affiliations** This permission allows the user to view the affiliations of other users.
-* **Consortium manager: Can create, edit and remove settings** This permission allows the user to perform build, create, edit and delete actions via the Consortia manager BUT the user must have the correct permissions in individual tenants to carry out these actions.
-* **Consortium manager: Can share settings to all members** This permission allows a user to create settings that will be shared by all members and is only editable in the central tenant.
-* **Consortium manager: Can view existing settings** This permission allows a user to view all the settings of members they are affiliated with via the consortia manager.
+* **Consortia manager: Consortia API module all permissions.** This permission allows the user to use the Consortia API module to add or remove members in Consortium manager. 
+* **Consortia: Assign and unassign affiliations.** This permission allows the user to add or remove affiliations of other users.
+* **Consortia: View affiliations.** This permission allows the user to view the affiliations of other users.
+* **Consortium manager: Can create, edit and remove settings.** This permission allows the user to perform build, create, edit and delete actions via the Consortia manager BUT the user must have the correct permissions in individual tenants to carry out these actions.
+* **Consortium manager: Can share settings to all members.** This permission allows a user to create settings that will be shared by all members and is only editable in the central tenant.
+* **Consortium manager: Can view existing settings.** This permission allows a user to view all the settings of members they are affiliated with via the consortia manager.
 
 
 ## Members
@@ -54,15 +54,15 @@ To view membership in **Consortium manager**, the user must be affiliated with t
 
 
 1. Select the primary tenant as the **active affiliation** in the top right corner if it is not already selected. 
-* To switch the **active affiliation**, click on the service point menu in the top right corner of the screen.
-* Select **switch active affiliation** in the drop-down menu. 
-* Select the primary member from the **Consortium members** menu. 
-* Click **Save & close**. 
+    - To switch the **active affiliation**, click on the service point menu in the top right corner of the screen.
+    - Select **switch active affiliation** in the drop-down menu. 
+    - Select the primary member from the **Consortium members** menu. 
+    - Click **Save & close**. 
 2. Click on the **Select members**. 
 3. In the **Select members** window, the list of members in the consortia is displayed. 
 
 
-Members cannot currently be added or removed in Consortium manager, but membership details can be edited. For more information about editing membership, see [Settings > Consortium manager](../settings/consortium-manager/#edit-member-details). 
+Members cannot currently be added or removed in Consortium manager, but membership details can be edited. For more information about editing membership, see [Settings > Consortium manager](../settings/settings_consortium-manager/settings_consortium-manager/#edit-member-details). 
 
 
 ## User type
@@ -80,10 +80,10 @@ In Consortium manager, **user types** include:
 * **System**: At least one system-level account must be in place in order to assign other roles and permissions. 
 
 
-For more information about creating a new user record manually, see [Creating a user record manually](../users/#creating-a-user-record-manually). 
+For more information about creating a new user record manually, see [Users \> Creating a user record manually](../users/#creating-a-user-record-manually). 
 
 
-For more information about editing user records, see [Edit a user record](../users/#edit-a-user-record). 
+For more information about editing user records, see [User \> Edit a user record](../users/#edit-a-user-record). 
 
 
 ## Affiliations 
@@ -121,7 +121,7 @@ A user's **primary affiliation** and affiliation with the central tenant cannot 
 To unassign an affiliation with a member, follow these steps:
 
 
-1. Search for the user record. For more information, see [Users > Search for user records](/users/#search-for-user-records). Select the user record. It will open in a new pane.
+1. Search for the user record. For more information, see [Users > Search for user records](../users/#search-for-user-records). Select the user record. It will open in a new pane.
 2. Click **Actions \> Edit** to edit the user record.
 3. Open the **Affiliations** accordion. The user’s primary affiliation appears in bold type.  
 4. Click the **Assign/unassign** button. 
@@ -139,7 +139,7 @@ Users may be assigned permissions for any assigned affiliations. To manage user 
 To assign affiliation permissions to a user record, go to the **Users** app and follow these steps:
 
 
-1. Search for the user record. For more information, see [Users \> Search for user records](/users/#search-for-user-records). Select the user record. It will open in a new pane.
+1. Search for the user record. For more information, see [Users \> Search for user records](../users/#search-for-user-records). Select the user record. It will open in a new pane.
 2. Click **Actions \> Edit** to edit the user record.
 3. Expand the **User permissions** accordion.
 4. Select the **Affiliation** from the drop-down menu. 
@@ -151,7 +151,7 @@ To assign affiliation permissions to a user record, go to the **Users** app and 
 To remove affiliation permissions from a user’s record, go to the **Users** app and follow these steps: 
 
 
-1. Search for the user record. For more information, see [Users \> Search for user records](/users/#search-for-user-records) for user records. 
+1. Search for the user record. For more information, see [Users \> Search for user records](../users/#search-for-user-records) for user records. 
 2. Select the user record. It will open in a new pane.
 3. Click **Actions \> Edit**.
 4. Expand the **User permissions** accordion.
@@ -159,7 +159,7 @@ To remove affiliation permissions from a user’s record, go to the **Users** ap
 6. Unassign permissions by any of these methods: 
 * Click on the **X icon** next to a permission to remove the permission for that affiliation.
 *  Or click on **Add permission** and uncheck the box next to **Name** in the **Permissions** window to unassign all of the permissions for that affiliation with one click.
-* To remove all permissions for an affiliation, click on the **Unassign all permissions** button or [unassign the affiliation](###unassign-an-affiliation). All permissions are removed for that user in that member’s tenant.
+* To remove all permissions for an affiliation, click on the **Unassign all permissions** button or [unassign the affiliation](#unassign-an-affiliation). All permissions are removed for that user in that member’s tenant.
 7. Click **Save & close** to save the changes to the user record.
 
 
@@ -178,11 +178,11 @@ If a setting is not shared, it serves as a local setting for a specific member l
 Shared settings are available in Consortium manager for these FOLIO apps:
 
 
-* [**Circulation**](###circulation)
-* [**Data Import**](###data-import)
-* [**Data Export**](###data-export)
-* [**Inventory**](###inventory)
-* [**Users**](###users)
+* [**Circulation**](#circulation)
+* [**Data Import**](#data-import)
+* [**Data Export**](#data-export)
+* [**Inventory**](#inventory)
+* [**Users**](#users)
 
 
 ### Circulation
@@ -229,22 +229,22 @@ To view a data export log for a member library, follow these steps:
 
 
 1. Select the central, or primary, tenant as the **active affiliation** in the top right corner if it is not already selected. If the central tenant is not selected: 
-* Click on the user profile icon in the top right corner of the screen to switch the **active affiliation**. 
-* Select **switch active affiliation** in the drop-down menu. 
-* Select the primary member from the **Consortium members** menu. 
-* Click **Save & close**. 
+    - Click on the user profile icon in the top right corner of the screen to switch the **active affiliation**. 
+    - Select **switch active affiliation** in the drop-down menu. 
+    - Select the primary member from the **Consortium members** menu. 
+    - Click **Save & close**. 
 2. In **Consortium manager**, select **Data export** in the **Settings** pane. 
 3. In the **Data export** pane, select the **Member** for which you wish to view the logs. 
 4. The **Data export** logs are listed in the **Data export** pane with these identifiers:
-* **File name**: File name assigned by the FOLIO system. 
-* **Status**: Completed, Fail, or Completed with errors
-* **Total**: Number of records requested for export
-* **Exported**: Number of records exported
-* **Failed**: Number of records not exported successfully
-* **Job profile**: Description of data export job
-* **Ended running**: Date and time the data export job finished
-* **Run by**: FOLIO username of user who ran the data export job
-* **ID**: Number assigned to the data export log by the FOLIO system
+    - **File name**: File name assigned by the FOLIO system. 
+    - **Status**: Completed, Fail, or Completed with errors
+    - **Total**: Number of records requested for export
+    - **Exported**: Number of records exported
+    - **Failed**: Number of records not exported successfully
+    - **Job profile**: Description of data export job
+    - **Ended running**: Date and time the data export job finished
+    - **Run by**: FOLIO username of user who ran the data export job
+    - **ID**: Number assigned to the data export log by the FOLIO system
 
 
 ### Data Import
@@ -257,21 +257,21 @@ To view a data import log for a member library, follow these steps:
 
 
 1. Select the central, or primary, tenant as the **active affiliation** in the top right corner if it is not already selected. If the central tenant is not selected: 
-* Click on the user profile icon in the top right corner of the screen to switch the **active affiliation**. 
-* Select **switch active affiliation** in the drop-down menu. 
-* Select the primary member from the **Consortium members** menu. 
-* Click **Save & close**. 
+    - Click on the user profile icon in the top right corner of the screen to switch the **active affiliation**. 
+    - Select **switch active affiliation** in the drop-down menu. 
+    - Select the primary member from the **Consortium members** menu. 
+    - Click **Save & close**. 
 2. In **Consortium manager**, select **Data import** in the **Settings** pane. 
 3. In the **Data import** pane, select the **Member** for which you wish to view the logs. 
 4. The **Data import** logs are listed in the **Data import** pane with these identifiers:
-* **File name**: File name assigned by the FOLIO system. 
-* **Status**: Completed, Fail, or Completed with errors
-* **Records**: Number of records imported
-* **Job profile**: Description of data import job
-* **Started running**: Date and time the data import job started
-* **Ended running**: Date and time the data import job finished
-* **Run by**: FOLIO username of user who ran the data import job
-* **ID**: Number assigned to the data import log by the FOLIO system
+    - **File name**: File name assigned by the FOLIO system. 
+    - **Status**: Completed, Fail, or Completed with errors
+    - **Records**: Number of records imported
+    - **Job profile**: Description of data import job
+    - **Started running**: Date and time the data import job started
+    - **Ended running**: Date and time the data import job finished
+    - **Run by**: FOLIO username of user who ran the data import job
+    - **ID**: Number assigned to the data import log by the FOLIO system
 
 
 ### Inventory
@@ -323,10 +323,10 @@ To view shared permissions, follow these steps:
 
 
 1. Select the central, or primary, tenant as the **active affiliation** in the top right corner if it is not already selected. If the central tenant is not selected, switch the active affiliation. 
-* Click on the user profile icon in the top right corner of the screen to switch the **active affiliation**. 
-* Select **switch active affiliation** in the drop-down menu. 
-* Select the primary member from the **Consortium members** menu. 
-* Click **Save & close**. 
+    - Click on the user profile icon in the top right corner of the screen to switch the **active affiliation**. 
+    - Select **switch active affiliation** in the drop-down menu. 
+    - Select the primary member from the **Consortium members** menu. 
+    - Click **Save & close**. 
 2. In **Consortium manager**, select **Users** in the **Settings** pane. 
 3. In the **Users** pane, select **Permission sets**. 
 4. In the **Permission sets** pane, select the **Member** for which you wish to view the assigned permission set(s) from the drop-down menu. If the member is not displayed as an option, click on the **Select members** button and check the box next to the member’s **Name** in the **Select members** window.
@@ -338,10 +338,10 @@ To create a shared permission, follow these steps:
 
 
 1. Select the central tenant as the **active affiliation** in the top right corner if it is not already selected. If the central tenant is not selected, switch the active affiliation. 
-* Click on the user profile icon in the top right corner of the screen to switch the **active affiliation**. 
-* Select **switch active affiliation** in the drop-down menu. 
-* Select the primary member from the **Consortium members** menu. 
-* Click **Save & close**. 
+    - Click on the user profile icon in the top right corner of the screen to switch the **active affiliation**. 
+    - Select **switch active affiliation** in the drop-down menu. 
+    - Select the primary member from the **Consortium members** menu. 
+    - Click **Save & close**. 
 2. In **Consortium manager**, select **Users** in the **Settings** pane. 
 3. In the **Users** pane, select **Permission sets**. 
 4. In the **Permission sets** pane, click ** the **Select members** button and check the box next to the name of each member for which the new permission will be created. 
@@ -354,10 +354,10 @@ To compare shared user permission sets between two members, follow these steps:
 
 
 1. Select the central, or primary, tenant as the **active affiliation** in the top right corner if it is not already selected. If the central tenant is not selected, switch the active affiliation. 
-* Click on the user profile icon in the top right corner of the screen to switch the **active affiliation**. 
-* Select **switch active affiliation** in the drop-down menu. 
-* Select the primary member from the **Consortium members** menu. 
-* Click **Save & close**. 
+    - Click on the user profile icon in the top right corner of the screen to switch the **active affiliation**. 
+    - Select **switch active affiliation** in the drop-down menu. 
+    - Select the primary member from the **Consortium members** menu. 
+    - Click **Save & close**. 
 2. Select **Users** in the **Settings** pane. 
 3. In the **Users** pane, select **Permission sets**. 
 4. In the **Permission sets** pane, click the **Actions** button and select **Compare**.
@@ -369,10 +369,10 @@ To edit permissions assigned to a shared user permission set, follow these steps
 
 
 1. Select the central, or primary, tenant as the **active affiliation** in the top right corner if it is not already selected. If the central tenant is not selected, switch the active affiliation. 
-* Click on the user profile icon in the top right corner of the screen to switch the **active affiliation**. 
-* Select **switch active affiliation** in the drop-down menu. 
-* Select the primary member from the **Consortium members** menu. 
-* Click **Save & close**. 
+    - Click on the user profile icon in the top right corner of the screen to switch the **active affiliation**. 
+    - Select **switch active affiliation** in the drop-down menu. 
+    - Select the primary member from the **Consortium members** menu. 
+    - Click **Save & close**. 
 1. In **Consortium manager**, select **Users** in the **Settings** pane. 
 2. In the **Users** pane, select **Permission sets**. 
 3. In the **Permission sets** pane, select the **Member** for which you wish to view the assigned permission set(s). 
@@ -380,21 +380,19 @@ To edit permissions assigned to a shared user permission set, follow these steps
 5. Expand the **Assigned permissions** accordion to view the list of **permissions** included in the **permission set**. 
 6. Select the **permission set**. The **permission set** will open in a new pane. 
 7. Click on the **Edit** button in the top right corner of the permission set pane. A new **Edit: [Permission name]** window opens. 
+    - To add, or assign, a permission to a permission set:
+        - Expand the **Assigned permissions** accordion and click on the **Add permission** button. In the new window, select the appropriate permissions to add to the permission set by searching and filtering or checking the box by the permission’s name. More than one permission may be added to the permission set in this step. 
+        - Click **Save & close**.
 
 
-* To add, or assign, a permission to a permission set:
-   * Expand the **Assigned permissions** accordion and click on the **Add permission** button. In the new window, select the appropriate permissions to add to the permission set by searching and filtering or checking the box by the permission’s name. More than one permission may be added to the permission set in this step. 
-   * Click **Save & close**.
+    - To remove, or unassign, a permission from a permission set: 
+        - Expand the **Assigned permissions** accordion and click on the **Add permission** button. In the new window, uncheck the box next to the name of the permission to remove it from the permission set. More than one permission may be removed from the permission set in this step. 
+        - Click **Save & close**.
 
 
-* To remove, or unassign, a permission from a permission set: 
-   * Expand the **Assigned permissions** accordion and click on the **Add permission** button. In the new window, uncheck the box next to the name of the permission to remove it from the permission set. More than one permission may be removed from the permission set in this step. 
-   * Click **Save & close**.
-
-
-* To remove or unassign all permissions in the permission set: 
-   * Click on the **Unassign all permissions** button. 
-   * Click **Save & close**.
+    - To remove or unassign all permissions in the permission set: 
+        - Click on the **Unassign all permissions** button. 
+        - Click **Save & close**.
 
 
 For more information about creating, editing, assigning, and unassigning permissions, see [User > Permissions](../users/#user-permissions).
@@ -404,10 +402,10 @@ To assign or unassign shared permissions to a user:
 
 
 1. Select the central, or primary, tenant as the **active affiliation** in the top right corner if it is not already selected. If the central tenant is not selected, switch the active affiliation. 
-* Click on the user profile icon in the top right corner of the screen to switch the **active affiliation**. 
-* Select **switch active affiliation** in the drop-down menu. 
-* Select the primary member from the **Consortium members** menu. 
-* Click **Save & close**. 
+    - Click on the user profile icon in the top right corner of the screen to switch the **active affiliation**. 
+    - Select **switch active affiliation** in the drop-down menu. 
+    - Select the primary member from the **Consortium members** menu. 
+    - Click **Save & close**. 
 2. In **Consortium manager**, select **Users** in the **Settings** pane. 
 3. In the **Users** pane, select **Permission sets**. 
 4. In the **Permission sets** pane, select the **Member** for which you wish to view the assigned permission set(s). 
@@ -426,10 +424,10 @@ To view the shared **Patron groups**, follow these steps:
 
 
 1. Select the central tenant as the **active affiliation** in the top right corner if it is not already selected. If the central tenant is not selected, switch the active affiliation. 
-* Click on the user profile icon in the top right corner of the screen to switch the **active affiliation**. 
-* Select **switch active affiliation** in the drop-down menu. 
-* Select the primary member from the **Consortium members** menu. 
-* Click **Save & close**. 
+    - Click on the user profile icon in the top right corner of the screen to switch the **active affiliation**. 
+    - Select **switch active affiliation** in the drop-down menu. 
+    - Select the primary member from the **Consortium members** menu. 
+    - Click **Save & close**. 
 2. Select **Users** in the **Settings** pane.
 3. Select **Patron groups** in the **User** pane. 
 4. The list of **Patron groups** displays in the **Patron groups** pane. The identifiers,  **Description**, **Expiration date offset (number of days)**, **Last updated**, and **Member libraries** display in separate columns. 
@@ -439,10 +437,10 @@ To create a shared **Patron group** for the consortium, follow these steps:
 
 
 1. Select the central tenant as the **active affiliation** in the top right corner if it is not already selected. If the central tenant is not selected, switch the active affiliation. 
-* Click on the user profile icon in the top right corner of the screen to switch the **active affiliation**. 
-* Select **switch active affiliation** in the drop-down menu. 
-* Select the primary member from the **Consortium members** menu. 
-* Click **Save & close**. 
+    - Click on the user profile icon in the top right corner of the screen to switch the **active affiliation**. 
+    - Select **switch active affiliation** in the drop-down menu. 
+    - Select the primary member from the **Consortium members** menu. 
+    - Click **Save & close**. 
 2. Select **Users** in the **Settings** pane.
 3. Select **Patron groups** in the **User** pane. 
 4. In the **Patron groups** pane, click the **Select members** button to select the member(s) for which you wish to create the shared setting. To select all members, check the box next to **Name**. 
@@ -458,10 +456,10 @@ To create a local (unshared) **Patron group** for the consortium, follow these s
 
 
 1. Select the central tenant as the **active affiliation** in the top right corner if it is not already selected. If the central tenant is not selected, switch the active affiliation. 
-* Click on the user profile icon in the top right corner of the screen to switch the **active affiliation**. 
-* Select **switch active affiliation** in the drop-down menu. 
-* Select the primary member from the **Consortium members** menu. 
-* Click **Save & close**. 
+    - Click on the user profile icon in the top right corner of the screen to switch the **active affiliation**. 
+    - Select **switch active affiliation** in the drop-down menu. 
+    - Select the primary member from the **Consortium members** menu. 
+    - Click **Save & close**. 
 2. Select **Users** in the **Settings** pane.
 3. Select **Patron groups** in the **User** pane. 
 4. In the **Patron groups** pane, click the **Select members** button to select the member(s) for which you wish to create the local, or unshared, setting. 
@@ -497,10 +495,10 @@ To view the shared **Departments**, follow these steps:
 
 
 1. Select the central tenant as the **active affiliation** in the top right corner if it is not already selected. If the central tenant is not selected, switch the active affiliation. 
-* Click on the user profile icon in the top right corner of the screen to switch the **active affiliation**. 
-* Select **switch active affiliation** in the drop-down menu. 
-* Select the primary member from the **Consortium members** menu. 
-* Click **Save & close**. 
+    - Click on the user profile icon in the top right corner of the screen to switch the **active affiliation**. 
+    - Select **switch active affiliation** in the drop-down menu. 
+    - Select the primary member from the **Consortium members** menu. 
+    - Click **Save & close**. 
 2. Select **Users** in the **Settings** pane.
 3. Select **Departments** in the **User** pane. 
 4. The list of **Departments** displays in the **Departments** pane. The identifiers,  **Name**, **Code**, **Last updated**, **# of users**, and **Member libraries** display in separate columns. 
@@ -510,10 +508,10 @@ To create a shared **Department** for the consortium, follow these steps:
 
 
 1. Select the central tenant as the **active affiliation** in the top right corner if it is not already selected. If the central tenant is not selected, switch the active affiliation. 
-* Click on the user profile icon in the top right corner of the screen to switch the **active affiliation**. 
-* Select **switch active affiliation** in the drop-down menu. 
-* Select the primary member from the **Consortium members** menu. 
-* Click **Save & close**. 
+    - Click on the user profile icon in the top right corner of the screen to switch the **active affiliation**. 
+    - Select **switch active affiliation** in the drop-down menu. 
+    - Select the primary member from the **Consortium members** menu. 
+    - Click **Save & close**. 
 2. Select **Users** in the **Settings** pane.
 3. Select **Departments** in the **User** pane. 
 4. In the **Departments** pane, click the **Select members** button to select the member(s) for which you wish to create the shared setting. To select all members, check the box next to **Name**. 
@@ -529,10 +527,10 @@ To create a local (unshared) **Department** for the consortium, follow these ste
 
 
 1. Select the central tenant as the **active affiliation** in the top right corner if it is not already selected. If the central tenant is not selected, switch the active affiliation. 
-* Click on the user profile icon in the top right corner of the screen to switch the **active affiliation**. 
-* Select **switch active affiliation** in the drop-down menu. 
-* Select the primary member from the **Consortium members** menu. 
-* Click **Save & close**. 
+    - Click on the user profile icon in the top right corner of the screen to switch the **active affiliation**. 
+    - Select **switch active affiliation** in the drop-down menu. 
+    - Select the primary member from the **Consortium members** menu. 
+    - Click **Save & close**. 
 2. Select **Users** in the **Settings** pane.
 3. Select **Departments** in the **User** pane. 
 4. In the **Departments** pane, click the **Select members** button to select the member(s) for which you wish to create the local, or unshared, setting. 
@@ -549,7 +547,7 @@ To edit a **Departments**, follow these steps:
 
 1. Click on the **pencil icon** in the **Actions** column. 
 2. Make edits to the **Name** and **Code** fields. 
-3. The **Share** box is grayed out because the sharing option cannot be edited once the setting is created and initially saved. For more information about changing sharing options in a shared setting, see [Shared Settings](/##shared-settings).
+3. The **Share** box is grayed out because the sharing option cannot be edited once the setting is created and initially saved. For more information about changing sharing options in a shared setting, see [Shared Settings](/#shared-settings).
 4. Click **Actions \> Save**. 
 
 
@@ -559,4 +557,4 @@ To delete a **Department**, follow these steps:
 1. Click on the **trash can icon** in the **Actions** column. 
 2. A **Delete Departments [name of Department]** pop-up window appears with the message, *The Departments (Department Name) will be **deleted**.
 3. Click **Delete** to delete the Department or click **Cancel** to cancel the deletion.
-[a]Add correct weight for this section.
+
