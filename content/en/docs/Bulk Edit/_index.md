@@ -148,7 +148,7 @@ To suppress the matched item records from discovery in the Bulk edit app, follow
    - Set false: Unsuppresses the matched item records from discovery.
 3. Click **Confirm changes** to apply the changes to the matched item records.
 4. An *Are you sure?* message appears in a new window with a **Preview of records to be changed**. An alert appears at the top of the window: *(Number of) records will be changed if the Commit changes button is clicked.* You may choose Download preview to review all changes prior to saving. Click **Keep editing** to return to the Bulk edits window, **Download preview** to preview the changes before saving, or **Commit changes** to run the bulk edit.
-5. The changes will be applied to the matched item records once **Commit changes** is clicked. 
+5. The changes will be applied to the matched item records once **Commit changes** is clicked.
 
 
 ## Inventory - items
@@ -209,7 +209,7 @@ To start a bulk edit on the matched records, follow these steps:
 9. To preview the entire list of records, click **Download preview**. A .csv file is downloaded to your local device.
 10. To run the bulk edit job, click **Commit changes**. The window closes and the banner at top of the Bulk edit pane displays the number of records successfully changed.
 11. To download the list of changed records, click the **Actions** button at the top right of the pane.
-12. Select **Download changed records (CSV)**. The .csv file is downloaded to your local device. 
+12. Select **Download changed records (CSV)**. The .csv file is downloaded to your local device.
 
 
 #### Administrative note
@@ -226,9 +226,9 @@ To bulk edit the **Administrative note** in the matched records, follow these st
     - **Find** Input note text you want to find. Select **Replace with** and input new text or select **Remove** to remove the text.
     - **Change note type.** Select the new note type.
       
-4. Click **Confirm changes**. The selected action will be applied to the matched item records.
-5. The **Preview of records to be changed** will pop up with options of **Keep editing**, **Download preview**, or **Commit changes**.
-6. The changes will be applied to the item records once **Commit changes** is clicked. 
+3. Click **Confirm changes**. The selected action will be applied to the matched item records.
+4. The **Preview of records to be changed** will pop up with options of **Keep editing**, **Download preview**, or **Commit changes**.
+5. The changes will be applied to the item records once **Commit changes** is clicked.
 
 
 #### Check in note
@@ -247,9 +247,9 @@ To bulk edit the **Check in note** in the matched records, follow these steps:
     - **Find** input note text you want to find. Select **Replace with** and input new text or select **Remove** to remove the text.
     - **Change note type.** Select the new note type you want.
       
-4. Click **Confirm changes**. The selected action will be applied to the item records.
-5. The **Preview of records to be changed** will pop up with options of **Keep editing**, **Download preview**, or **Commit changes**.
-6. The changes will be applied to the matched item records once **Commit changes** is clicked. 
+3. Click **Confirm changes**. The selected action will be applied to the item records.
+4. The **Preview of records to be changed** will pop up with options of **Keep editing**, **Download preview**, or **Commit changes**.
+5. The changes will be applied to the matched item records once **Commit changes** is clicked.
 
 
 #### Check out note
@@ -268,9 +268,9 @@ To bulk edit the **Check out note** in the matched records, follow these steps:
     - **Find**. Input note text you want to find. Select **Replace with** and input new text or select **Remove** to remove the text.
     - **Change note type.** Select the new note type you want.
       
-4. Click **Confirm changes**. The selected action will be applied to the item records.
-5. The **Preview of records to be changed** will pop up with options of **Keep editing**, **Download preview**, or **Commit changes**.
-6. The changes will be applied to the matched item records once **Commit changes** is clicked. 
+3. Click **Confirm changes**. The selected action will be applied to the item records.
+4. The **Preview of records to be changed** will pop up with options of **Keep editing**, **Download preview**, or **Commit changes**.
+5. The changes will be applied to the matched item records once **Commit changes** is clicked.
 
 
 #### Item notes
@@ -299,7 +299,7 @@ To bulk edit an **item note** in the matched records, follow these steps:
 
 3. Click **Confirm changes**. The selected action will be applied to the matched item records..
 4. The **Preview of records to be changed** will pop up with options of **Keep editing**, **Download preview**, or **Commit changes**.
-5. The changes will be applied to the matched item records once **Commit changes** is clicked. 
+5. The changes will be applied to the matched item records once **Commit changes** is clicked.
 
 
 #### Item status
@@ -313,7 +313,7 @@ To bulk edit the **item status** field in the matched records, follow these step
 3. Click **Actions** to select the item status you want to apply from the drop-down lis
 4. Click **Confirm changes**. The new item status will be applied to the item records.
 5. The **Preview of records to be changed** will pop up with options of **Keep editing**, **Download preview**, or **Commit changes**.
-6. The changes will be applied to the item records once **Commit changes** is clicked. 
+6. The changes will be applied to the item records once **Commit changes** is clicked.
 
 
 #### Loan type
@@ -337,7 +337,7 @@ To bulk edit the **loan type** in the matched records, follow these steps:
 3. Select the new loan type from the **Select loan type** drop-down menu or use the **Filter options list** to select the new loan type.
 4. Click **Confirm changes**. The selected action will be applied to the matched item records.
 5. The **Preview of records to be changed** will pop up with options of **Keep editing**, **Download preview**, or **Commit changes**.
-6. The changes will be applied to the matched item records once **Commit changes** is clicked. 
+6. The changes will be applied to the matched item records once **Commit changes** is clicked.
 
 
 #### Location
@@ -360,7 +360,7 @@ To bulk edit the **Location** in the matched records, follow these steps:
 
 3. Click **Confirm changes**. The selected action will be applied to the matched item records.
 4. The **Preview of records to be changed** will pop up with options of **Keep editing**, **Download preview**, or **Commit changes**.
-5. The changes will be applied to the matched item records once **Commit changes** is clicked. 
+5. The changes will be applied to the matched item records once **Commit changes** is clicked.
 
 
 #### Suppress from discovery
@@ -375,9 +375,9 @@ To suppress the matched item records from discovery in the Bulk edit app, follow
     - Set true: Suppresses the matched item records from discovery.
     - Set false: Unsuppresses the matched item records from discovery.
       
-4. Click **Confirm changes** to apply the changes to the matched item records.
-5. An *Are you sure?* message appears in a new window with a **Preview of records to be changed**. An alert appears at the top of the window: *(Number of) records will be changed if the Commit changes button is clicked*. You may choose Download preview to review all changes prior to saving. Click **Keep editing** to return to the Bulk edits window, **Download preview** to preview the changes before saving, or **Commit changes** to run the bulk edit.
-6. The changes will be applied to the matched item records once **Commit changes** is clicked. 
+3. Click **Confirm changes** to apply the changes to the matched item records.
+4. An *Are you sure?* message appears in a new window with a **Preview of records to be changed**. An alert appears at the top of the window: *(Number of) records will be changed if the Commit changes button is clicked*. You may choose Download preview to review all changes prior to saving. Click **Keep editing** to return to the Bulk edits window, **Download preview** to preview the changes before saving, or **Commit changes** to run the bulk edit.
+5. The changes will be applied to the matched item records once **Commit changes** is clicked.
 
 
 ## Users
@@ -401,7 +401,7 @@ The **record identifiers** for bulk edit include:
     - **External IDs**
     - **Usernames**
       
-4. **Drag and drop** your .csv file into the **Select a file with record identifiers** box, or click **or choose file** to upload the .csv file from your computer.
+3. **Drag and drop** your .csv file into the **Select a file with record identifiers** box, or click **or choose file** to upload the .csv file from your computer.
 
 
 ### Preview matched records
@@ -480,9 +480,9 @@ To bulk edit the **Email** field in the matched records, follow these steps:
     - Click **Download preview** to download a .csv file of the proposed changes. 
     - Click **Commit changes** to run the bulk edit.
       
-7. When the bulk edit is complete, a confirmation message, *(Number of) records have been successfully changed*, appears in the **Bulk edit** window. 
-8. To change the column headings in the **Preview of record changed** table, click **Actions** and select or deselect the fields in the **Show columns** list as appropriate.
-9. To download a .csv file of changed records, click **Actions > Download changed records (CSV)**. 
+6. When the bulk edit is complete, a confirmation message, *(Number of) records have been successfully changed*, appears in the **Bulk edit** window.
+7. To change the column headings in the **Preview of record changed** table, click **Actions** and select or deselect the fields in the **Show columns** list as appropriate.
+8. To download a .csv file of changed records, click **Actions > Download changed records (CSV)**.
 
 
 #### Expiration date
@@ -501,9 +501,9 @@ To bulk edit the **Expiration date** field in the matched records, follow these 
     - Click **Download preview** to download a .csv file of the proposed changes. 
     - Click **Commit changes** to run the bulk edit.
       
-7. When the bulk edit is complete, a confirmation message, *(Number of) records have been successfully changed*, appears in the **Bulk edit** window. 
-8. To change the column headings in the **Preview of record changed** table, click **Actions** and select or deselect the fields in the **Show columns** list as appropriate.
-9. To download a .csv file of changed records, click **Actions > Download changed records (CSV)**. 
+6. When the bulk edit is complete, a confirmation message, *(Number of) records have been successfully changed*, appears in the **Bulk edit** window.
+7. To change the column headings in the **Preview of record changed** table, click **Actions** and select or deselect the fields in the **Show columns** list as appropriate.
+8. To download a .csv file of changed records, click **Actions > Download changed records (CSV)**.
 
 
 #### Patron group
@@ -519,12 +519,12 @@ To bulk edit the **Patron group** field in the matched records, follow these ste
 5. An *Are you sure?* message appears in a new window. The message *(Number of) records will be changed if the Commit changes button is clicked.* You may choose Download preview to review all changes prior to saving.* A **Preview of records to be changed** is also displayed.
    
     - Click **Keep editing** to return to the Bulk edit window.
-    - Click **Download preview** to download a .csv file of the proposed changes. 
+    - Click **Download preview** to download a .csv file of the proposed changes.
     - Click **Commit changes** to run the bulk edit.
       
-7. When the bulk edit is complete, a confirmation message, *(Number of) records have been successfully changed*, appears in the **Bulk edit** window. 
-8. To change the column headings in the **Preview of record changed** table, click **Actions** and select or deselect the fields in the **Show columns** list as appropriate.
-9. To download a .csv file of changed records, click **Actions > Download changed records (CSV)**. 
+6. When the bulk edit is complete, a confirmation message, *(Number of) records have been successfully changed*, appears in the **Bulk edit** window.
+7. To change the column headings in the **Preview of record changed** table, click **Actions** and select or deselect the fields in the **Show columns** list as appropriate.
+8. To download a .csv file of changed records, click **Actions > Download changed records (CSV)**.
 
 
 ### Start bulk edit (Local)
@@ -570,16 +570,16 @@ To set criteria and preview bulk edit logs, follow these steps:
     - **Completed with errors**
     - **Failed**
       
-4. Under the Record types accordion, select the record type for the bulk edit log by checking the appropriate box: 
+3. Under the Record types accordion, select the record type for the bulk edit log by checking the appropriate box:
 
     - **Inventory - holdings**
     - **Inventory - items**
     - **Users**
       
-5. In the **Started** accordion, use the **calendar icon** or type in the date using the YYYY-MM-DD format in the **From** and **To** fields to limit the preview by the start date of the bulk edit. Click **Apply**. 
-6. In the **Ended** accordion, use the **calendar icon** or type in the date using the YYYY-MM-DD format in the **From** and **To** fields to limit the preview by the end date of the bulk edit. Click **Apply**. 
-7. In the **Users** accordion, select the user, or FOLIO account, that ran the bulk edit job from the **Choose user** drop-down list. 
-8. A preview list of bulk edit logs displays in the **Bulk edit logs** pane. The number of bulk edit logs in the preview displays at the top of the pane as *(number of) records found*. The column headings display the following criteria for each bulk edit log: 
+4. In the **Started** accordion, use the **calendar icon** or type in the date using the YYYY-MM-DD format in the **From** and **To** fields to limit the preview by the start date of the bulk edit. Click **Apply**.
+5. In the **Ended** accordion, use the **calendar icon** or type in the date using the YYYY-MM-DD format in the **From** and **To** fields to limit the preview by the end date of the bulk edit. Click **Apply**.
+6. In the **Users** accordion, select the user, or FOLIO account, that ran the bulk edit job from the **Choose user** drop-down list.
+7. A preview list of bulk edit logs displays in the **Bulk edit logs** pane. The number of bulk edit logs in the preview displays at the top of the pane as *(number of) records found*. The column headings display the following criteria for each bulk edit log:
 
     - **Record type**: type of records changed in the bulk edit job
     - **Status**: status of the bulk edit job
