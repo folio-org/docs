@@ -1,7 +1,7 @@
 ---
 title: "Users"
 linkTitle: "Users"
-date: 2023-12-12        
+date: 2023-12-19        
 weight: 250
 ---
 
@@ -89,7 +89,7 @@ ________________
 -  **Status (required).** Select a status for the user: **Active** or **Inactive.** A user's status is tied to the expiration date set on their user record. **Active** status indicates current affiliation, employment, or enrollment within the library's institution. **Inactive** status indicates that the expiration date on the user's record has passed and the user is no longer affiliated, employed, or enrolled. When a **Patron Group** is selected, the **Status** automatically defaults to **Active**.
 -  **Expiration date.** The amount of time set before the user record lapses and the user no longer has active permissions or the ability to borrow items. The expiration date determines when a user's status changes from **Active** to **Inactive**. Expiration date is optional and this field may be left blank. For information about editing an expiration date, see [Edit an expiration date](#edit-an-expiration-date).
 -  **Barcode.** The barcode number for the user's library card.
--  **User Type.** Select the user type: **Patron** or **Staff**. This field is optional for a non-ECS-enabled tenant but required in an ECS-enabled tenant. For more information, see  [Consortium manager \> Members](../consortia/consortium-manager/#members/). 
+-  **User Type.** Select the user type: **Patron** or **Staff**. This field is optional for a non-ECS-enabled tenant but required in an ECS-enabled tenant. For more information, see  [Consortium manager \> Members](../consortia/#members).
 -  **Patrons.** Users who may borrow library materials but have no FOLIO permissions assigned to their User record and do not log in to FOLIO to manage their library accounts.
 -  **Staff.** Users who are employed by the library, have FOLIO permissions assigned to their User record for the purpose of performing their library work, and may borrow library materials. 
 
@@ -101,12 +101,12 @@ ________________
 -  **External system ID.** The external system ID for the user. This field is auto-populated if it is included in source data provided by an external system. 
 -  **Birth date.** The date of birth of the user in YYYY-MM-DD format.
 -  **Folio number.** A system-generated number for the user record.
--  **Request preferences.** **Hold Shelf** is selected by default for all users. If **Delivery** is also checked, select **Fulfillment preference**. 
--  If **Delivery** is selected as the **Fulfillment preference**, select the **Default delivery address**. This field appears and is required only if **Delivery** is selected as a fulfillment preference. Addresses are stored in the **Contact information** section of the User record. See [Users \> Contact information] (#contact-information) for more information.
--   If **Hold Shelf** is selected as the **Fulfillment preference**, select the **Default pickup service point.** All user records have at least one service point assigned to indicate the location for checking out or picking up requested items. Service points are configured by your library in the Settings app. See [Settings \> Tenant \> Service points](../settings/settings_tenant/settings_tenant/#settings--tenant--service-points) for more information.
+-  **Request preferences.** **Hold Shelf** is selected by default for all users. If **Delivery** is also checked, select **Fulfillment preference**.
+    - If **Delivery** is selected as the **Fulfillment preference**, select the **Default delivery address**. This field appears and is required only if **Delivery** is selected as a fulfillment preference. Addresses are stored in the **Contact information** section of the User record. See [Users \> Contact information](#contact-information) for more information.
+    - If **Hold Shelf** is selected as the **Fulfillment preference**, select the **Default pickup service point.** All user records have at least one service point assigned to indicate the location for checking out or picking up requested items. Service points are configured by your library in the Settings app. See [Settings \> Tenant \> Service points](../settings/settings_tenant/settings_tenant/#settings--tenant--service-points) for more information.
 -  **Department name.** Name of the user's department, if applicable. The **Add Department** button appears only if **Departments** are configured in [Settings \> Users \> Departments](../settings/settings_users/settings_users/#settings--users--departments).
--  To associate the user with a department, click **Add Department** and select the department from the drop-down list. 
--  Delete **Department** from a user record by clicking the **trash can icon**.  
+    - To associate the user with a department, click **Add Department** and select the department from the drop-down list. 
+    - Delete **Department** from a user record by clicking the **trash can icon**.  
 -  **Username.** If the **User Type** is set to **Staff**, the username is used by library staff to log into FOLIO to perform library work. If the **User Type** is set to **Patron**, the username is not required, but may be assigned for the purpose of connecting their library account in FOLIO with an external system, such as a discovery interface or a self-checkout system. However, patrons will not log into FOLIO to manage their library accounts.
 -  **Password.** Users can be sent a reset password link via email. This link expires after 24 hours. An institution may apply different password validation rules for their users. 
 
@@ -340,8 +340,8 @@ To edit (or re-set) an **Expiration date** in an existing user record:
 1. [Find the user record](#search-for-user-records) you want to edit and select it.
 2. Select the user record from the **User search results** list. Click **Actions \> Edit**.
 3. Customize the expiration date by typing the new date in the **Expiration date** field using YYYY-MM-DD format. Or click on the **Calendar** icon in the **Expiration date** field to select a date. 
-* Reset the date to the default expiration date for the assigned patron group by clicking on the **Re-set** button in the **Expiration Date** field. The Expiration date reverts to the default expiration date for the assigned Patron Group.
-* Delete the expiration date by clicking on the **x** in the **Expiration Date** field.
+    - Reset the date to the default expiration date for the assigned patron group by clicking on the **Re-set** button in the **Expiration Date** field. The Expiration date reverts to the default expiration date for the assigned Patron Group.
+    - Delete the expiration date by clicking on the **x** in the **Expiration Date** field.
 4. Click **Save & Close**.
 
 
@@ -597,7 +597,7 @@ To remove a patron block with no assigned expiration date, follow these steps:
 ### Create a request
 
 
-Requests can be created in three ways: In the Requests app; in the user record in the Users app; or from the item record in the Inventory app. For information on creating requests, see [Creating a request](../access/requests/requests/#creating-a-request)
+Requests can be created in three ways: In the Requests app; in the user record in the Users app; or from the item record in the Inventory app. For information on creating requests, see [Creating a request](../access/requests/requests/#creating-a-request).
 
 
 ### Add a note 
@@ -627,7 +627,7 @@ Follow these steps to check for open transactions and delete a user record in th
 
 1. [Find the user record](#search-for-user-records) for which you want to check for open transactions and select it.
 2. In the **Actions** menu, select **Check for open transactions/delete user**. 
-3. If there are no open transactions for this user, the message *No open transactions for user (Last Name, First Name). Are you sure you want to delete this user?* will appear in the **Check for open transactions/delete user** modal..  
+3. If there are no open transactions for this user, the message *No open transactions for user (Last Name, First Name). Are you sure you want to delete this user?* will appear in the **Check for open transactions/delete user** modal.  
 4. Click **Yes** to delete the user record. A *User (Last Name, First Name) deleted successfully* message will confirm deletion of the user record. 
 5. Or click **No** to cancel the deletion and return to the user record. 
 6. If there are one or more open transactions for the user, the message *User (Last Name, First Name) has the following open transactions. Please resolve the transactions to proceed to delete this user.* Click **OK** to return to the user record. 
