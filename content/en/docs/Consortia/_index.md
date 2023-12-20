@@ -1,9 +1,9 @@
 ---
 title: "Consortium manager"
 linkTitle: "Consortium manager"
-date: 2023-12-19       
-weight: 275 
-—
+date: 2023-12-13        
+weight: 275
+---
 
 
 **This section of the documentation contains links to external sites. Please be advised that these external sites are not maintained by the FOLIO Documentation Group and may be aligned with a different FOLIO release.**
@@ -23,7 +23,7 @@ Definitions of terms related to Consortium manager:
 * **Member**: An independent library’s or library system’s FOLIO tenant affiliated with a consortium in Consortium manager.
 * **Permission**: A setting that allows users to perform specific functions in FOLIO. 
 * **Permission set**: A set of individual permissions. 
-* **Primary tenant: A user’s home tenant; the tenant in which the user’s record was initially created in FOLIO. 
+* **Primary tenant**: A user’s home tenant; the tenant in which the user’s record was initially created in FOLIO. 
 * **Shadow account**: A user record existing outside of a member’s primary tenant. A shadow account is automatically created when a user record is affiliated with a member library in the consortium that is not that user’s primary affiliation.
 * **Shared**: Settings that are shared between member libraries and managed at the central consortium level (e.g. shared settings, shared Instances) 
 * **Service Point**: A setting that libraries configure to support circulation functions. Each library must set up at least one service point. 
