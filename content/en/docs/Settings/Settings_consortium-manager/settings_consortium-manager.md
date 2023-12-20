@@ -2,7 +2,8 @@
 title: "Settings > Consortium Manager"
 linkTitle: "Consortium-manager"
 Date: 2023-12-14
-weight:  
+weight: 45
+tags: ["subtopic"]
 ---
 
 
