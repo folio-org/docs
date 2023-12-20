@@ -310,7 +310,7 @@ For more information on permissions, see [Platform Essentials \> Permissions](..
 ### Service points
 
 
-The **Service points** section displays all service points assigned to the user record, including the user's service point preference, if applicable. For more information, see [Add or remove a service point](/users/#add–or-remove-a-service-point) .
+The **Service points** section displays all service points assigned to the user record, including the user's service point preference, if applicable. For more information, see [Add or remove a service point](#add-or-remove-a-service-point).
 
 
 ### Notes
