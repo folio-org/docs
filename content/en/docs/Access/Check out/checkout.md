@@ -107,7 +107,7 @@ To add a patron info loan comment:
 1.	Click **… > Add patron info** to add a patron info note.
 2.	In the **Add patron information** dialog, enter a comment in the box.
 3.	Click **Save and Close**. The new comment is saved and any previous patron loan comment is superseded. The comment will appear in the Comment column in Loan details in the checkout app, and will also be recorded in the Circulation Log.
-4.	Patron info loan comments can also be added in Loan details -- see [Getting additional item information](/getting-additional-item-information).
+4.	Patron info loan comments can also be added in Loan details -- see [Getting additional item information](/#getting-additional-item-information).
 
 To add a staff info loan comment:
 
