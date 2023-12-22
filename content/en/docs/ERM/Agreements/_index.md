@@ -1,7 +1,7 @@
 ---
 title: "Agreements"
 linkTitle: "Agreements"
-date: 2022-11-15
+date: 2023-10-20
 weight: 10
 tags: ["parenttopic"]
 ---
@@ -52,8 +52,8 @@ If you want to eUsage data in an agreement record, you also need to have the fol
 *   **eUsage reports: charts may be viewed.** This permission adds an accordion to the Agreement record in the Agreement app that displays charts and graphs of eUsage data for the titles related to an agreement.
 
 
-## Keyboard shortcuts
-Keyboard shortcuts allow you to perform actions in this app using the keyboard.  See [Platform essentials > Keyboard shortcuts]({{< ref "keyboardshortcuts.md" >}}) for more information.
+##Keyboard shortcuts
+Keyboard shortcuts allow you to perform actions in this app using the keyboard.  See [Platform essentials > Keyboard shortcuts](< ref "/platform_essentials_keyboard_shortcuts.md" >) for more information.
 
 
 ## Creating an agreement
@@ -71,11 +71,31 @@ Keyboard shortcuts allow you to perform actions in this app using the keyboard. 
 
 *   **Name (required).** The title of the agreement record.
 *   **Description**. Enter a description of the agreement.
-*   **Status (required).** Select from the drop-down list the state of the agreement. For example, Active or Closed. You can configure the values that appear in the drop-down list in [Settings > Agreements > Pick list values]({{< ref "/settings_agreements.md#settings--agreements--pick-list-values" >}}).
+*   **Status (required).** Select from the drop-down list the state of the agreement. For example, Active or Closed. You can configure the labels that appear in the drop-down list in [Settings > Agreements > Pick list values]({{< ref "/settings_agreements.md#settings--agreements--pick-list-values" >}}).
 *   **Reason for closure.** This option only becomes available if **Closed** is selected from the **Status** drop-down list. Select from the drop-down list why the agreement was closed. You can configure the values that appear in the drop-down list in [Settings > Agreements > Pick list values]({{< ref "/settings_agreements.md#settings--agreements--pick-list-values" >}}).
 *   **Renewal priority.** Select from the drop-down list the level of interest in renewing the agreement. You can configure the values that appear in the drop-down list in [Settings > Agreements > Pick list values]({{< ref "/settings_agreements.md#settings--agreements--pick-list-values" >}}).
-*   **Is perpetual.** If the agreement provides perpetual access to the purchased materials, select **Yes**. You can configure the values that appear in the drop-down list in [Settings > Agreements > Pick list values]({{< ref "/settings_agreements.md#settings--agreements--pick-list-values" >}}).
+*   **Is perpetual.** If the agreement provides perpetual access to the purchased materials, select *Yes*. You can configure the labels that appear in the drop-down list in [Settings > Agreements > Pick list values]({{< ref "/settings_agreements.md#settings--agreements--pick-list-values" >}}).
+*   **Content type.** If the agreement represents a particular content type or types, add one or more content type field and select a type from the drop-down list. You can configure the values that appear in the drop-down list in [Settings > Agreements > Pick list values]({{< ref "/settings_agreements.md#settings--agreements--pick-list-values" >}}).
 *   **Alternative names.** Alternative names for the agreement record.
+
+
+#### Adding a content type
+
+Note: Adding a content type is optional, but if you click **Add content type**, you must enter a content type or delete the content type in order to save the agreement record.
+
+
+
+1. Click **Add content type**.
+2. Select the agreement record’s content type from the drop-down list. You can configure the values that appear in the drop-down list in [Settings > Agreements > Pick list values]({{< ref "/settings_agreements.md#settings--agreements--pick-list-values" >}}).
+3. Repeat as needed. The Content type saves once you save the agreement.
+
+
+#### Deleting a content type
+
+
+
+1. Find the Content type you want to delete.
+2. Click the **trash can icon**. The Content type is deleted and is removed from the record once you save the agreement.
 
 
 #### Adding an alternative name
@@ -325,13 +345,15 @@ A supplementary document is any additional document relevant to the agreement re
     * Enter the **URL** of the document in the box.
 6. Repeat steps 1-5 as needed. The supplementary document saves once you save the agreement.
 
+If a supplementary document is present in an agreement record, then a **copy icon** will appear in the supplementary document accordion multi-column list under Reference. Clicking the **copy icon** will copy the text content of the Reference column to your clipboard. 
+
 
 #### Removing a supplementary document
 
 
 
-1. Find the Supplementary document you want to remove.
-2. Click the **trash can icon**. The Supplementary document is removed from the record once you save the agreement.
+1. Find the supplementary document you want to remove.
+2. Click the **trash can icon**. The supplementary document is removed from the record once you save the agreement.
 
 
 ### Usage data
@@ -411,7 +433,7 @@ You can search for agreements in the **Search & filter** pane. To search for agr
 
 Note: When using the internal KB, click **Agreements search** in order to search for agreements. 
 
-You can also search for agreements by selecting any of the filters in the **Search & filter** pane: Status, Renewal priority, Is perpetual, Start date, End date, Organizations, Organization role, Internal contacts, Internal contacts role, Tags, and Supplementary properties. For more information on the filters, see the filter descriptions below.
+You can also search for agreements by selecting any of the filters in the **Search & filter** pane: Status, Renewal priority, Is perpetual, Start date, End date, Organizations, Organization role, Internal contacts, Internal contacts role, Content type, Tags, Supplementary properties, Agreement content, and Documents. For more information on the filters, see the filter descriptions below.
 
 
 ### Status
@@ -425,6 +447,20 @@ To filter agreements by their status, select one of the following:
 *   **Draft.** An agreement that is in draft form.
 *   **In negotiation.** An agreement that is being negotiated between your library and a provider.
 *   **Requested.** If your library has requested an agreement from a provider.
+
+
+### Reason for closure
+
+To filter agreements by their reason for closure, select one of the listed options. Possible priorities may include:
+
+
+
+*   **Canceled.** Agreements you have canceled.
+*   **Ceased.** Agreements that have ended.
+*   **Rejected.** Agreements you have rejected.
+*   **Superseded.** Agreements that have been superseded by another agreement.
+
+Renewal priority values are configured in [Settings > Agreements > Pick list values]({{< ref "/settings_agreements.md#settings--agreements--pick-list-values" >}}).
 
 
 ### Renewal priority
@@ -454,6 +490,15 @@ To filter agreements by their start date, enter a date into the **On or after** 
 To filter agreements by their end date, enter a date into the **On or after** and/or **On or before** search box, or click the **calendar icon** to select a date from the calendar.
 
 You can also check the box **Include agreements with no end date set** to locate agreements without end dates.
+
+
+
+
+### Cancellation deadline
+
+To filter agreements by their cancellation deadline, enter a date into the **On or after** and/or **On or before** search box, or click the **calendar icon** to select a date from the calendar.
+
+You can also check the box **Include agreements with no cancellation deadline set** to locate agreements without cancellation deadlines.
 
 
 ### Organizations
@@ -503,6 +548,16 @@ To filter agreements by their associated internal contacts’ roles, follow thes
 3. Select the internal contact role by which you want to filter. The search results appear in the Agreements pane.
 
 
+### Content type
+
+To filter agreements by their content type, follow these steps:
+
+
+
+1. In the **Search & filter** pane, click **Content type**.
+2. Check the box next to the content type(s). The search results appear in the Agreements pane.
+
+
 ### Tags
 
 To search for agreements assigned specific tags, follow these steps:
@@ -527,6 +582,36 @@ To filter agreements by their supplementary properties, follow these steps:
 6. (Optional) To continue to build the supplementary property filter, click **Add rule.**
 7. (Optional) To search for agreements using multiple supplementary property filters, click **Add supplementary property filter**. Note: To delete a rule or supplementary property filter in the Supplementary property filter builder, click on the **trash can icon** next to the rule or supplementary property filter.
 8. Click **Apply.** Your results appear in the Agreements pane.
+
+
+### Agreement content
+
+To filter agreements by their content, follow these steps:
+
+
+
+1. In the Search & filter pane, click **Agreement content**.
+2. Select Has or Has not from the drop-down list. 
+3. Select one or more agreement content options from the list. These may include Alternative names, Content types, Internal contacts, Organizations, Agreement lines, Linked licenses, External licenses, Supplementary documents, Usage data, Related agreements, and Tags. Note, if you select multiple agreement content options, they are combined with OR (rather than AND). For example, if you select Alternative names and Content types, the returned results will include agreement records with Alternative names OR Content types. 
+4. To add another filter, click **Add filter** and select And or Or. 
+5. Repeat the above steps as desired. 
+6. Your results will appear in the Agreements pane.
+
+
+### Documents
+
+To filter agreements by their documents, follow these steps:
+
+
+
+1. In the Search & filter pane, click **Documents**.
+2. Click **Edit document filters**.
+3. In the **Document filter builder** dialog, select a **Attribute** from the drop-down list. Attributes include Name, Note, Category, Physical location, URL, Content type, and File name. 
+4. Select a **Operator** from the drop-down list. Operators include Is, Contains, and Does not contain.
+5. In the **Value** box, select or enter a value.
+6. (Optional) To continue to build the document filter, click **Add rule.** Note, multiple rules in a single document filter card will apply to a single document. I.e. If you have a document filter card with two rules, then to find an agreement, a single document on that agreement must fulfill both rules. Whereas when you add a new document filter card in the filter builder, then it can apply to either the same or a different document. 
+7. (Optional) To search for agreements using multiple document filters, click **Add filter**. Note: To delete a rule or document filter in the Document filter builder, click on the **trash can icon** next to the rule or document filter.
+8. Click **Save & close.** Your results appear in the Agreements pane.
 
 
 ## Viewing an agreement
@@ -569,10 +654,12 @@ Note: You cannot delete an agreement that is linked to a license, has agreement 
 
 An agreement line represents the material covered by the agreement, for example, a package or title. The steps for adding agreement lines vary depending on whether your library is using the internal KB or an external KB.
 
+Note, adding an agreement line cannot be done in an agreement that is open for editing.
+
 
 ### Adding an agreement line via the internal KB
 
-When using the internal KB, you first have to add e-resources to a basket in the E-resources pane. Then, you can apply those e-resources to agreement lines.
+When using the internal KB, you first have to add e-resources to a basket in the E-resources pane. Then you can apply those e-resources to agreement lines.
 
 
 #### Adding e-resources to the basket
@@ -591,7 +678,7 @@ Before you can add e-resources to agreement lines in an existing or new agreemen
 
 #### Adding e-resources from the basket to an agreement
 
-There are three ways to add an e-resource from the basket to agreement lines:
+There are two ways to add an e-resource from the basket to agreement lines:
 
 
 ##### From the basket
@@ -601,25 +688,8 @@ There are three ways to add an e-resource from the basket to agreement lines:
 1. Click the **View X item(s)** button to open the basket.
 2. Select or unselect the items in the basket you wish to add to agreement lines using the checkboxes to the left of the resources in the basket.
 3. Select **Create new agreement** to add the selected resource(s) to a completely new agreement (one agreement line per resource selected), or select the appropriate agreement from the drop-down list of existing agreements and click **Add to selected agreement** to add the selected resource(s) to an existing agreement (one agreement line per resource selected).
-5. An agreement edit screen appears for the new or existing agreement. To complete the process, follow the instructions for adding agreement lines from the Agreement Edit screen from step 6 onwards.
+4. The agreement for which the agreement lines have been created (whether this is a new or existing agreement) is displayed in the agreement view screen.
 
-
-##### From the Agreement Edit screen
-
-
-
-1. [Find the agreement](#searching-for-agreements) to which you want to add an agreement line and select it.
-2. In the **Agreement details** pane, click **Agreement lines**.
-3. In the **Agreement lines** section, click **Actions** and select **New agreement line**.
-4. In the **New agreement line** window, to add an e-resource from the basket, click the **E-resource** drop-down list and select the e-resource.
-5. To link the e-resource, click **Link selected e-resource**. The e-resource is linked to the agreement line.
-6. (Optional) Enter a **Description** of the agreement line in the box.
-7. (Optional) Enter a **Note** about the agreement line in the box.
-8. (Optional) Enter **Active from** and **Active to** dates to indicate when the material covered by this agreement line was or is active in your collection.
-9. (Optional) To hide this information from your discovery layer, select the **Suppress from discovery** checkbox. If you don’t want this checkbox to appear, or you would like the checkbox to display on agreement line records, see [Settings > Agreements > Display settings]({{< ref "/settings_agreements.md#settings--agreements--display-settings" >}}) for more information.
-10. (Optional) To link the agreement line to a PO line, click **Add PO line**. See [Adding a purchase order line to an agreement line](#adding-a-purchase-order-line-to-an-agreement-line) for more information.
-11. To add multiple agreement lines at once, check the **Create another** checkbox and repeat steps 1-10.
-12. Click **Save & close**. A confirmation message appears and the agreement line is saved.
 
 
 ##### From the Agreement Line Edit screen
@@ -630,7 +700,7 @@ There are three ways to add an e-resource from the basket to agreement lines:
 2. In the **Agreement details** pane, click **Agreement lines**.
 3. In the **Agreement lines** section, click **Actions** and select **New agreement line**.
 4. In the **New agreement line** window, if not already selected, click **Basket**.
-5. In the E-resource dropdown select the resource from the Basket for which you want to create an agreement line.
+5. In the E-resource drop-down select the resource from the Basket for which you want to create an agreement line.
 6. (Optional) Enter a **Description** of the agreement line in the box.
 7. (Optional) Enter a **Note** about the agreement line in the box.
 8. (Optional) Enter **Active from** and **Active to** dates to indicate when the material covered by this agreement line was or is active in your collection.
@@ -641,8 +711,6 @@ There are three ways to add an e-resource from the basket to agreement lines:
 
 
 ### Adding an agreement line via eHoldings
-
-Adding an agreement line by linking to the eHoldings app cannot be done in an agreement that is open for editing.
 
 
 1. [Find the agreement](#searching-for-agreements) to which you want to add an agreement line and select it.
@@ -776,7 +844,7 @@ To filter agreement lines by an agreement record, click **Select agreement**. In
 
 ### Agreement line type
 
-To filter agreement lines by type, check the **Unlinked**, **External**, and/or **Internal** checkboxes. An [unlinked agreement line](#adding-an-unlinked-agreement-line) is not linked to a resource in a knowledge base. An [external agreement line](#adding-an-agreement-line-via-eholdings) is linked to a resource in an external knowledge base (like the eHoldings app), and an [internal agreement line](#adding-an-agreement-line-via-the-internal-kb) is linked to a resource in the internal knowledge base.
+To filter agreement lines by type, check the **Unlinked**, **External**, and/or **Internal** checkboxes. An [unlinked agreement line](#adding-an-unlinked-agreement-line) is not linked to a resource in a knowledge base. An [external agreement line](#adding-an-agreement-line-via-eHoldings) is linked to a resource in an external knowledge base (like the eHoldings app), and an [internal agreement line](#adding-an-agreement-line-via-the-internal-KB) is linked to a resource in the internal knowledge base.
 
 
 ### Active from
@@ -856,72 +924,13 @@ Note: E-resources can be filtered by Current, Future, or Dropped. These options 
 4. Click **Export as… > JSON** or **KBART**. Depending on your browser and its configurations, the file automatically downloads or you are prompted to save it.
 
 
-## Searching for e-resources
-
-Searching for e-resources covered by an agreement is only possible if using the internal KB. 
-
-You can search for e-resources in the **Search & filter** pane by clicking on **E-resources**. Enter your search terms in the search box and click **Search**. The search box searches through the Name, Description, and Alternative names fields.
-
-You can also search for e-resources by selecting any of the filters in the **Search & filter** pane: Tags and Is package; Type and Publication type under Title filters; and External data source, Scope, Status, and Content Type under Package filters. For more information on the filters, see the filter descriptions below.
-
-
-### Tags
-
-To search for e-resources assigned specific tags, follow these steps:
-
-
-
-1. In the **Search & filter** pane, click **Tags**.
-2. Select the tag(s) from the drop-down list. Your results appear in the E-resources pane.
-
-
-### Is package
-
-To filter e-resources by whether or not they are a package, select **Yes** or **No**.
-
-
-### Type
-
-To filter e-resources by type, select **Monograph** or **Serial**.
-
-
-### Publication type
-
-To filter e-resources by publication type, select **Monograph**, **Serial**, or **journal**.
-
-
-### External data source
-
-To search for e-resources by external data source, follow these steps:
-
-
-
-1. In the **Search & filter** pane, click **External data source**.
-2. Select the external data source from the drop-down list. Your results appear in the E-resources pane.
-
-
-### Scope
-
-To filter e-resources by scope, select **Consortial**, **Global**, **Local**, or **Regional**.
-
-
-### Status
-
-To filter e-resources by status, select **Current**, **Deleted**, **Expected**, or **Retired**.
-
-
-### Content type
-
-To filter e-resources by content type, select **Databases**, **Monographs**, or **Serials**.
-
-
 ## Viewing an e-resource
 
 Viewing e-resources covered by agreements is only possible if using the internal KB. 
 
-You can view e-resources by clicking on **E-resources** in the **Search & filter** pane. 
+You can view e-resources by clicking on **Packages** or **Titles** in the **Search & filter** pane. 
 
-In the E-resources pane, click an e-resource to view it. The e-resource details pane displays with additional information about the e-resource. Publication type, Material type, First author, First editor, Publication date, Edition, Volume, ISBN, and Related title fields are populated from the internal KB. The following accordions also display:
+In the Packages or Titles pane, click an e-resource to view it. The e-resource details pane displays with additional information about the e-resource. Publication type, Material type, First author, First editor, Publication date, Edition, Volume, ISBN, and Related title fields are populated from the internal KB. The following accordions also display:
 
 **Agreements for this e-resource.** This accordion displays agreements that cover this e-resource. To add an e-resource from the internal KB to an agreement see [Adding an agreement line via the internal KB](#adding-an-agreement-line-via-the-internal-kb).
 
@@ -934,9 +943,9 @@ In the E-resources pane, click an e-resource to view it. The e-resource details 
 
 ### Viewing an e-resource package
 
-You can view packages in e-resources by clicking on **E-resources** in the **Search & filter** pane, then selecting **Yes** for the filter **Is package**. 
+You can view packages in e-resources by clicking on **Packages** in the **Search & filter** pane. 
 
-In the E-resources pane, click an e-resource package to view it. The e-resource package details pane displays with additional information about the e-resource package, depending on the data that has been added to the internal KB. All packages will have a Provider, Source and Reference. In addition packages may have:
+In the Packages pane, click an e-resource package to view it. The e-resource package details pane displays with additional information about the e-resource package, depending on the data that has been added to the internal KB. All packages will have a Provider, Source and Reference. They will also display when the record was created and when it was last updated. In addition packages may have:
 
 * A Status: For example, Current or Deleted.
 * Content type: A list of content types in the package, for example, Serial, Monograph, or Video.
@@ -954,6 +963,23 @@ The following accordions also display:
 **E-resources in package.** This accordion displays all e-resources associated with the package. E-resources can be filtered by Current, Future, Dropped, and All.
 
 **Notes.** For information on Notes see [Adding and removing notes](#adding-and-removing-notes).
+
+
+### Viewing an e-resource title
+
+You can view packages in e-resources by clicking on **Titles** in the **Search & filter** pane. 
+
+In the Titles pane, click an e-resource title to view it. The e-resource title details pane displays with additional information about the e-resource title, depending on the data that has been added to the internal KB. It will also display when the record was created and when it was last updated. 
+
+The following accordions also display:
+
+**Agreements for this e-resource.** This accordion displays agreements that cover this e-resource title. To add an e-resource from the internal KB to an agreement see [Adding an agreement line via the internal KB](#adding-an-agreement-line-via-the-internal-kb).
+
+**Options for acquiring e-resource.** From here you can add a package or title to your basket.
+
+**Notes.** For information on Notes see [Adding and removing notes](#adding-and-removing-notes).
+
+**Discovery settings.** Displays whether the title is suppressed from discovery.
 
 
 ## Editing e-resources
@@ -991,11 +1017,48 @@ If a title instance is related to an incorrect identifier, you can transfer iden
 4. Click the **X** on the Tags pane to close the pane and save the tag. The tag number updates to the number of tags applied to the e-resource.
 
 
+## Local KB search
+
+You can search for packages, titles, and platforms in the local KB by clicking on the **Local KB search** tab. 
+
+
+### Searching for packages
+
+Searching for packages covered by an agreement is only possible if using the internal KB. 
+
+You can search for packages by clicking on the tab **Local KB search** and selecting **Packages** in the **Search & filter** pane. Enter your search terms in the search box and click **Search**. The search box searches the name field.
+
+Packages can be further filtered by: 
+
+* External data source: Select an external data source from the drop-down list. 
+* Status
+* Scope
+* Availability
+* Content type
+* Tags: Select a tag(s) from the drop-down list, or search for one by typing the tag’s name. 
+
+The values for Status, Scope, Availability, and Content type can be configured in Settings > Agreements > Pick list values. 
+
+
+### Searching for titles
+
+Searching for titles covered by an agreement is only possible if using the internal KB. 
+
+You can search for titles by clicking on the tab **Local KB search** and selecting **Titles** in the **Search & filter** pane. Enter your search terms in the search box and click **Search**. The search box searches the name field.
+
+Titles can be further filtered by: 
+
+* Type
+* Publication type
+
+The values for Type and Publication Type can be configured in Settings > Agreements > Pick list values. 
+
+
 ## Searching for platforms
 
 Searching for platforms covered by an agreement is only possible if using the internal KB. 
 
-You can search for platforms by clicking on the tab **Local KB search** and selecting **Platforms** in the **Search & filter** pane Enter your search terms in the search box and click **Search**. The search box searches the name field.
+You can search for platforms by clicking on the tab **Local KB search** and selecting **Platforms** in the **Search & filter** pane. Enter your search terms in the search box and click **Search**. The search box searches the name field.
 
 
 ## Viewing a platform

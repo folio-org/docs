@@ -1,14 +1,14 @@
 ---
 title: "Settings > Data export"
 linkTitle: "Data export"
-date: 2022-09-22
+date: 2023-11-06
 weight: 60
 tags: ["subtopic"]   
 ---
 
 The Data export section of the Settings app is where you can configure the job profiles used in the data export process. Job profiles determine how information is exported to the MARC file that is generated as a result of the export.
 
-The Data export app comes with a default job profile that exports only bibliographic data. Additional profiles that deliver information from the Instance, Holdings, and/or Item records can be created as needed. The mapping profiles allow you to customize the data that is used in the job profile.
+The Data export app comes with one or more default job profiles that export instance, holdings, or authority data. Additional profiles can be created as needed. The mapping profiles allow you to customize the data that is used in the job profile.
 
 The mapping and job profiles add flexibility to the data export and provide an easy way to execute a different type of export on the same data set or the same type of export on different data sets.  For example, one user can export bibliographic data only and another user can export instances with appended elements of the holdings and items records using the same set of data.
 
@@ -26,9 +26,9 @@ Before you begin configuring job profiles, you should first configure your field
 
 ### Default export job profile
 
-The system comes with a default job profile that is associated with the default field mapping profile. Records exported with the default job profile generate a MARC file containing information for the provided record IDs. 
+The system comes with one or more default job profiles that are associated with default field mapping profiles. Records exported with a default job profile generate a MARC file containing information for the provided record IDs. 
 
-If you use the default job profile, simplified MARC bibliographic records are generated for instances without underlying MARC records. For instances with underlying MARC records stored in SRS, those records are used in the export.
+If you use a default job profile, simplified MARC bibliographic records are generated for instances without underlying MARC records. For instances with underlying MARC records stored in SRS, those records are used in the export.
 
 ### Creating an export job profile
 
@@ -40,9 +40,9 @@ If you use the default job profile, simplified MARC bibliographic records are ge
 
 ### Searching for an export job profile
 
-Use the search bar to search for profiles contained in the Job profile table. 
+Use the search bar to search for profiles contained in the Job profile list. 
 
-The Job profiles table contains the following columns:
+The Job profiles list contains the following columns:
 
 -   **Name.** Name of the job profile.
 -   **Updated.** Date the job profile was last updated.
@@ -78,31 +78,31 @@ Note: Once a job profile has been used for a data export job, it cannot be edite
 
 ## Settings \> Data export \> Field mapping profiles
 
-The system comes with a default field mapping profile that is associated with the [default job profile](#default-export-job-profile). The field mapping profile determines how the data from FOLIO records appears in the generated MARC file.
+The system comes with one or more default field mapping profiles that are associated with a [default job profile](#default-export-job-profile). A field mapping profile determines how the data from FOLIO records appears in the generated MARC file.
 
 ### Creating an export field mapping profile
 
 1.  In the **Field mapping profiles** pane, click **New**.
 2.  In the **New field mapping profile** window, enter a **Name** for the field mapping profile.
 3.  Select an **Output format** from the drop-down list. MARC is the only option.
-4.  Select as many **FOLIO record types** that apply by selecting the checkbox next to the option: Source record storage (entire record), Inventory instance (selected fields), Holdings, and/or Item. You must select at least one option.
+4.  Select as many **FOLIO record types** that apply by selecting the checkbox next to the option: Source record storage (entire record), Authority, Inventory instance (selected fields), Holdings, and/or Item. You must select at least one option.
 5.  Optional: Enter a **Description** for the field mapping profile.
 6.  Optional: To add a transformation, click **Add transformations** and follow these steps:
     <ol type="a">
       <li>In the <strong>Select transformations</strong> dialog, use the search box and filters to find the transformations you want to add to the field mapping profile.</li>
       <li>For every transformation you want to add, select the <strong>checkbox</strong> next to it and fill out the field number, indicators, and subfield boxes. Subfields must begin with a $.</li>
-      <li>Once you have added all transformations, click <strong>Save & close<strong>. A confirmation message appears and the transformations are added to the field mapping profile.</li>
+      <li>Once you have added all transformations, click <strong>Save & close</strong>. A confirmation message appears and the transformations are added to the field mapping profile.</li>
     </ol>
 7.  Click **Save & close**. A confirmation message appears and the field mapping profile is created.
 
 ### Searching for an export field mapping profile
 
-Use the search bar to search for profiles contained in the Field mapping profiles table. 
+Use the search bar to search for profiles contained in the Field mapping profiles list. 
 
-The Field mapping profiles table contains the following columns:
+The Field mapping profiles list contains the following columns:
 
 -   **Name.** Name of the job profile.
--   **FOLIO record type.** The types of records included in the export: Source record storage (entire record), Instance, Holdings, and/or Item.
+-   **FOLIO record type.** The types of records included in the export: Source record storage (entire record), Authority, Instance, Holdings, and/or Item.
 -   **Format.** Format of the exported record.
 -   **Updated.** Date the field mapping profile was last updated.
 -   **Updated by.** User or system who last updated the field mapping profile.

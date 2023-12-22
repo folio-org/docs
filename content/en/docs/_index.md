@@ -1,9 +1,7 @@
-
 ---
 title: "Welcome"
 linkTitle: "Home"
 weight: 10
-
 ---
 
 {{% alert color="info"%}}

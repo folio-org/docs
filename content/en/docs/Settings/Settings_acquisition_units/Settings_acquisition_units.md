@@ -1,7 +1,7 @@
 ---
 title: "Settings > Acquisition units"
 linkTitle: "Acquisition units"
-date: 2022-09-22
+date: 2023-11-06
 weight: 10
 tags: ["subtopic"]   
 ---
@@ -29,13 +29,10 @@ In order to interact with acquisition units settings, a user needs to be assigne
 
 
 
-*   **Settings (acquisition units): Can view, edit, create and delete settings.** This permission allows you to manage acquisition unit settings.
+*   **Settings (acquisition units): Can view, edit, create and delete acquisition units.** This permission allows you to view, edit, create, and delete acquisition units.
 *   **Settings (acquisition units): Manage acquisition unit user assignments.**  This permission allows you to assign users to acquisition units.
+*   **Settings (acquisition units): View.**  This permission provides view-only access to the acquisition units area of the Settings app. 
 
-
-
-## Keyboard shortcuts
-Keyboard shortcuts allow you to perform actions in this setting using the keyboard.  See [Platform essentials > Keyboard shortcuts]({{< ref "/keyboardshortcuts.md" >}}) for more information.
 
 
 ## Creating an acquisition unit
@@ -77,9 +74,9 @@ Note: Users can be assigned to more than one acquisition unit.
 
 1. In the **Acquisition units** pane, find the acquisition unit you want to delete the user from and select it.
 
-2. In the **Acquisition unit detail** pane, click **Assigned users > Assign users**.
+2. In the **Acquisition unit detail** pane, locate the user you wish to delete under the **Assigned users** accordion.
 
-3. Find the user you want to delete and click the **trash can icon** at the end of their row. The user is removed from the list and deleted from the unit.
+3. Click the **trash can icon** at the end of their row. The user is removed from the list and deleted from the unit.
 
 
 ## Editing an acquisition unit
@@ -95,7 +92,7 @@ Note: Users can be assigned to more than one acquisition unit.
 
 ## Deleting an acquisition unit
 
-Note: You cannot delete acquisition units that have users assigned to them.
+Note: You cannot delete acquisition units that have users assigned to them. Acquisition units can be deleted if in use on records in acquisition apps. This may leave a broken reference on these records, so it is recommended to check for usage of the acquisition unit within these apps prior to deletion.
 
 1. In the **Acquisition units** pane, find the acquisition unit you want to delete and select it.
 
