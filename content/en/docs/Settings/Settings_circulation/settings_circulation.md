@@ -403,7 +403,7 @@ Click **Add reminder fee** to set up a reminder fee schedule:
 2. Enter **Fee** amount.
 3. Choose a **Notice method**. **Email** will send an email to the address in the user record. Printed reminder fee notices are not available.
 4. Select a fee/fine **Notice template**.
-5. **Block template** functionality is not yet available. Block templates are set up in [Settings > Users > Patron blocks > Templates]({{< ref "../settings_users/settings_users/#settings--users--patron-block-templates.md" >}}).
+5. **Block template** functionality is not yet available. Block templates are set up in [Settings > Users > Patron block templates](../../settings_users/settings_users/#settings--users--patron-block-templates).
 
 
 ### Duplicating an overdue fine policy
