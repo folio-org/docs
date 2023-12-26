@@ -85,7 +85,7 @@ After you perform a search for requests, you can save your results to a comma-se
 
 Library staff create requests in the Requests app.  They also can start the request process from a user record in Users, or an item record in Inventory; those apps will route you into the Requests app to create the request. Note: You must have permission to create requests in the Requests app in order to see the option to create a request from Inventory.
 
-Requesting is controlled by circulation rules and item statuses. You cannot request some item statuses and some only allow holds and recalls. See [Platform Essentials > Item Status](https://docs.folio.org/docs/platform-essentials/item-status/itemstatus/) for more information.
+Requesting is controlled by circulation rules and item statuses. You cannot request some item statuses and some only allow holds and recalls. See [Platform Essentials > Item Status](../../../platform-essentials/item-status/itemstatus/) for more information.
 
 1. In the **Requests** pane, select **Actions > New**.
 2. If you have title level requesting turned on, make sure **Create title level request** is not checked.
