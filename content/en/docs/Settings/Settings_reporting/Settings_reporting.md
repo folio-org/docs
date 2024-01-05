@@ -39,5 +39,5 @@ The **Configure database connection URL & credentials** setting is used to set t
 ### Settings > Reporting > Report repositories 
 The **Report repositories** setting allows you to configure connections to GitHub repositories for the purpose of accessing SQL queries created by individual institutions or the wider FOLIO reporting community. Queries saved in these repositories can be run using the Reporting app’s “Run report” option and can be configured to display parameters to filter the data output. The GitHub user, repository name, repository branch, and directory within the repository must be specified here. 
 
-For information on how to set up SQL queries compatible with the Reporting app in GitHub, please refer to [Authoring reports for the FOLIO Reporting App] (https://github.com/folio-org/ui-ldp/blob/master/doc/reports.md). 
+For information on how to set up SQL queries compatible with the Reporting app in GitHub, please refer to [Authoring reports for the FOLIO Reporting App](https://github.com/folio-org/ui-ldp/blob/master/doc/reports.md). 
 
