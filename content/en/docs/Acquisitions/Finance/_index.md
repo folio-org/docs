@@ -6,6 +6,7 @@ weight: 10
 tags: ["parenttopic"]
 ---
 
+**Molly was here**
 The Finance app allows you to create fund structures and manage money.
 
 Definitions of terms used in the Finance app:   
