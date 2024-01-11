@@ -64,10 +64,10 @@ In the **Search & filter** pane, click **Loan** and select any applicable filter
 * **Closed loan.** Include closed loan actions. Closed loan actions include: Item is returned and checked in; Item is lost and paid; Claimed returned item is resolved by marking as missing (via loan detail).
 * **Declared lost.** Include declared lost actions.
 * **Marked as missing.** Include marked as missing actions.
-* **Recall requested.** Include requested as [recall]({{< ref "/requests.md" >}}) actions.
+* **Recall requested.** Include requested as [recall](../../requests/requests/#request-types-and-statuses) actions.
 * **Renewed.** Include renewed actions.
 * **Renewed through override.** Include renewed using an override actions.
-* **Aged to lost.** Include aged to lost actions. The time in which an overdue item ages to lost is set up in the [Settings > Circulation > Lost item fee policies.]({{< ref "/settings_circulation.md#creating-a-lost-item-fee-policy" >}})
+* **Aged to lost.** Include aged to lost actions. The time in which an overdue item ages to lost is set up in the [Settings > Circulation > Lost item fee policies.](../../../settings/settings_circulation/settings_circulation/#creating-a-lost-item-fee-policy)
 
 The Circulation log app records some user block functionality, but it is not available through filters. To find when manual user blocks were created or deleted, search the description field for "Block" and apply other search/filter options as needed.
 
@@ -103,10 +103,10 @@ In the **Search & filter** pane, click **Request** and select any applicable fil
 
 * **Cancelled.** Include cancelled request actions.
 * **Created.** Include created request actions.
-* **Pickup expired.** Include [pickup expired request actions]({{< ref "requests#request-types-and-statuses" >}}).
-* **Expired.** Include [expired request actions]({{< ref "requests#request-types-and-statuses" >}}).
-* **Moved.** Include requests that were [moved from one item to another.]({{< ref "requests#moving-an-item-level-request-to-another-item-on-the-same-instance" >}}).
-* **Queue position reordered.** Include [requests that were moved up or down in the request queue] ({{< ref "requests#reordering-the-request-queue-for-an-item" >}}).
+* **Pickup expired.** Include [pickup expired request actions](../../requests/requests/#request-types-and-statuses).
+* **Expired.** Include [expired request actions](../../requests/requests/#request-types-and-statuses). These are requests with the request status of Closed - Unfilled.
+* **Moved.** Include requests that were [moved from one item to another.](../../requests/requests/#moving-an-item-level-request-to-another-item-on-the-same-instance).
+* **Queue position reordered.** Include [requests that were moved up or down in the request queue](../../requests/requests/#reordering-the-request-queue-for-an-item).
 
 
 ### Columns in the circulation log
