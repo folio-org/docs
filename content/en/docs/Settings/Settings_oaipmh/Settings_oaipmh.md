@@ -1,10 +1,12 @@
 ---
 title: "Settings > OAI-PMH"
 linkTitle: "OAI-PMH"
-date: 2022-02-27
+date: 2023-11-29
 weight: 190
 tags: ["subtopic"]   
 ---
+
+**This section of the documentation contains links to external sites. Please be advised that these sites are not maintained by the FOLIO Documentation Group and may be aligned with a different FOLIO release.**
 
 The OAI-PMH section of the Settings app is where you configure the behavior of FOLIO's OAI-PMH feed.  Learn more about the [OAI-PMH Specification at the Open Archives website](http://www.openarchives.org/OAI/openarchivesprotocol.html).
 
@@ -77,7 +79,7 @@ Setting value appears in `deletedRecord` XML element of Identify response.
 ### Suppressed records processing
 One of:
 * **Transfer suppressed records with discovery flag value** - Adds a MARC subfield $t = 1 to FOLIO's 999 field (for Instances), 852 field (for Holdings) or 952 field (for Items).
-* **Skip suppressed from discovery records** - Instances marked 'Suppress from Discovery' are to included in the OAI-PMH response.
+* **Skip suppressed from discovery records** - Instances marked 'Suppress from Discovery' are not included in the OAI-PMH response.
 
 ### OAI-PMH errors processing
 One of:
@@ -90,49 +92,8 @@ One of:
 * **Inventory** - Instance records are harvested from inventory only, and all OAI-PMH records are generated on-the-fly as part of the harvesting. 
 * **Source records storage and inventory** - All instance records with a metadata source of MARC are retrieved from source record storage. Instance records with a metadata source are retrieved from inventory and OAI-PMH records are generated on-the-fly for those inventory-only records as part of the harvest.
 
-
-
-## Settings > OAI-PMH > Sets
-
-{{% alert title="NOT YET IMPLEMENTED" color="info"%}}
-OAI-PMH Sets are not currently implemented in this version of FOLIO.  While the following configurations can be set, the Sets defined will not appear when using the [**ListSets** verb](http://www.openarchives.org/OAI/openarchivesprotocol.html#ListSets).
-{{% /alert %}}
-
-### Creating a new set
-
-1. Click **New**.
-
-2. Enter a **Set name** (required).
-
-3. Enter a **Set description** (optional, but recommended).
-
-4. Set Filtering Conditions 
-
-5. Click **Save**. The fund type is saved and appears in the Fund types list.
-
-### Editing a set
-
-1. Find the set you want to edit, click the **Actions** button, and select the **Edit** option.
-
-2. Edit the set.
-
-3. Click **Save**. The set is updated.
-
-
-### Duplicating a set
-
-1. Find the set you want to duplicate, click the **Actions** button, and select the **Duplicate** option.
-
-2. Edit the set.
-
-3. Click **Save**. A new set is created.
-
-
-### Deleting a set
-
-1. Find the set you want to delete. Click the **Actions** button, and select the **Delete** option.
-
-2. In the **Confirm deletion of set** dialog, click **Delete**. A confirmation message appears and the set is deleted.
+## Settings > OAI-PMH > Logs
+The logs page displays a list of completed harvests and is kept for 30 days. If a harvest contains a record or records that cannot be handled, a "Download" link will appear in the rightmost column of the logs. Clicking this link will download a spreadsheet where errors are listed with the UUID of the affected instance and an error message.
 
 ## Field mappings for ListRecords response
 
