@@ -5,6 +5,8 @@ date: 2021-12-03
 weight: 40
 ---
 
+**This section of the documentation contains links to external sites. Please be advised that these sites are not maintained by the FOLIO Documentation Group and may be aligned with a different FOLIO release.**
+
 The Courses app allows you to create and manage course reserves.
 
 Note: To enable library patrons to discover the courses you create in the Courses app you need an external interface or discovery layer set up and capable of interacting with FOLIO.
@@ -36,7 +38,7 @@ Keyboard shortcuts allow you to perform actions in this app using the keyboard. 
 Before you implement the Courses app, make sure you have completed the following:
 
 * Implemented the Inventory app.
-* [Configured your circulation rules.]({{< ref "/settings_circulation.md" >}})
+* [Configured your circulation rules.]({{< ref "/settings_circulation.md#settings--circulation--circulation-rules" >}})
 * Loaded or created users.
 
 If you are configuring the Courses app for the first time, you need first to set up the following features in the Settings app, if applicable:
