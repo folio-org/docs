@@ -104,7 +104,7 @@ In the **Search & filter** pane, click **Request** and select any applicable fil
 * **Cancelled.** Include cancelled request actions.
 * **Created.** Include created request actions.
 * **Pickup expired.** Include [pickup expired request actions](../../requests/requests/#request-types-and-statuses).
-* **Expired.** Include [expired request actions](../../requests/requests/#request-types-and-statuses). These are requests with the request status of Closed - Unfilled.
+* **Expired.** Include [expired request actions](../../requests/requests/#request-types-and-statuses). These occur when a request status becomes Closed - Unfilled.
 * **Moved.** Include requests that were [moved from one item to another.](../../requests/requests/#moving-an-item-level-request-to-another-item-on-the-same-instance).
 * **Queue position reordered.** Include [requests that were moved up or down in the request queue](../../requests/requests/#reordering-the-request-queue-for-an-item).
 
