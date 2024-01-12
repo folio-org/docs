@@ -5,6 +5,8 @@ date: 2021-12-03
 weight: 40
 ---
 
+**This section of the documentation contains links to external sites. Please be advised that these sites are not maintained by the FOLIO Documentation Group and may be aligned with a different FOLIO release.**
+
 The Courses app allows you to create and manage course reserves.
 
 Note: To enable library patrons to discover the courses you create in the Courses app you need an external interface or discovery layer set up and capable of interacting with FOLIO.
@@ -36,7 +38,7 @@ Keyboard shortcuts allow you to perform actions in this app using the keyboard. 
 Before you implement the Courses app, make sure you have completed the following:
 
 * Implemented the Inventory app.
-* [Configured your circulation rules.]({{< ref "/settings_circulation.md" >}})
+* [Configured your circulation rules.]({{< ref "/settings_circulation.md#settings--circulation--circulation-rules" >}})
 * Loaded or created users.
 
 If you are configuring the Courses app for the first time, you need first to set up the following features in the Settings app, if applicable:
@@ -307,7 +309,8 @@ The most common use case for these fields is when an electronic item is put on r
 
 ## Removing a reserve item from a course
 
-Note: Removing an item from a course does not remove it from the Inventory app. If the item on reserve had a temporary location inherited from the course, removing the item from reserve will remove the temporary location from the item in inventory.
+Note: Removing an item from a course does not remove it from the Inventory app. If the item on reserve had a temporary location inherited from the course, removing the item from the course will remove the temporary location from the item in inventory. If the item had a temporary loan type inherited from the course, removing the item from the course will **not** remove the temporary loan type from the item in inventory.
 
 1. [Find the course](#searching-for-courses) with the item you want to remove and click on it in the **Courses** list.
 2. In the **Items** section, find the reserve item and click the **trash icon**. The item is removed.
+3. If you added a temporary loan type, [remove the temporary loan type in the inventory app]({{< ref "/inventory.md#loan-and-availability" >}}). Alternatively, use **Bulk Edit** to clear temporary loan types at the end of the semester.

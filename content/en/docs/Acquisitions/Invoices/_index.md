@@ -79,9 +79,9 @@ This section contains invoice header information. Invoice date, Status, and Batc
 *   **Acquisition units.** The acquisition unit(s) assigned to the invoice. For more information see [Settings > Acquisition units]({{< ref "/settings_acquisition_units.md" >}}).
 *   **Bill to.** In the **Bill to** drop-down list, select the billing address for the invoice. Once you select an address, the billing address appears under **Address**. Addresses are configured in the Settings app. For more information, see [Settings > Tenant > Addresses]({{< ref "settings_tenant#settings--tenant--addresses" >}}).
 *   **Batch group (required).** The batch group with which the invoice voucher will be grouped for voucher export. Invoices from the same library are generally processed together. Batch groups are configured in [Settings > Invoices > Batch groups]({{< ref "settings_invoices#settings--invoices--batch--groups" >}}). For more information about batch voucher exports, see [Exporting vouchers](#exporting-vouchers).
-*   **Sub-total.** The sub-total of the invoice calculated as the sum of the sub-total values of all invoice lines. The system will generate this amount after the invoice is created and invoice lines are assigned.
+*   **Sub-total.** The sub-total of the invoice calculated as the sum of the sub-total values of all invoice lines. The system will generate this amount after the invoice is created and invoice lines are assigned. 
 *   **Total adjustments.** The total adjustments to the invoice calculated as the sum of all adjustments on the invoice and all invoice lines. The system will generate this amount after the invoice is created.
-*   **Calculated total amount.** The total amount of the invoice calculated as the sum of the **Sub-total** value and the **Total adjustments** value. The system will generate this amount after the invoice is created.
+*   **Calculated total amount.** The total amount of the invoice calculated as the sum of the **Sub-total** value and the **Total adjustments** value. The system will generate this amount after the invoice is created. If this value is negative, a credit transaction will be recorded.
 *   **Lock total** Check this box to indicate that you want to enter a total amount.  Leave this box unchecked if you want the system to calculate the total amount based on the invoice line amounts.  
 *   **Lock total amount.** The total expenditure for the invoice.  This field is editable only if the **Lock total** checkbox is checked. If you enter a lock total amount, all invoice lines and adjustment values must equal this lock total amount before a user can approve the invoice.  
 *   **Note.** Any additional comments relevant to the invoice.
@@ -100,7 +100,7 @@ Select a preset adjustment from the drop down list and click **Add adjustment.**
 
 
 *   **Description (required).** Describes the adjustment.
-*   **Value (required).** The amount of the adjustment.
+*   **Value (required).** The amount of the adjustment. A hyphen preceding the amount renders this a negative value and may be used to credit that amount to the specified fund(s).
 *   **Type.** Select a currency or a percentage. Note: This choice applies to the amount you entered in **Amount.**
 *   **Pro rate (required).** Select the method by which the adjustment should be proportionally distributed: **By line**, **By amount**, **By quantity**, or **Not prorated**.  **By line** will distribute the adjustment equally across all lines regardless of the quantity on each line; **By amount** will distribute the adjustment across all line proportionally based on each line amount; **By quantity** will distribute based on quantity.  For example, if there are two invoice lines and the first has a quantity of “1” and the second line has a quantity of “2”, a **By quantity** adjustment of $3.00 will apply $1.00 to line one and $2.00 to line two.  **Not Prorated** will apply the adjustment at the invoice level rather than to each line.  If this option is selected, an “Add fund distribution” button will appear.  Click “Add fund distribution” to define the fund to which this adjustment should be applied.
 *   **Relation to total (required).** Defines how this adjustment should be applied in relation to the invoice total. Select one: In addition to, Included in, or Separate from.  Note: Adjustments that are created with a **Relation to total** value of **Separate from** are not included in the **Total adjustments** amount or **Calculated total amount** for the invoice.
@@ -187,7 +187,7 @@ To create an invoice line that is not associated with an existing purchase order
 
 
 
-1. In the **Invoice lines** section of the invoice record, click **Actions > New blank lineL.**
+1. In the **Invoice lines** section of the invoice record, click **Actions > New blank line.**
 2. In the **Create vendor invoice line** window, fill in the Invoice line information, Fund distribution, and Adjustments sections. For more information on the fields and actions available in these sections, see the section descriptions below.
 3. Click **Save & close**. A confirmation message appears and the invoice line appears in the Invoice lines table.
 
@@ -220,7 +220,7 @@ When vendor EDIFACT format invoices are loaded to the system through data import
 *   **Accounting code.** The accounting code for the invoice line. If you select an account number from the drop-down list, the associated accounting code will display here. Note: If the **Export to accounting** checkbox is active, the **Accounting code** is required. This information may be pre-populated if creating the invoice line from a purchase order line (POL).
 *   **Account number.** The account number for the invoice line. This drop-down list contains vendor account numbers for the vendor selected on the invoice if any exist on the vendor’s Organization record. If one or more vendor accounts exist in the Organization record for the vendor, the first account appears in this field as the default value. This information may be pre-populated if creating the invoice line from a purchase order line (POL).
 *   **Quantity.** The number of items in the invoice line. This information will be pre-populated if creating the invoice line from a purchase order line (POL).
-*   **Sub-total.** The amount of this invoice line. Note: The subtotal amount must be distributed to one or more funds and is expressed in the currency defined in [Settings > Tenant > Language and localization]({{< ref "settings_tenant#settings--tenant--language-and-localization" >}}). This information will be pre-populated if creating the invoice line from a purchase order line (POL).
+*   **Sub-total.** The amount of this invoice line. A hyphen may be added before the numeric value to denote a negative amount for credit invoices. Note: The subtotal amount must be distributed to one or more funds and is expressed in the currency defined in [Settings > Tenant > Language and localization]({{< ref "settings_tenant#settings--tenant--language-and-localization" >}}). This information will be pre-populated if creating the invoice line from a purchase order line (POL).
 *   **Release encumbrance.** Check this box to release the remaining value of the related encumbrance(s) from the fund to which it was assigned when the invoice transitions to **Approved** status. If this box is unchecked, any related encumbrance value that remains will persist after the invoice is **Approved** and the order payment status of any related Purchase Order Lines (POL) will not transition to **Fully Paid** until the encumbrances are released.  For example, if the POL cost was $50, but the invoice amount is $40 and **Release encumbrance** is unchecked, the $10 difference will persist as an encumbrance on the fund indicated in the fund distribution.
 
 
@@ -245,7 +245,7 @@ The **Remaining amount to be distributed** is calculated based on the **Sub-tota
 To use a preset adjustment, select from the **Preset adjustment** dropdown list. Preset adjustments are created in [Settings > Invoices > Adjustments](../../settings/settings_invoices/settings_invoices/#settings--invoices--adjustments). If a new adjustment is needed that doesn’t exist as a preset, click **Add adjustment.**  
 
 *   **Description.** A description of the adjustment.
-*   **Value.** The cost of the adjustment, expressed as a percentage or currency value.
+*   **Value.** The cost of the adjustment, expressed as a percentage or currency value. A hyphen preceding the amount renders this a negative value and may be used to credit that amount to the specified fund(s).
 *   **Type.**  Select whether the **Value** should be expressed as a percentage or currency value.
 *   **Relation to total.** Specifies whether the adjustment is included in, in addition to, or separate from the total amount of the invoice. Note: Adjustments that are created with a **Relation to total** value of **Separate from** are not included in the **Total adjustments** amount or **Calculated total amount** for the invoice.
 *   **Export to accounting.** Select this checkbox to send the adjustment detail in the voucher export to your external payment system for this invoice.
