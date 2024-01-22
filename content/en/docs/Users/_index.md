@@ -1,7 +1,7 @@
 ---
 title: "Users"
 linkTitle: "Users"
-date: 2023-12-19        
+date: 2024-01-22        
 weight: 250
 ---
 
@@ -17,7 +17,7 @@ Definition of terms related to the Users app:
 ## Permissions
 
 
-The permissions listed below allow the user to interact with the Users app and determine what they can and cannot do within the app. If none of these permissions are assigned to a user, they are unable to see the User app or any related information. Permission sets are defined by your library in [Settings \> Users \> Permission sets](..settings/settings_users/settings_users/#settings--users--permission-sets). For more information on permissions, see [Platform Essentials \> Permissions](../platform-essentials/permissions/).
+The permissions listed below allow the user to interact with the Users app and determine what they can and cannot do within the app. If none of these permissions are assigned to a user, they are unable to see the User app or any related information. Permission sets are defined by your library in [Settings \> Users \> Permission sets](../settings/settings_users/settings_users/#settings--users--permission-sets). For more information on permissions, see [Platform Essentials \> Permissions](../platform-essentials/permissions/).
 
 
 The following are all of the User permissions:
@@ -277,7 +277,7 @@ To anonymize a user’s closed loan, follow these steps:
 ### Requests
 
 
-The **Requests** section displays the number of **open requests** and **closed requests** on a user’s record.
+The **Requests** section displays the number of **open requests** and **closed requests** on a user’s record. For more information about requests, see [Requests](../access/requests/requests/)
 
 
 #### Open requests
@@ -295,7 +295,7 @@ A request is **closed** when the patron picks up the item (**Closed - Filled**).
 To view additional details about the users’ open or closed requests, expand the **Requests** accordion and click **open requests** or **closed requests**, respectively.
 
 
-Requests can be created for the user in the user record or in the **Requests** app. Click the **Create request** button in the **Requests** section of the user record or go to the **Requests** app by selecting **Create request** in the **Actions** menu. For more information about requests, see [Requests](../access/requests/requests/#creating-a-request).
+Requests can be created for the user in the user record or in the **Requests** app. Click the **Create request** button in the **Requests** section of the user record or go to the **Requests** app by selecting **Create request** in the **Actions** menu. 
 
 
 ### User permissions
@@ -672,7 +672,7 @@ The Cash drawer reconciliation report is used by library staff to balance their 
 To create a Cash drawer reconciliation report: 
 
 
-1. In the **User search results** pane, click **Actions \>Cash drawer reconciliation report (CSV, PDF)**. 
+1. In the **User search results** pane, click **Actions \> Cash drawer reconciliation report (CSV, PDF)**. 
 2. In the **Cash drawer reconciliation report** modal, enter a **Start Date* (required) and an **End Date**. Select **Service Point** (required) and **Sources**. 
 3. Select **Report format**. You may select *CSV*, *PDF (Read Only)*, or *Both*.
 4. Click **Save & close**.
@@ -688,7 +688,7 @@ The Financial transaction detail report allows libraries to review transactions 
 To create a Financial transaction detail report: 
 
 
-1. In the **User search results** pane, click **Actions \>Financial transaction detail report (CSV)**. 
+1. In the **User search results** pane, click **Actions \> Financial transaction detail report (CSV)**. 
 2. In the **Financial transaction detail report** modal, specify a date range by entering a **Start date** and an **End date**. Select the **Fee/fine owner** (required). Select the **Associated service points**.
 3. Click on **Save & close**. 
 4. Depending on your browser and its configurations, an *Export in progress* message appears and the file automatically downloads or you are prompted to save it. If there are no transactions to report, a *No items found* message appears and no file is generated.
@@ -703,7 +703,7 @@ The **Refunds to process manually report** is a report that provides library adm
 To create a **Refunds to process manually report**: 
 
 
-1. In the **User search results** pane, click **Actions \>Refunds to process manually report (CSV)**. 
+1. In the **User search results** pane, click **Actions \> Refunds to process manually report (CSV)**. 
 2. In the **Refunds to process manually** modal, specify a date range by entering a **Start Date** and an **End Date**. Select the **Fee/Fine Owner**.
 3. Click **Save & close**. 
 4. Depending on your browser and its configurations, an *Export in progress* message appears and the file automatically downloads or you are prompted to save it. If no there are no refunds to process manually, a *No items found* message appears and no file is generated. 
@@ -963,7 +963,7 @@ You can search for lost item charges by patron name or instance title and filter
 - **Loss type**. You can filter by **Aged to lost**loans or **Declared lost** loans.
 - **Date of loss range**. You can specify a start date or end date for when the item became lost.
 - **Fee/fine owner**. You can filter on one or more fee/fine owners to see their specific actual cost items.
-- **Status: You can filter by loan status: **Open**, **Billed**, **Cancelled**, or **Expired**.
+- **Status**. You can filter by loan status: **Open**, **Billed**, **Cancelled**, or **Expired**.
 
 
 ### Applying a bill for an actual cost list item
