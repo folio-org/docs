@@ -70,7 +70,7 @@ Use this setting to create permission sets for your library. Permission sets are
 
 Additionally, if permissions change because of a new release, a FOLIO administrator can edit the permission set for a particular role to update the assigned permissions. The change to the permission set then propagates out to the users who have that permission set assigned, and the administrator doesn't have to update permissions for each individual user.
 
-For more information about permissions, see [Platform Essentials > Permissions](../../platform-essentials/permissions/).
+For more information about permissions, see [Platform Essentials > Permissions](../../../platform-essentials/permissions/).
 
 ### Create a permission set
 
@@ -138,7 +138,7 @@ To delete a patron group, follow these steps:
 
 ## Settings \> Users \> Address Types
 
-Use this setting to configure address types. Address types are used to categorize the addresses that are entered in the [Contact information](../../users/#contact-information) section of a user record. For example, you may want to create the address types: office, work, or home address.
+Use this setting to configure address types. Address types are used to categorize the addresses that are entered in the [Contact information](../../../users/#contact-information) section of a user record. For example, you may want to create the address types: office, work, or home address.
 
 Note: Address types should be configured before bulk loading of patrons occurs if mailing addresses are to be stored.
 
@@ -174,7 +174,7 @@ In the **Delete Address Type** dialog, click on the **Delete** button. A confirm
 
 ## Settings \> Users \> Departments
 
-Use this setting to configure departments. Departments can be added in the [Extended information](../../users/#extended-information) section of a user record. For example, you may want to add departments to reflect library staff or faculty's departments.
+Use this setting to configure departments. Departments can be added in the [Extended information](../../../users/#extended-information) section of a user record. For example, you may want to add departments to reflect library staff or faculty's departments.
 
 ### Create a department
 
@@ -270,7 +270,7 @@ When manually creating a fee/fine, **Fee/fine Type** is a required field.
 7.  Optional: Select an **Action Notice**.
 8.  Click **Save**. The Fee/fine type is saved.
 
-See [Settings \> Circulation \> Patron notice templates](../settings_circulation/settings_circulation/#patron-notice-templates) for more information about **Patron notice templates**.
+See [Settings \> Circulation \> Patron notice templates](../../settings_circulation/settings_circulation/#patron-notice-templates) for more information about **Patron notice templates**.
 
 
 ### Edit a fee/fine type
