@@ -60,9 +60,9 @@ In FOLIO, a fee/fine owner represents the agent or office that manages fines for
 
 If you plan to charge any fines, you need to set up at least one fee/fine owner.  FOLIO does not require that a fee/fine owner represent a specific office or part of a library system. A fee/fine owner could represent an individual, a specific office, or a specific library.
 
-Fee/fine owners are configured in [Settings > Users > Fee/fine > Owners]({{< ref "/Settings_users.md#settings--users--owners">}})
+Fee/fine owners are configured in [Settings > Users > Fee/fine > Owners](../../../../settings/settings_users/settings_users/#settings--users--owners)
 
-FOLIO libraries should configure a fee/fine owner for every service point in their FOLIO tenant, even if they don’t expect items attached to a particular service point to be loaned and generate fines. This is because if such a loan does occur, and no fee/fine owner is attached to the service point, the fine transaction will fail. Libraries may wish to create one fee/fine owner to attach those service points as a backup in case fine transactions occur.
+FOLIO libraries should configure a fee/fine owner for every service point in their FOLIO tenant, even if they don’t expect items attached to a particular service point to be loaned and generate fines. This is because if such a loan does occur, and no fee/fine owner is attached to the service point, the fine transaction will fail. Libraries may wish to create one fee/fine owner to attach to those service points as a backup in case fine transactions occur.
 
 ### How are fee/fine owners connected to locations?
 
@@ -98,15 +98,15 @@ When the item is aged to lost:
 FOLIO charges both the $100 lost item fee and the $25 lost item processing fee and associates them to “Science and Engineering Business Office” as the owner.
 
 ## Fee/fine notices
-Notices function differently for fee/fines that are charged manually, versus fee/fines that are charged automatically.
+Notices function differently for fees/fines that are charged manually, versus fees/fines that are charged automatically.
 
 ### Manual fee/fine notices
 
 For a manual fee/fine, you have two types of notices that you can use - the **charge** notice and the **action notice**.
 
-You can create templates for both types of notices in Settings\>Circulation\>Patron Notices\>Patron notice templates. For a **charge** notice, choose the notice category “Manual fee/fine charge.” For an **action notice**, choose “Manual fee/fine action (pay, waive, refund, transfer, or cancel/error)”.
+You can create templates for both types of notices in [Settings\>Circulation\>Patron Notices\>Patron notice templates](../../../../settings/settings_circulation/settings_circulation/#patron-notice-templates). For a **charge** notice, choose the notice category “Manual fee/fine charge.” For an **action notice**, choose “Manual fee/fine action (pay, waive, refund, transfer, or cancel/error)”.
 
-In Settings\>Users>Fee/fine\>Manual charges, you can select the appropriate fee/fine owner, and associate a charge notice and an action notice to that manual charge. You can select default charge and/or action notice templates for the owner, or specify different charge notice templates  for individual fee/fine types.
+In [Settings\>Users>Fee/fine\>Manual charges](../../../../settings/settings_users/settings_users/#settings--users--manual-charges), you can select the appropriate fee/fine owner, and associate a charge notice and an action notice to that manual charge. You can select default charge and/or action notice templates for the owner, or specify different charge notice templates  for individual fee/fine types.
 
 When you create a manual charge on a patron’s account, or apply an action to an existing charge, if there is an associated notice template, a checkbox option will allow you to choose if the patron should be notified. 
 
