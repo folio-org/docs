@@ -30,7 +30,7 @@ The following are all the Courses permissions:
 
 ## Keyboard shortcuts
 
-Keyboard shortcuts allow you to perform actions in this app using the keyboard.  See [Platform essentials > Keyboard shortcuts]({{< ref "keyboardshortcuts.md" >}}) for more information.
+Keyboard shortcuts allow you to perform actions in this app using the keyboard.  See [Platform essentials > Keyboard shortcuts](../../../platform-essentials/keyboard-shortcuts/keyboardshortcuts/) for more information.
 
 
 ## Implementation considerations
@@ -38,16 +38,16 @@ Keyboard shortcuts allow you to perform actions in this app using the keyboard. 
 Before you implement the Courses app, make sure you have completed the following:
 
 * Implemented the Inventory app.
-* [Configured your circulation rules.]({{< ref "/settings_circulation.md#settings--circulation--circulation-rules" >}})
+* [Configured your circulation rules.](../../../settings/settings_circulation/settings_circulation/#settings--circulation--circulation-rules)
 * Loaded or created users.
 
 If you are configuring the Courses app for the first time, you need first to set up the following features in the Settings app, if applicable:
 
-* [Terms]({{< ref "/settings_courses.md#settings--courses--terms" >}})
-* [Course Types]({{< ref "/settings_courses.md#settings--courses--course-types" >}})
-* [Course Departments]({{< ref "/settings_courses.md#settings--courses--course-department" >}})
-* [Processing Statuses]({{< ref "/settings_courses.md#settings--courses--processing-statuses" >}})
-* [Copyright Statuses]({{< ref "/settings_courses.md#settings--courses--copyright-statuses" >}})
+* [Terms](../../../settings/settings_courses/settings_courses/#settings--courses--terms)
+* [Course Types](../../../settings/settings_courses/settings_courses/#settings--courses--course-types)
+* [Course Departments](../../../settings/settings_courses/settings_courses/#settings--courses--course-department)
+* [Processing Statuses](../../../settings/settings_courses/settings_courses/#settings--courses--processing-statuses)
+* [Copyright Statuses](../../../settings/settings_courses/settings_courses/#settings--courses--copyright-statuses)
 
 Once you configure the above settings, you can:
 
@@ -100,9 +100,9 @@ To create a course, you must have the Courses window open. Then:
 ### Creating a course - reminders
      
 * Once a course is created, it can only be deleted if all reserve items are removed.
-* Department, Course Type, and Term are configured in Settings. See [Settings > Courses]({{< ref "/settings_courses.md" >}}) for more information.
+* Department, Course Type, and Term are configured in Settings. See [Settings > Courses](../../../settings/settings_courses/settings_courses/) for more information.
 * If you are adding one or more cross-listed courses to a course, the information you enter into Course listing information also applies to each cross-listed course.
-* Reserve items added to the course are automatically assigned with the Start Date and End Date of the Term you selected, as specified in the [Term settings.]({{< ref "/settings_courses.md#settings--courses--terms" >}}) If needed, you can edit the dates by [editing the reserve item.](#editing-a-reserve-item)
+* Reserve items added to the course are automatically assigned with the Start Date and End Date of the Term you selected, as specified in the [Term settings.](../../../settings/settings_courses/settings_courses/#settings--courses--terms) If needed, you can edit the dates by [editing the reserve item.](#editing-a-reserve-item)
 * Any item assigned to a Course automatically has its temporary location set to the value specified in the Location field. If needed, you can change the temporary location by [editing the reserve item.](#editing-a-reserve-item)
 * When completing the course information, make sure you understand how the fields correspond to your discovery interface.
 
@@ -151,7 +151,7 @@ You are able to delete a cross-listed course with items as long as one course re
 
 ## Duplicating a course
 
-1. Find the course you want to duplicate and click on it in the Courses list.
+1. [Find the course](#searching-for-courses) you want to duplicate and click on it in the Courses list.
 2. In the **course details** window, click **Actions > Duplicate**. A pop-up window will appear.
 3. In the pop-up window, select the term for the duplicate course.
 4. If the course has cross-listings, and you want the cross-listed courses to be duplicated also, check **Duplicate all cross-listed courses**.
@@ -199,7 +199,7 @@ Note: If an instructor has a FOLIO user record, you cannot edit that instructor'
 
 ## Adding and removing notes
 
-You can add and assign notes to courses. Assigning a note means you are reusing a previously created note. To be able to add or assign notes, you need the appropriate [Notes permissions]({{< ref "/settings_notes.md#permissions" >}}).
+You can add and assign notes to courses. Assigning a note means you are reusing a previously created note. To be able to add or assign notes, you need the appropriate [Notes permissions](../../../settings/settings_notes/settings_notes/#permissions).
 
 ### Adding a new note to a course
 
@@ -313,4 +313,4 @@ Note: Removing an item from a course does not remove it from the Inventory app. 
 
 1. [Find the course](#searching-for-courses) with the item you want to remove and click on it in the **Courses** list.
 2. In the **Items** section, find the reserve item and click the **trash icon**. The item is removed.
-3. If you added a temporary loan type, [remove the temporary loan type in the inventory app]({{< ref "/inventory.md#loan-and-availability" >}}). Alternatively, use **Bulk Edit** to clear temporary loan types at the end of the semester.
+3. If you added a temporary loan type, [remove the temporary loan type in the inventory app](../../../metadata/inventory/#loan-and-availability). Alternatively, use **Bulk Edit** to clear temporary loan types at the end of the semester.
