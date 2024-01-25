@@ -1,7 +1,7 @@
 ---
 title: "Bulk Edit"
 linkTitle: "Bulk Edit"
-date: 2023-12-19
+date: 2024-01-23
 weight: 550
 ---
 
@@ -144,7 +144,7 @@ To suppress the matched item records from discovery in the Bulk edit app, follow
 
 1. In the **Bulk edit** window, select **Suppress from discovery** from the **Select option** drop-down list.
 2. Select the appropriate Action from the **Select action** drop-down list.
-    - Set true: Suppresses the matched item records from discovery.
+   - Set true: Suppresses the matched item records from discovery.
    - Set false: Unsuppresses the matched item records from discovery.
 3. Click **Confirm changes** to apply the changes to the matched item records.
 4. An *Are you sure?* message appears in a new window with a **Preview of records to be changed**. An alert appears at the top of the window: *(Number of) records will be changed if the Commit changes button is clicked.* You may choose Download preview to review all changes prior to saving. Click **Keep editing** to return to the Bulk edits window, **Download preview** to preview the changes before saving, or **Commit changes** to run the bulk edit.
@@ -225,6 +225,7 @@ To bulk edit the **Administrative note** in the matched records, follow these st
     - **Remove all** will delete any administrative notes in the item records..
     - **Find** Input note text you want to find. Select **Replace with** and input new text or select **Remove** to remove the text.
     - **Change note type.** Select the new note type.
+
       
 3. Click **Confirm changes**. The selected action will be applied to the matched item records.
 4. The **Preview of records to be changed** will pop up with options of **Keep editing**, **Download preview**, or **Commit changes**.
@@ -246,6 +247,7 @@ To bulk edit the **Check in note** in the matched records, follow these steps:
     - **Remove all** will delete any check in notes in the item records.
     - **Find** input note text you want to find. Select **Replace with** and input new text or select **Remove** to remove the text.
     - **Change note type.** Select the new note type you want.
+
       
 3. Click **Confirm changes**. The selected action will be applied to the item records.
 4. The **Preview of records to be changed** will pop up with options of **Keep editing**, **Download preview**, or **Commit changes**.
@@ -267,6 +269,7 @@ To bulk edit the **Check out note** in the matched records, follow these steps:
     - **Remove all** will delete any check in notes in the item records.
     - **Find**. Input note text you want to find. Select **Replace with** and input new text or select **Remove** to remove the text.
     - **Change note type.** Select the new note type you want.
+
       
 3. Click **Confirm changes**. The selected action will be applied to the item records.
 4. The **Preview of records to be changed** will pop up with options of **Keep editing**, **Download preview**, or **Commit changes**.
@@ -296,6 +299,7 @@ To bulk edit an **item note** in the matched records, follow these steps:
     - **Remove all** will delete any selected **item notes** from the item records.
     - **Find**. Input note text you want to find. Select **Replace with** and input new text or select **Remove** to remove the text.
     - **Change note type.** Select the new note type you want.
+
 
 3. Click **Confirm changes**. The selected action will be applied to the matched item records..
 4. The **Preview of records to be changed** will pop up with options of **Keep editing**, **Download preview**, or **Commit changes**.
@@ -333,6 +337,7 @@ To bulk edit the **loan type** in the matched records, follow these steps:
     - For **temporary loan type**, **Replace with** and **Clear field** are the actions available in bulk edit. 
     - **Replace with**. Replaces the loan type in the matched records with the loan type selected in the **Select loan type** drop-down list. 
     - **Clear field**. Removes the data in the loan type field of the matched records.
+
 
 3. Select the new loan type from the **Select loan type** drop-down menu or use the **Filter options list** to select the new loan type.
 4. Click **Confirm changes**. The selected action will be applied to the matched item records.
@@ -474,11 +479,12 @@ To bulk edit the **Email** field in the matched records, follow these steps:
 2. In the **Bulk edits** section select **Email** from the **Select option** menu under **Options**
 3. For **Email**, bulk edit performs a find and replace in the email address field of the matched records. Thus, the **Actions** available are **Find** and **Replace with** . Type the appropriate text in the boxes next to **Find** and **Replace with**. 
 4. Click the **Confirm changes** button. 
-5. An *Are you sure?* message appears in a new window. The message *(Number of) records will be changed if the Commit changes button is clicked.* You may choose Download preview to review all changes prior to saving.* A **Preview of records to be changed** is also displayed.
+5. An *Are you sure?* message appears in a new window. The message *(Number of) records will be changed if the Commit changes button is clicked.* You may choose Download preview to review all changes prior to saving. A **Preview of records to be changed** is also displayed.
    
     - Click **Keep editing** to return to the Bulk edit window.
     - Click **Download preview** to download a .csv file of the proposed changes. 
     - Click **Commit changes** to run the bulk edit.
+
       
 6. When the bulk edit is complete, a confirmation message, *(Number of) records have been successfully changed*, appears in the **Bulk edit** window.
 7. To change the column headings in the **Preview of record changed** table, click **Actions** and select or deselect the fields in the **Show columns** list as appropriate.
@@ -500,6 +506,7 @@ To bulk edit the **Expiration date** field in the matched records, follow these 
     - Click **Keep editing** to return to the Bulk edit window.
     - Click **Download preview** to download a .csv file of the proposed changes. 
     - Click **Commit changes** to run the bulk edit.
+
       
 6. When the bulk edit is complete, a confirmation message, *(Number of) records have been successfully changed*, appears in the **Bulk edit** window.
 7. To change the column headings in the **Preview of record changed** table, click **Actions** and select or deselect the fields in the **Show columns** list as appropriate.
@@ -516,11 +523,12 @@ To bulk edit the **Patron group** field in the matched records, follow these ste
 2. In the **Bulk edits** section, select **Patron group** from the **Select option** menu under **Options**
 3. Bulk edit performs a **replace with** function for the **Patron group** field of the matched records. Thus, **Replace with** is the only option available. Select the new patron group from the **Select patron group** menu. 
 4. Click the **Confirm changes** button.
-5. An *Are you sure?* message appears in a new window. The message *(Number of) records will be changed if the Commit changes button is clicked.* You may choose Download preview to review all changes prior to saving.* A **Preview of records to be changed** is also displayed.
+5. An *Are you sure?* message appears in a new window. The message *(Number of) records will be changed if the Commit changes button is clicked.* You may choose Download preview to review all changes prior to saving. A **Preview of records to be changed** is also displayed.
    
     - Click **Keep editing** to return to the Bulk edit window.
     - Click **Download preview** to download a .csv file of the proposed changes.
     - Click **Commit changes** to run the bulk edit.
+
       
 6. When the bulk edit is complete, a confirmation message, *(Number of) records have been successfully changed*, appears in the **Bulk edit** window.
 7. To change the column headings in the **Preview of record changed** table, click **Actions** and select or deselect the fields in the **Show columns** list as appropriate.
@@ -542,7 +550,7 @@ To use bulk edit to apply local changes to records, follow these steps:
 1. Select **Actions \> Start bulk edit (Local)**. 
 2. In the **Bulk edit** window, **Drag and drop** the .csv file into the **Upload CSV file with edited records** box, or click **or choose file** to upload the .csv file from your computer.
 3. If the .csv file is uploaded successfully, the confirmation message, *(Name of File).csv successfully uploaded*, displays in a new window. 
-4. Click **Next**. The warning message, *(Number of) records will be updated if the **Commit changes** button is clicked.* appears in a new window.
+4. Click **Next**. The warning message, *(Number of) records will be updated if the **Commit changes** button is clicked* appears in a new window.
 5. Click **Commit changes**. Bulk edit will apply the local changes to the records in FOLIO.
 
 
@@ -569,12 +577,14 @@ To set criteria and preview bulk edit logs, follow these steps:
     - **Completed**
     - **Completed with errors**
     - **Failed**
+
       
-3. Under the Record types accordion, select the record type for the bulk edit log by checking the appropriate box:
+3. Under the **Record types** accordion, select the record type for the bulk edit log by checking the appropriate box:
 
     - **Inventory - holdings**
     - **Inventory - items**
     - **Users**
+
       
 4. In the **Started** accordion, use the **calendar icon** or type in the date using the YYYY-MM-DD format in the **From** and **To** fields to limit the preview by the start date of the bulk edit. Click **Apply**.
 5. In the **Ended** accordion, use the **calendar icon** or type in the date using the YYYY-MM-DD format in the **From** and **To** fields to limit the preview by the end date of the bulk edit. Click **Apply**.
@@ -592,7 +602,7 @@ To set criteria and preview bulk edit logs, follow these steps:
     - **ID**: system-generated number assigned to the bulk edit job
 
 
-Download a bulk edit log file
+### Download a bulk edit log file
 
 
 In the Bulk edit app, a file used to run a bulk edit job can be downloaded and saved from the **Bulk edit logs** pane.
@@ -609,5 +619,6 @@ To download a file associated with a bulk edit log, follow these steps:
     - **File with errors encountered during the record matching**
     - **File with the preview of proposed changes**
     - **File with updated records**.
+
 
 3. Depending on the web browser, the file can be opened or saved to your computer.
