@@ -1,7 +1,7 @@
 ---
 title: "Consortium manager"
 linkTitle: "Consortium manager"
-date: 2023-12-13        
+date: 2024-01-22        
 weight: 275
 ---
 
@@ -16,7 +16,7 @@ Definitions of terms related to Consortium manager:
 
 
 * **Affiliation**: Association with a given tenant (e.g. a user’s “active affiliation” is the tenant in which they are currently working) 
-* **Central tenant**: The administrative tenant in a multi-tenant system. 
+* **Central tenant**: The administrative tenant when Enhanced Consortial Support (ECS) is enabled.  
 * **Client**: A library or a branch library. 
 * **Consortium**: An association of independent libraries and/or library systems established by formal agreement, usually for the purpose of resource sharing. Membership may be restricted to a specific geographic region, type of library (public, academic, special), or subject specialization.
 * **Enhanced Consortial Support (ECS)**: The underlying architecture that defines the relationship and interactions among multiple tenants.
@@ -89,7 +89,7 @@ For more information about editing user records, see [User \> Edit a user record
 ## Affiliations 
 
 
-In an ECS-enabled tenant, each user must have at least one affiliation with a member library. The tenant in which the user record is initially created serves as the primary affiliation. When a user logs into FOLIO, the primary affiliation is set to active and displays in the top right corner of the screen. 
+In an ECS-enabled tenant, each user must have an affiliation with at least one member library. The tenant in which the user record is initially created serves as the primary affiliation. When a user logs into FOLIO, the primary affiliation is set to active and displays in the top right corner of the screen. 
 
 
 When working in an active affiliation, the local data in that tenant is displayed as well as any data shared across the consortium. 
@@ -412,7 +412,7 @@ To assign or unassign shared permissions to a user:
 5. Select the **Permission set** to view its **General information**, including **Permission set name** and **Description**, **Assigned permissions**, and **Assigned users**. 
 6. Expand the **Assigned users** accordion to view the list of users who have the permission set assigned to them. 
 7. Click the **Assign/unassign** button.
-8. In the **Select user** window, search for the user by name or filter by **Status** or ***Patron group** and select. For more information about searching for users, see [Users \> Search for user records](../users/#search-for-user-records).
+8. In the **Select user** window, search for the user by name or filter by **Status** or **Patron group** and select. For more information about searching for users, see [Users \> Search for user records](../users/#search-for-user-records).
 9. To add or assign a user to the shared permission, check the box next to the user’s name. To remove or unassign the user from the shared permission, uncheck the box next to the user’s name. 
 10. Click **Save**.
 
@@ -547,7 +547,7 @@ To edit a **Departments**, follow these steps:
 
 1. Click on the **pencil icon** in the **Actions** column. 
 2. Make edits to the **Name** and **Code** fields. 
-3. The **Share** box is grayed out because the sharing option cannot be edited once the setting is created and initially saved. For more information about changing sharing options in a shared setting, see [Shared Settings](/#shared-settings).
+3. The **Share** box is grayed out because the sharing option cannot be edited once the setting is created and initially saved. For more information about changing sharing options in a shared setting, see [Shared Settings](#shared-settings).
 4. Click **Actions \> Save**. 
 
 
