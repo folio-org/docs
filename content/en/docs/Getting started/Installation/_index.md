@@ -41,7 +41,14 @@ See [Kubernetes example]({{< ref "kubernetesex.md" >}}) for more information.
 
 At least 24 GB memory are needed to run the official [platform-complete](https://github.com/folio-org/platform-complete) set of FOLIO modules.
 
-### PostgreSQL
+### Infrastructure
+
+FOLIO requires
+* a PostgreSQL server
+* an OpenSearch or Elasticsearch server
+* a Kafka server
+
+#### PostgreSQL
 
 FOLIO requires PostgreSQL 12 or any later version.
 
