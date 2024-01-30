@@ -1,7 +1,7 @@
 ---
 title: "Settings > Users"
 linkTitle: "Users"
-date: 2023-12-13   
+date: 2024-01-22  
 weight: 220
 tags: ["subtopic"]
 ---
@@ -11,7 +11,7 @@ The Users section in the Settings app provides configuration options for managin
 Definition of terms related to Settings \> Users:
 
 -  **Permission.** Value assigned to a user, which grants them access to FOLIO records or allows them to carry out specific tasks in FOLIO.
--  **Permission set.** A group of permissions that allows a user to perform a specific set of tasks. For example, you may want to group certain permissions together to create job-specific permissions sets. Permission sets are defined by your library in [Settings \> Users \> Permission sets](../#permission-sets).
+-  **Permission set.** A group of permissions that allows a user to perform a specific set of tasks. For example, you may want to group certain permissions together to create job-specific permissions sets. Permission sets are defined by your library in [Settings \> Users \> Permission sets](#settings--users--permission-sets).
 -  **Invisible permission.** A permission defined by a FOLIO developer in the back-end module. 
 -  **Visible permission.** A permission defined by a FOLIO developer in the front-end UI module.
 
@@ -70,7 +70,7 @@ Use this setting to create permission sets for your library. Permission sets are
 
 Additionally, if permissions change because of a new release, a FOLIO administrator can edit the permission set for a particular role to update the assigned permissions. The change to the permission set then propagates out to the users who have that permission set assigned, and the administrator doesn't have to update permissions for each individual user.
 
-For more information about permissions, see [Platform Essentials > Permissions](../platform-essentials/permissions/).
+For more information about permissions, see [Platform Essentials > Permissions](../../../platform-essentials/permissions/).
 
 ### Create a permission set
 
@@ -138,7 +138,7 @@ To delete a patron group, follow these steps:
 
 ## Settings \> Users \> Address Types
 
-Use this setting to configure address types. Address types are used to categorize the addresses that are entered in the [Contact information](../users/#contact-information) section of a user record. For example, you may want to create the address types: office, work, or home address.
+Use this setting to configure address types. Address types are used to categorize the addresses that are entered in the [Contact information](../../../users/#contact-information) section of a user record. For example, you may want to create the address types: office, work, or home address.
 
 Note: Address types should be configured before bulk loading of patrons occurs if mailing addresses are to be stored.
 
@@ -163,10 +163,10 @@ Note: Address types should be configured before bulk loading of patrons occurs i
 An address type can be deleted only if it is not assigned to any user records. To delete an **Address Type**, you should first check to make sure no user records are assigned the address type.
 
 To see the number of user records assigned to an **Address Type**:
-In Settings \> Users \> Address Types, the number of user records assigned to an Address Type will display in the **# of Addresses** column. If a *-* is displayed, the address type can be deleted.
+
 
 - In **Settings \> Users \> Address Types**, the number of user records assigned to an **Address Type** will display in the **# of Addresses** column. 
-- If a *-* is displayed, no user records are assigned this address type and the address type can be deleted. 
+- If a *-* is displayed, no user records are assigned to this address type and the address type can be deleted. 
 
 In the **Settings app**, select **Users \> Address Types**.
 In the **Address Types** pane, find the Address Type you want to delete and click the **trash can icon** in the **actions** column.
@@ -174,7 +174,7 @@ In the **Delete Address Type** dialog, click on the **Delete** button. A confirm
 
 ## Settings \> Users \> Departments
 
-Use this setting to configure departments. Departments can be added in the [Extended information](../users/#extended-information) section of a user record. For example, you may want to add departments to reflect library staff or faculty's departments.
+Use this setting to configure departments. Departments can be added in the [Extended information](../../../users/#extended-information) section of a user record. For example, you may want to add departments to reflect library staff or faculty's departments.
 
 ### Create a department
 
@@ -206,7 +206,7 @@ Use this setting to configure custom fields. Custom fields are used to track add
 1.  In the **Custom fields** pane, click **New**.
 2.  In the **Edit custom fields** pane, in the **Accordion title** box, enter the name of the user record section for the custom field(s).
 3.  Click **Add custom field** and select the type of field you want to create: **Checkbox**, **Multi-select**, **Radio button set**, **Single select**, **Text area**, or **Text field**.
-4.  Configure the custom field by checking the box next to **Hidden** and/or **Required*. Add a name for the field in the **Field name** box.
+4.  Configure the custom field by checking the box next to **Hidden** and/or **Required**. Add a name for the field in the **Field name** box.
 5.  Optional: To add additional custom fields, repeat steps 3-4.
 6.  Click **Save & close**. The custom field(s) are saved.
 
@@ -218,7 +218,7 @@ Use this setting to configure custom fields. Custom fields are used to track add
 
 ### Delete a custom field
 
-Note: Custom fields can be deleted if they are in use, but any information tied to the fields is also deleted.
+Custom fields can be deleted if they are in use, but any information tied to the fields is also deleted.
 
 1.  In the **Custom fields** pane, click **Edit**.
 2.  In the **Edit custom fields** pane, click the **trash can icon** next to the custom fields you want to delete. Clear out all of the fields to remove the accordion from appearing in user records.
@@ -232,7 +232,7 @@ Libraries may use owners in different ways, such as creating a fee/fine owner fo
 
 If your library intends to charge any fines, it is important that *every service point* be assigned to a fee/fine owner, even if you do not expect fines to accrue for items associated with that service point. Ensuring that the service point is assigned to an owner will prevent unexpected errors.
 
-When manually creating a fee/fine, Fee/fine owner is a required field.
+When manually creating a fee/fine, **Fee/fine owner** is a required field.
 
 ### Create a fee/fine owner
 
@@ -270,12 +270,12 @@ When manually creating a fee/fine, **Fee/fine Type** is a required field.
 7.  Optional: Select an **Action Notice**.
 8.  Click **Save**. The Fee/fine type is saved.
 
-See [Settings \> Circulation \> Patron notice templates](../settings/settings_circulation/settings_circulation/#patron-notice-templates) for more information about **Patron notice templates**.
+See [Settings \> Circulation \> Patron notice templates](../../settings_circulation/settings_circulation/#patron-notice-templates) for more information about **Patron notice templates**.
 
 
 ### Edit a fee/fine type
 
-1.  In the **Fee/fine: Manual charges** pane, find the fee/fine type you want to edit and click the **pencil icon** in the **actions** column.
+1.  In the **Fee/fine: Manual charges** pane, find the fee/fine type you want to edit and click the **pencil icon** in the **Actions** column.
 2.  Make your changes to the manual charge.
 3.  Click **Save**. The manual charge is updated.
 
@@ -395,7 +395,7 @@ Use this setting to configure available transfer accounts. Transfer accounts are
 
 ## Settings \> Users \> Transfer criteria
 
-The **Transfer Criteria** section contains many sections to allow for a wide variety of criteria to be configured. Use this information to configure the criteria for transferring accounts. For more information about transfer accounts, see [Settings \> Users \> Transfer accounts](../#settings--users--transfer-accounts).
+The **Transfer Criteria** section contains many sections to allow for a wide variety of criteria to be configured. Use this information to configure the criteria for transferring accounts. For more information about transfer accounts, see [Settings \> Users \> Transfer accounts](#settings--users--transfer-accounts).
 
 ### Create transfer criteria
 
@@ -683,7 +683,7 @@ Patron block templates are created in **Settings \> Users \> Templates**.
 
 ## Settings \> Users \> Limits
 
-Limits determine the maximum number of materials, recalls, fee/fines, or overdues, that when reached, the conditions you configured in [Settings \> Users \> Conditions](#settings--users--conditions) are applied to a patron's account. Limits are established based on patron groups. See [Settings \> Users \> Patron Groups](#settings–users–patron-groups) for more information about setting up patron groups. 
+Limits determine the maximum number of materials, recalls, fee/fines, or overdues, that when reached, the conditions you configured in [Settings \> Users \> Conditions](#settings--users--conditions) are applied to a patron's account. Limits are established based on patron groups.  
 
 ### Create patron block limits
 

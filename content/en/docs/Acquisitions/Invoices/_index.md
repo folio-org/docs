@@ -187,7 +187,7 @@ To create an invoice line that is not associated with an existing purchase order
 
 
 
-1. In the **Invoice lines** section of the invoice record, click **Actions > New blank lineL.**
+1. In the **Invoice lines** section of the invoice record, click **Actions > New blank line.**
 2. In the **Create vendor invoice line** window, fill in the Invoice line information, Fund distribution, and Adjustments sections. For more information on the fields and actions available in these sections, see the section descriptions below.
 3. Click **Save & close**. A confirmation message appears and the invoice line appears in the Invoice lines table.
 

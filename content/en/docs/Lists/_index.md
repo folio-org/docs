@@ -1,7 +1,7 @@
 ---
 title: "Lists"
 linkTitle: "Lists"
-date: 2023-12-14        
+date: 2024-01-22        
 weight: 575
 ---
 
@@ -69,9 +69,11 @@ The selection of lists in the **Lists** pane can be narrowed by applying filters
    * **Inactive**: An inactive list contains a query but no record set.
 
 
+
 * **Visibility**
    * **Shared:** Shared lists can be accessed by all users with permissions to the Lists app in this organization. 
    * **Private:** Private lists can only be accessed by the user logged in.
+
 
 
 * **Record Types**
@@ -127,7 +129,7 @@ To add list details for a new list, follow these steps:
 
 
 1. In the Lists pane, click on **New**. 
-2. In the **New List** window, add the **List name**, **Description**, **Visibility**, and **Status** criteria in the **List information** section. For more information, see [List information](#list-information). 
+2. In the **New List** window, add the **List name**, **Description**, **Visibility**, and **Status** criteria in the **List information** section. 
 3. Select the appropriate **Record type** for the list. Record types include **Items**, **Loans**, and **Users**.
 4. Click **Build query** to start building a query for the list. For more information, see [Build a query](#build-a-query).
 
@@ -175,6 +177,7 @@ To build a query for **Record type: Items**, follow these steps:
 
 
 To change the display of columns headings, click on the **Show columns** button. Uncheck fields to remove them from the display. Check fields to include them in the display.  
+
 6. Click **Run query & save**. If saved successfully, a **Refresh complete with (number of) records* message displays along with a link to **View Updated List**.
 
 
@@ -189,8 +192,8 @@ To build a list for **Record type: Loans**, follow these steps:
 
 
 * ==: Selected **Field** equals selected **Value**.
-* !=: Selected **Field does not equal selected **Value**.
-* Contains: Selected **Field appears in selected **Value**.
+* !=: Selected **Field** does not equal selected **Value**.
+* Contains: Selected **Field** appears in selected **Value**.
 * Starts: Selected **Field** starts with selected **Value**.
 
 
@@ -284,7 +287,7 @@ To edit the **List information** in a list, follow these steps:
 1. Select the list in the **Lists** pane. The list opens a new window.
 2. Click **Actions \> Edit List**. 
 3. In the **List information** section, edit the **List name**, **Description**, **Visibility**, and/or **Status** fields as appropriate.
-4. Click **Save**. A *List (List Title) was saved* confirmation message will appear in the lower right corner of the screen. 
+4. Click **Save**. A *List _List Title_ was saved* confirmation message will appear in the lower right corner of the screen. 
 
 
 ### Edit the query
@@ -309,7 +312,7 @@ To delete a list, follow these steps:
 
 1. Select the list from the **Lists** pane. The selected list will open in a new window. 
 2. Click **Actions \> Delete List**. 
-3. A confirmation modal appears: *Are you sure you want to delete the list (List Title)?*
+3. A confirmation modal appears: *Are you sure you want to delete the list _List Title_?*
 4. Click the **Delete** button to delete the list.
 
 

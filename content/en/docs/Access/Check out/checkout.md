@@ -107,7 +107,7 @@ To add a patron info loan comment:
 1.	Click **… > Add patron info** to add a patron info note.
 2.	In the **Add patron information** dialog, enter a comment in the box.
 3.	Click **Save and Close**. The new comment is saved and any previous patron loan comment is superseded. The comment will appear in the Comment column in Loan details in the checkout app, and will also be recorded in the Circulation Log.
-4.	Patron info loan comments can also be added in Loan details -- see [Getting additional item information](/getting-additional-item-information).
+4.	Patron info loan comments can also be added in Loan details -- see [Getting additional item information](#getting-additional-item-information).
 
 To add a staff info loan comment:
 
@@ -121,4 +121,4 @@ To add a staff info loan comment:
 
 Once you have completed checking out items for a patron, you can end the session manually. To end your session and clear the Scanned Items table, click **End session**. Once you end the session, any applicable notices are sent to patrons.
 
-By default, the Check out session is configured to end automatically after a 3 minute period of inactivity. You can turn this setting off or edit the number of minutes of inactivity the session will end after in the [Settings app]({{< ref "/settings_circulation.md#automatically-end-check-in-and-check-out-session-after-period-of-inactivity" >}}).
+By default, the Check out session is configured to end automatically after a 3 minute period of inactivity. You can turn this setting off or edit the number of minutes of inactivity the session will end after in the [Settings app](../../../settings/settings_circulation/settings_circulation/#automatically-end-check-in-and-check-out-session-after-period-of-inactivity).

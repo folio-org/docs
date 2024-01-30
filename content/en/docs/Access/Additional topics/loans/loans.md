@@ -53,7 +53,7 @@ Differences between the two types of loans include:
     * For example: suppose a patron borrows an item from a service point open 9 AM to 10 PM seven days a week. If they borrow the item at 11 AM on April 1st, and the loan policy says they can borrow it for 48 hours, it will be due at 11 AM on April 3rd. But, if the loan policy said they could borrow the item for 2 days, it would instead be due at 11:59 PM on April 3rd, even though the service point is closed.
 
 
-## <a id="loanrenew"></a>When a loan is renewed, or a loan due date is changed, what circulation rule applies and what policies are used?
+## When a loan is renewed, or a loan due date is changed, what circulation rule applies and what policies are used?
 
 When a patron or FOLIO user requests to renew a loan, or a FOLIO user changes a loan’s due date, FOLIO reviews the circulation rule file and may do several things, depending on what it finds (and not necessarily in the order listed below).
 
@@ -92,7 +92,7 @@ This is what FOLIO does when renewing Sofia’s items:
 
 ## What happens with circulation rules and policies if you change item information after an item is loaned (e.g., change a loan type for an item that is checked out)?
 
-If you change information about an item that is currently on loan, nothing happens to the loan record. The loan **may** change if the item is renewed or if the loan due date is changed, and the change in the item information means a different circulation rule applies. See [When a loan is renewed, or a loan due date is changed, what circulation rule applies and what policies are used?](#loanrenew)
+If you change information about an item that is currently on loan, nothing happens to the loan record. The loan **may** change if the item is renewed or if the loan due date is changed, and the change in the item information means a different circulation rule applies. See [When a loan is renewed, or a loan due date is changed, what circulation rule applies and what policies are used?](#when-a-loan-is-renewed-or-a-loan-due-date-is-changed-what-circulation-rule-applies-and-what-policies-are-used)
 
 ## What happens in FOLIO when an item is checked in?
 
