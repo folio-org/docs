@@ -5,7 +5,9 @@ date: 2022-06-07
 weight: 50
 ---
 
-Keyboard shortcuts facilitate actions. For the [apps listed below](#list-of-apps-displaying-the-shortcut-list), you can [view the available shortcuts](#viewing-the-keyboard-shortcuts-list) while using the app. Note: Most apps do not use all the listed shortcuts. For example, **Alt+c** does not work in the **Users** app because currently you cannot duplicate a record in the Users app. The action associated with the shortcut may vary slightly for different apps -- for example, in the **Dashboard** app **Alt+n** is **Create a new widget**.
+Keyboard shortcuts facilitate actions. For the [apps listed below](#list-of-apps-displaying-the-shortcut-list), you can [view the available shortcuts](#viewing-the-keyboard-shortcuts-list) while using the app. Note: Most apps do not use all the listed shortcuts. For example, **Alt+c** does not work in the **Users** app because currently you cannot duplicate a record in the Users app. 
+
+The action associated with the shortcut may vary slightly for different apps -- for example, in the **Dashboard** app **Alt+n** is **Create a new widget**.
 
 ## Keyboard shortcuts list
  
