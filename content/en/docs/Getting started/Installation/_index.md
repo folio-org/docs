@@ -48,6 +48,9 @@ FOLIO requires
 * an OpenSearch or Elasticsearch server
 * a Kafka server
 
+Optional is
+* a MinIO object store or an Amazon S3 bucket
+
 #### PostgreSQL
 
 FOLIO requires PostgreSQL 12 or any later version.
