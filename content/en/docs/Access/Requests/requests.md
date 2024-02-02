@@ -13,7 +13,7 @@ Item level requests are the default type of request for FOLIO and are made on an
 
 Title level requests are made on the instance level. FOLIO chooses the item from the holdings on that instance to fill the request, whether the item is available immediately or becomes available when the item is returned.
 
-Libraries can turn on title-level requests in [Settings > Circulation > Title level requests]({{< ref "settings_circulation.md#settings--circulation--title-level-requests" >}}).
+Libraries can turn on title-level requests in [Settings > Circulation > Title level requests.](../../../settings/settings_circulation/settings_circulation/#settings--circulation--title-level-requests)
 
 Libraries that want to use title level requests should consider:
 
@@ -38,7 +38,7 @@ The following are all the Requests permissions:
 * **Requests: View, edit, cancel.** This permission allows the user to view, edit and cancel requests.
 
 ## Keyboard shortcuts
-Keyboard shortcuts allow you to perform actions in this app using the keyboard.  See [Platform essentials > Keyboard shortcuts]({{< ref "keyboardshortcuts.md" >}}) for more information.
+Keyboard shortcuts allow you to perform actions in this app using the keyboard.  See [Platform essentials > Keyboard shortcuts](../../../platform-essentials/keyboard-shortcuts/keyboardshortcuts/) for more information.
 
 ## Request Types and Statuses
 
@@ -99,7 +99,7 @@ Requesting is controlled by circulation rules and item statuses. You cannot requ
 8. Optional: Enter any **Patron comments.** For example, if the patron needs the item immediately, you can note it here. Patron comments show up in the CSV report and can be included in pick slips.
 9. Select the **Fulfillment preference**.
 10. Select the **Pickup service point** or **Delivery address**, depending on your selection in the previous step.
-11. Click **Save & close**. The request is saved and the Request Detail pane appears. The patron receives an email notification saying their request was received by the library, [if you have this notification configured.]({{< ref "settings_circulation.md#patron-notice-policies" >}})
+11. Click **Save & close**. The request is saved and the Request Detail pane appears. The patron receives an email notification saying their request was received by the library, [if you have this notification configured.](../../../settings/settings_circulation/settings_circulation/#patron-notice-policies)
 
 ### Editing an item level request
 
@@ -128,7 +128,7 @@ You can duplicate open requests but you will need to change either the requester
 
 You can move a request from one item to another on the same instance. You may want to do this if a request item goes missing or if you need to balance request queues.
 
-Note: If a recall request is moved to a loan item that wasn’t previously recalled, the loan will be recalled--the patron gets a recall notice, [if configured,]({{< ref "settings_circulation.md#patron-notice-policies" >}}) and the loan’s due date may be truncated or extended, depending on the associated loan policy.
+Note: If a recall request is moved to a loan item that wasn’t previously recalled, the loan will be recalled--the patron gets a recall notice, [if configured,](../../../settings/settings_circulation/settings_circulation/#patron-notice-policies) and the loan’s due date may be truncated or extended, depending on the associated loan policy.
 
 1. [Find the request you want to move.](#searching-for-requests)
 2. In the **Request Detail** pane, select **Actions > Move request**.
@@ -158,7 +158,7 @@ Note: When cancelling a request, you should consider the following:
 2. In the **Request Detail** pane, select **Actions > Cancel request**.
 3. In the **Confirm request cancellation** dialog, select the **Reason for cancellation**.
 4. Optional: Enter any additional notes on the cancellation in the **Additional information for patron** box. If you select **Other**, then you must supply additional information.
-5. Click **Confirm**. The dialog closes and the request is cancelled. The Request status is updated to Closed - Cancelled and the patron receives a cancellation notification email, [if you have this notification configured.]({{< ref "settings_circulation.md#patron-notice-policies" >}})
+5. Click **Confirm**. The dialog closes and the request is cancelled. The Request status is updated to Closed - Cancelled and the patron receives a cancellation notification email, [if you have this notification configured.](../../../settings/settings_circulation/settings_circulation/#patron-notice-policies)
 
 ## Title level requesting
 
@@ -273,18 +273,25 @@ Before you cancel a request, consider:
 
 ## Exporting a hold shelf clearance report
 
-The hold shelf clearance report contains requests that expired or were cancelled while awaiting pickup. Check in these items to clear them from the hold shelf.
+The hold shelf clearance report contains **Awaiting pickup** items where the item did not get checked out to the requester before the hold shelf expiration period expired. Check in these items to clear them from the hold shelf.
 
 Hold shelf clearance reports are specific to individual service points. Therefore, you must be signed in to the service point you want to generate the report for.
 
-The hold shelf clearance report will include requests where:
-* the item has a status of **Awaiting pickup** AND
-* the request has a status of **Closed - Cancelled** or **Closed - Pickup expired** AND
-* the item's request queue is empty OR the top request in queue is NOT status "Open - Awaiting pickup"
+The Hold shelf expiration period for a service point is set in [Settings \> Tenants \> Service points.](../../../settings/settings_tenant/settings_tenant/#creating-a-service-point)
 
-If there are no items matching the report’s criteria, the option appears grayed out.
+**Awaiting pickup** items whose requests were cancelled are also included in the hold shelf clearance report. 
 
 To export a hold shelf clearance report, in the **Requests** pane, select **Actions > Export hold shelf clearance report for [your service point].**
+
+
+The hold shelf clearance report includes requests that simultaneously meet all the following conditions:
+
+* the associated item has a status of **Awaiting pickup**;
+* the request has a status of **Closed - Cancelled** or **Closed - Pickup expired**;
+* the item’s request queue is empty OR the top request in queue is NOT status “Open - Awaiting pickup”.
+
+The third condition covers the case where an Awaiting pickup item has the hold shelf expiration period expire, but there is another request for the item. The item will appear on the hold shelf clearance report, but if the item is then checked in at its pickup service point for the second request, then the first two conditions are satisfied (with regards to the first request) but the item will not be on the report.
+
 
 ## Collecting page requests
 
@@ -306,7 +313,7 @@ To create a pick report, follow these steps:
 
 The pick slips report generates a single slip for every paged item that needs to be pulled from the shelf. Because this report automatically prints only those items whose Effective location is associated with the currently selected service point, you must be signed in to the service point you want to generate the slips for. If no items match the report’s criteria, the option is grayed out.
 
-You can configure the information that appears on the pick slips in the [Settings app]({{< ref "settings_circulation.md#settings--circulation--staff-slips" >}}).
+You can configure the information that appears on the pick slips in the [Settings app.](../../../settings/settings_circulation/settings_circulation/#settings--circulation--staff-slips)
 
 To print pick slips, in the Requests pane, select **Actions > Print pick slips for [your service point]**. A print dialog appears.
 
@@ -325,7 +332,7 @@ Some libraries store items at a remote, off-campus storage facility. These facil
 
 If your library integrates FOLIO with a remote storage system, you will be able to request items from remote storage through the FOLIO Requests app. The basic workflows in the Requests app will be the same as for on-campus items.
 
-For more information on FOLIO’s remote storage functionality, see [the Settings documentation for Remote Storage.]({{< ref "/remotestorage.md" >}})
+For more information on FOLIO’s remote storage functionality, see the [Settings documentation for Remote Storage.](../../../settings/settings_remotestorage/remotestorage/)
 
 ## Processing delivery requests
 
@@ -360,13 +367,13 @@ When checking in a delivery request, you have two options: check the item out to
 
 To check the item out to the patron, follow these steps:
 
-1. [Check in the item with the Check in app.]({{< ref "/checkin.md#checking-in-an-item" >}})
+1. [Check in the item with the Check in app.](../../check-in/checkin/#checking-in-an-item)
 2. Optional: In the **Route for delivery request** dialog, if you do not want to print a request delivery slip, clear the **Print slip** checkbox.
 3. To check out the item to the patron, click **Close and check out**. The check out window appears and the item is automatically checked out to the patron.
 4. To end the check out session, click **End Session**.
 
 To wait to process the request, follow these steps:
 
-1. [Check in the item with the Check in app.]({{< ref "/checkin.md#checking-in-an-item" >}})
+1. [Check in the item with the Check in app.](../../check-in/checkin/#checking-in-an-item)
 2. Optional: In the **Route for delivery request** dialog, if you do not want to print a hold slip, clear the **Print slip** checkbox.
 3. Click **Close**. The Route for delivery request dialog closes, and the Item status changes to Awaiting delivery.
