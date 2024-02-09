@@ -55,16 +55,16 @@ You can write circulation rules to determine the following:
 
 Before you implement Circulation rules, you need to configure these settings in FOLIO:
 
-* Patron groups
-* Locations
-* Library calendar
-* Loan types
-* Material types
-* Loan policies
-* Overdue fine policies
-* Lost item fee policies
-* Patron notice policies
-* Request policies
+* [Patron groups](../../settings_users/settings_users/#settings--users--patron-groups)
+* [Locations](../../settings_tenant/settings_tenant/#settings--tenant--location-setup)
+* [Library calendar](../../settings_calendar/settings_calendar/#create-a-new-calendar)
+* [Loan types](../../settings_inventory/settings_inventory/#settings--inventory--loan-types)
+* [Material types](../../settings_inventory/settings_inventory/#settings--inventory--material-types)
+* [Loan policies](#settings--circulation--loan-policies)
+* [Overdue fine policies](#overdue-fine-policies)
+* [Lost item fee policies](#lost-item-fee-policies)
+* [Patron notice policies](#patron-notice-policies)
+* [Request policies](#settings--circulation--request-policies)
 
 Before you begin to write your circulation rules, you should:
 
@@ -93,7 +93,7 @@ When writing your circulation rules, keep the following in mind:
 
 ###  Patron id(s) for checkout scanning
 
-This setting allows you to specify what types of patron IDs can be scanned to checkout items. All fields correspond to fields in the user record.
+This setting allows you to specify what types of patron IDs can be scanned to checkout items. All options correspond to fields in the user record.
 
 At least one of the options must be selected:
 
@@ -291,7 +291,7 @@ If you select **Fixed**, you see the following fields:
 * The due date will follow the choice given in the loan policy *only* in the case that the service point is completely closed on the day that the item would be due. When the loan is created, FOLIO will check the service point calendar; if the service point is open for any time on the day that the item is due, FOLIO will set the due time to 11:59 PM on that day.
 
 
-**Grace period.** Enter a grace period for overdue items. If you choose to have a grace period, items will not count against the [Maximum number of overdue items]({{< ref "../settings_users/settings_users/#settings--users--conditions" >}}) patron block and there will be no overdue fine until after the loan due date/time plus the grace period interval. If the grace period expires and the item has not been returned, the grace period will count towards calculating an overdue or lost item fee/fine. Adding a grace period to a due date follows the same logic that you chose for closed library due date management, if the grace period lands in a closed time for the service point.
+**Grace period.** Enter a grace period for overdue items. If you choose to have a grace period, items will not count against the [Maximum number of overdue items](../../settings_users/settings_users/#settings--users--conditions) patron block and there will be no overdue fine until after the loan due date/time plus the grace period interval. If the grace period expires and the item has not been returned, the grace period will count towards calculating an overdue or lost item fee/fine. Adding a grace period to a due date follows the same logic that you chose for closed library due date management, if the grace period lands in a closed time for the service point.
 
 **Item limit.** Enter the maximum number of items that can be borrowed by one patron under this policy. Leave blank to have no item limit.
 
@@ -306,7 +306,7 @@ If you select **Rolling**, you see the following fields:
 * If an item’s loaned interval is in **days**, **weeks**, or **months**, the due date will follow the choice given in the loan policy *only* in the case that the service point is completely closed on the day that the item would be due. When the loan is created, FOLIO will check the service point calendar; if the service point is open for any time on the day that the item is due, FOLIO will set the due time to 11:59 PM on that day.
 
 
-**Grace period.** Enter a grace period for overdue items. If you choose to have a grace period, items will not count against the [Maximum number of overdue items]({{< ref "../settings_users/settings_users/#settings--users--conditions" >}}) patron block and there will be no overdue fine until after the loan due date/time plus the grace period interval.  If the grace period expires and the item has not been returned, the grace period will count towards calculating an overdue or lost item fee/fine. Adding a grace period to a due date follows the same logic that you chose for closed library due date management if the grace period lands in a closed time for the service point.
+**Grace period.** Enter a grace period for overdue items. If you choose to have a grace period, items will not count against the [Maximum number of overdue items](../../settings_users/settings_users/#settings--users--conditions) patron block and there will be no overdue fine until after the loan due date/time plus the grace period interval.  If the grace period expires and the item has not been returned, the grace period will count towards calculating an overdue or lost item fee/fine. Adding a grace period to a due date follows the same logic that you chose for closed library due date management if the grace period lands in a closed time for the service point.
 
 **Item limit.** Enter the maximum number of items that can be borrowed by one patron under this policy. Leave blank to have no item limit.
 
