@@ -72,6 +72,10 @@ weight: 800
    </td>
   </tr>
   <tr>
+    <td>Central tenant    
+    </td>
+    <td>The administrative tenant when Enhanced Consortial Support (ECS) is enabled. Also referred to as a <em>primary tenant</em>.</td>
+  <tr>
    <td>Child record
    </td>
    <td>Associated with linking bound-withs, which allows for "links" between separate bibliographic records and/or a bibliographic record and items belonging to another bibliographic record. Child records<strong> </strong>are those associated bibliographic records.
