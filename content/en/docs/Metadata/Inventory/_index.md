@@ -791,7 +791,7 @@ The Bound-with and analytics section contains information on holdings that are b
 #### Adding a bound-with
 
 1. Click **Add Bound-with and analytics**.
-2. In the modal that appears, enter the Holdings HRID of the bound-with. You may add up to seven at once.
+2. In the modal that appears, enter the Holdings HRID of the bound-with. You may add up to seven at once. Bound-withs should be added in the same order that they appear in the piece. They cannot be reordered.
 3. Click **Save & close**. The bound-with Instance HRID, Instance title, and Holdings HRID will now appear in the instance record.
 4. Repeat steps 1-3 as needed. The bound-with is saved once you save the instance.
 
