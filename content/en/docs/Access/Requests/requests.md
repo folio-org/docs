@@ -290,7 +290,7 @@ The hold shelf clearance report includes requests that simultaneously meet all t
 * the request has a status of **Closed - Cancelled** or **Closed - Pickup expired**;
 * the item’s request queue is empty OR the top request in queue is NOT status “Open - Awaiting pickup”.
 
-The third condition covers the case where an Awaiting pickup item has the hold shelf expiration period expire, but there is another request for the item. The item will appear on the hold shelf clearance report, but if the item is then checked in at its pickup service point for the second request, then the first two conditions are satisfied (with regards to the first request) but the item will not be on the report.
+The third condition covers the case where an Awaiting pickup item has the hold shelf expiration period expired, but there is another request for the item. The item will appear on the hold shelf clearance report, but if the item is then checked in at its pickup service point for the second request, then the first two conditions are satisfied (with regards to the first request) but the item will not be on the report.
 
 
 ## Collecting page requests
