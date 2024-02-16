@@ -573,7 +573,7 @@ The system is scanned every five minutes for triggering events and fee/fine noti
 * To send the notice when the overdue fine is charged, select **Upon/At**.
 * To send the notice after the overdue fine is charged, select **After**. Then, determine the  **Frequency** of the notice. To send the notice once, select  **One Time**. To send the notice multiple times, select  **Recurring** and enter how often the notice sends until the fee/fine is closed.
 
-**Lost item fee(s) charged.** The notice is sent after or when a lost item fee is charged to a patron.
+**Lost item fee(s) charged.** The notice is sent after or when a lost item fee is charged to a patron. The notice will be sent for both set cost and actual cost lost item fees.
 
 Select when the notice is sent from the **Send** drop-down list:
 
@@ -585,7 +585,7 @@ Select whether multiple lost item fee notices are bundled together:
 * To bunch all a patron’s open lost item fees together in one email (processed at 11:59pm) choose **Send overnight with multiple lost item fee charges by patron.** The template you select should be configured for multiple loans.
 * To send notices throughout the day (typically processed every five minutes, with a separate notice for each fee/fine charged) choose **Send throughout the day with one lost item fee charge per notice.** The template you select should not be configured for multiple loans.
   
-**Lost item returned - fee(s) adjusted.** The notice is sent when the event is triggered, i.e. when the lost item is checked in.
+**Lost item returned - fee(s) adjusted.** The notice is sent when the event is triggered, i.e. when the lost item is checked in. The notice will be sent for both set cost and actual cost lost item fees.
 
 
 ### Duplicating a patron notice policy
