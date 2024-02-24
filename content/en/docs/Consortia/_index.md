@@ -2,7 +2,7 @@
 title: "Consortium manager"
 linkTitle: "Consortium manager"
 date: 2024-01-22        
-weight: 275
+weight: 675
 ---
 
 
