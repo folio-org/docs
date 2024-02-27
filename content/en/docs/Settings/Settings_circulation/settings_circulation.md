@@ -137,19 +137,6 @@ Staff slips allow you to configure the information that appears on your staff sl
 * **Request delivery.** This slip is available in the Check in app, when you check in an item with a delivery request.
 * **Transit.** This slip is available in the Check in app, when you check in an item that is in transit to another location.
 
-### Using tokens with staff slips
-
-The following table lists the six categories of available tokens for use with staff slips. All six appear as options in the staff slip editor, but some categories will only populate with information for some types of staff slips. 
-
-|Token category|Populates with these staff slips|Does not populate with these staff slips|
-|:---|:---|:---|
-|Item|Hold, Pick slip, Request delivery, Transit||
-|Effective location|Hold, Pick slip, Request delivery, Transit||
-|Staff slip|Hold, Pick slip, Request delivery, Transit||
-|Request|Hold|Pick slip, Request delivery, Transit| 
-|Request delivery address|Request delivery|Hold, Pick slip, Transit|
-|Requester|Hold, Pick slip, Request delivery|Transit|
-
 
 ### Configuring a staff slip
 
@@ -157,13 +144,13 @@ The following table lists the six categories of available tokens for use with st
 2. In the **staff slip details** pane, click **Edit**.
 3. Optional: Enter a **Description** in the box.
 4. Use the Display box to edit the slip. Click **{ }** to add tokens to the slip.
-5. Optional: Click **Preview** to view a preview of the slip. Be aware that Preview will populate non-populating tokens.
+5. Optional: Click **Preview** to view a preview of the slip.
 6. Click **Save & close**. The slip is saved and updated.
 
 ### Previewing a staff slip
 
 1. In the **Staff slips** pane, select the staff slip you want to preview.
-2. In the **staff slip details** pane, click **Preview**. A Preview of staff slip - [slip type] window appears and the preview is shown. Be aware that Preview will populate non-populating tokens.
+2. In the **staff slip details** pane, click **Preview**. A Preview of staff slip - [slip type] window appears and the preview is shown.
 3. Optional: To print the preview, click **Print**.
 4. To close the window, click **Close**.
 
