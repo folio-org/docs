@@ -1,7 +1,7 @@
 ---
 title: "Orders"
 linkTitle: "Orders"
-date: 2023-11-13
+date: 2024-02-19
 weight: 30
 tags: ["parenttopic"]
 ---
@@ -1198,6 +1198,18 @@ To search for order lines that have a fund distribution expense class assignment
 
 2. Select the expense class from the drop-down list. The search results appear in the Order lines pane.
 
+### Linked package POL
+To search for order lines that have been linked to a package POL:
+
+1. In the **Search & filter** pane, click **Linked package POL**.
+
+2. Click **Linked package POL lookup**.
+
+3. In the **Select order lines** dialog, the search results will be pre-filtered to package POLs.
+
+4. Click on the row representing the package POL you wish to select.
+   
+5. The search results will display all purchase order lines linked to the selected package POL. 
 
 ### Order format
 

@@ -1,7 +1,7 @@
 ---
 title: "Electronic Resource Managment (ERM)"
 linkTitle: "Electronic Resource Management (ERM)"
-weight: 600
+weight: 450
 ---
 
 In FOLIO, ERM includes essential functions. These functions include:

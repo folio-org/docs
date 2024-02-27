@@ -2,7 +2,7 @@
 title: "Lists"
 linkTitle: "Lists"
 date: 2024-01-22        
-weight: 575
+weight: 525
 ---
 
 

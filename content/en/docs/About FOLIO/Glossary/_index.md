@@ -1,9 +1,12 @@
 ---
 title: "Glossary"
 linkTitle: "Glossary"
-weight: 800
+url: docs/glossary
+weight: 5
+tags: ["parenttopic"]
 ---
 
+**This section of the documentation contains links to external sites. Please be advised that these external sites are not maintained by the FOLIO Documentation Group and may be aligned with a different FOLIO release.**
 <table>
   <tr>
    <td><strong>Term or Acronym</strong>

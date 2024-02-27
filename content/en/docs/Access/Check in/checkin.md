@@ -7,7 +7,7 @@ weight: 10
 
 The Check in app allows you to process items at a service point, including items a patron returns to the library, items requested by a patron, or in process items. You can also use the Check in app to record in-house usage.
 
-To configure any of the staff slips you encounter when checking in an item, like the Hold slip, see [Staff slips]({{< ref "/settings_circulation.md#settings--circulation--staff-slips" >}}) for more information.
+To configure any of the staff slips you encounter when checking in an item, like the Hold slip, see [Staff slips](../../../settings/settings_circulation/settings_circulation/#settings--circulation--staff-slips) for more information.
 
 
 ## Permissions
@@ -46,7 +46,7 @@ Once you check in an item, the following columns appear in the Scanned Items tab
 * **Location.** The permanent location of the item.
 * **In-house use.** If you are recording in-house use of an item, a house icon appears here. Otherwise, it appears blank. See [Recording in-house use of an item](#recording-in-house-use-of-an-item) for more information.
 * **Status.** The item status once checked in.
-* **Actions.** Click **…** to view additional item information or see the actions you can take on the item. See Getting additional item information for more information.
+* **Actions.** Click **…** to view additional item information or see the actions you can take on the item. See [Getting additional item information](#getting-additional-item-information) for more information.
 
 
 ### Getting additional item information
@@ -79,12 +79,12 @@ When a patron requests an item, checking the item in at its requested pickup ser
 
 1. Either scan the barcode of the item, or enter the barcode and click **Enter**. An **Awaiting pickup for a request** dialog appears noting the item is awaiting pickup and lists its pickup service point.
 2. If you do not want to print a hold slip, clear the **Print slip** checkbox if it is checked.
-3. Click **Close** to exit and print a hold slip, if selected. The item appears in the Scanned Items table and its status changes to Awaiting pickup. FOLIO automatically sets the hold shelf expiration date/time on the request record, following the settings for date management for the pickup service point. If configured in the notice policy, a pickup notice is sent to the patron once the check in session ends.
+3. Click **Close** to exit and print a hold slip, if selected. The item appears in the Scanned Items table and its status changes to Awaiting pickup. FOLIO automatically sets the hold shelf expiration date/time on the request record, following the [settings for date management for the pickup service point](../../../settings/settings_tenant/settings_tenant/#creating-a-service-point). If configured in the [notice policy](../../../settings/settings_circulation/settings_circulation/#request-notices-triggering-events), a pickup notice is sent to the patron once the check in session ends.
 
 
 ## Checking in an item with a request (delivery fulfillment)
 
-Delivery requests are not treated any differently from items being routed to the hold shelf. The delivery request is triggered once the item is checked in at any location. See [Processing delivery requests]({{< ref "/requests.md#processing-delivery-requests" >}}) for more information.
+Delivery requests are not treated any differently from items being routed to the hold shelf. The delivery request is triggered once the item is checked in at any location. See [Processing delivery requests](../../requests/requests/#processing-delivery-requests) for more information.
 
 When checking in a delivery request, you have two options: check the item out to the patron or wait to process the request.
 
@@ -130,7 +130,7 @@ To mark an item as used, either scan the barcode of the item, or enter the barco
 
 ## Printing a transit slip
 
-If you forget to print a transit slip, you can print a transit slip after checking in an item. Transit slips are configured in the [Settings app]({{< ref "/settings_circulation.md#settings--circulation--staff-slips" >}}).
+If you forget to print a transit slip, you can print a transit slip after checking in an item. Transit slips are configured in the [Settings app](../../../settings/settings_circulation/settings_circulation/#settings--circulation--staff-slips).
 
 1. [Check in the item](#checking-in-an-item).
 2. In the Actions column, click **... > Print transit slip.**
@@ -154,4 +154,4 @@ You can manually create a new fee/fine for an item after checking it in.
 
 Once you are done checking in items, you can end your check in session manually. To end your session and clear the Scanned Items table, click **End session**. Once you end the session, any applicable notices are sent to patrons.
 
-By default, the Check in session is configured to end automatically after a 3 minute period of inactivity. You can turn this setting off or edit the number of minutes of inactivity the session will end after in the [Settings app]({{< ref "/settings_circulation.md#automatically-end-check-in-and-check-out-session-after-period-of-inactivity" >}}).
+By default, the Check in session is configured to end automatically after a 3 minute period of inactivity. You can turn this setting off or edit the number of minutes of inactivity the session will end after in the [Settings app](../../../settings/settings_circulation/settings_circulation/#automatically-end-check-in-and-check-out-session-after-period-of-inactivity).
