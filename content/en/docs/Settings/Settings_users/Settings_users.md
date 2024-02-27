@@ -1,7 +1,7 @@
 ---
 title: "Settings > Users"
 linkTitle: "Users"
-date: 2024-01-22  
+date: 2024-02-27  
 weight: 220
 tags: ["subtopic"]
 ---
@@ -66,11 +66,20 @@ The following are all the permissions for Users in the Settings app:
 
 ## Settings \> Users \> Permission sets
 
-Use this setting to create permission sets for your library. Permission sets are customized collections of permissions that can be assigned to users. For example, you can create permission sets that correspond to specific job roles and assign the set, rather than each individual permission, to all library staff with that role.
+Use this setting to create permission sets for your library. Permission sets are customized collections of permissions that can be assigned to users. For example, you can create permission sets that correspond to specific job roles and assign the set, rather than each individual permission, to all library staff with that role. 
 
 Additionally, if permissions change because of a new release, a FOLIO administrator can edit the permission set for a particular role to update the assigned permissions. The change to the permission set then propagates out to the users who have that permission set assigned, and the administrator doesn't have to update permissions for each individual user.
 
 For more information about permissions, see [Platform Essentials > Permissions](../../platform-essentials/permissions/).
+
+### View assigned users
+
+To view a list of users assigned to a specific permission set: 
+
+1. In the **Permission sets** pane, click on a permission set. The details for that permission set will open in a new pane. 
+2. Open the **Assigned users** accordion, if necessary, to view a list of users assigned to that permission set. 
+
+Although the **Assign/Unassign** button appears and is clickable, note that permissions cannot be assigned or unassigned in Settings \> Users at this time. For more information about assigning or unassigning permissions to users, see [Users \> Assign or unassign permissions](../users/#assign-or-unassign-permissions).
 
 ### Create a permission set
 
