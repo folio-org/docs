@@ -3,17 +3,15 @@ title: "Getting Started"
 linkTitle: "Getting Started"
 weight: 200
 description: >
-  Note: This content is currently in draft status.
 ---
 
-Thinking about getting started with FOLIO?  Check out the resources below to familiarize yourself with the platform.
+Thinking about getting started with FOLIO? Check out the resources below to familiarize yourself with the platform.
 
 ## See FOLIO in action
 
 Check out these videos to learn about FOLIO:
 
 * [FOLIO videos on the Open Library Foundation](https://www.youtube.com/c/OpenLibraryFoundation)
-* [More FOLIO videos](https://www.youtube.com/watch?v=pTKjaE99QI4&list=PLMocoPoiGkwfNHau9jqASXk5BAwcd5ekk)
 
 ## Ready to experience FOLIO for yourself?
 
@@ -21,12 +19,12 @@ Access one of our demo sites and explore FOLIO features and functionality.
 
 Login: diku\_admin / admin
 
-* Current release: https://folio-nolana.dev.folio.org
-* Previous release: https://folio-morning-glory.dev.folio.org
+* Current release: https://folio-orchid.dev.folio.org
+* Previous release: https://folio-nolana.dev.folio.org
 
 ### Work with a demo site
 
-Once you've accessed a demo site, you can experiment with the platform to see how it works.  Some examples of things you can try include:
+Once you've accessed a demo site, you can experiment with the platform to see how it works. Some examples of things you can try include:
 
 * Check out an item, and check it back in
 * Update an item record with quickMARC
