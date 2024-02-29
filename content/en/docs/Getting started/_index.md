@@ -5,7 +5,7 @@ weight: 200
 description: >
 ---
 
-Thinking about getting started with FOLIO?  Check out the resources below to familiarize yourself with the platform.
+Thinking about getting started with FOLIO? Check out the resources below to familiarize yourself with the platform.
 
 ## See FOLIO in action
 
