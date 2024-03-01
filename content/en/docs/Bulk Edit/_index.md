@@ -1,9 +1,11 @@
 ---
 title: "Bulk Edit"
 linkTitle: "Bulk Edit"
-date: 2024-01-23
+date: 2024-02-28
 weight: 550
 ---
+
+**This section of the documentation contains links to external sites. Please be advised that these external sites are not maintained by the FOLIO Documentation Group and may be aligned with a different FOLIO release.**
 
 
 The Bulk Edit app allows a user to apply changes to multiple FOLIO records simultaneously. 
@@ -192,11 +194,12 @@ The **Error** accordion contains a list of errors found when searching for the m
 ### Start bulk edit
 
 
-Inventory - items may be changed by using the Bulk edit or In-app approach. The fields that can be changed in item records with this approach include **Administrative note**, **Check in note**, **Check out note**, **Item notes**, **Loan type**, **Location**, and **Suppress from discovery**. 
+Inventory - items may be changed by using the Bulk edit or In-app approach. The fields that can be changed in item records with this approach include **Administrative note**, **Check in note**, **Check out note**, **Item notes**, **Item status**, **Loan type**, **Location**, and **Suppress from discovery**. 
+
+For more information about item record status changes available in Bulk Edit, see [Supported Item Record Status Changes](https://folio-org.atlassian.net/wiki/x/U5VW).
 
 
 To start a bulk edit on the matched records, follow these steps:
-
 
 1. Click the **Actions** button.
 2. From the drop-down menu, select **Start bulk edit**. 
