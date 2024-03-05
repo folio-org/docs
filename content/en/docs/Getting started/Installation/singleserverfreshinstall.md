@@ -45,15 +45,13 @@ For testing FOLIO installation on a PC, it's recommended to use Vagrant to separ
 
 1. Install Vagrant.
 
-See the Vagrant [download and installation instructions](https://developer.hashicorp.com/vagrant/downloads).
+2. See the Vagrant [download and installation instructions](https://developer.hashicorp.com/vagrant/downloads). 
 
-2. Install a virtualization product.
-
-For Windows, [install VirtualBox](https://www.virtualbox.org/).
+3. Install a virtualization machine. For Windows, [use VirtualBox](https://www.virtualbox.org/).
 
 3. Install an Ubuntu box.
 
-Create a `Vagrantfile` like the following.
+Create or edit a `Vagrantfile` like the following in the same directory you created during the install process. 
 
 ```
 # -*- mode: ruby -*-
@@ -98,7 +96,7 @@ sudo apt -y install openjdk-11-jdk
 sudo update-java-alternatives --jre-headless --jre --set java-1.11.0-openjdk-amd64
 ```
 
-3. Import the PostgreSQL signing key, add the PostgreSQL apt repository and install PostgreSQL.
+3. Import the PostgreSQL signing key, add the PostgreSQL apt repository, and install PostgreSQL.
 ```
 wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
 sudo add-apt-repository "deb http://apt.postgresql.org/pub/repos/apt/ focal-pgdg main"
@@ -108,8 +106,8 @@ sudo apt -y install postgresql-12 postgresql-client-12 postgresql-contrib-12 lib
 
 4. Configure PostgreSQL to listen on all interfaces and allow connections from all addresses (to allow Docker connections).
 
-* Edit (via sudo) the file **/etc/postgresql/12/main/postgresql.conf** to add line **listen_addresses = '\*'** in the "Connection Settings" section.
-* In the same file, increase **max_connections** (e.g. to 500)
+* Edit (via sudo) the file **/etc/postgresql/12/main/postgresql.conf** to add line **listen_addresses = '\*'** under the  "Connection Settings" line in the "Connections and Authentication" setting
+* In the same file, increase **max_connections** (e.g. to 500). Save and close the file. 
 * Edit (via sudo) the file **/etc/postgresql/12/main/pg_hba.conf** to add line **host all all 0.0.0.0/0 md5**
 * Restart PostgreSQL with command **sudo systemctl restart postgresql**
 
