@@ -302,6 +302,8 @@ curl -w '\n' -D - -X POST -H "Content-type: application/json" \
    -d '{ "urls": [ "https://folio-registry.dev.folio.org" ] }' \
   http://localhost:9130/_/proxy/pull/modules
 ```
+Be sure to replace "localhost" with your IP address. In Vagrant, this is usually 10.0.2.15.
+
 Okapi log should show something like
 
 ````
