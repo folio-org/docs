@@ -219,14 +219,14 @@ sudo su -c psql postgres postgres
 2. Create a database role for Okapi and a database to persist Okapi configuration.
 ```
 CREATE ROLE okapi WITH PASSWORD 'okapi25' LOGIN CREATEDB;
-CREATE DATABASE okapi WITH OWNER okapi ENCODING 'UTF-8' LC_COLLATE 'und-x-icu' LC_CTYPE 'und-x-icu' TEMPLATE template0;
+CREATE DATABASE okapi WITH OWNER okapi ENCODING 'UTF-8' LC_COLLATE='C.UTF-8' LC_CTYPE='C.UTF-8' TEMPLATE template0;
 ```
 
 3. Create a database role and database to persist tenant data.
 
 ```
 CREATE ROLE folio WITH PASSWORD 'folio123' LOGIN SUPERUSER;
-CREATE DATABASE folio WITH OWNER folio ENCODING 'UTF-8' LC_COLLATE 'und-x-icu' LC_CTYPE 'und-x-icu' TEMPLATE template0;
+CREATE DATABASE folio WITH OWNER folio ENCODING 'UTF-8' LC_COLLATE='C.UTF-8' LC_CTYPE='C.UTF-8' TEMPLATE template0;
 ```
 
 4. Exit psql with **\q** command
