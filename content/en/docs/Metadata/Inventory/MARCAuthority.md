@@ -18,8 +18,9 @@ Definition of terms related to the MARC authority app:
 
 ## Permissions
 The permissions listed below allow you to interact with the Inventory app and determine what you can or cannot do within the app. You can assign permissions to users in the Users app.
--   **View MARC authority record.** This permission allows the user to view authority records.
--   **Edit MARC authority record.** This permission allows the user to edit authority records.
+-   **MARC Authority: View MARC authority record.** This permission allows the user to view authority records.
+-   **MARC Authority: Edit MARC authority record.** This permission allows the user to edit authority records.
+-   **MARC Authority: Delete MARC authority record.** This permission allows the user to delete authority records.
 -   **quickMARC: View, edit MARC authority record.** This permission allows the user to view and edit MARC authority records.
 
 ## Creating MARC authority records 
