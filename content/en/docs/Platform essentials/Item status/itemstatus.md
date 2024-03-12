@@ -4,25 +4,25 @@ linkTitle: "Item status"
 weight: 20
 ---
 
-FOLIO is implementing a three-part item state function. The three factors included are Availability; Needed for; and Process.
+FOLIO is implementing a three-part item state function. The three factors are Availability; Needed for; and Process.
 
-Once developed, the three factors for item state will interact together to drive functionality, and display status information on the item record. For example, an item that has an Availability value of “Checked Out” and a Needed for value of “Reserves” might trigger a process that routes the item to Course Reserves staff when returned, and prevent other patrons from requesting the item in the meantime.
+Once developed, the three factors for item state will interact to drive functionality, and display status information on the item record. For example, an item that has an Availability value of “Checked Out” and a Needed for value of “Reserves” might trigger a process that routes the item to Course Reserves staff when returned, and prevent other patrons from requesting the item in the meantime.
 
-Only Availability is currently implemented. In various FOLIO apps, this is labeled as **Item status**.
+Only Availability is currently implemented. In various FOLIO apps, it is labeled **Item status**.
 
 ### Availability
 
-An item’s **availability** describes information about where an item is or whether it can be circulated. In FOLIO, availability is currently labeled as **Item status**. 
+An item’s **availability** provides information about an item's location and whether it can be circulated. In FOLIO, availability is currently labeled **Item status**. 
 
-Availability is a required value for an item. It cannot be edited directly; instead, the availability value is set by FOLIO processes  such as data import, ordering an item, checking an item in or marking an item missing.
+Availability is a required value for an item. You cannot edit it directly. FOLIO processes, such as data import, ordering an item, checking an item in, or marking an item missing, set the availability value.
 
-An item’s availability controls whether it can be loaned and whether it can be requested, even if the applicable circulation rule would otherwise allow the item to circulate. If a staff member has appropriate permissions, they can override these loan and request restrictions.
+An item’s availability controls whether it can be loaned and whether it can be requested, even if the applicable circulation rule would otherwise allow the item to circulate.
 
 ### Needed for
 
 **Needed for** is not yet implemented in FOLIO.
 
-When implemented, **Needed for** will allow libraries to assign a workflow for an item to follow when it is needed for a specific staff or patron need. Some examples where **Needed for** might be used include item requesting; placing items on course reserve; or sending an item for binding. **Needed for** will be an optional value.
+When implemented, **Needed for** will allow libraries to assign a workflow for an item to follow to meet specific staff or patron needs. Some examples where **Needed for** might be used include item requesting; placing items on course reserve; or sending an item for binding. **Needed for** will be an optional value.
 
 ### Process
 **Process** is not yet implemented in FOLIO.
@@ -31,10 +31,10 @@ When implemented, **Process** will describe a staff process that an item is in. 
 
 ## How Item Status Changes During Circulation
 
-If a FOLIO library is depending on an item’s status to communicate information to patrons and control how that item is used, they should be aware of how item statuses change as part of circulation (requesting, check out, and check in.)
+If a FOLIO library relies on an item’s status to inform patrons and control how that item is used, library staff should be aware of how item statuses change as part of circulation (requesting, check out, and check in.)
 
-* If an item is requested by a patron, the item status may change to **Paged**, or if the item is currently on loan, it may change to **In transit** when the item is returned. 
-* If an item is checked out to a patron, the item status will change to **Checked out**.
+* When a patron requests an item, the item status may change to **Paged**, or, if the item is currently on loan, it may change to **In transit** when the item is returned. 
+* When a patron checks out an item, the item status will change to **Checked out**.
 * When an item is checked in, the item status may change to **Available** or **In Transit**, depending on the status it has or where it was located when it is scanned in the Check In app. 
  
 Items in some statuses will warn library staff members that the item status is going to change, and ask them to confirm check in before proceeding.
@@ -47,7 +47,7 @@ For example:
 
 Suppose a library decides to use the item status **Restricted** to indicate that a certain collection should only be used if patrons are pre-approved for access. If the library staff member then checks out an item with a **Restricted** status to an approved patron, the status of that item will change to **Checked out**. 
 
-When the item is checked in, the status will change to **Available** or **In Transit**; FOLIO will not automatically change the status to **Restricted**. The library would need to use reporting tools or other workflows to identify the item when it returned and change the status back to **Restricted**.
+When the item is checked in, the status will change to **Available** or **In Transit**; FOLIO will not automatically change the status to **Restricted**. The library would need to use reporting tools or other workflows to identify the item when it is returned and change the status back to **Restricted**.
 
 ## Currently implemented item statuses
 
