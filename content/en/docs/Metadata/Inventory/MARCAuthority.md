@@ -129,3 +129,25 @@ Edit permission in the MARC authority app also enables a user to delete records.
 To delete a MARC authority record, follow these steps:
 Click **Actions \> Delete**
 In the **Confirm deletion of authority record** dialog, click **Delete**. The authority record is deleted.
+
+## Reporting
+
+Users can generate reports within the MARC Authority app and retrieve them via [Export Manager](../../../export-manager/). Two reports are available, MARC authority headings updates and Failed updates: linked bibliographic fields. 
+
+The MARC authority headings updates report shows which MARC authority records' 1XX fields have been updated during a particular date range. It contains the following fields: date and time that the authority record was last updated, original heading, new heading, original 1XX, new 1XX, authority source file name, number of bibliographic records linked, and the FOLIO account name of the record updater.
+
+To generate the MARC authority headings updates report:
+1.  Open the **MARC authority** app.
+2.  Click **Actions \> MARC authority headings updates (CSV)**
+3.  Enter a start date and end date.
+4.  Click **Export**
+5.  Open the **Export manager** app.
+6.  Locate the correct job and click its **Job ID** to download the CSV report.
+
+The Failed updates: linked bibliographic fields report shows when a MARC authority record's 1XX or 010$a field is updated but the linked bibliographic field(s) has not updated. It contains the following fields: date and time of the failed link, bibliographic title, bibliographic UUID, MARC tag of the bibliographic field that failed to update, linked authority identifier, and reason for error.
+
+To generate the Failed updates: linked bibliographic fields report: 
+1.  Open the **MARC authority** app.
+2.  Click **Actions \> Failed updates: linked bibliographic fields (CSV)**
+3.  Open the **Export manager** app.
+4.  Locate the correct job and click its **Job ID** to download the CSV report.
