@@ -290,6 +290,7 @@ If you select **Rolling**, you see the following fields:
 
 **Closed library due date management.** Select when the item is due if an item’s calculated due date lands in closed hours for the service point.
 * If an item’s loaned interval is in **minutes** or **hours**, the due date will be determined by the loan policy.
+  * **Opening time offset**. For short-term loans (time intervals of minutes or hours), if you choose **Move to the beginning of the next open service point hours** then you need to enter the Opening time offset. The item will be due [Opening time offset] [Interval] after the service point opens if the item’s calculated due date lands in closed hours for the service point.  
 * If an item’s loaned interval is in **days**, **weeks**, or **months**, the due date will follow the choice given in the loan policy *only* in the case that the service point is completely closed on the day that the item would be due. When the loan is created, FOLIO will check the service point calendar; if the service point is open for any time on the day that the item is due, FOLIO will set the due time to 11:59 PM on that day.
 
 
