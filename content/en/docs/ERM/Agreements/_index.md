@@ -52,7 +52,7 @@ If you want to eUsage data in an agreement record, you also need to have the fol
 *   **eUsage reports: charts may be viewed.** This permission adds an accordion to the Agreement record in the Agreement app that displays charts and graphs of eUsage data for the titles related to an agreement.
 
 
-##Keyboard shortcuts
+## Keyboard shortcuts
 Keyboard shortcuts allow you to perform actions in this app using the keyboard.  See [Platform essentials > Keyboard shortcuts](< ref "/platform_essentials_keyboard_shortcuts.md" >) for more information.
 
 
