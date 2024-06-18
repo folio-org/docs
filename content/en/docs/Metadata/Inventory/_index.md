@@ -54,6 +54,10 @@ The following are all the Inventory permissions:
 
 Note: Some actions in Inventory require permissions in other apps. For example, **View source** requires permissions in quickMARC.
 
+## Keyboard shortcuts
+
+Keyboard shortcuts allow you to perform actions in this app using the keyboard.  See [Platform Essentials \> Keyboard shortcuts](../platform-essentials/keyboard-shortcuts/keyboardshortcuts/) for more information.
+
 ## Creating an instance record manually in FOLIO
 
 1.  In the Inventory pane, click **Actions \> New**.
@@ -843,6 +847,7 @@ To search, first select the record type (instance, holdings, or item) then enter
 -   **Identifier (all).** Searches through all identifier types. Not normalized: the search may be left truncated, otherwise the entire identifier, including any prefix, must be entered.
 -   **ISBN.** Searches the number exactly as it appears in the data. For example, if there are hyphens in the data, the hyphens must be entered in the search.
 -   **ISSN.** Searches the number exactly as it appears in the data. Searches should include hyphens.
+-   **LCCN, normalized.** Searches for the LCCN number with or without any prefixes.
 -   **OCLC number, normalized.** Searches for the OCLC number with or without any prefixes.
 -   **Instance notes (all).** Keyword search across all Instance notes; includes administrative notes. 
 -   **Instance administrative notes.** Keyword search of instance record administrative notes.
@@ -850,20 +855,18 @@ To search, first select the record type (instance, holdings, or item) then enter
 -   **Effective call number (item), shelving order.** Retrieves Instance records based on the shelving order element in the item record.
 -   **Instance HRID.** Human readable identifier for the instance record.
 -   **Instance UUID.** Universally unique identifier for the instance record.
--   **Authority UUID.** Universally unique identifier for an authority record stored in FOLIO. This searches for UUIDs in bibliographic data where a field is linked to and controlled by an authority record. This value is stored in a $9 the bibliographic record (visible via “View source”).
+-   **Authority UUID.** Universally unique identifier for an authority record stored in FOLIO. This searches for UUIDs in bibliographic data where a field is linked to and controlled by an authority record. This value is stored in a $9 in the bibliographic record (visible via “View source”).
 -   **All.** Searches across all fields in all record types. May impact performance.
 -   **Query search.** A search for advanced users to query by property names using CQL.
--   **Advanced search** Either selected from the list of search options, or by clicking the **Advanced search** button, the user is presented with a modal where up to six different search terms, boolean operators (AND, OR, NOT), types of search (Exact phrase, Contains all, Starts with) and fields to search may be specified.
-
+-   **Advanced search** Either selected from the list of search options, or by clicking the **Advanced search** button, the user is presented with a modal where up to six different search terms, boolean operators (AND, OR, NOT), types of search (Exact phrase, Contains all, Starts with, Contains any) and fields to search may be specified. 
 -   **Call number, eye readable.** Requires you to enter the call number exactly as it appears in the holdings record, including punctuation.
 -   **Call number, normalized.** Ignores any characters other than numbers and letters, such as punctuation and spaces.
 -   **Holdings notes (all).** Keyword search across all holdings notes; includes administrative notes. 
 -   **Holdings administrative notes.** Keyword search of holdings record administrative notes.
 -   **Holdings HRID.** Human readable identifier for the holdings record.
 -   **Holdings UUID.** Universally unique identifier for the holdings record.
-
 -   **Barcode.** Allows you to scan, copy/paste, or type a barcode.
--   **Effective call number (item) eye readable.** Requires you to enter the call number exactly as it appears in the item record, including the punctuation and call number prefix.
+-   **Effective call number (item), eye readable.** Requires you to enter the call number exactly as it appears in the item record, including the punctuation and call number prefix.
 -   **Effective call number (item), normalized.** Ignores any characters other than numbers and letters, such as punctuation and spaces.
 -   **Item notes (all).** Keyword search across all item notes; includes administrative notes, check in and check out notes.
 -   **Item administrative notes.** Keyword search of item record administrative notes.

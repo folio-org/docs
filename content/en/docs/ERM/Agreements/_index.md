@@ -1,7 +1,7 @@
 ---
 title: "Agreements"
 linkTitle: "Agreements"
-date: 2023-10-20
+date: 2024-06-05
 weight: 10
 tags: ["parenttopic"]
 ---
@@ -9,7 +9,6 @@ tags: ["parenttopic"]
 The Agreements app allows you to create and manage your library’s agreements. The agreements you create here can link to licenses in the Licenses app.
 
 Definition of terms related to the Agreements app:
-
 
 
 *   **Agreement.** An agreement is a place where you can manage the content your library can access (based on resources described in a knowledge base) and link that content to licensing and acquisitions information.
@@ -53,14 +52,16 @@ If you want to eUsage data in an agreement record, you also need to have the fol
 
 
 ## Keyboard shortcuts
-Keyboard shortcuts allow you to perform actions in this app using the keyboard.  See [Platform essentials > Keyboard shortcuts](< ref "/platform_essentials_keyboard_shortcuts.md" >) for more information.
+
+
+Keyboard shortcuts allow you to perform actions in this app using the keyboard.  See [Platform essentials \> Keyboard shortcuts](../../platform-essentials/keyboard-shortcuts/keyboardshortcuts.md) for more information.
 
 
 ## Creating an agreement
 
 
 
-1. In the **Agreements** pane, click **New**.
+1. In the **Agreements** pane, click **Actions** and select **New**.
 2. In the **New agreement** window, fill in the Primary fields, Agreement periods, Internal contacts, Agreement lines, License information, Organizations, Supplementary properties, Supplementary documents, Usage data, and Related agreements sections. For more information on the fields and actions available in these sections, see the section descriptions below.
 3. Once you have included all of the information you want about the agreement, click **Save & close**. The agreement is saved and added to the Agreements pane.
 
@@ -71,11 +72,11 @@ Keyboard shortcuts allow you to perform actions in this app using the keyboard. 
 
 *   **Name (required).** The title of the agreement record.
 *   **Description**. Enter a description of the agreement.
-*   **Status (required).** Select from the drop-down list the state of the agreement. For example, Active or Closed. You can configure the labels that appear in the drop-down list in [Settings > Agreements > Pick list values]({{< ref "/settings_agreements.md#settings--agreements--pick-list-values" >}}).
-*   **Reason for closure.** This option only becomes available if **Closed** is selected from the **Status** drop-down list. Select from the drop-down list why the agreement was closed. You can configure the values that appear in the drop-down list in [Settings > Agreements > Pick list values]({{< ref "/settings_agreements.md#settings--agreements--pick-list-values" >}}).
-*   **Renewal priority.** Select from the drop-down list the level of interest in renewing the agreement. You can configure the values that appear in the drop-down list in [Settings > Agreements > Pick list values]({{< ref "/settings_agreements.md#settings--agreements--pick-list-values" >}}).
-*   **Is perpetual.** If the agreement provides perpetual access to the purchased materials, select *Yes*. You can configure the labels that appear in the drop-down list in [Settings > Agreements > Pick list values]({{< ref "/settings_agreements.md#settings--agreements--pick-list-values" >}}).
-*   **Content type.** If the agreement represents a particular content type or types, add one or more content type field and select a type from the drop-down list. You can configure the values that appear in the drop-down list in [Settings > Agreements > Pick list values]({{< ref "/settings_agreements.md#settings--agreements--pick-list-values" >}}).
+*   **Status (required).** Select from the drop-down list the state of the agreement. For example, Active or Closed. You can configure the labels that appear in the drop-down list in [Settings \> Agreements \> Pick list values](../../settings/settings_agreements/settings_agreements/#settings--agreements--pick-list-values).
+*   **Reason for closure.** This option only becomes available if **Closed** is selected from the **Status** drop-down list. Select from the drop-down list why the agreement was closed. You can configure the values that appear in the drop-down list in [Settings \> Agreements \> Pick list values](../../settings/settings_agreements/settings_agreements/#settings--agreements--pick-list-values).
+*   **Renewal priority.** Select from the drop-down list the level of interest in renewing the agreement. You can configure the values that appear in the drop-down list in [Settings \> Agreements \> Pick list values](../../settings/settings_agreements/settings_agreements/#settings--agreements--pick-list-values).
+*   **Is perpetual.** If the agreement provides perpetual access to the purchased materials, select *Yes*. You can configure the labels that appear in the drop-down list in [Settings \> Agreements \> Pick list values](../../settings/settings_agreements/settings_agreements/#settings--agreements--pick-list-values).
+*   **Content type.** If the agreement represents a particular content type or types, add one or more content type field and select a type from the drop-down list. You can configure the values that appear in the drop-down list in [Settings \> Agreements \> Pick list values](../../settings/settings_agreements/settings_agreements/#settings--agreements--pick-list-values).
 *   **Alternative names.** Alternative names for the agreement record.
 
 
@@ -86,7 +87,7 @@ Note: Adding a content type is optional, but if you click **Add content type**, 
 
 
 1. Click **Add content type**.
-2. Select the agreement record’s content type from the drop-down list. You can configure the values that appear in the drop-down list in [Settings > Agreements > Pick list values]({{< ref "/settings_agreements.md#settings--agreements--pick-list-values" >}}).
+2. Select the agreement record’s content type from the drop-down list. You can configure the values that appear in the drop-down list in [Settings \> Agreements \> Pick list values](../../settings/settings_agreements/settings_agreements/#settings--agreements--pick-list-values).
 3. Repeat as needed. The Content type saves once you save the agreement.
 
 
@@ -170,7 +171,7 @@ Internal contacts are generally the people within your library that you need to 
 3. In the **Select User** dialog, enter the user’s name or portion of a name into the search box in the **User Search** pane, and click **Search.** User Search Results appear.
 4. (Optional) Filter results by Status or by Patron group.
 5. Click the user to select. The user is added to the agreement record as an internal contact.
-6. Select the internal contact’s **Role** from the drop-down list. You can configure the values that appear in the drop-down list in [Settings > Agreements > Pick list values]({{< ref "/settings_agreements.md#settings--agreements--pick-list-values" >}}).
+6. Select the internal contact’s **Role** from the drop-down list. You can configure the values that appear in the drop-down list in [Settings \> Agreements \> Pick list values](../../settings/settings_agreements/settings_agreements/#settings--agreements--pick-list-values).
 7. Repeat steps 1-6 as needed. The internal contacts are saved once you save the agreement.
 
 
@@ -230,7 +231,7 @@ External licenses are any license not available through the Licenses app.
     * Upload a file into the license record by dragging and dropping the file in the **Drag & drop to upload** box, or click **or choose file**.
     * Enter the **Physical location** of the license in the box.
     * Enter the **URL** of the license in the box.
-5. Repeat steps 1-5 as needed. The external license saves once you save the agreement record.
+5. Repeat steps 1-4 as needed. The external license saves once you save the agreement record.
 
 
 #### Removing a license
@@ -252,7 +253,7 @@ External licenses are any license not available through the Licenses app.
 
 ### Organizations
 
-Organizations are any institution with which your library interacts. For example, you may want to add a vendor or consortium associated with the agreement. Multiple organizations can be added to a record, but the organizations must first be created in the [Organizations app]({{< ref "/organizations.md" >}}). To set one organization as the primary organization, check the **Set as primary organization** box.
+Organizations are any institution with which your library interacts. For example, you may want to add a vendor or consortium associated with the agreement. Multiple organizations can be added to a record, but the organizations must first be created in the [Organizations app](../../acquisitions/organizations/). To set one organization as the primary organization, check the **Set as primary organization** box.
 
 
 #### Adding an organization
@@ -264,7 +265,7 @@ Organizations are any institution with which your library interacts. For example
 3. In the **Select Organization** dialog, in the **Search & filter** pane search box, enter the organization’s name or use the All drop-down list to search through specific organization parameters, and click **Search**. Search results appear in the Organizations pane.
 4. (Optional) Filter results using the filters in the **Search & filter** pane.
 5. Click the organization to select. The organization is added to the agreement record.
-6. Select the organization's **Role** from the drop-down list. You can configure the values that appear in the drop-down list in [Settings > Agreements > Pick list values]({{< ref "/settings_agreements.md#settings--agreements--pick-list-values" >}}).
+6. Select the organization's **Role** from the drop-down list. You can configure the values that appear in the drop-down list in [Settings \> Agreements \> Pick list values](../../settings/settings_agreements/settings_agreements/#settings--agreements--pick-list-values).
 7. (Optional) Enter any notes about the organization in the **Note** box.
 8. Repeat steps 1-7 as needed. The organization saves once you save the agreement.
 
@@ -290,7 +291,7 @@ Organizations are any institution with which your library interacts. For example
 
 Supplementary properties are an optional way to record additional information about the agreement not captured anywhere else in the record. For example, the authentication method used to access the material covered by the agreement.
 
-Note: This section only appears if you have configured supplementary properties in the Settings app. For more information on setting up properties, see [Settings > Agreements > Supplementary properties]({{< ref "/settings_agreements.md#settings--agreements--supplementary-properties" >}}).
+Note: This section only appears if you have configured supplementary properties in the Settings app. For more information on setting up properties, see [Settings \> Agreements \> Supplementary properties](../../settings/settings_agreements/settings_agreements/#settings--agreements--supplementary-properties).
 
 
 #### Filling out a primary property
@@ -337,7 +338,7 @@ A supplementary document is any additional document relevant to the agreement re
 
 1. Click **Add supplementary document.**
 2. Enter a **Name** in the box.
-3. Select a **Category** from the drop-down list. You can configure the values that appear in the drop-down list in [Settings > Agreements > Pick list values]({{< ref "/settings_agreements.md#settings--agreements--pick-list-values" >}}).
+3. Select a **Category** from the drop-down list. You can configure the values that appear in the drop-down list in [Settings \> Agreements \> Pick list values](../../settings/settings_agreements/settings_agreements/#settings--agreements--pick-list-values).
 4. (Optional) Enter a **Note** about the supplementary document.
 5. You must complete at least one of the following:
     * Upload a file into the agreement record by dragging and dropping the file in the **Drag & drop to upload** box, or click **or choose file**.
@@ -460,7 +461,7 @@ To filter agreements by their reason for closure, select one of the listed optio
 *   **Rejected.** Agreements you have rejected.
 *   **Superseded.** Agreements that have been superseded by another agreement.
 
-Renewal priority values are configured in [Settings > Agreements > Pick list values]({{< ref "/settings_agreements.md#settings--agreements--pick-list-values" >}}).
+Renewal priority values are configured in [Settings \> Agreements \> Pick list values](../../settings/settings_agreements/settings_agreements/#settings--agreements--pick-list-values).
 
 
 ### Renewal priority
@@ -472,7 +473,7 @@ To filter agreements by their renewal priority, select one of the listed options
 *   **Definitely renew.** Agreements you want to renew.
 *   **Definitely cancel.** Agreements you do not want to renew.
 
-Renewal priority values are configured in [Settings > Agreements > Pick list values]({{< ref "/settings_agreements.md#settings--agreements--pick-list-values" >}}).
+Renewal priority values are configured in [Settings \> Agreements \> Pick list values](../../settings/settings_agreements/settings_agreements/#settings--agreements--pick-list-values).
 
 
 ### Is perpetual
@@ -625,8 +626,18 @@ Once you search for an agreement, the following information appears in the Agree
 *   **Period start.** The date the agreement period starts.
 *   **Period end.** The date the agreement period ends.
 *   **Cancellation deadline.** The date by which you need to cancel the agreement if you do not want to renew the material covered by the agreement.
+*   **Description: A description of the agreement.
 
 In the search results, click an agreement to view it. The agreement details pane displays with additional information about the agreement. In the agreement display, any accordions not populated with data and not otherwise required are not displayed to the user.
+
+
+## Controlling which columns display in the Agreements multi-column list
+
+1. In the **Agreements search** display, click **Actions**. 
+2. At the bottom of the Actions menu is the heading **Show columns** followed by a list of available columns with checkboxes to display or hide those columns. All columns are displayed by default. The columns available should be (in order): Name, Status, Start date, End date, Cancellation deadline, and Description. 
+3. When you uncheck a box, that column is removed from the display of the multi-column list.
+4. When you check a box, that column is added to the display of the multi-column list.
+5. When you go to the agreement search and sort view in the same session, the selection of which columns display persists.
 
 
 ## Editing an agreement
@@ -704,7 +715,7 @@ There are two ways to add an e-resource from the basket to agreement lines:
 6. (Optional) Enter a **Description** of the agreement line in the box.
 7. (Optional) Enter a **Note** about the agreement line in the box.
 8. (Optional) Enter **Active from** and **Active to** dates to indicate when the material covered by this agreement line was or is active in your collection.
-9. (Optional) To hide this information from your discovery layer, select the **Suppress from discovery** checkbox. If you don’t want this checkbox to appear, or you would like the checkbox to display on agreement line records, see [Settings > Agreements > Display settings]({{< ref "/settings_agreements.md#settings--agreements--display-settings" >}}) for more information.
+9. (Optional) To hide this information from your discovery layer, select the **Suppress from discovery** checkbox. If you don’t want this checkbox to appear, or you would like the checkbox to display on agreement line records, see [Settings \> Agreements \> Display settings](../../settings/settings_agreements/settings_agreements/#settings--agreements--display-settings) for more information.
 10. (Optional) To link the agreement line to a PO line, click **Add PO line**. See Adding a PO line to an agreement line for more information.
 11. To add multiple agreement lines at once, check the **Create another** checkbox and repeat steps 1-10.
 12. Click **Save & close**. A confirmation message appears and the agreement line is saved.
@@ -724,7 +735,7 @@ There are two ways to add an e-resource from the basket to agreement lines:
 9. (Optional) Enter a **Description** of the agreement line in the box.
 10. (Optional) Enter a **Note** about the agreement line in the box.
 11. (Optional) Enter **Active from** and **Active to** dates to indicate when the material covered by this agreement line was or is active in your collection.
-12. (Optional) To hide this information from your discovery layer, select the **Suppress from discovery** checkbox. If you don’t want this checkbox to appear, or you would like the checkbox to display on agreement line records, see [Settings > Agreements > Display settings]({{< ref "/settings_agreements.md#settings--agreements--display-settings" >}}) for more information.
+12. (Optional) To hide this information from your discovery layer, select the **Suppress from discovery** checkbox. If you don’t want this checkbox to appear, or you would like the checkbox to display on agreement line records, see [Settings \> Agreements \> Display settings](../../settings/settings_agreements/settings_agreements/#settings--agreements--display-settings) for more information.
 13. (Optional) To link the agreement line to a PO line, click **Add PO line**. See [Adding a purchase order line to an agreement line](#adding-a-purchase-order-line-to-an-agreement-line) for more information.
 14. To add multiple agreement lines at once, check the **Create another** checkbox and repeat steps 1-13.
 15. Click **Save & close**. A confirmation message appears and the agreement line is saved.
@@ -825,6 +836,17 @@ In order to view all of the agreement lines associated with a particular agreeme
 3. In the **Agreement lines** section, click **Actions** and select **View in agreement lines search**. 
 4. The Agreement line search pane will open. Clicking on any agreement line will display the Agreement line details record from which you can edit or delete the agreement line. 
 
+## Controlling which columns display in the agreement lines multi-column list
+
+
+1. [Find the desired agreement](#searching-for-agreements).
+2. In the **Agreement details** pane, click **Agreement lines**.
+3. In the **Agreement lines** section, click **Actions**. 
+4. At the bottom of the Actions menu is the heading **Show columns** followed by a list of available columns with checkboxes to display or hide those columns. All columns are displayed by default. The columns available should be (in order): Name / Description, Provider, Publication type, Count, Note, Coverage, Custom coverage indicator, Active from, Active to, and PO Line. 
+5. When you uncheck a box, that column is removed from the display of the multi-column list.
+6. When you check a box, that column is added to the display of the multi-column list.
+7. When you go to the agreement lines multi-column list view for any agreement in the same session, the selection of which columns display persists. 
+
 
 ## Searching for agreement lines
 
@@ -874,6 +896,16 @@ To search for agreement lines assigned specific tags, follow these steps:
 
 1. In the **Search & filter** pane, click **Tags**.
 2. Select the tag(s) from the drop-down list. Your results appear in the Agreement lines pane.
+
+## Controlling which columns display in the Agreement lines multi-column list
+
+
+
+1. In the **Agreement lines search** display, click **Actions**. 
+2. At the bottom of the Actions menu is the heading **Show columns** followed by a list of available columns with checkboxes to display or hide those columns. All columns are displayed by default. The columns available should be (in order): Name / Reference, Description, Parent agreement, Note, Active from, and Active to. 
+3. When you uncheck a box, that column is removed from the display of the multi-column list.
+4. When you check a box, that column is added to the display of the multi-column list.
+5. When you go to the agreement lines search and sort view in the same session, the selection of which columns display persists.
 
 
 ## Adding a tag to an agreement
@@ -1037,7 +1069,7 @@ Packages can be further filtered by:
 * Content type
 * Tags: Select a tag(s) from the drop-down list, or search for one by typing the tag’s name. 
 
-The values for Status, Scope, Availability, and Content type can be configured in Settings > Agreements > Pick list values. 
+The values for Status, Scope, Availability, and Content type can be configured in [Settings \> Agreements \> Pick list values](../../settings/settings_agreements/settings_agreements/#settings--agreements--pick-list-values). 
 
 
 ### Searching for titles
@@ -1051,7 +1083,7 @@ Titles can be further filtered by:
 * Type
 * Publication type
 
-The values for Type and Publication Type can be configured in Settings > Agreements > Pick list values. 
+The values for Type and Publication Type can be configured in [Settings \> Agreements \> Pick list values](../../settings/settings_agreements/settings_agreements/#settings--agreements--pick-list-values). 
 
 
 ## Searching for platforms
@@ -1213,5 +1245,5 @@ You can add and assign notes to agreement records, agreement lines, and e-resour
 
 The Dashboard app is designed to enable a personalized view of key information from across FOLIO apps at a glance. In its first release (included in the Juniper flower release), the Dashboard includes the ability to display information from the Agreements and Licenses applications.
 
-In the Morning Glory release, the Agreements app comes with two dashboard widgets ("ERM Agreements" and "ERM Agreement Jobs"). There are examples of how you can use these two 
+The Agreements app comes with two dashboard widgets ("ERM Agreements" and "ERM Agreement Jobs"). There are examples of how you can use these two 
 widget definitions to achieve a wide range of outcomes in the Example widget configurations documentation.

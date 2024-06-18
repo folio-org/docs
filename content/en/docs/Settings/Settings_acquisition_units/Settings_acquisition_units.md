@@ -1,7 +1,7 @@
 ---
 title: "Settings > Acquisition units"
 linkTitle: "Acquisition units"
-date: 2023-11-06
+date: 2024-04-22
 weight: 10
 tags: ["subtopic"]   
 ---
@@ -21,6 +21,7 @@ Acquisitions units can be applied to the following types of records in FOLIO:
 *   Invoices
 *   Orders
 *   Organizations
+*   Receiving titles
 
 
 ## Permissions

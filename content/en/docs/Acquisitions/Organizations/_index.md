@@ -1,7 +1,7 @@
 ---
 title: "Organizations"
 linkTitle: "Organizations"
-date: 2022-12-02
+date: 2024-05-08
 weight: 40
 tags: ["parenttopic"]
 ---
@@ -12,7 +12,7 @@ Definition of terms related to the Organizations app:
 
 
 
-*   **Acquisition units.** An additional layer you can add to acquisitions records that restricts a user’s ability to interact with those records unless they have been assigned to that unit. For example, you may create acquisition units to represent the different libraries within your library system. Units are defined and determined by your library in the Settings app. See [Settings > Acquisition units]({{< ref "/settings_acquisition_units.md" >}}) for more information.
+*   **Acquisition units.** An additional layer you can add to acquisitions records that restricts a user’s ability to interact with those records unless they have been assigned to that unit. For example, you may create acquisition units to represent the different libraries within your library system. Units are defined and determined by your library in the Settings app. See [Settings > Acquisition units](../../settings/settings_acquisition_units/settings_acquisition_units/) for more information.
 *   **Organization.** Any institution with which your library interacts.  An organization may or may not be an institution from which you purchase materials.
 *   **Vendor.** Any institution from which your library purchases materials.
 
@@ -26,20 +26,26 @@ Organizations permissions:
 
 
 *   **Organizations: Assign acquisition units to new organization.** This permission allows the user to assign acquisition units to the organization when creating a new record.
+*   **Organizations: Can view privileged donor information.** This permission allows the user to view the information in the Privileged donor information accordion that appears on Organization records with the donor designation.
+*   **Organizations: Can view, create, edit, delete privileged donor information.** This permission allows the user to create, edit, and delete the information contained in the Privileged donor information accordion that appears on Organization records with the donor designation. Note: This permission must always be assigned in conjunction with either the Organizations: View, edit, create or Organizations: View, edit, delete permissions.
 *   **Organizations: Integration usernames and passwords: view.** This permission allows the user to view the usernames and passwords that appear in the Integration details accordion FTP section.
 *   **Organizations: Integration usernames and passwords: view, edit.** This permission allows the user to view and edit the usernames and passwords that appear in the Integration details accordion FTP details section.
 *   **Organizations: Interface usernames and passwords: view.** This permission allows the user to view the usernames and passwords that appear in the Interface section.
 *   **Organizations: Interface usernames and passwords: view, edit, create, delete.** This permission allows the user to create, edit, and delete the usernames and passwords that appear in the Interface section. Note: This permission must always be assigned in conjunction with either the Organizations: View, edit, create or Organizations: View, edit, delete permissions.
 *   **Organizations: Manage acquisition units.** This permission allows the user to change the assignment of acquisition units for the organization when editing a record.
 *   **Organizations: View.** This permission allows the user to search and view organization records and settings. The user can also access Contacts and Interfaces but cannot access Interface usernames and passwords.
+*   **Organizations: View and edit banking information.** This permission allows the user to view and edit the information contained in the Banking information accordion of an Organization record with a vendor designation. Note: Banking information must also be enabled in [Settings > Organizations > Banking information](../../settings/settings_organizations/settings_organizations/#settings--organizations--banking-information).
+*   **Organizations: View banking information.** This permission allows the user to view the information contained in the Banking information accordion of an Organization record with a vendor designation. Note: Banking information must also be enabled in [Settings > Organizations > Banking information](../../settings/settings_organizations/settings_organizations/#settings--organizations--banking-information).
 *   **Organizations: View, edit.** This permission allows the user to edit and view organizations. The user can also access Contacts, but they cannot access Interface usernames and passwords.
+*   **Organizations: View, edit and create banking information.** This permission allows the user to view and edit information contained in the Banking information accordion of an Organization record with a vendor designation, as well as create new entries. Note: Banking information must also be enabled in [Settings > Organizations > Banking information](../../settings/settings_organizations/settings_organizations/#settings--organizations--banking-information).
 *   **Organizations: View, edit, create.** This permission allows the user to create, edit, and view organizations. The user can also access Contacts, but they cannot access Interface usernames and passwords.
+*   **Organizations: View, edit, create and delete banking information.** This permission allows the user to view, edit, and delete information contained in the Banking information accordion of an Organization record with a vendor designation, as well as create new entries. Note: Banking information must also be enabled in Settings > Organizations > Banking information.
 *   **Organizations: View, edit, delete.** This permission allows the user to view, edit, and delete organizations. The user can also access Contacts, but they cannot access Interface usernames and passwords.
 
 
 
 ## Keyboard shortcuts
-Keyboard shortcuts allow you to perform actions in this app using the keyboard.  See [Platform essentials > Keyboard shortcuts]({{< ref "keyboardshortcuts.md" >}}) for more information.
+Keyboard shortcuts allow you to perform actions in this app using the keyboard.  See [Platform essentials > Keyboard shortcuts](../../platform-essentials/keyboard-shortcuts/keyboardshortcuts/) for more information.
 
 
 ## Creating an organization
@@ -61,11 +67,12 @@ When creating an organization, you either create it as a general organization or
 *   **Code (required).** A unique identifier for the organization. Note: You cannot have duplicate vendor codes. The codes for each organization must be different.
 *   **Accounting code.** The accounting code used by your library in your payment system in reference to the organization.
 *   **Organization status (required).** Select an organization status: Active, Inactive, or Pending. The status you select here is evaluated by the Orders and Invoices apps. Orders can only be opened and invoices can only be paid if the organization is a vendor with an Active status. You may want to use the Pending status to signify that the organization record is a draft.
-*  **Type.**  Select one or more organization types.  See [Settings > Organizations > Creating a new type]({{< ref "/settings_organizations.md" >}}) for more information.
+*  **Type.**  Select one or more organization types.  See [Settings > Organizations > Creating a new type](../../settings/settings_organizations/settings_organizations/#creating-a-new-type) for more information.
 *   **Default language.** Select the organization’s default language.
+*   **Acquisition units.** Select the Acquisition units you want to apply to the organization record. See [Settings > Acquisition units](../../settings/settings_acquisition_units/settings_acquisition_units/) for more information.
+*   **Description.** Enter a description of the organization.
+*   **Donor.** If you wish to include donor information on the Organization record, select the **Donor** checkbox. See [Privileged donor information](#privileged-donor-information) for more information.
 *   **Vendor.** If you are creating a vendor organization, select the **Vendor** checkbox . See [Creating a vendor](#creating-a-vendor) for more information.
-*   **Acquisition units.** Select the Acquisition units you want to apply to the organization record. See [Settings > Acquisition units]({{< ref "/settings_acquisition_units.md" >}}) for more information.
-*   **Description**. Enter a description of the organization.
 *   **Alternative names.** Alternative names used by the organization, such as abbreviations or prior names.
 
 
@@ -240,6 +247,31 @@ For more information, see [Creating an interface](#creating-an-interface).
 
 2. Click the **x**. The interface is deleted and is removed from the record once you save the organization.
 
+### Privileged donor information
+This accordion appears on any Organization record with the **Donor** checkbox selected. Only staff members with permissions to view data in this accordion will be able to access this information. Donors can be associated with both fund records and purchase order lines.
+
+#### Creating a new donor
+
+For more information, see [Creating a donor](#creating-a-donor).
+
+
+#### Adding an existing donor
+
+1. Click **Add donor**.
+
+2. In the **Add contacts** dialog, search for the donor you want to add.
+
+3. In the **Search results**, select the checkbox next to the donor(s) you want to add. You can add multiple donors at a time.
+
+4. Click **Save**. The donor(s) appear under the Privileged donor information section.
+
+
+#### Removing a donor from the organization record
+
+1. Find the donor you want to delete.
+
+2. Click the **x**. The donor is deleted and is removed from the record once you save the organization.
+
 
 ## Creating a vendor
 
@@ -280,11 +312,11 @@ The information that you enter under Vendor information sets some of the default
 
 
 
-*   **Payment method.** The payment method that you want to appear as the default payment method for the vendor on an invoice. See [Invoices > Extended information]({{< ref "/invoices.md#extended-information" >}}) for more information.
+*   **Payment method.** The payment method that you want to appear as the default payment method for the vendor on an invoice. See [Invoices > Extended information](../invoices/#extended-information) for more information.
 *   **Vendor currencies.** The currencies accepted by the vendor.
 *   **Expected activation interval.** The standard activation period for the vendor, in days. Note: The interval you enter here is used in the Activation due field in the E-resources details section of an order line associated with the vendor. For example, if you set the interval to 365, the Activation due field is populated with the date that falls one year from the date the order line is created.
 *   **Expected invoice interval.** The standard invoice interval for the vendor, in days. Currently, this information does not display on invoices.
-*   **Claiming interval.** The standard claim period for the vendor, in days.
+*   **Claiming interval.** The standard claim period for the vendor, in days. This value will carry over to the purchase order lines (POL) associated with this vendor. The default value may be overridden on an individual POL or receiving title. This interval represents how long after a piece's expected receipt date it should be marked 'Late' if the piece is not received.
 *   **Expected receipt interval.** The standard period during which ordered items are received from the vendor, in days.
 *   **Discount percent.** The discount negotiated with the vendor, as a percent value. When creating an order line for an order with the vendor, this value appears as the default in the discount field.
 *   **Renewal activation interval.** The standard renewal activation period for this vendor, in days.
@@ -365,9 +397,9 @@ Note: Adding an account is optional, but if you click **Add**, you must fill in 
 
 11. Optional: Enter any **Notes** about the account in the box.
 
-12. Optional: Select any **Acquisition units** from the drop-down list. For more information on acquisition units, see [Settings > Acquisition]({{< ref "/settings_acquisition_units.md" >}}) units.
+12. Optional: Select any **Acquisition units** from the drop-down list. For more information on acquisition units, see [Settings > Acquisition units](../../settings/settings_acquisition_units/settings_acquisition_units/).
 
-13. Repeat steps 1-13 as needed. Accounts are saved once you save the vendor.
+13. Repeat steps 1-12 as needed. Accounts are saved once you save the vendor.
 
 
 #### Deleting an account
@@ -375,6 +407,22 @@ Note: Adding an account is optional, but if you click **Add**, you must fill in 
 1. Find the account you want to delete.
 
 2. Click the **trash can icon**. The account is removed and is deleted once you save the vendor.
+
+### Banking information
+This accordion will appear on Organization records where the **Vendor** checkbox is selected, only if activated in [Settings > Organizations > Banking information](../../settings/settings_organizations/settings_organizations/#settings--organizations--banking-information). This section allows storage of banking details to fulfil payments to the associated vendor. Staff users must have permissions to view and interact with the data in this accordion.
+
+#### Adding banking information
+1. Click **Add banking information.**
+2. Enter the **Bank name.**
+3. Enter the **Bank account number.**
+4. Enter the **Transit number.**
+5. Select an **Address category** from the dropdown menu. The address category is derived from the addresses added in the [Contact information](#contact-information) accordion. The category you select here will determine which address is associated with the bankin information.
+6. Select an **Account type** from the dropdown menu. Account types are configured in [Settings > Organizations > Account types](../../settings/settings_organizations/settings_organizations/#settings--organizations--account-types).
+7. Add notes, if desired.
+
+#### Deleting banking information
+1. Find the banking information you want to delete.
+2. Click the **trash can icon**. The banking informaton is removed and is deleted once you save the vendor.
 
 
 ## Searching for an organization
@@ -390,6 +438,7 @@ You can search for organizations in the **Search & filter** pane. To search for 
 *   **Alias.** Alternative names used by the organization, such as abbreviations or prior names.
 *   **Accounting code.** The accounting code used by your library in your payment system in reference to the organization.
 *   **Tax ID.** Your library’s tax identifier number.
+*   **Bank account number.** The bank account number associated with the organization's banking information, if configured.
 
 You can also search for organizations by selecting any of the filters in the **Search & filter** pane. Additionally, you can apply the filters after you perform a search to limit your results. See the sections below for more information.
 
@@ -405,11 +454,11 @@ To filter organizations by their status, select one of the following:
 *   **Pending.** Organizations that are not yet available for use. Pending could indicate that the organization record is not yet complete.
 
 
-### Type
+### Types
 
 To search for organizations assigned with specific types, follow these steps:
 
-1. In the **Search & filter** pane, click **Type**.
+1. In the **Search & filter** pane, click **Types**.
 
 2. Select the type(s) from the drop-down list. Your results appear in the Organizations pane.
 
@@ -422,6 +471,14 @@ To search for organizations assigned with specific tags, follow these steps:
 
 2. Select the tag(s) from the drop-down list. Your results appear in the Organizations pane.
 
+### Is donor
+
+To filter organizations by whether or not they are a donor, select one of the following:
+
+
+
+*   **Yes.** Organizations that are donors (have the Donor checkbox selected).
+*   **No.** Organizations that are not donors.
 
 ### Is vendor
 
@@ -476,6 +533,52 @@ To search for organizations to which one or more acquisitions units have been as
 
 2. Select the acquisitions unit from the drop-down list. The search results appear in the Organizations pane.
 
+### Created by
+
+To search for organizations created by a specific user, follow these steps:
+
+1. In the **Search & filter** pane, click **Created by**.
+
+2. Click **Find User**.
+
+3. In the **Select User** dialog, search for the user.
+
+4. Select the user you want to filter by. The search results appear in the Organizations pane.
+
+
+### Date created
+
+To search for organizations based on the date they were created, follow these steps:
+
+1. In the **Search & filter** pane, click **Date created**.
+
+2. Enter a start date in the **From** box and an end date in the **To** box.
+
+3. Click **Apply**. The search results appear in the Organizations pane.
+
+### Updated by
+
+To search for organizations updated by a specific user, follow these steps:
+
+1. In the **Search & filter** pane, click **Updated by**.
+
+2. Click **Find User**.
+
+3. In the **Select User** dialog, search for the user.
+
+4. Select the user you want to filter by. The search results appear in the Organizations pane.
+
+
+### Date updated
+
+To search for organizations based on the date they were created, follow these steps:
+
+1. In the **Search & filter** pane, click **Date updated**.
+
+2. Enter a start date in the **From** box and an end date in the **To** box.
+
+3. Click **Apply**. The search results appear in the Organizations pane.
+
 
 ## Viewing organization details
 
@@ -496,10 +599,12 @@ In the search results, click on an organization to view it. The Organization det
 *   **Contact information.** See [Contact information](#contact-information).
 *   **Contact people.** See  [Contact people](#contact-people).
 *   **Interface.**  See [Interface fields](#interface-fields).
+*   **Privileged donor information.** See [Privileged donor information] (#privileged-donor-information).
 *   **Vendor information.**  See [Vendor information](#vendor-information).
 *   **Vendor terms.**  See [Vendor terms](#vendor-terms). 
 *   **Integration details.**  See [Adding integration details to a vendor organization](#adding-integration-details-to-a-vendor-organization).
 *   **Accounts.**  See [Accounts](#accounts).
+*   **Banking information.** See [Banking information](#banking-information).
 *   **Agreements.**  The agreements section displays a table list containing the following information for all agreements linked to the organization:
 
 *   **Agreement name.**  The title of the agreement record.
@@ -522,13 +627,13 @@ In the search results, click on an organization to view it. The Organization det
 
 ### Changing a vendor to an organization
 
-Note: Changing a vendor to an organization removes all Vendor information, Vendor terms, and Accounts from the record.
+Note: Changing a vendor to an organization removes all Vendor information, Vendor terms, Accounts, and Banking information from the record.
 
 1. [Find the organization you want to edit](#searching-for-an-organization) and select it.
 
 2. In the **Organization details** pane, clear the **Vendor** checkbox.
 
-3. In the Confirm vendor data deletion dialog, click **Confirm**. The Vendor information, Vendor terms, and Accounts sections are removed.
+3. In the Confirm vendor data deletion dialog, click **Confirm**. The Vendor information, Vendor terms, Accounts, and Banking information sections are removed.
 
 4. Make any additional changes to the organization.
 
@@ -553,7 +658,7 @@ To view a log of orders exported to a vendor organization that is set up for EDI
 
 2. In the **Organization details** pane, click **Actions > View export log**.
 
-3. The Export Manager app opens with the Search & Filter pane set to view exports related to the selected vendor organization.  See the [Export Manager documentation](../../export-manager#viewing-export-jobs) for more information about viewing export jobs.
+3. The Export Manager app opens with the Search & Filter pane set to view exports related to the selected vendor organization.  See the [Export Manager documentation](../../export-manager/#viewing-export-jobs) for more information about viewing export jobs.
 
 
 ## Adding a tag to an organization
@@ -609,13 +714,13 @@ This section enables orders to be exported to vendors in EDIFACT format. To add 
 ### EDI configuration
 
 *   **Account numbers (required).** All account numbers created in **Vendor account** section of the organization are listed.  Click on all vendor account numbers to be included in this EDI configuration.  To select multiple account numbers for this configuration, use shift+click. When you move your cursor to another field you will see the highlight persist on the selected account number(s).
-*   **Automate order export for acquisition methods.**   All order acquisition methods are listed. To automatically export orders for this vendor using specific order acquisitions methods, click on the acquisition method name.  When creating orders, you can override this default behavior by checking the [Manual]({{< ref "/orders.md#purchase-order" >}}) checkbox on the purchase order.  To select multiple acquisition methods to export automatically, use shift+click. When you move your cursor to another field you will see the highlight persist on the selected acquisition methods.
+*   **Automate order export for acquisition methods.**   All order acquisition methods are listed. To automatically export orders for this vendor using specific order acquisitions methods, click on the acquisition method name.  When creating orders, you can override this default behavior by checking the [Manual](../orders/#purchase-order) checkbox on the purchase order.  To select multiple acquisition methods to export automatically, use shift+click. When you move your cursor to another field you will see the highlight persist on the selected acquisition methods.
 *   **Vendor EDI code (required).** The vendor identifier for EDI transactions
 *   **Vendor EDI type.** Select one of the Vendor EDI types, which designates the type of identifier used as the vendor identifier: 014/EAN, 31B/US-SAN, 091/Vendor-assigned, or 092/Customer-assigned.
 *   **Library EDI code (required).** The library identifier for EDI transactions
 
 *   **Library EDI type.** Select one of the Library EDI types, which designates the type of identifier used as the library identifier: 014/EAN, 31B/US-SAN, 091/Vendor-assigned, or 092/Customer-assigned.
-*   **EDI naming convention.** The naming convention that sets the expected structure to be used for outgoing FOLIO EDI files, such as the prefix or file extension. Example: .edu  Note: When defining your naming convention you can use text or one of the following tokens. Tokens will be replace by the corresponding information from the export job. Possible tokens are organizationCode, integrationName, exportJobEndDate, jobID, numberSequence
+*   **EDI naming convention.** The naming convention that sets the expected structure to be used for outgoing FOLIO EDI files. This is currently a static value, using system-defined tokens. The naming convention will be configurable in a future release.
 *   **Send account number.** If you send your account number with orders or invoices, select this checkbox. If selected, the account number is required for the PO/POL and is included in the EDI order file.
 *   **What messages are expected for this vendor?** If your library expects to send EDI orders to the vendor, select the **Orders** checkbox. If your library expects to receive EDI invoices from the vendor, select the **Invoices** checkbox.
 *   **Notes.** Notes about the integration details for this vendor.
@@ -643,11 +748,12 @@ This section enables orders to be exported to vendors in EDIFACT format. To add 
 
 
 *   **Schedule EDI.** If you want to schedule the EDI, select the **Schedule EDI** checkbox.
-*   **Schedule period.**  The period between automated exports to the vendor.  Choose from Daily or Weekly. This release of FOLIO does not include Hourly or Monthly period options due to a known issue to be resolved in the next release.  If you applied either of those values to a vendor previously, the export may not run at the desired time when using hourly or monthly schedules.  
+*   **Schedule period.**  The period between automated exports to the vendor.  Choose from Hourly, Daily, Weekly, or Monthly.
 *   **Date.** If you choose a schedule period of Daily, the date field appears.  Use the calendar function to select the start date for this schedule.
-*   **Schedule frequency.**  If you choose a schedule period of Daily or Weekly, the schedule frequency field appears.  Enter the numeric value for the hourly or daily frequency of this scheduled integration.
-*   **Time.**  If you choose a schedule period of Daily or Weekly, the time field appears. Click on this field to view an hour and time select list.  Choose the scheduled time for this automated export.
+*   **Schedule frequency.**  If you choose a schedule period of Hourly, Daily, or Weekly, the schedule frequency field appears.  Enter the numeric value for the hourly, daily, or weekly frequency of this scheduled integration.
+*   **Time.**  Click on this field to view an hour and time select list.  Choose the scheduled time for this automated export.
 *   **S M T W Th F S.**  If you choose a schedule period of Weekly, the day of the week checkboxes appear. Choose the days for this weekly automated export.
+*   **Day.** If you choose a schedule period of monthly, enter the day of the month the automatic export should occur.
 
 
 
@@ -681,7 +787,7 @@ Note: If you need to create a new contact, you should save your progress on the 
 *   **First name.** The given name of the contact.
 *   **Status.** Select the status of the contact from the drop-down list: Active or Inactive.
 *   **Language.** The primary language spoken by the contact.
-*   **Categories.** Select any categories from the drop-down list that describe the contact. Categories are configured in the Settings app. See [Settings > Organizations](../../settings/settings_organizations/settings_organizations/#settings--organizations--categories) for more information.
+*   **Categories.** Select any categories from the drop-down list that describe the contact. Categories are configured in the Settings app. See [Settings > Organizations > Categories](../../settings/settings_organizations/settings_organizations/#settings--organizations--categories) for more information.
 *   **Notes.** Any notes related to the contact.
 
 
@@ -796,10 +902,6 @@ Note: If you need to edit a contact, you should save your progress on the organi
 5. Click **Save & close**. A confirmation message appears and the contact is updated.
 
 
-## Copying a contact person
-
-Although it appears in the user interface, copying a contact is not available.
-
 
 ## Unassigning a contact person
 
@@ -873,11 +975,6 @@ Note: If you need to edit an interface, you should save your progress on the org
 5. Click **Save**. A confirmation message appears and the interface is updated.
 
 
-## Copying an interface
-
-Although it appears in the user interface, copying an interface is not available.
-
-
 ## Unassigning an interface
 
 See [Deleting an interface](#deleting-an-interface) for an alternate way to remove an interface from an organization.
@@ -902,3 +999,155 @@ Deleting an interface removes it from your library’s list of interfaces. If yo
 3. In the contact window, click **Actions > Delete**.
 
 4. In the **Delete interface** dialog, click **Confirm**. The contact is deleted and the organization window appears.
+
+## Creating a donor
+
+Note: If you need to create a new donor, you should save your progress on the organization you are creating or wait until you have completed entering all organization information before you start the new donor process. Creating a new donor takes you out of the organization window.
+
+1. Click **Add donor**.
+
+2. In the **Add contacts** dialog, click **New**. If you have not saved your organization information, you are prompted to do so before continuing.
+
+3. In the **Create contact** window, fill in the fields in the Name, Emails, Phone numbers, URLs, and Addresses sections. See below for more information.
+
+4. Click **Save & close**. A confirmation message appears and the contact is saved.
+
+5. A new accordion is added to the donor detail pane containing the following information:
+
+*   **Record last updated.**  Date and time of the last record update.
+*   **Source.**   Name of the user who last updated the record.
+*   **Record created.** Date and time of record creation.
+*   **Source.**   Name of the user who last created the record.
+
+
+##### Name
+
+
+
+*   **Prefix.** Title of the donor.
+*   **Last name.** The surname of the donor.
+*   **First name.** The given name of the donor.
+*   **Status.** Select the status of the donor from the drop-down list: Active or Inactive.
+*   **Language.** The primary language spoken by the donor.
+*   **Categories.** Select any categories from the drop-down list that describe the donor. Categories are configured in the Settings app. See [Settings > Organizations > categories](../../settings/settings_organizations/settings_organizations/#settings--organizations--categories) for more information.
+*   **Note.** Any notes related to the donor.
+
+
+##### Emails
+
+
+###### Adding an email address
+
+1. Click **Add email**.
+
+2. Enter the **Email address** in the box.
+
+3. Optional: Enter a **Description** of the email in the box.
+
+4. Optional: Select a **Language** from the drop-down list.
+
+5. Optional: Select any **Categories** from the drop-down list that describe the email address.
+
+6. Repeat steps 1-5 as needed.The email address saves once you save the contact. Note: If you are adding multiple emails, click **Primary** to indicate the donor’s primary email address.  The **Primary** email will display as the first result.
+
+
+###### Deleting an email address
+
+1. Find the email address you want to delete.
+
+2. Click the **trash can icon**. The email address is removed and is deleted once you save the donor.
+
+
+##### Phone numbers
+
+
+###### Adding a phone number
+
+1. Click **Add phone number**.
+
+2. Enter the **Phone number** in the box.
+
+3. Optional: Select the **Type** of number from the drop-down list: Office, Mobile, Fax, or Other.
+
+4. Optional: Select the **Language** spoken at that number from the drop-down list.
+
+5. Optional: Select any **Categories** from the drop-down list that describe the email address.
+
+6. Repeat steps 1-5 as needed. The phone number saves once you save the donor. Note: If you are adding multiple phone numbers, click **Primary** to indicate the donor’s primary phone number. The **Primary** phone number will display as the first result.
+
+
+###### Deleting a phone number
+
+1. Find the phone number you want to delete.
+
+2. Click the **trash can icon**. The phone number is removed and is deleted once you save the donor.
+
+
+##### URLs
+
+
+###### Adding a URL
+
+The URL can be a website or FTP link.
+
+1. Click **Add URL**.
+
+2. Enter the **URL** in the box.
+
+3. Optional: Enter a **Description** of the URL in the box.
+
+4. Optional: Select a **Language** from the drop-down list.
+
+5. Optional: Select any **Categories** from the drop-down list that describe the URL.
+
+6. Repeat steps 1-5 as needed. The URL saves once you save the donor. Note: If you are adding multiple URLs, click **Primary** to indicate the donor’s primary URL.  The **Primary** URL will display as the first result.
+
+
+###### Deleting a URL
+
+1. Find the URL you want to delete.
+
+2. Click the **trash can icon**. The URL is removed and is deleted once you save the donor.
+
+
+##### Addresses
+
+
+###### Adding an address
+
+1. Click **Add address**.
+
+2. Fill in the address information.
+
+3. Repeat steps 1-2 as needed. The address saves once you save the donor. Note: If you are adding multiple addresses, click **Primary** to indicate the donor’s primary address. The **Primary** address will display as the first result.
+
+
+###### Deleting an address
+
+1. Find the address you want to delete.
+
+2. Click the **trash can icon**. The address is deleted and is removed from the record once you save the donor.
+
+
+## Editing a donor
+
+Note: If you need to edit a donor, you should save your progress on the organization you are creating or wait until you have completed entering all organization information before you start the edit donor process. Editing the donor takes you out of the organization window.
+
+1. Click the donor you want to edit. If you have not saved your organization information, you are prompted to do so before continuing.
+
+2. In the contact window, click **Actions > Edit**.
+
+3. Edit the donor.
+
+4. Click **Save & close**. A confirmation message appears and the donor is updated.
+
+
+## Deleting a donor
+
+Deleting a donor removes that person from your library’s list of donors. 
+
+1. Click the donor you want to delete. If you have not saved your organization information, you will be prompted to do so before continuing.
+
+2. In the donor window, click **Actions > Delete**.
+
+3. In the **Delete contact** dialog, click **Confirm**. The donor is deleted and the organization window appears.

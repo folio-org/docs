@@ -1,10 +1,13 @@
 ---
 title: "eHoldings"
 linkTitle: "eHoldings"
-date: 2023-11-20
+date: 2024-05-01
 weight: 20
 tags: ["parenttopic"]
 ---
+
+**This section of the documentation contains links to external sites. Please be advised that these sites are not maintained by the FOLIO Documentation Group and may not be aligned with the current release of FOLIO.**
+
 
 The eHoldings app allows you to manage your library’s e-resources. You can link your e-resources to agreements created in the Agreements app to create a relationship between the two.
 
@@ -409,7 +412,7 @@ Use the Agreements section to create agreements or link the package to agreement
 
 1. [Find the package](#searching-for-providers-packages-and-titles) to which you want to link an agreement and select it.
 2. In the **Package record** window, in the **Agreements** section, click **New.**
-3. Fill in the fields. See [Creating an agreement]({{< ref "/agreements.md#creating-an-agreement" >}}) for more information.
+3. Fill in the fields. See [Creating an agreement](../agreements/#creating-an-agreement) for more information.
 4. Click **Save & close.** A confirmation message appears and the package is added to the agreement as an agreement line..
 
 
@@ -649,7 +652,7 @@ Note: There will be a 10,000 title limit when exporting a package detail record.
 
 ### Editing custom labels
 
-Custom labels are created in the Settings app. For more information, see Settings > eHoldings > Custom labels. If you are using custom labels, you can enter information into these fields.
+Custom labels are created in the Settings app. For more information, see [Settings \> eHoldings \> Custom labels](../../settings/settings_eholdings/settings_eholdings/#settings--eholdings--custom-labels). If you are using custom labels, you can enter information into these fields.
 
 
 ### Editing resource settings
@@ -794,7 +797,7 @@ Note: Agreements can only be added to title records when a package is selected a
 
 1. Repeat steps 1-2 from [Linking an existing agreement](#linking-an-existing-agreement-to-a-title-record).
 2. In the **Package title details** window, in the **Agreements** section, click **New**.
-3. Fill in the fields. See [Creating an agreement]({{< ref "/agreements.md#creating-an-agreement" >}}) for more information.
+3. Fill in the fields. See [Creating an agreement](../agreements/#creating-an-agreement) for more information.
 4. Click **Save & close.** A confirmation message appears and the agreement is added to the title record.
 
 

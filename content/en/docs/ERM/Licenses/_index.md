@@ -1,7 +1,7 @@
 ---
 title: "Licenses"
 linkTitle: "Licenses"
-date: 2023-11-20
+date: 2024-06-05
 weight: 50
 tags: ["parenttopic"]
 ---
@@ -51,8 +51,8 @@ Keyboard shortcuts allow you to perform actions in this app using the keyboard. 
 
 1. In the **Licenses** pane, click **Actions > New**.
 2. In the **New license** window, enter a **Name** for the license record.
-3. Select a license **Type** from the drop-down list. For example, local or consortial. License Types are configured in the Settings app. For more information, see [Settings > Licenses > Pick list values]({{< ref "/settings_licenses.md#settings--licenses--pick-list-values" >}}).
-4. Select a **Status** from the drop-down list. License Statuses are configured in the Settings app. For more information, see [Settings > Licenses > Pick list values]({{< ref "/settings_licenses.md#settings--licenses--pick-list-values" >}}).
+3. Select a license **Type** from the drop-down list. For example, local or consortial. License Types are configured in the Settings app. For more information, see [Settings \> Licenses \> Pick list values](../../settings/settings_licenses/settings_licenses/#settings--licenses--pick-list-values).
+4. Select a **Status** from the drop-down list. License Statuses are configured in the Settings app. For more information, see [Settings \> Licenses \> Pick list values](../../settings/settings_licenses/settings_licenses/#settings--licenses--pick-list-values).
 5. (Optional) To indicate when the license begins, enter a **Start date**.
 6. (Optional) To indicate when the license terminates, enter an **End date**. If the license doesn’t have an End date, select the **Open ended** checkbox.
 7. (Optional) Enter a **Description** of the license in the box.
@@ -101,7 +101,7 @@ Internal contacts must have a user record created in the Users app in order to b
 3. In the **Select User** dialog, in the **User search** box, enter part or all of the internal contact’s name and click **Search**.
 4. (Optional) Filter results by Status or by Patron group.
 5. In the **User Search Results** pane, click the **user** to select them. The user is added to the license record as an internal contact.
-6. Select a **Role** to assign to the internal contact from the drop-down list. Roles are configured in the Settings app. For more information, see [Settings > Licenses > Pick list setup]({{< ref "/settings_licenses.md#settings--licenses--pick-lists" >}}).
+6. Select a **Role** to assign to the internal contact from the drop-down list. Roles are configured in the Settings app. For more information, see [Settings \> Licenses \> Pick list values](../../settings/settings_licenses/settings_licenses/#settings--licenses--pick-list-values).
 7. Repeat steps 1-6 as needed. The internal contact saves once you save the license.
 
 
@@ -119,7 +119,7 @@ Internal contacts must have a user record created in the Users app in order to b
 
 1. Identify the internal contact you want to replace.
 2. Click **Replace user**.
-3. Repeat steps 3-6 under Adding an internal contact.
+3. Repeat steps 3-6 under [Adding an internal contact](#adding-an-internal-contact).
 
 
 ### Organizations
@@ -135,10 +135,10 @@ Organizations must have an organization record created in the Organizations app 
 
 1. Click **Add organization.**
 2. Click **Link organization.**
-3. In the **Select Organization** dialog, in the **Search & filter** box, enter part or all of the organization’s name, and click **Search**. Alternatively, you can select the All drop-down list and search for an organization based on the fields listed. For more information, see [Searching for an organization]({{< ref "/organizations.md#searching-for-an-organization" >}}).
+3. In the **Select Organization** dialog, in the **Search & filter** box, enter part or all of the organization’s name, and click **Search**. Alternatively, you can select the All drop-down list and search for an organization based on the fields listed. For more information, see [Searching for an organization](../../acquisitions/organizations/#searching-for-an-organization).
 4. (Optional) Filter results by Organizations status, Tags, Is vendor, Country, Languages, or Payment method.
 5. In the Organizations pane, click the **organization** to select it. The Select Organization dialog closes and the organization is added to the license record.
-6. Select a **Role** for the organization from the drop-down list. Roles are configured in the Settings app under [Licenses > License term pick list setup]({{< ref "/settings_licenses.md#settings--licenses--pick-lists" >}}).
+6. Select a **Role** for the organization from the drop-down list. Roles are configured in the Settings app under [Licenses \> Pick list setup](../../settings/settings_licenses/settings_licenses/#settings--licenses--pick-lists).
 7. (Optional) Enter a **Note** in the box.
 8. Repeat steps 1-7 as needed. The organization saves once you save the license.
 
@@ -191,7 +191,7 @@ If a core document is present in a license record, then a **copy icon** will app
 
 ### Terms
 
-Terms are the terms of use that define what you can or cannot do with the licensed content. In FOLIO, you can define the Terms that appear in license records through configurations in the Settings app. The Settings app is where you establish the term label, the type of term, default visibility of the term, and term status (primary or optional). For more information, see [Settings > Licenses > Terms]({{< ref "/settings_licenses.md#settings--licenses--terms" >}})
+Terms are the terms of use that define what you can or cannot do with the licensed content. In FOLIO, you can define the Terms that appear in license records through configurations in the Settings app. The Settings app is where you establish the term label, the type of term, default visibility of the term, and term status (primary or optional). For more information, see [Settings \> Licenses \> Terms](../../settings/settings_licenses/settings_licenses/#settings--licenses--terms).
 
 
 Primary terms appear on every license record by default. Optional terms can be added on a license-by-license basis. 
@@ -240,7 +240,7 @@ A supplementary document is any additional document relevant to the license reco
 
 1. Click **Add supplementary document.**
 2. Enter a **Name** in the box.
-3. Select a **Category** from the drop-down list. Categories for Supplementary documents can be configured in the Settings app under [Licenses > License term pick list setup]({{< ref "/settings_licenses.md#settings--licenses--pick-lists" >}}).
+3. Select a **Category** from the drop-down list. Categories for Supplementary documents can be configured in the Settings app under [Licenses \> License term pick list setup](../../settings_licenses/settings_licenses/#settings--licenses--pick-lists).
 4. (Optional) Enter a **Note** about the supplementary document.
 5. You must complete at least one of the following:
     *   Upload a file into the license record by dragging and dropping the file in the **Drag & drop to upload** box, or click **or choose file**.
@@ -263,7 +263,7 @@ If a supplementary document is present in a license record, then a **copy icon**
 
 You can search for licenses in the **Search & filter** pane. You can toggle between the Licenses and Amendments search at the top of the search and filter pane. Click Licenses to start your search. Enter your search terms in the search box and click **Search**.
 
-You can also search for licenses by selecting any of the filters in the **Search & filter** pane: Status, Type, Organizations, Organization role, Tags, Start date, End date, and Terms. For more information on the filters, see the filter descriptions below.
+You can also search for licenses by selecting any of the filters in the **Search & filter** pane: Status, Type, Organizations, Organization role, Tags, Start date, End date, Terms, Supplementary documents, Core documents, and License content. For more information on the filters, see the filter descriptions below.
 
 
 ### Status
@@ -275,7 +275,7 @@ To filter licenses by their status, in the **Search & filter** pane, click **Sta
 *   **Active.** Licenses currently in use by your library.
 *   **Expired.** Licenses no longer in use by your library.
 
-Status values are configured in [Settings > Licenses > Pick list values]({{< ref "/settings_licenses.md#settings--licenses--pick-list-values" >}}).
+Status values are configured in [Settings \> Licenses \> Pick list values](../../settings/settings_licenses/settings_licenses/#settings--licenses--pick-list-values).
 
 
 ### Type
@@ -287,7 +287,7 @@ To filter licenses by their type, in the **Search & filter** pane, click **Type*
 *   **Local.** Licenses specific to your library.
 *   **Consortial.** Licenses entered into through a library consortium.
 
-Type values are configured in [Settings > Licenses > Pick list values]({{< ref "/settings_licenses.md#settings--licenses--pick-list-values" >}}).
+Type values are configured in [Settings \> Licenses \> Pick list values](../../settings/settings_licenses/settings_licenses/#settings--licenses--pick-list-values).
 
 
 ### Organizations
@@ -311,7 +311,7 @@ To filter licenses by their associated organizations’ roles, follow these step
 3. In the drop-down list, search for the role.
 4. Select the role you want to filter by. The search results appear in the Licenses pane.
 
-Organization role values are configured in [Settings > Licenses > Pick list values]({{< ref "/settings_licenses.md#settings--licenses--pick-list-values" >}}).
+Organization role values are configured in [Settings \> Licenses \> Pick list values](../../settings/settings_licenses/settings_licenses/#settings--licenses--pick-list-values).
 
 
 ### Tags
@@ -353,7 +353,54 @@ To filter licenses by their terms, follow these steps:
 7. (Optional) To search for licenses using multiple term filters, click **Add term filter.** Note: To delete a rule or term filter in the Term filter builder, click on the **trash can icon** next to the rule or term filter.
 8. Click **Apply.** The search results appear in the Licenses pane.
 
-Term values are configured in [Settings > Licenses > Pick list values]({{< ref "/settings_licenses.md#settings--licenses--pick-list-values" >}}).
+Term values are configured in [Settings \> Licenses \> Pick list values](../../settings/settings_licenses/settings_licenses/#settings--licenses--pick-list-values).
+
+### Supplementary documents
+
+To filter licenses by their supplementary documents, follow these steps:
+
+
+1. In the **Search & filter** pane, click **Supplementary documents**.
+2. Click **Edit document filters.**
+3. In the **Supplementary document filter builder** dialog, select an **Attribute** from the drop-down list.
+4. Select an **Operator** from the drop-down list. 
+5. Enter a value in the **Value** box.
+6. (Optional) To continue to build the supplementary document filter, click **Add rule.**
+7. (Optional) To search for licenses using multiple supplementary document filters, click **Add filter.** Note: To delete a rule or filter in the Supplementary document filter builder, click on the **trash can icon** next to the rule or filter.
+8. Click **Save & close.** The search results appear in the Licenses pane.
+
+Document values are configured in [Settings \> Licenses \> Pick list values](../../settings/settings_licenses/settings_licenses/#settings--licenses--pick-list-values).
+
+### Core documents
+
+To filter licenses by their core documents, follow these steps:
+
+
+
+1. In the **Search & filter** pane, click **Core documents**.
+2. Click **Edit document filters.**
+3. In the **Core document filter builder** dialog, select an **Attribute** from the drop-down list.
+4. Select an **Operator** from the drop-down list. 
+5. Enter a value in the **Value** box.
+6. (Optional) To continue to build the core document filter, click **Add rule.**
+7. (Optional) To search for licenses using multiple core document filters, click **Add filter.** Note: To delete a rule or filter in the Core document filter builder, click on the **trash can icon** next to the rule or filter.
+8. Click **Save & close.** The search results appear in the Licenses pane.
+
+Document values are configured in [Settings \> Licenses \> Pick list values](../../settings/settings_licenses/settings_licenses/#settings--licenses--pick-list-values).
+
+
+### License content
+
+To filter licenses by their content, follow these steps:
+
+
+
+1. In the Search & filter pane, click **License content**.
+2. Select Has or Has not from the drop-down list. 
+3. Select one or more license content options from the list. These may include Alternative names, Internal contacts, Organizations, Core documents, Supplementary documents, Amendments, and Tags. Note, if you select multiple license content options, they are combined with OR (rather than AND). For example, if you select Alternative names and Internal contacts, the returned results will include license records with Alternative names OR Internal contacts. 
+4. To add another filter, click **Add filter** and select And or Or. 
+5. Repeat the above steps as desired. 
+6. Your results will appear in the Licenses pane.
 
 
 ## Viewing a license
@@ -471,8 +518,19 @@ In the search results, click on a license to view it. The license details pane d
 
 You can search for amendments in the **Search & filter** pane. You can toggle between the Licenses and Amendments search at the top of the search and filter pane. Click Amendments to start your search. Enter your search terms in the search box and click **Search**.
 
-You can also search for amendments by selecting any of the filters in the **Search & filter** pane: Status, Start date, End date, and Terms. For more information on the filters, see the filter descriptions under the [Searching for licenses](#searching-for-licenses) header.
+You can also search for amendments by selecting any of the filters in the **Search & filter** pane: Status, Start date, End date, Terms, Supplementary documents, Core documents, and Amendment content. For more information on the filters, see the filter descriptions under the [Searching for licenses](#searching-for-licenses) header.
 
+
+## Filtering amendments by content
+
+To filter amendments by their content, follow these steps:
+
+
+
+1. In the Search & filter pane, click **Amendment content**.
+2. Select Has or Has not from the drop-down list. 
+3. Select one or more amendment content options from the list. These may include Core documents, Supplementary documents, and Tags. Note, if you select multiple amendment content options, they are combined with OR (rather than AND). For example, if you select Core documents and Supplementary documents, the returned results will include amendment records with Core documents OR Supplementary documents. 
+4. Your results will appear in the Licenses pane.
 
 ## Adding and removing notes from a license
 
@@ -527,4 +585,4 @@ You can add and assign notes to license records. Assigning a note means you are 
 
 The Dashboard app is designed to enable a personalized view of key information from across FOLIO apps at a glance. In its first release (included in the Juniper flower release), the Dashboard includes the ability to display information from the Agreements and Licenses applications.
 
-In the Morning Glory release, the Licenses app comes with one dashboard widget ("ERM Licenses"). There are examples of how you can use this  widget definition to achieve a wide range of outcomes in the Example widget configurations documentation.
+The Licenses app comes with one dashboard widget ("ERM Licenses"). There are examples of how you can use this  widget definition to achieve a wide range of outcomes in the Example widget configurations documentation.

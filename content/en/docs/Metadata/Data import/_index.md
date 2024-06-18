@@ -9,6 +9,7 @@ tags: ["parenttopic"]
 
 The Data import app allows you to: 
 - **Import one or more Bibliographic MARC records for use by the Inventory app.**  To create or update (overlay) records.
+- **Import one or more Bibliographic MARC records for use by the Orders app.**  To create records.
 - **Import one or more Authority MARC records for use by the MARC Authority app.**  To create or update (overlay) records.
 - **Load EDIFACT invoices for use by the Invoices app.**  Supports the Folio acquisitions workflow.
 

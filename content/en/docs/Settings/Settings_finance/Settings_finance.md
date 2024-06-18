@@ -18,8 +18,6 @@ In order to interact with Finance settings, a user needs to be assigned the foll
 *   **Settings (Finance): View settings.** This permission allows the user view-only access to finance settings.
 *   **Settings (Finance): View, edit, create, delete.** This permission allows the user to view, create, edit, and delete all finance settings.
 
-Note: This is the only permission available for Finance settings. With some other Finance permissions, the user is able to view the settings, but they are unable to create, edit, or delete the settings. You can assign permissions to users in the Users app.
-
 
 ## Settings > Finance > Fund types
 

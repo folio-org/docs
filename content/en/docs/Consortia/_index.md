@@ -1,7 +1,7 @@
 ---
 title: "Consortium manager"
 linkTitle: "Consortium manager"
-date: 2024-01-22        
+date: 2024-04-26        
 weight: 675
 ---
 
@@ -15,7 +15,7 @@ The Consortium manager app allows libraries to share data and settings between m
 Definitions of terms related to Consortium manager:
 
 
-* **Affiliation**: Association with a given tenant (e.g. a user’s “active affiliation” is the tenant in which they are currently working) 
+* **Affiliation**: Association with a given tenant (e.g. a user’s “active affiliation” is the tenant in which the user is  currently working) 
 * **Central tenant**: The administrative tenant when Enhanced Consortial Support (ECS) is enabled.  
 * **Client**: A library or a branch library. 
 * **Consortium**: An association of independent libraries and/or library systems established by formal agreement, usually for the purpose of resource sharing. Membership may be restricted to a specific geographic region, type of library (public, academic, special), or subject specialization.
@@ -33,18 +33,21 @@ Definitions of terms related to Consortium manager:
 ## Permissions
 
 
-The permissions listed below allow the user to interact with the Consortium manager app and determine what the user can and cannot do within the app. If none of these permissions are assigned to a user, they are unable to see the Consortium manager app or any related consortial information. For more information on permissions, see [Platform Essentials > Permissions](../platform-essentials/permissions/).
+The permissions listed below allow the user to interact with the Consortium manager app and determine what the user can and cannot do within the app. If none of these permissions are assigned to a user, they are unable to see the Consortium manager app or any related consortial information. 
+
+For general information about permissions, see [Platform Essentials > Permissions](../platform-essentials/permissions/).
 
 
 The following are the permissions for Consortium manager:
 
 
-* **Consortia manager: Consortia API module all permissions.** This permission allows the user to use the Consortia API module to add or remove members in Consortium manager. 
+* **Consortia API module - all permissions.** This permission allows the user to use the Consortia API module to add or remove members in Consortium manager. 
 * **Consortia: Assign and unassign affiliations.** This permission allows the user to add or remove affiliations of other users.
 * **Consortia: View affiliations.** This permission allows the user to view the affiliations of other users.
 * **Consortium manager: Can create, edit and remove settings.** This permission allows the user to perform build, create, edit and delete actions via the Consortia manager BUT the user must have the correct permissions in individual tenants to carry out these actions.
 * **Consortium manager: Can share settings to all members.** This permission allows a user to create settings that will be shared by all members and is only editable in the central tenant.
 * **Consortium manager: Can view existing settings.** This permission allows a user to view all the settings of members they are affiliated with via the consortia manager.
+* **Inventory: Share local instance with consortium.** This permission allows a user to share local instance records with consortium members.
 
 
 ## Members
@@ -62,7 +65,7 @@ To view membership in **Consortium manager**, the user must be affiliated with t
 3. In the **Select members** window, the list of members in the consortia is displayed. 
 
 
-Members cannot currently be added or removed in Consortium manager, but membership details can be edited. For more information about editing membership, see [Settings > Consortium manager](../settings/settings_consortium-manager/settings_consortium-manager/#edit-member-details). 
+Members cannot currently be added or removed in Consortium manager, but membership details can be edited. For more information about editing membership, see [Edit member details](../settings/settings_consortium-manager/settings_consortium-manager/#edit-member-details). 
 
 
 ## User type
@@ -133,7 +136,7 @@ To unassign an affiliation with a member, follow these steps:
 ### Assign or unassign user permissions for an affiliation
 
 
-Users may be assigned permissions for any assigned affiliations. To manage user permissions for an affiliation, the process is similar to doing so for a user record in an individual tenant, except the **Affiliation** option is displayed in the **Permissions** accordion of the user record and the appropriate affiliation must be selected. For more information on assigning or removing permissions, see [Users \> Assign or unassign permissions](../users/#assign-or-unassign-permissions).
+Users may be assigned permissions for any assigned affiliations. To manage user permissions for an affiliation, the process is similar to doing so for a user record in an individual tenant, except the **Affiliation** option is displayed in the **Permissions** accordion of the user record and the appropriate affiliation must be selected. For more information on assigning or unassigning permissions, see [Users \> Assign or unassign permissions](../users/#assign-or-unassign-permissions).
 
 
 To assign affiliation permissions to a user record, go to the **Users** app and follow these steps:
@@ -277,10 +280,39 @@ To view a data import log for a member library, follow these steps:
 ### Inventory
 
 
-For Inventory purposes, shared settings allow the same **Instance notes** to be used by all member libraries. 
+For Inventory purposes, shared settings allow the following **Inventory** settings to be used by all member libraries: 
+#### Instances 
+* **Alternative title types**
+* **Classification identifier types**
+* **Contributor types**
+* **Formats**
+* **Instance note types**
+* **Instance status types**
+* **Modes of issuance**
+* **Nature of content**
+* **Resource identifier types**
+* **Resource types**
+
+#### Holdings
+* **Holdings note types**
+* **Holdings types**
+
+#### Items
+* **Item note types**
+* **Loan types**
+* **Material types**
+
+#### Instances, Holdings, Items
+* **Statistical code types**
+* **Statistical codes**
+* **URL relationship**
+
+#### Holdings, Items
+* **Call number types**
 
 
-To create a shared **Instance note** setting for Inventory, follow these steps:
+
+To create a shared setting for Inventory, follow these steps:
 
 
 1. In the **Settings** pane, select **Inventory**
@@ -291,23 +323,23 @@ To create a shared **Instance note** setting for Inventory, follow these steps:
 6. Fill out the **Name** field for the new setting.
 7. Check the box next to **Share**. 
 8. Click on **Save** in the **Actions** column. 
-9. A **Confirm member libraries** window appears with the message, *(Name of Note) will be saved for the member libraries* with an accompanying list of members. 
-10. Click **Confirm** to save the shared Inventory note. 
+9. A **Confirm share to all** modal appears with the message, *Are you sure you want to share (Name of Inventory Setting) with **ALL** members?*.
+10. Click **Keep editing** to make additional changes or click **Confirm** to save the setting. A *(Name of Inventory Setting) successfully **created** for **ALL** libraries* appears in the bottom right corner. 
 
 
-To create a local (unshared) **Instance note** for Inventory, follow these steps: 
+To create a local (unshared) setting for Inventory, follow these steps: 
 
 
 1. In the **Settings** pane, select **Inventory**
 2. In the **Inventory** pane, select the appropriate setting in the **Instances**, **Holdings**, **Items**, **Instances, Holdings, Items** or **Holdings, Items** sections. 
-3. Click on the **Select members** button in the **Request cancellation reasons** pane. Check the box next to the **Name** to select the member for whom the local (unshared) **Instance note** will be created.
+3. Click on the **Select members** button. Check the box next to the **Name** to select the member for whom the local (unshared) setting will be created. More than one member may be selected. To select all members, check the box next to **Name**.
 4. Confirm the number of selected members. In the **Settings for selected members can be modified at the same time** window, the number of members selected will display at the top of the window.
 5. Click the **New** button. 
 6. Fill out the **Name** field for the new **Instance note**..
 7. Leave the box next to **Share** empty.
 8. Click on **Save** in the **Actions** column. 
 9. A **Confirm member libraries** window appears with the message, *(Name of Note) will be saved for the member libraries* with an accompanying list of members. 
-10. Click **Confirm** to save the local Inventory note.
+10. Click **Confirm** to save the local (unshared) setting.
 
 
 ### Users
@@ -323,10 +355,10 @@ To view shared permissions, follow these steps:
 
 
 1. Select the central, or primary, tenant as the **active affiliation** in the top right corner if it is not already selected. If the central tenant is not selected, switch the active affiliation. 
-    - Click on the user profile icon in the top right corner of the screen to switch the **active affiliation**. 
-    - Select **switch active affiliation** in the drop-down menu. 
-    - Select the primary member from the **Consortium members** menu. 
-    - Click **Save & close**. 
+    * Click on the user profile icon in the top right corner of the screen to switch the **active affiliation**. 
+    * Select **switch active affiliation** in the drop-down menu. 
+    * Select the primary member from the **Consortium members** menu. 
+    * Click **Save & close**. 
 2. In **Consortium manager**, select **Users** in the **Settings** pane. 
 3. In the **Users** pane, select **Permission sets**. 
 4. In the **Permission sets** pane, select the **Member** for which you wish to view the assigned permission set(s) from the drop-down menu. If the member is not displayed as an option, click on the **Select members** button and check the box next to the member’s **Name** in the **Select members** window.
@@ -379,23 +411,23 @@ To edit permissions assigned to a shared user permission set, follow these steps
 4. Select the **Permission set** to view its **General information**, including **Permission set name** and **Description**, **Assigned permissions**, and **Assigned users**. 
 5. Expand the **Assigned permissions** accordion to view the list of **permissions** included in the **permission set**. 
 6. Select the **permission set**. The **permission set** will open in a new pane. 
-7. Click on the **Edit** button in the top right corner of the permission set pane. A new **Edit: [Permission name]** window opens. 
-    - To add, or assign, a permission to a permission set:
-        - Expand the **Assigned permissions** accordion and click on the **Add permission** button. In the new window, select the appropriate permissions to add to the permission set by searching and filtering or checking the box by the permission’s name. More than one permission may be added to the permission set in this step. 
-        - Click **Save & close**.
+7. Click on the **Edit** button in the top right corner of the permission set pane. A new **Edit: [Permission name]** window opens.
+8. Expand the **Assigned permissions** accordion and click on the **Add permission** button. In the new window, select the appropriate permissions to add to the permission set by searching and filtering or checking the box by the permission’s name. More than one permission may be added to the permission set in this step.
+9. Click **Save & close**.
 
 
-    - To remove, or unassign, a permission from a permission set: 
-        - Expand the **Assigned permissions** accordion and click on the **Add permission** button. In the new window, uncheck the box next to the name of the permission to remove it from the permission set. More than one permission may be removed from the permission set in this step. 
-        - Click **Save & close**.
+To remove, or unassign, a permission from a permission set: 
+
+1. Expand the **Assigned permissions** accordion and click on the **Add permission** button. In the new window, uncheck the box next to the name of the permission to remove it from the permission set. More than one permission may be removed from the permission set in this step. 
+2. Click **Save & close**.
 
 
-    - To remove or unassign all permissions in the permission set: 
-        - Click on the **Unassign all permissions** button. 
-        - Click **Save & close**.
+To remove or unassign all permissions in the permission set: 
+1. Click on the **Unassign all permissions** button. 
+2. Click **Save & close**.
 
 
-For more information about creating, editing, assigning, and unassigning permissions, see [User > Permissions](../users/#user-permissions).
+For more information about creating, editing, assigning, and unassigning permissions, see [Users \> Permissions](../users/#user-permissions).
 
 
 To assign or unassign shared permissions to a user: 
@@ -468,7 +500,7 @@ To create a local (unshared) **Patron group** for the consortium, follow these s
 7. Click the **New** button in the **Patron groups** pane. 
 8. Fill out the **Patron group**, **Description**, **Expiration date offset (number of days)** fields.
 9. Leave the **Share** box in the **Member libraries** column unchecked. 
-10. Click **Actions \>Save**. 
+10. Click **Actions \> Save**. 
 
 
 To edit a **Patron group**, follow these steps:

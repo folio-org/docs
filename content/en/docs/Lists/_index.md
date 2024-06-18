@@ -1,7 +1,7 @@
 ---
 title: "Lists"
 linkTitle: "Lists"
-date: 2024-01-22        
+date: 2024-04-26        
 weight: 525
 ---
 
@@ -55,7 +55,7 @@ The following are the permissions for the Lists app:
 ## View a list
 
 
-To view a list, open the Lists app. Lists that have been created by you and/or shared with you are displayed in the **Lists** pane. 
+To view a list, open the Lists app. A list of Lists is displayed in the **Lists** pane. 
 
 
 ### Filters
@@ -77,9 +77,14 @@ The selection of lists in the **Lists** pane can be narrowed by applying filters
 
 
 * **Record Types**
+   * **Holdings**: Record set of list includes holdings records.
+   * **Instance**: Record set of list includes instance records.
    * **Items**: Record set of list includes item records. 
    * **Loans**: Record set of list includes loans.
-   * **Users**: Record set of list includes user records. 
+   * **Organizations - contact info**: Record set of list includes contact information for each organization.
+   * **Organizations - vendor**: Record set of list includes agreements for each organization.
+   * **Purchase order lines**: Record set of list includes information about purchase order lines (POLs).
+   * **Users**: Record set of list includes user records.
 
 
 Select a list to view by highlighting and clicking on it in the **Lists** pane. The selected list opens in a new window.
@@ -119,9 +124,6 @@ To view the refreshed list, click **Actions \> Refresh List** and click the **Vi
 A new list must have **List information** and a **Query** assigned to establish the record set for the list. A **Test query** must be performed before the query can be run and saved. 
 
 
-A record set in a list is currently limited to 1.25 million records. 
-
-
 ### List information
 
 
@@ -130,123 +132,36 @@ To add list details for a new list, follow these steps:
 
 1. In the Lists pane, click on **New**. 
 2. In the **New List** window, add the **List name**, **Description**, **Visibility**, and **Status** criteria in the **List information** section. 
-3. Select the appropriate **Record type** for the list. Record types include **Items**, **Loans**, and **Users**.
-4. Click **Build query** to start building a query for the list. For more information, see [Build a query](#build-a-query).
+3. Select the appropriate **Record type** for the list. Select the appropriate **Record type** for the list. Record types include **Holdings**, **Instances**, **Items**, **Loans**, **Organizations - contact info**, **Organizations - vendor info**, **Purchase order lines**, and **Users**.
 
 
 ### Build a query
 
 
-The **Build query** function in the Lists app allows the user to build a query for these record types: **Items**, **Loans**, and **Users**. The query string populates in the **Query** field as the query is built. 
+The **Build query** function in the Lists app allows the user to build a query for these record types: **Holdings**, **Instances**, **Items**, **Loans**, **Organizations - contact info**, **Organizations - vendor info**, **Purchase order lines**, and **Users**. The query string populates in the **Query** field as the query is built. 
 
 
 To set criteria and build a query for new list, follow these steps: 
 
 
 1. Click the **Build query** button to open the **Build query** window. 
-2. Select the **Record type** for the query. Currently, record types include **Items**, **Loans**, and **Users**. For more information about building a query for a specific record type, see [**Items**](#record-type-items), [**Loans**](#record-type-loans), or [**Users**](#record-type-users) as appropriate.
+2. Select the **Record type** for the query. 
 3. Select a **Field** from the **Filter options list** drop-down menu. The **Fields** available for selection in the **Filter options** are based on the **Record Type**. 
-4. Select an **Operator** from the **Select operator** drop-down list.
+4. Select an **Operator** from the **Select operator** drop-down list. The operators available for selection are based on the **Field**. 
+
+* ==: Field equals the selected Value.
+* !=: Field does not equal the selected Value.
+* In: Field appears in the selected Value.
+* Not in: Field does not appear in the selected Value.
+* Is null/empty: Field is empty; it contains no data. 
+
 5. Select a **Value** from the **Select value** drop-down list. The **Values** available for selection are based on the **Record Type** and **Field**.
-6. Click on the **+ icon** to add additional lines to the query. 
-7. Click the **Test query** button to see how many records are returned and to preview the record set of the list. See [Test query](#test-query) for more information. 
-
-
-#### Record type: Items
-
-
-To build a query for **Record type: Items**, follow these steps:
-
-
-1. Select a **Field** from the *Filter options list* drop-down menu. The **Fields** available for selection in the **Filter options** are based on the **Record Type**. 
-2. Select an **Operator** from the **Select operator** drop-down list:
-* ==: Selected **Field** equals the selected **Value**.
-* !=: Selected **Field** does not equal the selected **Value**.
-* In: Selected **Field** appears in the selected **Value**.
-* Not in: Selected **Field** does not appear in the selected **Value**.
-3. Select a **Value** from the **Select value** drop-down list. The **Values** available for selection are based on the **Record Type** and **Field**.
-4. Click on the **+ icon** to add additional rows to the query. Click on the **trash can icon** to delete rows from the query. 
-5. Click the **Test query** button to see how many records are returned and to preview the record set of the list. In an **Items** test query preview, the default column headings for the record set displayed include: 
-
-
-* **Instance title**
-* **Item barcode** 
-* **Item copy number** 
-* **Item effective call number**
-* **Item effective location name**
-
-
-To change the display of columns headings, click on the **Show columns** button. Uncheck fields to remove them from the display. Check fields to include them in the display.  
-
-6. Click **Run query & save**. If saved successfully, a **Refresh complete with (number of) records* message displays along with a link to **View Updated List**.
-
-
-#### Record type: Loans
-
-
-To build a list for **Record type: Loans**, follow these steps:
-
-
-1. Select a **Field** from the *Filter options list* drop-down list. The **Fields** available in the **Filter options list** are based on the selected **Record Type** . 
-2. Select an **Operator** from the **Select operator** drop-down menu.
-
-
-* ==: Selected **Field** equals selected **Value**.
-* !=: Selected **Field** does not equal selected **Value**.
-* Contains: Selected **Field** appears in selected **Value**.
-* Starts: Selected **Field** starts with selected **Value**.
-
-
-3. Select a **Value** from the **Select value** drop-down menu. The **Values** available for selection are based on the **Record Type** and **Field**. 
-4. Click on the **+icon** to add additional lines to the query. 
-5. Click the **Test query** button to see how many records are returned and to preview the record set of the list. In a **Loans** list test query preview, the default column headings for the record set displayed include: 
-
-
-* **Instance title**
-* **Item status**
-* **Loan due date**
-* **User barcode**
-* **User expiration date**
-* **User full name**
-* **User patron group** 
-
-To change the display of column headings, click on the **Show columns** button. Uncheck fields to remove them from display; Check fields to include them in the display. 
-
-6. To save the query and the list, click the **Run query & save** button. If saved successfully, a *Refresh complete with (number of) records* message displays along with a link to **View Updated List**.
-
-
-#### Record type: Users
-
-
-1. Select a **Field** from the *Filter options list* drop-down list. The **Fields** available for selection in the **Filter options list** are based on the **Record Type** and **Value**. 
-2. Select an **Operator** from the **Select operator** drop-down menu.
-
-
-* ==: Selected **Field** equals selected **Value**.
-* !=: Selected **Field** does not equal selected **Value**.
-* In: Selected **Field** appears in selected **Value**.
-* Not in: Selected **Field** does not appear in selected **Value**.
-
-
-3. Select a **Value** from the **Select value** drop-down list. The **Values**available for selection in the **Select value** menu are based on the **Record Type** and **Field**. 
-4. Click on the **+icon** to add additional lines to the query. 
-5. Click the **Test query** button to see how many records are returned and to preview the record set of the list. In a **Users** test query preview, the default column headings for the record set displayed include: 
-
-
-* **User active**
-* **User barcode** 
-* **User first name**
-* **User ID**
-* **User last name** 
-* **User phone**
-* **User preferred first name** 
-* **Username**
-
-
-To change the display of column headings, click on the **Show columns** button. Uncheck fields to remove them from display; Check fields to include them in the display. 
-
-6. To save the query and the list, click the **Run query & save** button.
-7. If successfully saved, a *Refresh complete with (number of) records* message displays along with a link to **View Updated List**.
+6. Click on the **+ icon** to add additional lines to the query; Click on the **trash can icon** to delete a line from the query. 
+7. Click the **Test query** button to preview the returned record set of the list. 
+Test query is required before the query can be run and saved whenever 1) creating a new list and building the query; and 2) editing the query of an existing list. Test query runs the query and displays the total number of records retrieved and a preview of the first 100 records in the record set. 
+8. Click **Run query & save**. If saved successfully, a *(Name of List) saved successfully* message appears momentarily. Once the query is completed, a *Refresh complete with (number of) records: View updated list* at the top of the window. 
+9. Click the **View updated list** link in the confirmation message to view the record set in the list. 
+10. In a list, the fields of the record type display as column headings. The default display of column headings is based on the record type assigned to the list. Customize the display of column headings in the record set by checking or unchecking the field(s) in **Actions \> Show columns** as appropriate for the selected record type. 
 
 
 ### Test query
@@ -278,19 +193,13 @@ To refresh or update the record set in a list, follow these steps:
 ## Edit a list
 
 
-### Edit the list information
-
-
 To edit the **List information** in a list, follow these steps: 
 
 
 1. Select the list in the **Lists** pane. The list opens a new window.
 2. Click **Actions \> Edit List**. 
 3. In the **List information** section, edit the **List name**, **Description**, **Visibility**, and/or **Status** fields as appropriate.
-4. Click **Save**. A *List _List Title_ was saved* confirmation message will appear in the lower right corner of the screen. 
-
-
-### Edit the query
+4. Click **Save**. A *List (List Title) was saved* confirmation message will appear in the lower right corner of the screen. 
 
 
 To edit the **Query** in a list, follow these steps: 
@@ -303,6 +212,20 @@ To edit the **Query** in a list, follow these steps:
 5. Click the **Test query** button to see how many records are returned and to preview the record set of the list. See [Test query](#test-query) for more information. 
 6. Click the **Run query & save** button. A confirmation message, *List_ListTitle_was saved* will appear in the lower right corner of the screen. 
 
+
+## Duplicate a list
+
+To duplicate a list, follow these steps:
+
+1. Select the list from the **Lists** pane. The selected list will open in a new window. 
+2. Click **Actions \> Duplicate List**. 
+3. Edit the **List name**, **Description** (optional), or change **Visibility** and **Status**,  if appropriate. 
+4. Edit the query, if appropriate, by clicking the **Edit query** button. 
+5. Make changes to **Field**, **Operator**, and/or **Value**. The **Query** field displays a preview of the query string as it is edited.
+6. If necessary, click on the **+ icon** to add additional rows to the query; click on the **trash can icon** to delete rows from the query. 
+7. Click the **Test query** button to see how many records are returned and to preview the record set of the list. Test query is required when editing the query of a list before the new query can be run and saved. 
+8. Click the **Run query & save** button. A confirmation message, *List (Duplicate List Name) was saved* will appear in the lower right corner of the screen. 
+If duplicating the list without making any changes, click **Save.** A confirmation message, *List (Original List Name) - copy was saved* appears in the lower right corner of the screen. 
 
 ## Delete a list
 

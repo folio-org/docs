@@ -1,7 +1,7 @@
 ---
 title: "Bulk Edit"
 linkTitle: "Bulk Edit"
-date: 2024-02-28
+date: 2024-05-09
 weight: 550
 ---
 
@@ -14,8 +14,9 @@ The Bulk Edit app allows a user to apply changes to multiple FOLIO records simul
 Bulk edit can apply changes to these record types:
 
 
-* **Inventory holdings**
-* **Inventory items**
+* **Inventory - holdings**
+* **Inventory - instances**
+* **Inventory - items**
 * **Users**
 
 
@@ -32,7 +33,8 @@ The following are the permissions for the Bulk edit app:
 
 
 - **Bulk edit: In App - Edit user records.** This permission allows the user to edit multiple user records in the Bulk Edit app. 
-- **Bulk edit: Can view logs** This permission allows the user to view logs in the Bulk Edit app.
+- **Bulk edit: Can build query**: This permission allows the user to build and test a query, and preview matched records in the Bulk edit app. 
+- **Bulk edit: Can view logs** This permission allows the user to download and view logs in the Bulk Edit app.
 - **Bulk edit: In app - Edit inventory records** This permission allows the user to edit a field in multiple inventory records in the Bulk Edit app. 
 - **Bulk edit: In app - View inventory records** This permission allows the user to view a list of inventory records in the Bulk Edit app. 
 - **Bulk edit: Local - Edit user records** This permission allows the user to edit a field in multiple user records in Bulk Edit using the CSV approach.
@@ -51,7 +53,7 @@ The Bulk edit app provides two methods for editing records:
 * **Bulk edit (Local)**: The **Bulk edit (Local)** approach is also referred to as **CSV**. This approach uses a .csv file to display records matching a selected **Record identifier**. Changes are made to the records and saved in the .csv file, and committed to FOLIO by uploading the edited .csv file. 
 
 
-Note that Microsoft Excel processes .csv files in ways that may change data unexpectedly, especially date and time fields. Reviewing the .csv data in a text editor helps ensure that no unexpected changes are made to records with **Bulk edit (Local)**.
+Note that Microsoft Excel processes .csv files in ways that may change data unexpectedly, especially date and time fields. Reviewing the .csv data in a text editor helps ensure that no unexpected changes are made to records when using **Bulk edit (Local)**.
 
 
 ## Inventory - holdings
@@ -137,20 +139,77 @@ To bulk edit the permanent holdings location of the matched records, follow thes
 5. The **Preview of records to be changed** will pop up with options of **Keep editing**, **Download preview**, or **Commit changes**.
 6. The changes will be applied to the item records once **Commit changes** is clicked.
 
+## Inventory - instances
+
+### Identify records
+
+The **Bulk edit** app accepts only .csv files for upload. Files should include only one column of record identifiers. If the file contains more than one column, the upload will not be successful and a *Something went wrong* message will display. 
+
+In the **Set criteria** pane, ensure **Record types** is set to **Inventory - instances**.
+In the **Set criteria** pane, select the **Record identifier** from the drop-down list. The record identifier you select should correspond to the type of record identifier in the CSV file uploaded.
+Either drag and drop your CSV file into the box, or click **or choose file** to locate the file on your computer. The .csv file automatically uploads and searches for matching **Items** records.
+
+### Preview matched records
+
+Once the file upload is complete, the matching **Instances** records are listed in the **Preview of record matched** pane. To customize the column headings in the preview, click the **Actions** button. To add, check the box next to the column heading; to remove, uncheck the box or leave it empty. 
+
+### Download Matched Records (CSV)
+
+1. Click the **Actions** button.
+2. From the drop-down menu, select **Download matched records (CSV)**.
+3. Open the file on your local device.
+4. Edit the records and save the file on your local device. Make sure you save the file in CSV format.
+
+### Download Errors (CSV)
+
+The **Error** accordion contains a list of errors found when searching for the matched records, if any, and displays the errors in two columns:
+
+**Record identifier.** The identifier for the record that produced the error
+**Reason for error.** The reason the search did not result in a matched record. 
+
+### Start bulk edit
+
+Inventory - instances may be changed by using the Bulk edit or In-app approach. The actions that can be done in instance records with this approach include **Staff suppress** and **Suppress from discovery**. 
+
+To start a bulk edit on the matched records, follow these steps:
+
+1. Click the **Actions** button.
+2. From the drop-down menu, select **Start bulk edit**. 
+3. Under **Options**, click the drop-down list and select the option you want to execute.
+4. Under **Actions**, click **Select action** and select the action you want to apply to the instance records.
+5. To edit another field during the same bulk edit job, click the plus sign near the end of the row. Another row will appear under the existing row(s).
+6. To delete a row, click the trash icon at the end of the row you want to delete. The row is deleted. 
+7. Click **Confirm changes**. A new window will appear with a preview of the first 10 records to be changed.
+8. To return to the bulk edit, click **Keep editing**. The window will close and you can continue editing.
+9. To preview the entire list of records, click **Download preview**. A .csv file is downloaded to your local device.
+10. To run the bulk edit job, click **Commit changes**. The window closes and the banner at top of the Bulk edit pane displays the number of records successfully changed.
+11. To download the list of changed records, click the **Actions** button at the top right of the pane.
+12. Select **Download changed records (CSV)**. The .csv file is downloaded to your local device. 
+
+#### Staff suppress
+
+To suppress the matched item records from staff view in the Bulk edit app, follow these steps:
+
+1. In the **Bulk edit** window, select **Staff suppress** from the **Select option** drop-down list.
+2. Select the appropriate Action from the Select action drop-down list.
+   * **Set true**: Suppresses the matched item records from staff view in the Bulk edit app.
+   * **Set false**: Unsuppresses the matched item records from staff view in the Bulk edit app.
+3. Click **Confirm changes**to apply the changes to the matched item records.
+4. An *Are you sure?* message appears in a new window with a **Preview of records to be changed**. An alert appears at the top of the window: *(Number of) records will be changed if the Commit changes button is clicked. You may choose Download preview to review all changes prior to saving.
+5. Click **Keep editing** to return to the Bulk edits window, **Download preview** to preview the changes before saving, or **Commit changes** to run the bulk edit.
 
 #### Suppress from discovery
 
+To suppress the matched instance records from discovery in the Bulk edit app, follow these steps:
 
-To suppress the matched item records from discovery in the Bulk edit app, follow these steps:
-
-
-1. In the **Bulk edit** window, select **Suppress from discovery** from the **Select option** drop-down list.
-2. Select the appropriate Action from the **Select action** drop-down list.
-   - Set true: Suppresses the matched item records from discovery.
-   - Set false: Unsuppresses the matched item records from discovery.
-3. Click **Confirm changes** to apply the changes to the matched item records.
-4. An *Are you sure?* message appears in a new window with a **Preview of records to be changed**. An alert appears at the top of the window: *(Number of) records will be changed if the Commit changes button is clicked.* You may choose Download preview to review all changes prior to saving. Click **Keep editing** to return to the Bulk edits window, **Download preview** to preview the changes before saving, or **Commit changes** to run the bulk edit.
-5. The changes will be applied to the matched item records once **Commit changes** is clicked.
+ 1. In the **Bulk edit** window, select **Suppress from discovery** from the **Select option** drop-down list.
+ 2. Select the appropriate Action from the Select action drop-down list.
+    * **Set true**: Suppresses the matched instance records from discovery.
+    * **Set false**: Unsuppresses the matched instance records from discovery.
+ 3. Once an action is selected, the Data defaults to apply the same **Set true** or **Set false** action to all holdings records and all items records. Click the appropriate checkbox(es) if you do not want the selected action to be applied to the holdings records and/or item records, 
+ 4. Click **Confirm changes** to apply the changes to the matched ins records.
+ 5. An *Are you sure?* message appears in a new window with a **Preview of records to be changed**. An alert appears at the top of the window: *(Number of) records will be changed if the Commit changes button is clicked.* You may choose Download preview to review all changes prior to saving.
+ 6. Click **Keep editing** to return to the Bulk edits window, **Download preview** to preview the changes before saving, or **Commit changes** to run the bulk edit. The changes will be applied to the matched item records once **Commit changes** is clicked. 
 
 
 ## Inventory - items
@@ -396,37 +455,70 @@ To suppress the matched item records from discovery in the Bulk edit app, follow
 
 The Bulk Edit app accepts only .csv files for editing record identifiers in a record. The .csv file used to set criteria must include only one column of record identifiers. 
 
+The Bulk Edit app accepts only .csv files for identifying records. The .csv file used to set criteria must include only one column of record identifiers. 
 
-To set criteria for **Bulk edit**, follow these steps: 
+There are two methods for identifying records for Bulk edit: **Identifier** and **Query**. 
 
+### Identifier
 
-1. In the **Set Criteria** pane, select **Users** under **Record types**.
-2. Select the record identifier type from the  **Select record identifier** drop-down menu.
-The **record identifiers** for bulk edit include:
+To set criteria for bulk edit using **Identifier**, follow these steps: 
 
-    - **User UUIDs**
-    - **User barcodes**
-    - **External IDs**
-    - **Usernames**
-      
-3. **Drag and drop** your .csv file into the **Select a file with record identifiers** box, or click **or choose file** to upload the .csv file from your computer.
+ 1. In the **Set Criteria** pane, select the **Identifier** button.
+ 2. Select **Users** under **Record types**.
+ 3. Select the record identifier type from the  **Select record identifier** drop-down menu.
+ 4. The **record identifiers** for Users include:
+
+ * **User UUIDs**
+ * **User barcodes**
+ * **External IDs**
+ * **Usernames**
+ 5. **Drag and drop** your .csv file into the **Select a file with record identifiers** box, or click **or choose file** to upload the .csv file from your computer.
+
+### Query
+
+The **Query** function in the Bulk Edit app allows the user to build a query to identify records for bulk edit. 
+
+To set criteria for bulk edit using **Query**, follow these steps: 
+
+1. In the **Set Criteria** pane, click on the **Query** tab.
+2. Select **Users** under **Record types**.
+3. Click the **Build query** button to open the **Build query** modal.
+4. Select a **Field** from the *Select field* drop-down menu or filter the selection by typing the field in the *Filter options list* text box.
+5. Select an **Operator** from the *Select operator* drop-down list. The operators available for selection are based on the Field. 
+
+ *  ==: Field equals selected or input Value.
+ *  !=:  Field does not equal selected or input Value.
+ *  Contains: Field appears in selected or input Value.
+ *  Starts: Field starts with selected or input Value.
+ *  \>: Field is greater than the selected or input Value.
+ *  <: Field is less than the selected or input Value.
+ *  \>=: Field is greater than or equal to the selected or input Value.
+ *  <=: Field is less than or equal to the selected or input Value.
+ *  Is null/empty: Field is blank; it contains no data.
+ 6. Select a **Value** from the *Select value* drop-down list or type the value in the Value text box.  The Values available for selection are based on the Field and Operator.
+ 7. Click on the **+ icon** to add additional lines to the query; Click on the **trash can icon** to delete a line from the query. 
+ 8. Once a query is built, it must be tested before the query can be run and saved. Click the **Test query** button to run the query and display a preview of matched records. The query string can be edited in the **Query string** field. If edited, another Test query must be done.
+ 9. If the Test query is successful, click the **Run query** button to run the query and preview the matched records in the **Bulk edit query** modal.
 
 
 ### Preview matched records
 
+If the **Identifier** method is used to identify records for bulk edit, the number of records matched and the filename display at the top of the **Bulk edit** modal. 
 
-Once the .csv file is uploaded, the number of records matched and the filename display at the top of the **Bulk edit** pane. 
+If the **Query** method is used to identify records for bulk edit, a Test query displays the Query string and number of records retrieved at the top of the **Build query** modal. 
+
+ If the **Query** is run, the query and a preview of matched records display in the **Bulk edit query** modal. 
 
 
-The following information appears in the **Preview of record matched** pane:
+In either method, the following information appears in the **Preview of record matched** pane:
 
 
-* **Username.** The username of the user.
-* **Barcode.** The barcode from the user record.
-* **Status.** The status of the user.
-* **Patron group.** The patron group assigned to the user. 
-* **Last name.** The last name of the user.
-* **First name.** The first name of the user.
+- **Username.** The username of the user.
+- **Barcode.** The barcode from the user record.
+- **Status.** The status of the user.
+- **Patron group.** The patron group assigned to the user. 
+- **Last name.** The last name of the user.
+- **First name.** The first name of the user.
 
 
 To include or remove record identifier columns in the preview pane, click **Actions \> Show columns**, check the box next to the name of the record identifier to include as a column in the preview; or uncheck the box next to the name of the record identifier to remove the column from the preview.
@@ -439,7 +531,7 @@ To download the matched records as a .csv file, follow these steps:
 
 
 1. In the **Preview** pane, click **Actions \> Download matched records (CSV)**.
-2. Depending on the web browser, the .csv file may be opened and/or saved. 
+2. Depending on the web browser settings, the .csv file may be opened and/or saved. 
 
 
 ### Download errors
@@ -459,102 +551,48 @@ To download the errors as a .csv file, follow these steps:
 
 
 1. In the **Preview** pane, select **Actions \> Download errors (CSV)**.
-2. Depending on the web browser, the .csv file may be opened and/or saved. 
+2. Depending on the web browser settings, the .csv file may be opened and/or saved. 
 
 
 ### Start bulk edit 
 
+The data in the **Email**, **Expiration date**, and **Patron group** fields of matched user records can be replaced with new data by using the Bulk edit approach. Bulk edit may be performed on each of these fields individually or simultaneously. To bulk edit all three fields simultaneously, click the **+ icon** at the end of the row to add another bulk edit option. 
 
-In matching user records, the **Email**, **Expiration date**, and **Patron group** fields of matched user records can be changed by using the Bulk edit approach. Bulk edit may be performed on each of these fields individually or simultaneously. To bulk edit all three fields simultaneously, click the **+ icon** at the end of the row to add another bulk edit option. 
-
-
-
-
-
-
-#### Email
-
-
-To bulk edit the **Email** field in the matched records, follow these steps:
-
+To start a bulk edit, follow these steps:
 
 1. In the **Preview** pane, click **Actions > Start bulk edit**. The number of matched records and the filename of the .csv file display at the top of the **Bulk edit** window.
-2. In the **Bulk edits** section select **Email** from the **Select option** menu under **Options**
-3. For **Email**, bulk edit performs a find and replace in the email address field of the matched records. Thus, the **Actions** available are **Find** and **Replace with** . Type the appropriate text in the boxes next to **Find** and **Replace with**. 
-4. Click the **Confirm changes** button. 
-5. An *Are you sure?* message appears in a new window. The message *(Number of) records will be changed if the Commit changes button is clicked.* You may choose Download preview to review all changes prior to saving. A **Preview of records to be changed** is also displayed.
-   
-    - Click **Keep editing** to return to the Bulk edit window.
-    - Click **Download preview** to download a .csv file of the proposed changes. 
-    - Click **Commit changes** to run the bulk edit.
-
-      
-6. When the bulk edit is complete, a confirmation message, *(Number of) records have been successfully changed*, appears in the **Bulk edit** window.
-7. To change the column headings in the **Preview of record changed** table, click **Actions** and select or deselect the fields in the **Show columns** list as appropriate.
-8. To download a .csv file of changed records, click **Actions > Download changed records (CSV)**.
-
-
-#### Expiration date
-
-
-To bulk edit the **Expiration date** field in the matched records, follow these steps:
-
-
-1. In the **Preview** pane, click **Actions > Start bulk edit**. The number of matched records and the filename of the .csv file display at the top of the **Bulk edit** window. 
-2. In the **Bulk edits** section, select **Expiration date** from the **Select option** menu under **Options**
-3. Bulk edit performs a **replace with** function for the **Expiration date** field of the matched records. Thus, **Replace with** is the only option available. Use the **calendar icon** to select the new expiration date or type the new expiration date in the box using the MM/DD/YYYY format. 
-4. Click the **Confirm changes** button. 
-5. An *Are you sure?* message appears in a new window. The message *(Number of) records will be changed if the Commit changes button is clicked.* You may choose Download preview to review all changes prior to saving. A **Preview of records to be changed** is also displayed.
-   
-    - Click **Keep editing** to return to the Bulk edit window.
-    - Click **Download preview** to download a .csv file of the proposed changes. 
-    - Click **Commit changes** to run the bulk edit.
-
-      
-6. When the bulk edit is complete, a confirmation message, *(Number of) records have been successfully changed*, appears in the **Bulk edit** window.
-7. To change the column headings in the **Preview of record changed** table, click **Actions** and select or deselect the fields in the **Show columns** list as appropriate.
-8. To download a .csv file of changed records, click **Actions > Download changed records (CSV)**.
-
-
-#### Patron group
-
-
-To bulk edit the **Patron group** field in the matched records, follow these steps:
-
-
-1. In the **Preview** pane, click **Actions > Start bulk edit**. The number of matched records and the filename of the .csv file display at the top of the **Bulk edit** window. 
-2. In the **Bulk edits** section, select **Patron group** from the **Select option** menu under **Options**
-3. Bulk edit performs a **replace with** function for the **Patron group** field of the matched records. Thus, **Replace with** is the only option available. Select the new patron group from the **Select patron group** menu. 
-4. Click the **Confirm changes** button.
-5. An *Are you sure?* message appears in a new window. The message *(Number of) records will be changed if the Commit changes button is clicked.* You may choose Download preview to review all changes prior to saving. A **Preview of records to be changed** is also displayed.
-   
-    - Click **Keep editing** to return to the Bulk edit window.
-    - Click **Download preview** to download a .csv file of the proposed changes.
-    - Click **Commit changes** to run the bulk edit.
-
-      
-6. When the bulk edit is complete, a confirmation message, *(Number of) records have been successfully changed*, appears in the **Bulk edit** window.
-7. To change the column headings in the **Preview of record changed** table, click **Actions** and select or deselect the fields in the **Show columns** list as appropriate.
-8. To download a .csv file of changed records, click **Actions > Download changed records (CSV)**.
+2. In the **Bulk edits** section, select **Email**, **Expiration Date**, or **Patron Group**.
+ - For **Email**, bulk edit performs a find and replace in the email address field of the matched records. Thus, the **Actions** available are **Find (full field search)** and **Replace with** . Type the current data (text) in the **Find (full field search)** box. Type the new data (text) in the **Replace with** box. 
+ - For **Expiration date**, bulk edit replaces the date in the Expiration date of the matched records. Thus, the **Actions** available are limited to **Replace with**.  Type the new expiration date in MM/DD/YYYY format in the **Data** box. 
+ - For **Patron group**, bulk edit replaces the Patron group data in the matched records. Thus, the **Actions** available are limited to **Replace with**. Select the new Patron group from the **Data** drop-down menu. 
+3. Click the **Confirm changes** button.
+4. A message appears in the **Are you sure?**modal. The message *(Number of) records will be changed if the Commit changes button is clicked. You may choose Download preview to review all changes prior to saving.* A **Preview of records to be changed** is also displayed.
+ - Click **Keep editing** to return to the Bulk edit window.
+ - Click **Download preview** to download a .csv file of the proposed changes. 
+ - Click **Commit changes** to run the bulk edit.
+5. When the bulk edit is complete, a confirmation message, *(Number of) records have been successfully changed*, appears in the **Bulk edit** window. 
+6. To change the column headings in the **Preview of record changed** table, click **Actions** and select or deselect the fields in the **Show columns** list as appropriate.
+7. To download a .csv file of changed records, click **Actions > Download changed records (CSV)**. 
 
 
 ### Start bulk edit (Local)
 
-
 The **Bulk edit (Local)** function allows the user to perform a bulk edit on records edited locally (external to FOLIO) by uploading a .csv file of the changed, or edited, records. 
 
+Any field in matching user records can be changed by using the Bulk edit (Local) approach.
 
-In matching user records, the **Email**, **Expiration date**, and **Patron group** fields of matched user records can be changed by using the Bulk edit (Local) approach. 
+Note that Microsoft Excel processes .csv files in ways that may change data unexpectedly, especially date and time fields. Reviewing the .csv data in a text editor helps ensure that no unexpected changes are made to records with **Bulk edit (Local)**.
 
+To use **Bulk edit (Local)** approach to apply changes to records, follow these steps: 
 
-To use bulk edit to apply local changes to records, follow these steps: 
-
-
-1. Select **Actions \> Start bulk edit (Local)**. 
-2. In the **Bulk edit** window, **Drag and drop** the .csv file into the **Upload CSV file with edited records** box, or click **or choose file** to upload the .csv file from your computer.
-3. If the .csv file is uploaded successfully, the confirmation message, *(Name of File).csv successfully uploaded*, displays in a new window. 
-4. Click **Next**. The warning message, *(Number of) records will be updated if the **Commit changes** button is clicked* appears in a new window.
-5. Click **Commit changes**. Bulk edit will apply the local changes to the records in FOLIO.
+1. In the **Set criteria** pane, select Users as the **Record type** and select the appropriate **Record identifier**: User UUIDs, User barcodes, External IDs, or Usernames.
+2. Upload a .csv file with the selected Record identifier by either using the **Drag and drop** option or clicking the **Choose file** button.
+3. Select **Actions \> Download matched records (CSV)** to download a .csv file of matched user records; or select **Actions \> Download errors (CSV)** to download a .csv file of records that did not match your selected record identifier. 
+4. Edit the downloaded .csv file and make changes to the user records in the file itself. Save the edited .csv file to your computer.
+5. Select **Actions \> Start bulk edit (Local)**. 
+6. In the **Bulk edit** window, **Drag and drop** the .csv file into the **Upload CSV file with edited records** box, or click **or choose file** to upload the .csv file from your computer. If the .csv file is uploaded successfully, the confirmation message, *(Name of File).csv successfully uploaded*, displays in a new window.
+7. Click **Next**. The warning message, *(Number of) records will be updated if the **Commit changes** button is clicked.* appears in a new window.
+8. Click **Commit changes**. Bulk edit will apply the local changes to the records in FOLIO.
 
 
 ## Logs
@@ -585,6 +623,7 @@ To set criteria and preview bulk edit logs, follow these steps:
 3. Under the **Record types** accordion, select the record type for the bulk edit log by checking the appropriate box:
 
     - **Inventory - holdings**
+    - **Inventory - instances**
     - **Inventory - items**
     - **Users**
 

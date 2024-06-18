@@ -1,7 +1,7 @@
 ---
 title: "Settings > Invoices"
 linkTitle: "Invoices"
-date: 2023-11-13
+date: 2024-04-24
 weight: 140
 tags: ["subtopic"]   
 ---
@@ -13,7 +13,10 @@ The Invoices section of the Settings app is where you establish one click approv
 
 To interact with invoice settings, users need the following permission: 
 
-*   **Settings (Invoices): Can view and edit settings.** This permission lets you view and edit all of the Invoice settings. 
+*   **Settings (Invoices): Batch group usernames and passwords: view.** This permission allows the user to view FTP/SFTP authentication credntials entered in [Settings \> Invoices \> Batch group configuration](#settings--invoices--batch-group-configuration/).
+*   **Settings (Invoices): Batch group usernames and passwords: view and edit.** This permission allows the user to view and edit FTP/SFTP authentication credntials entered in [Settings \> Invoices \> Batch group configuration](#settings--invoices--batch-group-configuration/).
+*   **Settings (Invoices): View settings.** This permission allows the user to view the Invoice settings. 
+*   **Settings (Invoices): Can view and edit settings.** This permission allows the user to view and edit all of the Invoice settings. 
 
 Note: This is the only permission for invoice settings. You can assign permissions to users in the Users app. 
 
@@ -64,7 +67,7 @@ Use this setting to create preset adjustments that you can add to invoices at an
 
 ## Settings > Invoices > Batch groups
 
-Use this setting to create, edit, and delete batch groups, which are used to organize invoices  for export as vouchers to an external payment system. FOLIO tenants come with a single batch group, FOLIO, configured. Additional batch groups can be added and the FOLIO batch group label may be edited, but the group itself cannot be deleted.
+Use this setting to create, edit, and delete batch groups, which are used to organize invoices for export as vouchers to an external payment system. FOLIO tenants come with a single batch group, FOLIO, configured. Additional batch groups can be added and the FOLIO batch group label may be edited, but the group itself cannot be deleted.
 
 
 ### Creating a batch group
@@ -94,7 +97,7 @@ Use this setting to create, edit, and delete batch groups, which are used to org
 
 ## Settings > Invoices > Batch group configuration
 
-Use this setting to configure batch group voucher exports. This configuration enables you to setup automated exports of files containing all invoice vouchers created since the last export. For more information about how vouchers are created, see  [Invoices > Approving an invoice]({{< ref "/invoices.md#approving-an-invoice" >}}).  All vouchers with the **Export to accounting** checkbox selected that were created since the last export for the batch group will be exported to a file. For more information about the Export to accounting checkbox, see  [Invoices > Extended information]({{< ref "/invoices.md#extended-information" >}}).  Each invoice generates a single unique voucher on which all fund charges are grouped by the fund external account number. 
+Use this setting to configure batch group voucher exports. This configuration enables you to setup automated exports of files containing all invoice vouchers created since the last export. For more information about how vouchers are created, see  [Invoices > Approving an invoice](../../invoices/#approving-an-invoice).  All vouchers with the **Export to accounting** checkbox selected that were created since the last export for the batch group will be exported to a file. For more information about the Export to accounting checkbox, see  [Invoices > Extended information](../../invoices/#extended-information).  Each invoice generates a single unique voucher on which all fund charges are grouped by the fund external account number. 
 
 
 
@@ -104,7 +107,7 @@ Use this setting to configure batch group voucher exports. This configuration en
 2. Select a **Location type.** FTP or SFTP.
 3. Enter an **Upload location.** If this box is left blank, the export downloads the file to your computer.
 4. Enter a **Port**, if needed for the file upload location.
-5. Enter a **Directory**, if needed for the file upload location.
+5. Enter a **Directory**, if needed for the file upload location (e.g. /files).
 6. Select a **Format.** JSON or XML. 
 7. Enter a **Username**, if needed for the file upload location.
 8. Enter a **Password**, if needed for the file upload location. 

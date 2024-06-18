@@ -1,7 +1,7 @@
 ---
 title: "Settings > Consortium Manager"
 linkTitle: "Consortium-manager"
-Date: 2023-12-14
+Date: 2024-06-05
 weight: 45
 tags: ["subtopic"]
 ---
@@ -19,13 +19,13 @@ The Consortium Manager app allows libraries to share data and settings between m
 Definition of terms related to **Settings \> Consortium manager**:
 
 
-**Consortium**: An association of independent libraries and/or library systems established by formal agreement, usually for the purpose of resource sharing. Membership may be restricted to a specific geographic region, type of library (public, academic, special), or subject specialization.
-**Central tenant**: The administrative tenant in a multi-tenant system. Also referred to as a **primary tenant**, 
-**Enhanced Consortial Support (ECS)**: A setting enabled in a tenant for managing a consortium using the Consortium Manager.
-**Permission**: Value assigned to a FOLIO user that allows them access to view, create, update or delete records in FOLIO, or to carry out specific FOLIO tasks.
-**Permission set**: A group of permissions that allows a user to perform a specific set of tasks.
-**Primary tenant**: See **Central tenant**.
-**Tenant**: A FOLIO client whose data are stored separately and are accessible and visible separately from other FOLIO clients. 
+* **Consortium**: An association of independent libraries and/or library systems established by formal agreement, usually for the purpose of resource sharing. Membership may be restricted to a specific geographic region, type of library (public, academic, special), or subject specialization.
+* **Central tenant**: The administrative tenant in a multi-tenant system. Also referred to as a **primary tenant**, 
+* **Enhanced Consortial Support (ECS)**: A setting enabled in a tenant for managing a consortium using the Consortium Manager.
+* **Permission**: Value assigned to a FOLIO user that allows them access to view, create, update or delete records in FOLIO, or to carry out specific FOLIO tasks.
+* **Permission set**: A group of permissions that allows a user to perform a specific set of tasks.
+* **Primary tenant**: See **Central tenant**.
+* **Tenant**: A FOLIO client whose data are stored separately and are accessible and visible separately from other FOLIO clients. 
 
 
 The following are the permissions for **Settings \> Consortium Manager**:
@@ -34,6 +34,7 @@ The following are the permissions for **Settings \> Consortium Manager**:
 * **Settings (Consortia): Can view and edit consortia membership** This permission allows the user to view and edit the details of the list of members in the Settings app of the central tenant.
 * **Settings (Consortia): Can view consortia membership** This permission allows the user to view the details of the list of members in the Settings app of the central tenant.
 
+For more general information about permissions, see [Platform Essentials \> Permissions](../../platform-essentials/permissions/).
 
 ## Edit member details
 

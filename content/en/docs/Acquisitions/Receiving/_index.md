@@ -1,12 +1,12 @@
 ---
 title: "Receiving"
 linkTitle: "Receiving"
-date: 2023-11-13
+date: 2024-05-08
 weight: 50
 tags: ["parenttopic"]
 ---
 
-The Receiving app allows you to indicate that materials ordered through the creation of purchase order lines in the Orders app have been received by the library. You can open the app directly from the FOLIO app bar or from the Orders app by clicking **Receive** on the action menu of an order that has an **Open** status.
+The Receiving app allows you to indicate that materials ordered through the creation of purchase order lines in the Orders app have been received by the library. You can open the app directly from the FOLIO app bar or from the Orders app by clicking **Receive** on the action menu of an order that has an **Open** or **Closed** status.
 
 
 Definition of terms related to the Receiving app:
@@ -26,16 +26,18 @@ The permissions listed below allow you to interact with the Receiving app and de
 
 
 
+*   **Receiving: Assign acquisition units to new receiving title.** This permission allows the user to apply an acquisition unit to a new title created in the Receiving app.
 *   **Receiving: Export search results.** This permission allows the user to export receiving search results in .csv format.
+*   **Receiving: Manage acquisition units.** This permission allows the user to add or update acquisition units on receiving records that may have been inherited from corresponding order records.
 *   **Receiving: View.** This permission allows the user to view receiving information for orders.
 *   **Receiving: View, edit.** This permission allows the user to receive and edit pieces that are associated with a purchase order line.
-*   **Receiving: View, edit, create.** This permission allows the user to view, edit, and create piece records. Note: Users can only create pieces if the related purchase order line has the [Receiving workflow](../orders/#po-line-details) set to “Independent order and receipt quantity.”
+*   **Receiving: View, edit, create.** This permission allows the user to view, edit, and create piece records.
 *   **Receiving: View, edit, delete.** This permission allows the user to view, edit and delete pieces in the Receiving app.
 
 
 
 ## Keyboard shortcuts
-Keyboard shortcuts allow you to perform actions in this app using the keyboard.  See [Platform essentials > Keyboard shortcuts]({{< ref "keyboardshortcuts.md" >}}) for more information.
+Keyboard shortcuts allow you to perform actions in this app using the keyboard.  See [Platform essentials > Keyboard shortcuts](../../platform-essentials/keyboard-shortcuts/keyboardshortcuts/) for more information.
 
 
 
@@ -43,7 +45,7 @@ Keyboard shortcuts allow you to perform actions in this app using the keyboard. 
 
 Usually, an order consists of a receiving title that may have one or more pieces attached. For example, if you order a journal, the receiving title would be the journal name and the attached pieces would include each issue of the journal.
 
-Purchase order lines can also be used to represent Packages. A package order line is created in the Orders app as a single purchase order line, but it can’t be located or received in Receiving because it represents the acquisitions of multiple titles (for example, a monographic standing order). In order to receive the titles that are included in a package, you must create the receiving titles in the Receiving app and link them to the Package POL. In this version of FOLIO, receiving titles must be connected to an instance in the Inventory app and a POL.
+Purchase order lines can also be used to represent Packages. A package order line is created in the Orders app as a single purchase order line, but it can’t be located or received in the Receiving app because it represents the acquisition of multiple titles (for example, a monographic standing order). In order to receive the titles that are included in a package, you must either [add the titles to the purchase order line](../orders/#adding-package-titles-to-an-order-line) or create the receiving titles in the Receiving app and link them to the Package POL.
 
 The **New** action allows you to create the receiving titles that come in a package so that they can be received by the library. This action also allows you to link existing instances to a package POL if you want to create a relationship between the instance and the order. In this case, the receiving title is searchable by its related POL number.
 
@@ -63,14 +65,17 @@ The **New** action allows you to create the receiving titles that come in a pack
 
 
 
-*   **Title.** The title of the material to be received. Note: For non-package POLs the receiving title is created automatically. For Package POLs you use the look-up to link an inventory instance to the Package POL and successfully add a receiving title.
-*   **Publisher.** Publisher of the material.
-*   **Publication date.** Date the material was published.
-*   **Edition.** Edition of the material.
+*   **Title.** The title of the material to be received. Note: For non-package POLs the receiving title is created automatically. For Package POLs you can use the **Title look-up** to link a pre-existing inventory instance to the Package POL or you may add a title manually by entering it in the text field. If manually adding a title, the Inventory record(s) will be created according to the **Create inventory** setting on the POL after the first piece is added to the receiving title. You will see the title appear in the **Package titles** accordionon the POL.
+*   **Publisher.** Publisher of the material. If linking to a pre-existing instance record, this field may be pre-filled based on the data from the instance record.
+*   **Publication date.** Date the material was published. If linking to a pre-existing instance record, this field may be pre-filled based on the data from the instance record.
+*   **Edition.** Edition of the material. If linking to a pre-existing instance record, this field may be pre-filled based on the data from the instance record.
 *   **Subscription from.** Start date of subscription (if applicable).
 *   **Subscription to.** End date of subscription (if applicable).
 *   **Subscription interval.** Number of days the subscription lasts (if applicable).
-*   **Contributor.** The contributor of the material.
+*   **Claiming active.** If this title is eligible for claiming with the vendor, check this box. This will activate the **Claiming interval** field.
+*   **Claiming interval.** This field becomes active after checking **Claiming active**. Enter the desired interval in days.
+*   **Acquisition units.** The acquisition units assigned to the title.
+*   **Contributor.** The contributor of the material. If linking to a pre-existing instance record, this field may be pre-filled based on the data from the instance record.
 *   **Product ID.** An identifying number, such as ISBN or DOI.
 
 
@@ -117,7 +122,7 @@ Note: Adding a product ID and type is optional, but if you click **Add product I
 
 
 
-*   **POL number.** The purchase order line number. This can only be populated by using the **POL number look-up**. See [Creating a receiving title](#creating-a-receiving-title) for more information.
+*   **POL number.** The purchase order line number for the package. This can only be populated by using the **POL number look-up**. See [Creating a receiving title](#creating-a-receiving-title) for more information.
 *   **Expected receipt date.** The date the material is expected to be received. This is automatically populated with information from Orders and cannot be modified.
 *   **Receiving note.** Notes about receiving the material. This is automatically populated with information from Orders and cannot be modified. 
 *   **Must acknowledge receiving note.** When this checkbox is selected, the **Receiving note** dialog appears when you attempt to receive the material. You must click **Continue** in order to receive the material.
@@ -147,9 +152,9 @@ You can search for orders to be received in the **Search & filter** pane. To sea
 
 
 *   **Keyword.** Searches through all fields in the drop-down list. This is the default search.
-*   **Title.** Title of the ordered material.
-*   **Package.** The name of the package to which a receiving title is attached.
-*   **Product ID.** Identifying number, typically assigned in Orders when the order was created.
+*   **Title (Receiving titles).** Title of the ordered material.
+*   **Package (POL Package name).** The name of the package to which a receiving title is attached.
+*   **Product ID (For the specific title or the package).** Identifying number, assigned in Orders when the order was created or when the receiving title was created/linked to a package.
 *   **PO number.** The purchase order number.
 *   **POL number.** The purchase order line number.
 *   **Vendor reference number.** The vendor reference number for the purchase order line associated with this receiving title. 
@@ -246,16 +251,14 @@ In the **Search & filter** pane, click **Receiving status** and select any appli
 *   **Received.** The order has arrived and been received. 
 
 
-### Acquisition units
+### Acquisition unit
 
-To search for orders assigned to a specific acquisition unit, follow these steps:
+To search for titles assigned to a specific acquisition unit, follow these steps:
 
 
 
 1. In the **Search & filter** pane, click **Acquisition units**.
 2. Select the acquisition unit(s) from the drop-down list. The search results appear in the Receiving pane. 
-
-Note: The Receiving app does not currently support restricting user permissions based on acquisition unit.  
 
 
 ### Rush
@@ -291,7 +294,97 @@ To search by the receipt due date from the order purchase order line, follow the
 2. Enter a start date in the **From** box and an end date in the **To** box.
 3. Click **Apply**. The search results appear in the Receiving pane. 
 
+### Created by
 
+To search for receiving title created by a specific user, follow these steps:
+
+1. In the **Search & filter** pane, click **Created by**.
+
+2. Click **Find User**.
+
+3. In the **Select User** dialog, search for the user.
+
+4. Select the user you want to filter by. The search results appear in the Receiving pane.
+
+
+### Date created
+
+To search for receiving titles based on the date they were created, follow these steps:
+
+1. In the **Search & filter** pane, click **Date created**.
+
+2. Enter a start date in the **From** box and an end date in the **To** box.
+
+3. Click **Apply**. The search results appear in the Receiving pane.
+
+### Updated by
+
+To search for receiving titles updated by a specific user, follow these steps:
+
+1. In the **Search & filter** pane, click **Updated by**.
+
+2. Click **Find User**.
+
+3. In the **Select User** dialog, search for the user.
+
+4. Select the user you want to filter by. The search results appear in the Receiving pane.
+
+
+### Date updated
+
+To search for receiving titles based on the date they were updated, follow these steps:
+
+1. In the **Search & filter** pane, click **Date updated**.
+
+2. Enter a start date in the **From** box and an end date in the **To** box.
+
+3. Click **Apply**. The search results appear in the Receiving pane.
+
+### Created by (Piece)
+
+To search for pieces created by a specific user, follow these steps:
+
+1. In the **Search & filter** pane, click **Created by (Piece)**.
+
+2. Click **Find User**.
+
+3. In the **Select User** dialog, search for the user.
+
+4. Select the user you want to filter by. The search results appear in the Receiving pane.
+
+
+### Date created (Piece)
+
+To search for pieces based on the date they were created, follow these steps:
+
+1. In the **Search & filter** pane, click **Date created (Piece)**.
+
+2. Enter a start date in the **From** box and an end date in the **To** box.
+
+3. Click **Apply**. The search results appear in the Receiving pane.
+
+### Updated by (Piece)
+
+To search for pieces updated by a specific user, follow these steps:
+
+1. In the **Search & filter** pane, click **Updated by (Piece)**.
+
+2. Click **Find User**.
+
+3. In the **Select User** dialog, search for the user.
+
+4. Select the user you want to filter by. The search results appear in the Receiving pane.
+
+
+### Date updated (Piece)
+
+To search for pieces based on the date they were updated, follow these steps:
+
+1. In the **Search & filter** pane, click **Date updated (Piece)**.
+
+2. Enter a start date in the **From** box and an end date in the **To** box.
+
+3. Click **Apply**. The search results appear in the Receiving pane.
 
 To clear all filters, go to the **Search & filter** pane and click **Reset all**.
 
@@ -325,10 +418,14 @@ Click **Export**. The file downloads to your local download location.
 *   Vendor
 *   Requester
 *   Rush
+*   Created by
+*   Created on
+*   Updated by
+*   Updated on
 
 ### Piece fields
 
-*   Caption
+*   Display summary
 *   Copy number
 *   Enumeration
 *   Chronology
@@ -341,6 +438,13 @@ Click **Export**. The file downloads to your local download location.
 *   Supplement
 *   Display on holding
 *   Item HRID
+*   Receiving status
+*   Internal note
+*   External note
+*   Created by (Piece)
+*   Created on (Piece)
+*   Updated by (Piece)
+*   Updated on (Piece)
 
 
 
@@ -368,7 +472,7 @@ In the search results, click on a receiving title to view it. The receiving titl
 
 ### Title information
 
-This section displays the material details defined under [Creating a receiving title](#creating-a-receiving-title). 
+This section displays the material details defined under [Item details](#item-details). 
 
 
 ### POL details
@@ -385,6 +489,7 @@ This section displays the details of the purchase order lines.
 *   **Access provider.**  The name of the access provider organization.  This field only displays for orders with an order format set to **Electronic resource** or **P/E Mix.**
 *   **Material supplier.** The name of the material supplier organization.  This field only displays for orders with an order format set to **Physical resource** or **P/E Mix.** 
 *   **Requester.** The person who requested the item.
+*   **Receiving workflow.** The receiving workflow from the corresponding purchase order line, either 'Synchronized order and receipt quantity' or 'Independent order and receipt quantity'.
 *   **Rush.** This flag indicates whether rush handling should be applied to this order.
 
 
@@ -393,7 +498,7 @@ This section displays the details of the purchase order lines.
 
 This section displays a table list of the pieces of the order that are still expected to be received. See [Adding an expected piece](#adding-an-expected-piece) for more information.  To customize the columns that appear in the table list, follow these steps:
 
-1.  In the Expected section of the receiving title, select the **Actions** button.  
+1. In the Expected section of the receiving title, select the **Actions** button.  
 2. The listed columns are all selected by default under **Show columns** in the Actions list.  
 3. Deselect any columns that you want to remove from the Expected table list.
 4. Your selections persist until you logout of FOLIO.
@@ -402,9 +507,9 @@ This section displays a table list of the pieces of the order that are still exp
 
 ### Received
 
-This section displays a table list of the pieces of the order that have been received. See [Item details](#item-details) for more information.  To customize the columns that appear in the table list, follow these steps:
+This section displays a table list of the pieces of the order that have been received. To customize the columns that appear in the table list, follow these steps:
 
-1.  In the Received section of the receiving title, select the **Actions** button.  
+1. In the Received section of the receiving title, select the **Actions** button.  
 2. The listed columns are all selected by default under **Show columns** in the Actions list.  
 3. Deselect any columns that you want to remove from the Received table list.
 4. Your selections persist until you logout of FOLIO.
@@ -436,7 +541,7 @@ The **Title look-up** function replaces the current title with a title that alre
 
 ### POL number look-up
 
-The **POL number look-up** function replaces the current POL number with a POL number that already exists in Inventory. This doesn't replace any item details, only the POL number. Once you make this change, the material is no longer searchable by the original POL number.
+The **POL number look-up** function replaces the current POL number with a POL number that already exists in Orders. This doesn't replace any item details, only the POL number. Once you make this change, the material is no longer searchable by the original POL number.
 
 
 
@@ -448,48 +553,57 @@ The **POL number look-up** function replaces the current POL number with a POL n
 
 ## Adding an expected piece
 
-An expected piece is a part of an order you expect to receive. For example, if you order a magazine subscription, you might expect to receive 12 different pieces during the year. If you order a book that comes with supplemental materials such as a CD or map, you might expect to receive multiple pieces with the order. The order does not initially display each piece that comes with it. Adding expected pieces to an order allows you to track which pieces of the order have been received and which are still expected. 
+An expected piece is a part of an order you expect to receive. For example, if you order a monthly magazine subscription, you might expect to receive 12 different pieces during the year. If you order a book that comes with supplemental materials such as a CD or map, you might expect to receive multiple pieces with the order. 
+
+The **Receiving workflow** selected on the purchase order line determines the behavior of expected pieces. When the **Receiving workflow** is set to 'Synchronized order and receipt quantity', as soon as the order is opened, the Receiving app will automatically create pieces to match the quantity on the purchase order line. Additional pieces may be added to the receiving title, but this will increase the quantity on the purchase order line and may impact the estimated cost of that line and any related encumbrances. A red warning displays on these receiving titles to alert staff users to this behavior.
+
+When the **Receiving workflow** is set to 'Independent order and receipt quantity', as soon as the order is opened, no pieces will be created automatically. A staff user can create any necessary pieces and this will not impact the quantity specified on the purchase order line.
 
 Expected pieces can be found  in the Expected section of a Receiving app record. Expected pieces can also be received from this section. See [Quick receive](#quick-receive) for more information.
 
-Note: To add an expected piece in Receiving, the [Receiving workflow](../orders/#po-line-details) on the order must be set to “Independent order and receipt quantity” when the order is opened.
-
-
-
 1. Find the receiving title to which you want to add a piece and select it.
-2. In the **Expected** section, click **Action**.  In the action menu, select **Add piece**.
+2. In the **Expected** section, click **Actions**.  In the action menu, select **Add piece**.
 3. Add information about the piece in the **Add piece** dialog. See below for more information about each field.
-4. To add another piece after saving or quick receiving this piece, click **Create another**. After you save & close or quick receive, the **Add piece** dialog form is populated with details from the previous piece form. 
-5. To save and receive the piece, click **Quick receive**.  The new piece is saved and listed in the Received section.
+4. To add another piece after saving or quick receiving this piece, click the dropdown next to **Save & close** and select **Save and create another**. After you save & close or quick receive, the **Add piece** dialog form is populated with details from the previous piece form. 
+5. To save and receive the piece simultaneously, click the dropdown next to **Save & close** and select **Quick receive**.  The new piece is saved and listed in the Received section.
 6. To save without adding another piece, Click **Save & close**. The new piece is saved and listed in the Expected section.
 
 
 ### Add piece
+#### Piece details
 
 
-
-*   **Caption.**  A word, phrase or abbreviation indicating the parts into which the publisher has divided the serial, such as “volume,” “part,” or “band.”
-*   **Copy number.** The copy number of the piece.
-*   **Enumeration.** The enumeration of the piece which indicates the sequential numeric and/or alphabetic designation used by a publisher to identify the individual bibliographic or physical parts and to show the relationship of each part to the bibliographic unit as a whole.
-*   **Chronology.**  The chronology of the piece, such as “year”, “month.”
-*   **Piece format.**  The order format, as selected in Orders. This field is not editable.
+*   **Display summary.** A description of a piece that can be used for public display. If this field is added/updated, the value displays on the corresponding field in the item record. Note: in previous releases, this field was labeled **Caption**.
+*   **Copy number.** The copy number of the piece. If this field is added/updated, the value displays on the corresponding field in the item record.
+*   **Enumeration.** The enumeration of the piece which indicates the sequential numeric and/or alphabetic designation used by a publisher to identify the individual bibliographic or physical parts and to show the relationship of each part to the bibliographic unit as a whole. If this field is added/updated, the value displays on the corresponding field in the item record.
+*   **Chronology.**  The chronology of the piece, such as “year”, “month.” If this field is added/updated, the value displays on the corresponding field in the item record.
+*   **Piece format.**  The order format, as selected in Orders. 
 *   **Expected receipt date.** The date the piece is expected to be received.
 *   **Comment.** Comments or notes about the piece.
+*   **Internal note.** A note for staff related to the piece.
+*   **External note.** A note meant to relay information to a vendor related to a claim.
+*   **Create item.** Select the **Create item** checkbox to connect the new piece to an item in Inventory. This option is only available for pieces linked to an order with the purchase order line **Create inventory** value set to “Instance, holdings, item.” . Note: In order to create an item in Inventory, a default instance status, instance type, and loan type must already be set up in Settings.  See [Settings > Orders](../../settings/settings_orders/settings_orders/) for more information.
+*   **Supplement.** Select the **Supplement** checkbox to indicate that the piece is supplementary material such as a CD or a map. 
+*   **Display on holdings.**  Select the **Display on holdings** checkbox to indicate that information about this piece should be displayed in the Inventory app in the Acquisition section of the holdings record.  See [Inventory > Acquisition](../../inventory/#acquisition) for more information.
 *   **Order line locations.**  A list of locations that were selected on the purchase order line.
-*   **Select location.**  In the drop down list, select the location for this piece. You can change the location by clicking [Create new holdings for location](#create-new-holdings-for-location). 
-*   **Create item.** Select the **Create item** checkbox to connect the new piece to an instance in Inventory. This option is only available for pieces linked to an order with the purchase order line **Create inventory** value set to “Instance/holding/item.” . Note: In order to create an item in Inventory, a default instance status, instance type, and loan type must already be set up in Settings.  See [Settings > Orders]({{< ref "/settings_orders.md" >}}) for more information.
-*   **Supplement.** Select the **Supplement** checkbox to indicate that the piece is a supplementary material such as a CD or a map. 
-*   **Display on holdings.**  Select the **Display on holdings** checkbox to indicate that information about this piece should be displayed in the Inventory app in the Acquisition section of the holding record.  See [Inventory > Acquisition](../../metadata/inventory/#acquisition) for more information.
+*   **Select holdings.**  In the drop down list, select the location for this piece. You can change the location by clicking [Create new holdings for location](#create-new-holdings-for-location). 
 
 #### Create new holdings for location
 
-Note: If the location is changed for a specific piece and no holding exists for that location already, a new holding is created.
+Note: If the location is changed for a specific piece and no holding exists for that location already, a new holdings record is created.
 
+1. In the **Add piece** dialog, click **Create new holdings for location**. 
+2. In the **Select locations** dialog, select an **Institution**, **Campus**, **Library**, and **Location**.
+3. Click **Save and close**. The changes appear in the **Select holdings** field of the **Add piece** dialog. The location is confirmed once the piece is saved.
 
+#### Item details
+Note: This section of the **Add piece** modal becomes active as soon as the **Create item** xheckbox is selected.
 
-1. In the **Add piece** dialog, click **Select holdings**. 
-2. In the **Select permanent location** dialog, select an **Institution**, **Campus**, **Library**, and **Location**.
-3. Click **Save and close**. The changes appear in the **Select holdings** field of the **Add piece** dialog. The location is confirmed once the piece is saved. 
+*   **Barcode.** The item barcode. This value must be unique and will update the item record if filled in.
+*   **Call number.** The item level call number. This will update the item record if filled in.
+*   **Accession number.** The item's accession number. This will update the item record if filled in.
+*   **Item status.** The current status of the associated item record. Expected pieces typically have a status of 'On order', which updated to 'In process' once the piece is received.
+*   **Request.** Displays a count of requests for the item, if applicable.
 
 
 ## Editing an expected or received piece
@@ -502,10 +616,10 @@ To edit an expected or received piece, make sure the correct receiving title is 
 
 
 1. Select the piece you want to edit.
-2. In the **Edit piece** dialog, the same fields as the [Add piece](#adding-an-expected-piece) dialog appear. See above for more information.
+2. In the **Edit piece** dialog, the same fields as the [Add piece](#adding-an-expected-piece) dialog appear. See above for more information. The **Edit piece** modal also displays a **Status log** for the piece.
 3. Edit the contents of fields, as needed.
-4. To add another piece after saving or quick receiving this piece, click **Create another**. After you save & close or quick receive, the **Add piece** dialog form is populated with details from the previous piece form. 
-5. To save and receive the piece, click **Quick receive**.  
+4. To add another piece after saving or quick receiving this piece, click the dropdown next to **Save & close** and select **Save and create another**. After you save & close or quick receive, the **Add piece** dialog form is populated with details from the previous piece form. 
+5. To save and receive the piece, click the dropdown next to **Save & close** and select **Quick receive**.  
 6. To save without adding another piece, Click **Save & close**. A confirmation message appears and the piece is updated.
 
 
@@ -528,9 +642,9 @@ To delete an expected or received piece, make sure the correct receiving title i
 
 
 
-1. Select the piece you want to edit.
+1. Select the piece you want to delete.
 2. In the **Edit piece** dialog, the same fields as the [Add piece](#adding-an-expected-piece) dialog appear. See above for more information.
-3. Click **Delete.** A confirmation message appears, click **Confirm** and the piece is deleted.
+3. Click the dropdown next to **Save & close** and select **Delete.** A confirmation message appears, click **Confirm** and the piece is deleted. Note: if connected to an item, the item record will also be deleted.
 
 
 ### Deleting a received piece
@@ -539,7 +653,7 @@ To delete an expected or received piece, make sure the correct receiving title i
 
 1. Select the piece you want to delete. 
 2. In the **Edit piece** dialog, the same fields as the **Add piece** dialog appear. See above for more information. 
-3. Click **Delete.** A confirmation message appears, click **Confirm** and the piece is deleted.
+3. Click the dropdown next to **Save & close** and select **Delete.** A confirmation message appears, click **Confirm** and the piece is deleted. Note: if connected to an item, the item record will not be deleted since it is no longer listed as 'On order'.
 
 
 
@@ -564,7 +678,7 @@ Quick receive can be used when you want to receive one piece of an order at a ti
 1. Using the **Search & filter** pane, find the receiving title from which you want to receive pieces and select it.
 2. In the Expected section of the order, click on the piece you want to receive. 
 3. In the **Edit piece** dialog, make any necessary edits to the piece.
-4. Click **Quick receive**. The piece is now displayed under the Received section. 
+4. Click the dropdown next to **Save & close** and select **Quick receive**. The piece is now displayed under the Received section. 
 
 
 ### Receive
@@ -574,38 +688,99 @@ The Receive function can be used to receive multiple pieces at once.
 
 
 1. Using the **Search & filter** pane, find the receiving title you want to receive and select it.
-2. In the Expected section of the receiving title, click the **Action** button and select **Receive**.
-3. A receiving note popup window will display if the purchase order line field **[Must acknowledge receiving note]({{< ref "/orders.md#item-details" >}})** is checked.  Click **Continue** to close the popup window.
+2. In the Expected section of the receiving title, click the **Actions** button and select **Receive**.
+3. A receiving note popup window will display if the purchase order line field **[Must acknowledge receiving note](../orders/#item-details)** is checked.  Click **Continue** to close the popup window.
 4. In the receiving title window, all of the expected pieces are displayed. Here, you can make changes to the pieces. See below for more information.
 5. Select the checkbox beside each piece you want to receive. Note: If you want to receive all of the pieces, click the top checkbox.
 6. Click **Receive**. The selected pieces are now displayed under the Received section.
 
 
-#### Receive
+#### Receiving screen
 
-
-
-*   **Order line locations.**  A list of locations that were selected on the purchase order line.
-*   **Caption.** A word, phrase or abbreviation indicating the parts into which the publisher has divided the serial, such as “volume,” “part,” or “band.”
-*   **Enumeration.** The enumeration of the piece which indicates the sequential numeric and/or alphabetic designation used by a publisher to identify the individual bibliographic or physical parts and to show the relationship of each part to the bibliographic unit as a whole.
-*   **Copy number.** The copy number of the piece.
- *   **Barcode.** A unique barcode for the piece. You can only add a barcode if the piece is already **Connected** to an instance in Inventory, or if the **Create item** checkbox is selected.
-*   **Piece format.** The order format, as selected in Orders. This field is not editable.
-*   **Request.** Information from the Requests app about this ordered material. A value of “Yes” indicates that a request is open for the piece. 
+*   **Display summary.** A description of a piece that can be used for public display. If this field is added/updated, the value displays on the corresponding field in the item record. Note: in previous releases, this field was labeled **Caption**.
+*   **Enumeration.** The enumeration of the piece which indicates the sequential numeric and/or alphabetic designation used by a publisher to identify the individual bibliographic or physical parts and to show the relationship of each part to the bibliographic unit as a whole. If this field is added/updated, the value displays on the corresponding field in the item record.
+*   **Chronology.**  The chronology of the piece, such as “year”, “month.” If this field is added/updated, the value displays on the corresponding field in the item record.
+*   **Copy number.** The copy number of the piece. If this field is added/updated, the value displays on the corresponding field in the item record.
+*   **Accession number.** The item's accession number. This will update the item record if filled in.
+*   **Barcode.** The item barcode. This value must be unique and will update the item record if filled in.
+*   **Piece format.**  The order format, as selected in Orders.
+*   **Expected receipt date.** The date the piece is expected to be received.
+*   **Request.** Displays a count of requests for the item, if applicable.
 *   **Comment.** Comments or notes about the piece.
-*   **Select location.** The location, as selected in Orders. You can change the location by clicking [Create new holdings for location](#create-new-holdings-for-location).
-*   **Item status.** This field is populated with the item status that will appear in Inventory after the item is received. The item status will change from “On order” to “In process.”
-*   **Call number.** Enter the call number for the piece. You can only add a call number if the piece is already **Connected** to an instance in Inventory, or if the **Create item** checkbox is selected.
-*   **Create item.** Selecting the **Create item** checkbox links the new piece to an instance in Inventory. This option is only available for pieces linked to an order with the purchase order line **Create inventory** value set to “Instance/holding/item.” Note: In order to create an item in Inventory, a default instance status, instance type, and loan type must already be set up in Settings.  See [Settings > Orders]({{< ref "/settings_orders.md" >}}) for more information.
+*   **Select location.** A dropdown menu to select the holdings location to associate with the piece. If the holdings location does not yet exist, click [Create new holdings for location](#create-new-holdings-for-location).
+*   **Item status.** The current status of the associated item record. Expected pieces typically have a status of 'On order', which updated to 'In process' once the piece is received.
+*   **Call number.** The item level call number. This will update the item record if filled in.
+*   **Create item.** This will show as 'Connected' and provide a clickable link to the item in Inventory, if applicable.
+*   **Display on holdings.**  Select the **Display on holdings** checkbox to indicate that information about this piece should be displayed in the Inventory app in the Acquisition section of the holdings record.  See [Inventory > Acquisition](../../inventory/#acquisition) for more information.
+*   **Supplement.** Select the **Supplement** checkbox to indicate that the piece is supplementary material such as a CD or a map. 
 
 
 
-## Unreceiving an order
+## Unreceiving an piece
 
 
 
 1. In the Received section of the receiving title, click **Actions**.  In the action menu, select **Unreceive.**
-2. In the receiving title window, all of the received pieces are displayed in a table list containing barcode, caption, enumeration, piece format, request, comment, select location, and call number. 
+2. In the receiving title window, all of the received pieces are displayed in a table list containing barcode, display summary, enumeration, piece format, request, comment, select location, and call number. 
 3. Optional: Make changes to the **Comment** field.
 4. Select the checkbox beside each piece you want to unreceive. Note: If you want to unreceive all of the received pieces, select the top checkbox.
-5. Click **Unreceive**. The selected pieces are now displayed under the Expected section. 
+5. Click **Unreceive**. The selected pieces are now displayed under the Expected section.
+
+## Marking a piece unreceivable
+If a piece will not arrive at the library (e.g. the title is out of print) and will never be received by the library, use the following steps to mark the piece unreceivable:
+1. Using the **Search & filter** pane, find the receiving title you want to mark unreceivable and select it.
+2. In the Expected section of the receiving title, click on the piece.
+3. The **Edit piece** modal will appear.
+4. Click on the dropdown menu next to **Save & close** and select **Unreceivable**.
+5. The piece status will update to 'Unreceivable' and the piece will move to the **Unreceiveable** accordion on the receiving record.
+
+Note: if this action is performed in error or the piece becomes receivable, you can click on the piece in the **Unreceivable** accordion and, in the **Edit piece** modal, click on the dropdown menu next to **Save & close** and select **Expect**. This will move the piece back to the **Expected** accordion and update the piece status accordingly.
+
+## Claiming a piece
+If a piece has not arrived from the vendor by the expected receipt date or is damaged/unacceptable upon arrival, the library may wish to file a claim with the vendor to seek replacement or a refund. 
+
+A library may configure a **Claiming interval** on the Organization record for the vendor. A **Claiming interval** represents the number of days after a piece's **Expected receipt date** when an unreceived piece will be marked **Late**. If a **Claiming interval** is entered on the Organization record, this will appear as the default claiming interval on purchase order lines associated with the vendor, but the default may be changed when the **Claiming active** box is checked on the purchase order line. The interval may also be changed on each receiving title; for example, if a package POL has mutliple titles that should each have different claiming intervals assigned.
+
+Once a piece is marked **Late**, a library may wish to send a claim to the vendor. In the Quesnelia release of FOLIO, pieces can be marked as **Claim sent**, but automatic transmission to the vendor is not yet implemented. A library may wish to filter by **Receiving status** and use the **Export results (CSV)** option to send information to their vendor to support the claim.
+
+To update a piece to 'Claim sent', use the following steps:
+1. Using the **Search & filter** pane, find the receiving title for which you want to send a claim and select it.
+2. In the Expected section of the receiving title, click on the piece.
+3. The **Edit piece** modal will appear.
+4. Click on the dropdown menu next to **Save & close** and select **Send claim**.
+5. In the **Send claim** modal, enter a **Claim expiry date**. This is the date by which the claim needs to be resolved. If the piece status is not resolved before that date, the piece status will update back to **Late** to facilitate subsequent claims.
+6. Optional: add internal and external notes, if desired.
+7. Click **Save & close**.
+8. The piece status will update to 'Claim sent' and remain in the **Expected** accordion on the receiving record.
+
+
+If a library knows they must wait for a longer period of time before submitting a claim to a vendor, they may update a piece to delay the claim:
+1. Using the **Search & filter** pane, find the receiving title for which you want to send delay a claim and select it.
+2. In the Expected section of the receiving title, click on the piece.
+3. The **Edit piece** modal will appear.
+4. Click on the dropdown menu next to **Save & close** and select **Delay claim**.
+5. In the **Delay piece** modal, enter a **Delay to** date.
+6. Click **Save & close**.
+7. The piece status will update to 'Claim delayed' and remain in the **Expected** accordion on the receiving record.
+Note: When the delay date has passed, the piece status reverts to 'Late' or 'Expected' depending on the expected receipt date and the claiming interval for the receiving title. If the status of the piece has already been changed to 'Received' or 'Unreceivable', the status will not update after the delad date has passed.
+
+
+## Viewing a piece's status log
+The status of a piece can update when any of the following actions occur:
+*  The piece is created.
+*  The piece is received.
+*  The piece is unreceived.
+*  The piece has not been received and it is past its expected receipt date.
+*  A claim is sent or delayed for the piece, which has not been received by the library.
+
+These status changes are tracked and can be reviewed in the piece record's status log. To access the status log:
+1. Using the **Search & filter** pane, find the receiving title and select it.
+2. Click on the piece.
+3. The **Edit piece** modal will appear.
+4. Expand the **Status log** accordion at the bottom of the piece.
+5. A table will appear with the following columns:
+*  **Status change.** The status of the piece.
+*  **Date.** The date the status change occurred.
+*  **Interval.** This column only holds data for **Send claim** and **Delay claim** updates.
+*  **Updated by.** The name of the user who made the update.
+

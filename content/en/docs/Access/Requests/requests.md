@@ -50,19 +50,21 @@ Requests are assigned one of three Request Types:
 
 Note that FOLIO allows items in some statuses to be recalled even if they are not on loan to a patron, but there is currently no difference in FOLIO workflows between a recall and a page when that occurs. If a loan is recalled, the original loan period may be shortened.
 
+After a request has been created, requests are set in progress by [checking the item in with the Check in app](../../check-in/checkin/#checking-in-an-item-on-route-to-another-service-point).
+
 Open requests have one of the following statuses:
 
-* **Open - Awaiting delivery**: The request has been associated with an item and is in the process of being delivered, but the item has not yet been checked out to the patron. Generally this signals a possible issue with the delivery request.
-* **Open - Awaiting pickup**: The request has an associated item that is currently at the requested pickup point, waiting for the requester to pick it up.
-* **Open - In transit**: The request has been associated with an item which is currently being delivered to the patron’s requested pickup service point.
-* **Open - Not yet filled**: The request has not yet been associated with an item, and the Request expiration date, if it exists, is in the future.
+* **Open - Awaiting delivery**: The request is a [Delivery request](#processing-delivery-requests), and the requested item has been checked in, but the item has not yet been checked out to the requester.
+* **Open - Awaiting pickup**: The requested item has been checked in at the requested pickup point, waiting for the requester to pick it up.
+* **Open - In transit**: The request has been set in progress and the item is being delivered to the patron’s requested pickup service point.
+* **Open - Not yet filled**: The request has not yet been set in progress, and the Request expiration date, if it exists, is in the future.
 
 Closed requests have one of the following statuses:
 
 * **Closed - Cancelled**: The request was cancelled either prior to an item being available for pickup, or after the item became available for pickup, but before the pickup expired.
-* **Closed - Filled**: The request was associated with an item, the item was placed on hold for the patron, and the patron checked the item out.
-* **Closed - Pickup expired**: The request was associated with an item, the item was placed on hold for the patron, but the patron did not pick up the item before the Hold shelf expiration date passed.
-* **Closed - Unfilled**: The request was not associated with an item before the Request expiration date passed. If the Request expiration date field is empty, the request will never be moved to this status.
+* **Closed - Filled**: The item was placed on hold for the patron, and the patron checked the item out. This also includes [Delivery requests](#processing-delivery-requests) where the item was checked in and the **Close and check out** option was selected.
+* **Closed - Pickup expired**: The item was placed on hold for the patron, but the patron did not pick up the item before the Hold shelf expiration date passed.
+* **Closed - Unfilled**: The request was still open when the Request expiration date passed. If the Request expiration date field is empty, the request will never be moved to this status. Exception: Open - Awaiting pickup requests remain open until the Hold shelf expiration date is passed.
 
 ## Searching for requests
 
@@ -83,7 +85,7 @@ After you perform a search for requests, you can save your results to a comma-se
 
 ### Creating a request
 
-Library staff create requests in the Requests app.  They also can start the request process from a user record in Users, or an item record in Inventory; those apps will route you into the Requests app to create the request. Note: You must have permission to create requests in the Requests app in order to see the option to create a request from Inventory.
+Library staff create requests in the Requests app.  They also can start the request process from a user record in Users, or an item record in Inventory; those apps will route you into the Requests app to create the request. Note: You must have permission to create requests in the Requests app in order to see the option to create a request from Inventory. You can request items lacking a barcode by starting in the Inventory app -- see [Inventory > Creating a new request](../../../metadata/inventory/#creating-a-new-request).
 
 Requesting is controlled by circulation rules and item statuses. You cannot request some item statuses and some only allow holds and recalls. See [Platform Essentials > Item Status](../../../platform-essentials/item-status/itemstatus/) for more information.
 
@@ -152,21 +154,21 @@ Note: When cancelling a request, you should consider the following:
 
 * When you cancel a page request and there are no other requests in the queue, the item's status changes back to Available.
 * If you cancel a request that has begun fulfillment (it has a Request status of Open - In transit or Open - Awaiting pickup), the Request status changes to Closed - Cancelled, but the Item status will not change until the item is checked in.
-* If you cancel a requested item that is awaiting pickup, it appears on the Hold shelf clearance report.
+* If you cancel a requested item that is awaiting pickup, it appears on the [Hold shelf clearance report](#exporting-a-hold-shelf-clearance-report).
 
 1. [Find the request you want to cancel.](#searching-for-requests)
 2. In the **Request Detail** pane, select **Actions > Cancel request**.
 3. In the **Confirm request cancellation** dialog, select the **Reason for cancellation**.
-4. Optional: Enter any additional notes on the cancellation in the **Additional information for patron** box. If you select **Other**, then you must supply additional information.
+4. Optional: Enter any additional notes on the cancellation in the **Additional information for patron** box. If you selected **Other** as the reason, then you must supply additional information.
 5. Click **Confirm**. The dialog closes and the request is cancelled. The Request status is updated to Closed - Cancelled and the patron receives a cancellation notification email, [if you have this notification configured.](../../../settings/settings_circulation/settings_circulation/#patron-notice-policies)
 
 ## Title level requesting
 
 ### Creating a title-level request
 
-Although library staff create requests in the Request app, they can initiate the request process from a user record in Users, or an item record in Inventory. Those apps will route the user to the Requests app to create the request. 
+Although library staff create requests in the Requests app, they can initiate the request process from a user record in Users, or an item record in Inventory. Those apps will route the user to the Requests app to create the request. 
 
-Note: You must have permission to create requests in the Requests app in order to see the option to create a request from Inventory. Also note that you only can place a title-level request on an instance if that instance has a holdings record. If you do not have the Settings > Circulation option **Fail to create title level hold when request is blocked by circulation rule** selected, then an item record is not required to create the request, but it is required to fill the request.
+Note: You must have permission to create requests in the Requests app in order to see the option to create a request from Inventory. If you do not have the Settings > Circulation option **Fail to create title level hold when request is blocked by circulation rule** selected, then an item record is not required to create the request, but it is required to fill the request.
 
 1. In the **Requests** pane, select **Actions > New**.
 2. To create a title level request, make sure **Create title level request** is checked.
@@ -183,7 +185,7 @@ Note: You must have permission to create requests in the Requests app in order t
 8. Optional: Enter any **Patron comments**. For example, if the patron needs the item immediately, you can note it here. Patron comments show up in the CSV report and can be included in pick slips.
 9. Select the **Fulfillment preference**.
 10. Select the **Pickup service point** or **Delivery address**, depending on your selection in the previous step.
-11. Click **Save & close**. The request is saved and the Request Detail pane appears. The patron receives an email notification saying their request was received by the library, if you have this notification configured.
+11. Click **Save & close**. The request is saved and the Request Detail pane appears. The patron receives an email notification saying their request was received by the library, [if you have this notification configured](../../../settings/settings_circulation/settings_circulation/#patron-notice-policies).
 
 ### How FOLIO decides which item will fill a title-level request
 
@@ -199,7 +201,7 @@ If the instance has no available items when the request is created, the request 
 
 If the request is a hold, it will remain in the request queue for the title, but it will not be associated with an item until the request is first in the queue and an item is returned.
 
-If the request is a recall, the recall will apply to the loan with the earlist due date. When the item is returned, it goes to the first open request, regardless of whether that request is the recall that triggered the item's return.
+If the request is a recall, the recall will apply to the loan with the earliest due date. When the item is returned, it goes to the first open request, regardless of whether that request is the recall that triggered the item's return.
 
 ### Viewing Title Level Requests
 
@@ -261,14 +263,14 @@ Before you cancel a request, consider:
 
 * When a page request is canceled and there are no other requests in the queue, the item's status changes back to Available.
 * If you cancel a request that has begun fulfillment (it has a Request status of Open - In transit or Open - Awaiting pickup), the Request status changes to Closed - Canceled, but the Item status will not change until the item is checked in.
-* If a requested item is awaiting pickup and its request is canceled, it appears on the Hold shelf clearance report.
-* If there are other open title level requests that are not in progress, the item needs to be checked in to fulfill the next request in the queue.
+* If a requested item is awaiting pickup and its request is canceled, it appears on the [Hold shelf clearance report](#exporting-a-hold-shelf-clearance-report).
+* If there are other open title level requests on the instance that are not in progress, the item needs to be checked in to fulfill the next request in the queue.
 
 1. [Find the request you want to cancel.](#searching-for-requests) 
 2. In the **Request Detail** pane, select **Actions > Cancel request**.
 3. In the **Confirm request cancellation** dialog, select the **Reason for cancellation**.
-4. Optional: Enter any additional notes on the cancellation in the **Additional information for patron** box. If you selected **Other**, then you must supply additional information.
-5. Click **Confirm**. The dialog closes and the request is canceled. The Request status is updated to Closed - Canceled and the patron receives a cancellation notification email, if that option is configured.
+4. Optional: Enter any additional notes on the cancellation in the **Additional information for patron** box. If you selected **Other** as the reason, then you must supply additional information.
+5. Click **Confirm**. The dialog closes and the request is canceled. The Request status is updated to Closed - Canceled and the patron receives a cancellation notification email, [if that option is configured](../../../settings/settings_circulation/settings_circulation/#patron-notice-policies).
 
 
 ## Exporting a hold shelf clearance report
@@ -288,7 +290,7 @@ The hold shelf clearance report includes requests that simultaneously meet all t
 
 * the associated item has a status of **Awaiting pickup**;
 * the request has a status of **Closed - Cancelled** or **Closed - Pickup expired**;
-* the item’s request queue is empty OR the top request in queue is NOT status “Open - Awaiting pickup”.
+* the item’s request queue is empty OR the top request in the queue does NOT have the status “Open - Awaiting pickup”.
 
 The third condition covers the case where an Awaiting pickup item has the hold shelf expiration period expired, but there is another request for the item. The item will appear on the hold shelf clearance report, but if the item is then checked in at its pickup service point for the second request, then the first two conditions are satisfied (with regards to the first request) but the item will not be on the report.
 
@@ -316,6 +318,15 @@ The pick slips report generates a single slip for every paged item that needs to
 You can configure the information that appears on the pick slips in the [Settings app.](../../../settings/settings_circulation/settings_circulation/#settings--circulation--staff-slips)
 
 To print pick slips, in the Requests pane, select **Actions > Print pick slips for [your service point]**. A print dialog appears.
+
+## Printing Hold request search slips  
+Libraries can choose to use search slips if they have many copies of a title (instance), but not all copies have been cataloged. When a patron requests an item from that instance, a search slip can be printed so a staff member can look for the item. Libraries must enable **Allow print hold requests (Open - Not yet filled)** in [Settings > Circulation > Print hold requests](../../../settings/settings_circulation/settings_circulation/#settings--circulation--print-hold-requests) in order to use this feature.
+
+The search slips report generates a single slip for every item level hold request with request status **Open - Not yet filled**. The report only prints hold requests for items that are shelved nearest the currently selected service point (i.e., those items whose Effective location is associated with the currently selected service point). You must be signed in to the service point you want to generate the search slips for. If no items match the report’s criteria, the option is grayed out.
+
+You can configure the information that appears on the pick slips in the [Settings app](../../../settings/settings_circulation/settings_circulation/#configuring-a-staff-slip).
+
+To print search slips, in the Requests pane, select Actions > Print search slips for [your service point]. A print dialog appears.
 
 ## Adding a tag to a request
 

@@ -1,12 +1,12 @@
 ---
 title: "Settings > Organizations"
 linkTitle: "Organizations"
-date: 2023-11-13
+date: 2024-04-22
 weight: 210
 tags: ["subtopic"]   
 ---
 
-The Organizations section of the Settings app is where you establish the categories you want to use to classify the contact people and contact information you add to an organization, as well as any types you may wish to use to classify the organization records for filtering purposes.
+The Organizations section of the Settings app is where you establish the categories you want to use to classify the contact people and contact information you add to an organization, any types you may wish to use to classify the organization records for filtering purposes, and banking information related to vendors.
 
 
 ## Permissions
@@ -25,7 +25,7 @@ You can assign permissions to users in the Users app.
 
 Categories are a way to classify the contact people and contact information you add to an organization. Categories are defined by your library and can be used to group contact information and contact people to make them easier to find and identify. You need to first add the categories in the Settings app in order to assign them to organization contacts.
 
-For more information on adding contact information and contact people to organizations, see [Contact information]({{< ref "/organizations.md#contact-information" >}}) and [Contact people]({{< ref "/organizations.md#contact-people" >}}).
+For more information on adding contact information and contact people to organizations, see [Contact information](../../organizations/#contact-information) and [Contact people](../../organizations/#contact-people).
 
 
 ### Creating a new category
@@ -87,3 +87,34 @@ Libraries may create controlled lists of organization types to facilitate filter
 
 3. In the **Delete Type** dialog, click **Delete**. The type is deleted and a confirmation message appears. Note: Types cannot be deleted when in use on an Organization record. You will see an error: "This type cannot be deleted, as it is in use by one or more records."
 
+## Settings \> Organizations \> Banking information
+Libraries may wish to record banking information to use for payments to vendors. To activate the **Banking information** accordion on Organization records, select the **Enable banking information** checkbox and click **Save**. This accordion will only be accessible to staff users with corresponding permissions to view/interact with Banking information.
+
+## Settings \> Organizations \> Account types
+If **Banking information** is enabled, a library can configured account types to include alongside banking information. Examples may include 'Corporate checking' or 'Corporate savings'.
+
+### Creating a new account type
+
+1. Click **New**.
+
+2. Enter a type **Name** in the box.
+
+3. Click **Save**. The account type is saved and appears in the account types list.
+
+
+### Editing an account type
+
+1. Find the account type you want to edit and click the **pencil icon**.
+
+2. Make the changes to the account type name.
+
+3. Click **Save**. The account type is updated.
+
+
+### Deleting an account type
+
+1. Find the account type you want to delete.
+
+2. Click the **trash can icon**.
+
+3. In the **Delete account type** dialog, click **Delete**. The account type is deleted and a confirmation message appears. Note: Account types can be deleted while in use on an organization record. The field will appear empty within the Banking information.

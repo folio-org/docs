@@ -37,27 +37,23 @@ The page shows three columns.
 
 Look for these modules to find out which FOLIO flower release the system runs. This is a good indicator if the official `platform-complete` set of modules has been installed and no individual changes have been made.
 
-| mod-configuration | mod-inventory-storage | mod-login-saml | release |
-| ----- | ------- | ----- | - |
-| 5.9.2 | 27.0.4  | 2.7.2 | [Poppy R2-2023-GA](https://github.com/folio-org/platform-complete/blob/R2-2023-GA/install.json) |
-| 5.9.1 | 26.0.1  | 2.6.2 | [Orchid R1-2023-csp-7](https://github.com/folio-org/platform-complete/blob/R1-2023-csp-7/install.json) |
-| 5.9.1 | 26.0.0  | 2.6.1 | [Orchid R1-2023-GA](https://github.com/folio-org/platform-complete/blob/R1-2023-GA/install.json) |
-| 5.9.1 | 25.0.4  | 2.5.1 | [Nolana R3-2022-hotfix-1](https://github.com/folio-org/platform-complete/blob/R3-2022-hotfix-1/install.json) |
-| 5.9.0 | 25.0.3  | 2.5.0 | [Nolana R3-2022-GA](https://github.com/folio-org/platform-complete/blob/R3-2022-GA/install.json) |
-| 5.8.0 | 24.1.0  | 2.4.9 | [Morning Glory R2-2022-hotfix-1](https://github.com/folio-org/platform-complete/blob/R2-2022-hotfix-1/install.json) |
-| 5.8.0 | 24.1.0  | 2.4.9 | [Morning Glory R2-2022-GA](https://github.com/folio-org/platform-complete/blob/R2-2022-GA/install.json) |
-| 5.7.9 | 23.0.5  | 2.4.9 | [Lotus R1-2022-hotfix-3](https://github.com/folio-org/platform-complete/blob/R1-2022-hotfix-3/install.json) |
-| 5.7.9 | 23.0.5  | 2.4.8 | [Lotus R1-2022-hotfix-2](https://github.com/folio-org/platform-complete/blob/R1-2022-hotfix-2/install.json) |
-| 5.7.8 | 23.0.5  | 2.4.5 | [Lotus R1-2022-hotfix-1](https://github.com/folio-org/platform-complete/blob/R1-2022-hotfix-1/install.json) |
-| 5.7.6 | 23.0.2  | 2.4.4 | [Lotus R1-2022-GA](https://github.com/folio-org/platform-complete/blob/R1-2022-GA/install.json) |
-| 5.7.7 | 22.0.4  | 2.4.5 | [Kiwi R3-2021-hotfix-3](https://github.com/folio-org/platform-complete/blob/R3-2021-hotfix-3/install.json) |
-| 5.7.5 | 22.0.4  | 2.4.2 | [Kiwi R3-2021-hotfix-2](https://github.com/folio-org/platform-complete/blob/R3-2021-hotfix-2/install.json) |
-| 5.7.4 | 22.0.4  | 2.4.2 | [Kiwi R3-2021-hotfix-1](https://github.com/folio-org/platform-complete/blob/R3-2021-hotfix-1/install.json) |
-| 5.7.3 | 22.0.4  | 2.3.2 | [Kiwi R3-2021-GA](https://github.com/folio-org/platform-complete/blob/R3-2021-GA/install.json) |
-| 5.7.4 | 21.0.10 | 2.4.1 | [Juniper R2-2021-hotfix-6](https://github.com/folio-org/platform-complete/blob/R2-2021-hotfix-6/install.json) |
-| 5.7.4 | 21.0.10 | 2.3.2 | [Juniper R2-2021-hotfix-5](https://github.com/folio-org/platform-complete/blob/R2-2021-hotfix-5/install.json) |
-| 5.7.2 | 21.0.9  | 2.2.1 | [Juniper R2-2021-hotfix-4](https://github.com/folio-org/platform-complete/blob/R2-2021-hotfix-4/install.json) |
-| 5.7.1 | 21.0.9  | 2.2.1 | [Juniper R2-2021-hotfix-3](https://github.com/folio-org/platform-complete/blob/R2-2021-hotfix-3/install.json) |
-| 5.7.0 | 21.0.3  | 2.2.1 | [Juniper R2-2021-hotfix-2](https://github.com/folio-org/platform-complete/blob/R2-2021-hotfix-2/install.json) |
-| 5.7.0 | 21.0.3  | 2.2.1 | [Juniper R2-2021-hotfix-1](https://github.com/folio-org/platform-complete/blob/R2-2021-hotfix-1/install.json) |
-| 5.7.0 | 21.0.3  | 2.2.1 | [Juniper R2-2021-GA](https://github.com/folio-org/platform-complete/blob/R2-2021-GA/install.json) |
+| mod-inventory | mod-inventory-storage | release |
+| ----- | ------- | - |
+| 20.2.6  | 27.1.3  | [Quesnelia R1-2024](https://github.com/folio-org/platform-complete/blob/R1-2024/install.json) |
+| 20.1.12 | 27.0.6  | [Poppy R2-2023-csp-5](https://github.com/folio-org/platform-complete/blob/R2-2023-csp-5/install.json) |
+| 20.1.11 | 27.0.6  | [Poppy R2-2023-csp-4](https://github.com/folio-org/platform-complete/blob/R2-2023-csp-4/install.json) |
+| 20.1.10 | 27.0.5  | [Poppy R2-2023-csp-3](https://github.com/folio-org/platform-complete/blob/R2-2023-csp-3/install.json) |
+| 20.1.9  | 27.0.4  | [Poppy R2-2023-csp-2](https://github.com/folio-org/platform-complete/blob/R2-2023-csp-2/install.json) |
+| 20.1.8  | 27.0.4  | [Poppy R2-2023-csp-1](https://github.com/folio-org/platform-complete/blob/R2-2023-csp-1/install.json) |
+| 20.1.6  | 27.0.4  | [Poppy R2-2023-GA](https://github.com/folio-org/platform-complete/blob/R2-2023-GA/install.json) |
+| 20.0.7  | 26.0.1  | [Orchid R1-2023-csp-7](https://github.com/folio-org/platform-complete/blob/R1-2023-csp-7/install.json) |
+| 20.0.7  | 26.0.1  | [Orchid R1-2023-csp-6](https://github.com/folio-org/platform-complete/blob/R1-2023-csp-6/install.json) |
+| 20.0.7  | 26.0.0  | [Orchid R1-2023-csp-5](https://github.com/folio-org/platform-complete/blob/R1-2023-csp-5/install.json) |
+| 20.0.6  | 26.0.0  | [Orchid R1-2023-csp-4](https://github.com/folio-org/platform-complete/blob/R1-2023-csp-4/install.json) |
+| 20.0.4  | 26.0.0  | [Orchid R1-2023-csp-3](https://github.com/folio-org/platform-complete/blob/R1-2023-csp-3/install.json) |
+| 20.0.4  | 26.0.0  | [Orchid R1-2023-csp-2](https://github.com/folio-org/platform-complete/blob/R1-2023-csp-2/install.json) |
+| 20.0.4  | 26.0.0  | [Orchid R1-2023-csp-1](https://github.com/folio-org/platform-complete/blob/R1-2023-csp-1/install.json) |
+| 20.0.4  | 26.0.0  | [Orchid R1-2023-GA](https://github.com/folio-org/platform-complete/blob/R1-2023-GA/install.json) |
+| 19.0.2  | 25.0.4  | [Nolana R3-2022-csp-2](https://github.com/folio-org/platform-complete/blob/R3-2022-csp-2/install.json) |
+| 19.0.2  | 25.0.4  | [Nolana R3-2022-hotfix-1](https://github.com/folio-org/platform-complete/blob/R3-2022-hotfix-1/install.json) |
+| 19.0.2  | 25.0.3  | [Nolana R3-2022-GA](https://github.com/folio-org/platform-complete/blob/R3-2022-GA/install.json) |

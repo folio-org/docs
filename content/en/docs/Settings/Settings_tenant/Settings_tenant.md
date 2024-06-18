@@ -18,10 +18,11 @@ The permissions listed below determine what you can do or not do with the indivi
 * **Settings (tenant): Can create, edit and remove service points.** This permission allows the user to create, read, update, and delete service points.
 * **Settings (tenant): Can create, edit and remove locations.** This permission allows the user to create, read, update, and delete institutions, campuses, libraries, and locations.
 * **Settings (tenant): View locations.** This permission allows the user to view institutions, campuses, libraries and locations.
-* **Settings (tenant): Can edit language, localization, and currency.** This permission allows the user to change the locale, time zone, and primary currency.
+* **Settings (tenant): Can edit language, localization, and currency.** This permission allows the user to change the locale, numbering system, time zone, and primary currency.
 * **Settings (tenant): Can maintain preferred plugins.** This permission allows the user to edit preferred plugins.
 * **Settings (tenant): Can maintain SSO settings.** This permission allows the user to create, edit, and delete SSO configurations.
 * **Settings (tenant): Can manage tenant addresses.** This permission allows the user to create, read, update, and delete addresses.
+* **Settings (tenant): View.** This permission allows the user to view addresses, language and localization, preferred plugins, SSO settings, service points, institutions, campuses, libraries, and locations.  
 
 
 ## Settings \> Tenant \> Addresses
@@ -62,7 +63,7 @@ Note: Before deleting an address, you should make sure it is not in use for any 
 
 ## Settings \> Tenant \> Language and localization
 
-Use this setting to change your location, timezone, and/or currency for all users of your FOLIO instance. To make temporary changes for your current session, click **Change session locale**. For more information, see Settings > Developer > Session locale.
+Use this setting to change your location, numbering system, timezone, and/or currency for all users of your FOLIO instance. To make temporary changes for your current session, click **Change session locale**. For more information, see Settings > Developer > Session locale.
 
 
 ### Update your library locale, time zone, or currency
@@ -70,6 +71,7 @@ Use this setting to change your location, timezone, and/or currency for all user
 
 
 * **Locale (for language display, date format, etc.).** Locale adjusts FOLIO's language display, date format, and number format to the standard for the locality selected.
+* **Numbering system**.  Numbering system specifies whether Latin or Arabic numbering is used.
 * **Time zone (time zone used when showing date time information).** Time zone adjusts FOLIO's time zone for when dates are displayed. Time zones are based on the standard tz database time zone names.
 * **Primary currency (for currency symbol to display).** Primary currency adjusts FOLIO's currency symbol, using ISO 4217 standard codes.
 1. Select a **Locale**, **Time zone**, and/or **Primary currency** from the drop-down lists.
@@ -135,9 +137,9 @@ All service points should be associated to a fee/fine owner in Settings\>Users, 
 8. (Required if your service point is a **Pickup location**): Enter a **Hold shelf expiration period**, which determines how long the request remains in **Open - Awaiting pickup** status. 
 9. (Required if your service point is a **Pickup location**): Specify the **Closed library date management for hold shelf expiration date calculation**. This tells FOLIO what to do with the hold shelf expiration date if it lands in a time when the service point is closed. 
 * If the hold shelf expiration period is calculated in **minutes** or **hours**, then you can choose to keep the original expiration date/time, move the expiration date/time to when the service point is closing, or move the expiration date/time to the beginning of the next open set of hours.
-* If the hold shelf expiration period is calculated in **days**, **weeks**, or **months**, you can choose to keep the original expiration date, move the expiration date to the end of the previous open day, or move the expiration date to the end of the next open day.
-    
-10. (Optional): Select the **Hold**, **Pick slip**, **Request delivery**, and/or **Transit** checkboxes to determine which staff slips print by default for this service point. 
+* If the hold shelf expiration period is calculated in **days**, **weeks**, or **months**, you can choose to keep the original expiration date, move the expiration date to the end of the previous open day, or move the expiration date to the end of the next open day.  
+  
+10. (Optional): Select the **Hold**, **Pick slip**, **Request delivery**, **Search slip( Hold Requests)**, and/or **Transit** checkboxes to determine which staff slips print by default for this service point.
 11. Click **Save & close**. A confirmation message appears and the service point is created.
 
 The **Assigned locations** accordion is updated when the service point is assigned to any locations in the location tree. 
@@ -342,7 +344,8 @@ The most common use case for a non-primary service point is if your library has 
 10. Optional: To add a non-primary service point to the location, click **Add service point** and select the **service point** from the drop-down list. Repeat as needed. To remove a service point, click the **trash can icon**.
 11. Optional: Select the location’s **Status**. By default, all locations are Active.
 12. Optional: Enter a **Description** of the location.
-13. Click **Save & close**. The location is created.
+13. Optional: Enter a Location detail **Name** and **Value**. Repeat as needed. This has no function outside Locations.
+14. Click **Save & close**. The location is created.
 
 
 ### Editing a location

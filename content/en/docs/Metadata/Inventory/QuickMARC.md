@@ -1,7 +1,7 @@
 ---
 title: "quickMARC"
 linkTitle: "QuickMARC"
-date: 2023-11-07
+date: 2024-04-19
 weight: 30
 tags: ["parenttopic"]   
 ---
@@ -65,8 +65,8 @@ In the Edit MARC record window, you can perform the following actions:
 -   **Delete a field.** To delete a field, click the **trash can icon**. The field will be deleted.
 -   **Move a field up.** To move a field up, click the **up arrow** in the row of the field you want to move. The field is moved one row up.
 -   **Move a field down.** To move a field down, click the **down arrow** in the row of the field you want to move. The field is moved one row down.
--   **Edit text within a field.** Click into a field to make changes to the text.
-Once you have made your desired changes, click **Save & close**. A confirmation message appears and the record is updated. Alternatively, click **Save & keep editing** to save the current changes and stay in edit mode. Click **Cancel** to discard changes and exit the Edit MARC record window.
+-   **Edit text within a field.** Click into a field to make changes to the text. To add a literal dollar sign (\$) in a field, enter {dollar}.
+-   Once you have made your desired changes, click **Save & close**. A confirmation message appears and the record is updated. Alternatively, click **Save & keep editing** to save the current changes and stay in edit mode. Click **Cancel** to discard changes and exit the Edit MARC record window.
 
 ### Linking to authority records
 
@@ -117,20 +117,20 @@ Indicators must consist of single characters.
 The following validation rules and restrictions apply when working with bibliographic records using quickMARC: 
 
 -   Fields 005 and 999ff are system supplied and cannot be edited or deleted.
--   The Leader must contain 24 characters, including null spaces
--   Only positions 5-8, 17, 18, and/or 19 in the Leader can be edited. Invalid values in the leader will result in an error message
--   245 is required and non-repeatable
+-   The leader (LDR) can be edited using the dropdown menus under each position. Only Record status (Status, corresponds with position 05), Type of record (Type, position 06), Bibliographic level (BLvl, position 07), Type of control (Ctrl, position 08), Encoding level (ELvl, position 17), Descriptive cataloging form (Desc, position 18), and/or Multipart resource record level (MultlLvl, position 19) in the LDR can be edited. Invalid values in the LDR will result in an error message.
+-   008 may be required based on the values entered in LDR Type and BLvl. The 008 field appears after LDR Type and BLvl are entered, and required positions' dropdown menus are highlighted in red. 008 can be edited using the dropdown menus under each position.
+-   245 is required and non-repeatable.
 
 The following validation rules and restrictions apply to working with MARC holdings records in quickMARC:
 
 -   001, 004, 005, and 999ff are system supplied and cannot be edited or deleted.
--   The Leader must contain 24 characters, including null spaces
--   Only positions 5, 6, 17, and 18 can be edited in the Leader
--   004 is required and non-repeatable, with no indicators or subfields
--   004 must be a valid HRID for an instance record with source = MARC
--   008 is required and must contain 32 characters, including null spaces
--   010  subfields must contain more than 3 characters 
--   852 is required; value in /$b must match a valid location code
+-   The LDR must contain 24 characters, including null spaces.
+-   Only Record Status (Status, corresponds with position 05), Type of record (Type, position 06), Encoding Level (Elvl, position 17), and Item information in record (Item, position 18) can be edited in the LDR.
+-   004 is required and non-repeatable, with no indicators or subfields.
+-   004 must be a valid HRID for an instance record with source = MARC.
+-   008 is required and can be edited using the dropdown menus under each position.
+-   010  subfields must contain more than 3 characters.
+-   852 is required; value in /$b must match a valid location code.
 
 ### Record status
 
@@ -148,7 +148,7 @@ Information on how MARC bibliographic fields are mapped to inventory instances i
 
 To create a new **MARC bibliographic record** for an item without an instance or SRS record:
 1.  Click **Actions \> New MARC Bib Record.**
-2.  Filling in LDR field positions 06 and 07 will add fillable form fields to the 008 field.
+2.  Filling in LDR field Type of record (Type, corresponds with position 06) and Bibliographic Level (BLvl, position 07) will add fillable form fields to the 008 field.
 3.  Edit the new record following the instructions in [Editing a MARC record using quickMARC](#editing-a-marc-record-using-quickmarc).
  
 To derive a new **MARC bibliographic record**:

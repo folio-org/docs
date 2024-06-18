@@ -6,8 +6,6 @@ weight: 10
 tags: ["parenttopic"]
 ---
 
-# FOLIO Terminology 
-
 *The list of terminology and definitions is designed to provide a common framework and language for community members to use when discussing FOLIO. The definitions have been left at a deliberately high level to provide for flexibility and to avoid unintentionally excluding common usage. This approach also recognizes that the definitions as they currently stand may not be in a completed or detailed enough state. This point was emphasized at the Tri-Council meeting on April 13, 2023, particularly around Platform, there was distress over the fact that there are many valid and important uses of the word Platform (e.g. Platform Minimal or Okapi-Stripes Platform) and these current definitions do not reference/acknowledge these terms. As such, this work is ongoing and definitions will continue to be refined appropriately.*
 
 **FOLIO** is an acronym: the “Future Of Libraries Is Open”. This adjective can be used to describe a platform, project, product, or community, among other things.

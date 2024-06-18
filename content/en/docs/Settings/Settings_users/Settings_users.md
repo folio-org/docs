@@ -1,7 +1,7 @@
 ---
 title: "Settings > Users"
 linkTitle: "Users"
-date: 2024-02-27  
+date: 2024-05-01 
 weight: 220
 tags: ["subtopic"]
 ---
@@ -22,64 +22,44 @@ The following are all the permissions for Users in the Settings app:
 
 ### Invisible permissions
 
-- **Settings (Users): Can view manual charges.** This permission allows the user to view  **Manual Charges** in the **Fee/fine** section of Settings \> Users.
-- **Settings (Users): Can view if comment required.** This permission allows the user to view **Comment Required** in the **Fee/fine** section of Settings \> Users.
-- **Settings (Users): Can view waive reasons.** This permission allows the user to view **Waive reasons** in the **Fee/fine** section of Settings \> Users.
-- **Settings (Users): Can view payment methods.** This permission allows the user to view **Payment methods** in the **Fee/fine** section of Settings \> Users.
-- **Settings (Users): Can view refund reasons.** This permission allows the user to view **Refund reasons** in the **Fee/fine** section of Settings \> Users.
-- **Settings (Users): Can view owners.** This permission allows the user to view **Owners** in the **Fee/fine** section of Settings \> Users.
-- **Settings (Users): Can view transfer accounts.** This permission allows the user to view **Transfer accounts** in the **Fee/fine** section of Settings \> Users.
-- **Settings (Users): Can view patron blocks conditions.** This permission allows the user to view **Conditions** in the **Patron blocks** section of Settings \> Users .
-- **Settings (Users): Can view patron blocks limits.** This permission allows the user to view **Limits** in the **Patron blocks** section of Settings \> Users. 
-- **Settings (Users): Can view patron blocks templates.** This permission allows the user to view **Templates** in the **Patron blocks** section of Settings \>Users.
-- **Settings (Users): Can view departments.** This permission allows the user to view  **Departments** in the **General** section of Settings \> Users.
+- **Settings (Users): Can view address types**. This permission allows the user to view **Address types** in the General section of Settings \> Users. 
+- **Settings (Users): Can view all patron blocks entries**. This permission allows the user to view all entries in the Patron blocks section of Settings \> Users. 
+- **Settings (Users): Can view custom fields**. This permission allows the user to view **Custom fields** in the General section of Settings \> Users. 
+- **Settings (Users): Can view feefines-related entries**. This permission allows the user to view all entries in the Fee/fine section of Settings \> Users, including **Owners**, **Manual charges**, **Waive reasons**, **Payment methods**, **Refund reasons**, **Comment required**, and **Transfer accounts** This permission does not apply to **Transfer criteria**.
+- **Settings (Users): Can view general entries**. This permission allows the user to view all entries in the General section of Settings \> Users. 
+- **Settings (Users): Can view patron groups**. This permission allows the user to view **Patron groups** in the General section of Settings \> Users.  
+- **Settings (Users): Can view permission sets**. This permission allows the user to view **Permission sets** in the General section of Settings \> Users. 
+- **Settings (Users): View all settings**. This permission allows the user to view all settings in Settings \> Users. 
 
 
 ### Visible permissions
 
 
--   **Settings (Users): Can create, edit and remove address types.** This permission allows the user to create, edit, or remove **Address Types** entries in the **General** section of Settings \> Users.
--   **Settings (Users): Can create, edit and remove manual charges.** This permission allows the user to create, edit, or remove **Manual charges** entries in the **Fee/fine** section of Settings \> Users. 
--   **Settings (Users): Can edit if comment required.** This permission allows the user to edit **Comment** required entries in the **Fee/fine** section of Settings \> Users.
--   **Settings (Users): Can create, edit and remove owners.** This permission allows the user to create, edit, or remove **Owners** in the **Fee/fine** section of Settings \> Users.
--   **Settings (Users): Can create, edit and remove patron blocks limits.** This permission allows the user to create, edit, or remove **Limits** in the **Patron blocks** section of Settings \> Users.
--   **Settings (Users): Can create, edit and remove patron blocks templates.** This permission allows the user to create, edit, or remove **Templates** in the **Patron blocks** section of Settings \> Users.
--   **Settings (Users): Can create, edit and remove patron groups.** This permission allows the user to create, edit, or remove **Patron groups** in the **General** section of Settings \> Users.
--   **Settings (Users): Can create, edit and remove payment methods.** This permission allows the user to create, edit, or remove **Payment methods** in the **Fee/fine** section of Settings \> Users.
--   **Settings (Users): Can create, edit and remove permission sets.** This permission allows the user to create, edit, or remove **Permission sets** in the **General** section of Settings \> Users.
--   **Settings (Users): Can create, edit and remove refund reasons.** This permission allows the user to create, edit, or remove **Refund reasons** in the **Fee/fine** section of Settings \> Users.
--   **Settings (Users): Can create, edit and remove transfer accounts.** This permission allows the user to create, edit, or remove **Transfer accounts** in the **Fee/fine** section of Settings \> Users.
--   **Settings (Users): Can create, edit and remove transfer criteria.** This permission allows the user to create, edit, or remove **Transfer criteria** in the **Fee/fine** section of Settings \> Users.
--   **Settings (Users): Can create, edit and remove waive reasons.** This permission allows the user to create, edit, or remove **Waive reasons** entries in the **Fee/fine** section of Settings \> Users.
--   **Settings (Users): Can create, edit, and view custom fields.** This permission allows the user to create, edit, and view **Custom fields** in the **General** section of Settings \> Users.
--   **Settings (Users): Can create, edit, view and delete custom fields.** This permission allows the user to create, edit, view and delete **Custom fields** in the **General** section of Settings \> Users.
--   **Settings (Users): Can view and edit patron blocks conditions.** This permission allows the user to view and edit **Conditions** in the **Patron blocks** section of Settings \> Users.
--   **Settings (Users): Can view custom fields.** This permission allows the user to view **Custom fields** in the **General** section of Settings \> Users.
+-   **Settings (Users): Can create, edit and remove address types.** This permission allows the user to create, edit, or remove **Address Types** entries in the General section of Settings \> Users.
+-   **Settings (Users): Can edit if comment required.** This permission allows the user to edit **Comment** required entries in the Fee/fine section of Settings \> Users.
+-   **Settings (Users): Can create, edit and remove owners.** This permission allows the user to create, edit, or remove **Owners** in the Fee/fine section of Settings \> Users.
+-   **Settings (Users): Can create, edit and remove patron blocks limits.** This permission allows the user to create, edit, or remove **Limits** in the Patron blocks section of Settings \> Users.
+-   **Settings (Users): Can create, edit and remove patron blocks templates.** This permission allows the user to create, edit, or remove **Templates** in the Patron blocks section of Settings \> Users.
+-   **Settings (Users): Can create, edit and remove patron groups.** This permission allows the user to create, edit, or remove **Patron groups** in the General section of Settings \> Users.
+-   **Settings (Users): Can create, edit and remove payment methods.** This permission allows the user to create, edit, or remove **Payment methods** in the Fee/fine section of Settings \> Users.
+-   **Settings (Users): Can create, edit and remove permission sets.** This permission allows the user to create, edit, or remove **Permission sets** in the General section of Settings \> Users.
+-   **Settings (Users): Can create, edit and remove refund reasons.** This permission allows the user to create, edit, or remove **Refund reasons** in the Fee/fine section of Settings \> Users.
+-   **Settings (Users): Can create, edit and remove transfer accounts.** This permission allows the user to create, edit, or remove **Transfer accounts** in the Fee/fine section of Settings \> Users.
+-   **Settings (Users): Can create, edit and remove transfer criteria.** This permission allows the user to create, edit, or remove **Transfer criteria** in the Fee/fine section of Settings \> Users.
+-   **Settings (Users): Can create, edit and remove waive reasons.** This permission allows the user to create, edit, or remove **Waive reasons** entries in the Fee/fine section of Settings \> Users.
+-   **Settings (Users): Can create, edit, and view custom fields.** This permission allows the user to create, edit, and view **Custom fields** in the General section of Settings \> Users.
+-   **Settings (Users): Can create, edit, view and delete custom fields.** This permission allows the user to create, edit, view and delete **Custom fields** in the General section of Settings \> Users.
 -   **Settings (Users): Can create, edit, and view departments.** This permission allows the user to create, edit, and view **Departments** in the **General** section of Settings \> Users.
--   **Settings (Users): Can create, edit, view, and delete departments.** This permission allows the user to create, edit, view, and delete **Departments** in the **General** section of Settings \> Users.
--   **Settings (Users): Can view departments.** This permission allows the user to view **Departments** in the **General** section of Settings \> Users.
--   **Settings (Users): Can view general entries.** This permission allows the user to view **Permission sets**, **Patron groups**, **Address types**, **Departments**, and **Custom fields** in the **General** section in Settings \> Users.
--   **Settings (Users): Can view feefines-related entries.** This permission allows the user to view **Owners**, **Manual charges**, **Waive reasons**, **Payment methods**, **Refund reasons**, **Comment required**, and **Transfer accounts** in the **Fee/fine** section in Settings \> Users. This permission does not apply to **Transfer criteria**.
--   **Settings (Users): Can view all patron blocks entries.** This permission allows the user to view **Conditions**, **Limits**, and **Templates** in the **Patron blocks** section in Settings \> Users.
--   **Settings (Users): View all settings.** This permission allows the users to view all sections in Settings \> Users. This permission does not apply to **Transfer criteria**. 
 
 
 ## Settings \> Users \> Permission sets
 
 Use this setting to create permission sets for your library. Permission sets are customized collections of permissions that can be assigned to users. For example, you can create permission sets that correspond to specific job roles and assign the set, rather than each individual permission, to all library staff with that role. 
 
-Additionally, if permissions change because of a new release, a FOLIO administrator can edit the permission set for a particular role to update the assigned permissions. The change to the permission set then propagates out to the users who have that permission set assigned, and the administrator doesn't have to update permissions for each individual user.
+Additionally, if permissions change because of a new release, a FOLIO administrator can edit the permission set for a particular role to update the assigned permissions. The change to the permission set then propagates out to the users who have that permission set assigned, and the administrator does not have to update permissions for each individual user.
 
-For more information about permissions, see [Platform Essentials > Permissions](../../../platform-essentials/permissions/).
+For more information about permissions, see [Platform Essentials > Permissions](../../platform-essentials/permissions/).
 
-### View assigned users
-
-To view a list of users assigned to a specific permission set: 
-
-1. In the **Permission sets** pane, click on a permission set. The details for that permission set will open in a new pane. 
-2. Open the **Assigned users** accordion, if necessary, to view a list of users assigned to that permission set. 
-
-Although the **Assign/Unassign** button appears and is clickable, note that permissions cannot be assigned or unassigned in Settings \> Users at this time. For more information about assigning or unassigning permissions to users, see [Users \> Assign or unassign permissions](../../../users/#assign-or-unassign-permissions).
 
 ### Create a permission set
 
@@ -107,6 +87,25 @@ Note: A permission set can be deleted even if it is currently assigned to a user
 2.  Click **Edit**.
 3.  In the **Edit** window, click **Delete**.
 4.  In the **Delete permission set?** dialog, click **Delete**. A confirmation message appears and the permission set is deleted.
+
+### View assigned users
+
+To view a list of users assigned to a specific permission set: 
+
+1. In the **Permission sets** pane, click on a permission set. The details for that permission set will open in a new pane. 
+2. Open the **Assigned users** accordion, if necessary, to view a list of users assigned to that permission set. 
+
+### Assign or unassign permission sets
+
+To assign or unassign a permission set to a user:
+
+1. In the **Permission sets** pane, click on a permission set. The details for that permission set will open in a new pane. 
+2. Open the **Assigned users** accordion, if necessary, to view a list of users assigned to that permission set. 
+3. Click the **Assign/unassign** button. 
+4. In the **User record** modal, search for the user record or filter by **Status**, **Patron group**, or **User assignment status**. 
+5. In the **User search results** pane, check or uncheck the box(es) next to **Name** to select or deselect the appropriate user(s) to update their permission set assignment.
+6. Click the **Save** button. A confirmation message, *Permissions set user assignment updated successfully* appears.
+
 
 ## Settings \> Users \> Patron Groups
 
@@ -234,6 +233,14 @@ Custom fields can be deleted if they are in use, but any information tied to the
 3.  Click **Save & close**.
 4.  In the **Delete field data** dialog, click **Save & lose data**.
 
+
+## Settings \> Users \> Number generator options
+
+- **Number generator off**: the barcode can be filled manually only.
+- **Number generator on, editable**: the barcode can be filled using the generator and be edited, or filled manually. 
+- **Number generator on, fixed**: the barcode can be filled using the generator only. 
+
+
 ## Settings \> Users \> Owners
  A Fee/fine owner is the agent or office that manages fines for FOLIO transactions. Fee/fine owners collect fees/fines for FOLIO service points.
 
@@ -279,7 +286,7 @@ When manually creating a fee/fine, **Fee/fine Type** is a required field.
 7.  Optional: Select an **Action Notice**.
 8.  Click **Save**. The Fee/fine type is saved.
 
-See [Settings \> Circulation \> Patron notice templates](../../settings_circulation/settings_circulation/#patron-notice-templates) for more information about **Patron notice templates**.
+See [Settings \> Circulation \> Patron notice templates](../settings_circulation/settings_circulation/#patron-notice-templates) for more information about **Patron notice templates**.
 
 
 ### Edit a fee/fine type

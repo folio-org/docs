@@ -121,6 +121,10 @@ algolia_docsearch = true
 offlineSearch = false
 
 [[params.versions]]
+  version = "Quesnelia"
+  url = "https://quesnelia.docs.folio.org/docs/"
+
+[[params.versions]]
   version = "Poppy"
   url = "https://poppy.docs.folio.org/docs/"
 

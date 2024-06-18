@@ -13,7 +13,7 @@ The action associated with the shortcut may vary slightly for different apps -- 
  
 | Action                           | Shortcut keys |
 | :------------------------------- | :------------ |
-| Create a new record:             | Alt+n         |
+| Create a new record             | Alt+n         |
 | Edit a record                    | Ctrl+Alt+e    |
 | Save a record                    | Ctrl+s        |
 | Expand or collapse an accordion  | Spacebar      |
@@ -68,4 +68,5 @@ The following apps display the list of keyboard shortcuts which can be viewed by
 *   Organizations
 *   Receiving
 *   Requests
+*   Serials
 *   Users

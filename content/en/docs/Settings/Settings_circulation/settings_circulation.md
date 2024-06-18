@@ -29,12 +29,13 @@ The following are all the Circulation Settings permissions:
 * **Settings (Circ): Can create, edit and remove request policies:** Allows the user to create, read, update, and delete request policies.
 * **Settings (Circ): Can create, edit and remove staff slips:** Allows the user to create, read, and update staff slips. Note: Users can erase the content of staff slips in the editor, but cannot delete the staff slip itself.
 * **Settings (Circ): Can edit loan history:** Allows the user to edit settings in Settings > Circulation > Loan anonymization.
-* **Settings (Circ): Can view loan history:** Allows the user to view settings in Settings > Circulation > Loan anonymization.
+* **Settings (Circ): Can view loan history:** Allows the user to view settings in Settings > Circulation > Loan anonymization but does not allow editing.
 * **Settings (Circ): Can view loan policies:** Allows the user to view loan policies but does not allow create, edit or delete.
 * **Settings (Circ): Can view lost item fee policies:** Allows the user to view lost item fee policies but does not allow create, edit or delete.
 * **Settings (Circ): Can view overdue fine policies:** Allows the user to view overdue fine policies but does not allow create, edit or delete.
 * **Settings (Circ): View circulation rules:** Allows a user to view circulation rules but does not allow them to create, edit or delete rules.
-* **Settings (Circulation): Title level request edit:** Allows users to enable, disable and configure title-level requesting. Note that title level requesting cannot be disabled via settings if there are any open title level requests.
+* **Settings (Circulation): Can view staff slips:** Allows the user to view staff slips but does not  allow editing of staff slips.
+* **Settings (Circulation): Title level request edit:** Allows the user to enable, disable and configure title-level requesting. Note that title level requesting cannot be disabled via settings if there are any open title level requests.
 
 
 ## Settings > Circulation > Circulation rules
@@ -98,8 +99,8 @@ This setting allows you to specify what types of patron IDs can be scanned to ch
 At least one of the options must be selected:
 
 * **Barcode.**
-* **External system id.**
-* **FOLIO record number.**
+* **External system ID.**
+* **FOLIO record number (ID).**
 * **Username.**
 * **User custom fields.**
 
@@ -133,8 +134,9 @@ If your library could potentially encounter duplicate barcodes as described, you
 Staff slips allow you to configure the information that appears on your staff slips. You have the option of printing these slips when their associated action occurs:
 
 * **Hold.** This slip is available through the Check in app, when you check in an item with a request.
-* **Pick slip.** This slip is available in the Requests app, when you generate the pick slip report.
+* **Pick slip.** This slip is available in the Requests app, when you generate the [pick slip report](../../../access/requests/requests/#printing-pick-slips).
 * **Request delivery.** This slip is available in the Check in app, when you check in an item with a delivery request.
+* **Search slip (Hold requests).** This slip is available in the Requests app, when you generate the [search slip report.](../../../access/requests/requests/#printing-hold-request-search-slips)
 * **Transit.** This slip is available in the Check in app, when you check in an item that is in transit to another location.
 
 
@@ -203,7 +205,7 @@ When closed loans are anonymized, all related patron information is removed from
 Select one of the following options to determine if closed loans are anonymized:
 
 * **Immediately after loan closes**. The anonymization process begins after the session is closed. Immediate anonymizing of loans runs on a schedule that can be determined by your system administrator or hosting provider.
-* **[Interval of time] after the loan closes**. Use the boxes to select the interval of time.
+* **[Interval of time] after loan closes**. Use the boxes to select the interval of time.
 * **Never**.
 
 
@@ -239,7 +241,7 @@ If you want to create exceptions for closed loans with associated fees/fines pai
 
 Loan policies determine how an item is treated if it is checked out, renewed, or requested. Loan policies include a wide variety of configuration options and are used in Circulation rules.
 
-Loan policy behavior differs depending on the unit of time used for the loan period. If an item is checked out for minutes or hours, the loan is considered “short term.” If an item is checked out for days, weeks or months, the loan is considered “long term.”
+Loan policy behavior differs depending on the unit of time used for the loan period. If an item is checked out for minutes or hours, the loan is considered “short term.” If an item is checked out for days, weeks or months, the loan is considered “long term.” See [Additional topics > Loans](../../../access/additional-topics/loans/loans/#what-does-folio-consider-a-short-term-loan-what-is-considered-a-long-term-loan) for more information.
 
 ### Implementation considerations
 
@@ -290,7 +292,7 @@ If you select **Rolling**, you see the following fields:
 
 **Closed library due date management.** Select when the item is due if an item’s calculated due date lands in closed hours for the service point.
 * If an item’s loaned interval is in **minutes** or **hours**, the due date will be determined by the loan policy.
-  * **Opening time offset**. For short-term loans (time intervals of minutes or hours), if you choose **Move to the beginning of the next open service point hours** then you need to enter the Opening time offset. The item will be due [Opening time offset] [Interval] after the service point opens if the item’s calculated due date lands in closed hours for the service point.  
+  * **Opening time offset**. For short-term loans (time intervals of minutes or hours), if you choose **Move to the beginning of the next open service point hours** then you need to enter the Opening time offset. The item will be due [Opening time offset] [Interval] after the service point opens if the item’s calculated due date lands in closed hours for the service point.
 * If an item’s loaned interval is in **days**, **weeks**, or **months**, the due date will follow the choice given in the loan policy *only* in the case that the service point is completely closed on the day that the item would be due. When the loan is created, FOLIO will check the service point calendar; if the service point is open for any time on the day that the item is due, FOLIO will set the due time to 11:59 PM on that day.
 
 
@@ -383,15 +385,20 @@ Overdue fine policies determine the fines that accrue when an item is checked ou
 
 #### Reminder fees
 
-The five options, **Count closed days/hours/minutes**, **Ignore grace periods for recalls**, **Ignore grace periods for holds**, **Allow renewal of items with reminder fee(s)**, and **Clear patron block when paid** are not available for Poppy. They can only have the selection value of **No**.
+1. **Create on closed days.** If you select **Yes**, Reminder fees will be created on days the library is closed. Select **No** to have Reminder fees created on the first open day after they would otherwise be created. See example in [Additional topics > Fees and fines](../../../access/additional-topics/feesfines/feesfines/#reminder-fee-examples-with-closed-days).
+2. **Ignore grace periods for recalls.** This setting can only be **No** for Quesnelia.
+3. **Ignore grace periods for holds.** This setting can only be **No** for Quesnelia.
+4. **Allow renewal of items with reminder fee(s).** If you select Yes, items with reminder fees can be renewed. The reminder fee will not be removed when the item is renewed.
+5. **Clear patron block when paid.** This setting can only be **No** for Quesnelia.
 
 Click **Add reminder fee** to set up a reminder fee schedule:
 
-1. Enter a number in **Interval** and choose the time interval in **Frequency** to determine how long after an item is overdue the fee is applied and the notice is sent.
-2. Enter **Fee** amount.
-3. Choose a **Notice method**. **Email** will send an email to the address in the user record. Printed reminder fee notices are not available.
-4. Select a fee/fine **Notice template**.
+1. Enter a number in **Interval** and choose the time interval in **Frequency** to determine how long after an item is overdue the fee is applied and the notice is sent. See example in [Additional topics > Fees and fines](../../../access/additional-topics/feesfines/feesfines/#reminder-fees).
+2. Enter a **Fee** amount.
+3. Choose a **Notice method**. **Email** will send an email to the address in the user record. Select **Print** if you want to [send a printed notice](../../../users#view-patron-print-jobs).
+4. Select a fee/fine **Notice template** that aligns with the Notice method chosen in the previous step.
 5. **Block template** functionality is not yet available. Block templates are set up in [Settings > Users > Patron Block Templates](../../settings_users/settings_users/#settings--users--patron-block-templates).
+6. Click **Add reminder fee** again to add another reminder fee. Reminder fees after the first in the sequence are created [**Interval**]  [**Frequency**] after the previous reminder fee. 
 
 
 ### Duplicating an overdue fine policy
@@ -419,7 +426,7 @@ Click **Add reminder fee** to set up a reminder fee schedule:
 
 ## Lost item fee policies
 
-Lost item fee policies determine when overdue items automatically age to lost (their Item status changes from Overdue to Lost); it also determines the charges billed to patrons for lost items. Lost item fee policies are used in Circulation rules.
+Lost item fee policies determine when overdue items automatically age to lost (their Item status changes to Aged to lost); it also determines the charges billed to patrons for lost items. Lost item fee policies are used in Circulation rules.
 
 
 ### Creating a lost item fee policy
@@ -431,7 +438,7 @@ Lost item fee policies determine when overdue items automatically age to lost (t
 5. Enter the amount of time in which **Patron billed after aged to lost**.
 6. Enter the amount of time in which **Recalled items aged to lost after overdue**. This setting allows libraries to set a shorter “aged to lost” period if the item has been recalled for use by other patrons. This setting **must have a value** in order for recalled items to age to lost.
 7. Enter the amount of time in which **Patron billed for recall after aged to lost**. This setting **must have a value** in order for patrons to be billed when a recalled item ages to lost.
-8. In the **Charge amount for item** section, choose **Actual cost** or **Set cost**. If you use Actual cost, you can use the **Lost items requiring actual cost** report in the Users app to find the aged to lost items and then apply a manual cost. If you use Set cost, then enter an amount in the box.
+8. In the **Charge amount for item** section, choose **Actual cost** or **Set cost**. If you use Actual cost, you can use the **Lost items requiring actual cost** report in the [Users app](../../../users/#processing-lost-items-requiring-actual-cost) to find the aged to lost items and then apply a manual cost. If you use Set cost, then enter an amount in the box.
 9. Enter a **Lost item processing fee**. This is an additional charge that will be added to the charge amount for the item when billed to the patron.
 10. Select whether to **Charge lost item processing fee if item declared lost by patron**.
 11. Select whether to **Charge lost item processing fee if item aged to lost by system**.
@@ -472,10 +479,11 @@ Lost item fee policies determine when overdue items automatically age to lost (t
 
 Patron notice policies determine which patron notice templates are sent out before, during, or after certain triggering events. Multiple notices can be set up in one policy. Patron notice policies are used in Circulation rules.
 
+Note: Reminder fees and Title level hold requests do not use the patron notice policy. See [Reminder fees](#reminder-fees) and [TLR Notice templates](#notice-templates).
 
 ### Implementation considerations
 
-Before you can set up your patron notice policies, you must first configure your Patron notice templates.
+Before you can set up your patron notice policies, you must first configure your [Patron notice templates](#patron-notice-templates).
 
 You can set up multiple notices in one policy. Libraries’ needs differ. Some will want to create several policies with one or few notices in each policy. Other libraries may find it advantageous to create few policies, each containing several notices. Additionally, patron notice policies can be associated with more than one circulation rule.
 
@@ -600,7 +608,7 @@ Select whether multiple lost item fee notices are bundled together:
 
 ## Patron notice templates
 
-Patron notice templates are the templates used in your Patron notice policies. Currently, patron notices can only be sent via email.
+Patron notice templates are the templates used in your Patron notice policies. Except for Reminder fees, patron notices can only be sent via email.
 
 
 ### Creating a new patron notice template
@@ -610,10 +618,11 @@ Patron notice templates are the templates used in your Patron notice policies. C
 3. Clear the **Active** checkbox if you do not want the notice to be available for use in notice policies.
 4. Optional: Enter a **Description** in the box.
 5. Select a **Category** for the template. Categories determine which section of the notice policy the notice can be used in and which tokens are available to be used in the body of the email.
-6. In the Email section, enter a **Subject** for the email sent to the patron.
-7. Enter a **Body** for the email sent to the patron. Click **{ }** to add tokens to the notice. Tokens fill in the item, loan, request, or user information based on the selected variables related to the notice event.
-8. Optional: Click **Preview** to view a preview of the notice.
-9. Click **Save & close**. The notice is saved and appears in the Patron notice templates pane.
+6. In the **Email or print** section, select the **Print only** checkbox to delete the subject line. Notices are printed in the [Users search results pane](../../../users#view-patron-notice-print-jobs). Currently, only Reminder fees are able to be collected in the nightly print job.
+7. Clear the **Print only** checkbox if you want to email the notice, and enter a Subject.
+8. Enter a **Body** for the email sent to the patron. Click **{ }** to add tokens to the notice. Tokens fill in the item, loan, request, or user information based on the selected variables related to the notice event.
+9. Optional: Click **Preview** to view a preview of the notice.
+10. Click **Save & close**. The notice is saved and appears in the Patron notice templates pane.
 
 
 ### Duplicating a patron notice template
@@ -703,13 +712,12 @@ Request policies determine the types of requests (pages, holds, and recalls) all
 
 FOLIO provides functionality for both item-level and title-level requesting. Since title-level requesting is off by default, you need to enable and configure related settings in this section if your library wants to use it.
 
-* **Allow title level requests**. If your library wants to use title-level requesting, check this box.
+* **Allow title level requests**. If your library wants to use title-level requesting, check this box. Before allowing title level requesting, be aware that you will not be able to turn title-level requesting off if there are any open title level requests.
 * **”Create title level request” selected by default.** If you are using title-level requesting, there will be a checkbox in the Requests app to toggle whether a request is title-level or item-level. If you’d like title-level request to be the default choice, check this box.
 * **Fail to create title level hold when request is blocked by circulation rule**. Check this box if you want title level hold requests to follow the circulation rules. If you do not check this box, then title level hold requests will go through even when item level hold requests are blocked by the circulation rule.
 
 Click **Save** at the bottom of the screen to save any changes.
 
-Before allowing title level requesting, be aware that you will not be able to turn title-level requesting off if there are any open title level requests.
 
 ### Notice templates
 
@@ -718,6 +726,13 @@ Notices that are triggered by title-level requests are not yet included in FOLIO
 * **Confirmation notice**. Choose a notice template from the drop-down if you want to send a patron notice when a title-level request is created.
 * **Cancellation notice**. Choose a notice template from the drop-down if you want to send a patron notice when a title-level request is canceled.
 * **Expiration notice**. Choose a notice template from the drop-down if you want to send a patron notice when a title-level request expires without having been fulfilled.
+
+Click **Save** at the bottom of the screen to save any changes.
+
+
+## Settings > Circulation > Print hold requests
+
+**Allow print hold requests (Open - Not yet filled)**. Check the box if you want the option to print [Search slips](../../../access/requests/requests/#printing-hold-request-search-slips) for item level hold requests.
 
 Click **Save** at the bottom of the screen to save any changes.
 
