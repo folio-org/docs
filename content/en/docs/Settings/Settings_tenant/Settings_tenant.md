@@ -11,7 +11,7 @@ The Tenant section of the Settings app is where you configure specific settings 
 
 ## Authorization Roles
 
-The roles listed below determine what you can do or not do with the individual parts of the Tenant section of Settings. If none of these permissions are assigned to a user, the user will not see this area of the Settings app.
+The roles listed below determine what you can do or not do with the individual parts of the Tenant section of Settings. If none of these roles are assigned to a user, the user will not see this area of the Settings app.
 
 
 
