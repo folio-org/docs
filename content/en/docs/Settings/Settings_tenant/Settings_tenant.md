@@ -1,30 +1,30 @@
 ---
 title: "Settings > Tenant"
 linkTitle: "Tenant"
-date: 2024-12-11
-weight: 250
+date: 2025-04-14
+weight: 240
 tags: ["subtopic"]
 ---
 
 The Tenant section of the Settings app is where you configure specific settings that apply to your entire FOLIO installation. Generally, settings in this area will be managed by your library’s FOLIO administrator.
 
 
-## Permissions
+## Authorization Roles
 
-The permissions listed below determine what you can do or not do with the individual parts of the Tenant section of Settings. If none of these permissions are assigned to a user, the user will not see this area of the Settings app.
+The roles listed below determine what you can do or not do with the individual parts of the Tenant section of Settings. If none of these permissions are assigned to a user, the user will not see this area of the Settings app.
 
 
 
-* **Settings (tenant): Can create, edit and remove service points.** This permission allows the user to create, read, update, and delete service points.
-* **Settings (tenant): Can create, edit and remove locations.** This permission allows the user to create, read, update, and delete institutions, campuses, libraries, and locations.
-* **Settings (tenant): View locations.** This permission allows the user to view institutions, campuses, libraries and locations.
-* **Settings (tenant): Can create, edit and remove reading room access.** This permission allows the user to view, create, edit, and delete reading rooms. 
-* **Settings (tenant): Can edit language, localization, and currency.** This permission allows the user to change the locale, numbering system, time zone, and primary currency.
-* **Settings (tenant): Can maintain preferred plugins.** This permission allows the user to edit preferred plugins.
-* **Settings (tenant): Can maintain SSO settings.** This permission allows the user to create, edit, and delete SSO configurations.
-* **Settings (tenant): Can manage tenant addresses.** This permission allows the user to create, read, update, and delete addresses.
-* **Settings (tenant): Can view reading room access.** This permission allows the user to view reading room access.
-* **Settings (tenant): Can create, edit, and remove reading room access** This permission allows the user to view, create, edit and delete Reading room access entries in tenant settings.
+* **UI-Tenant-Settings Settings Servicepoints** This role allows the user to create, read, update, and delete service points.
+* **UI-Tenant-Settings Settings Location** This permission allows the user to create, read, update, and delete institutions, campuses, libraries, and locations.
+* **UI-Tenant-Settings Settings Location View** This permission allows the user to view institutions, campuses, libraries and locations.
+* **UI-Tenant-Settings Settings Location Floating** This permission allows the user to view and edit the check mark that designates a location as a floating collection
+* **UI-Tenant-Settings Settings Reading-Room-Access** This permission allows the user to view, create, edit, and delete reading rooms. 
+* **UI-Tenant-Settings Settings Locale** This permission allows the user to change the locale, numbering system, time zone, and primary currency.
+* **UI-Tenant-Settings Settings Plugins** This permission allows the user to edit preferred plugins.
+* **UI-Tenant-Settings Settings SSO** This permission allows the user to create, edit, and delete SSO configurations.
+* **UI-Tenant-Settings Settings Addresses** This permission allows the user to create, read, update, and delete addresses.
+* **UI-Tenant-Settings Settings Reading-Room-Access** This permission allows the user to view, create, edit and delete Reading room access entries in tenant settings.
 
 
 ## Settings \> Tenant \> Addresses
@@ -361,7 +361,7 @@ The most common use case for a non-primary service point is if your library has 
 2. Select the **Campus** under which the location should be created.
 3. Select the **Library** under which the location should be created.
 4. Click **New**.
-5. Enter a **FOLIO Name** for the location. The name must be unique to your FOLIO tenant. The name and code appear in other locations like Inventory. 
+5. Enter a **FOLIO Name** for the location. The name must be unique to your FOLIO tenant. The name and code appear in other applications like Inventory. 
 6. Select whether the location is used for **Remote storage**. 
 7. Enter a **Code**. The code is the machine readable name and must be unique to your FOLIO tenant.
 8. Enter a **Discovery display name**. This name is used in discovery services to identify the location to patrons. It does not have to be unique.
@@ -401,7 +401,7 @@ The most common use case for a non-primary service point is if your library has 
 
 ### Deleting a location
 
-Note: If the location is in use by at least one record in Inventory, you cannot delete the location. In those cases, it is recommended that you edit the location and make the status **Inactive**. It doesn’t remove the location from Inventory location dropdown menus, but it gives staff a dialog message if they select an inactive location.
+Note: If the location is in use by at least one holding record in Inventory, you cannot delete the location. In those cases, it is recommended that you edit the location and make the status **Inactive**. It doesn’t remove the location from Inventory location dropdown menus, but it gives staff a dialog message if they select an inactive location.
 
 
 
@@ -411,3 +411,30 @@ Note: If the location is in use by at least one record in Inventory, you cannot 
 4. Find the location you want to delete and select it.
 5. In the **location details** pane, click **Actions > Delete**.
 6. In the **Delete location** dialog, click **Delete**. A confirmation message appears and the location is deleted.
+
+
+### Enable a floating collection
+
+
+A Floating collection is defined as a group of items that are not housed permanently at a specific library, but are shelved at the library where they were most recently checked in. Floating collections are used to decrease transportation of items between libraries and to reduce manual handling, transit time, shipping expenses and/or traffic emissions. Support for floating collections is enabled by designating a location as a floating collection.  
+
+To enable a location as a floating collection
+
+1. In the **Locations** pane, select the **Institution** under which the location is located.
+2. Select the **Campus** under which the location is located.
+3. Select the **Library** under which the location is located.
+4. Create or edit a location as above
+5. Under **Floating Collection** check the "Enable floating collection" box
+6. Click **Save & close**.
+
+### Make a location inactive
+
+When a location is marked as inactive, "Inactive" will be prepended to the location name in Inventory, and users will be given a prompt warning them the location is inactive if adding a new holding to the location. It will not prevent a user from adding a new holding or item.  
+
+1. In the **Locations** pane, select the **Institution** under which the location is located.
+2. Select the **Campus** under which the location is located.
+3. Select the **Library** under which the location is located.
+4. Find the location you want to edit and select it.
+5. In the **location details** pane, click **Actions > Edit**.
+6. Under **Status** select "Inactive"
+7. Click **Save & close**.
