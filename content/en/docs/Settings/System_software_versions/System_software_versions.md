@@ -1,7 +1,7 @@
 ---
 title: "Settings > Software versions"
 linkTitle: "Software versions"
-date: 2023-04-21
+date: 2025-04-14
 weight: 500
 tags: ["subtopic"]
 ---
@@ -39,6 +39,18 @@ Look for these modules to find out which FOLIO flower release the system runs. T
 
 | mod-inventory | mod-inventory-storage | release |
 | ----- | ------- | - |
+| 21.1.1 | 29.0.4 | [Sunflower R1-2025-GA](https://github.com/folio-org/platform-complete/blob/R1-2025/install.json) |
+| 21.0.13 | 28.0.10 | [Ramsons R2-2024-GA](https://github.com/folio-org/platform-complete/blob/R2-2024/install.json) |
+| 20.2.11  | 27.1.5  | [Quesnelia R1-2024-csp-10](https://github.com/folio-org/platform-complete/blob/R1-2024-csp-10/install.json) |
+| 20.2.11  | 27.1.5  | [Quesnelia R1-2024-csp-9](https://github.com/folio-org/platform-complete/blob/R1-2024-csp-9/install.json) |
+| 20.2.8  | 27.1.4  | [Quesnelia R1-2024-csp-8](https://github.com/folio-org/platform-complete/blob/R1-2024-csp-8/install.json) |
+| 20.2.8  | 27.1.4  | [Quesnelia R1-2024-csp-7](https://github.com/folio-org/platform-complete/blob/R1-2024-csp-7/install.json) |
+| 20.2.8  | 27.1.4  | [Quesnelia R1-2024-csp-6](https://github.com/folio-org/platform-complete/blob/R1-2024-csp-6/install.json) |
+| 20.2.7  | 27.1.4  | [Quesnelia R1-2024-csp-5](https://github.com/folio-org/platform-complete/blob/R1-2024-csp-5/install.json) |
+| 20.2.7  | 27.1.4  | [Quesnelia R1-2024-csp-4](https://github.com/folio-org/platform-complete/blob/R1-2024-csp-4/install.json) |
+| 20.2.7  | 27.1.4  | [Quesnelia R1-2024-csp-3](https://github.com/folio-org/platform-complete/blob/R1-2024-csp-3/install.json) |
+| 20.2.7  | 27.1.4  | [Quesnelia R1-2024-csp-2](https://github.com/folio-org/platform-complete/blob/R1-2024-csp-2/install.json) |
+| 20.2.7  | 27.1.4  | [Quesnelia R1-2024-csp-1](https://github.com/folio-org/platform-complete/blob/R1-2024-csp-1/install.json) |
 | 20.2.6  | 27.1.3  | [Quesnelia R1-2024](https://github.com/folio-org/platform-complete/blob/R1-2024/install.json) |
 | 20.1.12 | 27.0.6  | [Poppy R2-2023-csp-5](https://github.com/folio-org/platform-complete/blob/R2-2023-csp-5/install.json) |
 | 20.1.11 | 27.0.6  | [Poppy R2-2023-csp-4](https://github.com/folio-org/platform-complete/blob/R2-2023-csp-4/install.json) |
