@@ -92,7 +92,7 @@ Changing any of the preferred plugins to **(none)** disables the action for all 
 
 ## Settings \> Tenant \> Reading room access
 
-Use this setting to create, edit and delete reading rooms. Users can assign reading rooms to patrons in the Reading room access app.
+Use this setting to create, edit and delete reading rooms. A reading room defines a workflow that enables patrons to use certain items within the library that are typically stored in closed or restricted stacks. Users can assign reading rooms to patrons in the Reading room access app.  
 
 ### Creating a new Reading room access entry
 1. In the Reading room access pane, click the "+New" button
