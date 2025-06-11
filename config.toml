@@ -121,47 +121,51 @@ algolia_docsearch = true
 offlineSearch = false
 
 [[params.versions]]
+  version = "Sunflower"
+  url = "https://sunflower.docs.folio.org/docs/"
+
+[[params.versions]]
   version = "Ramsons"
   url = "https://ramsons.docs.folio.org/docs/"
 
 [[params.versions]]
-  version = "Quesnelia"
+  version = "Quesnelia (EOL)"
   url = "https://quesnelia.docs.folio.org/docs/"
 
 [[params.versions]]
-  version = "Poppy"
+  version = "Poppy (EOL)"
   url = "https://poppy.docs.folio.org/docs/"
 
 [[params.versions]]
-  version = "Orchid"
+  version = "Orchid (EOL)"
   url = "https://orchid.docs.folio.org/docs/"
 
 [[params.versions]]
-  version = "Nolana"
+  version = "Nolana (EOL)"
   url = "https://nolana.docs.folio.org/docs/"
 
 [[params.versions]]
-  version = "Morning Glory"
+  version = "Morning Glory (EOL)"
   url = "https://morning-glory.docs.folio.org/docs/"
 
 [[params.versions]]
-  version = "Lotus"
+  version = "Lotus (EOL)"
   url = "https://lotus.docs.folio.org/docs/"
 
 [[params.versions]]
-  version = "Kiwi"
+  version = "Kiwi (EOL)"
   url = "https://kiwi.docs.folio.org/docs/"
 
 [[params.versions]]
-  version = "Juniper"
+  version = "Juniper (EOL)"
   url = "https://juniper.docs.folio.org/docs/"
 
 [[params.versions]]
-  version = "Iris"
+  version = "Iris (EOL)"
   url = "https://iris.docs.folio.org/docs/"
 
 [[params.versions]]
-  version = "Honeysuckle"
+  version = "Honeysuckle (EOL)"
   url = "https://honeysuckle.docs.folio.org/docs/"
 
 # User interface configuration
