@@ -28,11 +28,11 @@ Definition of terms related to the Claiming app:
 |*Receiving: View, edit*|*UI-Receiving* (ui-receiving.edit)|Data|app-acquisitions-1.0.6|Edit|
 
 ## Keyboard shortcuts
-Keyboard shortcuts allow you to perform actions in this app using the keyboard. See [Platform essentials > Keyboards shortcuts](../../docs/platform-essentials/keyboard-shortcuts/keyboardshortcuts/) for more information.
+Keyboard shortcuts allow you to perform actions in this app using the keyboard. See [Platform essentials > Keyboards shortcuts](../../platform-essentials/keyboard-shortcuts/keyboardshortcuts/) for more information.
 
 ## Viewing pieces to claim
 
-For a piece to show up as **Late**, the Claiming active box needs to be checked in the POL and an Expected receipt date added. For more on this, see [Claiming a piece](../../docs/acquisitions/receiving/#claiming-a-piece). 
+For a piece to show up as **Late**, the Claiming active box needs to be checked in the POL and an Expected receipt date added. For more on this, see [Claiming a piece](../../acquisitions/receiving/#claiming-a-piece). 
 
 You can choose which columns to display by selecting from the Actions menu.
 - **Expected date**. The date entered in the Expected receipt date field of a piece.
@@ -57,7 +57,7 @@ Once all pieces or specific pieces are selected from the list by marking the che
 
 ### Send claim
 
-To send a claim, you need to have added an integration in Integration details in the Organization app, choosing as Integration type **Claiming**, either **CSV** or **EDI** as File format, and either **File download** or **FTP** for Transmission method. To add an integration, see [Adding integration details to a vendor organization](../../docs/acquisitions/organizations/#adding-integration-details-to-a-vendor-organization).
+To send a claim, you need to have added an integration in Integration details in the Organization app, choosing as Integration type **Claiming**, either **CSV** or **EDI** as File format, and either **File download** or **FTP** for Transmission method. To add an integration, see [Adding integration details to a vendor organization](../../acquisitions/organizations/#adding-integration-details-to-a-vendor-organization).
 
 1. Click on **Actions** and select **Send claim**.
 2.	Choose a **Claim expiry date** when prompted and add an optional internal/external note.
@@ -300,7 +300,7 @@ To search for title based on the date the title was updated, follow these steps:
 
 ### Ship to
 
-To search for order based on their ship to address, follow these steps. Addresses are created in [Settings > Tenant > Addresses](../../../settings/settings_tenant/settings_tenant/#settings--tenant--addresses).
+To search for order based on their ship to address, follow these steps. Addresses are created in [Settings > Tenant > Addresses](../../settings/settings_tenant/settings_tenant/#settings--tenant--addresses).
 1. In the Search & filter pane, click Ship to.
 
 3. Select the address name from the drop-down list. The search results appear in the Claiming pane.
