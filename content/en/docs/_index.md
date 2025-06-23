@@ -7,7 +7,7 @@ weight: 10
 ---
 
 {{% alert color="info"%}}
-This documentation supports the Lotus version of FOLIO. Use the Releases menu to select another version as needed.
+This documentation supports the Lotus version of FOLIO. The Lotus release has reached end-of-life on 2022-12-14, is no longer supported, has known security vulnerabilities, and should not be used in production. Use the Releases menu to select another version as needed.
 {{% /alert %}}
 
 Welcome to FOLIO documentation. FOLIO is an open source project that creates a new paradigm for collaboration between libraries, developers, and vendors.  This open platform moves the industry well beyond the traditional library management system, offering libraries more choices of features and services.
