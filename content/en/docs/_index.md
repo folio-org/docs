@@ -7,7 +7,7 @@ weight: 10
 ---
 
 {{% alert title="NO LONGER SUPPORTED" color="info"%}}
-This documentation is for the Juniper version of FOLIO, which is no longer supported. Use the Releases menu to select another, supported version as needed.
+This documentation is for the Juniper version of FOLIO. The Juniper release has reached end-of-life on 2022-04-19, is no longer supported, has known security vulnerabilities, and should not be used in production. Use the Releases menu to select another, supported version as needed.
 {{% /alert %}}
 
 Welcome to FOLIO documentation. FOLIO is an open source project that creates a new paradigm for collaboration between libraries, developers, and vendors.  This open platform moves the industry well beyond the traditional library management system, offering libraries more choices of features and services.
