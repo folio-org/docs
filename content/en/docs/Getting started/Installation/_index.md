@@ -11,15 +11,8 @@ tags: ["parenttopic"]
 
 You can work with, install and deploy FOLIO in different ways:
 
-* Pre-built Vagrant boxes
 * Single-server deployment
 * Kubernetes deployment
-
-### Pre-built Vagrant boxes
-
-If you just want to try FOLIO without installing it, you can run one of the pre-built Vagrant boxes. This will take a couple of minutes to download and run a virtual machine with a FOLIO instance and sample data that can be used right away.
-
-See [Vagrant boxes]({{< ref "vagrantboxes.md" >}}) for more information.
 
 ### Single-server deployment
 
