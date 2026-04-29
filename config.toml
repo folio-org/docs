@@ -125,7 +125,7 @@ offlineSearch = false
   url = "https://sunflower.docs.folio.org/docs/"
 
 [[params.versions]]
-  version = "Ramsons"
+  version = "Ramsons (EOL)"
   url = "https://ramsons.docs.folio.org/docs/"
 
 [[params.versions]]
