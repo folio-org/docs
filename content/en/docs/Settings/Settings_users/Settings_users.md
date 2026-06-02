@@ -180,7 +180,8 @@ Use this setting to enable Number generator for barcode in the Users app.
 Three options are available: 
 - Off (Number can be filled manually only) 
 - On, field editable (Number can be filled using the generator and be edited or filled manually) 
-- On, field not editable (Number can be filled using the generator only) 
+- On, field not editable (Number can be filled using the generator only)
+For more information about Number generator sequences, see [Settings > Service Interaction > Number generator sequences](../settings_service_interaction/settings_service_interaction/#settings--service-interaction--number-generator-sequences).
 
 ## Settings \> Users \> Custom fields
 
@@ -188,9 +189,9 @@ Use this setting to configure custom fields. Custom fields are used to track add
 
 ### Create a custom field
 
-1.  In the **Custom fields** pane, click **New**.
+1.  In the **Custom fields** pane, click **Edit**.
 2.  In the **Edit custom fields** pane, in the **Accordion title** box, enter the name of the user record section for the custom field(s).
-3.  Click **Add custom field** and select the type of field you want to create: **Checkbox**, **Multi-select**, **Radio button set**, **Single select**, **Text area**, or **Text field**.
+3.  Click **Add custom field** and select the type of field you want to create: **Checkbox**, **Date picker**, **Multi-select**, **Radio button set**, **Single select**, **Text area**, or **Text field**.
 4.  Configure the custom field by adding a name in the **Field label** box, selecting the accordian in which to display the custom field, and checking the box next to **Hidden** and/or **Required**.
 5.  Optional: To add additional custom fields, repeat steps 3-4.
 6.  Click **Save & close**. The custom field(s) are saved.

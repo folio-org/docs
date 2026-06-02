@@ -1,5 +1,5 @@
 # baseURL = "/"
-baseURL = "https://sunflower.docs.folio.org/"
+baseURL = "https://trillium.docs.folio.org/"
 title = "FOLIO Documentation"
 
 enableRobotsTXT = true
