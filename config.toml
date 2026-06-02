@@ -121,6 +121,10 @@ algolia_docsearch = true
 offlineSearch = false
 
 [[params.versions]]
+  version = "Trillium"
+  url = "https://trillium.docs.folio.org/docs/"
+
+[[params.versions]]
   version = "Sunflower"
   url = "https://sunflower.docs.folio.org/docs/"
 
