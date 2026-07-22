@@ -1,7 +1,7 @@
 ---
 title: "Order status"
 linkTitle: "Order status"
-date: 2024-12-04
+date: 2026-07-21
 weight: 20
 tags: ["subtopic"]
 ---
@@ -61,11 +61,13 @@ A library may need to edit fields on an order record with an 'Open' status. This
 | Discount  |  Set exchange rate   |  Set exchange rate   |
 | Fund distribution |  Discount  |   Discount |
 | Material supplier/access provider  |  Fund distribution  | Fund distribution   |
-|  Receipt/Activation due |  Quantity (physical and electronic)*  |  Quantity (physical and electronic)*  |
-| Expected activation/receipt date |  Material supplier/access provider  |  Material supplier/access provider  |
-| URL  | Receipt/Activation due   |  Receipt/Activation due  |
-|  | Expected activation/receipt date   |  Expected activation/receipt date  |
-|  | URL   |  URL  |
+|  Receipt/Activation due |  Material supplier/access provider   |  Material supplier/access provider   |
+| Expected activation/receipt date | Receipt/Activation due  | Receipt/Activation due |
+| URL  |  Expected activation/receipt date  |  Expected activation/receipt date   |
+|  |  URL   |  URL |
+
+
+Please note: a POL's **Quantity (physical or electronic)** field is editable when the corresponding order is in 'Open' status, only when the **Receiving workflow** field on the POL is set to 'Independent order and receipt quantity'. When the POL's **Receiving workflow** field is set to 'Synchronized order and receipt quantity', the quantity may be updated only by adding or removing pieces in the Receiving app. See [Adding an expected piece](../../receiving/#adding-an-expected-piece)
 
 ## How does FOLIO know when to close an order as 'Complete'?
 An order will automatically close with a ‘Reason for closure’ of Complete if all POL associated with the order achieve one of the following:
