@@ -74,7 +74,7 @@ To create an **Authorization role**, follow the steps outlined in [Role Creation
 
 ## Assign or unassign an Authorization role
 
-Management of role assignments can be done in several FOLIO applications: Settings \> Authorization roles, Users, or Consortia manager. See [Managing Role Assignments](https://folio-org.atlassian.net/wiki/spaces/UM/pages/789807108/Roles+Management+with+Eureka#Managing-Role-Assignments) for more information.
+Management of role assignments can be done in several FOLIO applications: Settings \> Authorization roles, Users, or Consortium manager. See [Managing Role Assignments](https://folio-org.atlassian.net/wiki/spaces/UM/pages/789807108/Roles+Management+with+Eureka#Managing-Role-Assignments) for more information.
 
 ## Edit an Authorization role
 
