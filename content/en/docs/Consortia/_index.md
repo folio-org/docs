@@ -44,9 +44,9 @@ The following are the permissions for Consortium manager:
 * **Consortia API module - all permissions.** This permission allows the user to use the Consortia API module to add or remove members in Consortium manager. 
 * **Consortia: Assign and unassign affiliations.** This permission allows the user to add or remove affiliations of other users.
 * **Consortia: View affiliations.** This permission allows the user to view the affiliations of other users.
-* **Consortium manager: Can create, edit and remove settings.** This permission allows the user to perform build, create, edit and delete actions via the Consortia manager BUT the user must have the correct permissions in individual tenants to carry out these actions.
+* **Consortium manager: Can create, edit and remove settings.** This permission allows the user to perform build, create, edit and delete actions via the Consortium manager BUT the user must have the correct permissions in individual tenants to carry out these actions.
 * **Consortium manager: Can share settings to all members.** This permission allows a user to create settings that will be shared by all members and is only editable in the central tenant.
-* **Consortium manager: Can view existing settings.** This permission allows a user to view all the settings of members they are affiliated with via the consortia manager.
+* **Consortium manager: Can view existing settings.** This permission allows a user to view all the settings of members they are affiliated with via the consortium manager.
 * **Inventory: Share local instance with consortium.** This permission allows a user to share local instance records with consortium members.
 
 
