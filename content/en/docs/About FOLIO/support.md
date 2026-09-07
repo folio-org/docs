@@ -15,3 +15,5 @@ After the support period has ended no CSPs are provided. This also applies to cr
 All FOLIO releases before Sunflower are out of support, don't use in production!
 
 Learn more about the [FOLIO support period policy](https://folio-org.atlassian.net/wiki/spaces/TC/pages/1187348628/DR-000043+-+Support+period).
+
+The [Settings > System Software Versions](../settings/system_software_versions/system_software_versions/#flower-release) documentation lists module versions of flower releases.
