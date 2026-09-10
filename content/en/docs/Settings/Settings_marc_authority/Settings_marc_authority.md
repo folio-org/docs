@@ -1,7 +1,7 @@
 ---
 title: "Settings > MARC authority"
 linkTitle: "MARC authority"
-date: 2025-07-24
+date: 2026-09-09
 weight: 170
 tags: ["subtopic"]   
 ---
@@ -40,3 +40,9 @@ Each setting within the MARC Authority app has its own capability or capability 
 
 1. In the **Manage authority files** pane, click the **trash can icon** in the row of the authority file you want to delete.
 2. In the **Delete authority file** dialog, click **Yes, delete**. A confirmation message appears and the authority file is deleted.
+
+## Settings > MARC authority > Version history
+
+### Cards to display per page on Version history
+
+1. From the drop down menu, select the number of cards to display in the Version history pane in the MARC authority app.
