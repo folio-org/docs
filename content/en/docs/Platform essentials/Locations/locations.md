@@ -26,6 +26,8 @@ In Inventory, you can set permanent and temporary location values on a holdings 
 
 Using the values in the permanent and temporary location fields, FOLIO computes two **effective locations** - one on the holdings record, and one on the item record. Libraries do not set the effective location value - FOLIO computes it for them.
 
+  
+
 ### Examples
 Temporary locations can be used to support various library workflows. 
 
@@ -84,3 +86,11 @@ FOLIO sets the item effective location to the first value it finds in the follow
 4. Holding permanent location
 
 Note that an item permanent location **does not need to be set** if the holding permanent location is set. **Item effective location** is what is used in circulation workflows, and it will inherit the holding permanent location if no location values are set directly on the item. If an item record is moved to a new holdings record, it will inherit its effective location and call number from the holdings record unless it has a temporary or permanent location or call number specified in the item record.
+
+### Floating Collections
+A floating collection is a collection of items that are not permanently housed to a specific library. Instead, items are shelved at the library where they were most recently checked in. When an item in a floating collection is checked in at another service point associated with a collection, the item's location is automatically updated to that service point's floating collection location.
+
+For floating to occur, both the item's original location and a location associated with check-in service point must be designated as floating collections. When an item belonging to one floating collection location is checked in at a service point associated with a different floating collection location, the item is assigned a temporary item location at the receiving library.
+
+This differs from the standard check-in process, in which the item is placed in transit and returned to the primary service point associated with its permanent location.  
+See [Settings \> Tenant]({{< ref "Settings_tenant.md" >}}) for instructions on configuring floating locations.
