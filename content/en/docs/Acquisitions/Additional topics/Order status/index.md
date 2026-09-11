@@ -1,7 +1,7 @@
 ---
 title: "Order status"
 linkTitle: "Order status"
-date: 2026-07-21
+date: 2026-09-10
 weight: 20
 tags: ["subtopic"]
 ---
@@ -104,7 +104,6 @@ Note: some fields listed are editable for specific formats or receiving workflow
 | Receiving note |  Receiving note    |  Receiving note    |
 | Subscription from |   Subscription from   |   Subscription from  |
 |  Linked package  |   Linked package   | Linked package     |
-|   |   Suppress instance from discovery...   |    |
 | Internal note  |  Internal note  |  Internal note  |
 | Receipt date  |  Receipt date  | Receipt date   |
 | Receipt status  | Receipt status    |   Receipt status  |
@@ -119,18 +118,10 @@ Note: some fields listed are editable for specific formats or receiving workflow
 | Receiving workflow  |  Receiving workflow  |  Receiving workflow  |
 | Donor information  | Donor information   | Donor information  |
 | Vendor reference number and type  |  Renewal note  | Renewal note   |
-|   | Vendor reference number and type   |  Vendor reference number and type  |
-|   |    |  Unit price (physical and electronic)  |
-|   |   |  Additional cost  |
-|   |   |  Currency  |
-|   |     | (Use) Set exchange rate   |
-|  |    |   Discount |
-|  |    | Fund distribution   |
-|  Activation status |     |  Material supplier/access provider  |
-| Receipt/Activation due | Activation status  |  Activation status  |
-|  Expected activation/receipt date  |  Receipt/Activation due  | Receipt/Activation due  |
-| URL  |  Expected activation/receipt date |  Expected activation/receipt date   |
-| Custom fields |  URL   | URL  |
+| Activation status  | Vendor reference number and type   |  Vendor reference number and type  |
+| Receipt/Activation due  | Activation status   |  Activation status   |
+| Expected activation/receipt date  |  Receipt/Activation due  |  Receipt/Activation due  |
+| Custom fields |  Expected activation/receipt date   |  Expected activation/receipt date   |
 |  | Custom fields   |  Custom fields   |
 
 Please note: a POL's **Quantity (physical or electronic)** field is editable when the corresponding order is in 'Open' status, only when the **Receiving workflow** field on the POL is set to 'Independent order and receipt quantity'. When the POL's **Receiving workflow** field is set to 'Synchronized order and receipt quantity', the quantity may be updated only by adding or removing pieces in the Receiving app. See [Adding an expected piece](../../receiving/#adding-an-expected-piece)
