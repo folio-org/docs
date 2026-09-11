@@ -421,6 +421,74 @@ A usage data provider is any organization that provides e-resource usage data to
 3. Repeat steps 3-6 under [Adding a usage data provider](#adding-a-usage-data-provider).
 
 
+## eUsage Reports (Plugin)
+
+### Matching summary
+
+When a new COUNTER report is harvested into the eUsage app, the eUsage Reports module creates matches between the titles in the COUNTER report and the titles that already exist in the Agreements local KB. Matching is done via ISSN or ISBN. If no matching ISSN or ISBN is found in the KB, then the title remains unmatched and can be manually addressed by a user.
+
+Note that matching is only supported for the COUNTER 5 TR report.
+
+The eUsage Reports matching summary can be found in the eUsage app. This accordion appears on each eUsage provider record and provides a summary of the results of the matching process. The matching summary contains the following data:
+* **Date of last harvest.** The date of the last COUNTER TR report harvest for that provider, whether manual or automated.
+* **Status**
+    * Reviewed: All titles have been reviewed and either matched or ignored.
+    * Pending review: Some titles have not yet been matched or ignored.
+    * No records: No counter data has yet been loaded.
+* **Records loaded.** The number of titles found in COUNTER TR reports for the current provider.
+* **Matched.** The number of COUNTER TR titles that have been matched to a KB title.
+* **Unmatched.** The number of COUNTER TR titles that were not matched.
+* **Ignored.** The number of titles have been manually flagged as ignored.
+
+
+#### Working with matches
+
+Clicking the hyperlinked numbers in the matching summary brings up the eUsage titles screen. This screen allows the user to review matched titles, create manual matches, and ignore titles that should not be matched. Each title in the list has an actions menu that provides the following options.
+
+
+##### Editing titles
+
+The edit option allows the user to manually choose a title from the local KB to match to a title found on a COUNTER TR report. Unmatched titles can be edited to select a match for the first time, and matched titles can be edited to change an existing match in case of error.
+
+To edit:
+
+1. Click the menu icon in the **Actions** column and select **Edit**.
+2. Use the modal to search for a title in the local KB.
+3. Click on the desired title to create the match.
+
+Once a match is chosen, it will be used for all future harvests and reports. You will not need to manually rematch an unmatched title every time you load new data. If necessary, you can reset matched titles to unmatched. 
+
+
+##### Ignoring titles
+
+There may be titles included on COUNTER TR reports that appear in error or are not of interest. If you don't want to include these titles in your reports or go through the trouble of matching them, you can ignore them. Ignored titles will not be shown in your matched or unmatched counts or cause a provider to be marked as **pending review**.
+
+To ignore:
+
+1. Click the menu icon in the **Actions** column and select **Ignore**.
+2. Your title will be ignored.
+3. To remove a title from the Ignored list, select the Actions menu and choose **Stop ignoring**.
+
+
+#### Updating matches
+
+The **Update matches** button triggers the eUsage Reports module to process any new COUNTER report data that has become available since the last harvest. If new titles have come in, they will either be matched automatically or added to the unmatched list. 
+
+Note that for new data to be included in the eUsage Reports visualizations, you must update matches before analyzing an agreement or viewing a report.
+
+
+#### Reset matched titles to unmatched
+
+If necessary, you can reset matched titles to unmatched.
+
+To reset:
+
+1. Click the menu icon in the **Actions** column and select **Ignore**.
+2. Your title will be ignored.
+3. Click the menu icon in the **Actions** column and select **Stop ignoring**.
+4. Your title will get the status **unmatched**.
+
+
 ### Related agreements
 
 A related agreement is an agreement relevant to the current agreement. This section allows you to link agreements together to establish relationships among them. For example, you may want to add a post-cancellation agreement here.

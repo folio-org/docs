@@ -122,9 +122,9 @@ After confirming you will automatically be taken to the new/duplicate role.
 
 
 ## Shared Roles
-Shared roles are centrally managed in that they can only be edited in the consortia manager. A shared role will appear as a Role in all tenants with the same capabilities. User from the given tenant can be assigned to that role. Editing that role in the central tenant will change it for all tenants. 
+Shared roles are centrally managed in that they can only be edited in the Consortium manager. A shared role will appear as a Role in all tenants with the same capabilities. User from the given tenant can be assigned to that role. Editing that role in the central tenant will change it for all tenants.
 
-To share a role users must have permissions to access the consortia manager app and share data. With your active affiliation set to the systems central tenant. Navigate to Consortia manager -> Authorization Roles. 
+To share a role users must have permissions to access the Consortium manager app and share data. With your active affiliation set to the systems central tenant. Navigate to Consortium manager -> Authorization Roles.
 
 
 * Select the central tenant from the Member dropdown at the top of the second pane 
@@ -144,7 +144,7 @@ Role assignments can be maanged from a few different places. Which place is most
 	* This is a good choice when assigning or unassigning multiple users to/from a given role 
 * From the Users app
 	* This is a good choice when managing role assignments for a given user
-* From Consortia manager -> Authorization Roles (only applicable to consortia with ECS enabled) 
+* From Consortium manager -> Authorization Roles (only applicable to consortia with ECS enabled)
 	* From here you can manage role assignments across all related tenants 
 	* From here you can also create "Shared" roles that can be used by all tenants in the system  
 
