@@ -1,7 +1,7 @@
 ---
 title: "Finance"
 linkTitle: "Finance"
-date: 2026-05-15
+date: 2026-09-10
 weight: 10
 tags: ["parenttopic"]
 ---
@@ -1066,8 +1066,10 @@ Note: Financial structure records cannot be deleted if they have other records a
 
 Fiscal year rollover is initiated from the ledger detail pane.  This process can close current fiscal year budgets, create upcoming fiscal year budgets with or without allocated funds based on fund type, and roll encumbrances onto new fiscal year budgets based on order type (one-time, ongoing, and ongoing subscription). This action is applied only to the funds associated with the ledger, so rollover must be run separately for each ledger. The fiscal year rollover process must be completed within the dates set on the current fiscal year. For example, if the current fiscal year ends on June 30, you must run fiscal year rollover on or before June 30. 
 
-Note: Prior to running the fiscal year rollover process, it is recommended to do the following:
-1. Review open orders to determine if the **Re-encumber** check box is selected where desired. If **Re-encumber** is not selected, but the order's workflow status is **Open**, an encumbrance transaction will be created in the new fiscal year's budget, but the transaction will be released and will not earmark any funds in the new budget.
+### Recommendations
+
+Prior to running the fiscal year rollover process, it is recommended to do the following:
+1. Review open orders to determine if the **Re-encumber** check box is selected where desired. If **Re-encumber** is not selected, but the order's workflow status is **Open**, an encumbrance transaction will be created in the new fiscal year's budget, but the transaction will be released and will not earmark any funds in the new budget. 
 2. Review and resolve approved invoices.
 3. Run at least one test rollover to identify any remaining unpaid invoices and to view the rollover log prior to running the actual rollover.
 
@@ -1090,7 +1092,7 @@ To run a test of fiscal year rollover, follow these steps:
 10. Click **Confirm.**  A green toast message indicates that the rollover test started successfully and focus returns to the three pane layout for the ledger.  A confirmation email is sent to the user’s email address.
 11. To [view the test rollover results](#viewing-rollover-log-results) in the log, open the Actions menu and select **Rollover logs.** 
 
-
+### Performing fiscal year rollover
 To run fiscal year rollover, follow these steps:
 
 
@@ -1139,7 +1141,10 @@ The information in this section defines rollover behavior for budgets by fund ty
 *   **Allowed encumbrance, %.**  The percentage amount to be applied to the upcoming fiscal year's budget allocated amount to calculate allowed encumbrances against funds of this fund type.  To allow all encumbrances with no limit, leave this field blank.  For example, if the budget’s total funding is $1000 and you set an **Allowed encumbrance, %** of 110 percent, the system will allow opening orders up to $1100. Similarly, a value of 90 percent will limit encumbrances to $900. Note: You can only enter a value in this field if the **Set allowances** checkbox is checked.
 *   **Allowed expenditure, %.**  The percentage amount to be applied to the upcoming budget’s allocated amount to calculate allowed expenditures against funds of this fund type.  To allow all expenditures with no limit, leave this field blank. For example, if the budget’s total funding is $1000 and you set an **Allowed expenditure, %** of 110 percent, the system will allow approval of invoices up to $1100.  Similarly, a value of 90 percent will limit expenditures to $900. Note: You can only enter a value in this field if the **Set allowances** checkbox is checked.
 
-
+**Notes**
+* New active budgets will be created on any fund with a current budget that is active or frozen.
+* New budgets will not be created on any fund that is inactive. Note: this may result in encumbrance errors if any open orders are tied to these funds.
+* New budgets will not have any money allocated unless corresponding fund type boxes are checked on the fiscal year rollover form.
 
 #### Rollover encumbrances
 
@@ -1147,8 +1152,12 @@ The information in this section defines rollover behavior for encumbrances by or
 
 *   **Rollover.**  Check this box if you want encumbrances for open orders of this type of order to roll over to the upcoming fiscal year budget associated with each order.  Checking this box will activate the  **Based on** and **Increase by, %** fields.
 *   **Based on.**  From the drop-down list, select **Expended** to encumber the total amount that was expended during the current fiscal year. Select **Initial encumbrance** to encumber the purchase order line estimated price. Select **Remaining** to encumber the amount that has not yet been paid.
-*   **Increase by, %.**  Enter a value if you want to increase the encumbrance amount by a defined percentage.   
+*   **Increase by, %.**  Enter a value if you want to increase the encumbrance amount by a defined percentage.
 
+**Notes**
+* Rollover does not impact orders in Pending or Closed status.
+* If an open order exist and the **Re-encumber** checkbox is not checked on the order, a 0.00 released encumbrance will appear on the new fiscal year budget.
+* If an open order exists, regardless of the status of the **Re-encumber** checkbox, and the corresponding order type box is not checked on the fiscal year rollover form, a 0.00 released encumbrance will appear on the new fiscal year budget.
 
 ### Viewing rollover log results
 
