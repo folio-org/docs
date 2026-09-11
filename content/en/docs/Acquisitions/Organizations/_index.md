@@ -1,7 +1,7 @@
 ---
 title: "Organizations"
 linkTitle: "Organizations"
-date: 2026-08-18
+date: 2026-09-10
 weight: 40
 tags: ["parenttopic"]
 ---
@@ -752,7 +752,7 @@ Please note: this accordion is only visible if the selected integration type is 
 
 *   **Schedule EDI.** If you want to schedule the EDI, select the **Schedule EDI** checkbox. This will make the following fields appear.
 *   **Schedule period.**  The period between automated exports to the vendor.  Choose from Hourly, Daily, Weekly, or Monthly.
-*   **Schedule frequency (required).**  If you choose a schedule period of Hourly, Daily, or Weekly, the schedule frequency field appears.  Enter the numeric value for the hourly, daily, or weekly frequency of this scheduled integration. Hourly example: 2 means the export will occur every 2 hours. Daily example: 2 means the export will occur every 2 days.
+*   **Schedule frequency (required).**  If you choose a schedule period of Hourly, Daily, or Weekly, the schedule frequency field appears.  Enter the numeric value for the hourly, daily, or weekly frequency of this scheduled integration. Hourly example: 2 means the export will occur every 2 hours. Daily example: 2 means the export will occur every 2 days. Weekly example: 2 means every second week on the day selected, e.g. every second Monday. Monthly example: the export will occur on the day (1-31) and time (hh:mm) selected.
 *   **Date.** If you choose a schedule period of Daily, the date field appears.  Use the calendar function to select the start date for this schedule.
 *   **Time (required).**  Click on this field to view an hour and time select list.  Choose the scheduled time for this automated export.
 *   **S M T W Th F S.**  If you choose a schedule period of Weekly, the day of the week checkboxes appear. Choose the days for this weekly automated export.
