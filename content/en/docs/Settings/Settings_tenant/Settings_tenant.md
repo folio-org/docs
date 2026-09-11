@@ -418,7 +418,7 @@ Note: If the location is in use by at least one holding record in Inventory, you
 ### Enable a floating collection
 
 
-A Floating collection is defined as a group of items that are not housed permanently at a specific library, but are shelved at the library where they were most recently checked in. Floating collections are used to decrease transportation of items between libraries and to reduce manual handling, transit time, shipping expenses and/or traffic emissions. Support for floating collections is enabled by designating a location as a floating collection.  
+A Floating collection is defined as a group of items that are not housed permanently at a specific library, but are shelved at the library where they were most recently checked in. Floating collections are used to decrease transportation of items between libraries and to reduce manual handling, transit time, shipping expenses and/or traffic emissions. Support for floating collections is enabled by designating a location as a floating collection.  NOTE: For circulation to use floating collections the environment variable ENABLE_FLOATING_COLLECTIONS must be set to TRUE when the circulation module (mod-circulation) is deployed. Otherwise floating collections will not function.
 
 To enable a location as a floating collection
 
