@@ -245,7 +245,7 @@ For more information on **Fees/fines**, see [Additional Topics \> Fees and fines
 
 
 The **Loans** section displays the number of open loans and closed loans on a user’s record. To view additional details about the user’s open loans or closed loans, expand the **Loans** accordion and click **open loans** or **closed loans**, accordingly.
--  **Open loans**. A patron has an **open loan** when they have borrowed an item and the item has not yet been returned. A loan is also considered open when the patron has returned the item but owes a fee/fine, or when a patron says they have returned an item and the library marks it as *claim returned* while they search the shelves.
+-  **Open loans**. A patron has an **open loan** when they have borrowed an item and the item has not yet been returned. A loan is also considered open when the patron has returned the item but owes a fee/fine, or when a patron says they have returned an item and the library marks it as *claim returned* while they search the shelves. If an open loan relies on a loan policy that has the [For use at location](../access/check-in/checkin/#for-use-at-location) option selected, this section will indicate that condition.
 -  **Closed loans**. Once an item is returned to the library and checked in, and any associated fees/fines are  resolved, the loan is closed. Once a loan is closed, it can be anonymized if **loan anonymization** is set up. For more information, see [Anonymizing a loan that has been checked in](../access/check-in/checkin/#anonymizing-a-loan-that-has-been-checked-in).
 
 
