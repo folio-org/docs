@@ -167,3 +167,6 @@ For information about using the LOB or S3 storage engines, please see: https://w
 
 This FOLIO wiki page also contains information about switching storage engines and maximum file sizes. 
 
+## Settings > Licenses > Acquisition Units
+
+For more on how Acquisition Units work and how to set them up and assign users, see the documentation at [Settings > Acquisition units](../../settings/settings_acquisition_units/settings_acquisition_units/) which describes how these already work with other modules.

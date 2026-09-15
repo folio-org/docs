@@ -25,10 +25,9 @@ Library’s utilizing FOLIO can employ an external knowledge base, like EBSCO, o
 The permissions listed below allow you to interact with the Agreements app and determine what you can or cannot do within the app. You can assign permissions to users in the Users app. If none of these permissions are assigned to a user, they are unable to see the Agreements app or any related information.
 
 
+## Permissions
 
 The following permissions are applicable to all libraries using the Agreements app:
-
-
 
 *   **Agreements: Search & view agreements.** This permission allows the user to search and view existing agreements. It also allows the user to see and access the Agreement app in the FOLIO interface.
 *   **Agreements: Edit agreements.** This permission allows the user to edit agreements, including the ability to add and edit agreement lines; to add and edit documents; and to view, add and edit tags on an agreement. It also grants all permissions included in "Agreements: Search & view agreements.”
@@ -37,8 +36,6 @@ The following permissions are applicable to all libraries using the Agreements a
 
 The following permissions are only applicable if your library is using the internal KB:
 
-
-
 *   **Agreements: Search & view e-resources.** This permission allows the user to search and view e-resources (packages and titles in those packages) in the internal KB. This includes the permission to see and access the Agreements app in the FOLIO interface.
 *   **Agreements: Edit e-resources.** This permission allows the user to edit the e-resources. It also grants all permissions included in "Agreements: Search & view e-resources."
 *   **Agreements: Search & view platforms.** This permission allows the user to search and view platforms in the internal KB. This includes the permission to see and access the Agreement app in the FOLIO interface.
@@ -46,11 +43,10 @@ The following permissions are only applicable if your library is using the inter
 
 If you want eUsage data in an agreement record, you also need to have the following eUsage permission:
 
-
-
 *   **eUsage reports: charts may be viewed.** This permission adds an accordion to the Agreement record in the Agreement app that displays charts and graphs of eUsage data for the titles related to an agreement.
 
 
+### Capability sets for Agreements
 
 The Capability sets listed below allow you to interact with the Agreements app and determine what you can or cannot do within the app. You can assign Capability sets to users in the section **Authorization roles** of the Settings app. 
 
@@ -65,6 +61,52 @@ The Capability sets listed below allow you to interact with the Agreements app a
 |Agreements: Search & view platforms  |UI-Agreements Platforms (ui-agreements.platforms.view)          |data      |app-platform-complete-2.5.3|view   |
 |Agreements: Edit platforms           |UI-Agreements Platforms (ui-agreements.platforms.edit)          |data      |app-platform-complete-2.5.3|edit   |
 |eUsage reports: charts may be viewed |Plugin-Eusage-Reports Charts (plugin-eusage-reports.view-charts)|data      |app-erm-usage-2.0.4        |view   |
+
+
+### Capability sets for eUsage Reports (Plugin)
+
+|Type      |Resource                           |Action   |Description                                                                                     |
+|:---------|:----------------------------------|:--------|:-----------------------------------------------------------------------------------------------|
+|Data      |Eusage-Reports                     | View    | All read only permissions                                                                      |
+|Data      |Eusage-Reports                     | Manage  | All permissions                                                                                |
+|Data      |Plugin-Eusage-Reports Charts       | View    | eUsage reports: charts may be viewed                                                           |
+|Data      |Plugin-Eusage-Reports Matches      | Edit    | eUsage reports: title matches may be viewed and edited                                         |
+|Data      |UI-Erm-Comparisons Jobs            | View    | A user with this permission can search and view  </br>ERM Comparison "jobs" which are used to compare </br>lists of resources in the Agreements local knowledgebase. </br> This includes the permission to see and access the </br>ERM Comparisons app in the Folio interface.|
+|Data      |UI-Erm-Comparisons Jobs            | Edit    | Grants all permissions in "ERM comparisons: View jobs" </br>plus the ability to create new jobs (i.e. compare </br>two lists of resources in the Agreements local </br>knowledgebase)                                                                                            |
+|Data      |UI-Erm-Comparisons Jobs            | Delete  | Grants all permissions in "ERM comparisons: View jobs" </br>plus the ability to delete jobs that have already run|
+|Settings  |Settings Erm-Comparisons Enabled   | View    | Settings (ERM comparisons): display list of settings pages                                     |
+
+Please note: 
+* To activate the plugin in Agreements in the UI, you must set the **Plugin-Eusage-Reports Charts** capability set.
+* To activate the comparison module in eUsage in the UI, you must set the **UI-Erm-Comparisons Jobs** capability set.
+
+
+### Capabilities for eUsage Reports (Plugin)
+
+|Type      |Resource                                  |Action   |Description                                             |
+|:---------|:-----------------------------------------|:--------|:-------------------------------------------------------|
+|Data      |Eusage-Reports                            | View    | All read only permissions                              |
+|Data      |Eusage-Reports                            | Manage  | All permissions                                        |
+|Data      |Eusage-Reports-Report-Cost-Per-Use        | View    | Get eUsage report for cost per use                     |
+|Data      |Eusage-Reports-Report-Data Collection     | View    | Get report data                                        |
+|Data      |Eusage-Reports-Report-Packages Collection | View    | Get report packages                                    |
+|Data      |Eusage-Reports-Report-Reqs-By-Date-Of-Use | View    | Get eUsage report for requests by date of use          |
+|Data      |Eusage-Reports-Report-Reqs-By-Pub-Year    | View    | Get eUsage report for requests by publication year     |
+|Data      |Eusage-Reports-Report-Status              | View    | Get eUsage report metadata (like lastUpdated)          |
+|Data      |Eusage-Reports-Report-Titles Collection   | View    | Get Counter report titles                              |
+|Data      |Eusage-Reports-Report-Use-Over-Time       | View    | Get eUsage report for use over time                    |
+|Data      |Eusage-Reports-Title-Data Collection      | View    | Get title data                                         |
+|Data      |Plugin-Eusage-Reports Charts              | View    | eUsage reports: charts may be viewed                   |
+|Data      |Plugin-Eusage-Reports Matches             | Edit    | eUsage reports: title matches may be viewed and edited |
+|Data      |UI-Erm-Comparisons Jobs                   | View    | A user with this permission can search and view  </br>ERM Comparison "jobs" which are used to compare </br>lists of resources in the Agreements local knowledgebase. </br> This includes the permission to see and access the </br>ERM Comparisons app in the Folio interface.|
+|Data      |UI-Erm-Comparisons Jobs                   | Edit    | Grants all permissions in "ERM comparisons: View jobs" </br>plus the ability to create new jobs (i.e. compare </br>two lists of resources in the Agreements local </br>knowledgebase)|
+|Data      |UI-Erm-Comparisons Jobs                   | Delete  | Grants all permissions in "ERM comparisons: View jobs" </br>plus the ability to delete jobs that have already run|
+|Settings  |Module Erm-Comparisons Enabled            | View    | UI: ui-erm-comparisons module is enabled               |
+|Settings  |Module Ui-Plugin-Eusage-Reports Enabled   | View    | UI: eusage-reports plugin is enabled                   |
+|Settings  |Settings Erm-Comparisons Enabled          | View    | Settings (ERM comparisons): display list of settings pages|
+|Procedural|Eusage-Reports-Report-Data-From-Agreement | Execute | Parse agreement lines and populate report data         |
+|Procedural|Eusage-Reports-Report-Titles Collection   | Execute | Post Counter report titles                             |
+|Procedural|Eusage-Reports-Report-Titles-From-Counter | Execute | Parse counter reports and return them                  |
 
 
 ## Keyboard shortcuts
