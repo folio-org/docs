@@ -1,7 +1,7 @@
 ---
 title: "eUsage"
 linkTitle: "eUsage"
-date: 2026-02-11
+date: 2026-09-28
 weight: 30
 tags: ["parenttopic"]
 ---
@@ -13,8 +13,8 @@ The app provides automatic harvesting of COUNTER standard usage reports via SUSH
 
 ## Definition of terms
 
-* **Aggregator**. A service that aggregates pre-processing statistics for multiple statistics providers and offers an endpoint to download the reports. eUsage allows you to harvest statistics for a usage data provider either directly from the provider via SUSHI or from an aggregator. The only aggregator service currently supported in FOLIO is the German National Statistics Server. 
-* **COUNTER** and **SUSHI.** Standard format and protocol for electronic resource usage statistics. Detailed information is available at[ Project COUNTER](https://www.projectcounter.org/).
+* **Aggregator.** A service that aggregates pre-processing statistics for multiple statistics providers and offers an endpoint to download the reports. eUsage allows you to harvest statistics for a usage data provider either directly from the provider or from an aggregator. 
+* **COUNTER** and **SUSHI.** Standard format and protocol for electronic resource usage statistics. Detailed information is available at [Project COUNTER](https://www.projectcounter.org/).
 * **Report.** The usage data for a certain set of electronic resources within a certain reporting period in a specific type.
 * **Usage data provider.** The agent that provides usage statistics for a set of electronic resources. Most likely, this is a vendor or a platform provider. The usage data provider record is the basic entity in eUsage used to manage all associated reports and harvesting processes.
 
@@ -220,8 +220,9 @@ When you create a usage data provider, you are asked to enter the configuration 
 ### Harvesting configuration
 
 * **Harvesting status (required).** Select a Harvesting status: Active or Inactive. The status you select here defines whether reports from the usage data provider are harvested in the automated or manually triggered harvesting processes.
-* **Harvest statistics via (required).** Select how to harvest statistics: Aggregator or Sushi. Note: The only aggregator currently supported by FOLIO is the German National Statistics Server.
-* **Aggregator (required).** If you have selected to harvest statistics via an aggregator, select the aggregator that should be used to harvest statistics. Note: The only aggregator currently supported by FOLIO is the German National Statistics Server.
+* **Harvest statistics via (required).** Select how to harvest statistics: Aggregator or Sushi.
+* **Aggregator (required).** If you have selected to harvest statistics via an aggregator, select the aggregator that should be used to harvest statistics. Note: The only aggregator currently supported by FOLIO is the German National Statistics Server. 
+    * **Update 09/2026:** You can now harvest data from the German National Statistics Server via Counter/Sushi (see [Documentation](https://kid.hebis.de/spaces/DSS/pages/286395337/COUNTER+API)). For more information, see [Setting up an aggregator](#setting-up-an-aggregator).
 * **Vendor code.** If you have selected to harvest statistics via an aggregator, enter the code by which the aggregator identifies the vendor for which statistics are requested. The German National Statistics Server requires the vendor names as displayed in the server’s user interface.
 * **Service type (required).** If you have selected to harvest statistics via a SUSHI protocol, select the SUSHI service type implementation to be used by the harvester. The service type normally corresponds to the requested Report release. 
     * Counter-Sushi 4.1
@@ -260,6 +261,23 @@ Note: Only enter the_ base URL_ to the service, not the complete URL for an API 
 #### Setting up an aggregator
 
 It is possible to use an aggregator to retrieve statistics. Setting up an aggregator can be done in the Settings app. For more information on this, see [Settings > General > Aggregators](../../settings/settings_eusage/settings_eusage/#settings--general--aggregators).
+
+**Update 09/2026:** You can now harvest data from the German National Statistics Server via Counter/Sushi (see [Documentation](https://kid.hebis.de/spaces/DSS/pages/286395337/COUNTER+API)).
+
+**Example**
+
+* **Harvesting status:** Active
+* **Harvest statistics via:** Sushi
+* **Service type:** Counter 5 or Counter 5.1
+* **Service URL:** https://statistik.hebis.de/stats/sushi
+* **Report release:** Counter 5 or Counter 5.1
+* **Requested report:** TR
+* **Harvesting start:** 2026-09
+* **Harvesting end:** 2026-09
+* **Customer ID:** *Your ID*
+* **Requestor ID:** *Your ID*
+* **API key:** *Your key*
+* **Platform:** *A number for the platform. The number is provided by the statistics server. For example, 1. It's similar to using the vendor code.* 
 
 
 #### Hide sushi credentials in detail views
