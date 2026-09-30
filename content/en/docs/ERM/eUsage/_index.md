@@ -1,7 +1,7 @@
 ---
 title: "eUsage"
 linkTitle: "eUsage"
-date: 2026-05-20
+date: 2026-09-28
 weight: 30
 tags: ["parenttopic"]
 ---
@@ -13,8 +13,8 @@ The app provides automatic harvesting of COUNTER standard usage reports via Coun
 
 ## Definition of terms
 
-* **Aggregator.** A service that aggregates pre-processing statistics for multiple statistics providers and offers an endpoint to download the reports. eUsage allows you to harvest statistics for a usage data provider either directly from the provider via Counter / Sushi or from an aggregator. The only aggregator service currently supported in eUsage is the German National Statistics Server. 
-* **Counter.** Standard format for electronic resource usage statistics. Detailed information is available at[ Project COUNTER](https://www.projectcounter.org/).
+* **Aggregator.** A service that aggregates pre-processing statistics for multiple statistics providers and offers an endpoint to download the reports. eUsage allows you to harvest statistics for a usage data provider either directly from the provider or from an aggregator. 
+* **Counter.** Standard format for electronic resource usage statistics. Detailed information is available at [Project COUNTER](https://www.projectcounter.org/).
 * **Counter** or **Sushi.** Protocol for electronic resource usage statistics. Detailed information is available at[ Project COUNTER](https://www.projectcounter.org/).
 * **Report.** The usage data for a certain set of electronic resources within a certain reporting period in a specific type.
 * **Usage data provider.** The agent that provides usage statistics for a set of electronic resources. Most likely, this is a vendor or a platform provider. The usage data provider record is the basic entity in eUsage used to manage all associated reports and harvesting processes.
@@ -183,8 +183,9 @@ When you create a usage data provider, you are asked to enter the configuration 
     * Provider status (active) and Harvesting status (active). Example: The provider receives the reports by harvester.
     * Provider status (active) and Harvesting status (inactive). Example: The provider does not receives reports by harvester, but non-counter reports are actively managed.
     * Provider status (inactive) and Harvesting status (inactive). Example: The provider no longer provides statistics, but the data is still retained. To set the harvesting status back to active, the provider status must first be active.
-* **Harvest statistics via (required).** Select how to harvest statistics: **Aggregator** or **Counter / Sushi**. Note: The only aggregator currently supported by FOLIO is the German National Statistics Server.
+* **Harvest statistics via (required).** Select how to harvest statistics: **Aggregator** or **Counter / Sushi**.
 * **Aggregator (required).** If you have selected to harvest statistics via an aggregator, select the aggregator that should be used to harvest statistics. Note: The only aggregator currently supported by FOLIO is the German National Statistics Server.
+    * **Update 09/2026:** You can now harvest data from the German National Statistics Server via Counter/Sushi (see [Documentation](https://kid.hebis.de/spaces/DSS/pages/286395337/COUNTER+API)). For more information, see [Setting up an aggregator](#setting-up-an-aggregator).
 * **Vendor code.** If you have selected to harvest statistics via an aggregator, enter the code by which the aggregator identifies the vendor for which statistics are requested. The German National Statistics Server requires the vendor names as displayed in the server’s user interface.
 * **Service type (required).** If you have selected to harvest statistics via **Counter / Sushi**, select the service type implementation to be used by the harvester. The service type normally corresponds to the requested Report release. 
     * Counter 5.0
@@ -223,6 +224,23 @@ Note: Only enter the _base URL_ to the service, not the complete URL for an API 
 #### Setting up an aggregator
 
 It is possible to use an aggregator to retrieve statistics. Setting up an aggregator can be done in the Settings app. For more information on this, see [Settings > General > Aggregators](../../settings/settings_eusage/settings_eusage/#settings--general--aggregators).
+
+**Update 09/2026:** You can now harvest data from the German National Statistics Server via Counter/Sushi (see [Documentation](https://kid.hebis.de/spaces/DSS/pages/286395337/COUNTER+API)).
+
+**Example**
+
+* **Harvesting status:** Active
+* **Harvest statistics via:** Sushi
+* **Service type:** Counter 5 or Counter 5.1
+* **Service URL:** https://statistik.hebis.de/stats/sushi
+* **Report release:** Counter 5 or Counter 5.1
+* **Requested report:** TR
+* **Harvesting start:** 2026-09
+* **Harvesting end:** 2026-09
+* **Customer ID:** *Your ID*
+* **Requestor ID:** *Your ID*
+* **API key:** *Your key*
+* **Platform:** *A number for the platform. The number is provided by the statistics server. For example, 1. It's similar to using the vendor code.* 
 
 
 #### Hide credentials in detail views
