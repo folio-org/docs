@@ -46,7 +46,7 @@ tags: ["parenttopic"]
   </tr>
   <tr>
     <td>AuthUser</td>
-    <td>Refers to a user record in Keycloak. AuthUsers are managed by FOLIO. No direct interaction with Keyucloak is required. AuthUsers are a subset of Users, which include staff, patrons, administrators, etc. A user becomes an AuthUser if they are assigned credentials, roles, or capabilities. The keycloak user record is only needed for those who log in and use FOLIO. There's no need for Keycloak to know about patrons and others who are just "data" in the system.</td>
+    <td>Refers to a user record in Keycloak. AuthUsers are managed by FOLIO. No direct interaction with Keycloak is required. AuthUsers are a subset of Users, which include staff, patrons, administrators, etc. A user becomes an AuthUser if they are assigned credentials, roles, or capabilities. The keycloak user record is only needed for those who log in and use FOLIO. There's no need for Keycloak to know about patrons and others who are just "data" in the system.</td>
   </tr>
   <tr>
    <td>Availability
