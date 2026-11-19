@@ -7,7 +7,7 @@ weight: 10
 ---
 
 {{% alert title="VERSION" color="info"%}}
-Dies ist die Dokumentation der Juniper-Version von FOLIO. Im Release-Menü wechseln Sie bei Bedarf in die gewünschte Version.
+Dies ist die Dokumentation der Trillium-Version von FOLIO. Im Release-Menü wechseln Sie bei Bedarf in die gewünschte Version.
 {{% /alert %}}
 
 Willkommen zur FOLIO-Dokumentation. FOLIO ist ein Open-Source-Projekt, das einen Paradigmenwechsel bei der Zusammenarbeit von Bibliotheken, Entwicklungsteams und Firmen darstellt. Diese offene Plattform bringt den Markt weit jenseits traditioneller Bibliotheksmanagementsysteme und eröffnet den Bibliotheken mehr Auswahl bei Funkionalität und Service.
