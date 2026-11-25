@@ -596,6 +596,9 @@ In the Lists app, the **Fields** available for building a query and displaying a
 | *Items - Item UUID* | YES | YES |
 | *Items - Last check in date time* | YES | YES |
 | *Items - Notes* | NO |YES |
+| *Items - Notes - Note* | YES |YES |
+| *Items - Notes - Note type* | YES |YES |
+| *Items - Notes - Staff only* | YES |YES |
 | *Items - Number of missing pieces* | YES | YES |
 | *Items - Number of pieces* | YES | YES |
 | *Items - Purchase order line identifier* | YES | YES |
